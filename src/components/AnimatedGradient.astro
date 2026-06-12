@@ -1,0 +1,107 @@
+---
+// AnimatedGradient.astro
+// Subtle, flowing gradient orbs that match the OphthaMCQ brand palette.
+// Use as a background layer behind section content.
+//
+// Props:
+//   variant: 'light' | 'dark' — defaults to 'light'
+
+interface Props {
+  variant?: 'light' | 'dark';
+}
+
+const { variant = 'light' } = Astro.props;
+const isDark = variant === 'dark';
+---
+
+<div class="absolute inset-0 overflow-hidden -z-10" class:list={[{ dark: isDark }]} aria-hidden="true">
+  <div class="gradient-blob blob-1"></div>
+  <div class="gradient-blob blob-2"></div>
+  <div class="gradient-blob blob-3"></div>
+  <div class="gradient-blob blob-4"></div>
+  <div class="absolute inset-0 overlay"></div>
+</div>
+
+<style>
+  .gradient-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.45;
+    will-change: transform;
+  }
+
+  .blob-1 {
+    width: 28rem;
+    height: 28rem;
+    top: -6rem;
+    left: -6rem;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.55) 0%, rgba(14, 165, 233, 0) 70%);
+    animation: float-1 18s ease-in-out infinite alternate;
+  }
+
+  .blob-2 {
+    width: 32rem;
+    height: 32rem;
+    top: 10%;
+    right: -8rem;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.5) 0%, rgba(34, 211, 238, 0) 70%);
+    animation: float-2 22s ease-in-out infinite alternate;
+  }
+
+  .blob-3 {
+    width: 24rem;
+    height: 24rem;
+    bottom: -4rem;
+    left: 20%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.45) 0%, rgba(59, 130, 246, 0) 70%);
+    animation: float-3 20s ease-in-out infinite alternate;
+  }
+
+  .blob-4 {
+    width: 20rem;
+    height: 20rem;
+    bottom: 15%;
+    right: 10%;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.35) 0%, rgba(14, 165, 233, 0) 70%);
+    animation: float-4 16s ease-in-out infinite alternate;
+  }
+
+  .overlay {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(1px);
+  }
+
+  /* Dark variant */
+  .dark .blob-1 { background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, rgba(56, 189, 248, 0) 70%); }
+  .dark .blob-2 { background: radial-gradient(circle, rgba(34, 211, 238, 0.3) 0%, rgba(34, 211, 238, 0) 70%); }
+  .dark .blob-3 { background: radial-gradient(circle, rgba(14, 165, 233, 0.35) 0%, rgba(14, 165, 233, 0) 70%); }
+  .dark .blob-4 { background: radial-gradient(circle, rgba(2, 132, 199, 0.35) 0%, rgba(2, 132, 199, 0) 70%); }
+  .dark .overlay { background-color: rgba(15, 23, 42, 0.25); backdrop-filter: blur(1px); }
+
+  @keyframes float-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(3rem, 4rem) scale(1.08); }
+  }
+
+  @keyframes float-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-4rem, 3rem) scale(1.05); }
+  }
+
+  @keyframes float-3 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(5rem, -3rem) scale(1.12); }
+  }
+
+  @keyframes float-4 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-3rem, -4rem) scale(1.06); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gradient-blob {
+      animation: none;
+    }
+  }
+</style>
