@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import Illustration from '../../components/Illustration.astro';
+import FinalCTA from '../../components/sections/FinalCTA.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'glaucoma' } },
+    { params: { slug: 'retina' } },
+    { params: { slug: 'cornea' } },
+    { params: { slug: 'cataract' } },
+    { params: { slug: 'neuro-ophthalmology' } },
+    { params: { slug: 'pediatric-ophthalmology' } },
+    { params: { slug: 'uveitis' } },
+    { params: { slug: 'oculoplastics' } },
+  ];
+}
+
+const { slug } = Astro.params;
+
+const topics: Record<string, any> = {
+  glaucoma: { name: 'Glaucoma', questionCount: '500+', sampleQuestion: 'A 65-year-old patient presents with increased IOP, open angles, and optic disc cupping. What is the first-line treatment?', sampleAnswer: 'Topical prostaglandin analogues such as latanoprost.' },
+  retina: { name: 'Retina', questionCount: '600+', sampleQuestion: 'A diabetic patient has neovascularization at the disc. What is the diagnosis?', sampleAnswer: 'Proliferative diabetic retinopathy (PDR).' },
+  cornea: { name: 'Cornea', questionCount: '450+', sampleQuestion: 'A patient has a dendritic corneal ulcer. What is the most likely causative agent?', sampleAnswer: 'Herpes simplex virus (HSV).' },
+  cataract: { name: 'Cataract', questionCount: '400+', sampleQuestion: 'What is the most common complication of cataract surgery?', sampleAnswer: 'Posterior capsular opacification (PCO).' },
+  'neuro-ophthalmology': { name: 'Neuro-Ophthalmology', questionCount: '350+', sampleQuestion: 'Bilateral optic disc swelling with headache suggests what diagnosis?', sampleAnswer: 'Papilledema due to increased intracranial pressure.' },
+  'pediatric-ophthalmology': { name: 'Pediatric Ophthalmology', questionCount: '300+', sampleQuestion: 'What is the most common cause of leukocoria in children?', sampleAnswer: 'Retinoblastoma (though cataract and Coats disease are also common).' },
+  uveitis: { name: 'Uveitis', questionCount: '300+', sampleQuestion: 'A patient with ankylosing spondylitis presents with acute unilateral red eye. What type of uveitis?', sampleAnswer: 'Acute anterior uveitis (AAU).' },
+  oculoplastics: { name: 'Oculoplastics', questionCount: '250+', sampleQuestion: 'What is the most common malignant eyelid tumor?', sampleAnswer: 'Basal cell carcinoma.' },
+};
+
+const topic = topics[slug] || topics.glaucoma;
+---
+
+<Layout
+  title={`${topic.name} MCQs — Practice ${topic.questionCount} Questions`}
+  description={`Practice ${topic.questionCount} ${topic.name.toLowerCase()} MCQs with detailed explanations. Free sample questions included.`}
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            {topic.name} <span class="text-sky-600">MCQs</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            {topic.questionCount} questions with detailed explanations. Master {topic.name.toLowerCase()} for your exam.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="questionBank" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl bg-white border border-slate-200 p-6 lg:p-8 mb-8">
+        <h2 class="text-xl font-bold text-slate-900 mb-4">Free Sample Question</h2>
+        <p class="text-slate-700 mb-4">{topic.sampleQuestion}</p>
+        <details class="group">
+          <summary class="cursor-pointer inline-flex items-center gap-2 text-sky-600 font-semibold hover:text-sky-700">
+            Show Answer
+            <Icon name="chevronDown" class="w-4 h-4 group-open:rotate-180 transition-transform" />
+          </summary>
+          <p class="mt-3 text-slate-600">{topic.sampleAnswer}</p>
+        </details>
+      </div>
+
+      <div class="text-center">
+        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+          Try 50 Free MCQs
+          <Icon name="arrowRight" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

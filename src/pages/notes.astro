@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { PRODUCTS } from '../config';
+import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+---
+
+<Layout
+  title="Handwritten Exam Notes — Retina, Glaucoma, Anatomy, Optics"
+  description="The world's only handwritten exam-ready notes for ophthalmology PG exams. Distilled from Ryan, Kanski & Elkington."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Handwritten <span class="text-sky-600">Exam Notes</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            The world's only notes designed specifically for ophthalmology PG exams.
+            No 50-page chapters — just the exact points you need.
+          </p>
+          <a href="/free-mcqs" class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+            Try Free MCQs
+            <Icon name="arrowRight" class="w-4 h-4" />
+          </a>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-64 h-64 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="notes" class="w-48 h-48" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {PRODUCTS.filter(p => p.category === 'notes').map(n => (
+          <div class="flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="h-48 bg-slate-100 flex items-center justify-center">
+              <div class="w-20 h-20 rounded-xl bg-white shadow-sm flex items-center justify-center">
+                <Illustration name={n.icon} class="w-14 h-14" />
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h2 class="text-lg font-bold text-slate-900 mb-2">{n.name}</h2>
+              <p class="text-sm text-slate-600 mb-4 flex-1">{n.description}</p>
+              <div class="flex items-baseline gap-2 mb-4">
+                <span class="text-xl font-bold text-slate-900">{n.price}</span>
+                {n.oldPrice && <span class="text-sm text-slate-400 line-through">{n.oldPrice}</span>}
+                {n.discount && <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">Save {n.discount}</span>}
+              </div>
+              <a
+                href={n.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
+              >
+                View on Store
+                <Icon name="externalLink" class="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

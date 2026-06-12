@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PRODUCTS } from '../../config';
+import Icon from '../../components/Icon.astro';
+import Illustration from '../../components/Illustration.astro';
+import FinalCTA from '../../components/sections/FinalCTA.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'best-ophthalmology-question-banks' } },
+    { params: { slug: 'ophthoquestions-vs-ophthamcq' } },
+    { params: { slug: 'ophthamcq-vs-prepguidance' } },
+    { params: { slug: 'best-app-for-ophthalmology-mcqs' } },
+  ];
+}
+
+const { slug } = Astro.params;
+
+const pages: Record<string, any> = {
+  'best-ophthalmology-question-banks': {
+    title: 'Best Ophthalmology Question Banks (2026)',
+    description: 'Compare the top ophthalmology question banks for FRCOphth, ICO, FAICO, DNB and NEET-SS. Features, pricing, and which is best for you.',
+    h1: 'Best Ophthalmology Question Banks',
+    intro: 'Choosing the right question bank can make or break your exam preparation. Here is how the top platforms compare.',
+    competitors: [
+      { name: 'OphthaMCQ', price: '₹249–₹1,799', notes: '✅', pastPapers: '✅', mobile: '✅ iOS + Android', freeTrial: '50 free MCQs', bestFor: 'Indian + International exams' },
+      { name: 'OphthoQuestions', price: '$314.99/6mo', notes: '❌', pastPapers: '❌', mobile: '⚠️ Web only', freeTrial: 'Limited demo', bestFor: 'US board exams' },
+      { name: 'EyeDocs / EyeQ', price: '£79–99', notes: '❌', pastPapers: '❌', mobile: '❌', freeTrial: 'Limited', bestFor: 'UK FRCOphth' },
+      { name: 'PrepGuidance', price: '₹999–₹8,995', notes: '❌', pastPapers: '✅', mobile: '✅ Android', freeTrial: '❌', bestFor: 'DNB/NEET-SS' },
+    ],
+  },
+  'ophthoquestions-vs-ophthamcq': {
+    title: 'OphthoQuestions vs OphthaMCQ (2026 Comparison)',
+    description: 'Detailed comparison of OphthoQuestions and OphthaMCQ. Pricing, features, notes, mobile apps, and which one is right for you.',
+    h1: 'OphthoQuestions vs OphthaMCQ',
+    intro: 'OphthoQuestions is the established US leader. OphthaMCQ is the India-focused challenger with handwritten notes and past papers.',
+    competitors: [
+      { name: 'OphthaMCQ', price: '₹249–₹1,799', notes: '✅ Handwritten', pastPapers: '✅ ICO/FICO', mobile: '✅ iOS + Android', freeTrial: '50 free MCQs', bestFor: 'Value + notes' },
+      { name: 'OphthoQuestions', price: '$314.99/6mo', notes: '❌', pastPapers: '❌', mobile: '⚠️ Web only', freeTrial: 'Limited demo', bestFor: 'Large US question bank' },
+    ],
+  },
+  'ophthamcq-vs-prepguidance': {
+    title: 'OphthaMCQ vs PrepGuidance (2026 Comparison)',
+    description: 'Compare OphthaMCQ and PrepGuidance for DNB, MS, and NEET-SS ophthalmology preparation. Pricing, faculty, and features.',
+    h1: 'OphthaMCQ vs PrepGuidance',
+    intro: 'Both platforms serve Indian PG residents, but with very different approaches and price points.',
+    competitors: [
+      { name: 'OphthaMCQ', price: '₹249–₹1,799', notes: '✅ Handwritten', pastPapers: '✅ ICO/FICO', mobile: '✅ iOS + Android', freeTrial: '50 free MCQs', bestFor: 'Affordable, mobile-first' },
+      { name: 'PrepGuidance', price: '₹999–₹8,995', notes: '❌', pastPapers: '✅ DNB solved', mobile: '✅ Android', freeTrial: '❌', bestFor: 'Video + faculty mentorship' },
+    ],
+  },
+  'best-app-for-ophthalmology-mcqs': {
+    title: 'Best App for Ophthalmology MCQs (2026)',
+    description: 'Find the best mobile app for ophthalmology MCQ practice. Compare features, offline access, and pricing.',
+    h1: 'Best App for Ophthalmology MCQs',
+    intro: 'Medical residents study on their phones. Here is how the top ophthalmology MCQ apps compare.',
+    competitors: [
+      { name: 'OphthaMCQ', price: '₹249–₹1,799', notes: '✅', pastPapers: '✅', mobile: '✅ iOS + Android', freeTrial: '50 free MCQs', bestFor: 'Best overall app' },
+      { name: 'OphthoQuestions', price: '$314.99/6mo', notes: '❌', pastPapers: '❌', mobile: '⚠️ Web only', freeTrial: 'Limited', bestFor: 'Desktop use' },
+      { name: 'PrepGuidance', price: '₹999+', notes: '❌', pastPapers: '✅', mobile: '✅ Android', freeTrial: '❌', bestFor: 'Android users' },
+    ],
+  },
+};
+
+const page = pages[slug] || pages['best-ophthalmology-question-banks'];
+---
+
+<Layout title={page.title} description={page.description}>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            {page.h1}
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">{page.intro}</p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="questionBank" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-slate-300">
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Platform</th>
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Price</th>
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Notes</th>
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Past Papers</th>
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Mobile</th>
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Free Trial</th>
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            {page.competitors.map((c: any, i: number) => (
+              <tr class={`border-b border-slate-200 ${i === 0 ? 'bg-sky-50/50' : 'bg-white'}`}>
+                <td class="py-4 px-4 font-semibold text-slate-900">{c.name}</td>
+                <td class="py-4 px-4 text-sm text-slate-600">{c.price}</td>
+                <td class="py-4 px-4 text-sm text-slate-600">{c.notes}</td>
+                <td class="py-4 px-4 text-sm text-slate-600">{c.pastPapers}</td>
+                <td class="py-4 px-4 text-sm text-slate-600">{c.mobile}</td>
+                <td class="py-4 px-4 text-sm text-slate-600">{c.freeTrial}</td>
+                <td class="py-4 px-4 text-sm text-slate-600">{c.bestFor}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-sky-700 transition-colors">
+          Try OphthaMCQ Free
+          <Icon name="arrowRight" class="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

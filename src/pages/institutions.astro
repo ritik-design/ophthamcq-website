@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+---
+
+<Layout
+  title="Institutional Sales — Bulk Licensing for Residency Programs"
+  description="Equip your entire residency program with OphthaMCQ. Bulk licenses, admin dashboards, and progress tracking."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 rounded-full bg-amber-50 border border-amber-100 px-4 py-1.5 mb-6">
+            <span class="text-sm font-medium text-amber-700">For Residency Programs</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Institutional <span class="text-sky-600">Licensing</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            Give every resident access to the best ophthalmology question bank.
+            Track progress. Improve pass rates. Reduce faculty burden.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="institutions" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">Why Institutions Choose Us</h2>
+          <div class="space-y-5">
+            {[
+              { title: 'Bulk Licensing', desc: '₹500–1,000 per resident per year. The more residents, the lower the per-head cost.', icon: 'users' },
+              { title: 'Admin Dashboard', desc: 'Track individual and cohort progress. Identify weak topics across your program.', icon: 'chartBar' },
+              { title: 'Exam Analytics', desc: 'See which residents are on track and who needs extra support before the exam.', icon: 'shield' },
+              { title: 'Content Updates', desc: 'All updates included. Your residents always get the latest MCQs and notes.', icon: 'download' },
+              { title: 'Dedicated Support', desc: 'Priority support for program coordinators. We respond within 2 hours.', icon: 'chat' },
+            ].map(item => (
+              <div class="flex gap-4">
+                <div class="shrink-0 w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center">
+                  <Icon name={item.icon} class="w-5 h-5 text-sky-600" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-900">{item.title}</h3>
+                  <p class="text-sm text-slate-600">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-white border border-slate-200 p-6 lg:p-8">
+          <h2 class="text-xl font-bold text-slate-900 mb-4">Request a Quote</h2>
+          <p class="text-sm text-slate-600 mb-6">Fill out the form below and we'll get back to you within 24 hours.</p>
+          <form class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Your Name</label>
+                <input type="text" class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm outline-none focus:border-sky-500" placeholder="Dr. Name" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Institution</label>
+                <input type="text" class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm outline-none focus:border-sky-500" placeholder="Hospital / College" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+              <input type="email" class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm outline-none focus:border-sky-500" placeholder="email@institution.edu" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Number of Residents</label>
+                <input type="number" class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm outline-none focus:border-sky-500" placeholder="e.g. 30" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Preferred Exam</label>
+                <select class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm outline-none focus:border-sky-500">
+                  <option>DNB</option>
+                  <option>FRCOphth</option>
+                  <option>ICO</option>
+                  <option>NEET-SS</option>
+                  <option>Multiple</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="w-full rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+              Request Quote
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

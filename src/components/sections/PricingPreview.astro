@@ -1,0 +1,117 @@
+---
+import { CHECKOUT } from '../../config';
+
+const tiers = [
+  {
+    name: 'Free',
+    price: '₹0',
+    period: '',
+    desc: 'Get a taste. No strings attached.',
+    features: ['100 MCQs across all topics', '1 sample chapter from notes', 'Basic performance analytics', 'Community access'],
+    cta: 'Start Free',
+    ctaHref: '/free-mcqs',
+    highlighted: false,
+  },
+  {
+    name: 'Resident',
+    price: '₹499',
+    period: '/month',
+    desc: 'Everything you need for your PG exams.',
+    features: ['10,000+ MCQs with explanations', 'All handwritten notes', 'Past papers with answers', 'Progress tracking & analytics', 'iOS & Android apps', 'Tim exam simulations'],
+    cta: 'Start Free Trial',
+    ctaHref: '/free-mcqs',
+    highlighted: true,
+    badge: 'Most Popular',
+  },
+  {
+    name: 'All-Access',
+    price: '₹2,999',
+    period: '/year',
+    desc: 'Best value. Everything included.',
+    features: ['Everything in Resident', 'NEET-SS mock tests', 'Fellowship interview guides', 'Priority support', 'All future updates', 'Download all content'],
+    cta: 'Get All Access',
+    ctaHref: CHECKOUT.purchases,
+    highlighted: false,
+    external: true,
+  },
+];
+---
+
+<section class="bg-slate-50 py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        Simple Pricing for Every Stage
+      </h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Start free. Upgrade when you're ready. Cancel anytime.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {tiers.map(t => (
+        <div class={`relative flex flex-col rounded-2xl p-6 ${
+          t.highlighted
+            ? 'bg-white border-2 border-sky-500 shadow-xl shadow-sky-100 scale-[1.02]'
+            : 'bg-white border border-slate-200'
+        }`}>
+          {t.badge && (
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span class="inline-flex items-center rounded-full bg-sky-600 px-4 py-1 text-xs font-bold text-white shadow-sm">
+                {t.badge}
+              </span>
+            </div>
+          )}
+
+          <div class="mb-6">
+            <h3 class="text-lg font-bold text-slate-900">{t.name}</h3>
+            <p class="text-sm text-slate-500 mt-1">{t.desc}</p>
+          </div>
+
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold text-slate-900">{t.price}</span>
+            <span class="text-slate-500">{t.period}</span>
+          </div>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            {t.features.map(f => (
+              <li class="flex items-start gap-2.5 text-sm text-slate-600">
+                <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={t.ctaHref}
+            target={t.external ? '_blank' : undefined}
+            rel={t.external ? 'noopener noreferrer' : undefined}
+            class={`w-full inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-colors ${
+              t.highlighted
+                ? 'bg-sky-600 text-white hover:bg-sky-700'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+            }`}
+          >
+            {t.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-sm text-slate-500 mb-2">
+        <span class="inline-flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          7-day money-back guarantee
+        </span>
+      </p>
+      <a href="/institutions" class="text-sm text-sky-600 hover:text-sky-700 font-medium">
+        Need institutional pricing? Contact us →
+      </a>
+    </div>
+  </div>
+</section>

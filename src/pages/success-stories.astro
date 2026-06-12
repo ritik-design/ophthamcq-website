@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { TESTIMONIALS } from '../config';
+import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+---
+
+<Layout
+  title="Success Stories — Real Doctors, Real Results"
+  description="Read how 15,000+ ophthalmology residents passed their exams with OphthaMCQ. Real stories from real doctors."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Success <span class="text-sky-600">Stories</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            Real doctors. Real exams. Real passes.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="success" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        {TESTIMONIALS.map(t => (
+          <div class="rounded-2xl bg-white border border-slate-200 p-8">
+            <div class="flex items-center gap-1 mb-4">
+              {[1,2,3,4,5].map(() => (
+                <Icon name="star" class="w-5 h-5 text-amber-400" />
+              ))}
+            </div>
+            <blockquote class="text-lg text-slate-700 italic mb-6 leading-relaxed">"{t.text}"</blockquote>
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
+              <div class="h-12 w-12 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 font-bold text-lg">
+                {t.name.charAt(0)}
+              </div>
+              <div>
+                <div class="font-semibold text-slate-900">{t.name}</div>
+                <div class="text-sm text-slate-500">{t.role}</div>
+              </div>
+              <div class="ml-auto">
+                <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-sm font-medium text-sky-700">{t.exam}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

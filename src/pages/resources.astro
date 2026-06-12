@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const resources = [
+  {
+    title: 'FRCOphth Part 1 Study Plan PDF',
+    desc: 'Complete 6-month week-by-week schedule with topic weightage and resources.',
+    illustration: 'notes',
+    cta: 'Download Free PDF',
+  },
+  {
+    title: 'ICO Exam Syllabus Checklist',
+    desc: 'Interactive checklist covering Part A, B, and C syllabi.',
+    illustration: 'pastPapers',
+    cta: 'Get Checklist',
+  },
+  {
+    title: 'Top 100 Ophthalmology Mnemonics',
+    desc: 'Memory aids for anatomy, drugs, syndromes, and exam facts.',
+    illustration: 'bookOpen',
+    cta: 'Get Mnemonics',
+  },
+  {
+    title: 'Optics Formula Sheet',
+    desc: 'Quick reference for vergence, lens power, magnification, and refraction.',
+    illustration: 'imageMcq',
+    cta: 'Download Sheet',
+  },
+  {
+    title: '50 Image-Based Questions',
+    desc: 'Fundus photos, OCTs, and slit-lamp images with explanations.',
+    illustration: 'imageMcq',
+    cta: 'Practice Free',
+  },
+  {
+    title: 'DNB 5-Year Topic Analysis',
+    desc: 'See which topics appear most frequently in DNB exams.',
+    illustration: 'chartBar',
+    cta: 'Get Analysis',
+  },
+];
+---
+
+<Layout
+  title="Free Resources — Study Plans, Checklists & Mnemonics"
+  description="Free ophthalmology exam resources: study plans, syllabi checklists, mnemonics, formula sheets, and image-based questions."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Free <span class="text-sky-600">Resources</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            Download study plans, checklists, mnemonics, and practice questions.
+            All free — just enter your email.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="download" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {resources.map(r => (
+          <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="w-16 h-16 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
+              <Illustration name={r.illustration} class="w-12 h-12" />
+            </div>
+            <h2 class="text-lg font-bold text-slate-900 mb-2">{r.title}</h2>
+            <p class="text-sm text-slate-600 mb-6 flex-1">{r.desc}</p>
+
+            <form class="space-y-3">
+              <input type="email" required placeholder="Enter your email" class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm outline-none focus:border-sky-500" />
+              <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+                {r.cta}
+              </button>
+            </form>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

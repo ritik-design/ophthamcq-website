@@ -1,0 +1,31 @@
+---
+import Icon from '../Icon.astro';
+
+const badges = [
+  { icon: 'building', label: 'AIIMS', sub: 'Trusted By Residents' },
+  { icon: 'eye', label: 'Aravind', sub: 'Eye Hospital' },
+  { icon: 'shield', label: 'LVPEI', sub: 'Eye Institute' },
+  { icon: 'globe', label: 'Moorfields', sub: 'Eye Hospital UK' },
+  { icon: 'heart', label: 'Sankara', sub: 'Nethralaya' },
+  { icon: 'badgeCheck', label: 'AIOS', sub: 'Recognized' },
+];
+---
+
+<section class="border-y border-slate-200 bg-slate-50/50">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
+      Trusted by Residents at Leading Institutions
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+      {badges.map(b => (
+        <div class="flex items-center gap-2.5 text-slate-500">
+          <Icon name={b.icon} class="w-6 h-6 text-sky-600" />
+          <div class="leading-tight">
+            <div class="text-sm font-bold text-slate-700">{b.label}</div>
+            <div class="text-[11px] text-slate-400">{b.sub}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

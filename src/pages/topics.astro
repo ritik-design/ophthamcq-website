@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const topics = [
+  { name: 'Glaucoma', slug: 'glaucoma', questionCount: '500+', icon: 'eye' },
+  { name: 'Retina', slug: 'retina', questionCount: '600+', icon: 'eye' },
+  { name: 'Cornea', slug: 'cornea', questionCount: '450+', icon: 'eye' },
+  { name: 'Cataract', slug: 'cataract', questionCount: '400+', icon: 'eye' },
+  { name: 'Neuro-Ophthalmology', slug: 'neuro-ophthalmology', questionCount: '350+', icon: 'eye' },
+  { name: 'Pediatric Ophthalmology', slug: 'pediatric-ophthalmology', questionCount: '300+', icon: 'eye' },
+  { name: 'Uveitis', slug: 'uveitis', questionCount: '300+', icon: 'eye' },
+  { name: 'Oculoplastics', slug: 'oculoplastics', questionCount: '250+', icon: 'eye' },
+];
+---
+
+<Layout
+  title="Topic-Wise Ophthalmology MCQs — Glaucoma, Retina, Cornea, Neuro"
+  description="Practice topic-wise ophthalmology MCQs by subspecialty. Glaucoma, retina, cornea, neuro-ophthalmology, pediatric, uveitis, and more."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Topic-Wise <span class="text-sky-600">MCQs</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            Focus your revision by subspecialty. Each topic includes free sample questions.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="questionBank" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {topics.map(topic => (
+          <a
+            href={`/topics/${topic.slug}`}
+            class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all"
+          >
+            <div class="w-12 h-12 rounded-lg bg-sky-50 flex items-center justify-center mb-4">
+              <Illustration name="questionBank" class="w-8 h-8" />
+            </div>
+            <h2 class="text-lg font-bold text-slate-900 mb-1">{topic.name}</h2>
+            <p class="text-sm text-slate-500 mb-4">{topic.questionCount} questions</p>
+            <span class="mt-auto text-sm font-medium text-sky-600 group-hover:text-sky-700 flex items-center gap-1">
+              Practice Now
+              <Icon name="chevronRight" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

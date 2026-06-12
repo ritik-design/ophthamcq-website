@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import Illustration from '../../components/Illustration.astro';
+import FinalCTA from '../../components/sections/FinalCTA.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'how-to-prepare-frcophth-part-1' } },
+    { params: { slug: '50-glaucoma-mcqs' } },
+    { params: { slug: 'ico-exam-format-explained' } },
+    { params: { slug: 'best-books-ophthalmology-pg' } },
+    { params: { slug: 'uk-fellowship-application-guide' } },
+    { params: { slug: 'fundus-photo-quiz-10-cases' } },
+  ];
+}
+
+const { slug } = Astro.params;
+
+const posts: Record<string, any> = {
+  'how-to-prepare-frcophth-part-1': {
+    title: 'How to Prepare for FRCOphth Part 1: Complete 6-Month Study Plan',
+    category: 'Exam Strategy',
+    date: 'June 10, 2026',
+    readTime: '12 min read',
+    illustration: 'notes',
+    content: `
+      <p class="text-slate-600 mb-4">The FRCOphth Part 1 exam tests your knowledge of basic sciences applied to ophthalmology. With the right strategy, you can pass on your first attempt.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Understand the Exam Format</h2>
+      <p class="text-slate-600 mb-4">The exam consists of two papers, each with 90 SBA questions. You must pass both papers in the same sitting. The pass mark typically ranges from 60–65%.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Topic Weightage</h2>
+      <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-4">
+        <li>Optics: ~25%</li>
+        <li>Pathology: ~20%</li>
+        <li>Anatomy/Embryology: ~12%</li>
+        <li>Physiology: ~12%</li>
+        <li>Statistics: ~8–15%</li>
+      </ul>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">6-Month Study Plan</h2>
+      <p class="text-slate-600 mb-4">Months 1–2: Build foundation in optics, pathology, and anatomy. Months 3–4: Cover all medium-weightage topics. Months 5–6: High-yield question practice and mock exams.</p>
+    `,
+  },
+  '50-glaucoma-mcqs': {
+    title: '50 High-Yield Glaucoma MCQs with Explanations',
+    category: 'Topic MCQs',
+    date: 'June 8, 2026',
+    readTime: '15 min read',
+    illustration: 'questionBank',
+    content: `
+      <p class="text-slate-600 mb-4">Glaucoma is one of the most frequently tested topics in ophthalmology PG exams. These 50 MCQs cover open-angle, angle-closure, congenital glaucoma, and medical/surgical management.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Question 1</h2>
+      <p class="text-slate-600 mb-4">A 60-year-old patient has IOP of 28 mmHg, open angles on gonioscopy, optic disc cupping of 0.7, and normal visual fields. What is the most likely diagnosis?</p>
+      <p class="text-slate-600 mb-4"><strong>Answer:</strong> Primary open-angle glaucoma suspect. Normal tension glaucoma requires documented progression despite normal IOP.</p>
+    `,
+  },
+  'ico-exam-format-explained': {
+    title: 'ICO Exam Format Explained: Part A, B, and C Breakdown',
+    category: 'Exam Guides',
+    date: 'June 5, 2026',
+    readTime: '8 min read',
+    illustration: 'globe',
+    content: `
+      <p class="text-slate-600 mb-4">The International Council of Ophthalmology (ICO) exams are recognized globally. Understanding the format is the first step to preparation.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">ICO Basic Sciences (Part A)</h2>
+      <p class="text-slate-600 mb-4">80 MCQs covering anatomy, physiology, pathology, microbiology, and optics.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">ICO Optics and Refraction (Part B)</h2>
+      <p class="text-slate-600 mb-4">40 MCQs focused on optics, refraction, and clinical optics.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">ICO Clinical Science (Part C)</h2>
+      <p class="text-slate-600 mb-4">200 MCQs covering all clinical ophthalmology subspecialties.</p>
+    `,
+  },
+  'best-books-ophthalmology-pg': {
+    title: 'Best Books for Ophthalmology PG Residents: 2026 Ranked',
+    category: 'Study Resources',
+    date: 'June 1, 2026',
+    readTime: '10 min read',
+    illustration: 'bookOpen',
+    content: `
+      <p class="text-slate-600 mb-4">The right textbooks can save you hundreds of hours. Here are the books every ophthalmology PG resident should consider.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Essential Textbooks</h2>
+      <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-4">
+        <li><strong>Kanski's Clinical Ophthalmology:</strong> Comprehensive clinical reference</li>
+        <li><strong>Ryan's Retina:</strong> Gold standard for retina</li>
+        <li><strong>BCSC (Basic and Clinical Science Course):</strong> US board preparation</li>
+      </ul>
+    `,
+  },
+  'uk-fellowship-application-guide': {
+    title: 'How to Apply for Ophthalmology Fellowships in the UK',
+    category: 'Career',
+    date: 'May 28, 2026',
+    readTime: '14 min read',
+    illustration: 'graduationCap',
+    content: `
+      <p class="text-slate-600 mb-4">UK ophthalmology fellowships are highly competitive but achievable with the right approach and timing.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">When to Apply</h2>
+      <p class="text-slate-600 mb-4">Most fellowships open 6–12 months before the start date. Start preparing your CV and references early.</p>
+    `,
+  },
+  'fundus-photo-quiz-10-cases': {
+    title: 'Fundus Photo Quiz: Can You Diagnose These 10 Cases?',
+    category: 'Clinical Cases',
+    date: 'May 25, 2026',
+    readTime: '10 min read',
+    illustration: 'imageMcq',
+    content: `
+      <p class="text-slate-600 mb-4">Image-based questions are increasingly common in ophthalmology exams. Test your pattern recognition with these 10 fundus photos.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Case 1</h2>
+      <p class="text-slate-600 mb-4">A 55-year-old diabetic patient with dot-blot hemorrhages, hard exudates, and neovascularization. Diagnosis: Proliferative diabetic retinopathy.</p>
+    `,
+  },
+};
+
+const post = posts[slug] || posts['how-to-prepare-frcophth-part-1'];
+---
+
+<Layout title={post.title} description={post.excerpt || post.title}>
+  <article class="bg-white">
+    <div class="border-b border-slate-200">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-sm font-medium text-sky-700">{post.category}</span>
+          <span class="text-sm text-slate-400">{post.date} • {post.readTime}</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+          {post.title}
+        </h1>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 font-bold">D</div>
+          <div>
+            <div class="text-sm font-semibold text-slate-900">Dr. OphthaMCQ Editorial Team</div>
+            <div class="text-xs text-slate-500">Reviewed by qualified ophthalmologists</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="w-full h-64 rounded-2xl bg-sky-50 flex items-center justify-center mb-12">
+        <Illustration name={post.illustration} class="w-48 h-48" />
+      </div>
+
+      <div class="prose prose-lg prose-slate max-w-none" set:html={post.content} />
+
+      <div class="mt-12 p-6 rounded-2xl bg-sky-50 border border-sky-100">
+        <h3 class="text-lg font-bold text-slate-900 mb-2">Ready to apply what you learned?</h3>
+        <p class="text-slate-600 mb-4">Practice 10,000+ MCQs with detailed explanations and track your progress.</p>
+        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+          Start Free Practice
+          <Icon name="arrowRight" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <FinalCTA />
+</Layout>

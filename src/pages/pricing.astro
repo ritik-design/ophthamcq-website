@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PricingPreview from '../components/sections/PricingPreview.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+---
+
+<Layout
+  title="Pricing — Free, Resident & All-Access Plans"
+  description="Start free. Upgrade when ready. Resident plan at ₹499/mo or All-Access at ₹2,999/yr. 7-day money-back guarantee."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Simple, Transparent <span class="text-sky-600">Pricing</span>
+      </h1>
+      <p class="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
+        Start free. Upgrade when you are ready. No hidden fees. Cancel anytime.
+      </p>
+    </div>
+  </div>
+
+  <PricingPreview />
+
+  <div class="bg-white py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-slate-900 text-center mb-10">Frequently Asked Questions</h2>
+      <FAQ />
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">Need Institutional Pricing?</h2>
+      <p class="text-slate-600 mb-6">
+        Residency programs, medical colleges, and training institutions get bulk licenses
+        at ₹500–1,000 per resident per year. Includes admin dashboard and progress reports.
+      </p>
+      <a
+        href="/institutions"
+        class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
+      >
+        Contact Institutional Sales
+      </a>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+---
+
+<Layout
+  title="About Us — Built by Ophthalmologists, for Ophthalmologists"
+  description="OphthaMCQ was created by doctors who struggled to find focused, exam-ready resources. We built what we wish we had."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Built by <span class="text-sky-600">Ophthalmologists</span>,
+            for Ophthalmologists
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            We sat these exams. We know exactly what you need — and what you do not.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="about" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg prose-slate max-w-none">
+        <h2 class="text-2xl font-bold text-slate-900">Our Story</h2>
+        <p class="text-slate-600">
+          During my DNB Ophthalmology residency, I spent countless hours sifting through 900-page textbooks,
+          trying to distill what actually mattered for the exam. I asked seniors for notes, bought question banks
+          that were outdated, and still felt unprepared walking into the exam hall.
+        </p>
+        <p class="text-slate-600">
+          That frustration became OphthaMCQ. We are a team of ophthalmologists who have passed FRCOphth, DNB,
+          ICO, and NEET-SS. We know the exact syllabus, the high-yield topics, and the exam patterns because
+          we have lived through them.
+        </p>
+
+        <h2 class="text-2xl font-bold text-slate-900 mt-12">Our Mission</h2>
+        <p class="text-slate-600">
+          To make ophthalmology exam preparation efficient, affordable, and effective. No more reading
+          50-page chapters when you only need the 5 bullet points that actually come in the exam.
+        </p>
+
+        <h2 class="text-2xl font-bold text-slate-900 mt-12">Quality Promise</h2>
+        <ul class="space-y-3 text-slate-600">
+          {[
+            'Every MCQ reviewed by 2+ qualified ophthalmologists',
+            'Notes distilled from standard textbooks (Ryan, Kanski, Elkington, Ferris, Khurana)',
+            'Content updated every 6 months based on latest exam patterns',
+            'References to standard guidelines and recent literature',
+          ].map(item => (
+            <li class="flex items-start gap-2">
+              <Icon name="check" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

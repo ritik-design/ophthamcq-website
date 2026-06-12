@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { EXAMS } from '../../config';
+import Icon from '../../components/Icon.astro';
+import FinalCTA from '../../components/sections/FinalCTA.astro';
+
+export function getStaticPaths() {
+  return EXAMS.map(e => ({ params: { slug: e.slug } }));
+}
+
+const { slug } = Astro.params;
+const exam = EXAMS.find(e => e.slug === slug);
+
+if (!exam) {
+  return Astro.redirect('/exams');
+}
+---
+
+<Layout
+  title={`${exam.full} Preparation — Question Bank, Notes & Past Papers`}
+  description={`Prepare for ${exam.full} with syllabus-mapped MCQs, handwritten notes, and past papers. Trusted by 15,000+ residents.`}
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 border border-sky-100 px-3 py-1 mb-6">
+          <span class="text-sm font-medium text-sky-700">Exam Preparation</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          {exam.full} <span class="text-sky-600">Preparation</span>
+        </h1>
+        <p class="mt-5 text-lg text-slate-600">
+          {exam.description}. Dedicated question bank, handwritten notes, and past papers to help you pass on the first attempt.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+            Try Free MCQs
+          </a>
+          <a href="/notes" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 transition-colors">
+            View Notes
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8">What's Included</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: 'Syllabus-Mapped MCQs', desc: 'Every topic covered with exam-weighted questions.', icon: 'mcq' },
+          { title: 'Handwritten Notes', desc: 'Distilled from standard textbooks into exam-ready points.', icon: 'notes' },
+          { title: 'Past Papers', desc: 'Previous years papers with full explanations.', icon: 'pastPapers' },
+          { title: 'Timed Simulations', desc: 'Practice under exam conditions with the real timer.', icon: 'clock' },
+          { title: 'Progress Tracking', desc: 'Know your weak topics and focus your revision.', icon: 'chartBar' },
+          { title: 'Mobile App Access', desc: 'Study on the go with iOS and Android apps.', icon: 'mobile' },
+        ].map(item => (
+          <div class="rounded-xl border border-slate-200 bg-white p-6">
+            <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3">
+              <Icon name={item.icon} class="w-5 h-5 text-sky-600" />
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">{item.title}</h3>
+            <p class="text-sm text-slate-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

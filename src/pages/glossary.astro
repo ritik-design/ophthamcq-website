@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const glossaryTerms = [
+  { term: 'Anterior Chamber', definition: 'The fluid-filled space between the cornea and the iris. Its depth is important in angle-closure glaucoma diagnosis.' },
+  { term: 'Aqueous Humor', definition: 'The clear fluid produced by the ciliary body that fills the anterior and posterior chambers, maintaining intraocular pressure.' },
+  { term: 'Cataract', definition: 'Opacification of the natural lens that leads to decreased vision. Most commonly age-related.' },
+  { term: 'Diabetic Retinopathy', definition: 'Microvascular complication of diabetes affecting the retina, classified as non-proliferative or proliferative.' },
+  { term: 'Glaucoma', definition: 'A progressive optic neuropathy characterized by optic disc cupping and visual field loss, often associated with elevated IOP.' },
+  { term: 'Gonioscopy', definition: 'Examination of the anterior chamber angle using a special contact lens to diagnose angle closure or open angle.' },
+  { term: 'Macula', definition: 'The central part of the retina responsible for sharp, detailed central vision.' },
+  { term: 'OCT', definition: 'Optical Coherence Tomography — a non-invasive imaging technique used to visualize retinal layers.' },
+  { term: 'Papilledema', definition: 'Swelling of the optic disc due to increased intracranial pressure. Differentiate from optic neuritis and optic neuropathy.' },
+  { term: 'Retinal Detachment', definition: 'Separation of the neurosensory retina from the retinal pigment epithelium. Requires urgent treatment.' },
+  { term: 'Strabismus', definition: 'Misalignment of the eyes. Can be paralytic or non-paralytic, concomitant or incomitant.' },
+  { term: 'Uveitis', definition: 'Inflammation of the uveal tract (iris, ciliary body, choroid). Can be infectious or non-infectious.' },
+];
+---
+
+<Layout
+  title="Ophthalmology Glossary — Terms & Definitions"
+  description="Comprehensive glossary of ophthalmology terms and definitions for PG residents and exam preparation."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Ophthalmology <span class="text-sky-600">Glossary</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            Essential terms and definitions for ophthalmology PG residents and exam preparation.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="bookOpen" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-4">
+        {glossaryTerms.map(item => (
+          <div class="rounded-xl border border-slate-200 bg-white p-6">
+            <h2 class="text-lg font-bold text-slate-900 mb-2">{item.term}</h2>
+            <p class="text-sm text-slate-600 leading-relaxed">{item.definition}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+          Test Your Knowledge
+          <Icon name="arrowRight" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <FinalCTA />
+</Layout>

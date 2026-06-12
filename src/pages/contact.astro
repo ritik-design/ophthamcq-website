@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
+---
+
+<Layout
+  title="Contact Us — We're Here to Help"
+  description="Questions about OphthaMCQ? Reach out via WhatsApp, email, or our contact form. Average response time: under 4 hours."
+>
+  <div class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+            We're Here to <span class="text-sky-600">Help</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            Average response time: under 4 hours. Reach out via WhatsApp, email, or the form below.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="contact" class="w-40 h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-1 space-y-6">
+          <a
+            href="https://wa.me/919999999999"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-4 rounded-xl bg-white border border-slate-200 p-5 hover:shadow-md hover:border-emerald-200 transition-all"
+          >
+            <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
+              <Icon name="chat" class="w-6 h-6 text-emerald-600" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900">WhatsApp</h3>
+              <p class="text-sm text-slate-500">Fastest response</p>
+            </div>
+          </a>
+
+          <a
+            href="mailto:support@ophthamcq.com"
+            class="flex items-center gap-4 rounded-xl bg-white border border-slate-200 p-5 hover:shadow-md hover:border-sky-200 transition-all"
+          >
+            <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center">
+              <Icon name="mail" class="w-6 h-6 text-sky-600" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900">Email</h3>
+              <p class="text-sm text-slate-500">support@ophthamcq.com</p>
+            </div>
+          </a>
+
+          <a
+            href="/institutions"
+            class="flex items-center gap-4 rounded-xl bg-white border border-slate-200 p-5 hover:shadow-md hover:border-amber-200 transition-all"
+          >
+            <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+              <Icon name="building" class="w-6 h-6 text-amber-600" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900">Institutional Sales</h3>
+              <p class="text-sm text-slate-500">Bulk licensing inquiries</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="rounded-2xl bg-white border border-slate-200 p-6 lg:p-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-6">Send us a message</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                  <input type="text" id="name" name="name" required class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors" placeholder="Dr. Your Name" />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors" placeholder="you@example.com" />
+                </div>
+              </div>
+              <div>
+                <label for="subject" class="block text-sm font-medium text-slate-700 mb-1">Subject</label>
+                <select id="subject" name="subject" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors">
+                  <option>General Question</option>
+                  <option>Technical Support</option>
+                  <option>Billing / Refund</option>
+                  <option>Institutional Sales</option>
+                  <option>Content Suggestion</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                <textarea id="message" name="message" rows="5" required class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors resize-y" placeholder="How can we help you?"></textarea>
+              </div>
+              <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-sky-600 px-8 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
