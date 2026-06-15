@@ -18,7 +18,12 @@ export const SITE = {
 /** E-commerce platform on .com — all purchase/auth flows go here */
 export const COM_BASE = 'https://www.ophthamcq.com';
 
-/** Real products from the current ophthamcq.com website */
+/** Product image CDN host on ophthamcq.com */
+const IMG = 'https://appx-content-v2.classx.co.in/paid_course3';
+
+/** Real products from the current ophthamcq.com website
+ *  Each `href` points to the live product page on .com so users
+ *  land on the correct product to purchase. */
 export const PRODUCTS = [
   {
     id: 'retina-deciphered',
@@ -29,6 +34,7 @@ export const PRODUCTS = [
     discount: '39%',
     description: '150+ pages of handwritten exam-ready notes covering the entire retina syllabus.',
     href: `${COM_BASE}/new-courses/3-retina-deciphered-exam-ready-handwritten-notes-for-ophthalmology`,
+    image: `${IMG}/2026-03-31-0_7186400839306661.png`,
     icon: 'notes',
     tag: 'Most Popular',
     category: 'notes',
@@ -42,6 +48,7 @@ export const PRODUCTS = [
     discount: '41%',
     description: 'Last 10 years of ICO/FICO past papers with full explanations and answer keys.',
     href: `${COM_BASE}/new-courses/23-ico-fico-past-papers`,
+    image: `${IMG}/2026-05-09-0_32620812112778164.jpeg`,
     icon: 'pastPapers',
     tag: 'Best Value',
     category: 'past-papers',
@@ -54,7 +61,8 @@ export const PRODUCTS = [
     oldPrice: '₹899',
     discount: '56%',
     description: '1,000+ high-yield MCQs across all subspecialties with detailed explanations.',
-    href: `${COM_BASE}/new-courses?examId=8`,
+    href: `${COM_BASE}/new-courses/25-ophthalmology-mcqs-high-yield`,
+    image: `${IMG}/2026-05-13-0_09908727110662874.png`,
     icon: 'mcq',
     tag: 'Essential',
     category: 'mcqs',
@@ -67,7 +75,8 @@ export const PRODUCTS = [
     oldPrice: '₹1,500',
     discount: '39%',
     description: 'FAICO exam MCQs mapped topic-by-topic to the exact syllabus.',
-    href: `${COM_BASE}/new-courses?examId=2`,
+    href: `${COM_BASE}/new-courses/14-faico-mcqs`,
+    image: `${IMG}/2026-05-03-0_5335415685199617.png`,
     icon: 'questionBank',
     tag: 'Syllabus-Mapped',
     category: 'mcqs',
@@ -80,7 +89,8 @@ export const PRODUCTS = [
     oldPrice: '₹429',
     discount: '42%',
     description: 'Oculoplastics and eyelid disorders for your PG and fellowship exams.',
-    href: `${COM_BASE}/new-courses/4-eyelids-exam-ready-handwritten-notes-for-ophthalmology-residents-and-postgraduates`,
+    href: `${COM_BASE}/new-courses/31-eyelids-exam-ready-handwritten-notes-for-ophthalmology-residents-and-postgraduates`,
+    image: `${IMG}/2026-06-07-0_13404218672885404.png`,
     icon: 'notes',
     tag: null,
     category: 'notes',
@@ -93,7 +103,8 @@ export const PRODUCTS = [
     oldPrice: '₹500',
     discount: '29%',
     description: 'Complete ocular anatomy with clinical correlations and exam focus.',
-    href: `${COM_BASE}/new-courses/5-anatomy-of-eye-and-related-ocular-structures-exam-ready-handwritten-notes`,
+    href: `${COM_BASE}/new-courses/4-anatomy-of-eye-and-related-ocular-structures-exam-ready-handwritten-notes`,
+    image: `${IMG}/2026-03-31-0_31158871596668736.png`,
     icon: 'notes',
     tag: null,
     category: 'notes',
@@ -106,7 +117,8 @@ export const PRODUCTS = [
     oldPrice: '₹699',
     discount: '48%',
     description: 'Complete glaucoma notes from pathophysiology to surgical management.',
-    href: `${COM_BASE}/new-courses/7-glaucoma-exam-ready-handwritten-notes-for-ophthalmology`,
+    href: `${COM_BASE}/new-courses/15-glaucoma-exam-ready-handwritten-notes`,
+    image: `${IMG}/2026-05-01-0_8256363297218628.png`,
     icon: 'notes',
     tag: null,
     category: 'notes',
@@ -119,7 +131,8 @@ export const PRODUCTS = [
     oldPrice: null,
     discount: null,
     description: 'The most feared topic — made simple with diagrams and solved problems.',
-    href: `${COM_BASE}/new-courses/8-optics-and-refraction-exam-ready-notes`,
+    href: `${COM_BASE}/new-courses/7-optics-and-refraction-exam-ready-notes`,
+    image: `${IMG}/2026-04-13-0_6616495688984549.png`,
     icon: 'notes',
     tag: 'Premium',
     category: 'notes',
@@ -133,8 +146,23 @@ export const PRODUCTS = [
     discount: '11%',
     description: 'Basic sciences MCQs for ICO Part A preparation.',
     href: `${COM_BASE}/new-courses/26-ico-basic-visual-sciences-mcqs`,
+    image: `${IMG}/2026-05-20-0_5853654958965788.png`,
     icon: 'mcq',
     tag: null,
+    category: 'mcqs',
+  },
+  {
+    id: 'pdcet-mcqs',
+    name: 'PDCET MCQs',
+    fullName: 'PDCET Ophthalmology MCQs',
+    price: '₹899',
+    oldPrice: null,
+    discount: null,
+    description: 'High-yield MCQ bank built specifically for the PDCET Ophthalmology exam.',
+    href: `${COM_BASE}/new-courses/20-pdcet-mcqs`,
+    image: `${IMG}/2026-05-07-0_9386367572222503.jpeg`,
+    icon: 'mcq',
+    tag: 'New',
     category: 'mcqs',
   },
 ] as const;

@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import { PRODUCTS } from '../../config';
 import Icon from '../../components/Icon.astro';
-import Illustration from '../../components/Illustration.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
 
 export function getStaticPaths() {
@@ -50,8 +49,12 @@ if (!product) {
           </a>
         </div>
         <div class="flex justify-center">
-          <div class="w-72 h-72 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name={product.icon} class="w-56 h-56" />
+          <div class="w-full max-w-md aspect-square rounded-2xl bg-slate-100 overflow-hidden shadow-md">
+            <img
+              src={product.image}
+              alt={product.fullName}
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

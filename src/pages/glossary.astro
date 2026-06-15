@@ -1,63 +1,170 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
-import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import { GLOSSARY, CATEGORIES } from '../data/glossary';
 
-const glossaryTerms = [
-  { term: 'Anterior Chamber', definition: 'The fluid-filled space between the cornea and the iris. Its depth is important in angle-closure glaucoma diagnosis.' },
-  { term: 'Aqueous Humor', definition: 'The clear fluid produced by the ciliary body that fills the anterior and posterior chambers, maintaining intraocular pressure.' },
-  { term: 'Cataract', definition: 'Opacification of the natural lens that leads to decreased vision. Most commonly age-related.' },
-  { term: 'Diabetic Retinopathy', definition: 'Microvascular complication of diabetes affecting the retina, classified as non-proliferative or proliferative.' },
-  { term: 'Glaucoma', definition: 'A progressive optic neuropathy characterized by optic disc cupping and visual field loss, often associated with elevated IOP.' },
-  { term: 'Gonioscopy', definition: 'Examination of the anterior chamber angle using a special contact lens to diagnose angle closure or open angle.' },
-  { term: 'Macula', definition: 'The central part of the retina responsible for sharp, detailed central vision.' },
-  { term: 'OCT', definition: 'Optical Coherence Tomography — a non-invasive imaging technique used to visualize retinal layers.' },
-  { term: 'Papilledema', definition: 'Swelling of the optic disc due to increased intracranial pressure. Differentiate from optic neuritis and optic neuropathy.' },
-  { term: 'Retinal Detachment', definition: 'Separation of the neurosensory retina from the retinal pigment epithelium. Requires urgent treatment.' },
-  { term: 'Strabismus', definition: 'Misalignment of the eyes. Can be paralytic or non-paralytic, concomitant or incomitant.' },
-  { term: 'Uveitis', definition: 'Inflammation of the uveal tract (iris, ciliary body, choroid). Can be infectious or non-infectious.' },
-];
+// Sort alphabetically then group by first letter
+const sorted = [...GLOSSARY].sort((a, b) =>
+  a.term.localeCompare(b.term, 'en', { sensitivity: 'base' })
+);
+
+const grouped: Record<string, typeof sorted> = {};
+for (const t of sorted) {
+  const letter = t.term[0]?.toUpperCase() ?? '#';
+  const key = /[A-Z]/.test(letter) ? letter : '#';
+  (grouped[key] ??= []).push(t);
+}
+const letters = Object.keys(grouped).sort();
+const totalCount = sorted.length;
+
+const categoryColors: Record<string, string> = {
+  'Anatomy': 'bg-rose-100 text-rose-700',
+  'Optics & Refraction': 'bg-amber-100 text-amber-700',
+  'Cornea & External': 'bg-orange-100 text-orange-700',
+  'Lens & Cataract': 'bg-yellow-100 text-yellow-700',
+  'Glaucoma': 'bg-emerald-100 text-emerald-700',
+  'Uveitis': 'bg-teal-100 text-teal-700',
+  'Retina & Vitreous': 'bg-sky-100 text-sky-700',
+  'Neuro-ophthalmology': 'bg-indigo-100 text-indigo-700',
+  'Strabismus & Pediatric': 'bg-purple-100 text-purple-700',
+  'Oculoplastics': 'bg-pink-100 text-pink-700',
+  'Pathology': 'bg-fuchsia-100 text-fuchsia-700',
+  'Pharmacology': 'bg-lime-100 text-lime-700',
+  'Imaging & Investigations': 'bg-cyan-100 text-cyan-700',
+  'Surgery': 'bg-slate-200 text-slate-700',
+};
 ---
 
 <Layout
-  title="Ophthalmology Glossary — Terms & Definitions"
-  description="Comprehensive glossary of ophthalmology terms and definitions for PG residents and exam preparation."
+  title={`Ophthalmology Glossary — ${totalCount}+ Essential Terms & Definitions`}
+  description={`Comprehensive glossary of ${totalCount}+ ophthalmology terms with concise definitions for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS exam preparation.`}
 >
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Ophthalmology <span class="text-sky-600">Glossary</span>
-          </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Essential terms and definitions for ophthalmology PG residents and exam preparation.
-          </p>
+  <div class="bg-gradient-to-br from-sky-50 via-white to-indigo-50 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 border border-sky-100 px-4 py-1.5 mb-5">
+          <Icon name="bookOpen" class="w-4 h-4 text-sky-600" />
+          <span class="text-sm font-medium text-sky-700">{totalCount} terms across {CATEGORIES.length} sub-specialties</span>
         </div>
-        <div class="flex justify-center">
-          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="bookOpen" class="w-40 h-40" />
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Ophthalmology <span class="text-sky-600">Glossary</span>
+        </h1>
+        <p class="mt-5 text-lg text-slate-600">
+          The definitions you need for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS — all on one page,
+          searchable, and grouped by sub-specialty.
+        </p>
+
+        <!-- Search -->
+        <div class="mt-8 max-w-2xl mx-auto">
+          <label for="g-search" class="sr-only">Search glossary</label>
+          <div class="relative">
+            <input
+              id="g-search"
+              type="search"
+              placeholder="Search 316 terms — try ‘OCT’, ‘keratoconus’, ‘Horner’…"
+              autocomplete="off"
+              class="w-full rounded-2xl border-2 border-slate-200 bg-white pl-12 pr-4 py-4 text-base text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-100 transition"
+            />
+            <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.34-4.34M17 10.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" />
+              </svg>
+            </div>
+            <button id="g-clear" type="button" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
+          <p id="g-result-count" class="mt-2 text-sm text-slate-500"></p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="bg-slate-50 py-16 lg:py-24">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-4">
-        {glossaryTerms.map(item => (
-          <div class="rounded-xl border border-slate-200 bg-white p-6">
-            <h2 class="text-lg font-bold text-slate-900 mb-2">{item.term}</h2>
-            <p class="text-sm text-slate-600 leading-relaxed">{item.definition}</p>
-          </div>
+  <!-- Category filter chips + A-Z jumper -->
+  <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+      <div class="flex items-start gap-4 flex-wrap">
+        <div class="flex items-center gap-2 flex-wrap" id="g-filters">
+          <button data-cat="" class="g-chip active text-xs font-semibold px-3 py-1.5 rounded-full bg-slate-900 text-white">
+            All
+          </button>
+          {CATEGORIES.map(cat => (
+            <button
+              data-cat={cat}
+              class={`g-chip text-xs font-semibold px-3 py-1.5 rounded-full transition ${categoryColors[cat] ?? 'bg-slate-100 text-slate-700'} hover:opacity-80`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- A-Z jumper -->
+      <div class="mt-3 flex items-center gap-1 flex-wrap" id="g-az">
+        <span class="text-xs uppercase tracking-wide text-slate-500 mr-2">Jump:</span>
+        {Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ').map(L => {
+          const has = !!grouped[L];
+          return has ? (
+            <a href={`#letter-${L}`} class="az-link w-7 h-7 inline-flex items-center justify-center rounded text-xs font-semibold text-sky-700 hover:bg-sky-100 transition">
+              {L}
+            </a>
+          ) : (
+            <span class="w-7 h-7 inline-flex items-center justify-center rounded text-xs font-medium text-slate-300">
+              {L}
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-12 lg:py-16 min-h-[60vh]">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+
+      <!-- "No results" message -->
+      <div id="g-empty" class="hidden text-center py-16 rounded-2xl bg-white border border-slate-200">
+        <div class="text-6xl mb-3">🔍</div>
+        <p class="text-lg font-semibold text-slate-900">No matches</p>
+        <p class="mt-1 text-sm text-slate-500">Try a different search term or clear filters.</p>
+      </div>
+
+      <div id="g-groups">
+        {letters.map(L => (
+          <section data-letter={L} id={`letter-${L}`} class="g-section mb-10 scroll-mt-44">
+            <div class="flex items-center gap-3 mb-4 sticky top-32 z-10">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-sky-600 text-white text-lg font-bold shadow-md">
+                {L}
+              </span>
+              <span class="text-sm text-slate-500">{grouped[L].length} {grouped[L].length === 1 ? 'term' : 'terms'}</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {grouped[L].map(item => (
+                <article
+                  class="g-item rounded-2xl border border-slate-200 bg-white p-5 hover:border-sky-300 hover:shadow-md transition-all"
+                  data-term={item.term.toLowerCase()}
+                  data-def={item.definition.toLowerCase()}
+                  data-cat={item.category}
+                >
+                  <header class="flex items-start justify-between gap-2 mb-2">
+                    <h2 class="text-base font-bold text-slate-900 leading-tight">{item.term}</h2>
+                    <span class={`shrink-0 text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded-full ${categoryColors[item.category] ?? 'bg-slate-100 text-slate-700'}`}>
+                      {item.category}
+                    </span>
+                  </header>
+                  <p class="text-sm text-slate-600 leading-relaxed">{item.definition}</p>
+                </article>
+              ))}
+            </div>
+          </section>
         ))}
       </div>
 
       <div class="mt-12 text-center">
         <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-          Test Your Knowledge
+          Test Yourself with Free MCQs
           <Icon name="arrowRight" class="w-4 h-4" />
         </a>
       </div>
@@ -66,3 +173,79 @@ const glossaryTerms = [
 
   <FinalCTA />
 </Layout>
+
+<style>
+  .g-chip.active { background: #0f172a; color: white; }
+  .az-link:target { background: #e0f2fe; }
+</style>
+
+<script>
+  const $ = (id: string) => document.getElementById(id) as HTMLElement | null;
+  const $$ = <T extends Element>(sel: string) => Array.from(document.querySelectorAll<T>(sel));
+
+  const searchInput = $('g-search') as HTMLInputElement | null;
+  const clearBtn = $('g-clear') as HTMLButtonElement | null;
+  const resultCount = $('g-result-count');
+  const empty = $('g-empty');
+
+  let activeCat = '';
+  let query = '';
+
+  const items = $$<HTMLElement>('.g-item');
+  const sections = $$<HTMLElement>('.g-section');
+  const chips = $$<HTMLButtonElement>('.g-chip');
+
+  function applyFilter() {
+    let visible = 0;
+
+    items.forEach((el) => {
+      const term = el.dataset.term ?? '';
+      const def = el.dataset.def ?? '';
+      const cat = el.dataset.cat ?? '';
+      const matchesQuery = !query || term.includes(query) || def.includes(query);
+      const matchesCat = !activeCat || cat === activeCat;
+      const show = matchesQuery && matchesCat;
+      el.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    sections.forEach((sec) => {
+      const anyVisible = sec.querySelectorAll<HTMLElement>('.g-item:not([style*="display: none"])').length > 0;
+      sec.style.display = anyVisible ? '' : 'none';
+    });
+
+    if (resultCount) {
+      const total = items.length;
+      if (!query && !activeCat) {
+        resultCount.textContent = '';
+      } else {
+        resultCount.textContent = `${visible} of ${total} terms`;
+      }
+    }
+    if (empty) empty.classList.toggle('hidden', visible !== 0);
+    if (clearBtn) clearBtn.classList.toggle('hidden', !query);
+  }
+
+  searchInput?.addEventListener('input', (e) => {
+    query = (e.target as HTMLInputElement).value.trim().toLowerCase();
+    applyFilter();
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    if (!searchInput) return;
+    searchInput.value = '';
+    query = '';
+    applyFilter();
+    searchInput.focus();
+  });
+
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      activeCat = chip.dataset.cat ?? '';
+      chips.forEach((c) => {
+        c.classList.toggle('active', c === chip);
+      });
+      applyFilter();
+    });
+  });
+</script>

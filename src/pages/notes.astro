@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import { PRODUCTS } from '../config';
 import Icon from '../components/Icon.astro';
-import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 ---
 
@@ -27,8 +26,12 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
           </a>
         </div>
         <div class="flex justify-center">
-          <div class="w-64 h-64 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="notes" class="w-48 h-48" />
+          <div class="w-72 h-72 rounded-2xl overflow-hidden shadow-md bg-slate-100">
+            <img
+              src={PRODUCTS.find(p => p.id === 'retina-deciphered')?.image}
+              alt="Handwritten ophthalmology notes"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
@@ -40,10 +43,13 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {PRODUCTS.filter(p => p.category === 'notes').map(n => (
           <div class="flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
-            <div class="h-48 bg-slate-100 flex items-center justify-center">
-              <div class="w-20 h-20 rounded-xl bg-white shadow-sm flex items-center justify-center">
-                <Illustration name={n.icon} class="w-14 h-14" />
-              </div>
+            <div class="h-56 bg-slate-100 overflow-hidden">
+              <img
+                src={n.image}
+                alt={n.fullName}
+                loading="lazy"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
             </div>
             <div class="p-6 flex-1 flex flex-col">
               <h2 class="text-lg font-bold text-slate-900 mb-2">{n.name}</h2>
