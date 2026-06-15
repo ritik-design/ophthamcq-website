@@ -1,28 +1,113 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { EXAMS } from '../../config';
+import { EXAMS, TESTIMONIALS } from '../../config';
 import Icon from '../../components/Icon.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
+
+const examTable = [
+  { name: 'FRCOphth Part 1', slug: 'frcophth', country: 'UK / International', forWho: 'Year 1–2 ophthalmology residents', format: '90 SBAs + 30 CRQs', frequency: '2× per year (Apr, Oct)', coverage: '1,400+ MCQs, basic sciences notes' },
+  { name: 'FRCOphth Part 2', slug: 'frcophth', country: 'UK / International', forWho: 'Senior residents (ST5+)', format: 'Written + OSCE + viva', frequency: '2× per year', coverage: 'Written paper bank, clinical scenarios' },
+  { name: 'ICO Basic Sciences', slug: 'ico-fico', country: 'International', forWho: 'Early-career residents worldwide', format: '120 MCQs over 3 hours', frequency: '2× per year (Apr, Oct)', coverage: 'ICO BVS MCQs, optics notes' },
+  { name: 'ICO Clinical / FICO', slug: 'ico-fico', country: 'International', forWho: 'Mid–late residents and post-MS', format: '4 papers, MCQ + essays', frequency: '2× per year', coverage: 'FICO past papers, topic banks' },
+  { name: 'FAICO', slug: 'faico', country: 'India (AIOS)', forWho: 'Post-MS / DNB sub-specialty', format: 'Theory + viva + log book', frequency: '1× per year (Feb)', coverage: 'Syllabus-mapped FAICO MCQs, notes' },
+  { name: 'PD-CET', slug: 'pd-cet', country: 'India', forWho: 'Diploma holders entering MS', format: '100 MCQs, 90 minutes', frequency: '1× per year', coverage: 'PDCET-specific MCQ bank' },
+  { name: 'DNB Ophthalmology', slug: 'dnb', country: 'India (NBE)', forWho: 'DNB residents', format: 'Theory (4 papers) + practical', frequency: '2× per year (Jun, Dec)', coverage: 'Topic-wise MCQs, handwritten notes' },
+  { name: 'NEET-SS', slug: 'neet-ss', country: 'India', forWho: 'MS/DNB heading to fellowship', format: '150 MCQs, 150 minutes', frequency: '1× per year (Sep)', coverage: 'High-yield MCQs, image banks' },
+  { name: 'OKAPs', slug: 'okaps', country: 'USA', forWho: 'US ophthalmology residents', format: '~260 MCQs, 4 hours', frequency: '1× per year (Mar)', coverage: 'BCSC-aligned MCQs and notes' },
+];
+
+const regions = [
+  {
+    region: 'India',
+    blurb: 'For residents on the Indian PG pathway: MS, DNB, post-MS sub-specialty.',
+    exams: ['faico', 'pd-cet', 'dnb', 'neet-ss'],
+  },
+  {
+    region: 'United Kingdom',
+    blurb: 'For UK trainees and IMGs pursuing Royal College fellowship.',
+    exams: ['frcophth'],
+  },
+  {
+    region: 'International',
+    blurb: 'Globally recognised qualifications that work across borders.',
+    exams: ['ico-fico', 'okaps'],
+  },
+];
+
+const stats = [
+  { num: '7', label: 'Exams covered end-to-end' },
+  { num: '10,000+', label: 'Syllabus-mapped MCQs' },
+  { num: '15,000+', label: 'Residents prepared with us' },
+  { num: '92%', label: 'First-attempt pass rate (FAICO 2024 cohort)' },
+];
+
+const popularity = [
+  { exam: 'DNB Ophthalmology', share: 32, color: 'bg-sky-500' },
+  { exam: 'FRCOphth Part 1 & 2', share: 24, color: 'bg-sky-500' },
+  { exam: 'ICO / FICO', share: 18, color: 'bg-sky-500' },
+  { exam: 'FAICO', share: 12, color: 'bg-sky-500' },
+  { exam: 'NEET-SS', share: 8, color: 'bg-sky-500' },
+  { exam: 'PD-CET + OKAPs', share: 6, color: 'bg-sky-500' },
+];
+
+const examFaqs = [
+  { q: 'FRCOphth vs ICO vs DNB — which ophthalmology exam should I take?', a: 'It depends on your career goal. FRCOphth (UK) is the gold standard for UK NHS jobs and Commonwealth fellowships. ICO/FICO is internationally portable and works as a parallel credential alongside any local degree. DNB is the Indian National Board route, equivalent to MS for clinical practice in India. Many residents in India take DNB first, then add ICO or FRCOphth for international mobility.' },
+  { q: 'What is the best ophthalmology exam to take alongside my MS or DNB?', a: 'For Indian post-graduates, FAICO is the natural next step into sub-specialty practice. If you plan to move abroad or join a Commonwealth fellowship, ICO Basic Sciences during your MS year 1 and FRCOphth Part 1 in year 2 is a popular combination.' },
+  { q: 'Can I prepare for multiple ophthalmology exams together?', a: 'Yes — the core syllabus overlaps significantly. Anatomy, optics, cornea, glaucoma and retina questions are common to FRCOphth, ICO, DNB and NEET-SS. We recommend mapping your study plan around one anchor exam and using topic-wise MCQs to keep adjacent exams in reach.' },
+  { q: 'How long should I prepare for FRCOphth Part 1?', a: 'A focused 4–6 month plan is typical for residents who already have a basic sciences foundation. Plan 90 minutes of MCQ practice 5 days a week, plus weekend revision of handwritten notes for the weak topics flagged by your analytics.' },
+  { q: 'Are FAICO MCQs harder than DNB MCQs?', a: 'FAICO is sub-specialty focused and assumes you have already passed MS or DNB. Stems are longer, clinical scenarios are more nuanced, and image-based questions dominate. The factual recall is comparable to DNB but the clinical reasoning bar is higher.' },
+  { q: 'Is OphthaMCQ suitable for OKAPs preparation?', a: 'Yes. Our high-yield MCQs and topic-wise banks are aligned with BCSC sections, which forms the OKAP blueprint. US residents typically combine our MCQs with BCSC reading for the strongest results.' },
+  { q: 'Do I need separate question banks for each exam?', a: 'For the most exam-specific stems and pass-mark calibration, yes. Each of our exam-specific banks is mapped to the actual exam blueprint and historical question patterns, not a generic shared pool.' },
+  { q: 'How often is the question bank updated for new exam patterns?', a: 'We refresh every bank every 6 months and push a major content review after each examination cycle so you always see the newest question patterns.' },
+];
+
+const choosingExam = [
+  { title: 'Map your career destination', body: 'Where do you want to practice in 3 years? Domestic clinical practice, sub-specialty fellowship, or a move abroad? The right exam credential follows that map, not the other way around.' },
+  { title: 'Audit your existing degree', body: 'If you already hold MS or DNB, sub-specialty exams like FAICO and NEET-SS unlock fellowship pathways faster than re-doing generalist qualifications.' },
+  { title: 'Match exam to study window', body: 'A focused 4-month exam window suits FRCOphth Part 1 or ICO BVS. A 9–12 month runway suits DNB theory finals or FAICO. Avoid stacking long-form exams in the same quarter.' },
+  { title: 'Use overlap to your advantage', body: 'Cornea, retina and glaucoma form 50%+ of every ophthalmology exam. Build a topic-first base and let exam-specific MCQ banks handle the calibration in the last 8 weeks.' },
+];
 ---
 
 <Layout
-  title="All Exams — FRCOphth, ICO, FAICO, DNB, NEET-SS, PD-CET, OKAPs"
-  description="Dedicated question banks and notes for every major ophthalmology exam. FRCOphth, ICO, FAICO, DNB, NEET-SS, PD-CET, and OKAPs."
+  title="Ophthalmology Exams India & UK: FRCOphth, ICO, FAICO, DNB, NEET-SS"
+  description="Compare every major ophthalmology exam: FRCOphth vs ICO vs DNB vs FAICO vs NEET-SS. Find the best ophthalmology fellowship exam and matched prep resources."
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="text-center max-w-3xl mx-auto">
         <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-          Prepare for <span class="text-sky-600">Any Exam</span>
+          Prepare for <span class="text-sky-600">Any Ophthalmology Exam</span>
         </h1>
         <p class="mt-5 text-lg text-slate-600">
-          Dedicated question banks, handwritten notes, and past papers for every major ophthalmology examination.
+          Dedicated question banks, handwritten notes and past papers for every major ophthalmology examination in India, the UK and internationally.
         </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+            Try 50 Free MCQs
+          </a>
+          <a href="#comparison" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 transition-colors">
+            Compare All Exams
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {stats.map(s => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center">
+            <div class="text-3xl font-extrabold text-sky-600">{s.num}</div>
+            <div class="mt-1 text-sm text-slate-600">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {EXAMS.map(exam => (
@@ -36,7 +121,7 @@ import FinalCTA from '../../components/sections/FinalCTA.astro';
             <h2 class="text-xl font-bold text-slate-900 mb-1">{exam.full}</h2>
             <p class="text-sm text-slate-500 mb-4">{exam.description}</p>
             <p class="text-sm text-slate-600 leading-relaxed flex-1">
-              Syllabus-mapped MCQs, handwritten notes, and past papers with full explanations.
+              Syllabus-mapped MCQs, handwritten notes and past papers with full explanations.
             </p>
             <div class="mt-6 pt-4 border-t border-slate-100">
               <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 flex items-center gap-1">
@@ -46,6 +131,194 @@ import FinalCTA from '../../components/sections/FinalCTA.astro';
             </div>
           </a>
         ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Choosing the right ophthalmology exam
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          The best ophthalmology exam to take is the one that lines up with where you want to practice and the time you can commit. Four questions decide it.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {choosingExam.map((item, i) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <div class="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center text-sky-700 font-bold text-sm mb-3">{i + 1}</div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div id="comparison" class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Ophthalmology exam comparison table
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          FRCOphth vs ICO vs FICO vs FAICO vs DNB vs NEET-SS vs PD-CET vs OKAPs — country, format, frequency and our matched coverage.
+        </p>
+      </div>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200">
+        <table class="min-w-full divide-y divide-slate-200 text-sm">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">Exam</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">Country</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">Who it's for</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">Format</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">Frequency</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">Our coverage</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 bg-white">
+            {examTable.map(row => (
+              <tr class="hover:bg-sky-50/40 transition-colors">
+                <td class="px-4 py-3 font-semibold text-slate-900">
+                  <a href={`/exams/${row.slug}`} class="hover:text-sky-700">{row.name}</a>
+                </td>
+                <td class="px-4 py-3 text-slate-600">{row.country}</td>
+                <td class="px-4 py-3 text-slate-600">{row.forWho}</td>
+                <td class="px-4 py-3 text-slate-600">{row.format}</td>
+                <td class="px-4 py-3 text-slate-600">{row.frequency}</td>
+                <td class="px-4 py-3 text-slate-600">{row.coverage}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Browse exams by region
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Whether you sit for ophthalmology exams in India, the UK or take an international route, we have a matched prep track.
+        </p>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        {regions.map(region => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{region.region}</h3>
+            <p class="text-sm text-slate-600 mb-5">{region.blurb}</p>
+            <div class="space-y-2">
+              {region.exams.map(slug => {
+                const e = EXAMS.find(x => x.slug === slug);
+                return e ? (
+                  <a href={`/exams/${e.slug}`} class="flex items-center justify-between rounded-lg border border-slate-100 px-3 py-2 hover:border-sky-200 hover:bg-sky-50/50 transition-colors">
+                    <span class="text-sm font-medium text-slate-800">{e.full}</span>
+                    <Icon name="chevronRight" class="w-4 h-4 text-sky-600" />
+                  </a>
+                ) : null;
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Most popular ophthalmology exams
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Share of OphthaMCQ users by primary target exam (2024–2025 cohort).
+        </p>
+      </div>
+      <div class="space-y-4">
+        {popularity.map(p => (
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-sm font-semibold text-slate-800">{p.exam}</span>
+              <span class="text-sm text-slate-500">{p.share}%</span>
+            </div>
+            <div class="h-3 rounded-full bg-slate-100 overflow-hidden">
+              <div class={`h-full ${p.color}`} style={`width: ${p.share * 3}%`}></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            Why exam-specific prep matters
+          </h2>
+          <p class="mt-4 text-lg text-slate-600">
+            A generic question bank gives you generic results. Each ophthalmology exam has its own blueprint, question style and difficulty calibration.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-base font-bold text-slate-900 mb-1">Blueprint weighting</h3>
+            <p class="text-sm text-slate-600">FRCOphth Part 1 weights optics and basic sciences far higher than DNB. NEET-SS pushes image-rich retina and uveitis. Practising to the wrong weighting wastes hours.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-base font-bold text-slate-900 mb-1">Stem style</h3>
+            <p class="text-sm text-slate-600">FAICO and ICO use long clinical vignettes. PD-CET and OKAPs use crisp single-best-answer stems. Drilling the wrong stem style slows you in the hall.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-base font-bold text-slate-900 mb-1">Negative marking and pass marks</h3>
+            <p class="text-sm text-slate-600">DNB and NEET-SS apply negative marking. FRCOphth uses standard setting. Each bank in OphthaMCQ scores you the way your actual exam will.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Choosing & preparing for ophthalmology exams — FAQ
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">Real questions from residents picking their exam path.</p>
+      </div>
+      <div class="space-y-4">
+        {examFaqs.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+      <div class="mt-10 grid sm:grid-cols-3 gap-4">
+        <a href="/topics" class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center hover:border-sky-300 transition-colors">
+          <div class="text-sm font-semibold text-slate-900">Topic-wise study</div>
+          <div class="text-xs text-slate-500 mt-1">Retina, cornea, glaucoma</div>
+        </a>
+        <a href="/free-mcqs" class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center hover:border-sky-300 transition-colors">
+          <div class="text-sm font-semibold text-slate-900">50 free MCQs</div>
+          <div class="text-xs text-slate-500 mt-1">No signup required</div>
+        </a>
+        <a href="/notes" class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center hover:border-sky-300 transition-colors">
+          <div class="text-sm font-semibold text-slate-900">Handwritten notes</div>
+          <div class="text-xs text-slate-500 mt-1">Distilled from Kanski & Ryan</div>
+        </a>
       </div>
     </div>
   </div>

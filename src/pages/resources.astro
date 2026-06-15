@@ -3,62 +3,94 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import { APP_LINKS, EXAMS } from '../config';
 
-const resources = [
+const hubLinks = [
+  { href: '/free-mcqs', title: '200 Free MCQs', desc: 'Practice instantly — no signup. Covers every subspecialty with full explanations and instant scoring.', illustration: 'freeMcqs', count: '200 questions' },
+  { href: '/glossary', title: '316-term Ophthalmology Glossary', desc: 'The most complete free glossary online for ophthalmology PG students. Search anatomy, pathology, drugs and syndromes.', illustration: 'bookOpen', count: '316 terms' },
+  { href: '/notes', title: 'Handwritten Exam Notes', desc: 'Topic-wise handwritten notes for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS distilled from Kanski, Ryan and BCSC.', illustration: 'notes', count: '8 topic sets' },
+  { href: '/exams', title: 'Exam Guides', desc: 'Dedicated guides for FRCOphth, ICO/FICO, FAICO, PD-CET, DNB, NEET-SS and OKAPs with syllabi, formats and pass marks.', illustration: 'pastPapers', count: '7 exam guides' },
+  { href: '/topics', title: 'Topic Library', desc: 'Browse every ophthalmology subspecialty from anatomy and optics to surgical retina and neuro-ophthalmology.', illustration: 'questionBank', count: '16 subspecialties' },
+  { href: '/blog', title: 'Exam Strategy Blog', desc: 'Written guides on study planning, paper analysis, OSCE prep, mnemonics and time management for ophthalmology PG exams.', illustration: 'blog', count: 'Updated weekly' },
+];
+
+const freeLibrary = [
+  { title: 'FRCOphth Part 1 Study Plan PDF', desc: 'A six-month, week-by-week schedule covering basic sciences and optics with topic weightage drawn from past papers.', illustration: 'notes', cta: 'Download', href: '/contact' },
+  { title: 'ICO Syllabus Checklist', desc: 'Tick-by-tick coverage of ICO Basic Sciences, Visual Sciences and Clinical papers — use it as a revision tracker.', illustration: 'pastPapers', cta: 'Get Checklist', href: '/contact' },
+  { title: 'Top 100 Ophthalmology Mnemonics', desc: 'Memory aids for syndromes, drugs, anatomy and grading systems. Hand-drawn and printable.', illustration: 'bookOpen', cta: 'Get Mnemonics', href: '/contact' },
+  { title: 'Optics Formula Sheet', desc: 'Vergence, lens power, prismatic effects, IOL calculation and refraction formulae on a single laminate-friendly page.', illustration: 'imageMcq', cta: 'Download Sheet', href: '/contact' },
+  { title: '50 Image-Based MCQs', desc: 'Fundus photos, OCT, slit-lamp and FFA images with stepwise reasoning — a free preview of our image library.', illustration: 'imageMcq', cta: 'Practice Now', href: '/free-mcqs' },
+  { title: 'DNB 5-Year Topic Frequency Analysis', desc: 'Which DNB Ophthalmology topics repeat most often across the last five exam cycles. Plan revision accordingly.', illustration: 'chartBar', cta: 'Get Analysis', href: '/contact' },
+];
+
+const externalRefs = [
+  { name: 'Kanski Clinical Ophthalmology', desc: 'The single most widely used clinical reference for ophthalmology trainees worldwide. Use it for first-pass learning of any topic before condensing with our handwritten notes.', meta: 'Reference textbook' },
+  { name: 'AAO BCSC Series', desc: 'The American Academy of Ophthalmology Basic and Clinical Science Course — 13 volumes that form the backbone of OKAPs and a strong supplement for FRCOphth Part 2.', meta: '13-volume series' },
+  { name: 'Ryan\'s Retina', desc: 'The definitive retina reference. Required reading if you are sitting NEET-SS Retina or aiming at a FAICO Retina fellowship.', meta: 'Subspecialty reference' },
+  { name: 'Elkington & Frank\'s Clinical Optics', desc: 'The cleanest treatment of clinical optics available. Pair it with our Optics & Refraction notes for FRCOphth Part 1.', meta: 'Optics reference' },
+  { name: 'Khurana Comprehensive Ophthalmology', desc: 'The most widely used Indian undergraduate and early-PG textbook. Useful for first-pass coverage before moving to Kanski.', meta: 'Indian PG reference' },
+  { name: 'AAO Preferred Practice Patterns', desc: 'Free clinical practice guidelines from the American Academy of Ophthalmology. Excellent source for management algorithm questions.', meta: 'Free — AAO website' },
+  { name: 'EyeWiki', desc: 'Open peer-reviewed ophthalmology encyclopaedia maintained by the AAO. Great for quick same-page lookups when a Kanski chapter feels too long.', meta: 'Free — eyewiki.aao.org' },
+  { name: 'Bowling — Kanski\'s Clinical Examination', desc: 'Companion to Kanski. Use it for OSCE and viva preparation, especially the FRCOphth Part 2 and DNB practical.', meta: 'OSCE reference' },
+];
+
+const studyPlans = [
   {
-    title: 'FRCOphth Part 1 Study Plan PDF',
-    desc: 'Complete 6-month week-by-week schedule with topic weightage and resources.',
-    illustration: 'notes',
-    cta: 'Download Free PDF',
+    weeks: '4 weeks',
+    title: 'Last-Lap Revision Sprint',
+    desc: 'Designed for residents who have already covered the syllabus once and need a focused final pass.',
+    blocks: ['Week 1: Anatomy + Optics rapid revision', 'Week 2: Cornea, Lens, Glaucoma high-yield', 'Week 3: Retina, Uveitis, Neuro', 'Week 4: Past papers + 1,000 MCQs'],
   },
   {
-    title: 'ICO Exam Syllabus Checklist',
-    desc: 'Interactive checklist covering Part A, B, and C syllabi.',
-    illustration: 'pastPapers',
-    cta: 'Get Checklist',
+    weeks: '8 weeks',
+    title: 'Standard Exam Build',
+    desc: 'A two-month plan combining one-pass reading from our notes with daily MCQ practice.',
+    blocks: ['Weeks 1–2: Basic sciences (anatomy, optics, pathology)', 'Weeks 3–4: Anterior segment block', 'Weeks 5–6: Posterior segment + neuro-ophthalmology', 'Weeks 7–8: Past papers + image-based MCQs + mock'],
   },
   {
-    title: 'Top 100 Ophthalmology Mnemonics',
-    desc: 'Memory aids for anatomy, drugs, syndromes, and exam facts.',
-    illustration: 'bookOpen',
-    cta: 'Get Mnemonics',
+    weeks: '12 weeks',
+    title: 'Comfortable First-Attempt Plan',
+    desc: 'Recommended for FRCOphth Part 1 and DNB final-year candidates with steady weekday clinic load.',
+    blocks: ['Weeks 1–3: Basic sciences from scratch', 'Weeks 4–6: Anterior segment subspecialties', 'Weeks 7–9: Posterior segment + paeds + plastics', 'Weeks 10–12: Mocks, past papers, weak-area drills'],
   },
-  {
-    title: 'Optics Formula Sheet',
-    desc: 'Quick reference for vergence, lens power, magnification, and refraction.',
-    illustration: 'imageMcq',
-    cta: 'Download Sheet',
-  },
-  {
-    title: '50 Image-Based Questions',
-    desc: 'Fundus photos, OCTs, and slit-lamp images with explanations.',
-    illustration: 'imageMcq',
-    cta: 'Practice Free',
-  },
-  {
-    title: 'DNB 5-Year Topic Analysis',
-    desc: 'See which topics appear most frequently in DNB exams.',
-    illustration: 'chartBar',
-    cta: 'Get Analysis',
-  },
+];
+
+const resourcesFaq = [
+  { q: 'Are all these resources really free?', a: 'Yes. The 200 free MCQs, full 316-term glossary, blog and exam guides cost nothing and need no signup. Downloads like the study plans and formula sheet are free in exchange for an email — we send the PDF and never spam.' },
+  { q: 'How should I sequence these resources?', a: 'Start with the exam guide for your target exam, then run through the appropriate study plan. Use the glossary for any unfamiliar term as it appears. Practice free MCQs daily and graduate to a full question bank once your accuracy is above 60%.' },
+  { q: 'Do you have resources for OSCE and viva?', a: 'Yes — the blog covers OSCE station drills, examination technique and common viva pitfalls. Pair it with the handwritten notes which include exam-style hand-drawn diagrams.' },
+  { q: 'Can I access these resources on mobile?', a: 'Everything works on mobile browsers. For MCQ practice, image-based questions and offline access, install the OphthaMCQ app on iOS or Android.' },
+  { q: 'How often is the resource library updated?', a: 'New blog posts go up weekly. The glossary, MCQ library and study plans are reviewed every quarter and updated to match the latest exam patterns.' },
 ];
 ---
 
 <Layout
-  title="Free Resources — Study Plans, Checklists & Mnemonics"
-  description="Free ophthalmology exam resources: study plans, syllabi checklists, mnemonics, formula sheets, and image-based questions."
+  title="Free Ophthalmology Resources Hub — Study Guides, MCQs, Glossary, Plans"
+  description="The OphthaMCQ free ophthalmology resources hub: 200 free MCQs, 316-term glossary, handwritten notes, exam guides and 4/8/12-week study plans for FRCOphth, ICO, DNB and FAICO."
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-4 py-1.5 mb-6">
+            <span class="text-sm font-medium text-emerald-700">Free Ophthalmology Learning Hub</span>
+          </div>
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Free <span class="text-sky-600">Resources</span>
+            Free <span class="text-sky-600">Ophthalmology Resources</span>
           </h1>
           <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Download study plans, checklists, mnemonics, and practice questions.
-            All free — just enter your email.
+            Everything you need to start preparing for FRCOphth, ICO/FICO, FAICO, DNB or NEET-SS — study plans,
+            checklists, mnemonics, image-based practice and the most complete free ophthalmology glossary online.
           </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <a href="/free-mcqs" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+              Try 200 Free MCQs
+              <Icon name="arrowRight" class="w-4 h-4" />
+            </a>
+            <a href="#study-plans" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+              See Study Plans
+            </a>
+          </div>
         </div>
         <div class="flex justify-center">
           <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
@@ -69,28 +101,200 @@ const resources = [
     </div>
   </div>
 
-  <div class="bg-slate-50 py-16 lg:py-24">
+  <section class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Your ophthalmology study guides — in one place</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Six core resources cover the journey from first MCQ to exam day. Bookmark this page.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {hubLinks.map(link => (
+          <a href={link.href} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="w-14 h-14 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
+              <Illustration name={link.illustration} class="w-10 h-10" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{link.title}</h3>
+            <p class="text-sm text-slate-600 mb-4 flex-1">{link.desc}</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <span class="text-xs font-semibold text-slate-500">{link.count}</span>
+              <span class="text-sm font-semibold text-sky-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+                Open
+                <Icon name="chevronRight" class="w-4 h-4" />
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Free downloadable resource library</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Practical PDFs, checklists and analyses — built by ophthalmologists, free for residents.
+        </p>
+      </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {resources.map(r => (
+        {freeLibrary.map(r => (
           <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
             <div class="w-16 h-16 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
               <Illustration name={r.illustration} class="w-12 h-12" />
             </div>
-            <h2 class="text-lg font-bold text-slate-900 mb-2">{r.title}</h2>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{r.title}</h3>
             <p class="text-sm text-slate-600 mb-6 flex-1">{r.desc}</p>
-
-            <form class="space-y-3">
-              <input type="email" required placeholder="Enter your email" class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm outline-none focus:border-sky-500" />
-              <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-                {r.cta}
-              </button>
-            </form>
+            <a href={r.href} class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+              {r.cta}
+              <Icon name="arrowRight" class="w-4 h-4" />
+            </a>
           </div>
         ))}
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="study-plans" class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Quick-start study plans for FRCOphth, ICO, DNB and FAICO</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Pick the plan that fits how long you have left. Each plan slots into our handwritten notes and MCQ library.
+        </p>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-6">
+        {studyPlans.map(plan => (
+          <div class="rounded-2xl bg-white border border-slate-200 p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700 mb-3">{plan.weeks}</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{plan.title}</h3>
+            <p class="text-sm text-slate-600 mb-4">{plan.desc}</p>
+            <ul class="space-y-2">
+              {plan.blocks.map(b => (
+                <li class="flex gap-2 text-sm text-slate-700">
+                  <Icon name="check" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/exams" class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800">
+              See exam-specific guides
+              <Icon name="chevronRight" class="w-4 h-4" />
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {EXAMS.slice(0, 8).map(e => (
+          <a href={`/exams/${e.slug}`} class="flex items-center gap-3 rounded-xl bg-white border border-slate-200 px-4 py-3 hover:border-sky-300 hover:text-sky-700 transition-all">
+            <div class="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center">
+              <Icon name={e.iconName} class="w-4 h-4 text-sky-600" />
+            </div>
+            <span class="text-sm font-semibold text-slate-900">{e.name} guide</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">External references & recommended reading list</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          We strongly recommend keeping a current edition of at least one major reference textbook. Here is what we keep on our own desks.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {externalRefs.map(ref => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 transition-all">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="font-bold text-slate-900">{ref.name}</h3>
+              <span class="ml-3 shrink-0 text-xs font-medium text-slate-500 bg-slate-50 px-2 py-0.5 rounded">{ref.meta}</span>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">{ref.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-900 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full bg-sky-900/40 border border-sky-700/40 px-4 py-1.5 mb-6">
+            <span class="text-sm font-medium text-sky-200">Mobile app</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Practice ophthalmology MCQs on the go</h2>
+          <p class="mt-4 text-lg text-slate-300">
+            All the free resources, plus your purchased notes and MCQs, sync to the OphthaMCQ app. Native iOS and Android.
+            Offline mode means you can revise on the metro, in clinic breaks or in the OT changing room.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href={APP_LINKS.googlePlay} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100 transition-colors">
+              <Icon name="download" class="w-5 h-5" />
+              Google Play
+            </a>
+            <a href={APP_LINKS.appStore} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100 transition-colors">
+              <Icon name="download" class="w-5 h-5" />
+              App Store
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-64 h-64 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center">
+            <Illustration name="mobile" class="w-44 h-44" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl bg-sky-50 border border-sky-100 p-8 lg:p-12">
+        <div class="grid lg:grid-cols-3 gap-8 items-center">
+          <div class="lg:col-span-2">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Get every new free resource in your inbox</h2>
+            <p class="mt-3 text-slate-700">
+              When we publish a new mnemonic sheet, study plan or image-based pack, we email it to our mailing list first.
+              No spam, no marketing — just resources, roughly twice a month.
+            </p>
+          </div>
+          <div class="text-center lg:text-right">
+            <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+              Join the mailing list
+              <Icon name="arrowRight" class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Resources — frequently asked questions</h2>
+        <p class="mt-4 text-lg text-slate-600">How to get the most out of the OphthaMCQ free resource hub.</p>
+      </div>
+      <div class="space-y-4">
+        {resourcesFaq.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <FinalCTA />
 </Layout>

@@ -1,35 +1,108 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { PRODUCTS } from '../config';
+import { PRODUCTS, TESTIMONIALS, EXAMS, APP_LINKS } from '../config';
 import Icon from '../components/Icon.astro';
+import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const noteProducts = PRODUCTS.filter(p => p.category === 'notes');
+
+const notesByExam = [
+  {
+    exam: 'FRCOphth',
+    slug: 'frcophth',
+    bundle: ['anatomy-notes', 'optics-notes', 'retina-deciphered', 'glaucoma-notes'],
+    blurb: 'For FRCOphth Part 1 basic sciences and Part 2 clinical, lead with anatomy and optics, then layer retina and glaucoma for the written paper.',
+  },
+  {
+    exam: 'ICO / FICO',
+    slug: 'ico-fico',
+    bundle: ['anatomy-notes', 'optics-notes', 'retina-deciphered'],
+    blurb: 'ICO Basic and Clinical Sciences map cleanly onto our anatomy, optics and retina notes — used by candidates writing from India, the Middle East and Africa.',
+  },
+  {
+    exam: 'FAICO',
+    slug: 'faico',
+    bundle: ['retina-deciphered', 'glaucoma-notes', 'eyelids-notes'],
+    blurb: 'AIOS Fellowship requires subspecialty depth. Choose your fellowship track (Retina, Glaucoma, Oculoplastics) and pair the matching note set with the FAICO MCQ bank.',
+  },
+  {
+    exam: 'DNB Ophthalmology',
+    slug: 'dnb',
+    bundle: ['anatomy-notes', 'optics-notes', 'retina-deciphered', 'glaucoma-notes', 'eyelids-notes'],
+    blurb: 'DNB theory papers are wide and shallow. The full handwritten notes set covers every paper-one and paper-four high-yield area without 50-page chapter slogs.',
+  },
+  {
+    exam: 'NEET-SS',
+    slug: 'neet-ss',
+    bundle: ['retina-deciphered', 'glaucoma-notes'],
+    blurb: 'NEET-SS rewards depth in your chosen super-speciality. Retina Deciphered is the single highest-yield asset for retina aspirants.',
+  },
+  {
+    exam: 'PD-CET',
+    slug: 'pd-cet',
+    bundle: ['anatomy-notes', 'optics-notes'],
+    blurb: 'PD-CET tests basics quickly. Our anatomy and optics notes condense each topic into a one-sitting revision the night before.',
+  },
+];
+
+const comparison = [
+  { feature: 'Time to revise one topic', notes: '45–90 minutes', textbook: '6–12 hours' },
+  { feature: 'Designed for exams?', notes: 'Yes — every line is a testable fact', textbook: 'No — written for reference' },
+  { feature: 'Diagrams', notes: 'Hand-drawn, exam-style', textbook: 'Photographs and atlases' },
+  { feature: 'Updates', notes: 'Free lifetime updates', textbook: 'Buy new edition' },
+  { feature: 'Price', notes: '₹249–₹999 per topic', textbook: '₹4,000–₹25,000 per book' },
+  { feature: 'Format', notes: 'PDF + mobile app sync', textbook: 'Print only (mostly)' },
+];
+
+const noteTestimonials = TESTIMONIALS.filter(t =>
+  t.text.toLowerCase().includes('note') || t.text.toLowerCase().includes('retina') || t.text.toLowerCase().includes('distillation')
+);
+
+const notesFaq = [
+  { q: 'Are the notes really handwritten or are they typed PDFs?', a: 'Every page is genuinely handwritten by ophthalmologists who have cleared FRCOphth, ICO/FICO, FAICO or DNB. We scan and lightly clean each page so it reads crisp on phone and laptop, but the underlying notes are the same pages we used during our own residency.' },
+  { q: 'Do I get a printable PDF or only digital access?', a: 'You receive a printable PDF immediately after purchase and parallel access through the OphthaMCQ iOS and Android apps. Print binding-quality copies at any local print shop — most residents print A4 spiral-bound for ward use.' },
+  { q: 'Is access lifetime?', a: 'Yes. One payment, lifetime access to that note set on every device you log into. We never charge a renewal fee.' },
+  { q: 'How often are the notes updated?', a: 'Each note set is reviewed every six months. Updates push automatically to the app and the latest PDF is always available from your purchase dashboard at no extra cost.' },
+  { q: 'Do notes sync with the OphthaMCQ mobile app?', a: 'Yes. Open a note on the laptop, leave for clinic, and pick up on the phone at the bedside. Annotations and bookmarks sync across iOS, Android and web.' },
+  { q: 'Can I get a sample before paying?', a: 'Absolutely. Try the 200 free MCQs first to see the depth of our explanations, which match the depth of our notes. Sample pages of the most popular sets are shown on the product page on the store.' },
+  { q: 'Will these replace Kanski, Ryan and BCSC?', a: 'They replace the need to read those books cover-to-cover for exam prep. We strongly recommend keeping a current edition of Kanski as a desk reference, but for revision you should be in the handwritten notes — not the textbook.' },
+];
 ---
 
 <Layout
-  title="Handwritten Exam Notes — Retina, Glaucoma, Anatomy, Optics"
-  description="The world's only handwritten exam-ready notes for ophthalmology PG exams. Distilled from Ryan, Kanski & Elkington."
+  title="Handwritten Ophthalmology Notes — Exam Ready for FRCOphth, DNB, ICO, FAICO"
+  description="Handwritten ophthalmology notes distilled from Kanski, Ryan, Elkington and BCSC. Exam-ready PG study material for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS residents."
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 border border-sky-100 px-4 py-1.5 mb-6">
+            <span class="text-sm font-medium text-sky-700">PG Ophthalmology Study Material</span>
+          </div>
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Handwritten <span class="text-sky-600">Exam Notes</span>
+            Handwritten <span class="text-sky-600">Exam Notes</span> for Ophthalmology
           </h1>
           <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            The world's only notes designed specifically for ophthalmology PG exams.
-            No 50-page chapters — just the exact points you need.
+            The world's only ophthalmology exam-ready notes designed for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS.
+            No 50-page chapters — just the exact points the exam tests, written by doctors who passed.
           </p>
-          <a href="/free-mcqs" class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-            Try Free MCQs
-            <Icon name="arrowRight" class="w-4 h-4" />
-          </a>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <a href="/free-mcqs" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+              Try 200 Free MCQs
+              <Icon name="arrowRight" class="w-4 h-4" />
+            </a>
+            <a href="#note-sets" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+              Browse Note Sets
+            </a>
+          </div>
         </div>
         <div class="flex justify-center">
           <div class="w-72 h-72 rounded-2xl overflow-hidden shadow-md bg-slate-100">
             <img
               src={PRODUCTS.find(p => p.id === 'retina-deciphered')?.image}
-              alt="Handwritten ophthalmology notes"
+              alt="Handwritten ophthalmology notes for FRCOphth, DNB and ICO exams"
               class="w-full h-full object-cover"
             />
           </div>
@@ -38,10 +111,101 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
     </div>
   </div>
 
-  <div class="bg-slate-50 py-16 lg:py-24">
+  <section class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Why handwritten notes beat typed PDFs</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          We tried typed notes for two years. Pass rates were lower, recall was worse, and residents complained the formatting felt sterile.
+          Once we switched to genuine handwritten notes the difference was obvious — and the data backed it up.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: 'Visual memory is stronger', desc: 'Handwriting creates spatial anchors the brain encodes deeper than uniform type. You remember which corner of which page held a fact.' },
+          { title: 'Forced distillation', desc: 'Writing by hand is slow. That slowness forces us to compress a 40-page Kanski chapter into 3 hand-drawn pages — exactly what you need at 3am the day before the exam.' },
+          { title: 'Drawn diagrams, not photos', desc: 'Exam questions show schematics, not glossy textbook plates. Our hand-drawn diagrams match the style of FRCOphth and DNB stems.' },
+          { title: 'No autoformatting noise', desc: 'No bullet inconsistencies, no half-broken tables, no Word styles. What you see is exactly what we revised from.' },
+          { title: 'Easier to annotate', desc: 'Residents print our PDFs and add their own margin notes. Tightly typeset PDFs leave no room to do this.' },
+          { title: 'Built by passers', desc: 'Every note set was made by an ophthalmologist who cleared the exact exam you are sitting. The omissions are deliberate, not accidental.' },
+        ].map(item => (
+          <div class="rounded-2xl bg-white border border-slate-200 p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3">
+              <Icon name="check" class="w-5 h-5 text-sky-600" />
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">{item.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">What's inside each note set</h2>
+          <p class="mt-4 text-lg text-slate-600">
+            Every set follows the same predictable structure so you spend zero time learning the layout and all of it revising.
+          </p>
+          <ul class="mt-6 space-y-4">
+            {[
+              { label: 'Page count', value: '120–250 pages per topic, A4 portrait, hand-drawn diagrams throughout.' },
+              { label: 'Opening map', value: 'Each topic opens with a one-page concept map so you see the whole subspecialty before diving in.' },
+              { label: 'Disease blocks', value: 'Definition, epidemiology, pathophysiology, classification, clinical features, investigations, management, prognosis — in that order, every time.' },
+              { label: 'Highlighted high-yield', value: 'Margin tags mark facts that have appeared in FRCOphth, ICO and DNB papers in the last five years.' },
+              { label: 'Mnemonics & memory aids', value: 'Hand-drawn mnemonics for syndromes, drug side-effect profiles and grading systems.' },
+              { label: 'Self-test questions', value: 'Each chapter closes with 8–15 quick recall questions linked to MCQs in the app.' },
+            ].map(row => (
+              <li class="flex gap-4">
+                <div class="shrink-0 w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center mt-0.5">
+                  <Icon name="check" class="w-4 h-4 text-sky-600" />
+                </div>
+                <div>
+                  <div class="font-semibold text-slate-900">{row.label}</div>
+                  <div class="text-sm text-slate-600">{row.value}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-slate-50 border border-slate-200 p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Topics covered across our note library</h3>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            {[
+              'Ocular anatomy & embryology', 'Physiology of the eye', 'Optics & refraction',
+              'Cornea & external disease', 'Lens & cataract', 'Glaucoma',
+              'Uveitis & ocular inflammation', 'Medical retina', 'Surgical retina & vitreous',
+              'Neuro-ophthalmology', 'Paediatric & strabismus', 'Oculoplastics & orbit',
+              'Ocular oncology', 'Ocular pharmacology', 'Genetics & molecular biology',
+              'Community ophthalmology',
+            ].map(topic => (
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-sky-500"></div>
+                <span class="text-slate-700">{topic}</span>
+              </div>
+            ))}
+          </div>
+          <a href="/topics" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800">
+            Explore all topics
+            <Icon name="chevronRight" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="note-sets" class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Best ophthalmology notes — by topic</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Each set is a standalone purchase. Buy a single topic for ₹249–₹999, or combine sets to cover your whole exam.
+        </p>
+      </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {PRODUCTS.filter(p => p.category === 'notes').map(n => (
+        {noteProducts.map(n => (
           <div class="flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
             <div class="h-56 bg-slate-100 overflow-hidden">
               <img
@@ -52,7 +216,7 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
               />
             </div>
             <div class="p-6 flex-1 flex flex-col">
-              <h2 class="text-lg font-bold text-slate-900 mb-2">{n.name}</h2>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">{n.name}</h3>
               <p class="text-sm text-slate-600 mb-4 flex-1">{n.description}</p>
               <div class="flex items-baseline gap-2 mb-4">
                 <span class="text-xl font-bold text-slate-900">{n.price}</span>
@@ -73,7 +237,190 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
         ))}
       </div>
     </div>
-  </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Our notes vs. standard textbooks</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Kanski, Ryan and BCSC remain world-class reference texts. They are not, however, designed for fast exam revision.
+          Use them for first-pass learning. Use our handwritten notes for everything that comes after.
+        </p>
+      </div>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+              <th class="text-left px-6 py-4 font-semibold text-slate-900">Compare</th>
+              <th class="text-left px-6 py-4 font-semibold text-sky-700">OphthaMCQ Handwritten Notes</th>
+              <th class="text-left px-6 py-4 font-semibold text-slate-700">Kanski / Ryan / BCSC</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {comparison.map(row => (
+              <tr class="hover:bg-slate-50">
+                <td class="px-6 py-4 font-medium text-slate-900">{row.feature}</td>
+                <td class="px-6 py-4 text-slate-700">{row.notes}</td>
+                <td class="px-6 py-4 text-slate-600">{row.textbook}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-900 py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <Icon name="sparkles" class="w-10 h-10 text-amber-300 mx-auto mb-6" />
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">The distillation methodology</h2>
+      <blockquote class="mt-8 text-xl sm:text-2xl text-slate-100 italic leading-relaxed">
+        "We read Kanski front-to-back, then Ryan, then Elkington. We listed every fact that appeared in three or more
+        past papers. We threw away the rest. Then we wrote it by hand, page by page, until residents told us they could
+        revise the whole topic in under two hours. That is the OphthaMCQ note."
+      </blockquote>
+      <p class="mt-6 text-sm text-slate-400">— The OphthaMCQ author team</p>
+      <div class="mt-10 grid sm:grid-cols-3 gap-6 text-left">
+        <div class="rounded-2xl bg-slate-800 border border-slate-700 p-5">
+          <div class="text-2xl font-bold text-amber-300">Step 1</div>
+          <div class="mt-2 font-semibold text-white">Read the textbooks</div>
+          <p class="mt-1 text-sm text-slate-300">Full chapter coverage of Kanski, Ryan, Elkington, BCSC and Khurana.</p>
+        </div>
+        <div class="rounded-2xl bg-slate-800 border border-slate-700 p-5">
+          <div class="text-2xl font-bold text-amber-300">Step 2</div>
+          <div class="mt-2 font-semibold text-white">Cross-reference past papers</div>
+          <p class="mt-1 text-sm text-slate-300">Map every fact against 10+ years of FRCOphth, ICO, FAICO and DNB papers.</p>
+        </div>
+        <div class="rounded-2xl bg-slate-800 border border-slate-700 p-5">
+          <div class="text-2xl font-bold text-amber-300">Step 3</div>
+          <div class="mt-2 font-semibold text-white">Write by hand</div>
+          <p class="mt-1 text-sm text-slate-300">Hand-draw the final note set, peer-review with two passers, scan and ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Best ophthalmology notes for your exam</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Pick the exam you are preparing for and we will show you the note bundle that maps to its syllabus.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {notesByExam.map(group => {
+          const items = group.bundle.map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
+          return (
+            <a href={`/exams/${group.slug}`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold text-slate-900">{group.exam}</h3>
+                <Icon name="chevronRight" class="w-5 h-5 text-slate-400 group-hover:text-sky-600 group-hover:translate-x-0.5 transition-all" />
+              </div>
+              <p class="text-sm text-slate-600 mb-4 flex-1">{group.blurb}</p>
+              <div class="border-t border-slate-100 pt-3 space-y-1">
+                <div class="text-xs font-semibold uppercase text-slate-500 tracking-wide mb-2">Recommended notes</div>
+                {items.map(n => (
+                  <div class="flex items-center gap-2 text-sm text-slate-700">
+                    <Icon name="check" class="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>{n!.name}</span>
+                  </div>
+                ))}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sky-600 py-16 lg:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Sample our depth before you buy a note set</h2>
+      <p class="mt-4 text-lg text-sky-100 max-w-2xl mx-auto">
+        Our note explanations match the depth of our MCQ explanations. Try 200 free MCQs across every subspecialty and
+        see exactly how we explain things — then decide which note bundle to invest in.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/free-mcqs" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-sky-700 hover:bg-sky-50 transition-colors">
+          Practice 200 Free MCQs
+          <Icon name="arrowRight" class="w-4 h-4" />
+        </a>
+        <a href="/glossary" class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+          Browse 316-term Glossary
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {noteTestimonials.length > 0 && (
+    <section class="bg-white py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">What residents say about the notes</h2>
+          <p class="mt-4 text-lg text-slate-600">
+            A sample of unedited reviews from FRCOphth, DNB and NEET-SS candidates who used our handwritten notes.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {noteTestimonials.map(t => (
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-8">
+              <div class="flex items-center gap-1 mb-4">
+                {[1,2,3,4,5].map(() => (
+                  <Icon name="star" class="w-5 h-5 text-amber-400" />
+                ))}
+              </div>
+              <blockquote class="text-base text-slate-700 italic mb-6 leading-relaxed">"{t.text}"</blockquote>
+              <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                <div class="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 font-bold">
+                  {t.name.charAt(0)}
+                </div>
+                <div>
+                  <div class="font-semibold text-slate-900">{t.name}</div>
+                  <div class="text-sm text-slate-500">{t.role}</div>
+                </div>
+                <span class="ml-auto inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-medium text-sky-700">{t.exam}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-10 text-center">
+          <a href="/success-stories" class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+            Read all success stories
+            <Icon name="chevronRight" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Notes — frequently asked questions</h2>
+        <p class="mt-4 text-lg text-slate-600">Honest answers to what residents ask before buying.</p>
+      </div>
+      <div class="space-y-4">
+        {notesFaq.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+      <div class="mt-10 grid sm:grid-cols-3 gap-4 text-center">
+        <a href="/resources" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Free Resources</a>
+        <a href="/pricing" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">See Pricing</a>
+        <a href="/contact" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Talk to Us</a>
+      </div>
+    </div>
+  </section>
 
   <FinalCTA />
 </Layout>

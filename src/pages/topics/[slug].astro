@@ -3,6 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
 import Illustration from '../../components/Illustration.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
+import { PRODUCTS } from '../../config';
+import { GLOSSARY } from '../../data/glossary';
+import { MCQS } from '../../data/free-mcqs';
 
 export function getStaticPaths() {
   return [
@@ -19,34 +22,488 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const topics: Record<string, any> = {
-  glaucoma: { name: 'Glaucoma', questionCount: '500+', sampleQuestion: 'A 65-year-old patient presents with increased IOP, open angles, and optic disc cupping. What is the first-line treatment?', sampleAnswer: 'Topical prostaglandin analogues such as latanoprost.' },
-  retina: { name: 'Retina', questionCount: '600+', sampleQuestion: 'A diabetic patient has neovascularization at the disc. What is the diagnosis?', sampleAnswer: 'Proliferative diabetic retinopathy (PDR).' },
-  cornea: { name: 'Cornea', questionCount: '450+', sampleQuestion: 'A patient has a dendritic corneal ulcer. What is the most likely causative agent?', sampleAnswer: 'Herpes simplex virus (HSV).' },
-  cataract: { name: 'Cataract', questionCount: '400+', sampleQuestion: 'What is the most common complication of cataract surgery?', sampleAnswer: 'Posterior capsular opacification (PCO).' },
-  'neuro-ophthalmology': { name: 'Neuro-Ophthalmology', questionCount: '350+', sampleQuestion: 'Bilateral optic disc swelling with headache suggests what diagnosis?', sampleAnswer: 'Papilledema due to increased intracranial pressure.' },
-  'pediatric-ophthalmology': { name: 'Pediatric Ophthalmology', questionCount: '300+', sampleQuestion: 'What is the most common cause of leukocoria in children?', sampleAnswer: 'Retinoblastoma (though cataract and Coats disease are also common).' },
-  uveitis: { name: 'Uveitis', questionCount: '300+', sampleQuestion: 'A patient with ankylosing spondylitis presents with acute unilateral red eye. What type of uveitis?', sampleAnswer: 'Acute anterior uveitis (AAU).' },
-  oculoplastics: { name: 'Oculoplastics', questionCount: '250+', sampleQuestion: 'What is the most common malignant eyelid tumor?', sampleAnswer: 'Basal cell carcinoma.' },
+type TopicContent = {
+  name: string;
+  questionCount: string;
+  glossaryCategory: string;
+  mcqTopic: string;
+  productIds: string[];
+  relatedExams: { slug: string; name: string }[];
+  seoTitle: string;
+  seoDescription: string;
+  overview: string;
+  clinicalImportance: string;
+  anatomyRefresher: string[];
+  highYieldFacts: string[];
+  studySequence: { step: string; detail: string }[];
+  sampleQuestion: string;
+  sampleAnswer: string;
+  faqs: { q: string; a: string }[];
 };
 
-const topic = topics[slug] || topics.glaucoma;
+const topics: Record<string, TopicContent> = {
+  glaucoma: {
+    name: 'Glaucoma',
+    questionCount: '500+',
+    glossaryCategory: 'Glaucoma',
+    mcqTopic: 'Glaucoma',
+    productIds: ['glaucoma-notes', 'high-yield-mcqs'],
+    relatedExams: [{ slug: 'frcophth', name: 'FRCOphth' }, { slug: 'dnb', name: 'DNB' }, { slug: 'faico', name: 'FAICO' }, { slug: 'neet-ss', name: 'NEET-SS' }],
+    seoTitle: 'Glaucoma MCQs & Study Guide — Diagnosis, Management, High-Yield Facts',
+    seoDescription: 'Master glaucoma for FRCOphth, DNB, FAICO and NEET-SS. 500+ MCQs, optic nerve and angle assessment, medical and surgical management ladders.',
+    overview: 'Glaucoma is a group of optic neuropathies characterised by progressive retinal ganglion cell loss, optic disc cupping and visual field defects, usually but not always associated with raised intraocular pressure (IOP). It is the second leading cause of irreversible blindness worldwide.',
+    clinicalImportance: 'Glaucoma carries the highest weighting after retina across most ophthalmology exams — typically 12–18% of MCQs. Surgical decision-making (trabeculectomy vs tube vs MIGS) and field interpretation dominate viva questions in FAICO and DNB practicals.',
+    anatomyRefresher: [
+      'Aqueous humour is secreted by the non-pigmented ciliary epithelium (pars plicata) at 2–3 µL/min.',
+      'Drainage: 80–90% via the trabecular meshwork into Schlemm canal, 10–20% via the uveoscleral pathway.',
+      'Trabecular meshwork has three layers: uveal, corneoscleral and juxtacanalicular (greatest outflow resistance).',
+      'Normal IOP range is 10–21 mmHg with diurnal variation up to 4–5 mmHg.',
+      'Optic nerve head has ~1.2 million axons converging through the lamina cribrosa.',
+    ],
+    highYieldFacts: [
+      'Primary open angle glaucoma (POAG) is the most common adult glaucoma worldwide.',
+      'First-line medical therapy is a prostaglandin analogue (latanoprost, travoprost, bimatoprost).',
+      'Risk factors for POAG: raised IOP, family history, African ancestry, age, thin central cornea, myopia.',
+      'CCT correction: thin cornea underestimates true IOP; thick cornea overestimates.',
+      'Angle closure: pupillary block (most common), plateau iris, phacomorphic, malignant glaucoma.',
+      'Acute angle closure attack: pain, headache, nausea, halos, mid-dilated fixed pupil, IOP often 40–80 mmHg.',
+      'Acute treatment: IV acetazolamide, topical beta-blocker, alpha agonist and pilocarpine after IOP drops, then YAG PI.',
+      'Normal tension glaucoma: progressive optic neuropathy with IOP consistently <21 mmHg; consider migraine and vasospasm.',
+      'Pseudoexfoliation: dandruff-like material on lens; high IOP spikes; often unilateral or asymmetric.',
+      'Pigmentary glaucoma: Krukenberg spindle, mid-peripheral iris transillumination, young myopic men.',
+      'Congenital glaucoma triad: epiphora, photophobia, blepharospasm. Buphthalmos and Haab striae on exam.',
+      'Surgical ladder: SLT → MIGS (iStent, Hydrus, XEN) → trabeculectomy → tube shunt → cyclodestruction.',
+      'Trabeculectomy complications: hypotony, choroidal effusion, bleb leak, blebitis, endophthalmitis.',
+      'Visual field defects progress: paracentral scotoma → nasal step → arcuate scotoma → tunnel vision.',
+      'OCT RNFL is most sensitive in early glaucoma; macular GCC adds value in advanced disease.',
+    ],
+    studySequence: [
+      { step: '1. Aqueous physiology and IOP control', detail: 'Lock in production, drainage and IOP measurement. Foundations for every glaucoma question.' },
+      { step: '2. Angle assessment and gonioscopy', detail: 'Open vs closed, Shaffer grading, plateau iris vs pupillary block.' },
+      { step: '3. Optic nerve and field assessment', detail: 'Disc photography, RNFL OCT, Humphrey 24-2 interpretation patterns.' },
+      { step: '4. Medical management', detail: 'Drug classes, mechanisms, side effects and combinations.' },
+      { step: '5. Laser and surgical ladders', detail: 'SLT, YAG PI, trabeculectomy steps, tube shunts and MIGS.' },
+      { step: '6. Special situations', detail: 'Congenital glaucoma, neovascular glaucoma, post-surgical management.' },
+    ],
+    sampleQuestion: 'A 65-year-old patient presents with increased IOP, open angles, and optic disc cupping. What is the first-line treatment?',
+    sampleAnswer: 'Topical prostaglandin analogues such as latanoprost — they reduce IOP by 25–35%, are once-daily, and have an excellent systemic safety profile.',
+    faqs: [
+      { q: 'What is the first-line treatment for primary open-angle glaucoma?', a: 'Topical prostaglandin analogues (latanoprost, travoprost, bimatoprost) are first-line in most settings due to efficacy and once-daily dosing.' },
+      { q: 'When should SLT be offered before drops?', a: 'SLT is increasingly offered as first-line based on the LiGHT trial, particularly for newly diagnosed POAG and ocular hypertension.' },
+      { q: 'How do I differentiate POAG from normal tension glaucoma?', a: 'NTG has consistent IOP under 21 mmHg with progressive optic neuropathy and field loss. Diurnal IOP monitoring, vascular assessment and disc haemorrhages help.' },
+      { q: 'What is the most common cause of acute angle closure?', a: 'Pupillary block in a hypermetropic eye with a shallow anterior chamber.' },
+      { q: 'Does OphthaMCQ cover MIGS?', a: 'Yes — the glaucoma question bank and notes cover iStent, Hydrus, XEN gel stent, Kahook dual blade and goniotomy.' },
+    ],
+  },
+  retina: {
+    name: 'Retina',
+    questionCount: '600+',
+    glossaryCategory: 'Retina & Vitreous',
+    mcqTopic: 'Retina & Vitreous',
+    productIds: ['retina-deciphered', 'high-yield-mcqs'],
+    relatedExams: [{ slug: 'frcophth', name: 'FRCOphth' }, { slug: 'dnb', name: 'DNB' }, { slug: 'faico', name: 'FAICO' }, { slug: 'neet-ss', name: 'NEET-SS' }, { slug: 'ico-fico', name: 'ICO/FICO' }],
+    seoTitle: 'Retina MCQs & Study Guide — DR, AMD, RD, OCT for FRCOphth, NEET-SS',
+    seoDescription: 'Master retina for ophthalmology PG exams. 600+ MCQs on diabetic retinopathy, AMD, retinal detachment, inherited retinal disease and OCT interpretation.',
+    overview: 'Retina is the highest-weighted single subspecialty across modern ophthalmology exams — typically 18–25% of MCQs in FRCOphth Part 2, FICO and NEET-SS. The field has accelerated with anti-VEGF therapy, OCT, OCTA and gene therapy.',
+    clinicalImportance: 'Diabetic retinopathy and AMD account for the bulk of blindness in working-age and elderly populations respectively. Retinal detachment is a surgical emergency. NEET-SS rankers are made or broken on the retina paper.',
+    anatomyRefresher: [
+      'Ten retinal layers; inner retina supplied by central retinal artery, outer retina by choriocapillaris via Bruch membrane.',
+      'Macula is the central 5.5 mm, fovea 1.5 mm, foveola 0.35 mm — cone-only avascular zone.',
+      'RPE has six key functions: phagocytosis, visual cycle, blood-retinal barrier, melanin absorption, growth factor secretion, ion transport.',
+      'Bruch membrane: five layers between RPE and choriocapillaris; thickens with age, central to AMD.',
+      'Vitreous is 99% water with hyaluronic acid and type II collagen; PVD typically by age 65.',
+    ],
+    highYieldFacts: [
+      'Diabetic retinopathy staging (ETDRS): mild/moderate/severe NPDR, then PDR.',
+      'Severe NPDR rule: 4 quadrants of haemorrhages, 2 quadrants venous beading, 1 quadrant IRMA (4-2-1 rule).',
+      'PDR features: NVD, NVE, vitreous haemorrhage, tractional retinal detachment.',
+      'DMO is the leading cause of vision loss in diabetic patients; treat with anti-VEGF +/- focal laser.',
+      'AMD: dry (drusen, geographic atrophy) vs wet (CNV). Anti-VEGF for wet AMD.',
+      'Rhegmatogenous RD: PVD with break, photopsia and floaters, curtain-like field loss.',
+      'Macular hole stages (Gass): 1 (impending) → 2 (small full thickness) → 3 (>400 µm) → 4 (with PVD).',
+      'CRVO: blood and thunder fundus, 4 quadrants of haemorrhage; ischaemic vs non-ischaemic by RAPD and FFA.',
+      'BRVO most commonly at superotemporal AV crossings; treat macular oedema with anti-VEGF.',
+      'Retinitis pigmentosa: triad of bone-spicule pigmentation, attenuated arterioles, waxy disc pallor.',
+      'Best disease: vitelliform lesion with reduced Arden ratio on EOG; BEST1/VMD2 gene.',
+      'Stargardt: pisciform flecks, dark choroid on FFA, ABCA4 gene.',
+      'Central serous retinopathy: young men, type A personality, steroids; treat conservatively first.',
+      'OCT layers to identify: ILM, NFL, GCL, IPL, INL, OPL, ONL, ELM, EZ, IZ, RPE/Bruch.',
+      'OCTA detects flow without dye; useful in CNV, ischaemic maculopathy and capillary dropout in DR.',
+    ],
+    studySequence: [
+      { step: '1. Anatomy and imaging', detail: 'OCT layers, FFA phases, OCTA flow slabs, autofluorescence.' },
+      { step: '2. Vascular retina', detail: 'DR, RVO, hypertensive retinopathy, retinal artery occlusion.' },
+      { step: '3. Macular disease', detail: 'AMD, macular hole, ERM, CSR, DMO.' },
+      { step: '4. Retinal detachment', detail: 'Rheg, tractional, exudative. Surgical approaches: SB, PPV, PR.' },
+      { step: '5. Inherited retinal disease', detail: 'RP, Stargardt, Best, X-linked retinoschisis, choroideremia.' },
+      { step: '6. Tumours and trauma', detail: 'Retinoblastoma, choroidal melanoma, commotio retinae, choroidal rupture.' },
+    ],
+    sampleQuestion: 'A diabetic patient has neovascularization at the disc. What is the diagnosis?',
+    sampleAnswer: 'Proliferative diabetic retinopathy (PDR). Management is pan-retinal photocoagulation with or without anti-VEGF, plus systemic glycaemic and BP control.',
+    faqs: [
+      { q: 'What is the best book for retina preparation?', a: 'Ryan Retina is the gold standard. For exam-ready distillation, our Retina Deciphered handwritten notes cover the entire syllabus in 150+ pages.' },
+      { q: 'How important is OCT interpretation for ophthalmology exams?', a: 'Critical. Modern exams use OCT images directly in MCQs and viva. Build pattern recognition by reviewing 5–10 OCTs daily during the build phase.' },
+      { q: 'Anti-VEGF agents — which to use?', a: 'Bevacizumab (off-label), ranibizumab, aflibercept, brolucizumab and faricimab. The choice depends on disease, durability needs and cost.' },
+      { q: 'When is PRP indicated in diabetic retinopathy?', a: 'PRP is indicated in high-risk PDR and severe NPDR in selected patients (poor compliance, monocular, one eye already with PDR).' },
+      { q: 'Best topic order for retina revision?', a: 'Anatomy and imaging → vascular retina → macular disease → retinal detachment → inherited disease → tumours and trauma.' },
+    ],
+  },
+  cornea: {
+    name: 'Cornea',
+    questionCount: '450+',
+    glossaryCategory: 'Cornea & External',
+    mcqTopic: 'Cornea & External Disease',
+    productIds: ['high-yield-mcqs', 'anatomy-notes'],
+    relatedExams: [{ slug: 'frcophth', name: 'FRCOphth' }, { slug: 'dnb', name: 'DNB' }, { slug: 'faico', name: 'FAICO' }, { slug: 'ico-fico', name: 'ICO/FICO' }],
+    seoTitle: 'Cornea MCQs & Study Guide — Dystrophies, Keratitis, Keratoplasty',
+    seoDescription: 'Master cornea for ophthalmology exams. 450+ MCQs on corneal dystrophies, microbial keratitis, keratoconus, dry eye, keratoplasty and ocular surface disease.',
+    overview: 'Cornea covers a broad clinical territory — from common infections and dry eye through complex dystrophies and surgical transplantation. The cornea is the eye’s primary refractive element and a transparent immune-privileged window.',
+    clinicalImportance: 'Cornea question density is 12–15% of most exams. Microbial keratitis and corneal dystrophy patterns appear in every cycle. FAICO cornea sub-specialty candidates are tested on transplant decision-making and refractive surgery.',
+    anatomyRefresher: [
+      'Cornea has five layers: epithelium, Bowman, stroma, Descemet, endothelium. Pre-Descemet (Dua) layer described in 2013.',
+      'Central thickness 520–540 µm, peripheral 650 µm; horizontal diameter 11.7 mm.',
+      'Refractive power of the cornea is ~43 D — two-thirds of the eye’s total refractive power.',
+      'Innervation by ophthalmic division of CN V (long ciliary nerves).',
+      'Endothelial cell density falls ~0.6% per year; <500 cells/mm² leads to decompensation.',
+    ],
+    highYieldFacts: [
+      'Bacterial keratitis: most common organisms — Pseudomonas, Staphylococcus, Streptococcus.',
+      'Pseudomonas keratitis: rapidly progressive ring infiltrate with hypopyon; common in contact lens wearers.',
+      'Fungal keratitis: feathery margins, satellite lesions, slow course; common after vegetative trauma.',
+      'Acanthamoeba keratitis: severe pain out of proportion to signs, ring infiltrate, contact lens wear with water exposure.',
+      'HSV epithelial keratitis: dendritic ulcer with terminal bulbs, treat with topical aciclovir.',
+      'Corneal dystrophies: epithelial (Meesmann, EBMD), Bowman (Reis-Bücklers, Thiel-Behnke), stromal (granular, macular, lattice), endothelial (Fuchs, posterior polymorphous, CHED).',
+      'Granular: TGFBI gene, autosomal dominant, breadcrumb opacities. Macular: AR, GAGs accumulation, stains with Alcian blue.',
+      'Keratoconus: progressive corneal thinning and ectasia; Vogt striae, Fleischer ring, Munson sign.',
+      'Cross-linking (CXL) halts keratoconus progression in eyes with documented progression and adequate corneal thickness.',
+      'Fuchs endothelial dystrophy: guttae, stromal oedema, AM blur improving through the day.',
+      'PK vs DSAEK vs DMEK: DMEK gives the best visual outcome for endothelial disease; PK reserved for full-thickness pathology.',
+      'Dry eye: aqueous-deficient (Sjögren) vs evaporative (MGD). Schirmer test, TBUT and ocular staining quantify it.',
+      'Refractive surgery: LASIK, SMILE, PRK. Contraindicated in keratoconus, thin corneas, severe dry eye.',
+      'Arcus senilis under age 50 raises suspicion of dyslipidaemia.',
+      'Limbal stem cell deficiency: conjunctivalisation, persistent epithelial defects; treat with SLET or CLET.',
+    ],
+    studySequence: [
+      { step: '1. Anatomy and physiology', detail: 'Layers, innervation, endothelial function, transparency mechanisms.' },
+      { step: '2. Infectious keratitis', detail: 'Bacterial, fungal, viral, acanthamoeba — clinical pattern recognition and treatment.' },
+      { step: '3. Dystrophies and degenerations', detail: 'IC3D classification, genetics, exam appearance.' },
+      { step: '4. Ectasia and refractive surgery', detail: 'Keratoconus, post-LASIK ectasia, CXL, refractive procedures.' },
+      { step: '5. Ocular surface disease', detail: 'Dry eye, MGD, limbal stem cell disease, ocular surface tumours.' },
+      { step: '6. Keratoplasty', detail: 'PK, DALK, DSAEK, DMEK; indications and complications.' },
+    ],
+    sampleQuestion: 'A patient has a dendritic corneal ulcer. What is the most likely causative agent?',
+    sampleAnswer: 'Herpes simplex virus (HSV). Treat with topical aciclovir; avoid topical steroids in epithelial disease.',
+    faqs: [
+      { q: 'What is the most common bacterial cause of contact lens keratitis?', a: 'Pseudomonas aeruginosa, especially in soft contact lens wearers with poor hygiene.' },
+      { q: 'When is corneal cross-linking indicated?', a: 'Documented progressive keratoconus with corneal thickness ≥400 µm and clear central cornea.' },
+      { q: 'Best technique for endothelial keratoplasty?', a: 'DMEK gives the fastest visual recovery and best final acuity; DSAEK is more forgiving for surgeons in early learning curve.' },
+      { q: 'How do I distinguish granular from macular dystrophy?', a: 'Granular has clear stroma between lesions and is autosomal dominant. Macular has diffuse haze, is autosomal recessive, and stains with Alcian blue.' },
+      { q: 'Best book for cornea preparation?', a: 'Krachmer Cornea for sub-specialty depth; Kanski for exam-level coverage.' },
+    ],
+  },
+  cataract: {
+    name: 'Cataract',
+    questionCount: '400+',
+    glossaryCategory: 'Lens & Cataract',
+    mcqTopic: 'Lens & Cataract',
+    productIds: ['high-yield-mcqs', 'anatomy-notes', 'optics-notes'],
+    relatedExams: [{ slug: 'frcophth', name: 'FRCOphth' }, { slug: 'dnb', name: 'DNB' }, { slug: 'pd-cet', name: 'PD-CET' }, { slug: 'faico', name: 'FAICO' }],
+    seoTitle: 'Cataract MCQs & Study Guide — Phaco, IOLs, Complications',
+    seoDescription: 'Cataract MCQs and study guide: lens biology, IOL formulas, phaco technique, surgical complications and post-op management for ophthalmology exams.',
+    overview: 'Cataract is the world’s leading cause of reversible blindness and the most performed ophthalmic surgery globally. The topic spans lens biology, biometry, phacoemulsification technique, IOL design and complication management.',
+    clinicalImportance: 'Cataract questions reliably appear across every PG exam, weighted 8–12%. PD-CET and DNB practical vivas test surgical decision-making in detail. FAICO cataract candidates must master complex cataract surgery.',
+    anatomyRefresher: [
+      'Lens grows throughout life with new fibres added peripherally; nucleus compacts centrally.',
+      'Lens capsule is the basement membrane of the lens epithelium; anterior thicker than posterior.',
+      'Zonules originate from the pars plana and pars plicata and insert pre- and post-equatorially.',
+      'Aqueous humour provides nutrition; lens is avascular.',
+      'Lens biochemistry: 35% protein (crystallins), highest of any body tissue.',
+    ],
+    highYieldFacts: [
+      'Age-related cataract types: nuclear sclerotic, cortical, posterior subcapsular.',
+      'PSC cataract: glare, near vision affected first; associated with steroids and diabetes.',
+      'Congenital cataract bilateral: TORCH, galactosaemia, Lowe syndrome, myotonic dystrophy.',
+      'Christmas tree cataract: myotonic dystrophy.',
+      'Sunflower cataract: Wilson disease.',
+      'IOL formulas: SRK/T, Hoffer Q, Haigis, Holladay for normal eyes; Barrett Universal II and Hill-RBF for outliers.',
+      'Short eye (<22 mm): use Hoffer Q or Haigis. Long eye (>26 mm): use SRK/T or Barrett.',
+      'Phaco fluidics: bottle height, aspiration flow rate and vacuum determine chamber stability.',
+      'Posterior capsular rupture: convert to anterior vitrectomy; assess for vitreous prolapse, sulcus IOL if adequate support.',
+      'Endophthalmitis: most common organism is Staph epidermidis. Treat per EVS: vitreous tap and intravitreal vancomycin + ceftazidime.',
+      'PCO: most common late complication; treat with YAG capsulotomy.',
+      'CME after surgery (Irvine-Gass): peak at 4–6 weeks; treat with topical NSAID and steroid.',
+      'TASS: toxic anterior segment syndrome, sterile inflammation within 24h; differential of endophthalmitis.',
+      'Posterior polar cataract: high risk of PCR; use slow-mo phaco, viscoexpression, avoid hydrodissection.',
+      'Multifocal IOLs: night vision symptoms (glare, halos); avoid in macular disease and demanding visual tasks.',
+    ],
+    studySequence: [
+      { step: '1. Lens biology', detail: 'Embryology, anatomy, physiology, biochemistry of crystallins.' },
+      { step: '2. Cataract classification', detail: 'Age-related, congenital, traumatic, secondary, metabolic.' },
+      { step: '3. Biometry and IOL selection', detail: 'Axial length, K readings, formulas, special situations.' },
+      { step: '4. Phacoemulsification', detail: 'Steps, fluidics, machine settings, divide-and-conquer vs phaco chop.' },
+      { step: '5. Complications', detail: 'PCR, dropped nucleus, suprachoroidal haemorrhage, endophthalmitis, CME.' },
+      { step: '6. Special situations', detail: 'Subluxated lens, posterior polar, white cataract, post-vitrectomy eye.' },
+    ],
+    sampleQuestion: 'What is the most common complication of cataract surgery?',
+    sampleAnswer: 'Posterior capsular opacification (PCO), occurring in up to 30% of eyes within 5 years. Treated with YAG capsulotomy.',
+    faqs: [
+      { q: 'Best IOL formula for short eyes?', a: 'Hoffer Q or Haigis perform best for axial length <22 mm. Barrett Universal II is also reliable across all axial lengths.' },
+      { q: 'How do I manage posterior capsular rupture intraoperatively?', a: 'Lower bottle, inject viscoelastic, perform anterior vitrectomy, assess capsular support and place sulcus IOL with optic capture if possible.' },
+      { q: 'When is YAG capsulotomy indicated?', a: 'Symptomatic PCO causing reduced vision, glare or contrast loss. Delay at least 3 months post-cataract surgery if possible.' },
+      { q: 'Multifocal IOL contraindications?', a: 'Macular disease, glaucoma with field loss, irregular astigmatism, high-precision visual demands (night drivers, surgeons).' },
+      { q: 'What is the role of femtosecond laser in cataract surgery?', a: 'Femto-assisted cataract surgery offers reproducible capsulotomy and lens fragmentation but no proven outcome advantage in routine cases.' },
+    ],
+  },
+  'neuro-ophthalmology': {
+    name: 'Neuro-Ophthalmology',
+    questionCount: '350+',
+    glossaryCategory: 'Neuro-ophthalmology',
+    mcqTopic: 'Neuro-ophthalmology',
+    productIds: ['high-yield-mcqs', 'anatomy-notes'],
+    relatedExams: [{ slug: 'frcophth', name: 'FRCOphth' }, { slug: 'dnb', name: 'DNB' }, { slug: 'ico-fico', name: 'ICO/FICO' }],
+    seoTitle: 'Neuro-Ophthalmology MCQs & Guide — Optic Nerve, Pupils, Fields',
+    seoDescription: 'Neuro-ophthalmology study guide for ophthalmology PG exams. 350+ MCQs on optic neuropathies, pupil disorders, visual fields and cranial nerve palsies.',
+    overview: 'Neuro-ophthalmology sits at the interface of ophthalmology and neurology — pupils, optic nerve, visual pathways, ocular motility and higher cortical visual function. Pattern recognition is everything.',
+    clinicalImportance: 'Neuro-ophth questions are 8–12% of most exams. Anisocoria workup, RAPD, papilloedema vs pseudopapilloedema and field defect localisation are perennial favourites.',
+    anatomyRefresher: [
+      'Visual pathway: retina → optic nerve → chiasm → optic tract → LGN → optic radiations → primary visual cortex (V1).',
+      'Optic nerve has four parts: intraocular (1 mm), intraorbital (25 mm), intracanalicular (9 mm), intracranial (16 mm).',
+      'Pupillary light reflex: afferent CN II → pretectal nucleus → bilateral Edinger-Westphal → CN III → ciliary ganglion → short ciliary nerves → sphincter pupillae.',
+      'Sympathetic pathway (3 neurons): hypothalamus → ciliospinal centre of Budge → superior cervical ganglion → carotid plexus → long ciliary nerves to dilator.',
+      'Cavernous sinus contents: CN III, IV, V1, V2, VI and internal carotid artery.',
+    ],
+    highYieldFacts: [
+      'RAPD localises to optic nerve disease or extensive retinal disease — not media opacity.',
+      'Optic neuritis: young women, painful loss of vision, RAPD, MRI shows demyelinating plaques.',
+      'AION (arteritic vs non-arteritic): GCA must be ruled out in any patient >50 with sudden vision loss; check ESR, CRP.',
+      'Papilloedema: bilateral disc swelling from raised ICP; check BP, neuroimaging, LP if no mass.',
+      'Pseudotumor cerebri: young obese women, headache, papilloedema, normal imaging, raised opening pressure.',
+      'Adie pupil: dilated tonic pupil, sectoral palsy, vermiform movements, constricts to dilute pilocarpine 0.125%.',
+      'Argyll Robertson pupil: small irregular, light-near dissociation, classic for neurosyphilis.',
+      'Horner syndrome: ptosis, miosis, anhidrosis; first-order (stroke), second-order (Pancoast), third-order (carotid dissection).',
+      'CN III palsy: pupil-sparing suggests microvascular (diabetes); pupil-involving suggests aneurysm (PCom).',
+      'CN IV palsy: vertical diplopia worse on contralateral gaze, head tilt to opposite side compensates.',
+      'CN VI palsy: horizontal diplopia worse at distance; raised ICP is a non-localising cause.',
+      'Internuclear ophthalmoplegia: MLF lesion; ipsilateral adduction failure with contralateral abducting nystagmus.',
+      'Bitemporal hemianopia: chiasmal lesion, usually pituitary adenoma or craniopharyngioma.',
+      'Homonymous hemianopia: retrochiasmal lesion; congruity increases the more posterior.',
+      'Macular sparing in homonymous hemianopia suggests occipital lobe (dual blood supply).',
+    ],
+    studySequence: [
+      { step: '1. Visual pathway anatomy', detail: 'From retina to V1, with field defects mapped at each level.' },
+      { step: '2. Pupillary disorders', detail: 'Anisocoria algorithm, RAPD, light-near dissociation.' },
+      { step: '3. Optic neuropathies', detail: 'Optic neuritis, AION, compressive, toxic, hereditary (LHON, DOA).' },
+      { step: '4. Disc oedema differentials', detail: 'Papilloedema, AION, optic neuritis, infiltration, pseudopapilloedema.' },
+      { step: '5. Eye movements', detail: 'CN III, IV, VI palsies, INO, gaze palsies, nystagmus.' },
+      { step: '6. Field defects', detail: 'Pattern recognition for prechiasmal, chiasmal and retrochiasmal lesions.' },
+    ],
+    sampleQuestion: 'Bilateral optic disc swelling with headache suggests what diagnosis?',
+    sampleAnswer: 'Papilloedema due to raised intracranial pressure. Urgent neuroimaging is mandatory before lumbar puncture.',
+    faqs: [
+      { q: 'How do I work up anisocoria?', a: 'Determine which pupil is abnormal: greater anisocoria in light suggests efferent (parasympathetic) failure; greater in dark suggests sympathetic (Horner) failure. Then apply targeted pharmacological tests.' },
+      { q: 'When is MRI mandatory in optic neuritis?', a: 'At first presentation to assess MS risk. Two or more brain lesions raise 15-year MS risk to 72% (ONTT data).' },
+      { q: 'Difference between AION and optic neuritis?', a: 'AION: older, painless, altitudinal field defect, swollen pale disc. Optic neuritis: younger, painful eye movements, RAPD, often normal disc.' },
+      { q: 'Best initial test for suspected GCA?', a: 'ESR and CRP, then start high-dose steroids immediately. Temporal artery biopsy within 2 weeks confirms.' },
+      { q: 'Recommended book for neuro-ophthalmology?', a: 'Walsh & Hoyt for depth; Kanski for exam-level coverage; our handwritten neuro notes for revision.' },
+    ],
+  },
+  'pediatric-ophthalmology': {
+    name: 'Pediatric Ophthalmology',
+    questionCount: '300+',
+    glossaryCategory: 'Strabismus & Pediatric',
+    mcqTopic: 'Strabismus & Pediatric',
+    productIds: ['high-yield-mcqs', 'anatomy-notes'],
+    relatedExams: [{ slug: 'frcophth', name: 'FRCOphth' }, { slug: 'dnb', name: 'DNB' }, { slug: 'faico', name: 'FAICO' }, { slug: 'neet-ss', name: 'NEET-SS' }],
+    seoTitle: 'Pediatric Ophthalmology MCQs — Strabismus, Amblyopia, ROP',
+    seoDescription: 'Pediatric ophthalmology and strabismus study guide: amblyopia, strabismus classification, ROP, congenital cataract and glaucoma for ophthalmology PG exams.',
+    overview: 'Paediatric ophthalmology and strabismus is a high-stakes subspecialty — early diagnosis prevents irreversible amblyopia and developmental delay. Questions span amblyopia, strabismus, ROP, congenital cataract and glaucoma.',
+    clinicalImportance: 'Paeds accounts for 8–10% of most exams. NEET-SS paediatric/strabismus fellowship is one of the most competitive sub-specialty seats. FAICO paeds depth is significant.',
+    anatomyRefresher: [
+      'Visual development: VEP-measurable from birth, adult acuity by 6–8 years.',
+      'Critical period for amblyopia: birth to 7–8 years; plastic to 12 years for some treatments.',
+      'Axial length at birth ~17 mm, reaches adult length (~23 mm) by age 13.',
+      'Corneal diameter at birth 10 mm; adult 11.7 mm.',
+      'IOL power changes with axial growth — adjustments required for pediatric IOLs.',
+    ],
+    highYieldFacts: [
+      'Amblyopia types: strabismic, anisometropic (≥1.5 D), deprivational (worst), bilateral ametropic.',
+      'Treatment of amblyopia: refractive correction first, then occlusion or atropine penalisation.',
+      'Esotropia: infantile (large angle, onset <6 months), accommodative (refractive), partially accommodative.',
+      'Exotropia: intermittent (most common), constant, sensory.',
+      'Inferior oblique overaction: V-pattern strabismus; treat with IO weakening procedures.',
+      'Brown syndrome: limited elevation in adduction; congenital (tight superior oblique tendon) or acquired (trauma, inflammation).',
+      'Duane retraction syndrome: type I (limited abduction), type II (limited adduction), type III (both); CN VI nucleus abnormality with aberrant CN III innervation.',
+      'Leukocoria differential: retinoblastoma, congenital cataract, Coats disease, PHPV, ROP, toxocariasis.',
+      'Retinoblastoma: most common intraocular malignancy of childhood; RB1 gene on 13q14.',
+      'Group A–E retinoblastoma (International Classification); E carries highest enucleation rate.',
+      'ROP screening: birth weight ≤1500 g or gestational age ≤30 weeks; first screen at 31 weeks PMA or 4 weeks chronological.',
+      'ROP zones (I innermost, III outermost), stages (1–5), plus disease and aggressive posterior ROP.',
+      'Treatment threshold: Type 1 ROP (any zone I stage 3, zone I plus, zone II stage 2 or 3 plus).',
+      'Congenital glaucoma triad: epiphora, photophobia, blepharospasm.',
+      'Goniotomy and trabeculotomy are first-line surgeries for primary congenital glaucoma.',
+    ],
+    studySequence: [
+      { step: '1. Visual development', detail: 'Acuity milestones, sensitive periods, refractive trajectory.' },
+      { step: '2. Amblyopia', detail: 'Classification, screening, treatment ladders.' },
+      { step: '3. Strabismus', detail: 'ET, XT, A and V patterns, special syndromes, surgical approaches.' },
+      { step: '4. ROP', detail: 'Screening criteria, classification, treatment thresholds, anti-VEGF role.' },
+      { step: '5. Anterior segment disorders', detail: 'Congenital cataract, glaucoma, anterior segment dysgenesis.' },
+      { step: '6. Posterior segment and tumours', detail: 'Retinoblastoma, Coats, FEVR, juvenile retinoschisis.' },
+    ],
+    sampleQuestion: 'What is the most common cause of leukocoria in children?',
+    sampleAnswer: 'Retinoblastoma must always be ruled out first, though congenital cataract and Coats disease are also common causes.',
+    faqs: [
+      { q: 'When should amblyopia treatment start?', a: 'As early as possible after refractive correction. Best outcomes before age 5; meaningful gains possible up to 12 in some cases.' },
+      { q: 'What is the gold standard treatment for primary congenital glaucoma?', a: 'Angle surgery — goniotomy (clear cornea) or trabeculotomy (cloudy cornea). Repeat if needed before considering trabeculectomy.' },
+      { q: 'ROP screening criteria?', a: 'Birth weight ≤1500 g or gestational age ≤30 weeks, plus selected larger infants with unstable course.' },
+      { q: 'When to consider surgery for intermittent exotropia?', a: 'Increasing manifest deviation, deterioration in stereopsis, large angle (>20 PD) or deteriorating control on Newcastle scale.' },
+      { q: 'Recommended book for paediatric ophthalmology?', a: 'Wright Pediatric Ophthalmology and Strabismus; Taylor & Hoyt for depth; our handwritten paeds notes for exam revision.' },
+    ],
+  },
+  uveitis: {
+    name: 'Uveitis',
+    questionCount: '300+',
+    glossaryCategory: 'Uveitis',
+    mcqTopic: 'Uveitis',
+    productIds: ['high-yield-mcqs', 'anatomy-notes'],
+    relatedExams: [{ slug: 'frcophth', name: 'FRCOphth' }, { slug: 'dnb', name: 'DNB' }, { slug: 'faico', name: 'FAICO' }, { slug: 'ico-fico', name: 'ICO/FICO' }],
+    seoTitle: 'Uveitis MCQs & Study Guide — Classification, Workup, Treatment',
+    seoDescription: 'Uveitis study guide for ophthalmology PG exams. 300+ MCQs on anterior, intermediate, posterior, panuveitis, infectious vs autoimmune workup and treatment.',
+    overview: 'Uveitis is a heterogeneous group of inflammatory eye diseases that requires structured anatomical classification (SUN), targeted systemic workup, and a step-wise treatment ladder. It accounts for 10% of legal blindness in working-age adults.',
+    clinicalImportance: 'Uveitis tests pattern recognition heavily. FAICO and DNB practical vivas use clinical photographs of KPs, posterior synechiae and chorioretinal lesions to anchor case discussions.',
+    anatomyRefresher: [
+      'Uveal tract: iris, ciliary body, choroid.',
+      'Blood–aqueous barrier formed by non-pigmented ciliary epithelium and iris vasculature.',
+      'Blood–retinal barrier formed by RPE tight junctions and retinal vascular endothelium.',
+      'Choroid is the most vascular tissue in the body per unit weight.',
+      'HLA associations: HLA-B27 (acute anterior uveitis), HLA-A29 (birdshot), HLA-B51 (Behçet).',
+    ],
+    highYieldFacts: [
+      'SUN classification by anatomy: anterior, intermediate, posterior, panuveitis.',
+      'Acute anterior uveitis (AAU): pain, photophobia, redness, miosis; HLA-B27 in 50%.',
+      'HLA-B27 associated systemic diseases: ankylosing spondylitis, reactive arthritis, IBD, psoriatic arthritis.',
+      'Fuchs heterochromic iridocyclitis: unilateral, mild inflammation, stellate KPs, heterochromia, cataract; rubella linked.',
+      'Pars planitis: intermediate uveitis with vitreous snowballs and inferior snowbanking; MS association.',
+      'Toxoplasma retinitis: focal necrotising chorioretinitis adjacent to a pigmented scar; treat with TMP-SMX or pyrimethamine-sulfadiazine.',
+      'CMV retinitis: AIDS-defining, pizza-pie appearance, treat with ganciclovir.',
+      'Acute retinal necrosis: VZV/HSV, peripheral confluent necrosis; treat with IV aciclovir.',
+      'VKH: bilateral panuveitis with neurological and dermatological signs; serous RD on OCT.',
+      'Sympathetic ophthalmia: bilateral granulomatous uveitis after penetrating injury or surgery; Dalen-Fuchs nodules.',
+      'Behçet disease: occlusive retinal vasculitis, hypopyon uveitis, oral and genital ulcers, pathergy.',
+      'Birdshot chorioretinopathy: HLA-A29, cream-coloured deep choroidal lesions, female predominance.',
+      'Sarcoid uveitis: mutton-fat KPs, candle-wax dripping, raised ACE; bilateral hilar lymphadenopathy.',
+      'Treatment ladder: topical/periocular steroids → systemic steroids → steroid-sparing immunosuppressants → biologics (adalimumab).',
+      'Complications of chronic uveitis: cataract, glaucoma, CME, band keratopathy, hypotony.',
+    ],
+    studySequence: [
+      { step: '1. Anatomical classification', detail: 'SUN nomenclature and the targeted workup that follows from each compartment.' },
+      { step: '2. Anterior uveitis', detail: 'Acute vs chronic, HLA-B27 spectrum, Fuchs, Posner-Schlossman.' },
+      { step: '3. Intermediate uveitis', detail: 'Pars planitis, sarcoid, multiple sclerosis associations.' },
+      { step: '4. Posterior uveitis', detail: 'Toxoplasma, CMV, ARN, PORN, syphilis, TB, sarcoid.' },
+      { step: '5. Panuveitis', detail: 'VKH, sympathetic ophthalmia, Behçet, sarcoid.' },
+      { step: '6. Treatment ladder', detail: 'Steroids, methotrexate, mycophenolate, anti-TNF biologics.' },
+    ],
+    sampleQuestion: 'A patient with ankylosing spondylitis presents with acute unilateral red eye. What type of uveitis?',
+    sampleAnswer: 'Acute anterior uveitis (AAU), typically HLA-B27 associated. Treat with topical steroids and cycloplegics; refer for rheumatology workup.',
+    faqs: [
+      { q: 'What is the first investigation in newly diagnosed uveitis?', a: 'A targeted workup based on the anatomical compartment and clinical pattern. Routine baseline includes CBC, ESR, CRP, ACE, syphilis serology, mantoux/IGRA and CXR for sarcoid.' },
+      { q: 'When to start systemic immunosuppression in uveitis?', a: 'When steroid taper below 7.5 mg/day prednisolone cannot be achieved without flare, or when sight-threatening posterior involvement is present.' },
+      { q: 'Adalimumab indications in uveitis?', a: 'FDA-approved for non-infectious intermediate, posterior and panuveitis. First-line biologic in Behçet ocular disease.' },
+      { q: 'How to differentiate viral retinitis subtypes?', a: 'CMV: indolent, AIDS, pizza-pie. ARN: immunocompetent, fulminant, VZV/HSV. PORN: immunocompromised, outer retinal, VZV.' },
+      { q: 'Best book for uveitis?', a: 'Foster & Vitale Diagnosis and Treatment of Uveitis; Nussenblatt Uveitis; Kanski for exam-level coverage.' },
+    ],
+  },
+  oculoplastics: {
+    name: 'Oculoplastics',
+    questionCount: '250+',
+    glossaryCategory: 'Oculoplastics',
+    mcqTopic: 'Oculoplastics & Orbit',
+    productIds: ['eyelids-notes', 'high-yield-mcqs'],
+    relatedExams: [{ slug: 'frcophth', name: 'FRCOphth' }, { slug: 'dnb', name: 'DNB' }, { slug: 'faico', name: 'FAICO' }, { slug: 'neet-ss', name: 'NEET-SS' }],
+    seoTitle: 'Oculoplastics MCQs & Study Guide — Lids, Lacrimal, Orbit',
+    seoDescription: 'Oculoplastics study guide for ophthalmology exams. 250+ MCQs on lid malpositions, lacrimal disease, orbital inflammation, lid tumours and thyroid eye disease.',
+    overview: 'Oculoplastics, lacrimal and orbital disease form the third sub-specialty by exam weight in most modern PG exams. The topic combines anatomy, surgical principles and clinical pattern recognition.',
+    clinicalImportance: 'Oculoplastics accounts for 6–10% of most exams. Lid malpositions, lacrimal sac pathology and thyroid eye disease are reliable recurring themes. FAICO oculoplasty candidates require deep operative knowledge.',
+    anatomyRefresher: [
+      'Upper lid retractors: levator palpebrae superioris (CN III) and Müller muscle (sympathetic).',
+      'Lower lid retractors: capsulopalpebral fascia and inferior tarsal muscle.',
+      'Whitnall ligament acts as a fulcrum for the levator.',
+      'Lacrimal drainage: puncta → canaliculi → common canaliculus → lacrimal sac → nasolacrimal duct → inferior meatus (valve of Hasner).',
+      'Orbital walls: medial (lamina papyracea) thinnest; floor (maxilla) common in blowout fracture.',
+    ],
+    highYieldFacts: [
+      'Ptosis classification: aponeurotic, myogenic, neurogenic, mechanical, traumatic.',
+      'Levator function grading: poor (<4 mm), fair (5–7 mm), good (8–12 mm), excellent (>12 mm).',
+      'Surgical choice: good function — levator advancement; poor function — frontalis sling.',
+      'Entropion: most often involutional (lower lid laxity); cicatricial in trachoma and SJS.',
+      'Ectropion: involutional, cicatricial, paralytic (CN VII palsy), mechanical.',
+      'Lagophthalmos management: lubricants, taping, gold weight implant, lateral tarsorrhaphy.',
+      'Chalazion: chronic granulomatous inflammation of meibomian gland; treat with warm compresses, lid hygiene, I&C if persistent.',
+      'Hordeolum: acute staphylococcal infection of meibomian (internal) or Zeiss (external) gland.',
+      'Basal cell carcinoma: most common eyelid malignancy; pearly nodule with telangiectasia; medial canthus most common.',
+      'Sebaceous gland carcinoma: masquerade as chronic chalazion; pagetoid spread, biopsy mandatory.',
+      'Congenital nasolacrimal duct obstruction: epiphora from birth, resolves spontaneously by 12 months in most; probe at 12 months if persistent.',
+      'Acute dacryocystitis: painful swelling over lacrimal sac; treat with systemic antibiotics, then DCR.',
+      'External DCR vs endonasal DCR: external has slightly higher success but visible scar.',
+      'Thyroid eye disease: upper lid retraction, lid lag (von Graefe), proptosis, EOM restriction (IR, MR most affected); IOSS or Hertel measurement.',
+      'Blowout fracture: inferior rectus entrapment causes diplopia; oculocardiac reflex needs urgent surgery in white-eyed blowout.',
+    ],
+    studySequence: [
+      { step: '1. Lid anatomy and physiology', detail: 'Layers, retractors, blood supply, innervation.' },
+      { step: '2. Lid malpositions', detail: 'Ptosis, entropion, ectropion, lagophthalmos with surgical algorithms.' },
+      { step: '3. Lid lesions and tumours', detail: 'Benign vs malignant pattern recognition, biopsy and Mohs.' },
+      { step: '4. Lacrimal disease', detail: 'Drainage anatomy, dacryocystitis, DCR techniques.' },
+      { step: '5. Orbital disease', detail: 'Thyroid eye disease, idiopathic orbital inflammation, cellulitis, tumours.' },
+      { step: '6. Trauma and reconstruction', detail: 'Lid laceration, blowout fracture, anophthalmic socket management.' },
+    ],
+    sampleQuestion: 'What is the most common malignant eyelid tumor?',
+    sampleAnswer: 'Basal cell carcinoma (>90% of eyelid malignancies), typically a pearly nodule with telangiectasia on the lower lid or medial canthus.',
+    faqs: [
+      { q: 'When to operate on congenital ptosis?', a: 'If amblyogenic (covering visual axis or causing astigmatism), operate early. Otherwise, school age before social impact.' },
+      { q: 'Best procedure for severe ptosis with poor levator function?', a: 'Frontalis sling using autologous fascia lata, silicone or expanded PTFE.' },
+      { q: 'When is DCR indicated?', a: 'Symptomatic nasolacrimal duct obstruction confirmed by syringing; chronic dacryocystitis.' },
+      { q: 'How to manage active thyroid eye disease?', a: 'Smoking cessation, lubrication, selenium, IV pulse methylprednisolone for moderate-severe active disease; teprotumumab where available; surgery in inactive phase.' },
+      { q: 'Recommended oculoplastics book?', a: 'Nesi Smith Oculoplastic Surgery; Stewart Atlas of Aesthetic Eyelid and Periocular Surgery; our handwritten Eyelids Notes for revision.' },
+    ],
+  },
+};
+
+const topic = topics[slug!] ?? topics.glaucoma;
+
+const matchedProducts = topic.productIds
+  .map(id => PRODUCTS.find(p => p.id === id))
+  .filter((p): p is typeof PRODUCTS[number] => Boolean(p));
+
+const glossaryTerms = GLOSSARY
+  .filter(g => g.category === topic.glossaryCategory)
+  .slice(0, 14);
+
+const sampleMcqs = MCQS
+  .filter(m => m.topic === topic.mcqTopic)
+  .slice(0, 3);
 ---
 
 <Layout
-  title={`${topic.name} MCQs — Practice ${topic.questionCount} Questions`}
-  description={`Practice ${topic.questionCount} ${topic.name.toLowerCase()} MCQs with detailed explanations. Free sample questions included.`}
+  title={topic.seoTitle}
+  description={topic.seoDescription}
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 border border-sky-100 px-3 py-1 mb-6">
+            <span class="text-sm font-medium text-sky-700">Topic Study Guide</span>
+          </div>
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            {topic.name} <span class="text-sky-600">MCQs</span>
+            {topic.name} <span class="text-sky-600">MCQs &amp; Guide</span>
           </h1>
           <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            {topic.questionCount} questions with detailed explanations. Master {topic.name.toLowerCase()} for your exam.
+            {topic.questionCount} questions with detailed explanations. Master {topic.name.toLowerCase()} for FRCOphth, ICO, FAICO, DNB and NEET-SS.
           </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">Try Free MCQs</a>
+            <a href="/notes" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 transition-colors">View Notes</a>
+          </div>
         </div>
         <div class="flex justify-center">
           <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
@@ -58,24 +515,226 @@ const topic = topics[slug] || topics.glaucoma;
   </div>
 
   <div class="bg-slate-50 py-16 lg:py-24">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-2xl bg-white border border-slate-200 p-6 lg:p-8 mb-8">
-        <h2 class="text-xl font-bold text-slate-900 mb-4">Free Sample Question</h2>
-        <p class="text-slate-700 mb-4">{topic.sampleQuestion}</p>
-        <details class="group">
-          <summary class="cursor-pointer inline-flex items-center gap-2 text-sky-600 font-semibold hover:text-sky-700">
-            Show Answer
-            <Icon name="chevronDown" class="w-4 h-4 group-open:rotate-180 transition-transform" />
-          </summary>
-          <p class="mt-3 text-slate-600">{topic.sampleAnswer}</p>
-        </details>
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">{topic.name} overview</h2>
+          <p class="text-slate-700 leading-relaxed mb-6">{topic.overview}</p>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Clinical &amp; exam importance</h3>
+          <p class="text-slate-700 leading-relaxed">{topic.clinicalImportance}</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6">
+          <h3 class="text-base font-bold text-slate-900 mb-4">At a glance</h3>
+          <dl class="space-y-3 text-sm">
+            <div class="flex justify-between"><dt class="text-slate-500">MCQ bank</dt><dd class="font-semibold text-slate-900">{topic.questionCount}</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-500">Glossary terms</dt><dd class="font-semibold text-slate-900">{glossaryTerms.length}+</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-500">Free sample MCQs</dt><dd class="font-semibold text-slate-900">{sampleMcqs.length}</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-500">Matched products</dt><dd class="font-semibold text-slate-900">{matchedProducts.length}</dd></div>
+          </dl>
+          <a href={`/free-mcqs?topic=${encodeURIComponent(topic.mcqTopic)}`} class="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+            Practice {topic.name} MCQs
+          </a>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="text-center">
-        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-          Try 50 Free MCQs
-          <Icon name="arrowRight" class="w-4 h-4" />
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-slate-900 mb-3">Core anatomy &amp; physiology refresher</h2>
+      <p class="text-slate-600 mb-8">The foundations you need before tackling clinical and surgical MCQs.</p>
+      <ul class="grid sm:grid-cols-2 gap-4">
+        {topic.anatomyRefresher.map(item => (
+          <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <Icon name="check" class="w-4 h-4 text-sky-600 mt-1 shrink-0" />
+            <span class="text-sm text-slate-700 leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-slate-900 mb-3">High-yield {topic.name.toLowerCase()} facts for MCQs</h2>
+      <p class="text-slate-600 mb-8">The facts that appear most often in real exam stems. Learn them cold.</p>
+      <ul class="space-y-3">
+        {topic.highYieldFacts.map((fact, i) => (
+          <li class="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4">
+            <div class="shrink-0 w-7 h-7 rounded-full bg-sky-50 text-sky-700 text-xs font-bold flex items-center justify-center">{i + 1}</div>
+            <span class="text-sm text-slate-700 leading-relaxed">{fact}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  {glossaryTerms.length > 0 && (
+    <div class="bg-white py-16 lg:py-24">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">Related {topic.name.toLowerCase()} glossary terms</h2>
+            <p class="text-slate-600">Exam-ready definitions filtered by subspecialty.</p>
+          </div>
+          <a href="/glossary" class="inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800">
+            Browse full 316-term glossary <Icon name="chevronRight" class="w-4 h-4" />
+          </a>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {glossaryTerms.map(g => (
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <div class="font-semibold text-slate-900 mb-1">{g.term}</div>
+              <div class="text-sm text-slate-600 leading-relaxed">{g.definition}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  {matchedProducts.length > 0 && (
+    <div class="bg-slate-50 py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Matched products for {topic.name}</h2>
+          <p class="mt-3 text-slate-600">Resources hand-picked for this subspecialty.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {matchedProducts.map(p => (
+            <a href={p.href} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center">
+                  <Icon name={p.icon} class="w-5 h-5 text-sky-600" />
+                </div>
+                {p.tag && <span class="text-xs font-semibold text-sky-700 bg-sky-50 rounded-full px-2 py-0.5">{p.tag}</span>}
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mb-1">{p.name}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed flex-1">{p.description}</p>
+              <div class="mt-4 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-lg font-bold text-slate-900">{p.price}</span>
+                  {p.oldPrice && <span class="text-sm text-slate-400 line-through">{p.oldPrice}</span>}
+                </div>
+                <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 flex items-center gap-1">View<Icon name="chevronRight" class="w-4 h-4" /></span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-slate-900 mb-3">Suggested study sequence</h2>
+      <p class="text-slate-600 mb-8">Six phases used by recent passers. Spread across 4–8 weeks per subspecialty.</p>
+      <ol class="space-y-4">
+        {topic.studySequence.map((s, i) => (
+          <li class="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold">{i + 1}</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">{s.step}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{s.detail}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+  {sampleMcqs.length > 0 && (
+    <div class="bg-slate-50 py-16 lg:py-24">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-3">Free {topic.name.toLowerCase()} sample MCQs</h2>
+        <p class="text-slate-600 mb-8">A taste of the exam-style stems from the full bank.</p>
+        <div class="space-y-4">
+          {sampleMcqs.map((m, i) => (
+            <details class="group rounded-2xl border border-slate-200 bg-white p-5 open:shadow-sm transition-all">
+              <summary class="cursor-pointer text-base font-semibold text-slate-900 list-none">
+                <span class="text-sky-600 mr-2">Q{i + 1}.</span>{m.q}
+              </summary>
+              <div class="mt-4 space-y-2">
+                {m.options.map((opt, idx) => (
+                  <div class={`text-sm rounded-lg px-3 py-2 border ${idx === m.correct ? 'border-emerald-200 bg-emerald-50 text-emerald-900 font-semibold' : 'border-slate-200 bg-slate-50 text-slate-700'}`}>
+                    {String.fromCharCode(65 + idx)}. {opt}
+                  </div>
+                ))}
+                <p class="mt-3 text-sm text-slate-600"><span class="font-semibold text-slate-900">Explanation: </span>{m.explanation}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+        <div class="mt-8 text-center">
+          <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+            Try 50 free MCQs across all topics
+            <Icon name="arrowRight" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">{topic.name} FAQ</h2>
+        <p class="mt-3 text-slate-600">Answers to the questions residents ask most about this topic.</p>
+      </div>
+      <div class="space-y-4">
+        {topic.faqs.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Continue your prep</h2>
+        <p class="mt-3 text-slate-600">Jump to related exams, topics and resources.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="/free-mcqs" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="mcq" class="w-5 h-5 text-sky-600" /></div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Practice {topic.name} MCQs</h3>
+          <p class="text-sm text-slate-600">Drill the full bank with instant scoring.</p>
         </a>
+        <a href="/glossary" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="bookOpen" class="w-5 h-5 text-sky-600" /></div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">{topic.name} glossary</h3>
+          <p class="text-sm text-slate-600">All terms in this subspecialty.</p>
+        </a>
+        <a href="/topics" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Illustration name="questionBank" class="w-6 h-6" /></div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">All topics</h3>
+          <p class="text-sm text-slate-600">Switch to retina, cornea, glaucoma and more.</p>
+        </a>
+        <a href="/notes" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="notes" class="w-5 h-5 text-sky-600" /></div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Handwritten notes</h3>
+          <p class="text-sm text-slate-600">Per-topic notes from Kanski, Ryan and Elkington.</p>
+        </a>
+      </div>
+      <div class="mt-10">
+        <h3 class="text-lg font-bold text-slate-900 mb-4 text-center">Relevant exam pages</h3>
+        <div class="flex flex-wrap justify-center gap-3">
+          {topic.relatedExams.map(e => (
+            <a href={`/exams/${e.slug}`} class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-colors">
+              {e.name}
+              <Icon name="chevronRight" class="w-4 h-4" />
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </div>

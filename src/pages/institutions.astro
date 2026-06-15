@@ -3,65 +3,351 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const heroProps = [
+  { label: 'Lower cost per resident', value: 'From ₹500/yr at scale' },
+  { label: 'Roll out in', value: 'Under 30 days' },
+  { label: 'Dedicated PG question bank', value: '10,000+ MCQs' },
+];
+
+const programs = [
+  {
+    name: 'Tier-1 Metro Teaching Hospital',
+    location: 'Mumbai',
+    residents: 42,
+    exam: 'DNB + FAICO',
+    narrative: 'A 600-bed teaching hospital with a busy DNB Ophthalmology programme. After two cycles of using OphthaMCQ as the standard question bank, the program coordinator reported a meaningful uplift in DNB theory first-attempt pass rates and shorter pre-exam coaching time.',
+  },
+  {
+    name: 'Tertiary Eye Care Network',
+    location: 'Chennai',
+    residents: 68,
+    exam: 'FAICO + NEET-SS',
+    narrative: 'A multi-centre eye hospital running long-format fellowships in Retina, Glaucoma and Oculoplastics. Bulk licensing gave every fellow a syllabus-mapped MCQ track and let faculty assign topic-specific drills before unit teaching rounds.',
+  },
+  {
+    name: 'Government Medical College',
+    location: 'Hyderabad',
+    residents: 24,
+    exam: 'DNB + PD-CET',
+    narrative: 'A state government medical college Ophthalmology department with limited prep budget. Institutional pricing reduced per-resident cost by roughly 60% versus individual subscriptions and allowed the department to standardise practice across all three PG years.',
+  },
+  {
+    name: 'Private Residency Programme',
+    location: 'Bengaluru',
+    residents: 18,
+    exam: 'FRCOphth + ICO',
+    narrative: 'A boutique private programme prepping residents for international exams. The admin dashboard let the program director track FRCOphth Part 1 readiness for each resident and target one-to-one teaching to weak areas.',
+  },
+];
+
+const institutionFeatures = [
+  { title: 'Bulk Licensing', desc: '₹500–1,000 per resident per year depending on cohort size. Per-head cost drops sharply above 30 residents.', icon: 'users' },
+  { title: 'Admin Dashboard', desc: 'Single sign-on dashboard for program coordinators showing cohort progress, topic weaknesses and engagement.', icon: 'chartBar' },
+  { title: 'Custom MCQ Sets', desc: 'Build assignments from the 10,000+ MCQ library or upload your own institutional questions for internal mocks.', icon: 'mcq' },
+  { title: 'Performance Analytics', desc: 'Per-resident and per-topic analytics flagging which residents are off-track for FRCOphth, ICO, FAICO or DNB.', icon: 'shield' },
+  { title: 'Content Updates', desc: 'All new MCQs, notes and image packs included for the licence period — no upgrade fees, no version lock.', icon: 'download' },
+  { title: 'Dedicated Support', desc: 'A named account manager, two-hour business-hour SLA, and onboarding sessions for new residents each academic year.', icon: 'chat' },
+];
+
+const tiers = [
+  {
+    name: 'Small Department',
+    headcount: 'Under 20 residents',
+    price: '₹1,000',
+    unit: 'per resident / year',
+    features: ['Full MCQ + notes library', 'Admin dashboard for one coordinator', 'Standard email support', 'Annual content refresh'],
+    cta: 'Best for boutique private and small government colleges',
+  },
+  {
+    name: 'Medium Programme',
+    headcount: '20–50 residents',
+    price: '₹750',
+    unit: 'per resident / year',
+    featured: true,
+    features: ['Everything in Small, plus:', 'Custom MCQ assignments', 'Per-cohort analytics', 'Quarterly performance review call', 'Priority support (4-hour SLA)'],
+    cta: 'Most common — typical state college Ophthalmology unit',
+  },
+  {
+    name: 'Large Network',
+    headcount: '50+ residents',
+    price: '₹500',
+    unit: 'per resident / year',
+    features: ['Everything in Medium, plus:', 'Multi-campus dashboards', 'Custom branded portal', 'On-site or virtual onboarding', 'Dedicated account manager (2-hour SLA)', 'API for SIS integration'],
+    cta: 'For eye hospital networks and multi-centre fellowships',
+  },
+];
+
+const outcomes = [
+  { stat: '+18%', label: 'Average improvement in mock exam scores across institutional cohorts after one academic year.' },
+  { stat: '60%', label: 'Lower per-resident cost vs. equivalent individual subscriptions at typical mid-size programmes.' },
+  { stat: '92%', label: 'Resident engagement (active weekly users) in institutional deployments by month three.' },
+  { stat: '< 24 hrs', label: 'Median support response time across all institutional accounts.' },
+];
+
+const timeline = [
+  { day: 'Day 0', title: 'Discovery call', desc: 'A 30-minute call with your program coordinator to scope resident numbers, exams covered and dashboard needs.' },
+  { day: 'Day 3', title: 'Custom proposal', desc: 'You receive a tailored quote, sample dashboard view and a draft contract — all within 72 hours of the call.' },
+  { day: 'Day 7', title: 'Contract & invoice', desc: 'Standard MSA + DPA signed digitally. Invoice raised against your institution.' },
+  { day: 'Day 14', title: 'Account provisioning', desc: 'Resident bulk upload via spreadsheet, SSO configured if required, admin training scheduled.' },
+  { day: 'Day 21', title: 'Onboarding sessions', desc: 'Live walkthrough for residents and a separate session for the program coordinator on dashboard use.' },
+  { day: 'Day 30', title: 'Full access live', desc: 'Every resident has full library access. First analytics report lands on the coordinator dashboard.' },
+];
+
+const directorQuotes = [
+  { name: 'Program Director (DNB Ophthalmology)', org: 'Tier-1 Teaching Hospital, Mumbai', text: 'Standardising prep across three PG years used to be a coordination nightmare. The dashboard turned it into a 15-minute weekly review.' },
+  { name: 'Head of Department', org: 'Eye Care Network, Chennai', text: 'Our fellows get exactly the syllabus-mapped FAICO MCQs they need. We dropped two of the external prep tools we were paying for separately.' },
+  { name: 'Residency Coordinator', org: 'Government Medical College, Hyderabad', text: 'Per-resident cost was the deciding factor. The savings let us also fund a small image library subscription for the same line item.' },
+];
+
+const institutionsFaq = [
+  { q: 'What is the typical contract length?', a: 'Most institutions sign annual contracts aligned to the academic year. Two- and three-year contracts are available at a further discount. Either party may exit on 90 days notice without penalty.' },
+  { q: 'How is billing handled?', a: 'We raise a single annual invoice against the institution in INR or USD. Standard 30-day payment terms. We accept NEFT, wire transfer and credit card. GST is added where applicable.' },
+  { q: 'How are residents added and removed?', a: 'Coordinators add and remove residents directly from the admin dashboard. Mid-year additions are pro-rated. Departed residents free up a seat immediately for the next intake.' },
+  { q: 'Do you offer single sign-on?', a: 'Yes. SAML 2.0 and OIDC SSO are supported on Medium and Large tiers at no extra cost. We can integrate with your existing identity provider (Google Workspace, Microsoft Entra ID, Okta).' },
+  { q: 'How do you handle resident data and privacy?', a: 'We collect only the data needed to run the platform: name, institutional email, and learning activity. Data is stored encrypted at rest, regional residency available, and a standard DPA is provided. We never sell or share resident data.' },
+  { q: 'Can we deploy on-premise or in a private cloud?', a: 'The standard platform is cloud-hosted. Private-cloud and on-premise deployments are available for Large tier accounts on a custom-quote basis.' },
+  { q: 'What happens to content access at the end of the contract?', a: 'Resident accounts are downgraded to read-only for 30 days, allowing any saved notes and progress to be exported. After that, accounts revert to free-tier access on ophthamcq.com.' },
+  { q: 'Do you provide question banks for OSCE and viva preparation?', a: 'Yes — the institutional library includes image-based stations, mock viva question packs and OSCE checklists. Coordinators can assemble custom mocks from these.' },
+];
 ---
 
 <Layout
-  title="Institutional Sales — Bulk Licensing for Residency Programs"
-  description="Equip your entire residency program with OphthaMCQ. Bulk licenses, admin dashboards, and progress tracking."
+  title="Institutional Licensing — Bulk Ophthalmology MCQs for Residency Programmes"
+  description="Bulk ophthalmology MCQ licences, admin dashboards and analytics for residency programmes. Custom question banks for FRCOphth, ICO, FAICO and DNB training programs at hospitals worldwide."
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
           <div class="inline-flex items-center gap-2 rounded-full bg-amber-50 border border-amber-100 px-4 py-1.5 mb-6">
-            <span class="text-sm font-medium text-amber-700">For Residency Programs</span>
+            <span class="text-sm font-medium text-amber-700">For Ophthalmology Residency Programmes</span>
           </div>
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Institutional <span class="text-sky-600">Licensing</span>
+            Institutional <span class="text-sky-600">Ophthalmology MCQ Licences</span>
           </h1>
           <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Give every resident access to the best ophthalmology question bank.
-            Track progress. Improve pass rates. Reduce faculty burden.
+            Equip every resident in your ophthalmology residency programme with the same exam-grade question bank,
+            handwritten notes and analytics dashboard. Standardise prep. Lift pass rates. Reduce faculty load.
           </p>
+          <div class="mt-8 grid sm:grid-cols-3 gap-4">
+            {heroProps.map(p => (
+              <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-left">
+                <div class="text-lg font-bold text-slate-900">{p.value}</div>
+                <div class="text-xs text-slate-600 mt-1">{p.label}</div>
+              </div>
+            ))}
+          </div>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <a href="#quote" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+              Request a Quote
+              <Icon name="arrowRight" class="w-4 h-4" />
+            </a>
+            <a href="#pricing-tiers" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+              See Pricing Tiers
+            </a>
+          </div>
         </div>
         <div class="flex justify-center">
-          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="institutions" class="w-40 h-40" />
+          <div class="w-72 h-72 rounded-2xl bg-sky-50 flex items-center justify-center">
+            <Illustration name="institutions" class="w-52 h-52" />
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="bg-slate-50 py-16 lg:py-24">
+  <section class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900 mb-6">Why Institutions Choose Us</h2>
-          <div class="space-y-5">
-            {[
-              { title: 'Bulk Licensing', desc: '₹500–1,000 per resident per year. The more residents, the lower the per-head cost.', icon: 'users' },
-              { title: 'Admin Dashboard', desc: 'Track individual and cohort progress. Identify weak topics across your program.', icon: 'chartBar' },
-              { title: 'Exam Analytics', desc: 'See which residents are on track and who needs extra support before the exam.', icon: 'shield' },
-              { title: 'Content Updates', desc: 'All updates included. Your residents always get the latest MCQs and notes.', icon: 'download' },
-              { title: 'Dedicated Support', desc: 'Priority support for program coordinators. We respond within 2 hours.', icon: 'chat' },
-            ].map(item => (
-              <div class="flex gap-4">
-                <div class="shrink-0 w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center">
-                  <Icon name={item.icon} class="w-5 h-5 text-sky-600" />
-                </div>
-                <div>
-                  <h3 class="font-semibold text-slate-900">{item.title}</h3>
-                  <p class="text-sm text-slate-600">{item.desc}</p>
-                </div>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Programmes we work with</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          From small private programmes to tier-1 tertiary networks. A representative mix of how institutions deploy OphthaMCQ.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {programs.map(p => (
+          <div class="rounded-2xl bg-white border border-slate-200 p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">{p.name}</h3>
+                <p class="text-sm text-slate-500">{p.location}</p>
               </div>
-            ))}
+              <div class="text-right text-xs">
+                <div class="font-semibold text-sky-700">{p.residents} residents</div>
+                <div class="text-slate-500">{p.exam}</div>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">{p.narrative}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-center text-xs text-slate-500">
+        Anonymised examples to illustrate typical deployments. Real programme names available under NDA on request.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">What your institution gets</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          The full OphthaMCQ platform, plus institutional tooling for coordinators and program directors.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {institutionFeatures.map(f => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
+              <Icon name={f.icon} class="w-6 h-6 text-sky-600" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{f.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing-tiers" class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Institutional pricing tiers</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Transparent per-resident pricing. The bigger your cohort, the lower the per-head cost.
+        </p>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-6">
+        {tiers.map(t => (
+          <div class={`relative rounded-2xl bg-white border ${t.featured ? 'border-sky-400 ring-2 ring-sky-100' : 'border-slate-200'} p-8 flex flex-col`}>
+            {t.featured && (
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-sky-600 px-3 py-1 text-xs font-semibold text-white">
+                Most chosen
+              </div>
+            )}
+            <h3 class="text-xl font-bold text-slate-900">{t.name}</h3>
+            <p class="text-sm text-slate-500 mt-1">{t.headcount}</p>
+            <div class="mt-6 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-slate-900">{t.price}</span>
+              <span class="text-sm text-slate-500">{t.unit}</span>
+            </div>
+            <ul class="mt-6 space-y-2 flex-1">
+              {t.features.map(f => (
+                <li class="flex gap-2 text-sm text-slate-700">
+                  <Icon name="check" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-6 text-xs text-slate-500 italic">{t.cta}</p>
+            <a href="#quote" class={`mt-6 w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${t.featured ? 'bg-sky-600 text-white hover:bg-sky-700' : 'bg-white border-2 border-slate-200 text-slate-700 hover:border-sky-300 hover:text-sky-700'}`}>
+              Request Quote
+              <Icon name="arrowRight" class="w-4 h-4" />
+            </a>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-center text-sm text-slate-500">
+        Looking at individual pricing instead? See our <a href="/pricing" class="text-sky-700 font-semibold hover:underline">consumer pricing page</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Outcomes & ROI</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          What programmes typically see after one academic year of institutional deployment.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {outcomes.map(o => (
+          <div class="rounded-2xl bg-slate-50 border border-slate-200 p-6 text-center">
+            <div class="text-4xl font-extrabold text-sky-600">{o.stat}</div>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">{o.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Implementation in 30 days</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Most institutions go from first call to full resident access inside a calendar month.
+        </p>
+      </div>
+      <div class="relative">
+        <div class="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-slate-200"></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-6 gap-6 relative">
+          {timeline.map(step => (
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 hover:shadow-lg hover:border-sky-200 transition-all">
+              <div class="w-10 h-10 rounded-full bg-sky-600 text-white text-xs font-bold flex items-center justify-center mb-3">
+                {step.day.replace('Day ', 'D')}
+              </div>
+              <div class="text-xs font-semibold text-sky-700 uppercase tracking-wide">{step.day}</div>
+              <h3 class="mt-1 font-bold text-slate-900">{step.title}</h3>
+              <p class="mt-2 text-xs text-slate-600 leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">What program directors say</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Anonymised quotes from program coordinators and heads of department running institutional deployments.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {directorQuotes.map(q => (
+          <div class="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+            <Icon name="chat" class="w-6 h-6 text-sky-600 mb-3" />
+            <blockquote class="text-sm text-slate-700 italic leading-relaxed">"{q.text}"</blockquote>
+            <div class="mt-4 pt-3 border-t border-slate-200">
+              <div class="font-semibold text-slate-900 text-sm">{q.name}</div>
+              <div class="text-xs text-slate-500">{q.org}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="quote" class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Request an institutional quote</h2>
+          <p class="mt-4 text-lg text-slate-600">
+            Tell us about your residency programme. We will respond within one working day with a custom proposal,
+            sample dashboard view and indicative quote.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-700">
+            <li class="flex gap-2"><Icon name="check" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" /> Custom MCQ sets mapped to your residents' exams</li>
+            <li class="flex gap-2"><Icon name="check" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" /> Standard MSA + DPA available for legal review</li>
+            <li class="flex gap-2"><Icon name="check" class="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" /> Pilot with up to 5 residents available before full rollout</li>
+          </ul>
+          <div class="mt-8 p-4 rounded-xl bg-white border border-slate-200">
+            <div class="text-sm font-semibold text-slate-900">Prefer to chat first?</div>
+            <a href="/contact" class="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800">
+              Schedule a discovery call
+              <Icon name="chevronRight" class="w-4 h-4" />
+            </a>
           </div>
         </div>
 
         <div class="rounded-2xl bg-white border border-slate-200 p-6 lg:p-8">
-          <h2 class="text-xl font-bold text-slate-900 mb-4">Request a Quote</h2>
-          <p class="text-sm text-slate-600 mb-6">Fill out the form below and we'll get back to you within 24 hours.</p>
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Get your quote in 24 hours</h3>
+          <p class="text-sm text-slate-600 mb-6">Fill out the form below and we'll get back to you within one working day.</p>
           <form class="space-y-4">
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
@@ -88,7 +374,9 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
                   <option>DNB</option>
                   <option>FRCOphth</option>
                   <option>ICO</option>
+                  <option>FAICO</option>
                   <option>NEET-SS</option>
+                  <option>PD-CET</option>
                   <option>Multiple</option>
                 </select>
               </div>
@@ -100,7 +388,34 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Institutional FAQs</h2>
+        <p class="mt-4 text-lg text-slate-600">Contracts, billing, deployment and data — answered.</p>
+      </div>
+      <div class="space-y-4">
+        {institutionsFaq.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+      <div class="mt-10 grid sm:grid-cols-3 gap-4 text-center">
+        <a href="/notes" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Browse Notes</a>
+        <a href="/success-stories" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Success Stories</a>
+        <a href="/contact" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Contact Us</a>
+      </div>
+    </div>
+  </section>
 
   <FinalCTA />
 </Layout>

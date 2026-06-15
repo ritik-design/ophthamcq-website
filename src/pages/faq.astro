@@ -1,24 +1,263 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { FAQS } from '../config';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+
+type FAQ = { q: string; a: string };
+type Category = { id: string; title: string; intro: string; icon: string; faqs: FAQ[] };
+
+const categories: Category[] = [
+  {
+    id: 'getting-started',
+    title: 'Getting Started',
+    intro: 'How to start using OphthaMCQ, what is free, and how to choose your first product.',
+    icon: 'sparkles',
+    faqs: [
+      {
+        q: 'What is OphthaMCQ and how do I start?',
+        a: 'OphthaMCQ is an ophthalmology question bank and handwritten-notes platform built by doctors who have passed FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS, PD-CET and OKAP. The fastest way to start is the free section: try 200 free MCQs, browse the 316-term glossary, or read a sample chapter from any notes title. No signup is needed for free MCQs.',
+      },
+      {
+        q: 'Do I need to create an account?',
+        a: 'You can attempt our free MCQs without an account. An account on ophthamcq.com is only required when you buy a product, because that is what unlocks PDF downloads, mobile app sync and progress tracking. Signup is free and takes about 30 seconds with email or Google.',
+      },
+      {
+        q: 'I am starting my ophthalmology PG residency — what should I buy first?',
+        a: 'For first-year residents we recommend starting with the Anatomy of Eye notes plus the High Yield MCQs bank. Together they cost less than ₹800 and cover the foundations you need before specialising. Add subspecialty notes (Retina Deciphered, Glaucoma, Optics) as those rotations begin.',
+      },
+      {
+        q: 'How is OphthaMCQ different from textbooks like Kanski or BCSC?',
+        a: 'Textbooks teach you the subject; OphthaMCQ teaches you the exam. Our notes are distilled to exam-ready bullet points, our MCQs are mapped to actual exam patterns, and our explanations cite the exact textbook reference so you can dive deeper when you need to. They complement Kanski and BCSC — not replace them.',
+      },
+      {
+        q: 'How long does it take to prepare for FRCOphth or DNB with OphthaMCQ?',
+        a: 'Most candidates who report back to us spent 3–4 months of focused work on top of clinical training. A typical pattern: 4 weeks reading exam-ready notes, 6–8 weeks doing topic-wise MCQs to plug gaps, then 2–4 weeks of timed mock exams and past papers. The platform is built around this rhythm.',
+      },
+    ],
+  },
+  {
+    id: 'content-quality',
+    title: 'Content & Quality',
+    intro: 'Who writes the questions, how they are reviewed, and what references we use.',
+    icon: 'badgeCheck',
+    faqs: [
+      {
+        q: 'Who writes the MCQs and notes?',
+        a: 'Every MCQ and notes chapter is authored by an ophthalmologist who has personally cleared the exam it targets. FRCOphth content is led by an author who passed Part 1 at Moorfields; FAICO content is led by an Aravind-trained FAICO holder; DNB content is led by AIIMS-trained DNB ophthalmologists. The full team is listed on the /about page.',
+      },
+      {
+        q: 'Are the notes really handwritten?',
+        a: 'Yes — every page is handwritten by ophthalmologists who have passed these exams. They are distilled from Kanski Clinical Ophthalmology, Ryan Retina, Elkington Clinical Optics, the AAO BCSC series, Wills Eye Manual, Yanoff & Duker and Khurana into exam-ready bullet points. Handwritten format helps with retention and is much easier to skim during last-minute revision.',
+      },
+      {
+        q: 'How are questions reviewed for accuracy?',
+        a: 'Every MCQ goes through a two-doctor peer review. The author writes the stem, options, correct answer and explanation. A second ophthalmologist who has cleared the relevant exam then verifies the single-best-answer logic, distractor plausibility, image accuracy and reference. Both authors are tracked internally on every question.',
+      },
+      {
+        q: 'What textbooks and guidelines do you reference?',
+        a: 'Primary references are Kanski, Ryan Retina, AAO BCSC (all 13 sections), Elkington Clinical Optics, Wills Eye Manual, Yanoff & Duker and Khurana. Guideline references include AAO Preferred Practice Patterns, the European Glaucoma Society guidelines, NICE guidance and Royal College of Ophthalmologists guidance. Every explanation links to the relevant source.',
+      },
+      {
+        q: 'How often is content updated?',
+        a: 'We do a full content refresh every 6 months. During each cycle we retire stale questions, add freshly recalled questions from the most recent exam sittings, rewrite explanations to reflect updated guidelines (for example new EGS glaucoma targets), and review every image. All updates are free for 6 months after your purchase.',
+      },
+      {
+        q: 'Do you have image-based MCQs (fundus, OCT, slit lamp)?',
+        a: 'Yes — we have 500+ image-based MCQs covering fundus photographs, OCT scans, slit-lamp images, visual fields, gonioscopy views and corneal topography. This is critical for FRCOphth Part 2, FAICO and NEET-SS where image recognition is heavily tested.',
+      },
+      {
+        q: 'What happens if I find an error in a question?',
+        a: 'Every question and notes chapter has a Report button in the app and on the store. Verified errors are corrected within 7 working days. The candidate who reported it is credited in the next release notes, and the explanation is rewritten with the corrected reference.',
+      },
+    ],
+  },
+  {
+    id: 'exams-covered',
+    title: 'Exams Covered',
+    intro: 'Which exams we cover and how each question bank is structured.',
+    icon: 'graduationCap',
+    faqs: [
+      {
+        q: 'Which ophthalmology exams does OphthaMCQ cover?',
+        a: 'We cover FRCOphth (Part 1 & Part 2), ICO/FICO (Basic Sciences, Optics, Clinical), FAICO (AIOS fellowship), PD-CET, DNB Ophthalmology (theory and practical), NEET-SS Ophthalmology and OKAPs. Each exam has its own dedicated question bank and matching notes. See the /exams page for a full breakdown.',
+      },
+      {
+        q: 'How do I prepare for FRCOphth Part 1 with OphthaMCQ?',
+        a: 'FRCOphth Part 1 is a Single Best Answer paper covering optics, anatomy, embryology, physiology, pharmacology and biochemistry of vision. Start with Optics & Refraction notes plus Anatomy notes (4–6 weeks). Then move to the FRCOphth-mapped MCQs for 6 weeks of topic-wise practice, followed by 2 weeks of timed mock exams. Most Moorfields-bound candidates clear in this rhythm.',
+      },
+      {
+        q: 'What is the ICO/FICO exam pattern and how do you cover it?',
+        a: 'ICO is run by the International Council of Ophthalmology and has three exams: Basic Sciences, Optics & Refraction, and Clinical Sciences. Each is 2 hours with ~150 MCQs. We cover all three with separate question banks and a full ICO/FICO Past Papers product containing the last 10 years of recalled questions with full explanations. FICO is the fellowship awarded after passing all three.',
+      },
+      {
+        q: 'Is OphthaMCQ useful for FAICO?',
+        a: 'Yes. Our FAICO MCQs bank is mapped topic-by-topic to the exact AIOS FAICO syllabus. It is reviewed by a FAICO holder from Aravind and is the most-used FAICO product in our catalogue. The bank covers all subspecialty modules: cataract, glaucoma, retina, cornea, oculoplastics, paediatrics and neuro-ophthalmology.',
+      },
+      {
+        q: 'Do you cover DNB Ophthalmology theory and practical?',
+        a: 'Yes. The MCQ bank covers DNB theory thoroughly with NBE-pattern questions. For practicals we have the Exam Ready notes series which double as ward-round revision sheets — useful for OSCE-style clinical stations, instruments and viva. We do not run live mock vivas; pair the notes with a clinical mentor.',
+      },
+      {
+        q: 'Is the platform good for NEET-SS Ophthalmology super-specialty?',
+        a: 'Yes — particularly for retina and glaucoma fellowships. Retina Deciphered is widely used by NEET-SS candidates and our highest-ranked testimonial is from a Rank 12 NEET-SS Retina aspirant. The high-yield MCQs bank is mapped to NEET-SS subspecialty weightage.',
+      },
+      {
+        q: 'Do you cover OKAPs for US ophthalmology residents?',
+        a: 'Yes — our High Yield MCQs and BCSC-aligned content is designed to be relevant for OKAPs as well. The references map directly to BCSC sections, which is what OKAPs is based on. Many of our international users are US PGY-2 and PGY-3 residents preparing for the annual OKAP exam.',
+      },
+      {
+        q: 'What about PD-CET?',
+        a: 'We have a dedicated PD-CET MCQs product built specifically for the Post Diploma Centralized Entrance Test pattern. It focuses on high-yield, recall-style questions across the entire ophthalmology syllabus relevant for diploma holders moving into MS / DNB.',
+      },
+    ],
+  },
+  {
+    id: 'pricing-refunds',
+    title: 'Pricing & Refunds',
+    intro: 'How much things cost, how payment works, and our refund policy.',
+    icon: 'shield',
+    faqs: [
+      {
+        q: 'How much does OphthaMCQ cost?',
+        a: 'Individual notes titles start at ₹249 (Eyelids) and go up to ₹1,799 (ICO/FICO Past Papers bundle). MCQ banks sit between ₹399 and ₹929. Subscriptions are ₹499/month (Resident) or ₹2,999/year (All-Access, best value). See the /pricing page for full plan details.',
+      },
+      {
+        q: 'What is your refund policy?',
+        a: 'Every paid product carries a 7-day money-back guarantee, no questions asked. If the content does not match the quality you saw in the free MCQs, email support@ophthamcq.com within 7 days of purchase and we refund the full amount to your original payment method, typically within 5 business days.',
+      },
+      {
+        q: 'What payment methods do you accept?',
+        a: 'UPI, all major Indian credit and debit cards, net banking, and Stripe for international payments (Visa, Mastercard, Amex). Currency is auto-converted at checkout for buyers outside India. All payments are processed on the secure ophthamcq.com store.',
+      },
+      {
+        q: 'Will my subscription auto-renew?',
+        a: 'Subscriptions renew automatically at the end of each billing period (monthly or yearly) so you do not lose access mid-prep. You can cancel auto-renewal any time from your ophthamcq.com account settings — your access continues until the end of the period you have already paid for.',
+      },
+      {
+        q: 'Are there discounts for residents, students or groups?',
+        a: 'All our individual prices are already discounted vs. international competitors. For groups, residency programmes and institutions we offer bulk licences at ₹500–1,000 per resident per year via the /institutions page. We do not run promotional discount codes outside major sales events listed on the homepage.',
+      },
+      {
+        q: 'Can I get an invoice for tax / GST purposes?',
+        a: 'Yes — every purchase generates a GST-compliant invoice that is emailed automatically and available in your ophthamcq.com account under Purchases. For institutional invoices with hospital/college billing details, contact institutional sales via the /contact page.',
+      },
+      {
+        q: 'Do you offer a free trial?',
+        a: 'We do not run a credit-card-required free trial. Instead, we publish 200 free MCQs, a 316-term glossary and sample chapters from every notes title that are free forever. That gives you a more honest preview than a 7-day trial, because you can see the actual question style and explanation depth before paying.',
+      },
+    ],
+  },
+  {
+    id: 'technical-access',
+    title: 'Technical & Access',
+    intro: 'How you access your purchases on web, iOS and Android — and what happens if something goes wrong.',
+    icon: 'mobile',
+    faqs: [
+      {
+        q: 'How do I access my purchases after buying?',
+        a: 'After purchase on ophthamcq.com you get three things immediately: instant PDF download for notes, app access via our iOS and Android apps, and a confirmation email with login details. Everything syncs automatically across devices when you sign in with the same account.',
+      },
+      {
+        q: 'Which devices and operating systems do you support?',
+        a: 'Native apps for iOS 14+ and Android 9+. Web access works on any modern browser (Chrome, Safari, Firefox, Edge). PDFs work on any device that opens a standard PDF. We do not have a dedicated iPad app yet but the iPhone app runs full-screen on iPad with no functionality lost.',
+      },
+      {
+        q: 'Can I use OphthaMCQ offline?',
+        a: 'Yes — the mobile apps have full offline mode. Download the question banks once over Wi-Fi and you can practise MCQs in the OPD, on night shifts or while travelling without any internet. Your progress syncs automatically the next time you go online.',
+      },
+      {
+        q: 'How many devices can I sign in on?',
+        a: 'Up to 3 active devices per account: typically one phone, one tablet/laptop, and one spare. Signing in on a fourth device prompts you to log out of one of the previous three. This is to prevent account sharing while keeping it practical for genuine personal use.',
+      },
+      {
+        q: 'I forgot my password — how do I reset it?',
+        a: 'Use the "Forgot password" link on the login page at ophthamcq.com. You will receive a reset email within a few minutes (check spam). If you used Google sign-in, just use the same Google account to sign back in — no password is needed.',
+      },
+      {
+        q: 'The app is crashing or my content is not loading — what do I do?',
+        a: 'First, check that you are on the latest app version from Google Play or the App Store. Then sign out and sign back in to force a content resync. If the problem persists, contact support via the /contact page with your device model and OS version — most issues are resolved within 24 hours.',
+      },
+      {
+        q: 'Can I share my account with a friend?',
+        a: 'No — accounts are single-user and the 3-device limit is enforced. We keep prices low specifically so that every candidate can afford their own account. Account sharing is detectable from sign-in patterns and may result in suspension without refund.',
+      },
+      {
+        q: 'Do you support exporting or printing my MCQ history?',
+        a: 'Yes — from the web app you can export your attempted MCQs and analytics as a PDF or CSV. Notes PDFs are downloadable but watermarked with your account email to discourage redistribution. Printing for personal revision is permitted.',
+      },
+    ],
+  },
+  {
+    id: 'for-institutions',
+    title: 'For Institutions',
+    intro: 'How residency programmes, medical colleges and training institutions can use OphthaMCQ.',
+    icon: 'building',
+    faqs: [
+      {
+        q: 'Do you offer institutional or bulk pricing?',
+        a: 'Yes. Residency programmes, medical colleges and fellowship institutions get bulk licences at ₹500–1,000 per resident per year depending on cohort size. The licence includes an admin dashboard, batch progress reports and exam-wise analytics. See the /institutions page or contact our sales team for a custom quote.',
+      },
+      {
+        q: 'Can faculty assign specific MCQ sets to residents?',
+        a: 'Yes — institutional accounts include a faculty dashboard where you can create custom MCQ assignments by topic, exam or difficulty, assign them to specific residents or batches, and see attempt rates, scores and weak topics across the cohort. Useful for weekly journal-club style practice.',
+      },
+      {
+        q: 'Do you provide cohort analytics and reporting?',
+        a: 'Yes. Institutional dashboards include cohort-wide accuracy heatmaps by topic, time-to-completion data, attempt counts per resident, and exportable reports. Programme directors typically use these to spot weak areas before in-house exams and to track readiness for FRCOphth, FAICO or DNB.',
+      },
+      {
+        q: 'Can we integrate OphthaMCQ with our LMS or SSO?',
+        a: 'For larger institutional contracts we support SSO via Google Workspace and Microsoft 365, and SCORM / LTI integration with most LMS platforms (Moodle, Canvas, Blackboard). This is typically scoped during the institutional onboarding call.',
+      },
+      {
+        q: 'What is the typical onboarding process for an institution?',
+        a: 'A 30-minute scoping call, then a single-day setup of admin accounts, cohort import and faculty training. Most programmes are fully live within 5 working days of signing. Pilots of 30 days for one batch are available before full-year commitment.',
+      },
+      {
+        q: 'Do you offer custom MCQ banks for institutional in-house exams?',
+        a: 'For larger contracts, yes — we can author custom MCQ sets aligned to your institution\'s internal exam pattern or weekly tests. This is quoted separately based on volume. Standard institutional licences include access to the entire OphthaMCQ catalogue.',
+      },
+    ],
+  },
+];
+
+// Flatten for JSON-LD FAQPage schema
+const allFaqs = categories.flatMap(c => c.faqs);
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: allFaqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
 ---
 
 <Layout
-  title="Frequently Asked Questions — OphthaMCQ"
-  description="Find answers to common questions about OphthaMCQ products, exams, pricing, refunds, and how to access your purchases."
+  title="Ophthalmology Question Bank FAQ — FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS"
+  description="Detailed answers about OphthaMCQ: how to prepare for FRCOphth, ICO/FICO exam pattern, FAICO and DNB question banks, pricing, refunds, device access and institutional plans."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 mb-4">
+            <Icon name="questionBank" class="w-4 h-4" />
+            {allFaqs.length}+ detailed answers
+          </span>
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             Frequently Asked <span class="text-sky-600">Questions</span>
           </h1>
           <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Everything you need to know before you start.
+            Honest, detailed answers about the OphthaMCQ ophthalmology question bank — exam coverage, content quality, pricing, refunds, device access and institutional plans for FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS, PD-CET and OKAP.
           </p>
         </div>
         <div class="flex justify-center">
@@ -30,30 +269,110 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
     </div>
   </div>
 
-  <div class="bg-slate-50 py-16 lg:py-24">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <div class="space-y-4">
-        {FAQS.map(faq => (
-          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
-            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
-              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
-              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
-                <Icon name="chevronDown" class="w-5 h-5" />
-              </span>
-            </summary>
-            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-              {faq.a}
-            </div>
-          </details>
+  <!-- Quick try-before-you-read callout -->
+  <div class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="/free-mcqs" class="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md hover:border-sky-200 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center shrink-0">
+            <Illustration name="freeMcqs" class="w-9 h-9" />
+          </div>
+          <div class="flex-1">
+            <div class="text-sm font-bold text-slate-900">Try 200 free MCQs</div>
+            <div class="text-xs text-slate-500">High-yield ophthalmology MCQs, instant explanations, no signup.</div>
+          </div>
+          <Icon name="chevronRight" class="w-5 h-5 text-slate-400 group-hover:text-sky-600 group-hover:translate-x-0.5 transition-all" />
+        </a>
+        <a href="/glossary" class="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md hover:border-sky-200 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center shrink-0">
+            <Illustration name="notes" class="w-9 h-9" />
+          </div>
+          <div class="flex-1">
+            <div class="text-sm font-bold text-slate-900">Browse 316-term glossary</div>
+            <div class="text-xs text-slate-500">Searchable ophthalmology terms by sub-specialty.</div>
+          </div>
+          <Icon name="chevronRight" class="w-5 h-5 text-slate-400 group-hover:text-sky-600 group-hover:translate-x-0.5 transition-all" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category nav -->
+  <div class="bg-white border-b border-slate-200 sticky top-0 z-10 backdrop-blur bg-white/90">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 overflow-x-auto">
+      <div class="flex gap-2 min-w-max">
+        {categories.map(c => (
+          <a href={`#${c.id}`} class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-sky-100 hover:text-sky-700 transition-colors">
+            <Icon name={c.icon} class="w-3.5 h-3.5" />
+            {c.title}
+          </a>
         ))}
       </div>
+    </div>
+  </div>
 
-      <div class="mt-12 text-center p-6 rounded-2xl bg-sky-50 border border-sky-100">
-        <p class="text-slate-700 mb-3">Still have questions?</p>
-        <a href="/contact" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-          <Icon name="chat" class="w-5 h-5" />
-          Contact Support
-        </a>
+  <!-- FAQ sections -->
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-16">
+      {categories.map(cat => (
+        <section id={cat.id}>
+          <div class="mb-8">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center">
+                <Icon name={cat.icon} class="w-5 h-5 text-sky-700" />
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                {cat.title}
+              </h2>
+            </div>
+            <p class="text-base text-slate-600">{cat.intro}</p>
+          </div>
+
+          <div class="space-y-4">
+            {cat.faqs.map(faq => (
+              <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+                <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+                  <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+                  <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                    <Icon name="chevronDown" class="w-5 h-5" />
+                  </span>
+                </summary>
+                <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+
+  <!-- Still have questions CTA -->
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl bg-sky-50 border border-sky-100 p-8 lg:p-12 text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-sky-100 flex items-center justify-center mb-5">
+          <Icon name="chat" class="w-8 h-8 text-sky-600" />
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+          Still have questions?
+        </h2>
+        <p class="mt-4 text-base text-slate-700 max-w-2xl mx-auto">
+          We answer every email from a real ophthalmologist on the team, usually within 4 working hours. Ask about exam strategy, product fit for your specific exam, or institutional pricing — whatever you need.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+            <Icon name="chat" class="w-4 h-4" />
+            Contact support
+          </a>
+          <a href="/about" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+            Meet the team
+          </a>
+          <a href="/pricing" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+            See pricing
+          </a>
+        </div>
       </div>
     </div>
   </div>

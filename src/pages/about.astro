@@ -3,23 +3,154 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const team = [
+  {
+    name: 'Dr. Sangam Rout',
+    role: 'Co-founder, Editorial Lead',
+    creds: 'DNB Ophthalmology, AIIMS',
+    bio: 'Cleared DNB theory and practical in the first attempt. Leads the editorial review board and signs off on every MCQ before it ships.',
+    initials: 'SR',
+  },
+  {
+    name: 'Dr. Umer Shaikh',
+    role: 'Co-founder, FRCOphth Lead',
+    creds: 'FRCOphth, Moorfields Eye Hospital',
+    bio: 'Cleared FRCOphth Part 1 with 72%. Maps every Part 1 and Part 2 question to the Royal College syllabus and writes the long-answer rubrics.',
+    initials: 'US',
+  },
+  {
+    name: 'Dr. Priya Menon',
+    role: 'NEET-SS & Retina Lead',
+    creds: 'NEET-SS Retina Rank 12, Sankara Nethralaya',
+    bio: 'Built the Retina Deciphered notes from the ground up. Curates NEET-SS pattern MCQs and image-based questions for vitreoretinal subspecialty prep.',
+    initials: 'PM',
+  },
+  {
+    name: 'Dr. Ritu Sharma',
+    role: 'FAICO & Pediatric Lead',
+    creds: 'FAICO, Aravind Eye Hospital',
+    bio: 'Reviewed and re-mapped every FAICO MCQ against the AIOS fellowship syllabus. Owns strabismus and pediatric ophthalmology content.',
+    initials: 'RS',
+  },
+  {
+    name: 'Dr. Ahmed Khan',
+    role: 'ICO/FICO & Basic Sciences Lead',
+    creds: 'ICO Basic Sciences 85%, King Khalid Hospital',
+    bio: 'Built our ICO Basic Visual Sciences MCQ bank from a decade of past papers. Edits all optics, physiology, and pharmacology explanations.',
+    initials: 'AK',
+  },
+  {
+    name: 'Dr. Garvesh Surya',
+    role: 'Notes & Cornea Lead',
+    creds: 'MS Ophthalmology, LV Prasad Eye Institute',
+    bio: 'Lead author on the Exam Ready handwritten notes series. Distills Kanski, Krachmer, and Wills Eye Manual into bullet-pointed revision pages.',
+    initials: 'GS',
+  },
+];
+
+const stats = [
+  { value: '15,000+', label: 'Residents helped', sub: 'Across 40+ countries' },
+  { value: '10,000+', label: 'MCQs written and reviewed', sub: 'Every one peer-checked' },
+  { value: '6', label: 'Major exams covered', sub: 'FRCOphth to NEET-SS' },
+  { value: '7+ yrs', label: 'Combined editorial experience', sub: 'Practising ophthalmologists' },
+];
+
+const pipeline = [
+  {
+    step: '01',
+    title: 'Topic blueprinting against the live syllabus',
+    body: 'Every MCQ and notes chapter starts from the published syllabus blueprint for FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS, PD-CET or OKAP. We map weightage by sub-topic so high-yield areas get the question density they deserve.',
+  },
+  {
+    step: '02',
+    title: 'Drafting from standard references',
+    body: 'Authors draft questions and notes only from accepted references — Kanski Clinical Ophthalmology, Ryan Retina, Elkington Clinical Optics, the AAO BCSC series, Wills Eye Manual, and Khurana for DNB-pattern questions.',
+  },
+  {
+    step: '03',
+    title: 'Two-doctor peer review',
+    body: 'Every MCQ is reviewed by a second ophthalmologist who has cleared the relevant exam. Reviewers check stem clarity, distractor plausibility, single best answer logic, and reference accuracy.',
+  },
+  {
+    step: '04',
+    title: 'Image and case validation',
+    body: 'Fundus photos, OCTs, slit-lamp images and visual fields are validated against original clinical sources. We mark grading systems (ETDRS, Shaffer, SUN) explicitly so candidates do not memorise the wrong scheme.',
+  },
+  {
+    step: '05',
+    title: 'Six-month refresh cycle',
+    body: 'Twice a year we re-grade the bank against the most recent exam patterns, retire stale questions, rewrite explanations to reflect new guidelines (EGS, AAO PPP, NICE), and add freshly recalled questions from candidates.',
+  },
+];
+
+const references = [
+  'Kanski Clinical Ophthalmology, 10th ed.',
+  'Ryan Retina, 7th ed.',
+  'AAO Basic and Clinical Science Course (BCSC), all 13 sections',
+  'Elkington Clinical Optics, 4th ed.',
+  'Wills Eye Manual, 8th ed.',
+  'Yanoff and Duker Ophthalmology, 6th ed.',
+  'Khurana Comprehensive Ophthalmology (for DNB & PD-CET)',
+  'AAO Preferred Practice Patterns and EGS Glaucoma Guidelines',
+];
+
+const teamFaqs = [
+  {
+    q: 'Who actually writes the questions at OphthaMCQ?',
+    a: 'Every MCQ is written and reviewed by an ophthalmologist who has cleared the relevant exam — FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS, PD-CET or OKAP. No medical students, no copywriters, no AI-generated stems. The author and reviewer initials are tracked internally on every question.',
+  },
+  {
+    q: 'How do you keep content factually correct?',
+    a: 'Each question lists its primary reference (textbook, edition, page or guideline). When a major guideline changes — for example new EGS glaucoma targets or updated diabetic macular oedema protocols — the editorial lead flags affected questions and rewrites the explanation within the next 6-month refresh.',
+  },
+  {
+    q: 'Is the team Indian only, or international?',
+    a: 'The team is intentionally mixed. We have FRCOphth-cleared authors in the UK, ICO and FAICO authors in India and the Middle East, and DNB and NEET-SS authors across AIIMS, Sankara, LV Prasad and Aravind. This is why the question bank reads naturally for both Indian PG exams and international exams like FRCOphth and OKAP.',
+  },
+  {
+    q: 'Do you partner with any institution or society?',
+    a: 'We are an independent editorial team. We are not officially affiliated with the Royal College of Ophthalmologists, ICO, AIOS, NBE or AAO. We follow their published syllabi and reference their guidelines, but our content is independently authored.',
+  },
+  {
+    q: 'Can I contribute or report an error?',
+    a: 'Yes — every question and notes chapter has a "Report" button in the app and on the store. Verified errors are corrected within 7 working days and the reporting candidate gets credited in the next release notes. Working ophthalmologists who want to author topics can reach out via the /contact page.',
+  },
+  {
+    q: 'What makes you different from other ophthalmology MCQ sites?',
+    a: 'Three things. First, our authors have actually sat and cleared these exams in the last few years, so the question style matches the live pattern. Second, every product is priced for residents — not US fellowship budgets. Third, we publish 200 free MCQs and a 316-term glossary so you can judge our quality before paying anything.',
+  },
+];
 ---
 
 <Layout
-  title="About Us — Built by Ophthalmologists, for Ophthalmologists"
-  description="OphthaMCQ was created by doctors who struggled to find focused, exam-ready resources. We built what we wish we had."
+  title="About OphthaMCQ — Ophthalmology Exam Prep Built by Doctors Who Passed"
+  description="Meet the ophthalmologists behind OphthaMCQ — an FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS exam prep team trusted by 15,000+ PG residents worldwide."
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 mb-4">
+            <Icon name="badgeCheck" class="w-4 h-4" />
+            Built by practising ophthalmologists
+          </span>
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             Built by <span class="text-sky-600">Ophthalmologists</span>,
             for Ophthalmologists
           </h1>
           <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            We sat these exams. We know exactly what you need — and what you do not.
+            We sat these exams. We know exactly what you need — and what you do not. OphthaMCQ is the ophthalmology exam prep platform built and maintained by doctors who passed FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS.
           </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+              Try 200 free MCQs
+              <Icon name="arrowRight" class="ml-2 h-4 w-4" />
+            </a>
+            <a href="/exams" class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+              Browse exams
+            </a>
+          </div>
         </div>
         <div class="flex justify-center">
           <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
@@ -30,41 +161,254 @@ import FinalCTA from '../components/sections/FinalCTA.astro';
     </div>
   </div>
 
+  <!-- Stats bar -->
+  <div class="bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {stats.map(s => (
+          <div class="text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold text-sky-600">{s.value}</div>
+            <div class="mt-1 text-sm font-semibold text-slate-900">{s.label}</div>
+            <div class="text-xs text-slate-500">{s.sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Story + Mission -->
   <div class="bg-white py-16 lg:py-24">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <div class="prose prose-lg prose-slate max-w-none">
         <h2 class="text-2xl font-bold text-slate-900">Our Story</h2>
         <p class="text-slate-600">
-          During my DNB Ophthalmology residency, I spent countless hours sifting through 900-page textbooks,
-          trying to distill what actually mattered for the exam. I asked seniors for notes, bought question banks
-          that were outdated, and still felt unprepared walking into the exam hall.
+          During DNB Ophthalmology residency, our founders spent countless hours sifting through 900-page textbooks, trying to distill what actually mattered for the exam. We asked seniors for notes, bought question banks that were outdated, and still felt unprepared walking into the exam hall.
         </p>
         <p class="text-slate-600">
-          That frustration became OphthaMCQ. We are a team of ophthalmologists who have passed FRCOphth, DNB,
-          ICO, and NEET-SS. We know the exact syllabus, the high-yield topics, and the exam patterns because
-          we have lived through them.
+          That frustration became OphthaMCQ. We are a team of ophthalmologists who have passed FRCOphth, DNB, ICO/FICO, FAICO and NEET-SS. We know the exact syllabus, the high-yield topics, and the exam patterns because we have lived through them — recently enough that the pattern is still fresh.
         </p>
 
         <h2 class="text-2xl font-bold text-slate-900 mt-12">Our Mission</h2>
         <p class="text-slate-600">
-          To make ophthalmology exam preparation efficient, affordable, and effective. No more reading
-          50-page chapters when you only need the 5 bullet points that actually come in the exam.
+          To make ophthalmology exam preparation efficient, affordable, and effective. No more reading 50-page chapters when you only need the five bullet points that actually come in the exam. No more paying $300+ for a six-month subscription that is locked behind a US credit card.
         </p>
 
         <h2 class="text-2xl font-bold text-slate-900 mt-12">Quality Promise</h2>
-        <ul class="space-y-3 text-slate-600">
+        <ul class="space-y-3 text-slate-600 list-none pl-0">
           {[
-            'Every MCQ reviewed by 2+ qualified ophthalmologists',
-            'Notes distilled from standard textbooks (Ryan, Kanski, Elkington, Ferris, Khurana)',
-            'Content updated every 6 months based on latest exam patterns',
-            'References to standard guidelines and recent literature',
+            'Every MCQ reviewed by 2+ qualified ophthalmologists who cleared that exam',
+            'Notes distilled from standard textbooks (Ryan, Kanski, Elkington, Ferris, Khurana, BCSC)',
+            'Content updated every 6 months based on latest exam patterns and guidelines',
+            'References to standard guidelines (AAO PPP, EGS, NICE) and recent literature',
+            '7-day money-back guarantee on every paid product, no questions asked',
           ].map(item => (
             <li class="flex items-start gap-2">
               <Icon name="check" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-              {item}
+              <span>{item}</span>
             </li>
           ))}
         </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team / Credentials -->
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          The Doctors Behind OphthaMCQ
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          An editorial team of ophthalmologists who have cleared FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS — and now write the question banks they wish they had.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {team.map(t => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all duration-300">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-14 h-14 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 font-bold text-lg shrink-0">
+                {t.initials}
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900">{t.name}</h3>
+                <p class="text-xs text-sky-600 font-semibold">{t.role}</p>
+              </div>
+            </div>
+            <div class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 mb-3">
+              <Icon name="badgeCheck" class="w-3.5 h-3.5" />
+              {t.creds}
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">{t.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial pipeline -->
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          How Every Question Gets Made
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          A five-stage editorial pipeline ensures every MCQ and every notes page is exam-accurate, single-best-answer clean, and tied to a published reference.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+        {pipeline.map(p => (
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:border-sky-200 hover:bg-white hover:shadow-md transition-all">
+            <div class="text-sm font-extrabold text-sky-600 mb-2">{p.step}</div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">{p.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{p.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+          See the output: 200 free MCQs
+          <Icon name="arrowRight" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust signals -->
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            Trusted by Residents at Top Programmes
+          </h2>
+          <p class="mt-4 text-lg text-slate-600">
+            OphthaMCQ candidates have cleared their exams at every major Indian and international ophthalmology training centre — including AIIMS, Sankara Nethralaya, LV Prasad, Aravind, Moorfields, King Khalid, and university-affiliated NHS deaneries across the UK.
+          </p>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li class="flex items-start gap-2">
+              <Icon name="check" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span>15,000+ residents and post-graduate ophthalmology students worldwide</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span>Used in 40+ countries by FRCOphth, ICO and FAICO candidates</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span>Institutional licences in residency programmes across India and the Gulf</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="check" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span>Rated 4.7+ on the App Store and Google Play</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-4">References we author from</h3>
+          <p class="text-sm text-slate-600 mb-5">
+            We do not paraphrase from other question banks. Every explanation cites one of the standard ophthalmology references below, plus the most recent published guidelines.
+          </p>
+          <ul class="space-y-2.5">
+            {references.map(r => (
+              <li class="flex items-start gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-3">
+                <Icon name="bookOpen" class="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">{r}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Internal cross-links -->
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          See the Work Before You Decide
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          You should not have to take our word for it. Try our free resources first and judge the quality yourself.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/free-mcqs" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
+            <Illustration name="freeMcqs" class="w-9 h-9" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">200 Free MCQs</h3>
+          <p class="text-sm text-slate-600 mb-4">High-yield ophthalmology MCQs across 12 topics — no signup, instant explanations.</p>
+          <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 inline-flex items-center gap-1">Try free MCQs <Icon name="chevronRight" class="w-4 h-4" /></span>
+        </a>
+
+        <a href="/glossary" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
+            <Illustration name="notes" class="w-9 h-9" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">316-Term Glossary</h3>
+          <p class="text-sm text-slate-600 mb-4">Searchable ophthalmology glossary by sub-specialty — anatomy, glaucoma, retina, neuro-ophthalmology.</p>
+          <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 inline-flex items-center gap-1">Open glossary <Icon name="chevronRight" class="w-4 h-4" /></span>
+        </a>
+
+        <a href="/notes" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
+            <Illustration name="notes" class="w-9 h-9" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Exam-Ready Notes</h3>
+          <p class="text-sm text-slate-600 mb-4">Handwritten notes on retina, glaucoma, optics, cornea and oculoplastics — distilled to bullet-point revision pages.</p>
+          <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 inline-flex items-center gap-1">Browse notes <Icon name="chevronRight" class="w-4 h-4" /></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team / content FAQ -->
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Questions About the Team and Content
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Honest answers about who writes the questions, where the content comes from, and how we keep it accurate.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {teamFaqs.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <p class="text-slate-600 mb-3">More questions about pricing, refunds or exam coverage?</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/faq" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+            Read the full FAQ
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+            <Icon name="chat" class="w-4 h-4" />
+            Talk to the team
+          </a>
+        </div>
       </div>
     </div>
   </div>

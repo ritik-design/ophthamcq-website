@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { EXAMS } from '../../config';
+import { EXAMS, PRODUCTS, TESTIMONIALS } from '../../config';
 import Icon from '../../components/Icon.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
 
@@ -14,23 +14,377 @@ const exam = EXAMS.find(e => e.slug === slug);
 if (!exam) {
   return Astro.redirect('/exams');
 }
+
+type ExamContent = {
+  seoTitle: string;
+  seoDescription: string;
+  parts: { name: string; format: string; duration: string; passMark: string; questions: string }[];
+  highYieldTopics: { heading: string; items: string[] }[];
+  productIds: string[];
+  timeline: { phase: string; weeks: string; focus: string }[];
+  pitfalls: string[];
+  tips: string[];
+  textbooks: { title: string; why: string }[];
+  pastPapers: string;
+  testimonialFilter: string[];
+  faqs: { q: string; a: string }[];
+};
+
+const content: Record<string, ExamContent> = {
+  frcophth: {
+    seoTitle: 'FRCOphth Part 1 & 2 Preparation — Question Bank, Notes, Past Papers',
+    seoDescription: 'Pass FRCOphth Part 1 and Part 2 with syllabus-mapped MCQs, handwritten basic sciences notes, OSCE scenarios and past paper explanations.',
+    parts: [
+      { name: 'Part 1 (Written)', format: '90 SBAs + 30 CRQs', duration: '3 hours total', passMark: 'Standard set (~63–67%)', questions: 'Basic sciences focus: anatomy, optics, physiology, pathology, pharmacology, biostatistics' },
+      { name: 'Part 2 (Written)', format: 'Two written papers, SBAs', duration: '2 hours each', passMark: 'Standard set', questions: 'Clinical ophthalmology across all subspecialties' },
+      { name: 'Part 2 (OSCE + Refraction)', format: 'OSCE stations + refraction', duration: 'Half day', passMark: 'Station-level', questions: 'Communication, examination, data interpretation' },
+    ],
+    highYieldTopics: [
+      { heading: 'Basic Sciences (Part 1)', items: ['Embryology of the eye and globe development', 'Anatomy of the orbit, EOMs and visual pathway', 'Geometric optics: prisms, lenses, vergence', 'Visual optics: accommodation, presbyopia, schematic eye', 'Ocular pharmacology and drug delivery', 'Pathology of the cornea, lens and retina', 'Biostatistics and study design'] },
+      { heading: 'Clinical (Part 2)', items: ['Glaucoma classification and management', 'Diabetic and hypertensive retinopathy', 'Uveitis workup and treatment ladders', 'Neuro-ophthalmology: optic neuropathies, pupils, fields', 'Strabismus and amblyopia', 'Oculoplastics: lid malpositions, lacrimal disease', 'Corneal dystrophies, keratoconus, infectious keratitis'] },
+    ],
+    productIds: ['high-yield-mcqs', 'optics-notes', 'anatomy-notes', 'retina-deciphered', 'glaucoma-notes'],
+    timeline: [
+      { phase: 'Foundation', weeks: 'Weeks 1–6', focus: 'Read Elkington Optics + Snell Anatomy. Light MCQ practice (40/week) by topic.' },
+      { phase: 'Build', weeks: 'Weeks 7–14', focus: 'Daily 50 MCQs across mixed topics. Annotate handwritten notes against weak areas.' },
+      { phase: 'Sprint', weeks: 'Weeks 15–20', focus: 'Timed mocks 2× weekly. Revise CRQ technique. Past papers under exam conditions.' },
+      { phase: 'Polish', weeks: 'Final 2 weeks', focus: 'Spaced repetition on flagged questions. No new topics. Sleep, hydration, exam logistics.' },
+    ],
+    pitfalls: [
+      'Underestimating optics — it is 15–20% of Part 1 and easy to lose 8 marks here',
+      'Ignoring CRQ technique; SBA-only practice leaves you under-prepared',
+      'Cramming pathology slides without seeing real histology images',
+      'Skipping biostatistics; 4–6 questions are essentially free if you prepare them',
+    ],
+    tips: [
+      'Drill image-rich questions daily — Part 1 leans heavily on histology and clinical photos',
+      'Build a one-page optics formula sheet and revise it every Sunday',
+      'For Part 2 OSCE, rehearse breaking bad news and informed consent stations out loud',
+      'Use past papers in the final 6 weeks only — they are most valuable as calibration, not learning',
+    ],
+    textbooks: [
+      { title: 'Kanski Clinical Ophthalmology', why: 'Primary clinical reference for Part 2 across all subspecialties.' },
+      { title: 'Elkington — Clinical Optics', why: 'The single most important book for FRCOphth optics.' },
+      { title: 'Snell — Clinical Anatomy of the Eye', why: 'Best diagrams for embryology and orbital anatomy.' },
+      { title: 'BCSC Series (AAO)', why: 'Use selectively for pathology, neuro-ophthalmology and pharmacology.' },
+    ],
+    pastPapers: 'FRCOphth releases sample questions but full historic papers are not public. Our bank reverse-engineers question style from candidate recall and the official sample. Practise 2–3 timed sets in the last month to nail pacing.',
+    testimonialFilter: ['FRCOphth'],
+    faqs: [
+      { q: 'How long should I study for FRCOphth Part 1?', a: 'Most successful candidates put in 4–6 months of structured prep at 10–12 hours per week. Less if you are already strong in optics and basic sciences.' },
+      { q: 'Is FRCOphth Part 1 harder than DNB theory?', a: 'They test different things. FRCOphth Part 1 has heavier optics, statistics and pathology weighting. DNB theory rewards depth of essay writing on clinical topics. Most candidates find FRCOphth more time-pressured.' },
+      { q: 'Can I sit FRCOphth Part 1 in my first year of residency?', a: 'Yes, and many UK trainees do. International candidates often wait until year 2 to have a stronger clinical base, though Part 1 is mostly basic sciences.' },
+      { q: 'Do I need to be in the UK to sit FRCOphth?', a: 'No. Part 1 has overseas centres including India, the Middle East and Southeast Asia. Check the RCOphth website for current centres.' },
+      { q: 'What is the best question bank for FRCOphth?', a: 'OphthaMCQ Part 1 is built specifically for the written paper format — SBAs plus CRQs — with image-rich histology and optics questions you will not find in a generic bank.' },
+      { q: 'How important are CRQs in FRCOphth Part 1?', a: 'CRQs carry meaningful weight and reward concise factual writing. Practise 2–3 CRQ sets per week from week 8 onwards.' },
+    ],
+  },
+  'ico-fico': {
+    seoTitle: 'ICO / FICO Preparation — Past Papers, BVS MCQs, Clinical Banks',
+    seoDescription: 'Pass ICO Basic Sciences, Clinical, Optics & Refraction and FICO with past papers, syllabus-mapped MCQs and handwritten notes from doctors who passed.',
+    parts: [
+      { name: 'Basic Visual Sciences', format: '120 MCQs', duration: '3 hours', passMark: '~60%', questions: 'Anatomy, physiology, optics, pathology, pharmacology, microbiology, genetics' },
+      { name: 'Optics & Refraction', format: '120 MCQs', duration: '3 hours', passMark: '~60%', questions: 'Geometric and clinical optics, refractive errors, low vision, instruments' },
+      { name: 'Clinical Sciences', format: '120 MCQs', duration: '3 hours', passMark: '~60%', questions: 'Full clinical ophthalmology curriculum' },
+      { name: 'Advanced / FICO', format: 'Essay + MCQ', duration: 'Multi-paper', passMark: 'Sub-specialty', questions: 'Advanced sub-specialty depth: retina, glaucoma, cornea, paeds' },
+    ],
+    highYieldTopics: [
+      { heading: 'Basic Visual Sciences', items: ['Visual pathway and cortical processing', 'Tear film physiology', 'Aqueous dynamics and IOP control', 'Photoreceptor biochemistry and phototransduction', 'Microbiology of ocular infections', 'Genetics of inherited retinal disease'] },
+      { heading: 'Optics & Refraction', items: ['Schematic eye and reduced eye', 'Astigmatism: regular, irregular, surgical correction', 'IOL formulas (SRK/T, Barrett, Haigis)', 'Prisms and prismatic effects', 'Contact lens optics and fitting'] },
+      { heading: 'Clinical / FICO', items: ['Diabetic retinopathy staging and management', 'Glaucoma medical and surgical ladders', 'Uveitis: infectious vs autoimmune workup', 'Paediatric strabismus and amblyopia', 'Corneal infections, dystrophies and transplants'] },
+    ],
+    productIds: ['ico-fico-past-papers', 'ico-basic-visual-sciences', 'optics-notes', 'high-yield-mcqs', 'retina-deciphered'],
+    timeline: [
+      { phase: 'Map the syllabus', weeks: 'Weeks 1–4', focus: 'Download the ICO blueprint. Order Kanski, Elkington and BCSC. Light topic reading.' },
+      { phase: 'Topic mastery', weeks: 'Weeks 5–14', focus: 'One subspecialty per 10 days, finishing with 60 MCQs and 5 past paper questions per topic.' },
+      { phase: 'Past papers', weeks: 'Weeks 15–22', focus: 'Last 10 years of past papers with full explanations under timed conditions.' },
+      { phase: 'Final revision', weeks: 'Final 2 weeks', focus: 'Flagged questions only. One mock per paper. Logistics and accommodation booked.' },
+    ],
+    pitfalls: [
+      'Treating Basic Visual Sciences as memorisation — it tests applied physiology and optics',
+      'Skipping past papers; ICO repeats stem patterns more than candidates expect',
+      'Doing too many random MCQs without per-topic mastery first',
+      'Ignoring microbiology and genetics — they yield easy marks in BVS',
+    ],
+    tips: [
+      'Use ICO/FICO past papers as your single most important resource — nothing predicts performance better',
+      'Group BVS revision with the matching clinical topic to lock in understanding',
+      'Build flashcards for IOL formula constants and lens power calculations',
+      'Time your mocks to the exact ICO clock — pacing is what catches strong candidates out',
+    ],
+    textbooks: [
+      { title: 'Kanski Clinical Ophthalmology', why: 'Spine of clinical sciences preparation.' },
+      { title: 'Elkington — Clinical Optics', why: 'Indispensable for the Optics & Refraction paper.' },
+      { title: 'Ryan — Retina', why: 'For FICO retina depth and image-rich questions.' },
+      { title: 'BCSC Section on Basic Sciences', why: 'Best single text for the BVS paper.' },
+    ],
+    pastPapers: 'ICO/FICO past papers are publicly available but unexplained. Our ICO/FICO Past Papers product covers the last 10 years with full worked explanations and cross-references to Kanski and BCSC.',
+    testimonialFilter: ['ICO', 'FICO'],
+    faqs: [
+      { q: 'Is the ICO exam recognised in India?', a: 'Yes. ICO and FICO are internationally recognised credentials valued by Indian and international employers as proof of standardised ophthalmology knowledge.' },
+      { q: 'How many attempts do most candidates need to pass FICO?', a: 'Most well-prepared candidates pass each ICO paper on their first or second attempt. Past papers practice is the strongest predictor of first-attempt success.' },
+      { q: 'Can I take ICO Basic Visual Sciences during MS year 1?', a: 'Yes. BVS overlaps heavily with MS year-1 syllabus and is widely taken during the first year of residency.' },
+      { q: 'How is FICO different from ICO?', a: 'FICO (Fellow of the ICO) is the advanced qualification awarded after passing all four ICO papers, including the Advanced exam. ICO refers to the individual papers.' },
+      { q: 'Which past papers are most important for ICO?', a: 'The last 5 years carry the most predictive weight. Going back 10 years gives you pattern coverage; older than that, the syllabus and weighting have shifted.' },
+    ],
+  },
+  faico: {
+    seoTitle: 'FAICO Exam Preparation — AIOS Fellowship MCQs, Notes & Tips',
+    seoDescription: 'Pass FAICO with syllabus-mapped MCQs, sub-specialty handwritten notes, viva tips and past paper patterns for the AIOS Fellowship exam.',
+    parts: [
+      { name: 'FAICO Theory', format: 'MCQ + essay', duration: 'Full day', passMark: '50% per section', questions: 'Sub-specialty depth in chosen fellowship area' },
+      { name: 'FAICO Viva', format: 'Oral + clinical', duration: '30–45 min', passMark: 'Examiner panel', questions: 'Case discussion, imaging, surgical decision-making' },
+      { name: 'Log Book + Thesis', format: 'Submitted in advance', duration: 'N/A', passMark: 'Approval', questions: 'Documented cases and academic submission' },
+    ],
+    highYieldTopics: [
+      { heading: 'Cataract & IOL', items: ['Phaco fluidics and complications', 'Toric and multifocal IOL selection', 'Complicated cataract surgery', 'Posterior capsular rupture management'] },
+      { heading: 'Glaucoma sub-specialty', items: ['MIGS techniques and patient selection', 'Trabeculectomy refinements', 'Tube shunt surgery', 'Childhood glaucoma management'] },
+      { heading: 'Retina sub-specialty', items: ['Anti-VEGF protocols and switching', 'RD surgery: SB vs vitrectomy', 'Macular hole staging and surgery', 'OCT and OCTA interpretation'] },
+      { heading: 'Cornea & Refractive', items: ['Keratoplasty: PK, DSAEK, DMEK', 'Keratoconus management ladder', 'Refractive surgery patient selection', 'Ocular surface tumour management'] },
+    ],
+    productIds: ['faico-mcqs', 'high-yield-mcqs', 'retina-deciphered', 'glaucoma-notes', 'eyelids-notes'],
+    timeline: [
+      { phase: 'Syllabus and log book', weeks: 'Months 1–2', focus: 'Lock in your fellowship case log. Read the FAICO blueprint cover-to-cover.' },
+      { phase: 'Sub-specialty deep dive', weeks: 'Months 3–6', focus: 'Topic-by-topic theory + MCQ blocks. Build viva cases from your own clinics.' },
+      { phase: 'MCQ marathon', weeks: 'Months 7–9', focus: 'Daily 50 syllabus-mapped FAICO MCQs. Past paper-style essays weekly.' },
+      { phase: 'Viva drilling', weeks: 'Final 6 weeks', focus: 'Mock vivas with seniors. Imaging file reviews. Surgical video discussions.' },
+    ],
+    pitfalls: [
+      'Treating FAICO as a generalist exam — it rewards sub-specialty depth',
+      'Neglecting the viva; theory clears it, viva fails it for many candidates',
+      'Submitting an unpolished log book — examiners read it before they meet you',
+      'Skipping recent guideline updates (PPP, ESCRS, EuRetina) that show up in MCQs',
+    ],
+    tips: [
+      'Build a portfolio of 20–30 of your own clinic cases with images for viva use',
+      'Rehearse explaining OCT and FFA findings in 60 seconds per image',
+      'Match your essay style to AIOS published model answers — bullet structure scores higher',
+      'Use senior colleagues who passed in the last 2 years for mock vivas',
+    ],
+    textbooks: [
+      { title: 'Kanski Clinical Ophthalmology', why: 'Baseline reference still relevant for the theory paper.' },
+      { title: 'Ryan — Retina', why: 'Mandatory for retina sub-specialty candidates.' },
+      { title: 'Shields — Textbook of Glaucoma', why: 'Glaucoma sub-specialty depth.' },
+      { title: 'Cornea (Krachmer)', why: 'Cornea fellowship reference.' },
+      { title: 'AIOS published guidelines', why: 'Examiners draw MCQs from current AIOS PPPs.' },
+    ],
+    pastPapers: 'FAICO past papers are circulated informally. We have curated essay patterns and MCQ recall from the last 5 years into our FAICO MCQ bank, organised by sub-specialty.',
+    testimonialFilter: ['FAICO'],
+    faqs: [
+      { q: 'Who is eligible for FAICO?', a: 'Candidates with MS Ophthalmology or DNB plus the required sub-specialty fellowship experience documented in a verified log book.' },
+      { q: 'How is FAICO scored?', a: 'Theory and viva are scored separately. You must pass both; a strong theory cannot rescue a weak viva.' },
+      { q: 'What is the FAICO pass rate?', a: 'Pass rates vary by sub-specialty but historically sit between 55–70% for well-prepared candidates.' },
+      { q: 'How does FAICO differ from a university fellowship?', a: 'FAICO is an AIOS-awarded national fellowship recognised across India. It is examination-based whereas many university fellowships are training-based.' },
+      { q: 'Can I prepare for FAICO while working full-time?', a: 'Yes. Most candidates prepare during their fellowship year using 12–15 hours per week of structured study.' },
+    ],
+  },
+  'pd-cet': {
+    seoTitle: 'PD-CET Ophthalmology Preparation — MCQ Bank, Notes & Past Patterns',
+    seoDescription: 'Prepare for PD-CET Ophthalmology with a syllabus-mapped MCQ bank, handwritten notes and past question patterns for diploma-to-degree conversion.',
+    parts: [
+      { name: 'PD-CET Theory', format: '100 MCQs', duration: '90 minutes', passMark: 'Rank-based selection', questions: 'Full ophthalmology curriculum at MS entry level' },
+    ],
+    highYieldTopics: [
+      { heading: 'Core clinical', items: ['Refraction and dispensing', 'Common anterior segment conditions', 'Glaucoma basics and management', 'Diabetic retinopathy', 'Pediatric ophthalmology basics', 'Ocular emergencies'] },
+      { heading: 'Surgical knowledge', items: ['Phaco basics and complications', 'Trabeculectomy steps', 'Vitrectomy indications', 'Lid surgery basics'] },
+    ],
+    productIds: ['pdcet-mcqs', 'high-yield-mcqs', 'optics-notes', 'glaucoma-notes'],
+    timeline: [
+      { phase: 'Syllabus mapping', weeks: 'Weeks 1–3', focus: 'Cover PD-CET official syllabus. Identify gaps from diploma training.' },
+      { phase: 'Topic-wise MCQs', weeks: 'Weeks 4–10', focus: 'Topic blocks: 100 MCQs per topic with explanations.' },
+      { phase: 'Mock tests', weeks: 'Final 4 weeks', focus: 'Full-length timed mocks every 3–4 days.' },
+    ],
+    pitfalls: [
+      'Treating PD-CET like a hospital exam — it is a competitive ranking exam, speed matters',
+      'Ignoring optics and refraction because of diploma comfort',
+      'Skipping image-based questions',
+      'Not practising negative-marking strategy',
+    ],
+    tips: [
+      'Time every block — PD-CET is won on pacing',
+      'Build a quick-recall sheet for normal values (IOP, axial length, refractive ranges)',
+      'Use the PDCET-specific bank — generic MCQs miss the stem style',
+      'Mock test under exam conditions at least 6 times before the exam',
+    ],
+    textbooks: [
+      { title: 'Kanski Clinical Ophthalmology', why: 'Foundation clinical text.' },
+      { title: 'Parsons Diseases of the Eye', why: 'Concise, MCQ-friendly Indian standard.' },
+      { title: 'AK Khurana — Comprehensive Ophthalmology', why: 'Easy-recall summaries that match PD-CET style.' },
+    ],
+    pastPapers: 'PD-CET does not publish official past papers. Our PDCET MCQ bank reconstructs the exam pattern from candidate recall across the last 4 cycles.',
+    testimonialFilter: [],
+    faqs: [
+      { q: 'Who can take PD-CET?', a: 'Diploma in Ophthalmology holders who want to convert to MS Ophthalmology through the centralised entrance.' },
+      { q: 'Is PD-CET easier than NEET PG?', a: 'PD-CET is more focused (ophthalmology only) but ranking is competitive. The depth of ophthalmology questions is greater than NEET PG.' },
+      { q: 'How many MCQs are on PD-CET?', a: '100 MCQs in 90 minutes. Pacing is critical.' },
+      { q: 'Is there negative marking on PD-CET?', a: 'Yes, in most cycles. Confirm with the current notification.' },
+      { q: 'Best resource for PD-CET preparation?', a: 'A PDCET-specific MCQ bank plus AK Khurana for fast revision is the most efficient combination.' },
+    ],
+  },
+  dnb: {
+    seoTitle: 'DNB Ophthalmology Preparation — Theory MCQs, Notes & Practical Tips',
+    seoDescription: 'Pass DNB Ophthalmology theory and practical with syllabus-mapped MCQs, handwritten notes covering Kanski and Ryan, and viva tips from recent passers.',
+    parts: [
+      { name: 'DNB Theory', format: '4 papers, essays + short notes', duration: '3 hours each', passMark: '50% per paper, 50% aggregate', questions: 'Full clinical ophthalmology curriculum' },
+      { name: 'DNB Practical', format: 'Long case + short cases + viva', duration: 'Half day', passMark: 'Examiner panel', questions: 'Case discussion, instruments, surgical viva' },
+    ],
+    highYieldTopics: [
+      { heading: 'Paper 1 — Basic Sciences', items: ['Anatomy with clinical correlations', 'Physiology of aqueous and IOP', 'Optics and refractive errors', 'Ocular pharmacology', 'Pathology high-yield slides'] },
+      { heading: 'Paper 2 — Cornea, Lens, Glaucoma', items: ['Corneal dystrophies and degenerations', 'Cataract surgery and complications', 'Glaucoma classification and management', 'Refractive surgery basics'] },
+      { heading: 'Paper 3 — Retina, Uveitis, Neuro', items: ['Diabetic retinopathy management', 'AMD: dry and wet', 'Uveitis: infectious and autoimmune', 'Optic neuropathies and visual field defects'] },
+      { heading: 'Paper 4 — Paeds, Strab, Oculoplasty', items: ['Amblyopia and strabismus management', 'Congenital glaucoma and cataract', 'Lid malpositions and tumours', 'Lacrimal disorders'] },
+    ],
+    productIds: ['high-yield-mcqs', 'retina-deciphered', 'anatomy-notes', 'glaucoma-notes', 'eyelids-notes', 'optics-notes'],
+    timeline: [
+      { phase: 'Year 1', weeks: 'Months 1–12', focus: 'Read Kanski cover-to-cover. Topic-wise MCQs alongside clinical postings.' },
+      { phase: 'Year 2', weeks: 'Months 13–24', focus: 'Ryan, Shields and BCSC for depth. Start essay-writing practice.' },
+      { phase: 'Year 3 build', weeks: 'Months 25–32', focus: 'Daily 50 MCQs. Weekly mock essays. Practical case write-ups.' },
+      { phase: 'Final sprint', weeks: 'Last 3 months', focus: 'Past paper essays under timed conditions. Mock vivas. Instrument identification.' },
+    ],
+    pitfalls: [
+      'Reading Kanski once and assuming it sticks — second pass plus MCQs is mandatory',
+      'Neglecting essay structure and presentation',
+      'Skipping pathology slides — DNB loves them',
+      'Showing up to practical without rehearsed case templates',
+    ],
+    tips: [
+      'Develop a fixed essay template (definition, classification, clinical features, investigations, management, complications, prognosis)',
+      'Carry handwritten one-pagers per topic into the final month',
+      'Drill instruments and surgical steps weekly from year 2',
+      'Use mock vivas with seniors who passed in the last 12 months',
+    ],
+    textbooks: [
+      { title: 'Kanski Clinical Ophthalmology', why: 'Primary clinical text for all four papers.' },
+      { title: 'Ryan — Retina', why: 'Depth for retina questions and posterior segment essays.' },
+      { title: 'Shields — Textbook of Glaucoma', why: 'Glaucoma essays and viva.' },
+      { title: 'Parsons / AK Khurana', why: 'Quick revision and Indian-context coverage.' },
+      { title: 'Yanoff Ophthalmic Pathology', why: 'For pathology slides and short notes.' },
+    ],
+    pastPapers: 'NBE publishes past DNB theory papers. Work through the last 5 years of essays and short notes with model answers — it is the highest-yield revision activity in the final 8 weeks.',
+    testimonialFilter: ['DNB'],
+    faqs: [
+      { q: 'How tough is DNB Ophthalmology theory?', a: 'DNB theory is widely considered one of the harder MS-equivalent exams in India because of essay depth and pathology weighting. Structured prep over the full 3 years is non-negotiable.' },
+      { q: 'How many marks to pass DNB theory?', a: '50% per paper plus 50% aggregate. Failing one paper fails the exam.' },
+      { q: 'When should I start MCQ practice for DNB?', a: 'Month 3 of year 1. Use it as a topic-wise learning tool, not just a final revision tool.' },
+      { q: 'Best handwritten notes for DNB Ophthalmology?', a: 'Topic-wise handwritten notes that distil Kanski and Ryan are the most efficient final-revision tool. Browse our notes catalog under /notes.' },
+      { q: 'How important are images for DNB theory?', a: 'Very. Pathology slides, fundus photos, OCTs and FFAs appear in short notes and viva. Build an image library through year 2.' },
+    ],
+  },
+  'neet-ss': {
+    seoTitle: 'NEET-SS Ophthalmology Preparation — MCQs, Image Banks & Strategy',
+    seoDescription: 'Crack NEET-SS Ophthalmology with image-rich MCQs, sub-specialty handwritten notes and a 6-month timeline built by recent rankers.',
+    parts: [
+      { name: 'NEET-SS Ophthalmology', format: '150 MCQs', duration: '150 minutes', passMark: 'Rank-based selection', questions: 'Sub-specialty oriented: retina, glaucoma, cornea, paeds, neuro-ophth' },
+    ],
+    highYieldTopics: [
+      { heading: 'Retina (heavily weighted)', items: ['Diabetic retinopathy: ETDRS staging', 'AMD and anti-VEGF', 'Retinal detachment management', 'Inherited retinal diseases', 'OCT and OCTA interpretation'] },
+      { heading: 'Glaucoma', items: ['Angle closure mechanisms', 'OAG management ladder', 'Surgical glaucoma: trab, tubes, MIGS', 'Pediatric glaucoma'] },
+      { heading: 'Cornea', items: ['Keratoplasty techniques', 'Keratoconus and cross-linking', 'Microbial keratitis', 'Ocular surface disease'] },
+      { heading: 'Other', items: ['Uveitis classification and workup', 'Pediatric strabismus', 'Neuro-ophth: optic neuropathies, fields', 'Oculoplasty: lid malpositions, orbital disease'] },
+    ],
+    productIds: ['high-yield-mcqs', 'retina-deciphered', 'glaucoma-notes', 'eyelids-notes', 'anatomy-notes'],
+    timeline: [
+      { phase: 'Foundation', weeks: 'Months 1–2', focus: 'Map NEET-SS sub-specialty weighting. Refresh Kanski chapters by topic.' },
+      { phase: 'Image-rich practice', weeks: 'Months 3–4', focus: 'Daily 60 image MCQs across retina, cornea and neuro.' },
+      { phase: 'Speed and accuracy', weeks: 'Months 5–6', focus: 'Full mocks 2× per week. Analyse weak topics and recycle.' },
+    ],
+    pitfalls: [
+      'Ignoring the retina weighting — it is 30%+ of the paper',
+      'Not practising image-based MCQs',
+      'Forgetting negative marking strategy under time pressure',
+      'Reading too many books instead of doing MCQ blocks',
+    ],
+    tips: [
+      'Build an image library: fundus photos, FFA, OCT, OCTA, anterior segment photos',
+      'Time every block — NEET-SS is won by candidates who finish with 10 minutes to review',
+      'Use the marking strategy: attempt only when 75%+ confident',
+      'Final month: only flagged questions and mocks, no new books',
+    ],
+    textbooks: [
+      { title: 'Ryan — Retina', why: 'Mandatory for the retina-heavy weighting.' },
+      { title: 'Kanski Clinical Ophthalmology', why: 'Baseline reference across topics.' },
+      { title: 'Shields — Glaucoma', why: 'Glaucoma depth for sub-specialty questions.' },
+      { title: 'Yanoff & Duker', why: 'Image-rich reference for high-yield clinical patterns.' },
+    ],
+    pastPapers: 'NBE does not publish NEET-SS past papers. Our high-yield MCQs and image bank reconstruct the exam pattern from rankers in the last 3 cycles, focusing on the recall stems that repeat.',
+    testimonialFilter: ['NEET-SS'],
+    faqs: [
+      { q: 'How competitive is NEET-SS Ophthalmology?', a: 'Highly. Only the top ranks secure premium retina, cornea and oculoplasty fellowships. The cut-off shifts each year with the seat matrix.' },
+      { q: 'What is the best book for NEET-SS Ophthalmology?', a: 'Ryan for retina and Kanski for everything else. Pair with a NEET-SS-aligned MCQ bank for the final 4 months.' },
+      { q: 'How long to prepare for NEET-SS?', a: '6 months of focused prep is typical for rankers. Start earlier if you are balancing a junior consultant job.' },
+      { q: 'Is there negative marking in NEET-SS?', a: 'Yes. Build a confidence-based attempt strategy in your mocks.' },
+      { q: 'Which sub-specialty is most asked in NEET-SS?', a: 'Retina, followed by glaucoma and cornea. Plan your time allocation accordingly.' },
+    ],
+  },
+  okaps: {
+    seoTitle: 'OKAPs Preparation — BCSC-Aligned MCQs & Topic-wise Notes',
+    seoDescription: 'Prepare for OKAPs with BCSC-aligned ophthalmology MCQs, handwritten topic notes and a US-resident-friendly study schedule.',
+    parts: [
+      { name: 'OKAP', format: '~260 MCQs', duration: '4 hours', passMark: 'Percentile-reported, programme-specific', questions: 'Comprehensive ophthalmology aligned to BCSC sections 1–13' },
+    ],
+    highYieldTopics: [
+      { heading: 'BCSC-aligned core', items: ['Update on General Medicine (BCSC 1)', 'Fundamentals and Optics (BCSC 3)', 'Ophthalmic Pathology (BCSC 4)', 'Neuro-ophthalmology (BCSC 5)', 'Pediatric Ophthalmology and Strabismus (BCSC 6)', 'Retina and Vitreous (BCSC 12)', 'Glaucoma (BCSC 10)'] },
+    ],
+    productIds: ['high-yield-mcqs', 'optics-notes', 'retina-deciphered', 'anatomy-notes'],
+    timeline: [
+      { phase: 'PGY1 / early PGY2', weeks: 'Months 1–6', focus: 'Read BCSC 3 (Optics) and BCSC 2 (Fundamentals). Light topic MCQs.' },
+      { phase: 'PGY2 build', weeks: 'Months 7–18', focus: 'Rotate through BCSC sections aligned with clinic rotations. Topic-wise MCQs weekly.' },
+      { phase: 'Pre-exam', weeks: 'Final 8 weeks', focus: 'Full mocks weekly. Spaced repetition on flagged questions. BCSC quick-recall summaries.' },
+    ],
+    pitfalls: [
+      'Trying to read all 13 BCSC sections cover-to-cover',
+      'Skipping optics — it is heavily tested',
+      'Cramming the week before; OKAPs rewards spaced practice',
+      'Ignoring image-based questions',
+    ],
+    tips: [
+      'Anchor your study to BCSC sections, not random topic order',
+      'Use OphthaMCQ topic banks to drill weak BCSC sections',
+      'Set a target percentile with your programme director and reverse-plan from there',
+      'Run two full-length mocks under exam conditions in the final 4 weeks',
+    ],
+    textbooks: [
+      { title: 'BCSC (Basic and Clinical Science Course)', why: 'The OKAPs blueprint is built directly from BCSC.' },
+      { title: 'Kanski Clinical Ophthalmology', why: 'Useful complement to BCSC for clinical depth.' },
+      { title: 'Friedman — Review of Ophthalmology', why: 'Concise pre-exam review.' },
+    ],
+    pastPapers: 'The AAO does not publish OKAP past papers. Our high-yield bank and topic MCQs are aligned to BCSC chapter weights, which match the blueprint closely.',
+    testimonialFilter: [],
+    faqs: [
+      { q: 'When should I take OKAPs?', a: 'OKAPs is administered annually in March. All US ophthalmology residents take it each year as a programme-wide assessment.' },
+      { q: 'Is there a pass mark for OKAPs?', a: 'OKAPs reports percentiles rather than pass/fail. Programmes set their own expectations, often around the 30th–50th percentile.' },
+      { q: 'Best resource for OKAPs?', a: 'BCSC plus a BCSC-aligned MCQ bank. Pair with topic-wise handwritten notes for the final weeks.' },
+      { q: 'How long should I prepare for OKAPs?', a: 'Spread practice across the academic year. Heavy revision in the final 6–8 weeks.' },
+      { q: 'Is OphthaMCQ aligned with BCSC?', a: 'Yes. Our high-yield bank maps to BCSC sections and uses the question style common across OKAPs and similar US in-training exams.' },
+    ],
+  },
+};
+
+const examData = content[slug!] ?? content.frcophth;
+const matchedProducts = examData.productIds
+  .map(id => PRODUCTS.find(p => p.id === id))
+  .filter((p): p is typeof PRODUCTS[number] => Boolean(p));
+const matchedTestimonials = examData.testimonialFilter.length
+  ? TESTIMONIALS.filter(t => examData.testimonialFilter.some(f => t.exam.includes(f)))
+  : [];
 ---
 
 <Layout
-  title={`${exam.full} Preparation — Question Bank, Notes & Past Papers`}
-  description={`Prepare for ${exam.full} with syllabus-mapped MCQs, handwritten notes, and past papers. Trusted by 15,000+ residents.`}
+  title={examData.seoTitle}
+  description={examData.seoDescription}
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="max-w-3xl">
         <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 border border-sky-100 px-3 py-1 mb-6">
+          <Icon name={exam.iconName} class="w-4 h-4 text-sky-600" />
           <span class="text-sm font-medium text-sky-700">Exam Preparation</span>
         </div>
         <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
           {exam.full} <span class="text-sky-600">Preparation</span>
         </h1>
         <p class="mt-5 text-lg text-slate-600">
-          {exam.description}. Dedicated question bank, handwritten notes, and past papers to help you pass on the first attempt.
+          {exam.description}. Syllabus-mapped MCQ bank, handwritten notes and past paper patterns to help you pass on the first attempt.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4">
           <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
@@ -46,24 +400,221 @@ if (!exam) {
 
   <div class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8">What's Included</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { title: 'Syllabus-Mapped MCQs', desc: 'Every topic covered with exam-weighted questions.', icon: 'mcq' },
-          { title: 'Handwritten Notes', desc: 'Distilled from standard textbooks into exam-ready points.', icon: 'notes' },
-          { title: 'Past Papers', desc: 'Previous years papers with full explanations.', icon: 'pastPapers' },
-          { title: 'Timed Simulations', desc: 'Practice under exam conditions with the real timer.', icon: 'clock' },
-          { title: 'Progress Tracking', desc: 'Know your weak topics and focus your revision.', icon: 'chartBar' },
-          { title: 'Mobile App Access', desc: 'Study on the go with iOS and Android apps.', icon: 'mobile' },
-        ].map(item => (
-          <div class="rounded-xl border border-slate-200 bg-white p-6">
-            <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3">
-              <Icon name={item.icon} class="w-5 h-5 text-sky-600" />
-            </div>
-            <h3 class="text-base font-bold text-slate-900 mb-1">{item.title}</h3>
-            <p class="text-sm text-slate-600">{item.desc}</p>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">{exam.name} Exam Overview</h2>
+        <p class="mt-3 text-slate-600">Format, duration and pass criteria broken down per part.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {examData.parts.map(part => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3">{part.name}</h3>
+            <dl class="space-y-2 text-sm">
+              <div class="flex justify-between gap-2"><dt class="text-slate-500">Format</dt><dd class="text-slate-800 text-right">{part.format}</dd></div>
+              <div class="flex justify-between gap-2"><dt class="text-slate-500">Duration</dt><dd class="text-slate-800 text-right">{part.duration}</dd></div>
+              <div class="flex justify-between gap-2"><dt class="text-slate-500">Pass mark</dt><dd class="text-slate-800 text-right">{part.passMark}</dd></div>
+            </dl>
+            <p class="mt-4 text-sm text-slate-600 border-t border-slate-100 pt-4">{part.questions}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">{exam.name} High-Yield Syllabus Topics</h2>
+        <p class="mt-3 text-slate-600">The topics that pull the most marks. Drill these first.</p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-8">
+        {examData.highYieldTopics.map(group => (
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-4">{group.heading}</h3>
+            <ul class="space-y-2">
+              {group.items.map(item => (
+                <li class="flex items-start gap-2 text-sm text-slate-700">
+                  <Icon name="check" class="w-4 h-4 text-sky-600 mt-0.5 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/topics" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800">
+          Browse all ophthalmology topics
+          <Icon name="chevronRight" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {matchedProducts.length > 0 && (
+    <div class="bg-slate-50 py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Matched products for {exam.name}</h2>
+          <p class="mt-3 text-slate-600">Our most-used resources for this exam, hand-picked from the OphthaMCQ catalog.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {matchedProducts.map(p => (
+            <a href={p.href} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center">
+                  <Icon name={p.icon} class="w-5 h-5 text-sky-600" />
+                </div>
+                {p.tag && <span class="text-xs font-semibold text-sky-700 bg-sky-50 rounded-full px-2 py-0.5">{p.tag}</span>}
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mb-1">{p.name}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed flex-1">{p.description}</p>
+              <div class="mt-4 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-lg font-bold text-slate-900">{p.price}</span>
+                  {p.oldPrice && <span class="text-sm text-slate-400 line-through">{p.oldPrice}</span>}
+                </div>
+                <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 flex items-center gap-1">View<Icon name="chevronRight" class="w-4 h-4" /></span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Suggested study plan and timeline</h2>
+        <p class="mt-3 text-slate-600">A phased plan used by recent passers. Adjust to your own runway.</p>
+      </div>
+      <ol class="space-y-4">
+        {examData.timeline.map((phase, i) => (
+          <li class="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div class="shrink-0 w-10 h-10 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold">{i + 1}</div>
+            <div>
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                <h3 class="text-lg font-bold text-slate-900">{phase.phase}</h3>
+                <span class="text-xs font-medium text-sky-700">{phase.weeks}</span>
+              </div>
+              <p class="text-sm text-slate-600 leading-relaxed">{phase.focus}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-5">Common pitfalls</h2>
+          <ul class="space-y-3">
+            {examData.pitfalls.map(p => (
+              <li class="flex items-start gap-3 rounded-xl bg-white border border-slate-200 p-4">
+                <div class="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-sm">!</span>
+                </div>
+                <span class="text-sm text-slate-700">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-5">Pro tips from recent passers</h2>
+          <ul class="space-y-3">
+            {examData.tips.map(t => (
+              <li class="flex items-start gap-3 rounded-xl bg-white border border-slate-200 p-4">
+                <div class="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
+                  <Icon name="check" class="w-3.5 h-3.5 text-emerald-600" />
+                </div>
+                <span class="text-sm text-slate-700">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Recommended textbooks and references</h2>
+        <p class="mt-3 text-slate-600">The references the exam is actually written from.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {examData.textbooks.map(b => (
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center shrink-0">
+                <Icon name="bookOpen" class="w-5 h-5 text-sky-600" />
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900">{b.title}</h3>
+                <p class="text-sm text-slate-600 mt-1">{b.why}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 rounded-2xl bg-sky-50 border border-sky-100 p-6">
+        <h3 class="text-base font-bold text-slate-900 mb-2">Past papers and question patterns</h3>
+        <p class="text-sm text-slate-700">{examData.pastPapers}</p>
+      </div>
+    </div>
+  </div>
+
+  {matchedTestimonials.length > 0 && (
+    <div class="bg-slate-50 py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 tracking-tight">From doctors who passed {exam.name}</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {matchedTestimonials.map(t => (
+            <figure class="rounded-2xl border border-slate-200 bg-white p-6">
+              <div class="flex gap-1 mb-3">
+                {[0, 1, 2, 3, 4].map(() => (
+                  <Icon name="star" class="w-4 h-4 text-amber-400" />
+                ))}
+              </div>
+              <blockquote class="text-sm text-slate-700 leading-relaxed">"{t.text}"</blockquote>
+              <figcaption class="mt-4 pt-4 border-t border-slate-100">
+                <div class="text-sm font-semibold text-slate-900">{t.name}</div>
+                <div class="text-xs text-slate-500">{t.role}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">{exam.name} FAQ</h2>
+        <p class="mt-3 text-slate-600">Answers to the questions residents actually ask.</p>
+      </div>
+      <div class="space-y-4">
+        {examData.faqs.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+      <div class="mt-10 grid sm:grid-cols-3 gap-3 text-center text-sm">
+        <a href="/exams" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">All exams</a>
+        <a href="/topics" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">All topics</a>
+        <a href="/glossary" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">Glossary</a>
       </div>
     </div>
   </div>

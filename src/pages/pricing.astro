@@ -1,47 +1,433 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PricingPreview from '../components/sections/PricingPreview.astro';
-import FAQ from '../components/sections/FAQ.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import Icon from '../components/Icon.astro';
+import { PRODUCTS, APP_LINKS, COM_BASE } from '../config';
+
+const principles = [
+  {
+    icon: 'heart',
+    title: 'Resident-friendly by default',
+    body: 'Indian PG residents earn a stipend, not a US fellowship salary. Every product is priced in rupees first, with a target of being a single-day stipend or less.',
+  },
+  {
+    icon: 'lock',
+    title: 'No subscription traps',
+    body: 'Buy a notes title once and you keep it for life — including all future revisions. We do not bury core content behind a recurring renewal you forgot to cancel.',
+  },
+  {
+    icon: 'shield',
+    title: 'Risk-free 7-day guarantee',
+    body: 'Every paid purchase comes with a no-questions-asked 7-day money-back guarantee. If the content does not match the quality on this site, we refund every rupee.',
+  },
+  {
+    icon: 'sparkles',
+    title: 'Free until you are sure',
+    body: '200 free MCQs, a 316-term ophthalmology glossary, and a sample chapter from every notes title are free forever. Try the quality before you spend anything.',
+  },
+];
+
+const comparison = [
+  {
+    name: 'OphthaMCQ',
+    highlight: true,
+    price: '₹249 – ₹1,799',
+    priceNote: 'per product (one-time)',
+    qbank: '10,000+ MCQs, exam-mapped',
+    notes: 'Handwritten notes included',
+    apps: 'iOS + Android, offline mode',
+    refund: '7-day money-back',
+    exams: 'FRCOphth, ICO, FAICO, DNB, NEET-SS, PDCET, OKAP',
+  },
+  {
+    name: 'OphthoQuestions',
+    highlight: false,
+    price: '$314',
+    priceNote: '6-month subscription',
+    qbank: '~3,500 MCQs',
+    notes: 'No notes',
+    apps: 'Browser only',
+    refund: 'None',
+    exams: 'OKAP-focused',
+  },
+  {
+    name: 'EyeDocs',
+    highlight: false,
+    price: '£79 – £99',
+    priceNote: 'annual subscription',
+    qbank: '~2,000 MCQs',
+    notes: 'Limited',
+    apps: 'iOS + Android',
+    refund: 'None advertised',
+    exams: 'FRCOphth-focused',
+  },
+  {
+    name: 'StatPearls / generic banks',
+    highlight: false,
+    price: 'Free / $99',
+    priceNote: 'mixed',
+    qbank: 'General medicine, ophthalmology thin',
+    notes: 'No exam-mapped notes',
+    apps: 'Web',
+    refund: 'N/A',
+    exams: 'Not ophthalmology-specific',
+  },
+];
+
+const included = [
+  { icon: 'download', title: 'Lifetime PDF download', body: 'Download every notes title as a PDF and keep it forever. Open it on your laptop, iPad or phone — no DRM lock-in.' },
+  { icon: 'mobile', title: 'iOS + Android app access', body: 'Full bank syncs to our native apps. Practise MCQs in the OPD waiting room, on the metro, or in night-duty downtime — even fully offline.' },
+  { icon: 'sparkles', title: 'Free updates for 6 months', body: 'Every paid product is updated twice a year. You get the latest pattern, recall questions and guideline rewrites at no extra cost during that period.' },
+  { icon: 'chartBar', title: 'Progress tracking & analytics', body: 'Topic-wise accuracy, time-per-question, weak-topic heatmaps and timed exam simulations show you exactly where to focus next.' },
+  { icon: 'image', title: 'Image-based MCQs included', body: '500+ fundus photos, OCTs, slit-lamp images and visual fields — the same image-recognition pattern you face in FRCOphth Part 2, FAICO and NEET-SS.' },
+  { icon: 'shield', title: 'Secure payments via .com store', body: 'Checkout is hosted on ophthamcq.com with UPI, cards, net-banking and international Stripe support. Your content unlocks instantly.' },
+];
+
+const pricingFaqs = [
+  {
+    q: 'How much do OphthaMCQ products actually cost?',
+    a: 'Individual products start at ₹249 for the Eyelids handwritten notes and go up to ₹1,799 for the full ICO/FICO past papers bundle. Most MCQ banks sit between ₹399 and ₹929. There is also a Resident plan at ₹499/month and an All-Access annual plan at ₹2,999/year if you want the whole library.',
+  },
+  {
+    q: 'Why is OphthaMCQ so much cheaper than OphthoQuestions or EyeDocs?',
+    a: 'We built the platform in India for the global ophthalmology PG community. Our cost base is lower and we deliberately price for residents on stipend, not for fellows on US salaries. Despite the price difference, we cover more exams (FRCOphth, ICO, FAICO, DNB, NEET-SS, PD-CET and OKAP) and include handwritten notes that the others do not offer at all.',
+  },
+  {
+    q: 'Is there a money-back guarantee?',
+    a: 'Yes — every paid product carries a 7-day money-back guarantee, no questions asked. If the content does not feel like a match for your exam in the first week, email support and we refund the full amount to the original payment method.',
+  },
+  {
+    q: 'Do I need to subscribe or can I buy products one-time?',
+    a: 'Both options exist. You can buy any individual notes title or MCQ bank as a one-time purchase and own it for life. Or you can take the Resident monthly plan or All-Access annual plan if you want everything. Most residents start with one or two one-time products and upgrade only if they sit multiple exams.',
+  },
+  {
+    q: 'What payment methods do you accept?',
+    a: 'On ophthamcq.com checkout we accept UPI, all major Indian credit and debit cards, net banking, and Stripe for international payments (Visa, Mastercard, Amex). Currency is auto-converted at checkout for buyers outside India.',
+  },
+  {
+    q: 'Are there discounts for groups or institutions?',
+    a: 'Yes. Residency programmes, medical colleges and fellowship institutions get bulk licences at ₹500 – ₹1,000 per resident per year, with an admin dashboard and progress reports. See the institutions page for details, or contact our sales team for a quote.',
+  },
+  {
+    q: 'How long do I have access after I buy?',
+    a: 'One-time product purchases are lifetime — you keep the PDF and app access forever, including 6 months of free updates from the purchase date. Subscription plans run for the period you pay for (month or year) and can be cancelled any time from your ophthamcq.com account.',
+  },
+];
+
+const featuredPrices = PRODUCTS.slice(0, 6);
 ---
 
 <Layout
-  title="Pricing — Free, Resident & All-Access Plans"
-  description="Start free. Upgrade when ready. Resident plan at ₹499/mo or All-Access at ₹2,999/yr. 7-day money-back guarantee."
+  title="Pricing — Affordable Ophthalmology MCQs, Notes & FAICO/DNB Question Bank"
+  description="Transparent pricing for ophthalmology exam prep: notes from ₹249, MCQ banks from ₹399, Resident plan at ₹499/mo, All-Access ₹2,999/yr. 7-day money-back guarantee."
 >
+  <!-- Hero -->
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
+      <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 mb-4">
+        <Icon name="shield" class="w-4 h-4" />
+        7-day money-back guarantee on every paid product
+      </span>
       <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
         Simple, Transparent <span class="text-sky-600">Pricing</span>
       </h1>
       <p class="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
-        Start free. Upgrade when you are ready. No hidden fees. Cancel anytime.
+        Affordable ophthalmology MCQs, handwritten notes and FAICO, DNB, FRCOphth, ICO/FICO and NEET-SS question banks. Start free, upgrade when ready, no hidden fees, cancel anytime.
       </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#plans" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+          See plans
+          <Icon name="arrowRight" class="ml-2 h-4 w-4" />
+        </a>
+        <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+          Try 200 free MCQs first
+        </a>
+      </div>
     </div>
   </div>
 
+  <div id="plans"></div>
   <PricingPreview />
 
-  <div class="bg-white py-16">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-slate-900 text-center mb-10">Frequently Asked Questions</h2>
-      <FAQ />
+  <!-- Why we price this way -->
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Why Our Pricing Looks Like This
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Four principles that decide how we charge for ophthalmology exam preparation.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {principles.map(p => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
+              <Icon name={p.icon} class="w-6 h-6 text-sky-600" />
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">{p.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{p.body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 
-  <div class="bg-slate-50 py-16">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl font-bold text-slate-900 mb-4">Need Institutional Pricing?</h2>
-      <p class="text-slate-600 mb-6">
-        Residency programs, medical colleges, and training institutions get bulk licenses
-        at ₹500–1,000 per resident per year. Includes admin dashboard and progress reports.
+  <!-- Featured product prices -->
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Individual Product Prices
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Buy any single notes title or MCQ bank as a one-time purchase. Own it for life with 6 months of free updates.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredPrices.map(prod => (
+          <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="text-base font-bold text-slate-900 leading-snug">{prod.name}</h3>
+              {prod.tag && (
+                <span class="shrink-0 inline-flex items-center rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-semibold text-sky-700">
+                  {prod.tag}
+                </span>
+              )}
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4 flex-1">{prod.description}</p>
+            <div class="flex items-end gap-2 mb-4">
+              <span class="text-2xl font-extrabold text-slate-900">{prod.price}</span>
+              {prod.oldPrice && (
+                <span class="text-sm text-slate-400 line-through mb-0.5">{prod.oldPrice}</span>
+              )}
+              {prod.discount && (
+                <span class="ml-auto inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-bold text-emerald-700">
+                  {prod.discount} off
+                </span>
+              )}
+            </div>
+            <a href={prod.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 rounded-xl bg-slate-100 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-200 transition-colors">
+              View on store
+              <Icon name="externalLink" class="w-4 h-4" />
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href={COM_BASE + '/courses'} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 hover:text-sky-700">
+          See the full catalogue on ophthamcq.com
+          <Icon name="chevronRight" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison table -->
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          OphthaMCQ vs International Question Banks
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Honest comparison against the best-known ophthalmology MCQ platforms. Prices verified against each provider's public website.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-slate-700">Feature</th>
+              {comparison.map(c => (
+                <th class={`px-4 py-3 font-semibold ${c.highlight ? 'text-sky-700 bg-sky-50' : 'text-slate-700'}`}>
+                  {c.name}
+                  {c.highlight && <div class="text-xs font-bold text-emerald-600 mt-0.5">Best value</div>}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">Price</td>
+              {comparison.map(c => (
+                <td class={`px-4 py-3 ${c.highlight ? 'bg-sky-50 text-slate-900 font-semibold' : 'text-slate-600'}`}>
+                  <div>{c.price}</div>
+                  <div class="text-xs text-slate-500">{c.priceNote}</div>
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">Question bank size</td>
+              {comparison.map(c => (
+                <td class={`px-4 py-3 ${c.highlight ? 'bg-sky-50 text-slate-900 font-semibold' : 'text-slate-600'}`}>{c.qbank}</td>
+              ))}
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">Handwritten notes</td>
+              {comparison.map(c => (
+                <td class={`px-4 py-3 ${c.highlight ? 'bg-sky-50 text-slate-900 font-semibold' : 'text-slate-600'}`}>{c.notes}</td>
+              ))}
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">Mobile apps</td>
+              {comparison.map(c => (
+                <td class={`px-4 py-3 ${c.highlight ? 'bg-sky-50 text-slate-900 font-semibold' : 'text-slate-600'}`}>{c.apps}</td>
+              ))}
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">Refund policy</td>
+              {comparison.map(c => (
+                <td class={`px-4 py-3 ${c.highlight ? 'bg-sky-50 text-slate-900 font-semibold' : 'text-slate-600'}`}>{c.refund}</td>
+              ))}
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">Exams covered</td>
+              {comparison.map(c => (
+                <td class={`px-4 py-3 ${c.highlight ? 'bg-sky-50 text-slate-900 font-semibold' : 'text-slate-600'}`}>{c.exams}</td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-4 text-xs text-slate-500 text-center">
+        Prices for other providers shown as published on their respective websites at the time of writing. We do not represent or affiliate with them.
       </p>
-      <a
-        href="/institutions"
-        class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
-      >
-        Contact Institutional Sales
-      </a>
+    </div>
+  </div>
+
+  <!-- What you get -->
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          What Every Purchase Includes
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Whether you buy a single product or take the All-Access plan, you get the same six core entitlements.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {included.map(i => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
+              <Icon name={i.icon} class="w-6 h-6 text-sky-600" />
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">{i.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{i.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href={APP_LINKS.googlePlay} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 transition-colors">
+          <Icon name="mobile" class="w-4 h-4" />
+          Get it on Google Play
+        </a>
+        <a href={APP_LINKS.appStore} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 transition-colors">
+          <Icon name="mobile" class="w-4 h-4" />
+          Download on the App Store
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Money-back guarantee callout -->
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-8 lg:p-12 text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 flex items-center justify-center mb-5">
+          <Icon name="shield" class="w-8 h-8 text-emerald-600" />
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+          7-Day Money-Back Guarantee
+        </h2>
+        <p class="mt-4 text-base text-slate-700 max-w-2xl mx-auto">
+          Try any paid OphthaMCQ product risk-free for 7 days. If the question quality, explanations or notes do not match what you saw in the free MCQs, email support and we refund the full amount to your original payment method. No forms. No interrogation.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/faq" class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-emerald-300 hover:border-emerald-400 transition-all">
+            Read the refund FAQ
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors">
+            <Icon name="chat" class="w-4 h-4 mr-2" />
+            Contact support
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing FAQ -->
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Pricing, Payments & Refunds — FAQ
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Specific questions about ophthalmology MCQ pricing, FAICO exam fees, DNB question bank pricing and refunds.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {pricingFaqs.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/faq" class="text-sm font-semibold text-sky-600 hover:text-sky-700 inline-flex items-center gap-1">
+          See the full FAQ <Icon name="chevronRight" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Institutional CTA -->
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl bg-sky-900 p-8 lg:p-12 grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-sky-800 px-3 py-1 text-xs font-semibold text-sky-200 mb-4">
+            <Icon name="building" class="w-4 h-4" />
+            For training programmes & hospitals
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            Institutional & Bulk Pricing
+          </h2>
+          <p class="mt-4 text-base text-sky-100">
+            Residency programmes, medical colleges and fellowship institutions get bulk licences at ₹500–1,000 per resident per year. Includes an admin dashboard, batch progress reports, exam-wise analytics and custom MCQ assignments.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="/institutions" class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-sky-900 hover:bg-sky-50 transition-colors">
+            See institutional plans
+            <Icon name="arrowRight" class="ml-2 h-4 w-4" />
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center rounded-xl bg-sky-700 px-5 py-3 text-sm font-semibold text-white border-2 border-sky-500 hover:bg-sky-600 transition-colors">
+            <Icon name="chat" class="w-4 h-4 mr-2" />
+            Talk to institutional sales
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -3,33 +3,83 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import { MCQS } from '../data/free-mcqs';
+import { GLOSSARY } from '../data/glossary';
 
-const topics = [
-  { name: 'Glaucoma', slug: 'glaucoma', questionCount: '500+', icon: 'eye' },
-  { name: 'Retina', slug: 'retina', questionCount: '600+', icon: 'eye' },
-  { name: 'Cornea', slug: 'cornea', questionCount: '450+', icon: 'eye' },
-  { name: 'Cataract', slug: 'cataract', questionCount: '400+', icon: 'eye' },
-  { name: 'Neuro-Ophthalmology', slug: 'neuro-ophthalmology', questionCount: '350+', icon: 'eye' },
-  { name: 'Pediatric Ophthalmology', slug: 'pediatric-ophthalmology', questionCount: '300+', icon: 'eye' },
-  { name: 'Uveitis', slug: 'uveitis', questionCount: '300+', icon: 'eye' },
-  { name: 'Oculoplastics', slug: 'oculoplastics', questionCount: '250+', icon: 'eye' },
+type TopicMeta = {
+  name: string;
+  slug: string;
+  questionCount: string;
+  mcqTopic: string;
+  glossaryCategory: string;
+  blurb: string;
+};
+
+const topics: TopicMeta[] = [
+  { name: 'Glaucoma',                slug: 'glaucoma',                questionCount: '500+', mcqTopic: 'Glaucoma',                  glossaryCategory: 'Glaucoma',              blurb: 'Open-angle and angle-closure mechanisms, optic nerve assessment, medical and surgical management ladders.' },
+  { name: 'Retina',                  slug: 'retina',                  questionCount: '600+', mcqTopic: 'Retina & Vitreous',         glossaryCategory: 'Retina & Vitreous',     blurb: 'Diabetic retinopathy, AMD, retinal detachment, inherited retinal disease and posterior segment imaging.' },
+  { name: 'Cornea',                  slug: 'cornea',                  questionCount: '450+', mcqTopic: 'Cornea & External Disease', glossaryCategory: 'Cornea & External',     blurb: 'Corneal dystrophies, microbial keratitis, keratoconus, dry eye and ocular surface disease.' },
+  { name: 'Cataract',                slug: 'cataract',                questionCount: '400+', mcqTopic: 'Lens & Cataract',           glossaryCategory: 'Lens & Cataract',       blurb: 'Lens biology, age-related cataract, surgical techniques and complications, IOL selection.' },
+  { name: 'Neuro-Ophthalmology',     slug: 'neuro-ophthalmology',     questionCount: '350+', mcqTopic: 'Neuro-ophthalmology',       glossaryCategory: 'Neuro-ophthalmology',   blurb: 'Pupil disorders, optic neuropathies, visual fields and intracranial pathways.' },
+  { name: 'Pediatric Ophthalmology', slug: 'pediatric-ophthalmology', questionCount: '300+', mcqTopic: 'Strabismus & Pediatric',    glossaryCategory: 'Strabismus & Pediatric', blurb: 'Amblyopia, strabismus, congenital cataract and glaucoma, retinopathy of prematurity.' },
+  { name: 'Uveitis',                 slug: 'uveitis',                 questionCount: '300+', mcqTopic: 'Uveitis',                   glossaryCategory: 'Uveitis',               blurb: 'Anterior, intermediate, posterior and panuveitis. Infectious vs autoimmune workup.' },
+  { name: 'Oculoplastics',           slug: 'oculoplastics',           questionCount: '250+', mcqTopic: 'Oculoplastics & Orbit',     glossaryCategory: 'Oculoplastics',         blurb: 'Lid malpositions, lacrimal disease, orbital inflammation and lid tumours.' },
+];
+
+const additionalSubspecialties = [
+  { name: 'Refraction & Optics',  slug: null, glossaryCategory: 'Optics & Refraction', blurb: 'Schematic eye, refractive errors, prisms, IOL formulas and contact lens optics.' },
+  { name: 'Ocular Pathology',     slug: null, glossaryCategory: 'Pathology',           blurb: 'High-yield slides, ocular tumours and pathology that appears in MCQs and viva.' },
+];
+
+const mcqsByTopic: Record<string, number> = MCQS.reduce((acc, m) => {
+  acc[m.topic] = (acc[m.topic] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+const glossaryByCategory: Record<string, number> = GLOSSARY.reduce((acc, g) => {
+  acc[g.category] = (acc[g.category] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
+const ranking = [...topics]
+  .map(t => ({ ...t, mcqCount: mcqsByTopic[t.mcqTopic] || 0 }))
+  .sort((a, b) => b.mcqCount - a.mcqCount);
+
+const studyRationale = [
+  { title: 'Mirrors the exam blueprint', body: 'Every major ophthalmology exam — FRCOphth, ICO, FAICO, DNB, NEET-SS, OKAPs — is structured by topic. Studying topic-wise lets you map effort directly to blueprint weighting.' },
+  { title: 'Spaced repetition compounds', body: 'Drilling one subspecialty per week, then revisiting it 21 days later, locks knowledge into long-term memory far better than calendar-day syllabus reading.' },
+  { title: 'Identifies weak topics fast', body: 'Topic-wise MCQ blocks expose gaps within 60 minutes — the kind that broad reading hides for weeks.' },
+  { title: 'Matches how clinics work', body: 'Real-world ophthalmology is sub-specialty-driven. Topic-wise study primes you for both the exam and the next decade of practice.' },
+];
+
+const topicFaqs = [
+  { q: 'Is topic-wise study better than syllabus-wise study for ophthalmology exams?', a: 'For MCQ-heavy exams, yes. Topic-wise drilling builds depth and exposes weak areas quickly. Syllabus-wise reading is best layered on top during the final 6–8 weeks for synthesis and essay practice.' },
+  { q: 'Which ophthalmology topic carries the most marks?', a: 'Retina is consistently the highest-weighted single topic across most exams (FRCOphth Part 2, FICO, NEET-SS), often 18–25% of MCQs. Glaucoma and cornea follow at 12–18% each.' },
+  { q: 'What are the highest-yield ophthalmology topics?', a: 'Diabetic retinopathy, primary open-angle glaucoma, corneal dystrophies, cataract surgery complications, and optic neuropathies are the most repeatedly tested across exam cycles.' },
+  { q: 'Should I study basic sciences as a separate topic?', a: 'Yes — anatomy, embryology, physiology and optics together carry 15–20% of FRCOphth Part 1 and ICO BVS. They are easy marks if drilled, easy losses if ignored.' },
+  { q: 'How many MCQs per topic should I do before an exam?', a: 'Aim for 200–400 MCQs per major subspecialty across the prep period, with 50+ done in the final 4 weeks per topic as revision.' },
+  { q: 'Can I prepare topic-wise for both FRCOphth and DNB at once?', a: 'Yes. The clinical topic syllabus overlaps almost entirely. Use exam-specific banks for stem style calibration in the final 8 weeks.' },
 ];
 ---
 
 <Layout
-  title="Topic-Wise Ophthalmology MCQs — Glaucoma, Retina, Cornea, Neuro"
-  description="Practice topic-wise ophthalmology MCQs by subspecialty. Glaucoma, retina, cornea, neuro-ophthalmology, pediatric, uveitis, and more."
+  title="Ophthalmology Topics — Retina, Cornea, Glaucoma Study Guides & MCQs"
+  description="Topic-wise ophthalmology study: retina, cornea, glaucoma, cataract, uveitis, neuro-ophth and more. High-yield notes, MCQs and glossary by subspecialty."
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Topic-Wise <span class="text-sky-600">MCQs</span>
+            Topic-Wise <span class="text-sky-600">Ophthalmology Study</span>
           </h1>
           <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Focus your revision by subspecialty. Each topic includes free sample questions.
+            Master ophthalmology by subspecialty. High-yield topics, MCQs, glossary terms and study guides for every PG exam.
           </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">Try Topic MCQs</a>
+            <a href="#topics" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 transition-colors">Browse Topics</a>
+          </div>
         </div>
         <div class="flex justify-center">
           <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
@@ -40,24 +90,169 @@ const topics = [
     </div>
   </div>
 
+  <div id="topics" class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Ophthalmology subspecialties</h2>
+        <p class="mt-4 text-lg text-slate-600">Pick a subspecialty to open the full study guide with MCQs, glossary terms and matched products.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {topics.map(topic => {
+          const mcqCount = mcqsByTopic[topic.mcqTopic] || 0;
+          const termCount = glossaryByCategory[topic.glossaryCategory] || 0;
+          return (
+            <a href={`/topics/${topic.slug}`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+              <div class="w-12 h-12 rounded-lg bg-sky-50 flex items-center justify-center mb-4">
+                <Illustration name="questionBank" class="w-8 h-8" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">{topic.name}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed flex-1">{topic.blurb}</p>
+              <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span>{topic.questionCount} MCQs</span>
+                <span>{termCount} terms · {mcqCount} free</span>
+              </div>
+              <span class="mt-4 text-sm font-medium text-sky-600 group-hover:text-sky-700 flex items-center gap-1">
+                Open guide
+                <Icon name="chevronRight" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </span>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-6">
+        {additionalSubspecialties.map(s => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">{s.name}</h3>
+            <p class="text-sm text-slate-600">{s.blurb}</p>
+            <div class="mt-3 text-xs text-slate-500">{glossaryByCategory[s.glossaryCategory] || 0} glossary terms available</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Why topic-wise study works</h2>
+        <p class="mt-4 text-lg text-slate-600">High-yield ophthalmology topics demand depth, not breadth. Here is why residents who study topic-wise outperform.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {studyRationale.map(r => (
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{r.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Most-studied ophthalmology topics</h2>
+        <p class="mt-4 text-lg text-slate-600">Ranked by free MCQ count and search demand from OphthaMCQ users (2024–2025).</p>
+      </div>
+      <ol class="space-y-3">
+        {ranking.map((t, i) => (
+          <li>
+            <a href={`/topics/${t.slug}`} class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 hover:border-sky-200 hover:shadow-sm transition-all">
+              <div class="shrink-0 w-9 h-9 rounded-full bg-sky-50 text-sky-700 flex items-center justify-center font-bold">{i + 1}</div>
+              <div class="flex-1">
+                <div class="font-semibold text-slate-900">{t.name}</div>
+                <div class="text-xs text-slate-500">{t.questionCount} MCQs · {glossaryByCategory[t.glossaryCategory] || 0} glossary terms</div>
+              </div>
+              <Icon name="chevronRight" class="w-5 h-5 text-sky-600" />
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Per-topic resources at a glance</h2>
+        <p class="mt-4 text-lg text-slate-600">MCQ count, glossary depth and the matched study guide for each subspecialty.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {topics.map(topic => {
+          const mcqCount = mcqsByTopic[topic.mcqTopic] || 0;
+          const termCount = glossaryByCategory[topic.glossaryCategory] || 0;
+          return (
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <h3 class="text-base font-bold text-slate-900 mb-3">{topic.name}</h3>
+              <div class="grid grid-cols-2 gap-3 mb-4">
+                <div class="rounded-lg bg-white border border-slate-200 p-3 text-center">
+                  <div class="text-xl font-bold text-sky-600">{mcqCount}</div>
+                  <div class="text-xs text-slate-500">free MCQs</div>
+                </div>
+                <div class="rounded-lg bg-white border border-slate-200 p-3 text-center">
+                  <div class="text-xl font-bold text-sky-600">{termCount}</div>
+                  <div class="text-xs text-slate-500">glossary terms</div>
+                </div>
+              </div>
+              <a href={`/topics/${topic.slug}`} class="text-sm font-semibold text-sky-700 hover:text-sky-800 flex items-center gap-1">
+                Open guide <Icon name="chevronRight" class="w-4 h-4" />
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+
   <div class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Cross-link your study</h2>
+        <p class="mt-4 text-lg text-slate-600">Use topic guides alongside our MCQs, glossary, notes and exam pages.</p>
+      </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {topics.map(topic => (
-          <a
-            href={`/topics/${topic.slug}`}
-            class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all"
-          >
-            <div class="w-12 h-12 rounded-lg bg-sky-50 flex items-center justify-center mb-4">
-              <Illustration name="questionBank" class="w-8 h-8" />
-            </div>
-            <h2 class="text-lg font-bold text-slate-900 mb-1">{topic.name}</h2>
-            <p class="text-sm text-slate-500 mb-4">{topic.questionCount} questions</p>
-            <span class="mt-auto text-sm font-medium text-sky-600 group-hover:text-sky-700 flex items-center gap-1">
-              Practice Now
-              <Icon name="chevronRight" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </span>
-          </a>
+        <a href="/free-mcqs" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="mcq" class="w-5 h-5 text-sky-600" /></div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">50 Free MCQs</h3>
+          <p class="text-sm text-slate-600">Sample questions across every subspecialty, scored instantly.</p>
+        </a>
+        <a href="/glossary" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="bookOpen" class="w-5 h-5 text-sky-600" /></div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">316-term Glossary</h3>
+          <p class="text-sm text-slate-600">Filterable by subspecialty with exam-ready definitions.</p>
+        </a>
+        <a href="/notes" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="notes" class="w-5 h-5 text-sky-600" /></div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Handwritten Notes</h3>
+          <p class="text-sm text-slate-600">Per-topic notes distilled from Kanski, Ryan and Elkington.</p>
+        </a>
+        <a href="/exams" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="graduationCap" class="w-5 h-5 text-sky-600" /></div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Exam Guides</h3>
+          <p class="text-sm text-slate-600">FRCOphth, ICO, FAICO, DNB, NEET-SS, PD-CET and OKAPs prep paths.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Topic-wise vs syllabus-wise study — FAQ</h2>
+        <p class="mt-4 text-lg text-slate-600">How to plan a study schedule by subspecialty.</p>
+      </div>
+      <div class="space-y-4">
+        {topicFaqs.map(faq => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <span class="shrink-0 text-slate-400 group-open:rotate-180 transition-transform">
+                <Icon name="chevronDown" class="w-5 h-5" />
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
         ))}
       </div>
     </div>
