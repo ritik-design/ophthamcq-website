@@ -183,13 +183,10 @@ export const APP_LINKS = {
 
 /** Exams we cover — icon references custom Icon component names */
 export const EXAMS = [
-  { name: 'FRCOphth',    full: 'FRCOphth Part 1 & 2',   slug: 'frcophth',     iconName: 'eye',       description: 'Royal College of Ophthalmologists' },
   { name: 'ICO / FICO',  full: 'ICO / FICO Exams',      slug: 'ico-fico',     iconName: 'globe',     description: 'International Council of Ophthalmology' },
   { name: 'FAICO',       full: 'FAICO Exam',            slug: 'faico',        iconName: 'badgeCheck', description: 'Fellowship of All India Ophthalmological Society' },
   { name: 'PD-CET',      full: 'PD-CET Ophthalmology',  slug: 'pd-cet',       iconName: 'target',    description: 'Post Diploma Centralized Entrance Test' },
   { name: 'DNB',         full: 'DNB Ophthalmology',     slug: 'dnb',          iconName: 'building',  description: 'Diplomate of National Board' },
-  { name: 'NEET-SS',     full: 'NEET-SS Ophthalmology', slug: 'neet-ss',      iconName: 'graduationCap', description: 'Super Specialty Entrance Exam' },
-  { name: 'OKAPs',       full: 'OKAPs',                 slug: 'okaps',        iconName: 'bookOpen',  description: 'Ophthalmology Knowledge Assessment Program' },
 ];
 
 /** Nav links */
@@ -209,7 +206,6 @@ export const TESTIMONIALS = [
   { name: 'Dr. Sangam Rout', role: 'DNB Ophthalmology, AIIMS', text: 'The quality of explanations is super so so good. Cleared my DNB theory in first attempt.', exam: 'DNB' },
   { name: 'Dr. Garvesh Surya', role: 'MS Ophthalmology', text: 'The exam ready notes have my heart — extremely helpful for my DNB finals.', exam: 'DNB' },
   { name: 'Dr. Umer Shaikh', role: 'FRCOphth, Moorfields', text: 'The best distillation of Ryan, Kanski, and Elkington you will ever find. Passed FRCOphth Part 1 with 72%.', exam: 'FRCOphth' },
-  { name: 'Dr. Priya Menon', role: 'NEET-SS Retina Rank 12', text: 'Retina Deciphered notes saved me 200 hours of reading. Landed my dream fellowship.', exam: 'NEET-SS' },
   { name: 'Dr. Ahmed Khan', role: 'ICO Basic Sciences', text: 'ICO past papers with full explanations were my single biggest advantage. Scored 85%.', exam: 'ICO' },
   { name: 'Dr. Ritu Sharma', role: 'FAICO, Aravind Eye Hospital', text: 'Topic-wise MCQs mapped exactly to the FAICO syllabus. Could not have passed without them.', exam: 'FAICO' },
 ];
