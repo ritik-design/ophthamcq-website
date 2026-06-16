@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { COM_BASE } from '../config';
+
+const stations = [
+  { title: 'OSCE Stations', body: 'Communication, examination and data interpretation stations modeled on DNB and MS practical exams.' },
+  { title: 'Instruments', body: 'Identification, parts and clinical use for every instrument on the practical exam table.' },
+  { title: 'Case Presentation', body: 'Long and short case templates — history, examination, diagnosis, investigations and management.' },
+  { title: 'Investigations', body: 'OCT, FFA, perimetry, USG, A-scan, B-scan, keratometry — how to read and present in viva.' },
+  { title: 'Viva Voce', body: 'Hot questions from recent passers across all subspecialties with structured 60-second answers.' },
+];
+---
+
+<Layout
+  title="OSCE, Practical & Viva Voce Ready Bundle — DNB / MS / DO Ophthalmology"
+  description="Complete DNB/MS/DO practical exam bundle — OSCE stations, instruments, case presentation, investigations and viva voce preparation by ophthalmologists who passed."
+>
+  <section class="bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-sm font-medium text-emerald-700">New Launch — Free for DNB / MS / DO residents</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        OSCE, Practical &amp; Viva Voce Ready
+        <span class="block mt-2 text-sky-600">DNB / MS / DO Bundle</span>
+      </h1>
+      <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
+        Complete practical exam bundle — OSCE stations, instruments, case presentation,
+        investigations and viva voce prep built by ophthalmologists who passed these exams.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {stations.map(s => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6">
+            <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-4">
+              <Icon name="check" class="w-5 h-5 text-sky-600" />
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">{s.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sky-900 py-20 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Walk into the practical exam ready.<br />
+        <span class="text-sky-300">Get the complete bundle.</span>
+      </h2>
+      <p class="mt-5 text-lg text-sky-100 max-w-xl mx-auto">
+        OSCE stations, instruments, case templates, investigations and viva voce — everything in one place on ophthamcq.com.
+      </p>
+      <a
+        href={COM_BASE}
+        class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-sky-900 shadow-lg hover:bg-sky-50 transition-colors"
+      >
+        Get Complete Resources →
+        <Icon name="externalLink" class="w-4 h-4" />
+      </a>
+    </div>
+  </section>
+</Layout>

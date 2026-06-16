@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 import { MCQS } from '../data/free-mcqs';
+import { COM_BASE } from '../config';
 
 const QUIZ_SIZE = 25;
 const TIMER_MINUTES = 30;
@@ -152,8 +153,8 @@ const TIMER_MINUTES = 30;
                 <Icon name="arrowRight" class="w-4 h-4" />
                 Try a New Set of {QUIZ_SIZE}
               </button>
-              <a href="/notes" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white border-2 border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-colors">
-                Unlock 10,000+ MCQs
+              <a href={COM_BASE} class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors">
+                Get Full Question Bank →
                 <Icon name="externalLink" class="w-4 h-4" />
               </a>
             </div>

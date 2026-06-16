@@ -1,8 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { EXAMS, PRODUCTS, TESTIMONIALS } from '../../config';
+import { EXAMS, PRODUCTS, TESTIMONIALS, COM_BASE } from '../../config';
 import Icon from '../../components/Icon.astro';
-import FinalCTA from '../../components/sections/FinalCTA.astro';
 
 export function getStaticPaths() {
   return EXAMS.map(e => ({ params: { slug: e.slug } }));
@@ -358,6 +357,52 @@ const content: Record<string, ExamContent> = {
       { q: 'Is OphthaMCQ aligned with BCSC?', a: 'Yes. Our high-yield bank maps to BCSC sections and uses the question style common across OKAPs and similar US in-training exams.' },
     ],
   },
+  fellowship: {
+    seoTitle: 'Ophthalmology Subspecialty Fellowship Preparation — Notes, MCQs & Viva',
+    seoDescription: 'Handwritten notes, MCQs and viva preparation for ophthalmology subspecialty fellowships in retina, glaucoma, cornea, oculoplasty and paediatric ophthalmology.',
+    parts: [
+      { name: 'Theory / Long Case', format: 'Essays + clinical', duration: 'Institution specific', passMark: 'Examiner panel', questions: 'Subspecialty depth in chosen fellowship area' },
+      { name: 'Viva + Imaging', format: 'Oral + image interpretation', duration: '30–45 min', passMark: 'Examiner panel', questions: 'OCT, FFA, angiography, surgical decision making' },
+    ],
+    highYieldTopics: [
+      { heading: 'Retina fellowship', items: ['Anti-VEGF protocols and switching', 'Macular hole staging and surgery', 'OCT and OCTA interpretation', 'Vitreoretinal surgical principles'] },
+      { heading: 'Glaucoma fellowship', items: ['MIGS techniques and patient selection', 'Trabeculectomy refinements', 'Tube shunt surgery', 'Childhood glaucoma'] },
+      { heading: 'Cornea fellowship', items: ['Keratoplasty: PK, DSAEK, DMEK', 'Refractive surgery selection', 'Ocular surface tumours', 'Keratoconus management'] },
+      { heading: 'Oculoplasty & Paeds', items: ['Lid malpositions and tumours', 'Lacrimal drainage surgery', 'Strabismus and amblyopia', 'Paediatric cataract and glaucoma'] },
+    ],
+    productIds: ['retina-deciphered', 'glaucoma-notes', 'eyelids-notes', 'anatomy-notes', 'optics-notes'],
+    timeline: [
+      { phase: 'Fellowship year 1', weeks: 'Months 1–6', focus: 'Clinic-driven reading. Build a personal case log with images.' },
+      { phase: 'Topic deep dives', weeks: 'Months 7–12', focus: 'Handwritten notes per subspecialty. Image interpretation drills weekly.' },
+      { phase: 'Exam prep', weeks: 'Final 3 months', focus: 'Mock vivas, essay practice, image-based MCQs under time pressure.' },
+    ],
+    pitfalls: [
+      'Relying only on clinic exposure — examiners test guideline knowledge too',
+      'Neglecting OCT and FFA interpretation practice',
+      'Skipping image-based MCQs',
+      'Not rehearsing viva answers out loud',
+    ],
+    tips: [
+      'Build a portfolio of 20–30 of your own cases with imaging',
+      'Practise explaining OCTs and FFAs in 60 seconds per image',
+      'Review subspecialty PPPs and ESCRS/EuRetina guidelines monthly',
+      'Mock viva with seniors who passed in the last 12 months',
+    ],
+    textbooks: [
+      { title: 'Ryan — Retina', why: 'Reference for retina fellowships.' },
+      { title: 'Shields — Textbook of Glaucoma', why: 'Glaucoma fellowship depth.' },
+      { title: 'Cornea (Krachmer)', why: 'Cornea fellowship reference.' },
+      { title: 'Subspecialty PPPs / AIOS Guidelines', why: 'Current guidelines that examiners draw from.' },
+    ],
+    pastPapers: 'Subspecialty fellowship exams vary by institution. Our handwritten notes and image bank cover the topics and image patterns most commonly tested across Indian and international fellowships.',
+    testimonialFilter: ['FAICO', 'FRCOphth'],
+    faqs: [
+      { q: 'Which subspecialty fellowships do you cover?', a: 'Retina, glaucoma, cornea, oculoplasty and paediatric ophthalmology — with handwritten notes, MCQs and image banks for each.' },
+      { q: 'Are these notes useful during fellowship clinics?', a: 'Yes. They are written by fellows who used them in clinic for quick recall on diagnosis and management.' },
+      { q: 'Do you have past papers for fellowship exams?', a: 'Most fellowship exams are institution-specific and do not have published papers. We curate question patterns and viva topics from recent passers.' },
+      { q: 'How long should I prepare for a subspecialty fellowship exam?', a: 'Plan a 3-month focused prep window in the final quarter of the fellowship year on top of clinic-driven daily reading.' },
+    ],
+  },
 };
 
 const examData = content[slug!] ?? content.frcophth;
@@ -619,5 +664,22 @@ const matchedTestimonials = examData.testimonialFilter.length
     </div>
   </div>
 
-  <FinalCTA />
+  <section class="bg-sky-900 py-20 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Ready to prepare for {exam.name}?<br />
+        <span class="text-sky-300">Unlock the full study kit.</span>
+      </h2>
+      <p class="mt-5 text-lg text-sky-100 max-w-xl mx-auto">
+        MCQ banks, handwritten notes, and past papers — everything for {exam.name} in one place on ophthamcq.com.
+      </p>
+      <a
+        href={COM_BASE}
+        class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-sky-900 shadow-lg hover:bg-sky-50 transition-colors"
+      >
+        Get Complete Resources →
+        <Icon name="externalLink" class="w-4 h-4" />
+      </a>
+    </div>
+  </section>
 </Layout>

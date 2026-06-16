@@ -183,10 +183,12 @@ export const APP_LINKS = {
 
 /** Exams we cover — icon references custom Icon component names */
 export const EXAMS = [
-  { name: 'ICO / FICO',  full: 'ICO / FICO Exams',      slug: 'ico-fico',     iconName: 'globe',     description: 'International Council of Ophthalmology' },
-  { name: 'FAICO',       full: 'FAICO Exam',            slug: 'faico',        iconName: 'badgeCheck', description: 'Fellowship of All India Ophthalmological Society' },
-  { name: 'PD-CET',      full: 'PD-CET Ophthalmology',  slug: 'pd-cet',       iconName: 'target',    description: 'Post Diploma Centralized Entrance Test' },
-  { name: 'DNB',         full: 'DNB Ophthalmology',     slug: 'dnb',          iconName: 'building',  description: 'Diplomate of National Board' },
+  { name: 'ICO / FICO',     full: 'ICO / FICO Exams',                  slug: 'ico-fico',    iconName: 'globe',       description: 'International Council of Ophthalmology' },
+  { name: 'FAICO',          full: 'FAICO Exam',                        slug: 'faico',       iconName: 'badgeCheck',  description: 'Fellowship of All India Ophthalmological Society' },
+  { name: 'DNB / MS / DO',  full: 'DNB / MS / DO Ophthalmology',       slug: 'dnb',         iconName: 'building',    description: 'Diplomate of National Board' },
+  { name: 'PDCET',          full: 'PD-CET Ophthalmology',              slug: 'pd-cet',      iconName: 'target',      description: 'Post Diploma Centralized Entrance Test' },
+  { name: 'FRCOphth',       full: 'FRCOphth Exam',                     slug: 'frcophth',    iconName: 'graduationCap', description: 'Royal College of Ophthalmologists', comingSoon: true },
+  { name: 'Fellowship',     full: 'Ophthalmology Subspecialty Fellowship', slug: 'fellowship', iconName: 'sparkles', description: 'Ophthalmology Subspecialty Fellowship' },
 ];
 
 /** Nav links */

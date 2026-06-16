@@ -1,9 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { PRODUCTS, TESTIMONIALS, EXAMS, APP_LINKS } from '../config';
+import { PRODUCTS, TESTIMONIALS, EXAMS, APP_LINKS, COM_BASE } from '../config';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
-import FinalCTA from '../components/sections/FinalCTA.astro';
 
 const noteProducts = PRODUCTS.filter(p => p.category === 'notes');
 
@@ -422,5 +421,22 @@ const notesFaq = [
     </div>
   </section>
 
-  <FinalCTA />
+  <section class="bg-sky-900 py-20 lg:py-24">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        You've seen the sample.<br />
+        <span class="text-sky-300">Get the complete notes library.</span>
+      </h2>
+      <p class="mt-5 text-lg text-sky-100 max-w-xl mx-auto">
+        Instant PDF download, lifetime app access, 7-day money-back guarantee. Checkout on ophthamcq.com.
+      </p>
+      <a
+        href={COM_BASE}
+        class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-sky-900 shadow-lg hover:bg-sky-50 transition-colors"
+      >
+        Buy Complete Notes →
+        <Icon name="externalLink" class="w-4 h-4" />
+      </a>
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,99 @@
+---
+import Icon from '../Icon.astro';
+
+const exams = [
+  {
+    name: 'ICO / FICO',
+    sub: 'International Council of Ophthalmology',
+    body: 'Past papers + MCQs for all ICO steps',
+    href: '/exams/ico-fico',
+    cta: 'Get ICO/FICO Resources →',
+    icon: 'globe',
+  },
+  {
+    name: 'FAICO',
+    sub: 'Fellowship of All India Ophthalmological Society',
+    body: 'Subspecialty MCQs mapped to AIOS syllabus',
+    href: '/exams/faico',
+    cta: 'Get FAICO Resources →',
+    icon: 'badgeCheck',
+  },
+  {
+    name: 'DNB / MS / DO',
+    sub: 'Diplomate of National Board',
+    body: 'Theory MCQs + Free OSCE Ready Bundle',
+    href: '/exams/dnb',
+    cta: 'Get DNB/MS/DO Resources →',
+    icon: 'building',
+  },
+  {
+    name: 'PDCET',
+    sub: 'Post Diploma Centralized Entrance Test',
+    body: 'High yield MCQs for post diploma entrance',
+    href: '/exams/pd-cet',
+    cta: 'Get PDCET Resources →',
+    icon: 'target',
+  },
+  {
+    name: 'FRCOphth',
+    sub: 'Royal College of Ophthalmologists',
+    body: 'Syllabus-mapped Part 1 & Part 2 prep — launching soon.',
+    href: '/exams/frcophth',
+    cta: 'Join Waitlist →',
+    icon: 'graduationCap',
+    badge: 'Coming Soon',
+  },
+  {
+    name: 'Fellowship',
+    sub: 'Ophthalmology Subspecialty Fellowship',
+    body: 'Handwritten notes for all subspecialties',
+    href: '/exams/fellowship',
+    cta: 'Get Fellowship Resources →',
+    icon: 'sparkles',
+  },
+];
+---
+
+<section class="bg-slate-50 py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        Every Ophthalmology Exam. One Platform.
+      </h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Syllabus-mapped MCQs, handwritten notes and past papers for the exams that matter.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {exams.map(e => (
+        <div class:list={[
+          'group relative flex flex-col rounded-2xl border bg-white p-6 transition-all',
+          e.badge ? 'border-amber-200 opacity-95' : 'border-slate-200 hover:border-sky-300 hover:shadow-md',
+        ]}>
+          {e.badge && (
+            <span class="absolute top-4 right-4 inline-flex items-center rounded-full bg-amber-50 border border-amber-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
+              {e.badge}
+            </span>
+          )}
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-sky-50 flex items-center justify-center shrink-0">
+              <Icon name={e.icon} class="w-5 h-5 text-sky-600" />
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-900 leading-tight">{e.name}</h3>
+              <p class="text-xs text-slate-500 mt-0.5">{e.sub}</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed mb-5">{e.body}</p>
+          <a
+            href={e.href}
+            class="mt-auto inline-flex items-center justify-center rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
+          >
+            {e.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
