@@ -17,11 +17,6 @@ const principles = [
     body: 'Buy a notes title once and you keep it for life — including all future revisions. We do not bury core content behind a recurring renewal you forgot to cancel.',
   },
   {
-    icon: 'shield',
-    title: 'Risk-free 7-day guarantee',
-    body: 'Every paid purchase comes with a no-questions-asked 7-day money-back guarantee. If the content does not match the quality on this site, we refund every rupee.',
-  },
-  {
     icon: 'sparkles',
     title: 'Free until you are sure',
     body: '200 free MCQs, a 316-term ophthalmology glossary, and a sample chapter from every notes title are free forever. Try the quality before you spend anything.',
@@ -37,7 +32,7 @@ const comparison = [
     qbank: '10,000+ MCQs, exam-mapped',
     notes: 'Handwritten notes included',
     apps: 'iOS + Android, offline mode',
-    refund: '7-day money-back',
+    refund: 'See refund policy',
     exams: 'FRCOphth, ICO, FAICO, DNB, NEET-SS, PDCET, OKAP',
   },
   {
@@ -94,10 +89,6 @@ const pricingFaqs = [
     a: 'We built the platform in India for the global ophthalmology PG community. Our cost base is lower and we deliberately price for residents on stipend, not for fellows on US salaries. Despite the price difference, we cover more exams (FRCOphth, ICO, FAICO, DNB, NEET-SS, PD-CET and OKAP) and include handwritten notes that the others do not offer at all.',
   },
   {
-    q: 'Is there a money-back guarantee?',
-    a: 'Yes — every paid product carries a 7-day money-back guarantee, no questions asked. If the content does not feel like a match for your exam in the first week, email support and we refund the full amount to the original payment method.',
-  },
-  {
     q: 'Do I need to subscribe or can I buy products one-time?',
     a: 'Both options exist. You can buy any individual notes title or MCQ bank as a one-time purchase and own it for life. Or you can take the Resident monthly plan or All-Access annual plan if you want everything. Most residents start with one or two one-time products and upgrade only if they sit multiple exams.',
   },
@@ -120,14 +111,14 @@ const featuredPrices = PRODUCTS.slice(0, 6);
 
 <Layout
   title="Pricing — Affordable Ophthalmology MCQs, Notes & FAICO/DNB Question Bank"
-  description="Transparent pricing for ophthalmology exam prep: notes from ₹249, MCQ banks from ₹399, Resident plan at ₹499/mo, All-Access ₹2,999/yr. 7-day money-back guarantee."
+  description="Transparent pricing for ophthalmology exam prep: notes from ₹249, MCQ banks from ₹399, Resident plan at ₹499/mo, All-Access ₹2,999/yr."
 >
   <!-- Hero -->
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
       <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 mb-4">
         <Icon name="shield" class="w-4 h-4" />
-        7-day money-back guarantee on every paid product
+        Buy once, keep for life — instant access on web, iOS &amp; Android
       </span>
       <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
         Simple, Transparent <span class="text-sky-600">Pricing</span>
@@ -335,32 +326,6 @@ const featuredPrices = PRODUCTS.slice(0, 6);
           <Icon name="mobile" class="w-4 h-4" />
           Download on the App Store
         </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Money-back guarantee callout -->
-  <div class="bg-white py-16 lg:py-24">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-8 lg:p-12 text-center">
-        <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 flex items-center justify-center mb-5">
-          <Icon name="shield" class="w-8 h-8 text-emerald-600" />
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-          7-Day Money-Back Guarantee
-        </h2>
-        <p class="mt-4 text-base text-slate-700 max-w-2xl mx-auto">
-          Try any paid OphthaMCQ product risk-free for 7 days. If the question quality, explanations or notes do not match what you saw in the free MCQs, email support and we refund the full amount to your original payment method. No forms. No interrogation.
-        </p>
-        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/faq" class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-emerald-300 hover:border-emerald-400 transition-all">
-            Read the refund FAQ
-          </a>
-          <a href="/contact" class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors">
-            <Icon name="chat" class="w-4 h-4 mr-2" />
-            Contact support
-          </a>
-        </div>
       </div>
     </div>
   </div>

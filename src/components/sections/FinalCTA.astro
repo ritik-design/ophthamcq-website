@@ -1,39 +1,33 @@
 ---
 import Icon from '../Icon.astro';
-import AnimatedGradient from '../AnimatedGradient.astro';
 ---
 
-<section class="relative overflow-hidden bg-sky-900 py-20 lg:py-28">
-  <AnimatedGradient variant="dark" />
-
-  <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-      Your Exam Is Coming.<br />
+<section class="bg-sky-900 py-20 lg:py-24">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+      Your Ophthalmology Exam Is Coming.<br />
       <span class="text-sky-300">Are You Ready?</span>
     </h2>
-    <p class="mt-6 text-lg text-sky-100 max-w-2xl mx-auto">
-      Join 15,000+ residents who passed their exams with OphthaMCQ.
-      Start with 50 free MCQs today.
+    <p class="mt-6 text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+      The world's only ophthalmology PG exam notes and MCQ question bank —
+      built by gold medalists who passed. Start with free sample questions today.
     </p>
 
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
       <a
-        href="/free-mcqs"
+        href="/notes"
         class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-base font-semibold text-sky-900 shadow-lg hover:bg-sky-50 transition-colors"
       >
-        Start Free Practice
+        Browse Notes &amp; MCQs
         <Icon name="arrowRight" class="ml-2 h-5 w-5" />
       </a>
       <a
-        href="/notes"
-        class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-sky-700 px-8 py-4 text-base font-semibold text-white border-2 border-sky-500 hover:bg-sky-600 transition-colors"
+        href="/exams"
+        class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-transparent px-8 py-4 text-base font-semibold text-white border-2 border-sky-400/60 hover:border-white hover:bg-sky-800 transition-colors"
       >
-        Explore Products
+        Browse by Exam
+        <Icon name="chevronRight" class="ml-1 h-5 w-5" />
       </a>
     </div>
-
-    <p class="mt-4 text-sm text-sky-200">
-      No credit card required for free practice. All purchases handled securely on ophthamcq.com.
-    </p>
   </div>
 </section>

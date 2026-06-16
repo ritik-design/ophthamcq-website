@@ -1,74 +1,46 @@
 ---
 import Icon from '../Icon.astro';
-import AnimatedGradient from '../AnimatedGradient.astro';
 ---
 
-<section class="relative overflow-hidden bg-slate-50/80">
-  <AnimatedGradient />
-
-  <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
-    <svg width="100%" height="100%">
-      <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)"/>
-    </svg>
-  </div>
-
-  <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-28">
+<section class="bg-white">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 pb-14 lg:pt-24 lg:pb-20">
     <div class="text-center">
-      <div class="inline-flex items-center gap-2 rounded-full bg-white/70 border border-sky-100 px-4 py-1.5 mb-8 backdrop-blur-sm">
-        <span class="relative flex h-2.5 w-2.5">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-500"></span>
-        </span>
-        <span class="text-sm font-medium text-sky-700">Trusted by 15,000+ Ophthalmology Residents</span>
-      </div>
-
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-        The World's Only Ophthalmology PG Exam Notes &amp; MCQ Question Bank.
-        <span class="block mt-3 text-sky-600">By Ophthalmologists. For Ophthalmologists.</span>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+        The World's Only Ophthalmology PG
+        <span class="block mt-2">Exam Notes &amp; MCQ Question Bank.</span>
       </h1>
 
-      <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        20,000+ exam pattern MCQs and handwritten exam ready notes
+      <p class="mt-6 text-lg sm:text-xl font-medium text-slate-500">
+        By Ophthalmologists. For Ophthalmologists.
+      </p>
+
+      <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        20,000+ exam-pattern MCQs and handwritten exam ready notes
         built for ICO/FICO, FAICO, FRCOphth, DNB and PDCET.
         Trusted by 15,000+ PGs and residents across India and 23 countries.
       </p>
 
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="/free-mcqs" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-sky-200 hover:bg-sky-700 hover:shadow-xl hover:shadow-sky-300 transition-all duration-200">
+        <a
+          href="/exams"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-sky-200 hover:bg-sky-700 hover:shadow-xl hover:shadow-sky-300 transition-all duration-200"
+        >
           Exam-Wise MCQs
           <Icon name="arrowRight" class="ml-2 h-5 w-5" />
         </a>
-        <a href="/notes" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white/80 px-6 py-3.5 text-base font-semibold text-slate-700 border-2 border-slate-200/70 hover:border-slate-300 hover:bg-white transition-all duration-200 backdrop-blur-sm">
+        <a
+          href="/notes"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all duration-200"
+        >
           Handwritten PG Exam Ready Notes
         </a>
-        <a href="/exams" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white/80 px-6 py-3.5 text-base font-semibold text-slate-700 border-2 border-slate-200/70 hover:border-slate-300 hover:bg-white transition-all duration-200 backdrop-blur-sm">
+        <a
+          href="/exams"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-4 py-3.5 text-base font-semibold text-sky-700 hover:text-sky-800 transition-colors"
+        >
           Browse by Exam
+          <Icon name="chevronRight" class="ml-1 h-5 w-5" />
         </a>
-      </div>
-
-      <p class="mt-4 text-sm text-slate-500">
-        50 free MCQs. No credit card. No signup required.
-      </p>
-
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-slate-600">
-        <div class="flex items-center gap-1.5">
-          <Icon name="star" class="w-4 h-4 text-amber-400" />
-          <span class="font-semibold text-slate-800">4.8</span>
-          <span>Rating</span>
-        </div>
-        <span class="text-slate-300">|</span>
-        <div><span class="font-semibold text-slate-800">15,000+</span> PGs</div>
-        <span class="text-slate-300">|</span>
-        <div><span class="font-semibold text-slate-800">20,000+</span> MCQs</div>
-        <span class="text-slate-300">|</span>
-        <div><span class="font-semibold text-slate-800">23+</span> Countries</div>
-        <span class="text-slate-300">|</span>
-        <div><span class="font-semibold text-slate-800">87%</span> Pass Rate</div>
       </div>
     </div>
   </div>

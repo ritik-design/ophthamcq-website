@@ -1,0 +1,101 @@
+---
+import Icon from '../Icon.astro';
+
+const posts = [
+  {
+    tag: 'FAICO',
+    tagColor: 'emerald',
+    title: 'FAICO Ophthalmology 2026 — Most Asked Questions Answered',
+    description: 'Everything about FAICO by AIOS — eligibility, exam pattern, dates, preparation strategy and best resources.',
+    readTime: '8 min read',
+    href: '/blog/faico-ophthalmology-2026',
+    live: true,
+  },
+  {
+    tag: 'ICO/FICO',
+    tagColor: 'sky',
+    title: 'How to Prepare for ICO/FICO — Complete 2026 Guide',
+    description: 'Step by step preparation guide for all ICO exam steps.',
+    readTime: '7 min read',
+    href: '/blog/ico-fico-preparation-2026',
+    live: false,
+  },
+  {
+    tag: 'DNB/MS/DO',
+    tagColor: 'amber',
+    title: 'DNB Ophthalmology OSCE — Complete Practical Exam Guide',
+    description: 'Everything you need for the DNB practical exam.',
+    readTime: '6 min read',
+    href: '/blog/dnb-osce-practical-guide',
+    live: false,
+  },
+];
+
+const tagClasses: Record<string, string> = {
+  emerald: 'bg-emerald-50 border-emerald-200 text-emerald-700',
+  sky:     'bg-sky-50 border-sky-200 text-sky-700',
+  amber:   'bg-amber-50 border-amber-200 text-amber-700',
+};
+---
+
+<section class="bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        Exam Guides &amp; Preparation Tips
+      </h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Written by ophthalmologists who passed. Free guides to help you prepare smarter.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {posts.map(p => (
+        <a
+          href={p.live ? p.href : '/blog'}
+          class:list={[
+            'group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-md hover:border-sky-200 transition-all',
+            !p.live && 'opacity-90',
+          ]}
+        >
+          <div class="flex items-center justify-between mb-4">
+            <span class={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${tagClasses[p.tagColor]}`}>
+              {p.tag}
+            </span>
+            {!p.live && (
+              <span class="inline-flex items-center rounded-full bg-slate-100 border border-slate-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
+                Coming Soon
+              </span>
+            )}
+          </div>
+
+          <h3 class="text-lg font-bold text-slate-900 leading-snug mb-3 group-hover:text-sky-700 transition-colors">
+            {p.title}
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-5 flex-1">{p.description}</p>
+
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+            <span class="inline-flex items-center text-xs text-slate-500">
+              <Icon name="check" class="w-3.5 h-3.5 mr-1.5 text-slate-400" />
+              {p.readTime}
+            </span>
+            <span class="inline-flex items-center text-sm font-semibold text-sky-700">
+              Read Now
+              <Icon name="chevronRight" class="ml-1 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all"
+      >
+        View All Blogs
+        <Icon name="chevronRight" class="w-4 h-4" />
+      </a>
+    </div>
+  </div>
+</section>

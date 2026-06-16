@@ -10,7 +10,8 @@ export const SITE = {
   tagline: 'The Only Ophthalmology Question Bank Built by Doctors Who Passed These Exams',
   description:
     '10,000+ MCQs, Handwritten Notes, Past Papers with Explanations. For FRCOphth, ICO, FAICO, DNB & NEET-SS.',
-  url: 'https://www.ophthamcq.net',
+  url: 'https://www.ophthamcq.org',
+  canonicalUrl: 'https://www.ophthamcq.com',
   logo: '/logo.svg',
   favicon: '/favicon.svg',
 };
@@ -206,20 +207,22 @@ export const NAV = [
 /** Testimonials */
 export const TESTIMONIALS = [
   { name: 'Dr. Sangam Rout', role: 'DNB Ophthalmology, AIIMS', text: 'The quality of explanations is super so so good. Cleared my DNB theory in first attempt.', exam: 'DNB' },
-  { name: 'Dr. Garvesh Surya', role: 'MS Ophthalmology', text: 'The exam ready notes have my heart — extremely helpful for my DNB finals.', exam: 'DNB' },
-  { name: 'Dr. Umer Shaikh', role: 'FRCOphth, Moorfields', text: 'The best distillation of Ryan, Kanski, and Elkington you will ever find. Passed FRCOphth Part 1 with 72%.', exam: 'FRCOphth' },
-  { name: 'Dr. Ahmed Khan', role: 'ICO Basic Sciences', text: 'ICO past papers with full explanations were my single biggest advantage. Scored 85%.', exam: 'ICO' },
+  { name: 'Dr. Garvesh Surya', role: 'MS Ophthalmology', text: 'The exam ready notes have my heart — extremely helpful for my DNB finals.', exam: 'MS' },
+  { name: 'Dr. Umer Shaikh', role: 'FRCOphth, Moorfields Eye Hospital UK', text: 'The best distillation of Ryan, Kanski and Elkington you will ever find. Passed FRCOphth Part 1 with 72%.', exam: 'FRCOphth' },
+  { name: 'Dr. Ahmed Khan', role: 'ICO Basic Sciences', text: 'ICO past papers with full explanations were my single biggest advantage. Scored 85%.', exam: 'ICO/FICO' },
   { name: 'Dr. Ritu Sharma', role: 'FAICO, Aravind Eye Hospital', text: 'Topic-wise MCQs mapped exactly to the FAICO syllabus. Could not have passed without them.', exam: 'FAICO' },
 ];
 
 /** FAQ items */
 export const FAQS = [
-  { q: 'Which exams does OphthaMCQ cover?', a: 'We cover FRCOphth (Part 1 & 2), ICO/FICO (all steps), FAICO, PD-CET, DNB Ophthalmology, NEET-SS, and OKAPs. Each exam has a dedicated question bank and handwritten notes.' },
-  { q: 'Can I try before I buy?', a: 'Absolutely! Start with 50 free MCQs across all subspecialties — no signup required. Get instant scoring and detailed explanations.' },
-  { q: 'Are the notes really handwritten?', a: 'Yes — every page is handwritten by ophthalmologists who have passed these exams. They are distilled from standard textbooks (Ryan, Kanski, Elkington, Ferris, Khurana) into exam-ready bullet points.' },
-  { q: 'How do I access my purchases?', a: 'After purchase, you get instant PDF download + lifetime access via our iOS and Android apps. Your content syncs across all devices.' },
-  { q: 'What is your refund policy?', a: 'We offer a 7-day money-back guarantee, no questions asked. If you are not satisfied, we will refund every rupee.' },
-  { q: 'How do I buy products?', a: 'Click any "View on Store" button to go to our secure store on ophthamcq.com. Complete your purchase there and access your content instantly.' },
-  { q: 'Do you offer institutional pricing?', a: 'Yes! Residency programs can get bulk licenses. Contact us for a custom quote and admin dashboard demo.' },
-  { q: 'How often is content updated?', a: 'We update our question banks every 6 months based on the latest exam patterns and textbook editions.' },
+  { q: 'What is OphthaMCQ?', a: "OphthaMCQ is the world's only ophthalmology PG exam notes and MCQ question bank — built by gold medalists and exam toppers who personally passed ICO, FAICO, DNB and FRCOphth. Trusted by 15,000+ ophthalmologists, PGs and residents across India and 23 countries." },
+  { q: 'Which exams does OphthaMCQ cover?', a: 'OphthaMCQ covers ICO/FICO, FAICO, DNB/MS/DO and PDCET. FRCOphth resources coming soon.' },
+  { q: 'Are the notes really handwritten?', a: 'Yes. Every page is handwritten by ophthalmologists who topped their MS, DNB and fellowship exams — distilled from Ryan, Kanski, Elkington, BCSC and Khurana into concise exam-ready bullet points.' },
+  { q: 'Can I try before I buy?', a: 'Yes. Access free sample questions and notes on OphthaMCQ before purchasing anything. No credit card required.' },
+  { q: 'Are ICO/FICO past papers available anywhere else?', a: 'No. OphthaMCQ is the world\u2019s first and only platform with complete ICO/FICO past papers and full explanations. Not available anywhere else on the planet.' },
+  { q: 'How do I access my purchases?', a: 'After purchase you get instant PDF access plus lifetime access via the OphthaMCQ app on Android and iOS. Syncs across all devices.' },
+  { q: 'How do I buy products?', a: 'Click any Buy Now button to go to our secure store on ophthamcq.com. Complete your purchase there and access your content instantly.' },
+  { q: 'Is OphthaMCQ available outside India?', a: 'Yes. OphthaMCQ is used by ophthalmology PGs and residents in 23 countries worldwide. ICO/FICO resources are especially popular internationally.' },
+  { q: 'Do you offer institutional pricing?', a: 'Yes. Residency programs and eye hospitals can get bulk licenses for their residents. Contact us for a custom quote.' },
+  { q: 'How often is content updated?', a: 'Question banks and notes are updated regularly based on the latest exam patterns, textbook editions and syllabus changes.' },
 ];

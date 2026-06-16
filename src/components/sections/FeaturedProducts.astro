@@ -2,62 +2,122 @@
 import { PRODUCTS } from '../../config';
 import Icon from '../Icon.astro';
 
-const featured = PRODUCTS.slice(0, 4);
+const byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+
+const cards = [
+  { id: 'retina-deciphered',    badge: 'Most Popular', badgeColor: 'sky' },
+  { id: 'ico-fico-past-papers', badge: 'Best Value',   badgeColor: 'sky' },
+  { id: 'glaucoma-notes',       badge: 'Top Seller',   badgeColor: 'amber' },
+  { id: 'faico-mcqs',           badge: 'FAICO',        badgeColor: 'violet' },
+  { id: 'high-yield-mcqs',      badge: 'High Yield',   badgeColor: 'sky' },
+];
+
+const osce = {
+  name: 'OphthaMCQ OSCE Ready',
+  description: 'Complete DNB/MS/DO Practical Exam Bundle — OSCE • Instruments • Cases • Investigations • Viva Voce',
+  href: '/osce',
+  badge: 'New Launch',
+};
+
+const badgeClasses: Record<string, string> = {
+  sky:    'bg-sky-50 border-sky-200 text-sky-700',
+  amber:  'bg-amber-50 border-amber-200 text-amber-700',
+  violet: 'bg-violet-50 border-violet-200 text-violet-700',
+  emerald:'bg-emerald-50 border-emerald-200 text-emerald-700',
+};
 ---
 
-<section class="bg-slate-50 py-20 lg:py-28">
+<section class="bg-white py-20 lg:py-28">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-14">
       <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-        Most Loved Resources
+        The Resources Ophthalmologists, PGs &amp; Residents Swear By
       </h2>
-      <p class="mt-4 text-lg text-slate-600">
-        Thousands of residents trust these to pass their exams.
-      </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {featured.map(p => (
-        <div class="group relative flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all duration-300">
-          {p.tag && (
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cards.map(c => {
+        const p = byId[c.id];
+        if (!p) return null;
+        return (
+          <div class="group relative flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all duration-300">
             <div class="absolute top-3 left-3 z-10">
-              <span class="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
-                {p.tag}
+              <span class:list={[
+                'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide',
+                badgeClasses[c.badgeColor],
+              ]}>
+                {c.badge}
               </span>
             </div>
-          )}
 
-          <div class="h-48 bg-slate-100 overflow-hidden">
-            <img
-              src={p.image}
-              alt={p.fullName}
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          <div class="flex flex-col flex-1 p-5">
-            <h3 class="text-base font-bold text-slate-900 mb-1">{p.name}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4 flex-1">{p.description}</p>
-
-            <div class="flex items-baseline gap-2 mb-4">
-              <span class="text-xl font-bold text-slate-900">{p.price}</span>
-              {p.oldPrice && <span class="text-sm text-slate-400 line-through">{p.oldPrice}</span>}
-              {p.discount && <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">Save {p.discount}</span>}
+            <div class="h-48 bg-slate-100 overflow-hidden">
+              <img
+                src={p.image}
+                alt={p.fullName}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
 
-            <a
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
-            >
-              View on Store
-              <Icon name="externalLink" class="w-4 h-4" />
-            </a>
+            <div class="flex flex-col flex-1 p-5">
+              <h3 class="text-base font-bold text-slate-900 mb-1">{p.name}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-4 flex-1">{p.description}</p>
+
+              <div class="flex items-baseline gap-2 mb-4">
+                <span class="text-xl font-bold text-slate-900">{p.price}</span>
+                {p.oldPrice && <span class="text-sm text-slate-400 line-through">{p.oldPrice}</span>}
+                {p.discount && <span class="text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">Save {p.discount}</span>}
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <a
+                  href={`/products/${p.id}`}
+                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-colors"
+                >
+                  Preview Sample
+                </a>
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
+                >
+                  Buy Now
+                  <Icon name="externalLink" class="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+
+      <!-- OSCE Card — single button, no price -->
+      <div class="group relative flex flex-col rounded-2xl border border-emerald-200 bg-white overflow-hidden hover:shadow-lg transition-all duration-300">
+        <div class="absolute top-3 left-3 z-10">
+          <span class={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide ${badgeClasses.emerald}`}>
+            {osce.badge}
+          </span>
+        </div>
+
+        <div class="h-48 bg-gradient-to-br from-emerald-100 via-sky-50 to-emerald-50 flex items-center justify-center">
+          <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center">
+            <Icon name="check" class="w-10 h-10 text-emerald-600" />
           </div>
         </div>
-      ))}
+
+        <div class="flex flex-col flex-1 p-5">
+          <h3 class="text-base font-bold text-slate-900 mb-1">{osce.name}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-4 flex-1">{osce.description}</p>
+
+          <a
+            href={osce.href}
+            class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors mt-auto"
+          >
+            Get Access
+            <Icon name="arrowRight" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="mt-12 text-center">

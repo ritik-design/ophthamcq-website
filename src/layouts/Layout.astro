@@ -21,7 +21,11 @@ const pageTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="noindex, nofollow" />
     <title>{pageTitle}</title>
+
+    <!-- Canonical points to commercial site -->
+    <link rel="canonical" href={SITE.canonicalUrl} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

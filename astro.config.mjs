@@ -12,7 +12,7 @@ export default defineConfig({
   session: {
     driver: sessionDrivers.memory(),
   },
-  site: 'https://www.ophthamcq.net',
+  site: 'https://www.ophthamcq.org',
   vite: {
     plugins: [tailwindcss()],
   },
