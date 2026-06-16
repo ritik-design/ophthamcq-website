@@ -3,11 +3,11 @@ import { TESTIMONIALS } from '../../config';
 import Icon from '../Icon.astro';
 
 const institutions = [
-  'AIIMS',
-  'Aravind Eye Hospital',
-  'LVPEI Eye Institute',
-  'Moorfields Eye Hospital UK',
-  'Sankara Nethralaya',
+  { icon: 'building',   name: 'AIIMS',      sub: 'Trusted By Residents' },
+  { icon: 'eye',        name: 'Aravind',    sub: 'Eye Hospital' },
+  { icon: 'badgeCheck', name: 'LVPEI',      sub: 'Eye Institute' },
+  { icon: 'globe',      name: 'Moorfields', sub: 'Eye Hospital UK' },
+  { icon: 'heart',      name: 'Sankara',    sub: 'Nethralaya' },
 ];
 
 const reviewLd = {
@@ -31,22 +31,6 @@ const reviewLd = {
 };
 ---
 
-<!-- Institution Strip -->
-<section class="bg-slate-50 border-y border-slate-200">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
-    <h2 class="text-center text-base sm:text-lg font-semibold text-slate-700 mb-6">
-      Trusted by Ophthalmologists &amp; Residents at Leading Institutions
-    </h2>
-    <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
-      {institutions.map(name => (
-        <span class="text-sm sm:text-base font-bold text-slate-500 tracking-tight uppercase">
-          {name}
-        </span>
-      ))}
-    </div>
-  </div>
-</section>
-
 <!-- Testimonials -->
 <section class="bg-white py-20 lg:py-28">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -54,6 +38,24 @@ const reviewLd = {
       <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
         Ophthalmologists Who Passed. In Their Own Words.
       </h2>
+    </div>
+
+    <!-- Institutions -->
+    <div class="mb-16">
+      <p class="text-center text-sm sm:text-base font-semibold tracking-[0.15em] uppercase text-slate-400 mb-10">
+        Trusted by Residents at Leading Institutions
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 max-w-6xl mx-auto">
+        {institutions.map(inst => (
+          <div class="flex items-center gap-3 justify-center">
+            <Icon name={inst.icon} class="w-9 h-9 lg:w-10 lg:h-10 text-sky-500 shrink-0" />
+            <div class="text-left">
+              <div class="text-base lg:text-lg font-bold text-slate-800 leading-tight">{inst.name}</div>
+              <div class="text-xs lg:text-sm text-slate-500">{inst.sub}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
 
     <!-- Row 1: 3 cards -->
