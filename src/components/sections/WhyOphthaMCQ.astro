@@ -1,0 +1,69 @@
+---
+const cards = [
+  {
+    emoji: '👨‍⚕️',
+    title: 'Built by Ophthalmologists Who Passed',
+    body: 'Built by ophthalmologists who personally passed ICO, FAICO, DNB and FRCOphth — not generic medical content writers.',
+  },
+  {
+    emoji: '🎯',
+    title: 'The Only FAICO-Specific MCQ Bank',
+    body: 'The only MCQ bank mapped subspecialty-wise to the exact AIOS FAICO syllabus.',
+  },
+  {
+    emoji: '✍️',
+    title: 'Exam Ready PG & Residency Handwritten Notes',
+    body: 'Written by gold medalists and exam toppers — ophthalmologists who topped their MS, DNB and fellowship exams. Not generic content writers. They know exactly what examiners look for and what never appears in the exam.',
+  },
+  {
+    emoji: '📚',
+    title: "Distilled From the World's Standard Textbooks",
+    body: 'Retina Deciphered, Glaucoma Exam Ready Notes, Optics & Refraction, Anatomy of Eye, Uveitis Simplified — every note distilled from Ryan, Kanski, Elkington, BCSC and Khurana into concise exam-ready bullet points. No fluff. No copy-paste. Just what the exam tests.',
+  },
+  {
+    emoji: '🌍',
+    title: "World's First & Only",
+    body: 'ICO/FICO past papers with full explanations — first time in the world. Not available anywhere else on the planet.',
+  },
+  {
+    emoji: '🏆',
+    title: 'Every Major Ophthalmology PG Exam. One Platform.',
+    body: 'ICO/FICO, FAICO, DNB/MS/DO, PDCET — all covered under one platform. No need to look anywhere else.',
+  },
+  {
+    emoji: '📱',
+    title: 'Built for Busy Residents',
+    body: 'Concise, exam-focused and accessible on Android and iOS anytime. Practice during clinic breaks, commutes or late-night revision.',
+  },
+  {
+    emoji: '📊',
+    title: '87% Pass Rate. 23 Countries.',
+    body: '15,000+ ophthalmology PGs and residents across 23 countries trust OphthaMCQ to pass on the first attempt.',
+  },
+  {
+    emoji: '🏥',
+    title: 'Complete Practical Exam Prep',
+    body: 'The only platform with OSCE stations, instruments, case presentation format and viva voce prep for DNB/MS/DO.',
+  },
+];
+---
+
+<section class="bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        Why 15,000+ Ophthalmologists Trust OphthaMCQ
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cards.map(c => (
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-300 hover:shadow-md transition-all">
+          <div class="text-3xl mb-4" aria-hidden="true">{c.emoji}</div>
+          <h3 class="text-base font-bold text-slate-900 leading-snug mb-2">{c.title}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">{c.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
