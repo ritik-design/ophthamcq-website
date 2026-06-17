@@ -21,22 +21,25 @@ export interface TheStaccListResponse {
   total?: number;
 }
 
+// SECURITY NOTE: This is a fallback because Cloudflare Pages does not allow
+// environment variables on this static-only project. Once Cloudflare env vars
+// are available, move these values to THESTACC_API_KEY / THESTACC_API_URL and
+// rotate the key immediately.
+const FALLBACK_API_KEY = 'pk_live_gHcZrdMCQYDfWpXT7nX_nEt4bUru1hOx2s7Db7GkUms';
+const FALLBACK_API_URL = 'https://api.thestacc.com/blog/api/v1/public';
+
 function getApiKey(): string {
-  const key = import.meta.env.THESTACC_API_KEY;
+  const key = import.meta.env.THESTACC_API_KEY || FALLBACK_API_KEY;
   if (!key) {
-    throw new Error(
-      '[thestacc] THESTACC_API_KEY is not set. Add it in Cloudflare Pages dashboard: Settings > Environment variables.',
-    );
+    throw new Error('[thestacc] THESTACC_API_KEY is not set.');
   }
   return key;
 }
 
 function getBaseUrl(): string {
-  const url = import.meta.env.THESTACC_API_URL;
+  const url = import.meta.env.THESTACC_API_URL || FALLBACK_API_URL;
   if (!url) {
-    throw new Error(
-      '[thestacc] THESTACC_API_URL is not set. Add it in Cloudflare Pages dashboard: Settings > Environment variables.',
-    );
+    throw new Error('[thestacc] THESTACC_API_URL is not set.');
   }
   return String(url).replace(/\/$/, '');
 }
