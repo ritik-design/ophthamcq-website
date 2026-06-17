@@ -1,17 +1,49 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import { fetchBlogList, normalizeBlog, type TheStaccBlog } from '../lib/thestacc';
 
-const posts = [
-  { title: 'How to Prepare for FRCOphth Part 1: Complete 6-Month Study Plan', excerpt: 'A step-by-step guide covering topic weightage, recommended resources, and a week-by-week schedule.', category: 'Exam Strategy', date: 'June 10, 2026', readTime: '12 min read', slug: 'how-to-prepare-frcophth-part-1' },
-  { title: '50 High-Yield Glaucoma MCQs with Explanations', excerpt: 'Test your knowledge with these carefully selected glaucoma questions covering diagnosis, management, and surgery.', category: 'Topic MCQs', date: 'June 8, 2026', readTime: '15 min read', slug: '50-glaucoma-mcqs' },
-  { title: 'ICO Exam Format Explained: Part A, B, and C Breakdown', excerpt: 'Everything you need to know about the ICO exam structure, scoring, and preparation strategy.', category: 'Exam Guides', date: 'June 5, 2026', readTime: '8 min read', slug: 'ico-exam-format-explained' },
-  { title: 'Best Books for Ophthalmology PG Residents: 2026 Ranked', excerpt: 'Our top recommendations for textbooks, atlases, and reference guides for every stage of residency.', category: 'Study Resources', date: 'June 1, 2026', readTime: '10 min read', slug: 'best-books-ophthalmology-pg' },
-  { title: 'How to Apply for Ophthalmology Fellowships in the UK', excerpt: 'A comprehensive guide for international medical graduates seeking UK ophthalmology fellowships.', category: 'Career', date: 'May 28, 2026', readTime: '14 min read', slug: 'uk-fellowship-application-guide' },
-  { title: 'Fundus Photo Quiz: Can You Diagnose These 10 Cases?', excerpt: 'Interactive image-based quiz with fundus photographs. Test your clinical pattern recognition.', category: 'Clinical Cases', date: 'May 25, 2026', readTime: '10 min read', slug: 'fundus-photo-quiz-10-cases' },
-];
+interface BlogCard {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readTime: string;
+  illustration: string;
+}
+
+// Pull posts from TheStacc Public Blog API at build time.
+const apiPosts = await fetchBlogList();
+
+let posts: BlogCard[];
+
+if (apiPosts.length > 0) {
+  posts = apiPosts.map(normalizeBlog).map(post => ({
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt || '',
+    category: post.category || 'General',
+    date: post.date || new Date().toISOString().split('T')[0],
+    readTime: post.readTime || '5 min read',
+    illustration: post.illustration || 'blog',
+  }));
+} else {
+  // Fallback to local content collection during API outages / local dev.
+  const local = await getCollection('blog');
+  posts = local.map(entry => ({
+    slug: entry.data.slug,
+    title: entry.data.title,
+    excerpt: entry.data.excerpt,
+    category: entry.data.category,
+    date: entry.data.date,
+    readTime: entry.data.readTime,
+    illustration: entry.data.illustration,
+  }));
+}
 ---
 
 <Layout
@@ -40,12 +72,18 @@ const posts = [
 
   <div class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {posts.length === 0 && (
+        <div class="text-center py-16">
+          <p class="text-slate-600">No blog posts found. Check your TheStacc API key and URL.</p>
+        </div>
+      )}
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map(post => (
-          <a href={`/blog/${post.slug}`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
+          <a href={`/blog/${post.slug}/`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
             <div class="h-48 bg-slate-100 flex items-center justify-center group-hover:bg-sky-50 transition-colors">
               <div class="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Illustration name="blog" class="w-12 h-12" />
+                <Illustration name={post.illustration} class="w-12 h-12" />
               </div>
             </div>
             <div class="p-6 flex-1 flex flex-col">
