@@ -25,7 +25,7 @@ function getApiKey(): string {
   const key = import.meta.env.THESTACC_API_KEY;
   if (!key) {
     throw new Error(
-      '[thestacc] THESTACC_API_KEY is not set. Add it to your Cloudflare Workers build environment variables.',
+      '[thestacc] THESTACC_API_KEY is not set. Add it in Cloudflare Pages dashboard: Settings > Environment variables.',
     );
   }
   return key;
@@ -35,7 +35,7 @@ function getBaseUrl(): string {
   const url = import.meta.env.THESTACC_API_URL;
   if (!url) {
     throw new Error(
-      '[thestacc] THESTACC_API_URL is not set. Add it to your Cloudflare Workers build environment variables.',
+      '[thestacc] THESTACC_API_URL is not set. Add it in Cloudflare Pages dashboard: Settings > Environment variables.',
     );
   }
   return String(url).replace(/\/$/, '');
