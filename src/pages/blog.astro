@@ -4,46 +4,8 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
-import { fetchBlogList, normalizeBlog, type TheStaccBlog } from '../lib/thestacc';
 
-interface BlogCard {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  readTime: string;
-  illustration: string;
-}
-
-// Pull posts from TheStacc Public Blog API at build time.
-const apiPosts = await fetchBlogList();
-
-let posts: BlogCard[];
-
-if (apiPosts.length > 0) {
-  posts = apiPosts.map(normalizeBlog).map(post => ({
-    slug: post.slug,
-    title: post.title,
-    excerpt: post.excerpt || '',
-    category: post.category || 'General',
-    date: post.date || new Date().toISOString().split('T')[0],
-    readTime: post.readTime || '5 min read',
-    illustration: post.illustration || 'blog',
-  }));
-} else {
-  // Fallback to local content collection during API outages / local dev.
-  const local = await getCollection('blog');
-  posts = local.map(entry => ({
-    slug: entry.data.slug,
-    title: entry.data.title,
-    excerpt: entry.data.excerpt,
-    category: entry.data.category,
-    date: entry.data.date,
-    readTime: entry.data.readTime,
-    illustration: entry.data.illustration,
-  }));
-}
+const posts = await getCollection('blog');
 ---
 
 <Layout
@@ -74,31 +36,31 @@ if (apiPosts.length > 0) {
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {posts.length === 0 && (
         <div class="text-center py-16">
-          <p class="text-slate-600">No blog posts found. Check your TheStacc API key and URL.</p>
+          <p class="text-slate-600">No blog posts yet.</p>
         </div>
       )}
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map(post => (
-          <a href={`/blog/${post.slug}/`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
+          <a href={`/blog/${post.data.slug}/`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
             <div class="h-48 bg-slate-100 flex items-center justify-center group-hover:bg-sky-50 transition-colors">
               <div class="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Illustration name={post.illustration} class="w-12 h-12" />
+                <Illustration name={post.data.illustration} class="w-12 h-12" />
               </div>
             </div>
             <div class="p-6 flex-1 flex flex-col">
               <div class="flex items-center gap-2 mb-3">
                 <span class="inline-flex items-center rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-700">
-                  {post.category}
+                  {post.data.category}
                 </span>
-                <span class="text-xs text-slate-400">{post.readTime}</span>
+                <span class="text-xs text-slate-400">{post.data.readTime}</span>
               </div>
               <h2 class="text-base font-bold text-slate-900 mb-2 group-hover:text-sky-700 transition-colors">
-                {post.title}
+                {post.data.title}
               </h2>
-              <p class="text-sm text-slate-600 leading-relaxed flex-1">{post.excerpt}</p>
+              <p class="text-sm text-slate-600 leading-relaxed flex-1">{post.data.excerpt}</p>
               <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span class="text-xs text-slate-400">{post.date}</span>
+                <span class="text-xs text-slate-400">{post.data.date}</span>
                 <span class="text-sm font-medium text-sky-600 group-hover:text-sky-700 flex items-center gap-1">
                   Read
                   <Icon name="chevronRight" class="w-4 h-4" />

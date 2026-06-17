@@ -1,6 +1,6 @@
-# OphthaMCQ Blog — TheStacc Pull Integration
+# OphthaMCQ Blog — TheStacc Push Integration
 
-This site pulls blog posts from **TheStacc Public Blog API** at build time.
+This site receives blog posts from **TheStacc** via a GitHub Actions webhook.
 
 ## Flow
 
@@ -8,44 +8,70 @@ This site pulls blog posts from **TheStacc Public Blog API** at build time.
 Publish in TheStacc
         │
         ▼
-Cloudflare deploy hook fires
+TheStacc sends POST to GitHub repository_dispatch
         │
         ▼
-Cloudflare Pages rebuilds the Astro site
+GitHub Actions writes src/content/blog/[slug].md
         │
         ▼
-Build fetches posts from TheStacc API
+Git commit + push
         │
         ▼
-Static HTML generated and deployed
+Cloudflare Pages rebuilds from git
+        │
+        ▼
+New post is live
 ```
 
-## Environment variables
+## Required GitHub Secrets
 
-These must be set in the **Cloudflare Pages build environment**:
+Go to **Settings → Secrets and variables → Actions → New repository secret**:
 
-```bash
-THESTACC_API_KEY=pk_live_...
-THESTACC_API_URL=https://api.thestacc.com/blog/api/v1/public
+| Secret | Value |
+|---|---|
+| `GH_PAT` | GitHub Personal Access Token with `repo` scope. |
+| `THESTACC_SECRET` | Any random string. Paste the same value into TheStacc dashboard. |
+
+## TheStacc dashboard configuration
+
+- **Webhook URL:** `https://api.github.com/repos/ritik-design/ophthamcq-website/dispatches`
+- **Method:** `POST`
+- **Headers:**
+  - `Accept: application/vnd.github+json`
+  - `Authorization: Bearer <GH_PAT>`
+  - `X-GitHub-Api-Version: 2022-11-28`
+- **Payload (JSON):**
+
+```json
+{
+  "event_type": "thestacc-post",
+  "client_payload": {
+    "secret": "<THESTACC_SECRET>",
+    "post": {
+      "title": "{{title}}",
+      "slug": "{{slug}}",
+      "excerpt": "{{excerpt}}",
+      "category": "{{category}}",
+      "date": "{{published_date}}",
+      "readTime": "{{read_time}}",
+      "illustration": "blog",
+      "content": "{{content_html}}",
+      "author": "{{author}}"
+    }
+  }
+}
 ```
 
-Locally, they are read from `.env` (which is gitignored).
+Replace `{{...}}` with TheStacc's merge tags. Only `title`, `slug`, and `content` are required.
 
 ## Code structure
 
-- `src/lib/thestacc.ts` — API helper that fetches the blog list, a single post, and the sitemap.
-- `src/pages/blog.astro` — Listing page. Pulls from the API; falls back to local `src/content/blog/` if the API is empty or unavailable.
-- `src/pages/blog/[slug].astro` — Detail page. Generates static paths from the API sitemap/list; falls back to local content.
-- `src/content/blog/*.md` — Local fallback posts.
-- `src/content.config.ts` — Local content collection schema.
-
-## API endpoints used
-
-| Purpose | Endpoint |
-|---|---|
-| Sitemap | `GET ${THESTACC_API_URL}/blogs/sitemap?api_key=${KEY}` |
-| List | `GET ${THESTACC_API_URL}/blogs?api_key=${KEY}` |
-| Single post | `GET ${THESTACC_API_URL}/blogs/{slug}?api_key=${KEY}` |
+- `.github/workflows/publish-stacc-post.yml` — validates the webhook secret and runs the publish job.
+- `.github/scripts/write-post.js` — converts the payload into `src/content/blog/[slug].md`.
+- `src/content.config.ts` — Astro content collection schema.
+- `src/content/blog/*.md` — blog posts.
+- `src/pages/blog.astro` — listing page.
+- `src/pages/blog/[slug].astro` — detail page.
 
 ## Local development
 
@@ -53,10 +79,10 @@ Locally, they are read from `.env` (which is gitignored).
 npm run dev
 ```
 
-The dev server reads `.env` and calls the TheStacc API. If you want to work offline, temporarily remove/empty the env vars to use the local fallback posts.
+Posts live as Markdown files in `src/content/blog/`.
 
-## Deploy
+## Security
 
-No manual action is needed. TheStacc triggers the Cloudflare deploy hook on every publish.
-
-If you need to redeploy manually, use the Cloudflare Pages dashboard or `git push`.
+- Never commit `GH_PAT` or `THESTACC_SECRET` to this repo.
+- Use a fine-grained PAT with minimal permissions if possible.
+- Rotate secrets immediately if they are ever exposed.

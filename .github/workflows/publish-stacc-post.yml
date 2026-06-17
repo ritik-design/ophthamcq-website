@@ -1,0 +1,40 @@
+name: Publish TheStacc Post
+
+on:
+  repository_dispatch:
+    types: [thestacc-post]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate webhook secret
+        env:
+          THESTACC_SECRET: ${{ secrets.THESTACC_SECRET }}
+          PAYLOAD_SECRET: ${{ github.event.client_payload.secret }}
+        run: |
+          if [ -z "$THESTACC_SECRET" ]; then
+            echo "THESTACC_SECRET is not configured in repository secrets"
+            exit 1
+          fi
+          if [ "$THESTACC_SECRET" != "$PAYLOAD_SECRET" ]; then
+            echo "Invalid webhook secret"
+            exit 1
+          fi
+
+      - name: Write blog post
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload.post) }}
+        run: node .github/scripts/write-post.js
+
+      - name: Commit and push
+        run: |
+          git config user.name "thestacc-bot"
+          git config user.email "bot@thestacc.com"
+          git add src/content/blog/
+          git diff --cached --quiet || (
+            git commit -m "Add post: ${{ github.event.client_payload.post.title }}" &&
+            git push
+          )
