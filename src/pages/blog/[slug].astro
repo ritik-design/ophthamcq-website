@@ -1,37 +1,37 @@
 ---
-import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
 import Illustration from '../../components/Illustration.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
+import { fetchBlogBySlug, fetchBlogList, normalizeBlog } from '../../lib/thestacc';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => ({
-    params: { slug: post.data.slug },
-    props: { post },
+  const apiPosts = await fetchBlogList();
+  return apiPosts.map(post => ({
+    params: { slug: post.slug },
   }));
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { slug } = Astro.params;
+const rawPost = await fetchBlogBySlug(slug || '');
+const post = normalizeBlog(rawPost);
 ---
 
-<Layout title={post.data.title} description={post.data.excerpt}>
+<Layout title={post.title} description={post.excerpt}>
   <article class="bg-white">
     <div class="border-b border-slate-200">
       <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div class="flex flex-wrap items-center gap-3 mb-6">
-          <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-sm font-medium text-sky-700">{post.data.category}</span>
-          <span class="text-sm text-slate-400">{post.data.date} • {post.data.readTime}</span>
+          <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-sm font-medium text-sky-700">{post.category || 'General'}</span>
+          <span class="text-sm text-slate-400">{post.date} • {post.readTime}</span>
         </div>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-          {post.data.title}
+          {post.title}
         </h1>
         <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
           <div class="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 font-bold">D</div>
           <div>
-            <div class="text-sm font-semibold text-slate-900">{post.data.author}</div>
+            <div class="text-sm font-semibold text-slate-900">{post.author}</div>
             <div class="text-xs text-slate-500">Reviewed by qualified ophthalmologists</div>
           </div>
         </div>
@@ -40,11 +40,11 @@ const { Content } = await render(post);
 
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="w-full h-64 rounded-2xl bg-sky-50 flex items-center justify-center mb-12">
-        <Illustration name={post.data.illustration} class="w-48 h-48" />
+        <Illustration name={post.illustration} class="w-48 h-48" />
       </div>
 
       <div class="prose prose-lg prose-slate max-w-none">
-        <Content />
+        <div set:html={post.content} />
       </div>
 
       <div class="mt-12 p-6 rounded-2xl bg-sky-50 border border-sky-100">

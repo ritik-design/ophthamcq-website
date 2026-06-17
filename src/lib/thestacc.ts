@@ -1,0 +1,91 @@
+export interface TheStaccBlog {
+  slug: string;
+  title: string;
+  excerpt?: string;
+  meta_description?: string;
+  category?: string;
+  date?: string;
+  readTime?: string;
+  illustration?: string;
+  author?: string;
+  content?: string;
+  featured_image?: string;
+  published_at?: string;
+  updated_at?: string;
+}
+
+export interface TheStaccListResponse {
+  blogs?: TheStaccBlog[];
+  data?: TheStaccBlog[];
+  posts?: TheStaccBlog[];
+  total?: number;
+}
+
+function getApiKey(): string {
+  const key = import.meta.env.THESTACC_API_KEY;
+  if (!key) {
+    throw new Error(
+      '[thestacc] THESTACC_API_KEY is not set. Add it to your Cloudflare Workers build environment variables.',
+    );
+  }
+  return key;
+}
+
+function getBaseUrl(): string {
+  const url = import.meta.env.THESTACC_API_URL;
+  if (!url) {
+    throw new Error(
+      '[thestacc] THESTACC_API_URL is not set. Add it to your Cloudflare Workers build environment variables.',
+    );
+  }
+  return String(url).replace(/\/$/, '');
+}
+
+function buildUrl(path: string): string {
+  const base = getBaseUrl();
+  const key = getApiKey();
+  const separator = path.includes('?') ? '&' : '?';
+  return `${base}${path}${separator}api_key=${encodeURIComponent(key)}`;
+}
+
+function scrubUrl(url: string): string {
+  return url.replace(/api_key=[^&]*/, 'api_key=***');
+}
+
+async function safeFetch<T>(url: string): Promise<T> {
+  const res = await fetch(url, {
+    headers: { Accept: 'application/json' },
+  });
+
+  if (!res.ok) {
+    throw new Error(
+      `[thestacc] HTTP ${res.status} from ${scrubUrl(url)}`,
+    );
+  }
+
+  return (await res.json()) as T;
+}
+
+export async function fetchBlogList(): Promise<TheStaccBlog[]> {
+  const data = await safeFetch<TheStaccListResponse>(buildUrl('/blogs'));
+  return data.blogs || data.data || data.posts || [];
+}
+
+export async function fetchBlogBySlug(slug: string): Promise<TheStaccBlog> {
+  return safeFetch<TheStaccBlog>(buildUrl(`/blogs/${encodeURIComponent(slug)}`));
+}
+
+export function normalizeBlog(post: TheStaccBlog): TheStaccBlog {
+  const content = post.content || '';
+  const words = content.split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(words / 200));
+
+  return {
+    ...post,
+    excerpt: post.excerpt || post.meta_description || '',
+    readTime: post.readTime || `${minutes} min read`,
+    illustration: post.illustration || 'blog',
+    author: post.author || 'Dr. OphthaMCQ Editorial Team',
+    date: post.date || post.published_at || new Date().toISOString().split('T')[0],
+  };
+}
