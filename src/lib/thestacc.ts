@@ -10,6 +10,7 @@ export interface TheStaccBlog {
   author?: string;
   content?: string;
   featured_image?: string;
+  featured_image_url?: string;
   published_at?: string;
   updated_at?: string;
 }
@@ -88,7 +89,15 @@ export function normalizeBlog(post: TheStaccBlog): TheStaccBlog {
     excerpt: post.excerpt || post.meta_description || '',
     readTime: post.readTime || `${minutes} min read`,
     illustration: post.illustration || 'blog',
+    featured_image: post.featured_image || post.featured_image_url || '',
     author: post.author || 'Dr. OphthaMCQ Editorial Team',
     date: post.date || post.published_at || new Date().toISOString().split('T')[0],
   };
+}
+
+export function truncateExcerpt(text: string, maxLength = 155): string {
+  if (!text || text.length <= maxLength) return text || '';
+  const truncated = text.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  return (lastSpace > 0 ? truncated.slice(0, lastSpace) : truncated) + '...';
 }

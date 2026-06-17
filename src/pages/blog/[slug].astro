@@ -17,7 +17,7 @@ const rawPost = await fetchBlogBySlug(slug || '');
 const post = normalizeBlog(rawPost);
 ---
 
-<Layout title={post.title} description={post.excerpt}>
+<Layout title={post.title} description={post.meta_description || post.excerpt}>
   <article class="bg-white">
     <div class="border-b border-slate-200">
       <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -39,11 +39,15 @@ const post = normalizeBlog(rawPost);
     </div>
 
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
-      <div class="w-full h-64 rounded-2xl bg-sky-50 flex items-center justify-center mb-12">
-        <Illustration name={post.illustration} class="w-48 h-48" />
+      <div class="w-full h-64 sm:h-80 rounded-2xl bg-sky-50 flex items-center justify-center mb-12 overflow-hidden">
+        {post.featured_image ? (
+          <img src={post.featured_image} alt={post.title} class="w-full h-full object-cover" />
+        ) : (
+          <Illustration name={post.illustration} class="w-48 h-48" />
+        )}
       </div>
 
-      <div class="prose prose-lg prose-slate max-w-none">
+      <div class="prose prose-lg prose-slate max-w-none thestacc-content">
         <div set:html={post.content} />
       </div>
 
@@ -60,3 +64,33 @@ const post = normalizeBlog(rawPost);
 
   <FinalCTA />
 </Layout>
+
+<style is:global>
+  .thestacc-content img {
+    border-radius: 1rem;
+    margin: 1.5rem 0;
+  }
+  .thestacc-content blockquote {
+    border-left: 4px solid #0ea5e9;
+    background-color: #f0f9ff;
+    padding: 1rem 1.5rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+    font-style: italic;
+  }
+  .thestacc-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  .thestacc-content th,
+  .thestacc-content td {
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  .thestacc-content th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+  }
+</style>
