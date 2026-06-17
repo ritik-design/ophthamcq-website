@@ -29,6 +29,18 @@ function getBaseUrl(): string {
   return (import.meta.env.THESTACC_API_URL || '').replace(/\/$/, '');
 }
 
+function checkEnv(): boolean {
+  const url = getBaseUrl();
+  const key = getApiKey();
+  if (!url || !key) {
+    console.warn(
+      '[thestacc] THESTACC_API_URL or THESTACC_API_KEY is not set. Falling back to local content.',
+    );
+    return false;
+  }
+  return true;
+}
+
 function buildUrl(path: string): string {
   const base = getBaseUrl();
   const key = getApiKey();
@@ -60,16 +72,19 @@ async function safeFetch<T>(url: string): Promise<T | null> {
 }
 
 export async function fetchBlogList(): Promise<TheStaccBlog[]> {
+  if (!checkEnv()) return [];
   const data = await safeFetch<TheStaccListResponse>(buildUrl('/blogs'));
   if (!data) return [];
   return data.blogs || data.data || data.posts || [];
 }
 
 export async function fetchBlogBySlug(slug: string): Promise<TheStaccBlog | null> {
+  if (!checkEnv()) return null;
   return safeFetch<TheStaccBlog>(buildUrl(`/blogs/${encodeURIComponent(slug)}`));
 }
 
 export async function fetchBlogSitemap(): Promise<{ slug: string }[] | null> {
+  if (!checkEnv()) return null;
   return safeFetch<{ slug: string }[]>(buildUrl('/blogs/sitemap'));
 }
 
