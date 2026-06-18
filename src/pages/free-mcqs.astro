@@ -1,87 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
-import FinalCTA from '../components/sections/FinalCTA.astro';
-import { MCQS } from '../data/free-mcqs';
-import { COM_BASE } from '../config';
-
-const QUIZ_SIZE = 25;
-const TIMER_MINUTES = 30;
+import CategoryCard from '../components/CategoryCard.astro';
+import ConversionScreen from '../components/ConversionScreen.astro';
+import SocialProof from '../components/sections/SocialProof.astro';
+import { CATEGORIES, CATEGORY_MCQS, getCategoryById } from '../data/categories';
 ---
 
 <Layout
-  title="Free Ophthalmology MCQs — Timed Quiz with Instant Scoring"
-  description={`Practice ${QUIZ_SIZE} high-yield ophthalmology MCQs from a 200-question pool. ${TIMER_MINUTES}-minute timer. Different questions every attempt. Instant scoring with detailed explanations. No signup.`}
+  title="Free Ophthalmology MCQs by Exam — Practice & Buy Full Courses"
+  description="Try free sample MCQs for PD-CET, FAICO, ICO/FICO, FRCOphth, Fellowship, Exam Notes, and High-Yield topics. Unlock full courses with handwritten notes and past papers."
 >
+  <!-- Hero -->
   <div class="bg-gradient-to-br from-sky-50 via-white to-indigo-50 border-b border-slate-200">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
       <div class="text-center">
         <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-4 py-1.5 mb-6">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="text-sm font-medium text-emerald-700">100% Free — No Signup — Different Questions Every Time</span>
+          <span class="text-sm font-medium text-emerald-700">100% Free — No Signup — Instant Scoring</span>
         </div>
         <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-          Free <span class="text-sky-600">Ophthalmology MCQs</span>
+          Free <span class="text-sky-600">Ophthalmology MCQs</span> by Exam
         </h1>
         <p class="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
-          A timed quiz of <strong>{QUIZ_SIZE} questions</strong> drawn at random from our pool of 200 high-yield MCQs.
-          Pacing, scoring, and explanations — just like the real exam.
+          Pick your exam or topic, answer a short sample quiz, then unlock the full course with
+          notes, past papers, and thousands of MCQs.
         </p>
       </div>
     </div>
   </div>
 
   <div class="bg-slate-50 py-12 lg:py-16 min-h-[60vh]">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-
-      <!-- Start screen -->
-      <section id="screen-start" class="rounded-2xl bg-white border border-slate-200 shadow-sm p-8 lg:p-10 text-center">
-        <div class="w-16 h-16 mx-auto rounded-2xl bg-sky-100 flex items-center justify-center mb-4">
-          <Icon name="freeMcqs" class="w-9 h-9 text-sky-600" />
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <!-- Screen 1: Category selection -->
+      <section id="screen-select">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {CATEGORIES.map((category) => (
+            <CategoryCard category={category} />
+          ))}
         </div>
-        <h2 class="text-2xl font-bold text-slate-900 mb-3">Ready to start?</h2>
-        <p class="text-slate-600 mb-6">
-          You'll get <strong>{QUIZ_SIZE} randomly selected questions</strong> spanning all major
-          ophthalmology subspecialties. The timer is <strong>{TIMER_MINUTES} minutes</strong>.
-          You can navigate freely; submit when done or when time runs out.
-        </p>
-
-        <div class="grid sm:grid-cols-3 gap-3 mb-8 text-left">
-          <div class="rounded-xl border border-slate-200 p-4">
-            <div class="text-2xl font-bold text-sky-600">{QUIZ_SIZE}</div>
-            <div class="text-xs uppercase tracking-wide text-slate-500">Questions</div>
-          </div>
-          <div class="rounded-xl border border-slate-200 p-4">
-            <div class="text-2xl font-bold text-sky-600">{TIMER_MINUTES} min</div>
-            <div class="text-xs uppercase tracking-wide text-slate-500">Timer</div>
-          </div>
-          <div class="rounded-xl border border-slate-200 p-4">
-            <div class="text-2xl font-bold text-sky-600">200</div>
-            <div class="text-xs uppercase tracking-wide text-slate-500">Question pool</div>
-          </div>
-        </div>
-
-        <button id="btn-start" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-sky-700 transition-colors">
-          Start Quiz
-          <Icon name="arrowRight" class="w-5 h-5" />
-        </button>
       </section>
 
-      <!-- Quiz screen -->
-      <section id="screen-quiz" class="hidden">
+      <!-- Screen 2: Quiz -->
+      <section id="screen-quiz" class="hidden max-w-3xl mx-auto">
         <div class="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
           <div class="bg-sky-600 px-6 py-4 flex items-center justify-between flex-wrap gap-2">
             <div class="flex items-center gap-3">
-              <span class="text-white font-bold" id="q-counter">Question 1 of {QUIZ_SIZE}</span>
-              <span id="q-topic" class="text-xs font-medium text-sky-100 bg-sky-700/60 px-2 py-0.5 rounded-full"></span>
-            </div>
-            <div class="flex items-center gap-3 text-sky-50">
-              <span class="text-sm">⏱</span>
-              <span id="timer" class="font-mono text-base">{TIMER_MINUTES}:00</span>
+              <span class="text-white font-bold" id="q-counter">Question 1 of 10</span>
+              <span id="q-category" class="text-xs font-medium text-sky-100 bg-sky-700/60 px-2 py-0.5 rounded-full"></span>
             </div>
           </div>
 
-          <!-- Question progress bar -->
           <div class="h-1 bg-sky-100">
             <div id="progress-bar" class="h-full bg-sky-500 transition-all duration-300" style="width:0%"></div>
           </div>
@@ -107,20 +76,26 @@ const TIMER_MINUTES = 30;
           </div>
         </div>
 
-        <!-- Mini palette of question numbers for quick navigation -->
+        <!-- Quick navigation palette -->
         <div class="mt-6 rounded-2xl bg-white border border-slate-200 p-4">
           <div class="text-xs uppercase tracking-wide text-slate-500 mb-3">Quick navigation</div>
           <div id="q-palette" class="grid grid-cols-10 sm:grid-cols-12 gap-1.5"></div>
           <div class="mt-3 flex items-center gap-4 text-xs text-slate-500 flex-wrap">
-            <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-sky-600"></span> Current</span>
-            <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-200 border border-emerald-400"></span> Answered</span>
-            <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-white border border-slate-300"></span> Unanswered</span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-sky-600"></span> Current
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-emerald-200 border border-emerald-400"></span> Answered
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-white border border-slate-300"></span> Unanswered
+            </span>
           </div>
         </div>
       </section>
 
-      <!-- Result screen -->
-      <section id="screen-result" class="hidden">
+      <!-- Screen 3: Result -->
+      <section id="screen-result" class="hidden max-w-3xl mx-auto">
         <div class="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
           <div id="result-header" class="px-6 py-8 text-white text-center">
             <div class="text-sm uppercase tracking-wide opacity-80">Your Score</div>
@@ -151,262 +126,292 @@ const TIMER_MINUTES = 30;
             <div class="mt-8 grid sm:grid-cols-2 gap-3">
               <button id="btn-restart" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
                 <Icon name="arrowRight" class="w-4 h-4" />
-                Try a New Set of {QUIZ_SIZE}
+                Retake This Quiz
               </button>
-              <a href={COM_BASE} class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors">
-                Get Full Question Bank →
+              <button id="btn-convert" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors">
+                Unlock Full Preparation
                 <Icon name="externalLink" class="w-4 h-4" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Screen 4: Conversion + testimonials -->
+      <section id="screen-conversion" class="hidden max-w-5xl mx-auto">
+        {CATEGORIES.map((category) => (
+          <ConversionScreen category={category} />
+        ))}
+
+        <div id="conversion-testimonials" class="hidden mt-16">
+          <SocialProof />
+        </div>
+      </section>
     </div>
   </div>
 
-  <FinalCTA />
-</Layout>
+  <script define:vars={{ CATEGORIES, CATEGORY_MCQS }}>
+    const $ = (id) => document.getElementById(id);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
-<script define:vars={{ MCQS, QUIZ_SIZE, TIMER_MINUTES }}>
-  // Shuffle utility (Fisher–Yates)
-  function shuffle(array) {
-    const a = array.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
+    let selectedCategory = null;
+    let quiz = [];
+    let answers = [];
+    let current = 0;
 
-  const $ = (id) => document.getElementById(id);
-
-  let quiz = [];          // Array of { ...mcq, optionOrder: number[] }
-  let answers = [];       // Array<number|null> — selected ORIGINAL option index
-  let current = 0;
-  let timerInterval = null;
-  let secondsLeft = TIMER_MINUTES * 60;
-
-  function buildQuiz() {
-    const picked = shuffle(MCQS).slice(0, QUIZ_SIZE);
-    quiz = picked.map((q) => {
-      const order = shuffle(q.options.map((_, i) => i));
-      return { ...q, optionOrder: order };
-    });
-    answers = new Array(QUIZ_SIZE).fill(null);
-    current = 0;
-    secondsLeft = TIMER_MINUTES * 60;
-  }
-
-  function fmtTime(s) {
-    const m = Math.floor(s / 60).toString().padStart(2, '0');
-    const ss = (s % 60).toString().padStart(2, '0');
-    return `${m}:${ss}`;
-  }
-
-  function startTimer() {
-    updateTimerDisplay();
-    timerInterval = setInterval(() => {
-      secondsLeft--;
-      updateTimerDisplay();
-      if (secondsLeft <= 0) {
-        clearInterval(timerInterval);
-        finishQuiz(true);
+    function shuffle(array) {
+      const a = array.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
       }
-    }, 1000);
-  }
+      return a;
+    }
 
-  function updateTimerDisplay() {
-    const el = $('timer');
-    if (!el) return;
-    el.textContent = fmtTime(Math.max(0, secondsLeft));
-    if (secondsLeft <= 60) el.classList.add('text-amber-200');
-    if (secondsLeft <= 30) el.classList.add('text-rose-200', 'animate-pulse');
-  }
-
-  function renderPalette() {
-    const palette = $('q-palette');
-    palette.innerHTML = '';
-    quiz.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = String(i + 1);
-      const isCurrent = i === current;
-      const isAnswered = answers[i] !== null;
-      b.className = [
-        'h-8 rounded text-xs font-semibold transition-colors',
-        isCurrent ? 'bg-sky-600 text-white' :
-          isAnswered ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 hover:bg-emerald-200' :
-            'bg-white text-slate-600 border border-slate-300 hover:bg-slate-100',
-      ].join(' ');
-      b.addEventListener('click', () => {
-        current = i;
-        renderQuestion();
+    function showScreen(name) {
+      ['select', 'quiz', 'result', 'conversion'].forEach((s) => {
+        $(`screen-${s}`)?.classList.toggle('hidden', s !== name);
       });
-      palette.appendChild(b);
-    });
-  }
 
-  function renderQuestion() {
-    const q = quiz[current];
-    $('q-counter').textContent = `Question ${current + 1} of ${QUIZ_SIZE}`;
-    $('q-topic').textContent = q.topic;
-    $('q-stem').textContent = q.q;
+      if (name === 'conversion') {
+        $('conversion-testimonials')?.classList.remove('hidden');
+      } else {
+        $('conversion-testimonials')?.classList.add('hidden');
+      }
 
-    const wrap = $('q-options');
-    wrap.innerHTML = '';
-    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
-    q.optionOrder.forEach((origIdx, displayIdx) => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      const selected = answers[current] === origIdx;
-      btn.className = [
-        'w-full text-left rounded-xl border-2 px-5 py-4 text-sm transition-all flex items-start gap-3',
-        selected
-          ? 'border-sky-500 bg-sky-50 text-slate-900 ring-2 ring-sky-200'
-          : 'border-slate-200 bg-white text-slate-700 hover:border-sky-300 hover:bg-sky-50/50',
-      ].join(' ');
-      btn.innerHTML = `
-        <span class="shrink-0 w-7 h-7 rounded-full ${selected ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-600'} font-semibold text-xs inline-flex items-center justify-center">${letters[displayIdx]}</span>
-        <span class="leading-relaxed">${q.options[origIdx]}</span>
-      `;
-      btn.addEventListener('click', () => {
-        answers[current] = origIdx;
-        renderQuestion();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function buildQuiz(categoryId) {
+      const pool = CATEGORY_MCQS[categoryId] || [];
+      const category = CATEGORIES.find((c) => c.id === categoryId);
+      const size = category?.quizSize || 8;
+      const picked = shuffle(pool).slice(0, Math.min(size, pool.length));
+      quiz = picked.map((q) => {
+        const order = shuffle(q.options.map((_, i) => i));
+        return { ...q, optionOrder: order };
       });
-      wrap.appendChild(btn);
-    });
+      answers = new Array(quiz.length).fill(null);
+      current = 0;
+    }
 
-    $('btn-prev').disabled = current === 0;
-    const onLast = current === QUIZ_SIZE - 1;
-    $('btn-next').classList.toggle('hidden', onLast);
-    $('btn-submit').classList.toggle('hidden', !onLast);
+    function renderPalette() {
+      const palette = $('q-palette');
+      palette.innerHTML = '';
+      quiz.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = String(i + 1);
+        const isCurrent = i === current;
+        const isAnswered = answers[i] !== null;
+        b.className = [
+          'h-8 rounded text-xs font-semibold transition-colors',
+          isCurrent ? 'bg-sky-600 text-white' :
+            isAnswered ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 hover:bg-emerald-200' :
+              'bg-white text-slate-600 border border-slate-300 hover:bg-slate-100',
+        ].join(' ');
+        b.addEventListener('click', () => {
+          current = i;
+          renderQuestion();
+        });
+        palette.appendChild(b);
+      });
+    }
 
-    const pct = ((current + 1) / QUIZ_SIZE) * 100;
-    $('progress-bar').style.width = `${pct}%`;
+    function renderQuestion() {
+      const q = quiz[current];
+      $('q-counter').textContent = `Question ${current + 1} of ${quiz.length}`;
+      $('q-category').textContent = selectedCategory?.name || '';
+      $('q-stem').textContent = q.q;
 
-    renderPalette();
-  }
+      const wrap = $('q-options');
+      wrap.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+      q.optionOrder.forEach((origIdx, displayIdx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        const selected = answers[current] === origIdx;
+        btn.className = [
+          'w-full text-left rounded-xl border-2 px-5 py-4 text-sm transition-all flex items-start gap-3',
+          selected
+            ? 'border-sky-500 bg-sky-50 text-slate-900 ring-2 ring-sky-200'
+            : 'border-slate-200 bg-white text-slate-700 hover:border-sky-300 hover:bg-sky-50/50',
+        ].join(' ');
+        btn.innerHTML = `
+          <span class="shrink-0 w-7 h-7 rounded-full ${selected ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-600'} font-semibold text-xs inline-flex items-center justify-center">${letters[displayIdx]}</span>
+          <span class="leading-relaxed">${q.options[origIdx]}</span>
+        `;
+        btn.addEventListener('click', () => {
+          answers[current] = origIdx;
+          renderQuestion();
+        });
+        wrap.appendChild(btn);
+      });
 
-  function startQuiz() {
-    buildQuiz();
-    $('screen-start').classList.add('hidden');
-    $('screen-result').classList.add('hidden');
-    $('screen-quiz').classList.remove('hidden');
-    $('timer').classList.remove('text-amber-200', 'text-rose-200', 'animate-pulse');
-    renderQuestion();
-    startTimer();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+      $('btn-prev').disabled = current === 0;
+      const onLast = current === quiz.length - 1;
+      $('btn-next').classList.toggle('hidden', onLast);
+      $('btn-submit').classList.toggle('hidden', !onLast);
 
-  function finishQuiz(autoSubmitted) {
-    clearInterval(timerInterval);
+      const pct = ((current + 1) / quiz.length) * 100;
+      $('progress-bar').style.width = `${pct}%`;
 
-    let correct = 0, wrong = 0, skipped = 0;
-    quiz.forEach((q, i) => {
-      if (answers[i] === null) skipped++;
-      else if (answers[i] === q.correct) correct++;
-      else wrong++;
-    });
+      renderPalette();
+    }
 
-    const total = QUIZ_SIZE;
-    const pct = Math.round((correct / total) * 100);
+    function startQuiz(categoryId) {
+      selectedCategory = CATEGORIES.find((c) => c.id === categoryId) || null;
+      if (!selectedCategory) return;
 
-    $('result-score').textContent = `${correct}/${total}`;
-    $('result-percent').textContent = `${pct}%`;
-    $('result-correct').textContent = String(correct);
-    $('result-wrong').textContent = String(wrong);
-    $('result-skipped').textContent = String(skipped);
+      buildQuiz(categoryId);
+      showScreen('quiz');
+      renderQuestion();
+    }
 
-    // Color the header band by performance
-    const header = $('result-header');
-    header.className = 'px-6 py-8 text-white text-center';
-    if (pct >= 80) header.classList.add('bg-gradient-to-br', 'from-emerald-500', 'to-emerald-700');
-    else if (pct >= 60) header.classList.add('bg-gradient-to-br', 'from-sky-500', 'to-sky-700');
-    else if (pct >= 40) header.classList.add('bg-gradient-to-br', 'from-amber-500', 'to-amber-700');
-    else header.classList.add('bg-gradient-to-br', 'from-rose-500', 'to-rose-700');
+    function finishQuiz() {
+      let correct = 0, wrong = 0, skipped = 0;
+      quiz.forEach((q, i) => {
+        if (answers[i] === null) skipped++;
+        else if (answers[i] === q.correct) correct++;
+        else wrong++;
+      });
 
-    let msg = '';
-    if (autoSubmitted) msg = 'Time expired — your answers so far have been graded.';
-    else if (pct >= 80) msg = 'Excellent — exam-ready performance.';
-    else if (pct >= 60) msg = 'Solid effort — focus on weak topics in review below.';
-    else if (pct >= 40) msg = 'Keep going — the explanations below will close key gaps.';
-    else msg = 'A good place to start — work through every explanation below.';
-    $('result-message').textContent = msg;
+      const total = quiz.length;
+      const pct = Math.round((correct / total) * 100);
 
-    // Review list
-    const review = $('review-list');
-    review.innerHTML = '';
-    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+      $('result-score').textContent = `${correct}/${total}`;
+      $('result-percent').textContent = `${pct}%`;
+      $('result-correct').textContent = String(correct);
+      $('result-wrong').textContent = String(wrong);
+      $('result-skipped').textContent = String(skipped);
 
-    quiz.forEach((q, i) => {
-      const userIdx = answers[i];
-      const isCorrect = userIdx === q.correct;
-      const isSkipped = userIdx === null;
+      const header = $('result-header');
+      header.className = 'px-6 py-8 text-white text-center';
+      if (pct >= 80) header.classList.add('bg-gradient-to-br', 'from-emerald-500', 'to-emerald-700');
+      else if (pct >= 60) header.classList.add('bg-gradient-to-br', 'from-sky-500', 'to-sky-700');
+      else if (pct >= 40) header.classList.add('bg-gradient-to-br', 'from-amber-500', 'to-amber-700');
+      else header.classList.add('bg-gradient-to-br', 'from-rose-500', 'to-rose-700');
 
-      const card = document.createElement('div');
-      card.className = `rounded-xl border-2 p-5 ${
-        isSkipped ? 'border-slate-200 bg-slate-50' :
-        isCorrect ? 'border-emerald-200 bg-emerald-50/50' :
-                    'border-rose-200 bg-rose-50/50'
-      }`;
+      let msg = '';
+      if (pct >= 80) msg = 'Excellent — exam-ready performance.';
+      else if (pct >= 60) msg = 'Solid effort — focus on weak topics in review below.';
+      else if (pct >= 40) msg = 'Keep going — the explanations below will close key gaps.';
+      else msg = 'A good place to start — work through every explanation below.';
+      $('result-message').textContent = msg;
 
-      const optionsHtml = q.optionOrder.map((origIdx, di) => {
-        const isUser = userIdx === origIdx;
-        const isCorrectOpt = q.correct === origIdx;
-        const tone = isCorrectOpt
-          ? 'border-emerald-400 bg-emerald-100 text-emerald-900'
-          : isUser
-            ? 'border-rose-400 bg-rose-100 text-rose-900'
-            : 'border-slate-200 bg-white text-slate-600';
-        const badge = isCorrectOpt ? '✓' : (isUser ? '✗' : '');
-        return `<div class="flex items-start gap-2 rounded-lg border ${tone} px-3 py-2 text-sm">
-          <span class="shrink-0 w-5 h-5 rounded-full bg-white/70 text-xs font-semibold inline-flex items-center justify-center">${letters[di]}</span>
-          <span class="flex-1">${q.options[origIdx]}</span>
-          <span class="shrink-0 font-bold">${badge}</span>
-        </div>`;
-      }).join('');
+      // Review list
+      const review = $('review-list');
+      review.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
 
-      card.innerHTML = `
-        <div class="flex items-start justify-between gap-3 mb-3">
-          <div>
-            <span class="text-xs font-semibold ${isCorrect ? 'text-emerald-700' : isSkipped ? 'text-slate-600' : 'text-rose-700'}">
-              Q${i + 1} • ${q.topic}
+      quiz.forEach((q, i) => {
+        const userIdx = answers[i];
+        const isCorrect = userIdx === q.correct;
+        const isSkipped = userIdx === null;
+
+        const card = document.createElement('div');
+        card.className = `rounded-xl border-2 p-5 ${
+          isSkipped ? 'border-slate-200 bg-slate-50' :
+          isCorrect ? 'border-emerald-200 bg-emerald-50/50' :
+                      'border-rose-200 bg-rose-50/50'
+        }`;
+
+        const optionsHtml = q.optionOrder.map((origIdx, di) => {
+          const isUser = userIdx === origIdx;
+          const isCorrectOpt = q.correct === origIdx;
+          const tone = isCorrectOpt
+            ? 'border-emerald-400 bg-emerald-100 text-emerald-900'
+            : isUser
+              ? 'border-rose-400 bg-rose-100 text-rose-900'
+              : 'border-slate-200 bg-white text-slate-600';
+          const badge = isCorrectOpt ? '✓' : (isUser ? '✗' : '');
+          return `<div class="flex items-start gap-2 rounded-lg border ${tone} px-3 py-2 text-sm">
+            <span class="shrink-0 w-5 h-5 rounded-full bg-white/70 text-xs font-semibold inline-flex items-center justify-center">${letters[di]}</span>
+            <span class="flex-1">${q.options[origIdx]}</span>
+            <span class="shrink-0 font-bold">${badge}</span>
+          </div>`;
+        }).join('');
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div>
+              <span class="text-xs font-semibold ${isCorrect ? 'text-emerald-700' : isSkipped ? 'text-slate-600' : 'text-rose-700'}">
+                Q${i + 1}
+              </span>
+              <p class="mt-1 text-sm font-medium text-slate-900 leading-relaxed">${q.q}</p>
+            </div>
+            <span class="shrink-0 text-xs font-bold px-2 py-1 rounded ${isCorrect ? 'bg-emerald-200 text-emerald-800' : isSkipped ? 'bg-slate-200 text-slate-700' : 'bg-rose-200 text-rose-800'}">
+              ${isCorrect ? 'Correct' : isSkipped ? 'Skipped' : 'Wrong'}
             </span>
-            <p class="mt-1 text-sm font-medium text-slate-900 leading-relaxed">${q.q}</p>
           </div>
-          <span class="shrink-0 text-xs font-bold px-2 py-1 rounded ${isCorrect ? 'bg-emerald-200 text-emerald-800' : isSkipped ? 'bg-slate-200 text-slate-700' : 'bg-rose-200 text-rose-800'}">
-            ${isCorrect ? 'Correct' : isSkipped ? 'Skipped' : 'Wrong'}
-          </span>
-        </div>
-        <div class="space-y-2">${optionsHtml}</div>
-        <div class="mt-3 rounded-lg bg-white border border-slate-200 p-3">
-          <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Explanation</div>
-          <p class="text-sm text-slate-700 leading-relaxed">${q.explanation}</p>
-        </div>
-      `;
-      review.appendChild(card);
-    });
+          <div class="space-y-2">${optionsHtml}</div>
+          <div class="mt-3 rounded-lg bg-white border border-slate-200 p-3">
+            <div class="text-xs uppercase tracking-wide text-slate-500 mb-1">Explanation</div>
+            <p class="text-sm text-slate-700 leading-relaxed">${q.explanation}</p>
+          </div>
+        `;
+        review.appendChild(card);
+      });
 
-    $('screen-quiz').classList.add('hidden');
-    $('screen-result').classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+      showScreen('result');
 
-  // Wire up
-  document.addEventListener('DOMContentLoaded', () => {
-    $('btn-start').addEventListener('click', startQuiz);
-    $('btn-restart').addEventListener('click', startQuiz);
-    $('btn-prev').addEventListener('click', () => {
-      if (current > 0) { current--; renderQuestion(); }
+      // Store score for conversion screen
+      const scoreDisplay = $(`conversion-${selectedCategory.id}`)?.querySelector('[data-score-display]');
+      if (scoreDisplay) scoreDisplay.textContent = `${correct}/${total}`;
+    }
+
+    function showConversion() {
+      if (!selectedCategory) return;
+
+      // Hide all conversion screens then show selected
+      $$('.conversion-screen').forEach((el) => el.classList.add('hidden'));
+      $(`conversion-${selectedCategory.id}`)?.classList.remove('hidden');
+
+      showScreen('conversion');
+    }
+
+    function resetToCategories() {
+      selectedCategory = null;
+      quiz = [];
+      answers = [];
+      current = 0;
+      showScreen('select');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Category selection
+      document.querySelectorAll('.btn-start-quiz').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-category');
+          if (id) startQuiz(id);
+        });
+      });
+
+      // Quiz navigation
+      $('btn-prev').addEventListener('click', () => {
+        if (current > 0) { current--; renderQuestion(); }
+      });
+      $('btn-next').addEventListener('click', () => {
+        if (current < quiz.length - 1) { current++; renderQuestion(); }
+      });
+      $('btn-submit').addEventListener('click', () => {
+        const unanswered = answers.filter((a) => a === null).length;
+        if (unanswered > 0 && !confirm(`You have ${unanswered} unanswered question(s). Submit anyway?`)) return;
+        finishQuiz();
+      });
+
+      // Result screen
+      $('btn-restart').addEventListener('click', () => {
+        if (selectedCategory) startQuiz(selectedCategory.id);
+      });
+      $('btn-convert').addEventListener('click', showConversion);
+
+      // Reset buttons inside conversion screens (event delegation)
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('#btn-reset')) {
+          resetToCategories();
+        }
+      });
     });
-    $('btn-next').addEventListener('click', () => {
-      if (current < QUIZ_SIZE - 1) { current++; renderQuestion(); }
-    });
-    $('btn-submit').addEventListener('click', () => {
-      const unanswered = answers.filter((a) => a === null).length;
-      if (unanswered > 0 && !confirm(`You have ${unanswered} unanswered question(s). Submit anyway?`)) return;
-      finishQuiz(false);
-    });
-  });
-</script>
+  </script>
+</Layout>
