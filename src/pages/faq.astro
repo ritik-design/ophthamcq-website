@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import BundleCTA from '../components/BundleCTA.astro';
+import { CATEGORIES } from '../data/categories';
 
 type FAQ = { q: string; a: string };
 type Category = { id: string; title: string; intro: string; icon: string; faqs: FAQ[] };
@@ -369,6 +371,26 @@ const faqSchema = {
             See pricing
           </a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exam bundles -->
+  <div class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Prepare for your exam with the full bundle
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Every bundle includes MCQs, handwritten notes, explanations, and exam-focused resources for that specific exam.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {CATEGORIES.map((category) => (
+          <BundleCTA categoryId={category.id} />
+        ))}
       </div>
     </div>
   </div>

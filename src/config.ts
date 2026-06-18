@@ -104,7 +104,7 @@ export const PRODUCTS = [
     oldPrice: '₹500',
     discount: '29%',
     description: 'Complete ocular anatomy with clinical correlations and exam focus.',
-    href: `${COM_BASE}/new-courses/4-anatomy-of-eye-and-related-ocular-structures-exam-ready-handwritten-notes`,
+    href: `${COM_BASE}/new-courses/4-anatomy-of-eye-related-ocular-structures-exam-ready-handwritten-notes`,
     image: `${IMG}/2026-03-31-0_31158871596668736.png`,
     icon: 'notes',
     tag: null,

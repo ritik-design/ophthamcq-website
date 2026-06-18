@@ -3,9 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
 import Illustration from '../../components/Illustration.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
+import BundleCTA from '../../components/BundleCTA.astro';
 import { PRODUCTS } from '../../config';
 import { GLOSSARY } from '../../data/glossary';
 import { MCQS } from '../../data/free-mcqs';
+import type { CategoryId } from '../../data/categories';
 
 export function getStaticPaths() {
   return [
@@ -470,6 +472,19 @@ const topics: Record<string, TopicContent> = {
 
 const topic = topics[slug!] ?? topics.glaucoma;
 
+const topicBundleMap: Record<string, CategoryId[]> = {
+  glaucoma: ['pdcet', 'faico', 'high-yield', 'general'],
+  retina: ['faico', 'exam-notes', 'general'],
+  cornea: ['general', 'high-yield'],
+  cataract: ['general', 'high-yield'],
+  'neuro-ophthalmology': ['general', 'high-yield'],
+  'pediatric-ophthalmology': ['fellowship', 'exam-notes'],
+  uveitis: ['general', 'high-yield'],
+  oculoplastics: ['pdcet', 'fellowship', 'exam-notes'],
+};
+
+const topicBundles = topicBundleMap[slug!] ?? [];
+
 const matchedProducts = topic.productIds
   .map(id => PRODUCTS.find(p => p.id === id))
   .filter((p): p is typeof PRODUCTS[number] => Boolean(p));
@@ -619,6 +634,22 @@ const sampleMcqs = MCQS
                 <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 flex items-center gap-1">View<Icon name="chevronRight" class="w-4 h-4" /></span>
               </div>
             </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  {topicBundles.length > 0 && (
+    <div class="bg-white py-16 lg:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Or buy the complete bundle for your exam</h2>
+          <p class="mt-3 text-slate-600">These exam bundles include {topic.name.toLowerCase()} plus all the other topics you need.</p>
+        </div>
+        <div class="space-y-8">
+          {topicBundles.map((categoryId) => (
+            <BundleCTA categoryId={categoryId} />
           ))}
         </div>
       </div>

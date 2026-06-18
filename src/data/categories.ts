@@ -80,9 +80,9 @@ export const CATEGORIES: Category[] = [
     fullQuestionCount: '1500+',
     quizSize: 8,
     productIds: [
-      'faico-mcqs',
       'retina-deciphered',
       'glaucoma-notes',
+      'faico-mcqs',
     ],
     benefits: [
       '1500+ FAICO-mapped MCQs',

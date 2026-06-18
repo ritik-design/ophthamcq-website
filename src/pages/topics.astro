@@ -3,8 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import BundleCTA from '../components/BundleCTA.astro';
 import { MCQS } from '../data/free-mcqs';
 import { GLOSSARY } from '../data/glossary';
+import { CATEGORIES } from '../data/categories';
 
 type TopicMeta = {
   name: string;
@@ -253,6 +255,26 @@ const topicFaqs = [
             </summary>
             <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{faq.a}</div>
           </details>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Exam bundles -->
+  <div class="bg-slate-100 py-16 lg:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Complete exam bundles — all topics covered
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Get the full package for your exam: MCQs, handwritten notes, past papers, and explanations in one place.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {CATEGORIES.map((category) => (
+          <BundleCTA categoryId={category.id} />
         ))}
       </div>
     </div>
