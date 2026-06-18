@@ -45,7 +45,7 @@ export const CATEGORIES: Category[] = [
     quizSize: 8,
     productIds: [
       'pdcet-mcqs',
-      'high-yield-mcqs',
+      'eyelids-notes',
       'glaucoma-notes',
     ],
     benefits: [
@@ -80,10 +80,9 @@ export const CATEGORIES: Category[] = [
     fullQuestionCount: '1500+',
     quizSize: 8,
     productIds: [
-      'faico-mcqs',
-      'high-yield-mcqs',
       'retina-deciphered',
       'glaucoma-notes',
+      'faico-mcqs',
     ],
     benefits: [
       '1500+ FAICO-mapped MCQs',
@@ -154,7 +153,6 @@ export const CATEGORIES: Category[] = [
     quizSize: 8,
     productIds: [
       'frcophth-step-1-mcqs',
-      'high-yield-mcqs',
     ],
     benefits: [
       '2000+ FRCOphth-style MCQs',
@@ -189,8 +187,6 @@ export const CATEGORIES: Category[] = [
     quizSize: 8,
     productIds: [
       'short-term-phaco',
-      'retina-deciphered',
-      'high-yield-mcqs',
     ],
     benefits: [
       'Fellowship-ready case discussions',
