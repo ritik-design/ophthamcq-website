@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import QuizEngine from '../../components/QuizEngine.astro';
+import BundleCTA from '../../components/BundleCTA.astro';
+import { CATEGORIES, getCategoryById } from '../../data/categories';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { category: c.id } }));
+}
+
+const { category } = Astro.params;
+const categoryData = getCategoryById(category as any);
+
+if (!categoryData) {
+  return Astro.redirect('/free-mcqs');
+}
+---
+
+<Layout
+  title={`Free ${categoryData.name} MCQs — Practice & Buy Full Course`}
+  description={`Try ${categoryData.quizSize} free ${categoryData.name} MCQs with instant feedback. Unlock the full bundle with ${categoryData.fullQuestionCount} questions, notes, and past papers.`}
+>
+  <!-- Hero -->
+  <div class="bg-gradient-to-br from-sky-50 via-white to-indigo-50 border-b border-slate-200">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="text-center">
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-sm font-medium text-emerald-700">100% Free — No Signup — Instant Scoring</span>
+        </div>
+
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-100 text-sky-600">
+            <Icon name={categoryData.iconName} class="h-7 w-7" />
+          </div>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Free <span class="text-sky-600">{categoryData.name}</span> MCQs
+        </h1>
+        <p class="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
+          {categoryData.description}
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-50 border border-sky-100 px-3 py-1 text-sky-700 font-medium">
+            <Icon name="mcq" class="h-4 w-4" />
+            {categoryData.quizSize} free sample questions
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-50 border border-sky-100 px-3 py-1 text-sky-700 font-medium">
+            <Icon name="document" class="h-4 w-4" />
+            {categoryData.fullQuestionCount}+ in full bundle
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="bg-slate-50 py-12 lg:py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <QuizEngine categoryId={categoryData.id} />
+    </div>
+  </div>
+
+  <!-- Related courses -->
+  <div id="related-courses" class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Unlock the full {categoryData.name} bundle
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Buy the complete course package and get all the resources you need to pass your exam.
+        </p>
+      </div>
+
+      <BundleCTA categoryId={categoryData.id} />
+    </div>
+  </div>
+
+  <!-- Back to all categories -->
+  <div class="bg-slate-50 py-10">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+      <a
+        href="/free-mcqs"
+        class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all"
+      >
+        ← Back to all free MCQs
+      </a>
+    </div>
+  </div>
+</Layout>

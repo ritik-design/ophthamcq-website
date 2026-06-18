@@ -24,12 +24,11 @@ const { category } = Astro.props;
   <h3 class="text-lg font-bold text-slate-900 mb-2">{category.name}</h3>
   <p class="text-sm text-slate-600 leading-relaxed mb-6 flex-1">{category.description}</p>
 
-  <button
-    type="button"
-    data-category={category.id}
-    class="btn-start-quiz w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 transition-colors"
+  <a
+    href={`/free-mcqs/${category.id}/`}
+    class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 transition-colors"
   >
     Start Free Quiz
     <Icon name="arrowRight" class="h-4 w-4" />
-  </button>
+  </a>
 </div>
