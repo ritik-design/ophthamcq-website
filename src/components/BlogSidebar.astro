@@ -1,0 +1,71 @@
+---
+import Icon from './Icon.astro';
+import Illustration from './Illustration.astro';
+import { PRODUCTS } from '../config';
+
+const featuredIds = [
+  'retina-deciphered',
+  'anatomy-notes',
+  'glaucoma-notes',
+  'optics-notes',
+];
+
+const featured = featuredIds
+  .map(id => PRODUCTS.find(p => p.id === id))
+  .filter(Boolean) as (typeof PRODUCTS)[number][];
+---
+
+<aside class="space-y-6">
+  <div class="rounded-2xl bg-sky-50 border border-sky-100 p-6">
+    <div class="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4">
+      <Illustration name="notes" class="w-10 h-10" />
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 mb-2">Handwritten Exam Notes</h3>
+    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+      Exam-ready notes written by ophthalmologists who passed. Distilled from Kanski, Ryan, Elkington and BCSC into concise, printable PDFs.
+    </p>
+    <a
+      href="/notes"
+      class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
+    >
+      Browse Notes
+      <Icon name="arrowRight" class="w-4 h-4" />
+    </a>
+  </div>
+
+  <div class="rounded-2xl bg-white border border-slate-200 p-5">
+    <h4 class="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-4">Popular note sets</h4>
+    <div class="space-y-4">
+      {featured.map(n => (
+        <a
+          href={n.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex gap-3 items-start"
+        >
+          <div class="w-12 h-12 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+            <img
+              src={n.image}
+              alt={n.name}
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-slate-900 group-hover:text-sky-700 transition-colors leading-snug">
+              {n.name}
+            </div>
+            <div class="text-xs text-slate-500 mt-0.5">{n.price}</div>
+          </div>
+        </a>
+      ))}
+    </div>
+    <a
+      href="/notes"
+      class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800"
+    >
+      View all notes
+      <Icon name="chevronRight" class="w-4 h-4" />
+    </a>
+  </div>
+</aside>

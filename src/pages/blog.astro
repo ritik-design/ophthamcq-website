@@ -4,6 +4,7 @@ import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 import { fetchBlogList, normalizeBlog, truncateExcerpt } from '../lib/thestacc';
+import BlogSidebar from '../components/BlogSidebar.astro';
 
 const apiPosts = await fetchBlogList();
 const posts = apiPosts.map(normalizeBlog);
@@ -35,45 +36,53 @@ const posts = apiPosts.map(normalizeBlog);
 
   <div class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      {posts.length === 0 && (
-        <div class="text-center py-16">
-          <p class="text-slate-600">No blog posts found. Publish a post in TheStacc first.</p>
-        </div>
-      )}
+      <div class="grid lg:grid-cols-[1fr_320px] gap-8 xl:gap-12 items-start">
+        <main>
+          {posts.length === 0 && (
+            <div class="text-center py-16">
+              <p class="text-slate-600">No blog posts found. Publish a post in TheStacc first.</p>
+            </div>
+          )}
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map(post => (
-          <a href={`/blog/${post.slug}/`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
-            <div class="h-48 bg-slate-100 flex items-center justify-center overflow-hidden group-hover:bg-sky-50 transition-colors">
-              {post.featured_image ? (
-                <img src={post.featured_image} alt={post.title} class="w-full h-full object-cover" />
-              ) : (
-                <div class="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Illustration name={post.illustration} class="w-12 h-12" />
+          <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {posts.map(post => (
+              <a href={`/blog/${post.slug}/`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
+                <div class="h-48 bg-slate-100 flex items-center justify-center overflow-hidden group-hover:bg-sky-50 transition-colors">
+                  {post.featured_image ? (
+                    <img src={post.featured_image} alt={post.title} class="w-full h-full object-cover" />
+                  ) : (
+                    <div class="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Illustration name={post.illustration} class="w-12 h-12" />
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-            <div class="p-6 flex-1 flex flex-col">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="inline-flex items-center rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-700">
-                  {post.category || 'General'}
-                </span>
-                <span class="text-xs text-slate-400">{post.readTime}</span>
-              </div>
-              <h2 class="text-base font-bold text-slate-900 mb-2 group-hover:text-sky-700 transition-colors">
-                {post.title}
-              </h2>
-              <p class="text-sm text-slate-600 leading-relaxed flex-1">{truncateExcerpt(post.meta_description || post.excerpt)}</p>
-              <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span class="text-xs text-slate-400">{post.date}</span>
-                <span class="text-sm font-medium text-sky-600 group-hover:text-sky-700 flex items-center gap-1">
-                  Read
-                  <Icon name="chevronRight" class="w-4 h-4" />
-                </span>
-              </div>
-            </div>
-          </a>
-        ))}
+                <div class="p-6 flex-1 flex flex-col">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="inline-flex items-center rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-700">
+                      {post.category || 'General'}
+                    </span>
+                    <span class="text-xs text-slate-400">{post.readTime}</span>
+                  </div>
+                  <h2 class="text-base font-bold text-slate-900 mb-2 group-hover:text-sky-700 transition-colors">
+                    {post.title}
+                  </h2>
+                  <p class="text-sm text-slate-600 leading-relaxed flex-1">{truncateExcerpt(post.meta_description || post.excerpt)}</p>
+                  <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs text-slate-400">{post.date}</span>
+                    <span class="text-sm font-medium text-sky-600 group-hover:text-sky-700 flex items-center gap-1">
+                      Read
+                      <Icon name="chevronRight" class="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </main>
+
+        <div class="lg:sticky lg:top-8">
+          <BlogSidebar />
+        </div>
       </div>
     </div>
   </div>
