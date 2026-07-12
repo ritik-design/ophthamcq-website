@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
+import PageHero from '../components/PageHero.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 import { APP_LINKS, EXAMS } from '../config';
 
@@ -68,38 +69,24 @@ const resourcesFaq = [
   title="Free Ophthalmology Resources Hub — Study Guides, MCQs, Glossary, Plans"
   description="The OphthaMCQ free ophthalmology resources hub: 200 free MCQs, 316-term glossary, handwritten notes, exam guides and 4/8/12-week study plans for FRCOphth, ICO, DNB and FAICO."
 >
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-4 py-1.5 mb-6">
-            <span class="text-sm font-medium text-emerald-700">Free Ophthalmology Learning Hub</span>
-          </div>
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Free <span class="text-sky-600">Ophthalmology Resources</span>
-          </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Everything you need to start preparing for FRCOphth, ICO/FICO, FAICO, DNB or NEET-SS — study plans,
-            checklists, mnemonics, image-based practice and the most complete free ophthalmology glossary online.
-          </p>
-          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <a href="/free-mcqs" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-              Try 200 Free MCQs
-              <Icon name="arrowRight" class="w-4 h-4" />
-            </a>
-            <a href="#study-plans" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
-              See Study Plans
-            </a>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="download" class="w-40 h-40" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PageHero
+    eyebrow="Free Ophthalmology Learning Hub"
+    eyebrowIcon="download"
+    accent="emerald"
+    titleHtml={`Free <span class="text-sky-600">Ophthalmology Resources</span>`}
+    description="Everything you need to start preparing for FRCOphth, ICO/FICO, FAICO, DNB or NEET-SS — study plans, checklists, mnemonics, image-based practice and the most complete free ophthalmology glossary online."
+    primaryCta={{ href: '/free-mcqs', label: 'Try 200 Free MCQs' }}
+    secondaryCta={{ href: '#study-plans', label: 'See Study Plans' }}
+    trust={[
+      { value: '200', label: 'Free MCQs' },
+      { value: '316', label: 'Glossary' },
+      { value: 'Free', label: 'Plans' },
+    ]}
+    illustration="download"
+    floatLabel="Start free"
+    floatSub="No signup required"
+    floatIcon="sparkles"
+  />
 
   <section class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

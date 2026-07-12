@@ -70,9 +70,16 @@ const pageTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
         const GRID = getSiteGrid();
         document.querySelectorAll('.section-skin-grid, .section-skin-blue').forEach((el) => {
           if (!(el instanceof HTMLElement)) return;
-          // Hero keeps tight padding — don't snap-grow it
-          if (el.classList.contains('surface-slitlamp')) {
+          // Heroes fill viewport on desktop — don't snap-grow them
+          if (
+            el.classList.contains('surface-slitlamp') ||
+            el.classList.contains('contact-hero') ||
+            el.classList.contains('site-hero') ||
+            el.classList.contains('page-hero')
+          ) {
             el.style.setProperty('--grid-snap-extra', '0px');
+            el.style.removeProperty('padding-top');
+            el.style.removeProperty('padding-bottom');
             return;
           }
           // Reset extra, measure natural height, then add remainder
@@ -108,6 +115,27 @@ const pageTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
           main.querySelectorAll(':scope > section, :scope > div').forEach((el) => {
             if (!(el instanceof HTMLElement)) return;
             if (!el.children.length) return;
+
+            // Heroes keep their own look/padding — never force section-skin 144px pad
+            if (
+              el.classList.contains('site-hero') ||
+              el.classList.contains('page-hero') ||
+              el.classList.contains('contact-hero') ||
+              el.classList.contains('surface-slitlamp')
+            ) {
+              // Ensure a grid wash on plain page heroes without the 3-cell padding
+              if (
+                !el.classList.contains('section-skin-grid') &&
+                !el.classList.contains('section-skin-clean') &&
+                !el.classList.contains('section-skin-blue') &&
+                !el.classList.contains('surface-slitlamp')
+              ) {
+                el.classList.add('section-skin-grid');
+              }
+              skinIndex = 1; // next non-hero section starts on "clean"
+              return;
+            }
+
             if (
               el.classList.contains('section-skin-grid') ||
               el.classList.contains('section-skin-clean') ||

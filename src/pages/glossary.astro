@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
+import PageHero from '../components/PageHero.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 import { GLOSSARY, CATEGORIES } from '../data/glossary';
 
@@ -40,23 +41,29 @@ const categoryColors: Record<string, string> = {
   title={`Ophthalmology Glossary — ${totalCount}+ Essential Terms & Definitions`}
   description={`Comprehensive glossary of ${totalCount}+ ophthalmology terms with concise definitions for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS exam preparation.`}
 >
-  <div class="bg-gradient-to-br from-sky-50 via-white to-indigo-50 border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-      <div class="text-center max-w-3xl mx-auto">
-        <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 border border-sky-100 px-4 py-1.5 mb-5">
-          <Icon name="bookOpen" class="w-4 h-4 text-sky-600" />
-          <span class="text-sm font-medium text-sky-700">{totalCount} terms across {CATEGORIES.length} sub-specialties</span>
-        </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-          Ophthalmology <span class="text-sky-600">Glossary</span>
-        </h1>
-        <p class="mt-5 text-lg text-slate-600">
-          The definitions you need for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS — all on one page,
-          searchable, and grouped by sub-specialty.
-        </p>
+  <PageHero
+    eyebrow={`${totalCount} terms · ${CATEGORIES.length} sub-specialties`}
+    eyebrowIcon="bookOpen"
+    titleHtml={`Ophthalmology <span class="text-sky-600">Glossary</span>`}
+    description="The definitions you need for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS — all on one page, searchable, and grouped by sub-specialty."
+    primaryCta={{ href: '#glossary-search', label: 'Jump to search' }}
+    secondaryCta={{ href: '/free-mcqs', label: 'Practice free MCQs' }}
+    trust={[
+      { value: `${totalCount}`, label: 'Terms' },
+      { value: `${CATEGORIES.length}`, label: 'Categories' },
+      { value: 'Free', label: 'Forever' },
+    ]}
+    illustration="bookOpen"
+    floatLabel="Searchable"
+    floatSub="A–Z definitions"
+    floatIcon="search"
+  />
 
+  <div class="bg-gradient-to-br from-sky-50 via-white to-indigo-50 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
+      <div class="text-center max-w-3xl mx-auto">
         <!-- Search -->
-        <div class="mt-8 max-w-2xl mx-auto">
+        <div id="glossary-search" class="max-w-2xl mx-auto">
           <label for="g-search" class="sr-only">Search glossary</label>
           <div class="relative">
             <input

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
+import PageHero from '../components/PageHero.astro';
 import { COM_BASE } from '../config';
 
 const stations = [
@@ -16,22 +17,25 @@ const stations = [
   title="OSCE, Practical & Viva Voce Ready Bundle — DNB / MS / DO Ophthalmology"
   description="Complete DNB/MS/DO practical exam bundle — OSCE stations, instruments, case presentation, investigations and viva voce preparation by ophthalmologists who passed."
 >
-  <section class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
-      <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 mb-6">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span class="text-sm font-medium text-emerald-700">New Launch — Free for DNB / MS / DO residents</span>
-      </div>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-        OSCE, Practical &amp; Viva Voce Ready
-        <span class="block mt-2 text-sky-600">DNB / MS / DO Bundle</span>
-      </h1>
-      <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
-        Complete practical exam bundle — OSCE stations, instruments, case presentation,
-        investigations and viva voce prep built by ophthalmologists who passed these exams.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="New Launch · DNB / MS / DO Practical"
+    eyebrowIcon="sparkles"
+    accent="emerald"
+    titleHtml={`OSCE, Practical &amp; Viva Voce Ready<br/><span class="text-sky-600">DNB / MS / DO Bundle</span>`}
+    description="Complete practical exam bundle — OSCE stations, instruments, case presentation, investigations and viva voce prep built by ophthalmologists who passed these exams."
+    primaryCta={{ href: '/#practical-osce', label: 'Browse practical PDFs' }}
+    secondaryCta={{ href: COM_BASE, label: 'Get on store', external: true }}
+    trust={[
+      { value: '5', label: 'Stations' },
+      { value: 'PDFs', label: 'Included' },
+      { value: 'Viva', label: 'Ready' },
+    ]}
+    image="/practical-pdfs/osce-cover.jpeg"
+    imageAlt="OSCE practical and viva complete bundle cover"
+    floatLabel="Practical table ready"
+    floatSub="Instruments · cases · drugs"
+    floatIcon="check"
+  />
 
   <section class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

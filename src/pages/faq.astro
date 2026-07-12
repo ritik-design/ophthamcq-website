@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
+import PageHero from '../components/PageHero.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 import BundleCTA from '../components/BundleCTA.astro';
 import { CATEGORIES } from '../data/categories';
@@ -242,30 +243,23 @@ const faqSchema = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Hero -->
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <span class="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 mb-4">
-            <Icon name="questionBank" class="w-4 h-4" />
-            {allFaqs.length}+ detailed answers
-          </span>
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Frequently Asked <span class="text-sky-600">Questions</span>
-          </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Honest, detailed answers about the OphthaMCQ ophthalmology question bank — exam coverage, content quality, pricing, refunds, device access and institutional plans for FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS, PD-CET and OKAP.
-          </p>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="questionBank" class="w-40 h-40" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PageHero
+    eyebrow={`${allFaqs.length}+ detailed answers`}
+    eyebrowIcon="questionBank"
+    titleHtml={`Frequently Asked <span class="text-sky-600">Questions</span>`}
+    description="Honest, detailed answers about the OphthaMCQ ophthalmology question bank — exam coverage, content quality, pricing, refunds, device access and institutional plans for FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS, PD-CET and OKAP."
+    primaryCta={{ href: '/free-mcqs', label: 'Try free MCQs' }}
+    secondaryCta={{ href: '/contact', label: 'Contact support' }}
+    trust={[
+      { value: `${allFaqs.length}+`, label: 'Answers' },
+      { value: '6+', label: 'Topics' },
+      { value: '< 4h', label: 'Support' },
+    ]}
+    illustration="questionBank"
+    floatLabel="Still stuck?"
+    floatSub="Email support anytime"
+    floatIcon="mail"
+  />
 
   <!-- Quick try-before-you-read callout -->
   <div class="bg-slate-50 border-b border-slate-200">

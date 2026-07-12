@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { PRODUCTS, TESTIMONIALS, EXAMS, APP_LINKS, COM_BASE } from '../config';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
+import PageHero from '../components/PageHero.astro';
 import { NOTE_PREVIEWS } from '../data/note-previews';
 
 const noteProducts = PRODUCTS.filter(p => p.category === 'notes');
@@ -82,42 +83,24 @@ const notesFaq = [
   title="Handwritten Ophthalmology Notes — Exam Ready for FRCOphth, DNB, ICO, FAICO"
   description="Handwritten ophthalmology notes distilled from Kanski, Ryan, Elkington and BCSC. Exam-ready PG study material for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS residents."
 >
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 border border-sky-100 px-4 py-1.5 mb-6">
-            <span class="text-sm font-medium text-sky-700">PG Ophthalmology Study Material</span>
-          </div>
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Handwritten <span class="text-sky-600">Exam Notes</span> for Ophthalmology
-          </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            The world's only ophthalmology exam-ready notes designed for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS.
-            No 50-page chapters — just the exact points the exam tests, written by doctors who passed.
-          </p>
-          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <a href="/free-mcqs" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-              Try 200 Free MCQs
-              <Icon name="arrowRight" class="w-4 h-4" />
-            </a>
-            <a href="#free-samples" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
-              Browse Full PDFs
-            </a>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-72 h-72 rounded-2xl overflow-hidden shadow-md bg-slate-100">
-            <img
-              src={PRODUCTS.find(p => p.id === 'retina-deciphered')?.image}
-              alt="Handwritten ophthalmology notes for FRCOphth, DNB and ICO exams"
-              class="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PageHero
+    eyebrow="PG Ophthalmology Study Material"
+    eyebrowIcon="notes"
+    titleHtml={`Handwritten <span class="text-sky-600">Exam Notes</span> for Ophthalmology`}
+    description="The world's only ophthalmology exam-ready notes designed for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS. No 50-page chapters — just the exact points the exam tests, written by doctors who passed."
+    primaryCta={{ href: '/free-mcqs', label: 'Try 200 Free MCQs' }}
+    secondaryCta={{ href: '#free-samples', label: 'Browse Full PDFs' }}
+    trust={[
+      { value: '8+', label: 'Note sets' },
+      { value: '₹249+', label: 'From' },
+      { value: 'Lifetime', label: 'Access' },
+    ]}
+    image="/illustrations/notes-hero.webp"
+    imageAlt="Handwritten ophthalmology exam notes illustration"
+    floatLabel="Handwritten PDFs"
+    floatSub="Exam-ready revision"
+    floatIcon="notes"
+  />
 
   <section class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

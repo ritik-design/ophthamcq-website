@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
+import PageHero from '../components/PageHero.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 import BundleCTA from '../components/BundleCTA.astro';
 import { MCQS } from '../data/free-mcqs';
@@ -68,29 +69,23 @@ const topicFaqs = [
   title="Ophthalmology Topics — Retina, Cornea, Glaucoma Study Guides & MCQs"
   description="Topic-wise ophthalmology study: retina, cornea, glaucoma, cataract, uveitis, neuro-ophth and more. High-yield notes, MCQs and glossary by subspecialty."
 >
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Topic-Wise <span class="text-sky-600">Ophthalmology Study</span>
-          </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Master ophthalmology by subspecialty. High-yield topics, MCQs, glossary terms and study guides for every PG exam.
-          </p>
-          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">Try Topic MCQs</a>
-            <a href="#topics" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 transition-colors">Browse Topics</a>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="questionBank" class="w-40 h-40" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PageHero
+    eyebrow="Retina · Cornea · Glaucoma · More"
+    eyebrowIcon="eye"
+    titleHtml={`Topic-Wise <span class="text-sky-600">Ophthalmology Study</span>`}
+    description="Master ophthalmology by subspecialty. High-yield topics, MCQs, glossary terms and study guides for every PG exam."
+    primaryCta={{ href: '/free-mcqs', label: 'Try topic MCQs' }}
+    secondaryCta={{ href: '#topics', label: 'Browse topics' }}
+    trust={[
+      { value: `${topics.length}+`, label: 'Topics' },
+      { value: '500+', label: 'MCQs/topic' },
+      { value: 'Free', label: 'Samples' },
+    ]}
+    illustration="questionBank"
+    floatLabel="Study by specialty"
+    floatSub="Map effort to marks"
+    floatIcon="target"
+  />
 
   <div id="topics" class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

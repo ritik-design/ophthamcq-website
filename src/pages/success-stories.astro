@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { TESTIMONIALS, PRODUCTS, EXAMS } from '../config';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
+import PageHero from '../components/PageHero.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 
 const stats = [
@@ -80,29 +81,24 @@ const relatedProducts = PRODUCTS.slice(0, 4);
   title="Ophthalmology Exam Success Stories — Passed FRCOphth, ICO, FAICO, DNB"
   description="Real testimonials and reviews from ophthalmology residents who cleared FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS using OphthaMCQ. Read how they passed on first attempt."
 >
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-4 py-1.5 mb-6">
-            <span class="text-sm font-medium text-emerald-700">Real doctors. Real exams. Real passes.</span>
-          </div>
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Ophthalmology Exam <span class="text-sky-600">Success Stories</span>
-          </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            How residents passed FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS using OphthaMCQ — what worked,
-            what they wish they had done differently, and what topped their study stack.
-          </p>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="success" class="w-40 h-40" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PageHero
+    eyebrow="Real doctors. Real exams. Real passes."
+    eyebrowIcon="trophy"
+    accent="emerald"
+    titleHtml={`Ophthalmology Exam <span class="text-sky-600">Success Stories</span>`}
+    description="How residents passed FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS using OphthaMCQ — what worked, what they wish they had done differently, and what topped their study stack."
+    primaryCta={{ href: '/free-mcqs', label: 'Start free practice' }}
+    secondaryCta={{ href: '/notes', label: 'Browse notes' }}
+    trust={[
+      { value: '15k+', label: 'Residents' },
+      { value: '83%', label: 'First pass' },
+      { value: '7', label: 'Exams' },
+    ]}
+    illustration="success"
+    floatLabel="First-attempt stories"
+    floatSub="From real passers"
+    floatIcon="trophy"
+  />
 
   <section class="bg-slate-900 py-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

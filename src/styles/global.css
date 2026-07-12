@@ -27,6 +27,7 @@
 /* Base */
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -37,6 +38,52 @@ body {
   position: relative;
   /* Simple base — section skins handle texture */
   background-color: var(--color-surface);
+  overflow-x: clip;
+}
+
+/* ── Site heroes: PC = full viewport under sticky header, content centered ──
+   Mobile / tablet: natural height (no forced 100vh) */
+.site-hero,
+.page-hero {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.site-hero > .site-hero-inner,
+.page-hero > .site-hero-inner {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Desktop / large laptop: fill remaining viewport under sticky header */
+@media (min-width: 1024px) {
+  main > .site-hero,
+  main > .page-hero,
+  main > .surface-slitlamp.section-skin-grid,
+  main > .section-skin-grid.contact-hero {
+    min-height: calc(100svh - var(--site-header-height));
+  }
+}
+
+/* Responsive media defaults (do not force height on icons) */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Wide tables scroll on small screens without blowing the layout */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Selection */
@@ -105,6 +152,7 @@ details[open] > summary {
      so no half-boxes at top/bottom edges
 */
 :root {
+  --site-header-height: 4.25rem;
   --site-grid: 48px;
   --content-max: 80rem; /* matches Tailwind max-w-7xl */
   --gutter: 1rem; /* px-4 */
@@ -211,24 +259,33 @@ main .section-skin-clean > .mx-auto.max-w-7xl {
 
 /* Override Tailwind py-* so block size stays on-grid.
    --grid-snap-extra is set by JS to finish the last incomplete cell row.
-   Hero (.surface-slitlamp) keeps its own tight padding — do not force 3-cell pad. */
-main > .section-skin-grid:not(.surface-slitlamp),
-main > .section-skin-blue {
+   Heroes manage their own height/padding — exclude them from forced 3-cell pad. */
+main > .section-skin-grid:not(.surface-slitlamp):not(.site-hero):not(.page-hero):not(.contact-hero),
+main > .section-skin-blue:not(.site-hero):not(.page-hero) {
   --grid-snap-extra: 0px;
   padding-top: calc(var(--site-grid) * 3) !important;
   padding-bottom: calc(var(--site-grid) * 3 + var(--grid-snap-extra)) !important;
 }
-main > .section-skin-clean {
+main > .section-skin-clean:not(.site-hero):not(.page-hero) {
   padding-top: calc(var(--site-grid) * 2) !important;
   padding-bottom: calc(var(--site-grid) * 2) !important;
 }
-main > .section-skin-clean.border-y {
+main > .section-skin-clean.border-y:not(.site-hero):not(.page-hero) {
   padding-top: var(--site-grid) !important;
   padding-bottom: var(--site-grid) !important;
 }
 
-/* Hero: minimal top space under sticky header */
-main > .surface-slitlamp.section-skin-grid {
+/* All heroes: zero outer padding — height comes from min-height + inner pad */
+main > .surface-slitlamp.section-skin-grid,
+main > .section-skin-grid.contact-hero,
+main > .site-hero,
+main > .page-hero,
+main > .section-skin-grid.site-hero,
+main > .section-skin-grid.page-hero,
+main > .section-skin-clean.site-hero,
+main > .section-skin-clean.page-hero,
+main > .section-skin-blue.site-hero,
+main > .section-skin-blue.page-hero {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   --grid-snap-extra: 0px;

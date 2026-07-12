@@ -1,0 +1,185 @@
+---
+/**
+ * Richer inner-page hero (NOT used on homepage).
+ * Fills empty two-column heroes with trust chips, CTAs, and framed art.
+ */
+import Icon from './Icon.astro';
+import Illustration from './Illustration.astro';
+
+interface TrustChip {
+  value: string;
+  label: string;
+}
+
+interface Cta {
+  href: string;
+  label: string;
+  external?: boolean;
+}
+
+interface Props {
+  eyebrow?: string;
+  eyebrowIcon?: string;
+  titleHtml: string;
+  description: string;
+  primaryCta?: Cta;
+  secondaryCta?: Cta;
+  trust?: TrustChip[];
+  /** Path under /public, e.g. /illustrations/notes-hero.webp */
+  image?: string;
+  imageAlt?: string;
+  /** Fallback SVG illustration name when no image */
+  illustration?: string;
+  /** Floating mini card on the image */
+  floatLabel?: string;
+  floatSub?: string;
+  floatIcon?: string;
+  /** Soft emerald vs sky accent for badge */
+  accent?: 'sky' | 'emerald';
+  align?: 'left' | 'center';
+}
+
+const {
+  eyebrow,
+  eyebrowIcon = 'sparkles',
+  titleHtml,
+  description,
+  primaryCta,
+  secondaryCta,
+  trust = [],
+  image,
+  imageAlt = '',
+  illustration = 'hero',
+  floatLabel,
+  floatSub,
+  floatIcon = 'check',
+  accent = 'sky',
+  align = 'left',
+} = Astro.props;
+
+const badge =
+  accent === 'emerald'
+    ? 'bg-emerald-50 border-emerald-100 text-emerald-800'
+    : 'bg-sky-50 border-sky-100 text-sky-800';
+const badgeDot = accent === 'emerald' ? 'bg-emerald-500' : 'bg-sky-500';
+---
+
+<section class="page-hero site-hero relative overflow-hidden border-b border-slate-200 bg-white">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute -top-24 right-0 w-[26rem] h-[26rem] rounded-full bg-sky-200/25 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-cyan-100/35 blur-3xl"></div>
+    <div
+      class="absolute inset-0 opacity-[0.35]"
+      style="background-image: linear-gradient(to right, rgb(15 23 42 / 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.04) 1px, transparent 1px); background-size: 48px 48px;"
+    ></div>
+  </div>
+
+  <div class="site-hero-inner relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-12">
+    <div
+      class:list={[
+        'grid gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center w-full',
+        align === 'center' ? 'lg:grid-cols-1' : 'lg:grid-cols-2',
+      ]}
+    >
+      <div class:list={[align === 'center' ? 'text-center max-w-3xl mx-auto' : 'text-center lg:text-left']}>
+        {eyebrow && (
+          <div class:list={['inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 shadow-sm mb-5', badge]}>
+            <span class:list={['w-2 h-2 rounded-full', badgeDot]}></span>
+            {eyebrowIcon && <Icon name={eyebrowIcon} class="w-3.5 h-3.5 opacity-80" />}
+            <span class="text-xs sm:text-sm font-semibold tracking-wide">{eyebrow}</span>
+          </div>
+        )}
+
+        <h1
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.12]"
+          set:html={titleHtml}
+        />
+
+        <p class:list={['mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed', align === 'center' ? 'mx-auto max-w-2xl' : 'max-w-xl mx-auto lg:mx-0']}>
+          {description}
+        </p>
+
+        {(primaryCta || secondaryCta) && (
+          <div class:list={['mt-7 sm:mt-8 flex flex-col sm:flex-row gap-3', align === 'center' ? 'justify-center' : 'justify-center lg:justify-start']}>
+            {primaryCta && (
+              <a
+                href={primaryCta.href}
+                target={primaryCta.external ? '_blank' : undefined}
+                rel={primaryCta.external ? 'noopener noreferrer' : undefined}
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-sky-200 hover:bg-sky-700 transition-colors w-full sm:w-auto"
+              >
+                {primaryCta.label}
+                <Icon name={primaryCta.external ? 'externalLink' : 'arrowRight'} class="w-4 h-4" />
+              </a>
+            )}
+            {secondaryCta && (
+              <a
+                href={secondaryCta.href}
+                target={secondaryCta.external ? '_blank' : undefined}
+                rel={secondaryCta.external ? 'noopener noreferrer' : undefined}
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-colors w-full sm:w-auto"
+              >
+                {secondaryCta.label}
+              </a>
+            )}
+          </div>
+        )}
+
+        {trust.length > 0 && (
+          <div
+            class:list={[
+              'mt-8 sm:mt-9 grid gap-2 sm:gap-3',
+              trust.length === 2 ? 'grid-cols-2 max-w-sm' : 'grid-cols-3 max-w-md',
+              align === 'center' ? 'mx-auto' : 'mx-auto lg:mx-0',
+            ]}
+          >
+            {trust.map(t => (
+              <div class="rounded-2xl border border-slate-200 bg-white/95 px-2 sm:px-3 py-3 sm:py-3.5 text-center shadow-sm">
+                <div class="text-sm sm:text-base lg:text-lg font-extrabold text-slate-900 tracking-tight">{t.value}</div>
+                <div class="mt-0.5 text-[10px] sm:text-[11px] lg:text-xs font-medium text-slate-500 uppercase tracking-wide">{t.label}</div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <slot name="below" />
+      </div>
+
+      {align !== 'center' && (
+        <div class="relative flex justify-center lg:justify-end">
+          <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sky-200/40 via-transparent to-cyan-100/30 blur-2xl" aria-hidden="true"></div>
+          <figure class="relative w-full max-w-sm sm:max-w-md lg:max-w-[min(28rem,42svh)] mx-auto lg:mx-0 lg:ml-auto">
+            <div class="rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/80 bg-white shadow-xl shadow-sky-900/5 ring-1 ring-slate-100">
+              {image ? (
+                <img
+                  src={image}
+                  alt={imageAlt}
+                  class="w-full h-auto object-cover aspect-square max-h-[min(28rem,42svh)]"
+                  width="800"
+                  height="800"
+                  loading="eager"
+                />
+              ) : (
+                <div class="aspect-square max-h-[min(28rem,42svh)] bg-gradient-to-br from-sky-50 via-white to-cyan-50 flex items-center justify-center p-8 sm:p-10">
+                  <Illustration name={illustration} class="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56" />
+                </div>
+              )}
+            </div>
+
+            {(floatLabel || floatSub) && (
+              <div class="absolute -left-1 sm:-left-3 bottom-6 sm:bottom-8 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur px-3 py-2.5 shadow-lg flex items-center gap-2 max-w-[11rem]">
+                <div class="w-8 h-8 rounded-full bg-sky-50 border border-sky-100 flex items-center justify-center shrink-0">
+                  <Icon name={floatIcon} class="w-4 h-4 text-sky-600" />
+                </div>
+                <div class="min-w-0">
+                  {floatLabel && <p class="text-[11px] font-semibold text-slate-900 leading-snug">{floatLabel}</p>}
+                  {floatSub && <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">{floatSub}</p>}
+                </div>
+              </div>
+            )}
+          </figure>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

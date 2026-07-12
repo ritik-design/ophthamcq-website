@@ -1,100 +1,285 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
-import Illustration from '../components/Illustration.astro';
+
+const channels = [
+  {
+    title: 'Email support',
+    sub: 'support@ophthamcq.com',
+    body: 'Product access, billing, and content questions. We reply within a few hours on weekdays.',
+    href: 'mailto:support@ophthamcq.com',
+    icon: 'mail',
+    tone: 'sky',
+  },
+  {
+    title: 'Institutional sales',
+    sub: 'Bulk licensing for residency programmes',
+    body: 'Group and college licences for MCQs, notes, and practical packs at institutional pricing.',
+    href: '/institutions',
+    icon: 'building',
+    tone: 'amber',
+  },
+  {
+    title: 'Exam prep help',
+    sub: 'Which resource for your exam?',
+    body: 'Not sure where to start for DNB, ICO, FAICO, or FRCOphth? Tell us your exam and timeline.',
+    href: '#contact-form',
+    icon: 'graduationCap',
+    tone: 'emerald',
+  },
+];
+
+const toneClasses: Record<string, { well: string; icon: string; ring: string }> = {
+  sky: { well: 'bg-sky-50 border-sky-100', icon: 'text-sky-600', ring: 'hover:border-sky-300' },
+  amber: { well: 'bg-amber-50 border-amber-100', icon: 'text-amber-600', ring: 'hover:border-amber-300' },
+  emerald: { well: 'bg-emerald-50 border-emerald-100', icon: 'text-emerald-600', ring: 'hover:border-emerald-300' },
+};
+
+const trustPoints = [
+  { value: '< 4 hrs', label: 'Avg. response' },
+  { value: '15,000+', label: 'PGs supported' },
+  { value: '23', label: 'Countries' },
+];
 ---
 
 <Layout
   title="Contact Us — We're Here to Help"
   description="Questions about OphthaMCQ? Reach out via email or our contact form. Average response time: under 4 hours."
 >
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <!-- Hero -->
+  <section class="section-skin-grid contact-hero site-hero relative overflow-hidden border-b border-slate-200">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="absolute -top-20 right-0 w-[28rem] h-[28rem] rounded-full bg-sky-200/30 blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-cyan-100/40 blur-3xl"></div>
+    </div>
+
+    <div class="site-hero-inner relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-12">
+      <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 items-center w-full">
         <div class="text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            We're Here to <span class="text-sky-600">Help</span>
+          <div class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/80 backdrop-blur-sm px-3.5 py-1.5 shadow-sm mb-5">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-pulse"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+            </span>
+            <span class="text-xs sm:text-sm font-semibold text-sky-800 tracking-wide">
+              Support for PGs · under 4 hour response
+            </span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+            We're Here to <span class="text-gradient-clinical">Help</span>
           </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Average response time: under 4 hours. Reach out by email or via the form below.
+          <p class="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Questions about notes, MCQs, practical packs, access, or billing?
+            Reach the OphthaMCQ team by email or the form below — built by ophthalmologists, for ophthalmologists.
           </p>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-56 h-56 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="contact" class="w-40 h-40" />
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <a
+              href="#contact-form"
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-sky-200 hover:bg-sky-700 transition-colors w-full sm:w-auto"
+            >
+              Send a message
+              <Icon name="arrowRight" class="w-4 h-4" />
+            </a>
+            <a
+              href="mailto:support@ophthamcq.com"
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-colors w-full sm:w-auto"
+            >
+              <Icon name="mail" class="w-4 h-4" />
+              support@ophthamcq.com
+            </a>
           </div>
+
+          <div class="mt-8 sm:mt-9 grid grid-cols-3 gap-2 sm:gap-3 max-w-md mx-auto lg:mx-0">
+            {trustPoints.map(t => (
+              <div class="rounded-2xl border border-slate-200 bg-white/90 px-2 sm:px-3 py-3 sm:py-3.5 text-center shadow-sm">
+                <div class="text-sm sm:text-base lg:text-lg font-extrabold text-slate-900 tracking-tight">{t.value}</div>
+                <div class="mt-0.5 text-[10px] sm:text-[11px] lg:text-xs font-medium text-slate-500 uppercase tracking-wide">{t.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="relative flex justify-center lg:justify-end">
+          <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sky-200/50 via-transparent to-cyan-100/40 blur-2xl" aria-hidden="true"></div>
+          <figure class="relative w-full max-w-sm sm:max-w-md lg:max-w-[min(28rem,42svh)] mx-auto lg:mx-0 lg:ml-auto">
+            <div class="rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/80 bg-white shadow-xl shadow-sky-900/5 ring-1 ring-slate-100">
+              <img
+                src="/illustrations/contact-hero.webp"
+                alt="Ophthalmology resident with tablet and eye care support illustration"
+                class="w-full h-auto object-cover aspect-square max-h-[min(28rem,42svh)]"
+                width="800"
+                height="800"
+                loading="eager"
+              />
+            </div>
+            <figcaption class="sr-only">
+              Illustration of ophthalmology exam-prep support for OphthaMCQ contact page
+            </figcaption>
+
+            <!-- Floating chips -->
+            <div class="absolute -left-1 sm:-left-4 top-6 sm:top-8 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur px-3 py-2.5 shadow-lg flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-sky-50 border border-sky-100 flex items-center justify-center">
+                <Icon name="mail" class="w-4 h-4 text-sky-600" />
+              </div>
+              <div>
+                <p class="text-[11px] font-semibold text-slate-900 leading-none">Email us</p>
+                <p class="text-[10px] text-slate-500 mt-1">support@ophthamcq.com</p>
+              </div>
+            </div>
+            <div class="absolute -right-1 sm:-right-3 bottom-8 sm:bottom-10 rounded-2xl border border-emerald-200 bg-white/95 backdrop-blur px-3 py-2.5 shadow-lg flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center">
+                <Icon name="check" class="w-4 h-4 text-emerald-600" />
+              </div>
+              <div>
+                <p class="text-[11px] font-semibold text-slate-900 leading-none">Fast replies</p>
+                <p class="text-[10px] text-slate-500 mt-1">Usually under 4 hours</p>
+              </div>
+            </div>
+          </figure>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="bg-slate-50 py-16 lg:py-24">
+  <!-- Channel strip with second illustration -->
+  <section class="section-skin-clean border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-1 space-y-6">
-          <a
-            href="mailto:support@ophthamcq.com"
-            class="flex items-center gap-4 rounded-xl bg-white border border-slate-200 p-5 hover:shadow-md hover:border-sky-200 transition-all"
-          >
-            <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center">
-              <Icon name="mail" class="w-6 h-6 text-sky-600" />
-            </div>
-            <div>
-              <h3 class="font-semibold text-slate-900">Email</h3>
-              <p class="text-sm text-slate-500">support@ophthamcq.com</p>
-            </div>
-          </a>
-
-          <a
-            href="/institutions"
-            class="flex items-center gap-4 rounded-xl bg-white border border-slate-200 p-5 hover:shadow-md hover:border-amber-200 transition-all"
-          >
-            <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
-              <Icon name="building" class="w-6 h-6 text-amber-600" />
-            </div>
-            <div>
-              <h3 class="font-semibold text-slate-900">Institutional Sales</h3>
-              <p class="text-sm text-slate-500">Bulk licensing inquiries</p>
-            </div>
-          </a>
+      <div class="grid lg:grid-cols-5 gap-10 items-center">
+        <div class="lg:col-span-2 order-2 lg:order-1">
+          <div class="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-md">
+            <img
+              src="/illustrations/contact-channels.webp"
+              alt="Support channels for email, institutions, and response time"
+              class="w-full h-auto object-cover"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+          </div>
         </div>
-
-        <div class="lg:col-span-2">
-          <div class="rounded-2xl bg-white border border-slate-200 p-6 lg:p-8">
-            <h2 class="text-xl font-bold text-slate-900 mb-6">Send us a message</h2>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
-              <div class="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
-                  <input type="text" id="name" name="name" required class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors" placeholder="Dr. Your Name" />
-                </div>
-                <div>
-                  <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                  <input type="email" id="email" name="email" required class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors" placeholder="you@example.com" />
-                </div>
-              </div>
-              <div>
-                <label for="subject" class="block text-sm font-medium text-slate-700 mb-1">Subject</label>
-                <select id="subject" name="subject" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors">
-                  <option>General Question</option>
-                  <option>Technical Support</option>
-                  <option>Billing / Refund</option>
-                  <option>Institutional Sales</option>
-                  <option>Content Suggestion</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                <textarea id="message" name="message" rows="5" required class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors resize-y" placeholder="How can we help you?"></textarea>
-              </div>
-              <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-sky-600 px-8 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-                Send Message
-              </button>
-            </form>
+        <div class="lg:col-span-3 order-1 lg:order-2 space-y-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-2">How to reach us</p>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+              Pick the channel that fits your question
+            </h2>
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Whether you need product help, institutional licensing, or exam-resource guidance, we route every message to the right person on the OphthaMCQ team.
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-1 gap-4">
+            {channels.map(c => {
+              const t = toneClasses[c.tone];
+              return (
+                <a
+                  href={c.href}
+                  class:list={[
+                    'flex items-start gap-4 rounded-2xl bg-white border border-slate-200 p-5 shadow-sm transition-all hover:shadow-md',
+                    t.ring,
+                  ]}
+                >
+                  <div class:list={['w-12 h-12 rounded-xl border flex items-center justify-center shrink-0', t.well]}>
+                    <Icon name={c.icon} class={`w-6 h-6 ${t.icon}`} />
+                  </div>
+                  <div class="min-w-0">
+                    <h3 class="font-bold text-slate-900">{c.title}</h3>
+                    <p class="text-sm font-medium text-sky-700 mt-0.5">{c.sub}</p>
+                    <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">{c.body}</p>
+                  </div>
+                  <Icon name="chevronRight" class="w-5 h-5 text-slate-400 shrink-0 mt-1 hidden sm:block" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Form -->
+  <section id="contact-form" class="section-skin-grid">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-2">Contact form</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Send us a message
+        </h2>
+        <p class="mt-3 text-slate-600 max-w-xl mx-auto">
+          Share your exam, product, or account question. We read every message.
+        </p>
+      </div>
+
+      <div class="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 lg:p-10 shadow-lg shadow-slate-900/5">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-sm font-medium text-slate-700 mb-1.5">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors bg-white"
+                placeholder="Dr. Your Name"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors bg-white"
+                placeholder="you@example.com"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="subject" class="block text-sm font-medium text-slate-700 mb-1.5">Subject</label>
+            <select
+              id="subject"
+              name="subject"
+              class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors bg-white"
+            >
+              <option>General Question</option>
+              <option>Technical Support</option>
+              <option>Billing / Refund</option>
+              <option>Institutional Sales</option>
+              <option>Content Suggestion</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-slate-700 mb-1.5">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none transition-colors resize-y bg-white"
+              placeholder="How can we help you? Include your exam (DNB, ICO, FAICO…) if relevant."
+            ></textarea>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-1">
+            <p class="text-xs text-slate-500">
+              Prefer email? Write to{' '}
+              <a href="mailto:support@ophthamcq.com" class="font-semibold text-sky-700 hover:underline">
+                support@ophthamcq.com
+              </a>
+            </p>
+            <button
+              type="submit"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-sky-200 hover:bg-sky-700 transition-colors"
+            >
+              Send Message
+              <Icon name="arrowRight" class="w-4 h-4" />
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 </Layout>

@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { EXAMS, PRODUCTS, TESTIMONIALS, COM_BASE } from '../../config';
 import { CATEGORIES } from '../../data/categories';
 import Icon from '../../components/Icon.astro';
+import PageHero from '../../components/PageHero.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
 
 const examTable = [
@@ -74,26 +75,24 @@ const choosingExam = [
   title="Ophthalmology Exams India & UK: FRCOphth, ICO, FAICO, DNB, NEET-SS"
   description="Compare every major ophthalmology exam: FRCOphth vs ICO vs DNB vs FAICO vs NEET-SS. Find the best ophthalmology fellowship exam and matched prep resources."
 >
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="text-center max-w-3xl mx-auto">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-          Prepare for <span class="text-sky-600">Any Ophthalmology Exam</span>
-        </h1>
-        <p class="mt-5 text-lg text-slate-600">
-          Dedicated question banks, handwritten notes and past papers for every major ophthalmology examination in India, the UK and internationally.
-        </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-            Try 50 Free MCQs
-          </a>
-          <a href="#comparison" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 transition-colors">
-            Compare All Exams
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PageHero
+    eyebrow="India · UK · International"
+    eyebrowIcon="globe"
+    titleHtml={`Prepare for <span class="text-sky-600">Any Ophthalmology Exam</span>`}
+    description="Dedicated question banks, handwritten notes and past papers for every major ophthalmology examination in India, the UK and internationally."
+    primaryCta={{ href: '/free-mcqs', label: 'Try free MCQs' }}
+    secondaryCta={{ href: '#comparison', label: 'Compare all exams' }}
+    trust={[
+      { value: '7+', label: 'Exams' },
+      { value: '20k+', label: 'MCQs' },
+      { value: '15k+', label: 'PGs' },
+    ]}
+    image="/illustrations/exams-hero.webp"
+    imageAlt="Ophthalmology exam pathways illustration"
+    floatLabel="Pick your exam"
+    floatSub="Matched prep resources"
+    floatIcon="target"
+  />
 
   <div class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
+import PageHero from '../components/PageHero.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
 
 const heroProps = [
@@ -116,46 +117,19 @@ const institutionsFaq = [
   title="Institutional Licensing — Bulk Ophthalmology MCQs for Residency Programmes"
   description="Bulk ophthalmology MCQ licences, admin dashboards and analytics for residency programmes. Custom question banks for FRCOphth, ICO, FAICO and DNB training programs at hospitals worldwide."
 >
-  <div class="bg-white border-b border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 rounded-full bg-amber-50 border border-amber-100 px-4 py-1.5 mb-6">
-            <span class="text-sm font-medium text-amber-700">For Ophthalmology Residency Programmes</span>
-          </div>
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Institutional <span class="text-sky-600">Ophthalmology MCQ Licences</span>
-          </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            Equip every resident in your ophthalmology residency programme with the same exam-grade question bank,
-            handwritten notes and analytics dashboard. Standardise prep. Lift pass rates. Reduce faculty load.
-          </p>
-          <div class="mt-8 grid sm:grid-cols-3 gap-4">
-            {heroProps.map(p => (
-              <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-left">
-                <div class="text-lg font-bold text-slate-900">{p.value}</div>
-                <div class="text-xs text-slate-600 mt-1">{p.label}</div>
-              </div>
-            ))}
-          </div>
-          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <a href="#quote" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
-              Request a Quote
-              <Icon name="arrowRight" class="w-4 h-4" />
-            </a>
-            <a href="#pricing-tiers" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
-              See Pricing Tiers
-            </a>
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-72 h-72 rounded-2xl bg-sky-50 flex items-center justify-center">
-            <Illustration name="institutions" class="w-52 h-52" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <PageHero
+    eyebrow="For Ophthalmology Residency Programmes"
+    eyebrowIcon="building"
+    titleHtml={`Institutional <span class="text-sky-600">Ophthalmology MCQ Licences</span>`}
+    description="Equip every resident in your ophthalmology residency programme with the same exam-grade question bank, handwritten notes and analytics dashboard. Standardise prep. Lift pass rates. Reduce faculty load."
+    primaryCta={{ href: '#quote', label: 'Request a Quote' }}
+    secondaryCta={{ href: '#pricing-tiers', label: 'See Pricing Tiers' }}
+    trust={heroProps.map(p => ({ value: p.value, label: p.label }))}
+    illustration="institutions"
+    floatLabel="Bulk licensing"
+    floatSub="From ₹500/resident/yr"
+    floatIcon="users"
+  />
 
   <section class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
