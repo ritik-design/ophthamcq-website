@@ -3,6 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import { PRODUCTS } from '../../config';
 import Icon from '../../components/Icon.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
+import NotePdfPreview from '../../components/NotePdfPreview.astro';
+import ProductLongDescription from '../../components/ProductLongDescription.astro';
+import { getNotePreview } from '../../data/note-previews';
+import { getPracticalPdfForProduct } from '../../data/practical-pdfs';
+import { getProductDescription } from '../../data/product-descriptions';
 
 export function getStaticPaths() {
   return PRODUCTS.map(p => ({ params: { id: p.id } }));
@@ -14,11 +19,19 @@ const product = PRODUCTS.find(p => p.id === id);
 if (!product) {
   return Astro.redirect('/notes');
 }
+
+const notePreview = getNotePreview(product.id);
+const practicalRes = getPracticalPdfForProduct(product.id);
+const hasPdfPreview = Boolean(notePreview);
+const practicalPdf = practicalRes?.pdf;
+const longDesc = getProductDescription(product.id);
+const pageDescription = longDesc?.tagline ?? product.description;
+const pageTitle = longDesc?.headline ?? `${product.name} — ${product.fullName}`;
 ---
 
 <Layout
-  title={`${product.name} — ${product.fullName}`}
-  description={product.description}
+  title={pageTitle}
+  description={pageDescription}
 >
   <div class="bg-white border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -30,23 +43,39 @@ if (!product) {
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             {product.name}
           </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-            {product.description}
+          {longDesc ? (
+            <p class="mt-4 text-xl font-semibold text-sky-800 max-w-xl mx-auto lg:mx-0">
+              {longDesc.tagline}
+            </p>
+          ) : null}
+          <p class="mt-4 text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+            {longDesc?.intro[0] ?? product.description}
           </p>
           <div class="mt-6 flex items-baseline gap-3 justify-center lg:justify-start">
             <span class="text-3xl font-bold text-slate-900">{product.price}</span>
             {product.oldPrice && <span class="text-lg text-slate-400 line-through">{product.oldPrice}</span>}
             {product.discount && <span class="text-sm font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Save {product.discount}</span>}
           </div>
-          <a
-            href={product.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-sky-700 transition-colors"
-          >
-            Buy on Store
-            <Icon name="externalLink" class="w-5 h-5" />
-          </a>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <a
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-sky-700 transition-colors"
+            >
+              Buy on Store
+              <Icon name="externalLink" class="w-5 h-5" />
+            </a>
+            {(hasPdfPreview || practicalPdf) && (
+              <a
+                href="#sample-pdf"
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-colors"
+              >
+                View full PDF
+                <Icon name="document" class="w-5 h-5" />
+              </a>
+            )}
+          </div>
         </div>
         <div class="flex justify-center">
           <div class="w-full max-w-md aspect-square rounded-2xl bg-slate-100 overflow-hidden shadow-md">
@@ -61,35 +90,128 @@ if (!product) {
     </div>
   </div>
 
-  <div class="bg-slate-50 py-16 lg:py-24">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6">What's Included</h2>
-      <div class="grid sm:grid-cols-2 gap-4">
-        {[
-          'Expert-written content',
-          'Detailed explanations',
-          'Exam-focused format',
-          'Mobile app access',
-          'Instant PDF download',
-          'Regular updates',
-        ].map(item => (
-          <div class="flex items-center gap-3 rounded-xl bg-white border border-slate-200 p-4">
-            <Icon name="check" class="w-5 h-5 text-emerald-500 shrink-0" />
-            <span class="text-sm font-medium text-slate-700">{item}</span>
-          </div>
-        ))}
-      </div>
+  <ProductLongDescription
+    productId={product.id}
+    productName={product.name}
+    storeHref={product.href}
+    showPdfLink={hasPdfPreview || Boolean(practicalPdf)}
+  />
 
-      <div class="mt-12 p-6 rounded-2xl bg-white border border-slate-200">
-        <h3 class="text-lg font-bold text-slate-900 mb-2">Not sure if this is right for you?</h3>
-        <p class="text-slate-600 mb-4">Start with 50 free MCQs and see the quality for yourself.</p>
+  {hasPdfPreview && (
+    <div id="sample-pdf" class="bg-slate-50 py-16 lg:py-20 border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <NotePdfPreview productId={product.id} storeHref={product.href} />
+      </div>
+    </div>
+  )}
+
+  {!hasPdfPreview && practicalPdf && (
+    <div id="sample-pdf" class="bg-slate-50 py-16 lg:py-20 border-b border-slate-200">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-emerald-700 mb-1">
+              Practical / OSCE / Viva PDF
+            </p>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">{product.name}</h2>
+            <p class="mt-2 text-sm text-slate-600">Full PDF viewer · Buy lifetime access on ophthamcq.com</p>
+          </div>
+          <a
+            href={product.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+          >
+            Buy on ophthamcq.com
+            <Icon name="externalLink" class="w-4 h-4" />
+          </a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          <iframe
+            src={`${practicalPdf}#view=FitH`}
+            title={`Full PDF: ${product.name}`}
+            class="w-full border-0 bg-white"
+            style="height: min(80vh, 900px); min-height: 480px;"
+            loading="lazy"
+          />
+          <div class="border-t border-slate-200 px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <a
+              href={practicalPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-semibold text-slate-700 hover:text-sky-700"
+            >
+              Open PDF in new tab →
+            </a>
+            <a
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700"
+            >
+              Buy on store
+              <Icon name="externalLink" class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+        <p class="mt-4 text-center text-sm text-slate-500">
+          This is a practical / OSCE resource — not part of the handwritten Exam Ready Notes set.
+        </p>
+      </div>
+    </div>
+  )}
+
+  {!longDesc && (
+    <div class="bg-slate-50 py-16 lg:py-24">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6">What's Included</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {[
+            'Expert-written content',
+            'Detailed explanations',
+            'Exam-focused format',
+            'Mobile app access',
+            'Instant PDF download',
+            'Regular updates',
+          ].map(item => (
+            <div class="flex items-center gap-3 rounded-xl bg-white border border-slate-200 p-4">
+              <Icon name="check" class="w-5 h-5 text-emerald-500 shrink-0" />
+              <span class="text-sm font-medium text-slate-700">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 p-6 rounded-2xl bg-white border border-slate-200">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Not sure if this is right for you?</h3>
+          <p class="text-slate-600 mb-4">
+            {hasPdfPreview || practicalPdf
+              ? 'Browse the full PDF above, then buy lifetime access on ophthamcq.com — or try free MCQs first.'
+              : 'Start with 50 free MCQs and see the quality for yourself.'}
+          </p>
+          <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+            Try Free MCQs
+            <Icon name="arrowRight" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {longDesc && (
+    <div class="bg-slate-50 py-12 border-t border-slate-200">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-slate-600 mb-4">
+          {hasPdfPreview || practicalPdf
+            ? 'Browse the PDF above, then buy lifetime access on ophthamcq.com — or try free MCQs first.'
+            : 'Start with free MCQs and see the quality for yourself.'}
+        </p>
         <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
           Try Free MCQs
           <Icon name="arrowRight" class="w-4 h-4" />
         </a>
       </div>
     </div>
-  </div>
+  )}
 
   <FinalCTA />
 </Layout>

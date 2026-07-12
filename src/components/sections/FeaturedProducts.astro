@@ -27,15 +27,16 @@ const badgeClasses: Record<string, string> = {
 };
 ---
 
-<section class="bg-white py-20 lg:py-28">
+<section class="section-skin-clean py-20 lg:py-28">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-14">
-      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+    <div class="text-center max-w-3xl mx-auto mb-14" data-reveal>
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700 mb-3">Bestsellers</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
         The Resources Ophthalmologists, PGs &amp; Residents Swear By
       </h2>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
       {cards.map(c => {
         const p = byId[c.id];
         if (!p) return null;

@@ -1,37 +1,635 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* ─────────────────────────────────────────────────────────────
+   OphthaMCQ premium design tokens
+   Clinical-editorial: textbook authority + modern product polish
+   Signature: soft “slit-lamp” light — cool radial glows, deep ink
+   ───────────────────────────────────────────────────────────── */
+
 @theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-ink: #0b1220;
+  --color-ink-soft: #1e293b;
+  --color-clinical: #0369a1;
+  --color-clinical-bright: #0ea5e9;
+  --color-clinical-glow: #38bdf8;
+  --color-surface: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-gold: #d4a017;
+
+  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px rgb(15 23 42 / 0.06);
+  --shadow-lift: 0 4px 12px rgb(15 23 42 / 0.06), 0 20px 40px rgb(14 165 233 / 0.1);
+  --shadow-glow: 0 0 0 1px rgb(14 165 233 / 0.12), 0 12px 40px rgb(14 165 233 / 0.18);
 }
 
+/* Base */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  @apply antialiased;
+  font-family: var(--font-sans);
+  color: var(--color-ink-soft);
+  text-rendering: optimizeLegibility;
+  position: relative;
+  /* Simple base — section skins handle texture */
+  background-color: var(--color-surface);
+}
+
+/* Selection */
+::selection {
+  background: rgb(14 165 233 / 0.2);
+  color: var(--color-ink);
+}
+
+/* Focus visibility */
+:focus-visible {
+  outline: 2px solid var(--color-clinical-bright);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #94a3b8, #cbd5e1);
+  border-radius: 999px;
+  border: 2px solid #f1f5f9;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: linear-gradient(180deg, #0ea5e9, #38bdf8);
 }
 
-/* Details/summary animation for FAQ */
+/* Details/summary */
 details > summary {
   list-style: none;
+  cursor: pointer;
 }
 details > summary::-webkit-details-marker {
   display: none;
+}
+details[open] > summary {
+  color: var(--color-clinical);
+}
+
+/* ── Typography helpers (Inter only — no alternate display font) ─ */
+.font-display {
+  font-family: var(--font-sans);
+  letter-spacing: -0.025em;
+}
+
+.text-gradient-clinical {
+  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 45%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/*
+  Alternating section skins — rhythm: grid → clean → blue → …
+
+  Grid rules (important):
+  1. Local to each section (scrolls with content) — not viewport-fixed
+  2. Same cell size everywhere
+  3. Horizontal origin aligns with max-w-7xl content column
+  4. Section block size is snapped to full cells (via CSS padding + JS height snap)
+     so no half-boxes at top/bottom edges
+*/
+:root {
+  --site-grid: 48px;
+  --content-max: 80rem; /* matches Tailwind max-w-7xl */
+  --gutter: 1rem; /* px-4 */
+  --section-grid-line-slate: rgb(15 23 42 / 0.09);
+  --section-grid-line-blue: rgb(3 105 161 / 0.15);
+  /* Content column left edge: centered max-w-7xl with side gutters */
+  --grid-origin-x: max(
+    var(--gutter),
+    calc((100% - min(100%, var(--content-max))) / 2)
+  );
+}
+
+@media (min-width: 640px) {
+  :root {
+    --gutter: 1.5rem; /* sm:px-6 */
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 2rem; /* lg:px-8 */
+  }
+}
+
+.section-skin-grid,
+.section-skin-clean,
+.section-skin-blue {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden; /* clip grid to exact section box */
+  box-sizing: border-box;
+}
+
+.section-skin-grid > *,
+.section-skin-clean > *,
+.section-skin-blue > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Content shells align to the same column as the grid */
+main .section-skin-grid > .mx-auto.max-w-7xl,
+main .section-skin-blue > .mx-auto.max-w-7xl,
+main .section-skin-clean > .mx-auto.max-w-7xl {
+  max-width: var(--content-max);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* Shared local grid — starts at top-left of content column, full cells only */
+.section-skin-grid::before,
+.section-skin-blue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--section-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--section-grid-line) 1px, transparent 1px);
+  background-size: var(--site-grid) var(--site-grid);
+  /* Align to content column; y starts at section top (full first row) */
+  background-position: var(--grid-origin-x) 0;
+  background-repeat: repeat;
+  background-attachment: scroll; /* local to section — complete cells at edges after snap */
+}
+
+/* 1) White + grid — padding is exact multiples of the grid cell */
+.section-skin-grid {
+  --section-grid-line: var(--section-grid-line-slate);
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgb(14 165 233 / 0.08), transparent 55%);
+  padding-top: calc(var(--site-grid) * 3); /* 144px — hero overrides this */
+  padding-bottom: calc(var(--site-grid) * 3);
+}
+.section-skin-grid.surface-slitlamp {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* 2) Clean — no grid */
+.section-skin-clean {
+  background-color: #f8fafc;
+  background-image: none;
+  padding-top: calc(var(--site-grid) * 2);
+  padding-bottom: calc(var(--site-grid) * 2);
+}
+
+.section-skin-clean::before {
+  content: none;
+}
+
+/* 3) Soft blue + same local grid system */
+.section-skin-blue {
+  --section-grid-line: var(--section-grid-line-blue);
+  color: #0f172a;
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 0%, rgb(125 211 252 / 0.55), transparent 55%),
+    radial-gradient(ellipse 60% 45% at 100% 100%, rgb(14 165 233 / 0.18), transparent 55%),
+    linear-gradient(165deg, #e0f2fe 0%, #bae6fd 42%, #7dd3fc 100%);
+  padding-top: calc(var(--site-grid) * 3);
+  padding-bottom: calc(var(--site-grid) * 3);
+}
+
+/* Override Tailwind py-* so block size stays on-grid.
+   --grid-snap-extra is set by JS to finish the last incomplete cell row.
+   Hero (.surface-slitlamp) keeps its own tight padding — do not force 3-cell pad. */
+main > .section-skin-grid:not(.surface-slitlamp),
+main > .section-skin-blue {
+  --grid-snap-extra: 0px;
+  padding-top: calc(var(--site-grid) * 3) !important;
+  padding-bottom: calc(var(--site-grid) * 3 + var(--grid-snap-extra)) !important;
+}
+main > .section-skin-clean {
+  padding-top: calc(var(--site-grid) * 2) !important;
+  padding-bottom: calc(var(--site-grid) * 2) !important;
+}
+main > .section-skin-clean.border-y {
+  padding-top: var(--site-grid) !important;
+  padding-bottom: var(--site-grid) !important;
+}
+
+/* Hero: minimal top space under sticky header */
+main > .surface-slitlamp.section-skin-grid {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  --grid-snap-extra: 0px;
+}
+
+/* White cards on blue */
+.section-skin-blue .rounded-2xl.bg-white,
+.section-skin-blue .rounded-xl.bg-white,
+.section-skin-blue .bg-white,
+.section-skin-blue .review-marquee__card,
+.section-skin-blue figure.rounded-2xl {
+  background-color: #ffffff;
+}
+
+/* Adjacent gridded sections join cleanly (full cell on both sides after snap) */
+.section-skin-grid + .section-skin-grid,
+.section-skin-grid + .section-skin-blue,
+.section-skin-blue + .section-skin-grid,
+.section-skin-blue + .section-skin-blue {
+  margin-top: 0;
+  box-shadow: none;
+  border-top: none;
+}
+
+
+
+/* Dark ink CTA — no alternating grid needed */
+.surface-ink {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgb(14 165 233 / 0.22), transparent 55%),
+    radial-gradient(ellipse 40% 40% at 90% 80%, rgb(56 189 248 / 0.1), transparent 50%),
+    linear-gradient(165deg, #0b1220 0%, #0f2744 48%, #0c4a6e 100%);
+}
+
+.surface-ink > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero light wash only (grid comes from section-skin-grid when paired) */
+.surface-slitlamp {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.surface-slitlamp.section-skin-grid {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgb(56 189 248 / 0.2), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 50%, rgb(14 165 233 / 0.08), transparent 50%),
+    #ffffff;
+}
+
+.surface-slitlamp > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Premium buttons (site-wide polish for primary CTAs) ────── */
+.btn-premium,
+a.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+  will-change: transform;
+}
+
+.btn-premium-primary,
+a.btn-premium-primary {
+  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+  color: #fff;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.2) inset,
+    0 8px 24px rgb(14 165 233 / 0.35);
+}
+
+.btn-premium-primary:hover,
+a.btn-premium-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.25) inset,
+    0 14px 32px rgb(14 165 233 / 0.4);
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  color: #fff;
+}
+
+.btn-premium-primary:active,
+a.btn-premium-primary:active {
+  transform: translateY(0);
+}
+
+.btn-premium-secondary,
+a.btn-premium-secondary {
+  background: #fff;
+  color: #334155;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+}
+
+.btn-premium-secondary:hover,
+a.btn-premium-secondary:hover {
+  transform: translateY(-2px);
+  border-color: #7dd3fc;
+  color: #0369a1;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Shine sweep on primary buttons */
+.btn-premium-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgb(255 255 255 / 0.22) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-premium-primary:hover::before {
+  transform: translateX(120%);
+}
+
+/* Elevate common sky primary CTAs site-wide without touching every file */
+main a.rounded-xl.bg-sky-600,
+main a.rounded-lg.bg-sky-600,
+header a.rounded-lg.bg-sky-600,
+header a.rounded-xl.bg-sky-600 {
+  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%) !important;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.18) inset,
+    0 8px 20px rgb(14 165 233 / 0.28);
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease,
+    background 0.2s ease !important;
+}
+
+main a.rounded-xl.bg-sky-600:hover,
+main a.rounded-lg.bg-sky-600:hover,
+header a.rounded-lg.bg-sky-600:hover,
+header a.rounded-xl.bg-sky-600:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.22) inset,
+    0 14px 28px rgb(14 165 233 / 0.38);
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%) !important;
+}
+
+main a.rounded-xl.bg-emerald-600 {
+  box-shadow: 0 8px 20px rgb(16 185 129 / 0.28);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+}
+main a.rounded-xl.bg-emerald-600:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgb(16 185 129 / 0.35);
+}
+
+/* Secondary outline buttons */
+main a.rounded-xl.bg-white.border-2,
+main a.rounded-xl.border-2.border-slate-200 {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.25s ease;
+}
+main a.rounded-xl.bg-white.border-2:hover,
+main a.rounded-xl.border-2.border-slate-200:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ── Premium cards site-wide ────────────────────────────────── */
+main .rounded-2xl.border.border-slate-200,
+main .rounded-2xl.border.border-emerald-200 {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease;
+}
+
+main a.rounded-2xl.border.border-slate-200:hover,
+main .group.rounded-2xl.border.border-slate-200:hover,
+main div.rounded-2xl.border.border-slate-200:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+  border-color: rgb(125 211 252 / 0.7);
+}
+
+/* Image zoom inside cards that already use group-hover:scale */
+main .group img {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Scroll reveal (only after JS marks body.js-ready) ──────── */
+/* Default: content visible without JS. Hidden only once JS boots. */
+.js-ready [data-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(22px);
+}
+.js-ready [data-reveal] {
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.js-ready [data-reveal="left"]:not(.is-visible) {
+  transform: translateX(-24px);
+}
+.js-ready [data-reveal="left"].is-visible {
+  transform: translateX(0);
+}
+.js-ready [data-reveal="right"]:not(.is-visible) {
+  transform: translateX(24px);
+}
+.js-ready [data-reveal="right"].is-visible {
+  transform: translateX(0);
+}
+.js-ready [data-reveal="scale"]:not(.is-visible) {
+  transform: scale(0.96);
+}
+.js-ready [data-reveal="scale"].is-visible {
+  transform: scale(1);
+}
+
+/* Stagger children */
+.js-ready [data-stagger]:not(.is-visible) > * {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.js-ready [data-stagger] > * {
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js-ready [data-stagger].is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.js-ready [data-stagger].is-visible > *:nth-child(2) { transition-delay: 60ms; }
+.js-ready [data-stagger].is-visible > *:nth-child(3) { transition-delay: 120ms; }
+.js-ready [data-stagger].is-visible > *:nth-child(4) { transition-delay: 180ms; }
+.js-ready [data-stagger].is-visible > *:nth-child(5) { transition-delay: 240ms; }
+.js-ready [data-stagger].is-visible > *:nth-child(6) { transition-delay: 300ms; }
+.js-ready [data-stagger].is-visible > *:nth-child(7) { transition-delay: 360ms; }
+.js-ready [data-stagger].is-visible > *:nth-child(8) { transition-delay: 420ms; }
+.js-ready [data-stagger].is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hero entrance ──────────────────────────────────────────── */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.92); opacity: 0.55; }
+  70% { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+.hero-animate > * {
+  opacity: 0;
+  animation: hero-fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-animate > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-animate > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-animate > *:nth-child(3) { animation-delay: 0.25s; }
+.hero-animate > *:nth-child(4) { animation-delay: 0.35s; }
+.hero-animate > *:nth-child(5) { animation-delay: 0.45s; }
+
+.float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+/* ── Header states ──────────────────────────────────────────── */
+.site-header {
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  background-color: rgb(255 255 255 / 0.82) !important;
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  box-shadow: 0 1px 0 rgb(15 23 42 / 0.04), 0 8px 32px rgb(15 23 42 / 0.06);
+  border-color: rgb(226 232 240 / 0.8) !important;
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.35rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+.mobile-menu.is-open {
+  max-height: 80vh;
+  opacity: 1;
+}
+
+/* ── Section headings ───────────────────────────────────────── */
+main h1,
+main h2 {
+  letter-spacing: -0.025em;
+}
+
+/* Soft section divider glow */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(14 165 233 / 0.25), transparent);
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js-ready [data-reveal],
+  .js-ready [data-stagger] > *,
+  .hero-animate > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+  .section-skin-grid::before,
+  .section-skin-blue::before {
+    display: none !important;
+  }
 }

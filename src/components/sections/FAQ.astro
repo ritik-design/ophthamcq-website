@@ -3,10 +3,11 @@ import { FAQS } from '../../config';
 import Icon from '../Icon.astro';
 ---
 
-<section class="bg-slate-50 py-20 lg:py-28">
+<section class="section-skin-grid py-20 lg:py-28">
   <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
-      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+    <div class="text-center mb-14" data-reveal>
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700 mb-3">Support</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
         Frequently Asked Questions
       </h2>
       <p class="mt-4 text-lg text-slate-600">
@@ -14,10 +15,10 @@ import Icon from '../Icon.astro';
       </p>
     </div>
 
-    <div class="space-y-3">
+    <div class="space-y-3" data-stagger>
       {FAQS.map((faq, i) => (
         <details
-          class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all"
+          class="group rounded-2xl border border-slate-200 bg-white open:shadow-lg open:border-sky-200/80 open:ring-1 open:ring-sky-100 transition-all duration-300"
           open={i === 0}
         >
           <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-left">

@@ -3,8 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import { PRODUCTS, TESTIMONIALS, EXAMS, APP_LINKS, COM_BASE } from '../config';
 import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
+import { NOTE_PREVIEWS } from '../data/note-previews';
 
 const noteProducts = PRODUCTS.filter(p => p.category === 'notes');
+const previewById = new Set(NOTE_PREVIEWS.map(p => p.productId));
+const sampleNotes = NOTE_PREVIEWS.map(preview => {
+  const product = PRODUCTS.find(p => p.id === preview.productId);
+  return product ? { preview, product } : null;
+}).filter(Boolean) as Array<{
+  preview: (typeof NOTE_PREVIEWS)[number];
+  product: (typeof PRODUCTS)[number];
+}>;
 
 const notesByExam = [
   {
@@ -92,8 +101,8 @@ const notesFaq = [
               Try 200 Free MCQs
               <Icon name="arrowRight" class="w-4 h-4" />
             </a>
-            <a href="#note-sets" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
-              Browse Note Sets
+            <a href="#free-samples" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+              Browse Full PDFs
             </a>
           </div>
         </div>
@@ -195,6 +204,49 @@ const notesFaq = [
     </div>
   </section>
 
+  <section id="free-samples" class="bg-white py-16 lg:py-24 border-t border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-2">Full note PDFs</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          Browse the full PDF, then buy on the store
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Open complete note PDFs on this site. When you&rsquo;re ready, get lifetime access on{' '}
+          <span class="font-semibold text-slate-800">ophthamcq.com</span>.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {sampleNotes.map(({ preview, product }) => (
+          <a
+            href={`/products/${product.id}#sample-pdf`}
+            class="group flex flex-col rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all"
+          >
+            <div class="relative h-48 bg-slate-200 overflow-hidden">
+              <img
+                src={`/note-previews/${product.id}/page-01.webp`}
+                alt={`${product.name} cover sample`}
+                loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+              />
+              <span class="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/95 border border-slate-200 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-sky-700">
+                Full PDF
+              </span>
+            </div>
+            <div class="p-4 flex-1 flex flex-col">
+              <h3 class="text-sm font-bold text-slate-900 mb-1 leading-snug">{product.name}</h3>
+              <p class="text-xs text-slate-500 mb-3 flex-1 line-clamp-2">{preview.lockCopy}</p>
+              <span class="inline-flex items-center text-sm font-semibold text-sky-700 group-hover:text-sky-800">
+                Open full PDF
+                <Icon name="chevronRight" class="ml-1 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section id="note-sets" class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
@@ -222,15 +274,25 @@ const notesFaq = [
                 {n.oldPrice && <span class="text-sm text-slate-400 line-through">{n.oldPrice}</span>}
                 {n.discount && <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">Save {n.discount}</span>}
               </div>
-              <a
-                href={n.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
-              >
-                View on Store
-                <Icon name="externalLink" class="w-4 h-4" />
-              </a>
+              <div class="flex flex-col gap-2">
+                {previewById.has(n.id) && (
+                  <a
+                    href={`/products/${n.id}#sample-pdf`}
+                    class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-colors"
+                  >
+                    View full PDF
+                  </a>
+                )}
+                <a
+                  href={n.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
+                >
+                  Buy on Store
+                  <Icon name="externalLink" class="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         ))}

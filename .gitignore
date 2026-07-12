@@ -11,3 +11,6 @@ dist/
 .wrangler/
 
 .gstack/
+
+# Source note PDFs (full content) — only webp previews in public/note-previews ship
+opthapdfs/

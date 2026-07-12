@@ -10,16 +10,22 @@ const stats = [
 ];
 ---
 
-<section class="bg-slate-50 border-y border-slate-200">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 lg:py-7">
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-4 items-center">
+<section class="section-skin-clean relative border-y border-slate-200/80" data-reveal>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-7 lg:py-8">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-4 items-center" data-stagger>
       {stats.map(s => (
-        <div class="flex flex-col items-center text-center">
+        <div class="flex flex-col items-center text-center group">
           <div class="flex items-center gap-1.5">
-            {s.star && <Icon name="star" class="w-5 h-5 text-amber-400" />}
-            <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">{s.value}</span>
+            {s.star && (
+              <Icon name="star" class="w-5 h-5 text-amber-400 drop-shadow-sm transition-transform duration-300 group-hover:scale-110" />
+            )}
+            <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">
+              {s.value}
+            </span>
           </div>
-          <span class="mt-0.5 text-xs sm:text-sm text-slate-500 font-medium">{s.label}</span>
+          <span class="mt-1 text-xs sm:text-sm text-slate-500 font-medium tracking-wide uppercase">
+            {s.label}
+          </span>
         </div>
       ))}
     </div>

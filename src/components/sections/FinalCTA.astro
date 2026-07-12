@@ -2,13 +2,22 @@
 import Icon from '../Icon.astro';
 ---
 
-<section class="bg-sky-900 py-20 lg:py-24">
-  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+<section class="surface-ink relative overflow-hidden py-20 lg:py-28" data-reveal>
+  <!-- Decorative rings -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36rem] h-[36rem] rounded-full border border-sky-400/10"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[48rem] h-[48rem] rounded-full border border-sky-400/5"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-300/90 mb-4">
+      Ready when you are
+    </p>
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight">
       Your Ophthalmology Exam Is Coming.<br />
       <span class="text-sky-300">Are You Ready?</span>
     </h2>
-    <p class="mt-6 text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+    <p class="mt-6 text-base sm:text-lg text-sky-100/90 max-w-2xl mx-auto leading-relaxed">
       The world's only ophthalmology PG exam notes and MCQ question bank —
       built by gold medalists who passed. Start with free sample questions today.
     </p>
@@ -16,14 +25,14 @@ import Icon from '../Icon.astro';
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
       <a
         href="/notes"
-        class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-base font-semibold text-sky-900 shadow-lg hover:bg-sky-50 transition-colors"
+        class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-base font-semibold text-sky-950 shadow-xl shadow-sky-950/30 hover:bg-sky-50 hover:-translate-y-0.5 transition-all duration-300"
       >
         Browse Notes &amp; MCQs
         <Icon name="arrowRight" class="ml-2 h-5 w-5" />
       </a>
       <a
         href="/exams"
-        class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-transparent px-8 py-4 text-base font-semibold text-white border-2 border-sky-400/60 hover:border-white hover:bg-sky-800 transition-colors"
+        class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white/5 px-8 py-4 text-base font-semibold text-white border border-sky-300/30 hover:border-white/60 hover:bg-white/10 transition-all duration-300"
       >
         Browse by Exam
         <Icon name="chevronRight" class="ml-1 h-5 w-5" />

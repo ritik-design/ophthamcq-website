@@ -1,0 +1,123 @@
+---
+import Icon from './Icon.astro';
+import { getProductDescription } from '../data/product-descriptions';
+
+interface Props {
+  productId: string;
+  productName: string;
+  storeHref: string;
+  showPdfLink?: boolean;
+}
+
+const { productId, productName, storeHref, showPdfLink = false } = Astro.props;
+const d = getProductDescription(productId);
+---
+
+{d && (
+  <section class="bg-white border-b border-slate-200 py-16 lg:py-20" aria-labelledby="product-long-desc">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-3">
+        Full product description
+      </p>
+      <h2 id="product-long-desc" class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-snug">
+        {d.headline}
+      </h2>
+      <p class="mt-4 text-xl font-semibold text-sky-800">
+        {d.tagline}
+      </p>
+
+      <div class="mt-8 space-y-4 text-base text-slate-700 leading-relaxed">
+        {d.intro.map(p => (
+          <p>{p}</p>
+        ))}
+      </div>
+
+      <!-- What you'll learn -->
+      <div class="mt-12">
+        <h3 class="text-xl font-bold text-slate-900 mb-4">What You’ll Learn</h3>
+        <p class="text-slate-600 mb-4">
+          This comprehensive resource covers high-yield areas including:
+        </p>
+        <ul class="grid sm:grid-cols-2 gap-2.5">
+          {d.whatYoullLearn.map(item => (
+            <li class="flex items-start gap-2.5 text-sm text-slate-700">
+              <Icon name="check" class="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Why it stands out -->
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Why This Stands Out</h3>
+        <p class="text-slate-600 mb-5">
+          Unlike conventional textbooks, this is designed for fast revision and maximum retention.
+        </p>
+        <ul class="space-y-2.5">
+          {d.whyStandsOut.map(item => (
+            <li class="flex items-start gap-2.5 text-sm text-slate-800 font-medium">
+              <span class="text-emerald-600 shrink-0">✔</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Who is this for -->
+      <div class="mt-12">
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Who Is This For?</h3>
+        <p class="text-slate-600 mb-4">This resource is ideal for:</p>
+        <ul class="grid sm:grid-cols-2 gap-2.5">
+          {d.whoIsThisFor.map(item => (
+            <li class="flex items-start gap-2.5 text-sm text-slate-700">
+              <span class="text-sky-600 shrink-0">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Inside -->
+      <div class="mt-12">
+        <h3 class="text-xl font-bold text-slate-900 mb-4">What’s Inside</h3>
+        <ul class="grid sm:grid-cols-2 gap-2.5">
+          {d.inside.map(item => (
+            <li class="flex items-start gap-2.5 text-sm text-slate-800 font-medium">
+              <span class="text-emerald-600 shrink-0">✔</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Why OphthaMCQ -->
+      <div class="mt-12 rounded-2xl border border-sky-100 bg-sky-50/60 p-6 sm:p-8">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Why Choose OPHTHA MCQ?</h3>
+        <p class="text-slate-700 leading-relaxed">{d.whyOphtha}</p>
+        <p class="mt-4 text-slate-800 font-medium leading-relaxed">{d.closing}</p>
+      </div>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-3">
+        <a
+          href={storeHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-sky-700 transition-colors"
+        >
+          Buy {productName} on Store
+          <Icon name="externalLink" class="w-5 h-5" />
+        </a>
+        {showPdfLink && (
+          <a
+            href="#sample-pdf"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-colors"
+          >
+            View PDF
+            <Icon name="document" class="w-5 h-5" />
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
+)}
