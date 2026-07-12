@@ -47,4 +47,5 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-Sitemap: https://www.ophthamcq.org/sitemap-index.xml
+Sitemap: https://ophthamcq.org/sitemap.xml
+

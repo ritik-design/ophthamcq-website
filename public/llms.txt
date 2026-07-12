@@ -6,57 +6,57 @@ OphthaMCQ helps ophthalmology trainees and residents prepare for competitive exa
 
 ## Exams
 
-- [ICO / FICO](https://www.ophthamcq.org/exams/ico-fico): International Council of Ophthalmology exam prep
-- [FAICO](https://www.ophthamcq.org/exams/faico): Fellowship of All India Ophthalmological Society exam prep
-- [DNB / MS / DO](https://www.ophthamcq.org/exams/dnb): Diplomate of National Board ophthalmology exam prep
-- [PD-CET](https://www.ophthamcq.org/exams/pd-cet): Post Diploma Centralized Entrance Test prep
-- [FRCOphth](https://www.ophthamcq.org/exams/frcophth): Royal College of Ophthalmologists exam prep
-- [Fellowship](https://www.ophthamcq.org/exams/fellowship): Ophthalmology subspecialty fellowship prep
+- [ICO / FICO](https://ophthamcq.org/exams/ico-fico): International Council of Ophthalmology exam prep
+- [FAICO](https://ophthamcq.org/exams/faico): Fellowship of All India Ophthalmological Society exam prep
+- [DNB / MS / DO](https://ophthamcq.org/exams/dnb): Diplomate of National Board ophthalmology exam prep
+- [PD-CET](https://ophthamcq.org/exams/pd-cet): Post Diploma Centralized Entrance Test prep
+- [FRCOphth](https://ophthamcq.org/exams/frcophth): Royal College of Ophthalmologists exam prep
+- [Fellowship](https://ophthamcq.org/exams/fellowship): Ophthalmology subspecialty fellowship prep
 
 ## Topics
 
-- [Glaucoma](https://www.ophthamcq.org/topics/glaucoma)
-- [Retina](https://www.ophthamcq.org/topics/retina)
-- [Cornea](https://www.ophthamcq.org/topics/cornea)
-- [Cataract](https://www.ophthamcq.org/topics/cataract)
-- [Neuro-ophthalmology](https://www.ophthamcq.org/topics/neuro-ophthalmology)
-- [Pediatric ophthalmology](https://www.ophthamcq.org/topics/pediatric-ophthalmology)
-- [Uveitis](https://www.ophthamcq.org/topics/uveitis)
-- [Oculoplastics](https://www.ophthamcq.org/topics/oculoplastics)
+- [Glaucoma](https://ophthamcq.org/topics/glaucoma)
+- [Retina](https://ophthamcq.org/topics/retina)
+- [Cornea](https://ophthamcq.org/topics/cornea)
+- [Cataract](https://ophthamcq.org/topics/cataract)
+- [Neuro-ophthalmology](https://ophthamcq.org/topics/neuro-ophthalmology)
+- [Pediatric ophthalmology](https://ophthamcq.org/topics/pediatric-ophthalmology)
+- [Uveitis](https://ophthamcq.org/topics/uveitis)
+- [Oculoplastics](https://ophthamcq.org/topics/oculoplastics)
 
 ## Free MCQs
 
-- [Free MCQs hub](https://www.ophthamcq.org/free-mcqs)
-- [PD-CET Ophthal](https://www.ophthamcq.org/free-mcqs/pdcet)
-- [FAICO](https://www.ophthamcq.org/free-mcqs/faico)
-- [ICO / FICO](https://www.ophthamcq.org/free-mcqs/ico-fico)
-- [FRCOphth](https://www.ophthamcq.org/free-mcqs/frcophth)
-- [Fellowship](https://www.ophthamcq.org/free-mcqs/fellowship)
-- [Exam notes](https://www.ophthamcq.org/free-mcqs/exam-notes)
-- [High-yield MCQs](https://www.ophthamcq.org/free-mcqs/high-yield)
-- [General ophthalmology](https://www.ophthamcq.org/free-mcqs/general)
+- [Free MCQs hub](https://ophthamcq.org/free-mcqs)
+- [PD-CET Ophthal](https://ophthamcq.org/free-mcqs/pdcet)
+- [FAICO](https://ophthamcq.org/free-mcqs/faico)
+- [ICO / FICO](https://ophthamcq.org/free-mcqs/ico-fico)
+- [FRCOphth](https://ophthamcq.org/free-mcqs/frcophth)
+- [Fellowship](https://ophthamcq.org/free-mcqs/fellowship)
+- [Exam notes](https://ophthamcq.org/free-mcqs/exam-notes)
+- [High-yield MCQs](https://ophthamcq.org/free-mcqs/high-yield)
+- [General ophthalmology](https://ophthamcq.org/free-mcqs/general)
 
 ## Blog
 
-- [Blog index](https://www.ophthamcq.org/blog)
-- [DNB Ophthalmology: Prep Theory & Practicals Together](https://www.ophthamcq.org/blog/dnb-ophthalmology-prep-theory-practicals-together)
-- [How to Use an MCQ Bank for Ophthalmology PG Exams](https://www.ophthamcq.org/blog/how-to-use-an-mcq-bank-for-ophthalmology-pg-exams)
+- [Blog index](https://ophthamcq.org/blog)
+- [DNB Ophthalmology: Prep Theory & Practicals Together](https://ophthamcq.org/blog/dnb-ophthalmology-prep-theory-practicals-together)
+- [How to Use an MCQ Bank for Ophthalmology PG Exams](https://ophthamcq.org/blog/how-to-use-an-mcq-bank-for-ophthalmology-pg-exams)
 
 ## Comparisons
 
-- [Best ophthalmology question banks](https://www.ophthamcq.org/compare/best-ophthalmology-question-banks)
-- [OphthoQuestions vs OphthaMCQ](https://www.ophthamcq.org/compare/ophthoquestions-vs-ophthamcq)
-- [OphthaMCQ vs PrepGuidance](https://www.ophthamcq.org/compare/ophthamcq-vs-prepguidance)
-- [Best app for ophthalmology MCQs](https://www.ophthamcq.org/compare/best-app-for-ophthalmology-mcqs)
+- [Best ophthalmology question banks](https://ophthamcq.org/compare/best-ophthalmology-question-banks)
+- [OphthoQuestions vs OphthaMCQ](https://ophthamcq.org/compare/ophthoquestions-vs-ophthamcq)
+- [OphthaMCQ vs PrepGuidance](https://ophthamcq.org/compare/ophthamcq-vs-prepguidance)
+- [Best app for ophthalmology MCQs](https://ophthamcq.org/compare/best-app-for-ophthalmology-mcqs)
 
 ## About
 
-- [About OphthaMCQ](https://www.ophthamcq.org/about)
-- [Pricing](https://www.ophthamcq.org/pricing)
-- [FAQ](https://www.ophthamcq.org/faq)
-- [Contact](https://www.ophthamcq.org/contact)
-- [Success stories](https://www.ophthamcq.org/success-stories)
+- [About OphthaMCQ](https://ophthamcq.org/about)
+- [Pricing](https://ophthamcq.org/pricing)
+- [FAQ](https://ophthamcq.org/faq)
+- [Contact](https://ophthamcq.org/contact)
+- [Success stories](https://ophthamcq.org/success-stories)
 
 ## Optional
 
-- [Sitemap](https://www.ophthamcq.org/sitemap-index.xml)
+- [Sitemap](https://ophthamcq.org/sitemap.xml)

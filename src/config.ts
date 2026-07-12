@@ -10,8 +10,10 @@ export const SITE = {
   tagline: 'The Only Ophthalmology Question Bank Built by Doctors Who Passed These Exams',
   description:
     '10,000+ MCQs, Handwritten Notes, Past Papers with Explanations. For FRCOphth, ICO, FAICO, DNB & NEET-SS.',
-  url: 'https://www.ophthamcq.org',
-  canonicalUrl: 'https://www.ophthamcq.com',
+  // Marketing site on .org (apex is canonical; www redirects here in production).
+  // Checkout/auth still live on .com via COM_BASE — do not use .com as page canonicals.
+  url: 'https://ophthamcq.org',
+
   logo: '/logo.svg',
   favicon: '/favicon.svg',
 };
