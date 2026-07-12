@@ -474,13 +474,13 @@ const topic = topics[slug!] ?? topics.glaucoma;
 
 const topicBundleMap: Record<string, CategoryId[]> = {
   glaucoma: ['pdcet', 'faico', 'high-yield', 'general'],
-  retina: ['faico', 'exam-notes', 'general'],
+  retina: ['faico', 'high-yield', 'general'],
   cornea: ['general', 'high-yield'],
   cataract: ['general', 'high-yield'],
   'neuro-ophthalmology': ['general', 'high-yield'],
-  'pediatric-ophthalmology': ['fellowship', 'exam-notes'],
+  'pediatric-ophthalmology': ['faico', 'high-yield'],
   uveitis: ['general', 'high-yield'],
-  oculoplastics: ['pdcet', 'fellowship', 'exam-notes'],
+  oculoplastics: ['pdcet', 'high-yield', 'general'],
 };
 
 const topicBundles = topicBundleMap[slug!] ?? [];

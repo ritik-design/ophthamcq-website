@@ -31,8 +31,6 @@ OphthaMCQ helps ophthalmology trainees and residents prepare for competitive exa
 - [FAICO](https://ophthamcq.org/free-mcqs/faico)
 - [ICO / FICO](https://ophthamcq.org/free-mcqs/ico-fico)
 - [FRCOphth](https://ophthamcq.org/free-mcqs/frcophth)
-- [Fellowship](https://ophthamcq.org/free-mcqs/fellowship)
-- [Exam notes](https://ophthamcq.org/free-mcqs/exam-notes)
 - [High-yield MCQs](https://ophthamcq.org/free-mcqs/high-yield)
 - [General ophthalmology](https://ophthamcq.org/free-mcqs/general)
 
