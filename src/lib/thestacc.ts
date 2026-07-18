@@ -71,8 +71,20 @@ async function safeFetch<T>(url: string): Promise<T> {
 }
 
 export async function fetchBlogList(): Promise<TheStaccBlog[]> {
-  const data = await safeFetch<TheStaccListResponse>(buildUrl('/blogs'));
-  return data.blogs || data.data || data.posts || [];
+  // The blog is a non-critical, additive section. If the API is down or the
+  // key is rejected, degrade gracefully to an empty list so the rest of the
+  // (marketing-critical) site still builds instead of failing the whole build.
+  try {
+    const data = await safeFetch<TheStaccListResponse>(buildUrl('/blogs'));
+    return data.blogs || data.data || data.posts || [];
+  } catch (err) {
+    console.warn(
+      `[thestacc] Failed to fetch blog list; building with no posts. ${
+        err instanceof Error ? err.message : String(err)
+      }`,
+    );
+    return [];
+  }
 }
 
 export async function fetchBlogBySlug(slug: string): Promise<TheStaccBlog> {
