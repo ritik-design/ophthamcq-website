@@ -1,0 +1,101 @@
+n,wave,cluster,title,primary_keyword,est_vol,competition,intent,funnel,internal_link_target
+1,1,Exams,"FRCOphth Part 1 Syllabus & Exam Pattern (2026): Every Section Explained",frcophth part 1 syllabus,900-1500,Low,Informational,TOFU,/exams/frcophth
+2,1,Exams,"How to Prepare for FRCOphth Part 1: A 6-Month Study Plan",frcophth part 1 preparation,700-1200,Low,Informational,MOFU,/exams/frcophth
+3,1,Exams,"FRCOphth Part 2 Written (CRQ & MCQ): Format, Timing and What Gets Asked",frcophth part 2 written,400-800,Low,Informational,MOFU,/exams/frcophth
+4,1,Exams,"FRCOphth Part 2 OSCE: All Stations, Marking and How to Rehearse",frcophth part 2 osce,300-600,Low,Informational,MOFU,/osce
+5,1,Exams,"FRCOphth Eligibility, Fees and Exam Dates for International Candidates",frcophth eligibility international,400-700,Low,Informational,TOFU,/exams/frcophth
+6,2,Exams,"FRCOphth vs ICO: Which Exam Should an Indian Ophthalmology Resident Take?",frcophth vs ico,200-400,Very Low,Commercial,MOFU,/exams
+7,1,Exams,"ICO Basic Visual Sciences (BVS): Syllabus, Question Style and High-Yield Areas",ico bvs exam,600-1000,Low,Informational,MOFU,/exams/ico-fico
+8,1,Exams,"ICO Optics & Refraction Paper: What to Study and What to Skip",ico optics and refraction exam,400-700,Low,Informational,MOFU,/exams/ico-fico
+9,1,Exams,"ICO Clinical Sciences Paper: Structure, Scoring and Preparation Route",ico clinical sciences exam,300-600,Low,Informational,MOFU,/exams/ico-fico
+10,2,Exams,"FICO (Advanced ICO): Who It's For, What Changes After BVS",fico exam,300-600,Low,Informational,MOFU,/exams/ico-fico
+11,1,Exams,"ICO Exam Registration, Dates, Fees and Test Centres in India",ico exam registration india,800-1400,Low,Informational,TOFU,/exams/ico-fico
+12,1,Exams,"ICO/FICO Past Papers: How to Use Them Without Wasting Them",ico past papers,900-1600,Low,Commercial,BOFU,/products/ico-fico-past-papers
+13,1,Exams,"FAICO Exam Guide: Eligibility, Subspecialties, Pattern and Timeline",faico exam,600-1100,Very Low,Informational,TOFU,/exams/faico
+14,1,Exams,"How to Apply for FAICO: Documents, Deadlines and Common Rejections",faico eligibility,300-600,Very Low,Informational,TOFU,/exams/faico
+15,2,Exams,"FAICO Glaucoma: Syllabus Map and High-Yield Question Areas",faico glaucoma,100-300,Very Low,Informational,MOFU,/exams/faico
+16,1,Exams,"DNB Ophthalmology Theory Papers: Pattern and 10-Year Topic Analysis",dnb ophthalmology theory papers,900-1600,Low,Informational,MOFU,/exams/dnb
+17,1,Exams,"DNB Ophthalmology Previous Year Questions: What Repeats and How Often",dnb ophthalmology previous year questions,1000-1800,Low,Commercial,BOFU,/products/dnb-do-past-5-year-papers
+18,1,Exams,"DNB Ophthalmology Practical Exam: Cases, Viva and Examiner Expectations",dnb ophthalmology practical exam,600-1100,Low,Commercial,BOFU,/osce
+19,2,Exams,"MS Ophthalmology University Exams: How They Differ From DNB",ms ophthalmology exam preparation,500-900,Low,Informational,MOFU,/exams/dnb
+20,2,Exams,"DO Ophthalmology Exam: Syllabus, Practicals and Next Steps After DO",do ophthalmology exam,300-600,Very Low,Informational,MOFU,/exams/dnb
+21,1,Exams,"PD-CET Ophthalmology: Pattern, Syllabus, Cut-offs and Seat Matrix",pdcet ophthalmology,700-1300,Very Low,Informational,TOFU,/exams/pd-cet
+22,1,Exams,"PD-CET Previous Year Questions: Topic-Wise Breakdown",pdcet previous year question paper,400-800,Very Low,Commercial,BOFU,/free-mcqs/pdcet
+23,1,Exams,"NEET-SS Ophthalmology: Pattern, Eligibility and Preparation Strategy",neet ss ophthalmology,1200-2200,Medium,Informational,TOFU,/exams
+24,2,Exams,"OKAP Exam Explained for Residents Outside the US",okap exam,800-1500,Medium,Informational,TOFU,/exams
+25,3,Exams,"EBO/FEBO Diploma: Format, Eligibility and Whether It's Worth It",ebo exam ophthalmology,200-500,Low,Informational,TOFU,/exams
+26,1,Topics,"Glaucoma High-Yield Facts for PG Exams (+30 Practice MCQs)",glaucoma mcq,700-1300,Low,Informational,TOFU,/topics/glaucoma
+27,1,Topics,"Diabetic Retinopathy Classification: ETDRS, ICDR and Exam Traps",diabetic retinopathy classification mcq,600-1100,Low,Informational,TOFU,/topics/retina
+28,2,Topics,"AMD and Anti-VEGF: Trials, Dosing Regimens and High-Yield Points",amd anti vegf mcq,300-600,Low,Informational,TOFU,/topics/retina
+29,2,Topics,"Retinal Detachment and PVR: Classification, Surgery and Viva Points",retinal detachment mcq,400-700,Low,Informational,TOFU,/topics/retina
+30,1,Topics,"How to Read an OCT in the Exam: Pattern Recognition in 10 Scans",oct interpretation ophthalmology,900-1600,Low,Informational,TOFU,/products/read-ophthalmology-reports-tests
+31,2,Topics,"FFA and ICGA Interpretation: Phases, Patterns and Classic Images",ffa interpretation ophthalmology,400-800,Low,Informational,TOFU,/products/read-ophthalmology-reports-tests
+32,1,Topics,"Corneal Dystrophies Made Memorable: IC3D Classification and Mnemonics",corneal dystrophies mnemonics,500-900,Low,Informational,TOFU,/topics/cornea
+33,2,Topics,"Infective Keratitis: Workup Algorithm and Exam-Ready Answers",keratitis mcq,300-600,Low,Informational,TOFU,/topics/cornea
+34,2,Topics,"Keratoplasty Types (PK, DALK, DSAEK, DMEK) Compared for Exams",keratoplasty types,400-800,Low,Informational,TOFU,/topics/cornea
+35,1,Topics,"Phacoemulsification Step by Step: Complications and Their Management",phacoemulsification steps,800-1400,Low,Informational,TOFU,/topics/cataract
+36,1,Topics,"IOL Power Calculation Formulas: SRK/T to Barrett, and When Each Fails",iol power calculation formulas,700-1300,Low,Informational,TOFU,/topics/cataract
+37,2,Topics,"Uveitis Classification (SUN) and a Workup You Can Reproduce Under Pressure",uveitis classification mcq,300-600,Low,Informational,TOFU,/topics/uveitis
+38,1,Topics,"Pupil Abnormalities and Visual Field Defects: The Two Guaranteed Questions",pupillary reflex mcq,500-900,Low,Informational,TOFU,/topics/neuro-ophthalmology
+39,2,Topics,"Optic Neuropathies Differentiated: AION, Optic Neuritis, Compressive",optic neuropathy mcq,300-600,Low,Informational,TOFU,/topics/neuro-ophthalmology
+40,2,Topics,"Strabismus Measurements: PBCT, Hess Chart and Squint Surgery Numbers",strabismus mcq,400-800,Low,Informational,TOFU,/topics/pediatric-ophthalmology
+41,2,Topics,"Amblyopia and ROP Screening: Protocols Examiners Expect You to Quote",rop screening guidelines,600-1100,Low,Informational,TOFU,/topics/pediatric-ophthalmology
+42,2,Topics,"Ptosis: Classification, Measurements and Choosing the Right Surgery",ptosis classification,500-900,Low,Informational,TOFU,/topics/oculoplastics
+43,3,Topics,"Lacrimal System, Syringing and DCR: Practical and Theory Overlap",dcr surgery mcq,300-600,Low,Informational,TOFU,/topics/oculoplastics
+44,1,Topics,"Optics and Refraction Formula Sheet Every Ophthalmology PG Needs",ophthalmology optics formulas,600-1100,Low,Informational,TOFU,/products/optics-notes
+45,1,Topics,"Ocular Pharmacology High-Yield: Drugs, Doses and Side Effects Tables",ocular pharmacology mcq,500-900,Low,Informational,TOFU,/products/ophthalmology-drugs-practical-pdf
+46,1,OSCE,"Ophthalmology OSCE Stations: The Complete List and How to Approach Each",ophthalmology osce stations,700-1300,Low,Commercial,MOFU,/osce
+47,1,OSCE,"Case Presentation Format for the Ophthalmology Practical Exam",ophthalmology case presentation format,800-1500,Very Low,Commercial,BOFU,/products/case-presentation-format-notes
+48,1,OSCE,"Long Case: Mature Cataract — Full Presentation and Likely Viva",cataract long case ophthalmology,400-800,Very Low,Informational,MOFU,/osce
+49,2,OSCE,"Long Case: Glaucoma — History, Examination and Discussion Points",glaucoma long case,300-600,Very Low,Informational,MOFU,/osce
+50,2,OSCE,"Long Case: Retinal Detachment — What to Show and What to Say",retinal detachment case presentation,200-500,Very Low,Informational,MOFU,/osce
+51,2,OSCE,"Short Case: Proptosis — Examination Sequence in 5 Minutes",proptosis examination,300-600,Very Low,Informational,MOFU,/osce
+52,2,OSCE,"Short Case: Squint — Cover Test to Diagnosis Without Fumbling",squint examination steps,400-700,Very Low,Informational,MOFU,/osce
+53,1,OSCE,"Slit Lamp Examination Viva: Every Question Examiners Actually Ask",slit lamp viva questions,500-1000,Very Low,Informational,MOFU,/osce
+54,2,OSCE,"Direct vs Indirect Ophthalmoscopy: Optics, Technique and Viva Answers",indirect ophthalmoscopy viva,400-800,Very Low,Informational,MOFU,/osce
+55,2,OSCE,"Gonioscopy Viva: Lenses, Grading Systems and Classic Questions",gonioscopy viva questions,200-500,Very Low,Informational,MOFU,/topics/glaucoma
+56,2,OSCE,"Perimetry Viva: Reading a Field Printout Out Loud, Correctly",visual field interpretation,600-1100,Low,Informational,MOFU,/products/read-ophthalmology-reports-tests
+57,1,OSCE,"Ophthalmic Instruments Viva: The Complete List With Uses and Traps",ophthalmology instruments viva,900-1600,Very Low,Commercial,BOFU,/products/instruments-in-ophthalmology-notes
+58,1,OSCE,"Ophthalmic Drugs Viva: Bottles, Colours, Doses and Contraindications",ophthalmology drugs viva,500-1000,Very Low,Commercial,BOFU,/products/ophthalmology-drugs-practical-pdf
+59,3,OSCE,"Sutures and Needles in Ophthalmic Surgery: A Viva-Proof Reference",ophthalmic sutures viva,200-500,Very Low,Informational,MOFU,/osce
+60,2,OSCE,"20 Viva Questions That Trip Up Candidates — and How to Answer Them",ophthalmology viva questions,700-1300,Very Low,Commercial,MOFU,/osce
+61,1,Resources,"Best Ophthalmology Books for PG Residents (2026, Ranked by Exam)",best ophthalmology books,1200-2200,Medium,Informational,TOFU,/resources
+62,1,Resources,"Kanski vs BCSC vs Khurana: Which One for Which Exam",kanski vs bcsc,400-800,Low,Commercial,MOFU,/resources
+63,3,Resources,"Ryan's Retina vs BCSC Retina: What Each Is Actually Good For",ryan retina vs bcsc,100-300,Very Low,Commercial,MOFU,/topics/retina
+64,1,Resources,"Free Ophthalmology Study Resources That Are Genuinely Worth Your Time",free ophthalmology resources,900-1600,Low,Informational,TOFU,/resources
+65,1,Resources,"A 3-Month DNB Ophthalmology Study Plan (Week by Week)",dnb ophthalmology study plan,600-1100,Low,Commercial,MOFU,/exams/dnb
+66,1,Resources,"A 6-Month FRCOphth Study Plan for Residents Who Also Work Full Time",frcophth study plan,400-800,Low,Commercial,MOFU,/exams/frcophth
+67,2,Resources,"A 30-Day FAICO Revision Plan Built Around Past Questions",faico preparation,300-600,Very Low,Commercial,MOFU,/exams/faico
+68,1,Resources,"How to Actually Use an MCQ Bank: Spaced Repetition for Exam Prep",how to use mcq bank,400-800,Low,Commercial,MOFU,/free-mcqs
+69,2,Resources,"Handwritten vs Typed Notes for Revision: What the Evidence Says",handwritten notes revision,500-900,Low,Commercial,MOFU,/notes
+70,1,Resources,"Best Ophthalmology Apps for Residents (2026)",best ophthalmology app,700-1300,Low,Commercial,MOFU,/compare/best-app-for-ophthalmology-mcqs
+71,1,Resources,"Best Ophthalmology Question Banks Compared (2026)",best ophthalmology question bank,900-1600,Medium,Commercial,BOFU,/compare/best-ophthalmology-question-banks
+72,2,Resources,"OphthoQuestions for Non-US Residents: What It Covers and What It Doesn't",ophthoquestions review,400-800,Low,Commercial,BOFU,/compare/ophthoquestions-vs-ophthamcq
+73,2,Resources,"eyeQ (Eyedocs) vs OphthaMCQ: FRCOphth Coverage Compared",eyedocs eyeq review,200-500,Very Low,Commercial,BOFU,/compare/best-ophthalmology-question-banks
+74,2,Resources,"Free vs Paid Ophthalmology Question Banks: Where Free Runs Out",free ophthalmology question bank,600-1100,Low,Commercial,MOFU,/free-mcqs
+75,3,Resources,"How to Build Your Own High-Yield Notes (Without Rewriting Kanski)",how to make ophthalmology notes,300-600,Very Low,Commercial,MOFU,/notes
+76,1,Free MCQs,"100 Free Ophthalmology MCQs With Explanations",free ophthalmology mcqs with answers,1000-1800,Low,Transactional,TOFU,/free-mcqs
+77,1,Free MCQs,"Fundus Image Quiz: 25 Photos, Can You Name Them All?",fundus image quiz,600-1100,Low,Transactional,TOFU,/free-mcqs/high-yield
+78,2,Free MCQs,"Slit Lamp Image Quiz: Anterior Segment Pattern Recognition",anterior segment quiz,300-600,Very Low,Transactional,TOFU,/free-mcqs/high-yield
+79,1,Free MCQs,"Ocular Anatomy MCQs With Answers and Explanations",ocular anatomy mcq,700-1300,Low,Transactional,TOFU,/products/anatomy-notes
+80,1,Free MCQs,"Optics and Refraction MCQs With Worked Solutions",optics and refraction mcq,600-1100,Low,Transactional,TOFU,/free-mcqs/general
+81,2,Free MCQs,"Glaucoma MCQs: 40 Questions From Basics to Surgery",glaucoma mcq questions,500-900,Low,Transactional,TOFU,/topics/glaucoma
+82,2,Free MCQs,"Retina MCQs: 40 Questions Across DR, AMD and RD",retina mcq questions,400-800,Low,Transactional,TOFU,/topics/retina
+83,2,Free MCQs,"Cornea MCQs: 40 Questions With Image-Based Stems",cornea mcq questions,300-600,Low,Transactional,TOFU,/topics/cornea
+84,3,Free MCQs,"Paediatric Ophthalmology and Squint MCQs",pediatric ophthalmology mcq,300-600,Low,Transactional,TOFU,/topics/pediatric-ophthalmology
+85,1,Free MCQs,"Recent Advances in Ophthalmology 2026: MCQs on What's New",recent advances in ophthalmology,900-1600,Low,Transactional,TOFU,/products/recent-advances-ophthalmology-notes
+86,1,Career,"Ophthalmology Fellowships in India After MS/DNB: Complete List and Routes",ophthalmology fellowship india,1200-2200,Medium,Informational,TOFU,/exams/fellowship
+87,2,Career,"How to Choose an Ophthalmology Subspecialty: An Honest Comparison",ophthalmology subspecialty choice,500-900,Low,Informational,TOFU,/exams/fellowship
+88,2,Career,"Does ICO/FICO Help You Get a Fellowship Abroad? What It Actually Does",fico exam benefits,300-600,Very Low,Informational,MOFU,/exams/ico-fico
+89,1,Career,"Practising Ophthalmology in the UK: The FRCOphth and Registration Route",ophthalmology jobs uk indian doctors,800-1500,Medium,Informational,TOFU,/exams/frcophth
+90,2,Career,"Ophthalmology Training Abroad: UK, Middle East and Australia Compared",ophthalmology residency abroad,600-1100,Medium,Informational,TOFU,/exams
+91,3,Career,"Ophthalmologist Salary and Career Paths in India (2026)",ophthalmologist salary india,1500-2500,Medium,Informational,TOFU,/about
+92,3,Career,"AIOS Membership: What It Costs, What You Get, Why FAICO Needs It",aios membership,400-800,Very Low,Informational,TOFU,/exams/faico
+93,2,Career,"50 Thesis Topics for Ophthalmology PG Residents (With Feasibility Notes)",ophthalmology thesis topics,700-1300,Very Low,Informational,TOFU,/resources
+94,3,Career,"How to Publish Your First Case Report as an Ophthalmology Resident",ophthalmology case report publishing,300-600,Low,Informational,TOFU,/resources
+95,2,Career,"Recent Advances You Must Know for 2026 Exams: Drugs, Devices, Trials",recent advances ophthalmology 2026,600-1100,Low,Informational,MOFU,/products/recent-advances-ophthalmology-notes
+96,3,Career,"New Ophthalmic Drug and Device Approvals Worth Knowing for Vivas",new ophthalmology drugs 2026,300-600,Low,Informational,TOFU,/products/ophthalmology-drugs-practical-pdf
+97,3,Career,"Studying While On Call: A Realistic System for Ophthalmology Residents",how to study during residency,500-900,Low,Informational,TOFU,/resources
+98,3,Career,"Exam Anxiety and Burnout in Residency: Practical Countermeasures",medical exam anxiety,600-1100,Medium,Informational,TOFU,/resources
+99,3,Career,"What to Do in the Last 7 Days Before an Ophthalmology Exam",last minute exam preparation,400-800,Low,Commercial,MOFU,/notes
+100,3,Career,"First-Year Ophthalmology Resident Survival Guide",first year ophthalmology residency,500-900,Low,Informational,TOFU,/about

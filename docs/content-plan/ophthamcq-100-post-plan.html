@@ -1,0 +1,282 @@
+<title>OphthaMCQ Content Runway</title>
+<style>
+:root {
+  --ground: #F6F7F8;
+  --panel: #FFFFFF;
+  --ink: #12181D;
+  --ink-2: #4A555E;
+  --ink-3: #7A868F;
+  --rule: #DCE1E5;
+  --rule-soft: #E9EDEF;
+  --accent: #14528C;
+  --accent-soft: #E7EEF6;
+  --spark: #6E7B12;
+  --spark-soft: #EFF2DC;
+  --warn: #9A5A17;
+  --warn-soft: #F6EDE1;
+  --shadow: 0 1px 2px rgba(18,24,29,.06), 0 8px 24px -16px rgba(18,24,29,.28);
+  --display: ui-serif, Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0D1216;
+    --panel: #141B21;
+    --ink: #E9EDF0;
+    --ink-2: #A6B2BB;
+    --ink-3: #78858E;
+    --rule: #26313A;
+    --rule-soft: #1D262D;
+    --accent: #74A8DC;
+    --accent-soft: #17293B;
+    --spark: #B9C750;
+    --spark-soft: #232916;
+    --warn: #D69A5C;
+    --warn-soft: #2C2118;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0D1216; --panel: #141B21; --ink: #E9EDF0; --ink-2: #A6B2BB; --ink-3: #78858E;
+  --rule: #26313A; --rule-soft: #1D262D; --accent: #74A8DC; --accent-soft: #17293B;
+  --spark: #B9C750; --spark-soft: #232916; --warn: #D69A5C; --warn-soft: #2C2118;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1120px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 40px; }
+header { display: flex; flex-direction: column; gap: 14px; border-bottom: 2px solid var(--ink); padding-bottom: 24px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4.6vw, 46px); line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+.lede { margin: 0; max-width: 62ch; color: var(--ink-2); font-size: 17px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+.stat { background: var(--panel); padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.stat b { font-family: var(--display); font-size: 28px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; }
+.stat span { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.waves { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.wave { background: var(--panel); border: 1px solid var(--rule); border-radius: 3px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow); }
+.wave h3 { margin: 0; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.wave p { margin: 0; font-size: 14px; color: var(--ink-2); }
+.wave .when { font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+.cluster { display: flex; flex-direction: column; gap: 12px; }
+.chead { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid var(--ink); padding-bottom: 8px; }
+h2 { font-family: var(--display); font-size: 26px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+.count { margin: 0; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+.note { margin: 0; max-width: 78ch; color: var(--ink-2); font-size: 15px; }
+.scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--panel); box-shadow: var(--shadow); }
+table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 14px; }
+th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; padding: 10px 12px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+td { padding: 9px 12px; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.wv { font-family: var(--mono); font-size: 12px; width: 44px; color: var(--ink-3); border-left: 3px solid transparent; }
+.wv1 { border-left-color: var(--accent); color: var(--accent); }
+.wv2 { border-left-color: var(--spark); }
+.wv3 { border-left-color: var(--rule); }
+.post { color: var(--ink); min-width: 300px; }
+.kw { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); }
+.dim { color: var(--ink-3); }
+.vol { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); }
+.fn { font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+.chip { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; padding: 2px 7px; border-radius: 2px; white-space: nowrap; }
+.c-vlow { background: var(--spark-soft); color: var(--spark); }
+.c-low { background: var(--accent-soft); color: var(--accent); }
+.c-med { background: var(--warn-soft); color: var(--warn); }
+footer { border-top: 1px solid var(--rule); padding-top: 20px; color: var(--ink-3); font-size: 14px; max-width: 72ch; display: flex; flex-direction: column; gap: 10px; }
+footer strong { color: var(--ink-2); font-weight: 600; }
+@media (max-width: 620px) { .wrap { padding: 36px 16px 64px; } }
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">OphthaMCQ · ophthamcq.org · 12-month plan</p>
+  <h1>100 posts, ordered by what the SERP will actually give up</h1>
+  <p class="lede">Every post below targets a query an ophthalmology PG types during exam season, mapped to a page that already exists on the site. Ordering is by wave: wave 1 is where the search results are thinnest and the commercial intent highest.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>100</b><span>posts</span></div>
+  <div class="stat"><b>48</b><span>wave 1</span></div>
+  <div class="stat"><b>91</b><span>low / very low comp</span></div>
+  <div class="stat"><b>9</b><span>medium comp</span></div>
+  <div class="stat"><b>~76k</b><span>combined est. vol/mo</span></div>
+</div>
+
+<div class="waves">
+  <div class="wave"><h3>Wave 1</h3><p class="when">Months 1–5 · 48 posts</p><p>Exam-pattern pages, past-paper posts and viva guides. Thin SERPs, buyer intent, and the two 404 gaps closed early.</p></div>
+  <div class="wave"><h3>Wave 2</h3><p class="when">Months 6–10 · 38 posts</p><p>Subspecialty depth and the head-to-head comparisons, published once the exam hubs have authority to pass down.</p></div>
+  <div class="wave"><h3>Wave 3</h3><p class="when">Months 11–12 · 14 posts</p><p>Career and breadth topics. Reach and returning readers, not conversions.</p></div>
+</div>
+
+
+<section class="cluster">
+  <div class="chead">
+    <h2>Exams</h2>
+    <p class="count">25 posts · wave 1: 18 · wave 2: 6 · wave 3: 1</p>
+  </div>
+  <p class="note">One page per exam, per paper. This is how residents search and how LLMs get asked. It is also where the 404 gaps (NEET-SS, OKAP) currently leak traffic to PrepGuidance.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Primary keyword</th><th class="num">Est. vol/mo</th><th>Competition</th><th>Funnel</th><th>Links to</th></tr></thead><tbody>
+<tr><td class="num wv wv1">1</td><td class="post">FRCOphth Part 1 Syllabus &amp; Exam Pattern (2026): Every Section Explained</td><td class="kw">frcophth part 1 syllabus</td><td class="num vol">900-1500</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/frcophth</td></tr>
+<tr><td class="num wv wv1">2</td><td class="post">How to Prepare for FRCOphth Part 1: A 6-Month Study Plan</td><td class="kw">frcophth part 1 preparation</td><td class="num vol">700-1200</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/frcophth</td></tr>
+<tr><td class="num wv wv1">3</td><td class="post">FRCOphth Part 2 Written (CRQ &amp; MCQ): Format, Timing and What Gets Asked</td><td class="kw">frcophth part 2 written</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/frcophth</td></tr>
+<tr><td class="num wv wv1">4</td><td class="post">FRCOphth Part 2 OSCE: All Stations, Marking and How to Rehearse</td><td class="kw">frcophth part 2 osce</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv1">5</td><td class="post">FRCOphth Eligibility, Fees and Exam Dates for International Candidates</td><td class="kw">frcophth eligibility international</td><td class="num vol">400-700</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/frcophth</td></tr>
+<tr><td class="num wv wv2">6</td><td class="post">FRCOphth vs ICO: Which Exam Should an Indian Ophthalmology Resident Take?</td><td class="kw">frcophth vs ico</td><td class="num vol">200-400</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams</td></tr>
+<tr><td class="num wv wv1">7</td><td class="post">ICO Basic Visual Sciences (BVS): Syllabus, Question Style and High-Yield Areas</td><td class="kw">ico bvs exam</td><td class="num vol">600-1000</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr><td class="num wv wv1">8</td><td class="post">ICO Optics &amp; Refraction Paper: What to Study and What to Skip</td><td class="kw">ico optics and refraction exam</td><td class="num vol">400-700</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr><td class="num wv wv1">9</td><td class="post">ICO Clinical Sciences Paper: Structure, Scoring and Preparation Route</td><td class="kw">ico clinical sciences exam</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr><td class="num wv wv2">10</td><td class="post">FICO (Advanced ICO): Who It&#x27;s For, What Changes After BVS</td><td class="kw">fico exam</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr><td class="num wv wv1">11</td><td class="post">ICO Exam Registration, Dates, Fees and Test Centres in India</td><td class="kw">ico exam registration india</td><td class="num vol">800-1400</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr><td class="num wv wv1">12</td><td class="post">ICO/FICO Past Papers: How to Use Them Without Wasting Them</td><td class="kw">ico past papers</td><td class="num vol">900-1600</td><td><span class="chip c-low">Low</span></td><td class="fn">BOFU</td><td class="kw dim">/products/ico-fico-past-papers</td></tr>
+<tr><td class="num wv wv1">13</td><td class="post">FAICO Exam Guide: Eligibility, Subspecialties, Pattern and Timeline</td><td class="kw">faico exam</td><td class="num vol">600-1100</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/faico</td></tr>
+<tr><td class="num wv wv1">14</td><td class="post">How to Apply for FAICO: Documents, Deadlines and Common Rejections</td><td class="kw">faico eligibility</td><td class="num vol">300-600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/faico</td></tr>
+<tr><td class="num wv wv2">15</td><td class="post">FAICO Glaucoma: Syllabus Map and High-Yield Question Areas</td><td class="kw">faico glaucoma</td><td class="num vol">100-300</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/faico</td></tr>
+<tr><td class="num wv wv1">16</td><td class="post">DNB Ophthalmology Theory Papers: Pattern and 10-Year Topic Analysis</td><td class="kw">dnb ophthalmology theory papers</td><td class="num vol">900-1600</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/dnb</td></tr>
+<tr><td class="num wv wv1">17</td><td class="post">DNB Ophthalmology Previous Year Questions: What Repeats and How Often</td><td class="kw">dnb ophthalmology previous year questions</td><td class="num vol">1000-1800</td><td><span class="chip c-low">Low</span></td><td class="fn">BOFU</td><td class="kw dim">/products/dnb-do-past-5-year-papers</td></tr>
+<tr><td class="num wv wv1">18</td><td class="post">DNB Ophthalmology Practical Exam: Cases, Viva and Examiner Expectations</td><td class="kw">dnb ophthalmology practical exam</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">BOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv2">19</td><td class="post">MS Ophthalmology University Exams: How They Differ From DNB</td><td class="kw">ms ophthalmology exam preparation</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/dnb</td></tr>
+<tr><td class="num wv wv2">20</td><td class="post">DO Ophthalmology Exam: Syllabus, Practicals and Next Steps After DO</td><td class="kw">do ophthalmology exam</td><td class="num vol">300-600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/dnb</td></tr>
+<tr><td class="num wv wv1">21</td><td class="post">PD-CET Ophthalmology: Pattern, Syllabus, Cut-offs and Seat Matrix</td><td class="kw">pdcet ophthalmology</td><td class="num vol">700-1300</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/pd-cet</td></tr>
+<tr><td class="num wv wv1">22</td><td class="post">PD-CET Previous Year Questions: Topic-Wise Breakdown</td><td class="kw">pdcet previous year question paper</td><td class="num vol">400-800</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">BOFU</td><td class="kw dim">/free-mcqs/pdcet</td></tr>
+<tr><td class="num wv wv1">23</td><td class="post">NEET-SS Ophthalmology: Pattern, Eligibility and Preparation Strategy</td><td class="kw">neet ss ophthalmology</td><td class="num vol">1200-2200</td><td><span class="chip c-med">Medium</span></td><td class="fn">TOFU</td><td class="kw dim">/exams</td></tr>
+<tr><td class="num wv wv2">24</td><td class="post">OKAP Exam Explained for Residents Outside the US</td><td class="kw">okap exam</td><td class="num vol">800-1500</td><td><span class="chip c-med">Medium</span></td><td class="fn">TOFU</td><td class="kw dim">/exams</td></tr>
+<tr><td class="num wv wv3">25</td><td class="post">EBO/FEBO Diploma: Format, Eligibility and Whether It&#x27;s Worth It</td><td class="kw">ebo exam ophthalmology</td><td class="num vol">200-500</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <h2>OSCE</h2>
+    <p class="count">15 posts · wave 1: 6 · wave 2: 8 · wave 3: 1</p>
+  </div>
+  <p class="note">The thinnest cluster on the site (one page deep) and the least contested corner of the whole niche. Nobody ranks properly for viva and long-case queries.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Primary keyword</th><th class="num">Est. vol/mo</th><th>Competition</th><th>Funnel</th><th>Links to</th></tr></thead><tbody>
+<tr><td class="num wv wv1">46</td><td class="post">Ophthalmology OSCE Stations: The Complete List and How to Approach Each</td><td class="kw">ophthalmology osce stations</td><td class="num vol">700-1300</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv1">47</td><td class="post">Case Presentation Format for the Ophthalmology Practical Exam</td><td class="kw">ophthalmology case presentation format</td><td class="num vol">800-1500</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">BOFU</td><td class="kw dim">/products/case-presentation-format-notes</td></tr>
+<tr><td class="num wv wv1">48</td><td class="post">Long Case: Mature Cataract — Full Presentation and Likely Viva</td><td class="kw">cataract long case ophthalmology</td><td class="num vol">400-800</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv2">49</td><td class="post">Long Case: Glaucoma — History, Examination and Discussion Points</td><td class="kw">glaucoma long case</td><td class="num vol">300-600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv2">50</td><td class="post">Long Case: Retinal Detachment — What to Show and What to Say</td><td class="kw">retinal detachment case presentation</td><td class="num vol">200-500</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv2">51</td><td class="post">Short Case: Proptosis — Examination Sequence in 5 Minutes</td><td class="kw">proptosis examination</td><td class="num vol">300-600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv2">52</td><td class="post">Short Case: Squint — Cover Test to Diagnosis Without Fumbling</td><td class="kw">squint examination steps</td><td class="num vol">400-700</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv1">53</td><td class="post">Slit Lamp Examination Viva: Every Question Examiners Actually Ask</td><td class="kw">slit lamp viva questions</td><td class="num vol">500-1000</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv2">54</td><td class="post">Direct vs Indirect Ophthalmoscopy: Optics, Technique and Viva Answers</td><td class="kw">indirect ophthalmoscopy viva</td><td class="num vol">400-800</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv2">55</td><td class="post">Gonioscopy Viva: Lenses, Grading Systems and Classic Questions</td><td class="kw">gonioscopy viva questions</td><td class="num vol">200-500</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr><td class="num wv wv2">56</td><td class="post">Perimetry Viva: Reading a Field Printout Out Loud, Correctly</td><td class="kw">visual field interpretation</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/products/read-ophthalmology-reports-tests</td></tr>
+<tr><td class="num wv wv1">57</td><td class="post">Ophthalmic Instruments Viva: The Complete List With Uses and Traps</td><td class="kw">ophthalmology instruments viva</td><td class="num vol">900-1600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">BOFU</td><td class="kw dim">/products/instruments-in-ophthalmology-notes</td></tr>
+<tr><td class="num wv wv1">58</td><td class="post">Ophthalmic Drugs Viva: Bottles, Colours, Doses and Contraindications</td><td class="kw">ophthalmology drugs viva</td><td class="num vol">500-1000</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">BOFU</td><td class="kw dim">/products/ophthalmology-drugs-practical-pdf</td></tr>
+<tr><td class="num wv wv3">59</td><td class="post">Sutures and Needles in Ophthalmic Surgery: A Viva-Proof Reference</td><td class="kw">ophthalmic sutures viva</td><td class="num vol">200-500</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+<tr><td class="num wv wv2">60</td><td class="post">20 Viva Questions That Trip Up Candidates — and How to Answer Them</td><td class="kw">ophthalmology viva questions</td><td class="num vol">700-1300</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/osce</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <h2>Topics</h2>
+    <p class="count">20 posts · wave 1: 9 · wave 2: 10 · wave 3: 1</p>
+  </div>
+  <p class="note">Subspecialty depth feeds the eight existing topic hubs and opens the eight the site claims but never built — optics, anatomy, pharmacology, instruments, imaging, pathology, strabismus, lens.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Primary keyword</th><th class="num">Est. vol/mo</th><th>Competition</th><th>Funnel</th><th>Links to</th></tr></thead><tbody>
+<tr><td class="num wv wv1">26</td><td class="post">Glaucoma High-Yield Facts for PG Exams (+30 Practice MCQs)</td><td class="kw">glaucoma mcq</td><td class="num vol">700-1300</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr><td class="num wv wv1">27</td><td class="post">Diabetic Retinopathy Classification: ETDRS, ICDR and Exam Traps</td><td class="kw">diabetic retinopathy classification mcq</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/retina</td></tr>
+<tr><td class="num wv wv2">28</td><td class="post">AMD and Anti-VEGF: Trials, Dosing Regimens and High-Yield Points</td><td class="kw">amd anti vegf mcq</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/retina</td></tr>
+<tr><td class="num wv wv2">29</td><td class="post">Retinal Detachment and PVR: Classification, Surgery and Viva Points</td><td class="kw">retinal detachment mcq</td><td class="num vol">400-700</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/retina</td></tr>
+<tr><td class="num wv wv1">30</td><td class="post">How to Read an OCT in the Exam: Pattern Recognition in 10 Scans</td><td class="kw">oct interpretation ophthalmology</td><td class="num vol">900-1600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/products/read-ophthalmology-reports-tests</td></tr>
+<tr><td class="num wv wv2">31</td><td class="post">FFA and ICGA Interpretation: Phases, Patterns and Classic Images</td><td class="kw">ffa interpretation ophthalmology</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/products/read-ophthalmology-reports-tests</td></tr>
+<tr><td class="num wv wv1">32</td><td class="post">Corneal Dystrophies Made Memorable: IC3D Classification and Mnemonics</td><td class="kw">corneal dystrophies mnemonics</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/cornea</td></tr>
+<tr><td class="num wv wv2">33</td><td class="post">Infective Keratitis: Workup Algorithm and Exam-Ready Answers</td><td class="kw">keratitis mcq</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/cornea</td></tr>
+<tr><td class="num wv wv2">34</td><td class="post">Keratoplasty Types (PK, DALK, DSAEK, DMEK) Compared for Exams</td><td class="kw">keratoplasty types</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/cornea</td></tr>
+<tr><td class="num wv wv1">35</td><td class="post">Phacoemulsification Step by Step: Complications and Their Management</td><td class="kw">phacoemulsification steps</td><td class="num vol">800-1400</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/cataract</td></tr>
+<tr><td class="num wv wv1">36</td><td class="post">IOL Power Calculation Formulas: SRK/T to Barrett, and When Each Fails</td><td class="kw">iol power calculation formulas</td><td class="num vol">700-1300</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/cataract</td></tr>
+<tr><td class="num wv wv2">37</td><td class="post">Uveitis Classification (SUN) and a Workup You Can Reproduce Under Pressure</td><td class="kw">uveitis classification mcq</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/uveitis</td></tr>
+<tr><td class="num wv wv1">38</td><td class="post">Pupil Abnormalities and Visual Field Defects: The Two Guaranteed Questions</td><td class="kw">pupillary reflex mcq</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/neuro-ophthalmology</td></tr>
+<tr><td class="num wv wv2">39</td><td class="post">Optic Neuropathies Differentiated: AION, Optic Neuritis, Compressive</td><td class="kw">optic neuropathy mcq</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/neuro-ophthalmology</td></tr>
+<tr><td class="num wv wv2">40</td><td class="post">Strabismus Measurements: PBCT, Hess Chart and Squint Surgery Numbers</td><td class="kw">strabismus mcq</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr><td class="num wv wv2">41</td><td class="post">Amblyopia and ROP Screening: Protocols Examiners Expect You to Quote</td><td class="kw">rop screening guidelines</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr><td class="num wv wv2">42</td><td class="post">Ptosis: Classification, Measurements and Choosing the Right Surgery</td><td class="kw">ptosis classification</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/oculoplastics</td></tr>
+<tr><td class="num wv wv3">43</td><td class="post">Lacrimal System, Syringing and DCR: Practical and Theory Overlap</td><td class="kw">dcr surgery mcq</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/oculoplastics</td></tr>
+<tr><td class="num wv wv1">44</td><td class="post">Optics and Refraction Formula Sheet Every Ophthalmology PG Needs</td><td class="kw">ophthalmology optics formulas</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr><td class="num wv wv1">45</td><td class="post">Ocular Pharmacology High-Yield: Drugs, Doses and Side Effects Tables</td><td class="kw">ocular pharmacology mcq</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/products/ophthalmology-drugs-practical-pdf</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <h2>Free MCQs</h2>
+    <p class="count">10 posts · wave 1: 5 · wave 2: 4 · wave 3: 1</p>
+  </div>
+  <p class="note">Practice-set posts are the link magnets and the app-install driver. Every one ends in a partial set that continues in the app.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Primary keyword</th><th class="num">Est. vol/mo</th><th>Competition</th><th>Funnel</th><th>Links to</th></tr></thead><tbody>
+<tr><td class="num wv wv1">76</td><td class="post">100 Free Ophthalmology MCQs With Explanations</td><td class="kw">free ophthalmology mcqs with answers</td><td class="num vol">1000-1800</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/free-mcqs</td></tr>
+<tr><td class="num wv wv1">77</td><td class="post">Fundus Image Quiz: 25 Photos, Can You Name Them All?</td><td class="kw">fundus image quiz</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/free-mcqs/high-yield</td></tr>
+<tr><td class="num wv wv2">78</td><td class="post">Slit Lamp Image Quiz: Anterior Segment Pattern Recognition</td><td class="kw">anterior segment quiz</td><td class="num vol">300-600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">TOFU</td><td class="kw dim">/free-mcqs/high-yield</td></tr>
+<tr><td class="num wv wv1">79</td><td class="post">Ocular Anatomy MCQs With Answers and Explanations</td><td class="kw">ocular anatomy mcq</td><td class="num vol">700-1300</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/products/anatomy-notes</td></tr>
+<tr><td class="num wv wv1">80</td><td class="post">Optics and Refraction MCQs With Worked Solutions</td><td class="kw">optics and refraction mcq</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/free-mcqs/general</td></tr>
+<tr><td class="num wv wv2">81</td><td class="post">Glaucoma MCQs: 40 Questions From Basics to Surgery</td><td class="kw">glaucoma mcq questions</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr><td class="num wv wv2">82</td><td class="post">Retina MCQs: 40 Questions Across DR, AMD and RD</td><td class="kw">retina mcq questions</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/retina</td></tr>
+<tr><td class="num wv wv2">83</td><td class="post">Cornea MCQs: 40 Questions With Image-Based Stems</td><td class="kw">cornea mcq questions</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/cornea</td></tr>
+<tr><td class="num wv wv3">84</td><td class="post">Paediatric Ophthalmology and Squint MCQs</td><td class="kw">pediatric ophthalmology mcq</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr><td class="num wv wv1">85</td><td class="post">Recent Advances in Ophthalmology 2026: MCQs on What&#x27;s New</td><td class="kw">recent advances in ophthalmology</td><td class="num vol">900-1600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/products/recent-advances-ophthalmology-notes</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <h2>Resources</h2>
+    <p class="count">15 posts · wave 1: 8 · wave 2: 5 · wave 3: 2</p>
+  </div>
+  <p class="note">Books, plans and head-to-heads. These carry the highest commercial intent and rescue the four orphaned /compare pages.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Primary keyword</th><th class="num">Est. vol/mo</th><th>Competition</th><th>Funnel</th><th>Links to</th></tr></thead><tbody>
+<tr><td class="num wv wv1">61</td><td class="post">Best Ophthalmology Books for PG Residents (2026, Ranked by Exam)</td><td class="kw">best ophthalmology books</td><td class="num vol">1200-2200</td><td><span class="chip c-med">Medium</span></td><td class="fn">TOFU</td><td class="kw dim">/resources</td></tr>
+<tr><td class="num wv wv1">62</td><td class="post">Kanski vs BCSC vs Khurana: Which One for Which Exam</td><td class="kw">kanski vs bcsc</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/resources</td></tr>
+<tr><td class="num wv wv3">63</td><td class="post">Ryan&#x27;s Retina vs BCSC Retina: What Each Is Actually Good For</td><td class="kw">ryan retina vs bcsc</td><td class="num vol">100-300</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/topics/retina</td></tr>
+<tr><td class="num wv wv1">64</td><td class="post">Free Ophthalmology Study Resources That Are Genuinely Worth Your Time</td><td class="kw">free ophthalmology resources</td><td class="num vol">900-1600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/resources</td></tr>
+<tr><td class="num wv wv1">65</td><td class="post">A 3-Month DNB Ophthalmology Study Plan (Week by Week)</td><td class="kw">dnb ophthalmology study plan</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/dnb</td></tr>
+<tr><td class="num wv wv1">66</td><td class="post">A 6-Month FRCOphth Study Plan for Residents Who Also Work Full Time</td><td class="kw">frcophth study plan</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/frcophth</td></tr>
+<tr><td class="num wv wv2">67</td><td class="post">A 30-Day FAICO Revision Plan Built Around Past Questions</td><td class="kw">faico preparation</td><td class="num vol">300-600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/faico</td></tr>
+<tr><td class="num wv wv1">68</td><td class="post">How to Actually Use an MCQ Bank: Spaced Repetition for Exam Prep</td><td class="kw">how to use mcq bank</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/free-mcqs</td></tr>
+<tr><td class="num wv wv2">69</td><td class="post">Handwritten vs Typed Notes for Revision: What the Evidence Says</td><td class="kw">handwritten notes revision</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/notes</td></tr>
+<tr><td class="num wv wv1">70</td><td class="post">Best Ophthalmology Apps for Residents (2026)</td><td class="kw">best ophthalmology app</td><td class="num vol">700-1300</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/compare/best-app-for-ophthalmology-mcqs</td></tr>
+<tr><td class="num wv wv1">71</td><td class="post">Best Ophthalmology Question Banks Compared (2026)</td><td class="kw">best ophthalmology question bank</td><td class="num vol">900-1600</td><td><span class="chip c-med">Medium</span></td><td class="fn">BOFU</td><td class="kw dim">/compare/best-ophthalmology-question-banks</td></tr>
+<tr><td class="num wv wv2">72</td><td class="post">OphthoQuestions for Non-US Residents: What It Covers and What It Doesn&#x27;t</td><td class="kw">ophthoquestions review</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">BOFU</td><td class="kw dim">/compare/ophthoquestions-vs-ophthamcq</td></tr>
+<tr><td class="num wv wv2">73</td><td class="post">eyeQ (Eyedocs) vs OphthaMCQ: FRCOphth Coverage Compared</td><td class="kw">eyedocs eyeq review</td><td class="num vol">200-500</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">BOFU</td><td class="kw dim">/compare/best-ophthalmology-question-banks</td></tr>
+<tr><td class="num wv wv2">74</td><td class="post">Free vs Paid Ophthalmology Question Banks: Where Free Runs Out</td><td class="kw">free ophthalmology question bank</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/free-mcqs</td></tr>
+<tr><td class="num wv wv3">75</td><td class="post">How to Build Your Own High-Yield Notes (Without Rewriting Kanski)</td><td class="kw">how to make ophthalmology notes</td><td class="num vol">300-600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/notes</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <h2>Career</h2>
+    <p class="count">15 posts · wave 1: 2 · wave 2: 5 · wave 3: 8</p>
+  </div>
+  <p class="note">Broadest reach, weakest intent. Runs last, and exists to build topical authority and returning readers rather than sales.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Primary keyword</th><th class="num">Est. vol/mo</th><th>Competition</th><th>Funnel</th><th>Links to</th></tr></thead><tbody>
+<tr><td class="num wv wv1">86</td><td class="post">Ophthalmology Fellowships in India After MS/DNB: Complete List and Routes</td><td class="kw">ophthalmology fellowship india</td><td class="num vol">1200-2200</td><td><span class="chip c-med">Medium</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr><td class="num wv wv2">87</td><td class="post">How to Choose an Ophthalmology Subspecialty: An Honest Comparison</td><td class="kw">ophthalmology subspecialty choice</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr><td class="num wv wv2">88</td><td class="post">Does ICO/FICO Help You Get a Fellowship Abroad? What It Actually Does</td><td class="kw">fico exam benefits</td><td class="num vol">300-600</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">MOFU</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr><td class="num wv wv1">89</td><td class="post">Practising Ophthalmology in the UK: The FRCOphth and Registration Route</td><td class="kw">ophthalmology jobs uk indian doctors</td><td class="num vol">800-1500</td><td><span class="chip c-med">Medium</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/frcophth</td></tr>
+<tr><td class="num wv wv2">90</td><td class="post">Ophthalmology Training Abroad: UK, Middle East and Australia Compared</td><td class="kw">ophthalmology residency abroad</td><td class="num vol">600-1100</td><td><span class="chip c-med">Medium</span></td><td class="fn">TOFU</td><td class="kw dim">/exams</td></tr>
+<tr><td class="num wv wv3">91</td><td class="post">Ophthalmologist Salary and Career Paths in India (2026)</td><td class="kw">ophthalmologist salary india</td><td class="num vol">1500-2500</td><td><span class="chip c-med">Medium</span></td><td class="fn">TOFU</td><td class="kw dim">/about</td></tr>
+<tr><td class="num wv wv3">92</td><td class="post">AIOS Membership: What It Costs, What You Get, Why FAICO Needs It</td><td class="kw">aios membership</td><td class="num vol">400-800</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">TOFU</td><td class="kw dim">/exams/faico</td></tr>
+<tr><td class="num wv wv2">93</td><td class="post">50 Thesis Topics for Ophthalmology PG Residents (With Feasibility Notes)</td><td class="kw">ophthalmology thesis topics</td><td class="num vol">700-1300</td><td><span class="chip c-vlow">Very Low</span></td><td class="fn">TOFU</td><td class="kw dim">/resources</td></tr>
+<tr><td class="num wv wv3">94</td><td class="post">How to Publish Your First Case Report as an Ophthalmology Resident</td><td class="kw">ophthalmology case report publishing</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/resources</td></tr>
+<tr><td class="num wv wv2">95</td><td class="post">Recent Advances You Must Know for 2026 Exams: Drugs, Devices, Trials</td><td class="kw">recent advances ophthalmology 2026</td><td class="num vol">600-1100</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/products/recent-advances-ophthalmology-notes</td></tr>
+<tr><td class="num wv wv3">96</td><td class="post">New Ophthalmic Drug and Device Approvals Worth Knowing for Vivas</td><td class="kw">new ophthalmology drugs 2026</td><td class="num vol">300-600</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/products/ophthalmology-drugs-practical-pdf</td></tr>
+<tr><td class="num wv wv3">97</td><td class="post">Studying While On Call: A Realistic System for Ophthalmology Residents</td><td class="kw">how to study during residency</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/resources</td></tr>
+<tr><td class="num wv wv3">98</td><td class="post">Exam Anxiety and Burnout in Residency: Practical Countermeasures</td><td class="kw">medical exam anxiety</td><td class="num vol">600-1100</td><td><span class="chip c-med">Medium</span></td><td class="fn">TOFU</td><td class="kw dim">/resources</td></tr>
+<tr><td class="num wv wv3">99</td><td class="post">What to Do in the Last 7 Days Before an Ophthalmology Exam</td><td class="kw">last minute exam preparation</td><td class="num vol">400-800</td><td><span class="chip c-low">Low</span></td><td class="fn">MOFU</td><td class="kw dim">/notes</td></tr>
+<tr><td class="num wv wv3">100</td><td class="post">First-Year Ophthalmology Resident Survival Guide</td><td class="kw">first year ophthalmology residency</td><td class="num vol">500-900</td><td><span class="chip c-low">Low</span></td><td class="fn">TOFU</td><td class="kw dim">/about</td></tr>
+</tbody></table></div>
+</section>
+
+<footer>
+  <p><strong>On the volume figures.</strong> No keyword API is connected to this workspace, so every estimate is a banded read from SERP structure and niche sizing — treat the bands as relative ordering, not absolutes. Connecting DataForSEO replaces all 100 with measured volume, difficulty and SERP-feature data.</p>
+  <p><strong>Publishing note.</strong> The blog on ophthamcq.org is fed by the theStacc API and the key is currently revoked, so a rebuild ships zero posts. That has to be fixed before post 1 goes live.</p>
+</footer>
+</div>

@@ -1,0 +1,164 @@
+n,group,idea,target_keyword,volume,kd,evidence,link_to
+1,Acronyms,"FICO Full Form: What FICO Means in Ophthalmology and Who Can Sit It",fico full form,3600,23,"MEASURED — icoph.org ranks #3; you rank nowhere with a dedicated page",/exams/ico-fico
+2,Acronyms,"ICO Full Form and What the International Council of Ophthalmology Actually Does",ico full form,2400,57,"MEASURED — icoph.org #5; high KD, long game",/exams/ico-fico
+3,Acronyms,"FICO Full Form in Medical: The Exam, Not the Credit Score",fico full form in medical,590,10,"MEASURED — icoph #1; KD 10, you can take this",/exams/ico-fico
+4,Acronyms,"FAICO Full Form in Medical and How the Fellowship Works",faico full form in medical,260,10,"MEASURED — you already rank #4–9 across 5 URLs (cannibalised)",/exams/faico
+5,Acronyms,"FAICO Full Form: Fellowship of All India Ophthalmological Society",faico full form,110,9,"MEASURED — you hold 8 competing URLs for this one term",/exams/faico
+6,Acronyms,"FICO Full Form in Ophthalmology",fico full form in ophthalmology,110,8,"MEASURED — icoph #1, you hold 8 competing URLs",/exams/ico-fico
+7,Acronyms,"FAICO Ophthalmology: What the Qualification Is Worth",faico ophthalmology,110,10,"MEASURED — aios.org #1, you #4",/exams/faico
+8,Acronyms,"AIOS Full Form and What Membership Gets You",aios full form,320,23,"MEASURED — aios.org #1",/exams/faico
+9,Acronyms,"AIOC Full Form: The AIOS Annual Conference Explained",aioc full form,170,24,"MEASURED — aios.org ranks",/exams/faico
+10,Acronyms,"OKAT Full Form and How the AIOS Assessment Test Works",okat,1300,25,"MEASURED — aios.org #2; your nav says OKAT/MAICO but you have no page",/exams
+11,Acronyms,"IJO: Indian Journal of Ophthalmology — Scope, Submission, Access",ijo,3600,20,"MEASURED — aios.org #2 (468 clicks/mo, their single biggest page)",/resources
+12,Acronyms,"OPH / Ophth Abbreviations Used in Exam Papers",oph full form,390,18,"MEASURED — icoph ranks #15",/glossary
+13,Eponyms,"Fincham Test: Technique, Interpretation and Exam Answer",fincham test,1900,19,"MEASURED — your rings-dots page ranks #38 unoptimised. Biggest single miss on the site",/products/rings-dots-lines-spots-guide
+14,Eponyms,"Mittendorf Dot: Origin, Appearance and Differentials",mittendorf dot,880,19,"MEASURED — your rings-dots page ranks #31 unoptimised",/products/rings-dots-lines-spots-guide
+15,Eponyms,"Coats White Ring: What It Is and Why It's Asked",coats white ring,210,19,"MEASURED — you rank #18; hiseyeness also ranks",/products/rings-dots-lines-spots-guide
+16,Eponyms,"Bull's Eye Maculopathy: Complete Differential",bull's eye maculopathy,390,17,"MEASURED — eyedocs.co.uk ranks #3",/topics/retina
+17,Eponyms,"Keratic Precipitates: Types, Distribution and What Each Suggests",keratic precipitates,480,26,"MEASURED — eyedocs #9",/topics/uveitis
+18,Eponyms,"Megalocornea: Definition, Associations and Differentials",megalocornea,1900,38,"MEASURED — eyedocs #3 (45 clicks/mo)",/topics/cornea
+19,Eponyms,"Fuchs Heterochromic Iridocyclitis: Signs and Cataract Surgery Pitfalls",fuchs heterochromic,260,28,"MEASURED — eyedocs ranks",/topics/uveitis
+20,Eponyms,"Kayser-Fleischer Ring: Where to Look and What It Means",kayser fleischer ring,—,—,"Sibling of the proven rings-dots cluster",/topics/cornea
+21,Eponyms,"Fleischer Ring and the Keratoconus Sign Set",fleischer ring,—,—,"Sibling",/topics/cornea
+22,Eponyms,"Vossius Ring: Trauma Sign You Must Not Miss",vossius ring,—,—,"Sibling",/topics/cataract
+23,Eponyms,"Weiss Ring and Posterior Vitreous Detachment",weiss ring,—,—,"Sibling",/topics/retina
+24,Eponyms,"Krukenberg Spindle: Pigment Dispersion Explained",krukenberg spindle,—,—,"Sibling",/topics/glaucoma
+25,Eponyms,"Hudson-Stahli Line, Ferry Line, Stocker Line: Iron Lines Compared",corneal iron lines,—,—,"Sibling — one page covering the whole set",/topics/cornea
+26,Eponyms,"Sampaolesi Line and Gonioscopic Pigment Signs",sampaolesi line,—,—,"Sibling",/topics/glaucoma
+27,Eponyms,"Khodadoust Line and Graft Rejection Signs",khodadoust line,—,—,"Sibling",/topics/cornea
+28,Eponyms,"Arlt's Line and the Trachoma Sign Sequence",arlt line trachoma,—,—,"Sibling",/topics/cornea
+29,Eponyms,"Horner-Trantas Dots in Vernal Keratoconjunctivitis",horner trantas dots,—,—,"Sibling",/topics/cornea
+30,Eponyms,"Bitot's Spots and the Vitamin A Deficiency Grading",bitot spots,—,—,"Sibling",/topics/cornea
+31,Eponyms,"Roth Spots: The Full Differential Beyond Endocarditis",roth spots,—,—,"Sibling",/topics/retina
+32,Eponyms,"Elschnig Spots and Siegrist Streaks in Hypertensive Choroidopathy",elschnig spots,—,—,"Sibling",/topics/retina
+33,Eponyms,"Dalen-Fuchs Nodules and Sympathetic Ophthalmia",dalen fuchs nodules,—,—,"Sibling",/topics/uveitis
+34,Eponyms,"Koeppe vs Busacca Nodules: Telling Them Apart",koeppe busacca nodules,—,—,"Sibling",/topics/uveitis
+35,Eponyms,"Lisch Nodules and Neurofibromatosis in the Eye",lisch nodules,—,—,"Sibling",/topics/neuro-ophthalmology
+36,Eponyms,"Brushfield Spots and Ocular Signs of Down Syndrome",brushfield spots,—,—,"Sibling",/topics/pediatric-ophthalmology
+37,Eponyms,"Cherry-Red Spot: Six Causes and How to Separate Them",cherry red spot,—,—,"Sibling",/topics/retina
+38,Eponyms,"Cotton Wool Spots vs Hard Exudates vs Drusen",cotton wool spots,—,—,"Sibling",/topics/retina
+39,Eponyms,"Salt-and-Pepper Fundus: Causes and Exam Framing",salt and pepper fundus,—,—,"Sibling",/topics/retina
+40,Eponyms,"Leopard Spot Fundus and Its Differentials",leopard spot fundus,—,—,"Sibling",/topics/retina
+41,Eponyms,"Silver Wiring and Copper Wiring in Hypertensive Retinopathy",copper wiring retina,—,—,"Sibling",/topics/retina
+42,Eponyms,"Sea-Fan Neovascularisation in Sickle Retinopathy",sea fan neovascularization,—,—,"Sibling",/topics/retina
+43,Eponyms,"Vogt's Limbal Girdle and Age-Related Corneal Changes",vogt limbal girdle,—,—,"Sibling",/topics/cornea
+44,Eponyms,"Haab's Striae vs Descemet's Tears in Trauma",haab striae,—,—,"Sibling",/topics/pediatric-ophthalmology
+45,Eponyms,"Vogt's Striae, Munson's Sign, Rizzuti's Sign: The Keratoconus Set",keratoconus signs,—,—,"Sibling",/topics/cornea
+46,Eponyms,"Snowballs, Snowbanking and Pars Planitis Signs",snowbanking uveitis,—,—,"Sibling",/topics/uveitis
+47,Eponyms,"Candle-Wax Drippings and Sarcoid Ocular Signs",candle wax drippings,—,—,"Sibling",/topics/uveitis
+48,Tests,"Schirmer Test: Types, Values and the Viva Answer",schirmer test,1900,26,"MEASURED — eyedocs #2, 123 clicks/mo, their #1 clinical page",/osce
+49,Tests,"How to Use a Focimeter, Step by Step",focimeter,320,12,"MEASURED — eyedocs ranks #1 with 42 clicks/mo at KD 12",/products/optics-notes
+50,Tests,"Direct Ophthalmoscopy: Technique, Optics and Viva Questions",fundoscopy ophthalmoscopy,2400,31,"MEASURED — eyedocs #10",/osce
+51,Tests,"Barrett Toric Calculator: How to Use It and When It Beats SRK/T",barrett toric calculator,8100,24,"MEASURED — aios proceedings page ranks #16 on an 8.1K term. Largest unclaimed volume in the whole dataset",/topics/cataract
+52,Tests,"Autorefractometer Results: How to Read and Why Retinoscopy Still Wins",auto refractometer results,210,31,"MEASURED — aios proceedings #5",/products/optics-notes
+53,Tests,"IVMP: Intravenous Methylprednisolone Protocols in Ophthalmology",ivmp,210,21,"MEASURED — aios proceedings ranks",/topics/neuro-ophthalmology
+54,Tests,"Seidel Test: Technique and Interpretation",seidel test,—,—,"Sibling of proven Schirmer/focimeter format",/osce
+55,Tests,"Jones Dye Test I and II Explained",jones dye test,—,—,"Sibling",/topics/oculoplastics
+56,Tests,"Syringing and Probing: Practical Technique and Viva",lacrimal syringing,—,—,"Sibling",/osce
+57,Tests,"Gonioscopy Grading: Shaffer vs Spaeth vs Van Herick",gonioscopy grading,—,—,"Sibling",/topics/glaucoma
+58,Tests,"Hirschberg and Krimsky Tests: Estimating Deviation",hirschberg test,—,—,"Sibling",/topics/pediatric-ophthalmology
+59,Tests,"Prism Bar Cover Test: How to Perform and Record",prism cover test,—,—,"Sibling",/osce
+60,Tests,"Worth Four-Dot Test: Interpretation Table",worth four dot test,—,—,"Sibling",/topics/pediatric-ophthalmology
+61,Tests,"Maddox Rod and Double Maddox Rod Testing",maddox rod test,—,—,"Sibling",/topics/pediatric-ophthalmology
+62,Tests,"Bagolini Striated Glasses and Sensory Testing",bagolini striated glasses,—,—,"Sibling",/topics/pediatric-ophthalmology
+63,Tests,"Swinging Flashlight Test and Grading an RAPD",rapd test,—,—,"Sibling",/topics/neuro-ophthalmology
+64,Tests,"Amsler Grid: Administration and Patterns",amsler grid,—,—,"Sibling",/topics/retina
+65,Tests,"Tonometry Compared: Goldmann, iCare, NCT, Perkins, Tono-Pen",types of tonometry,—,—,"Sibling",/topics/glaucoma
+66,Tests,"Pachymetry and Corneal Thickness Correction Factors",pachymetry,—,—,"Sibling",/topics/glaucoma
+67,Tests,"Keratometry: Principles, Javal-Schiotz vs Bausch-Lomb",keratometry principle,—,—,"Sibling",/products/optics-notes
+68,Tests,"A-Scan vs B-Scan Biometry: Indications and Errors",a scan b scan ophthalmology,—,—,"Sibling",/topics/cataract
+69,Tests,"ERG, EOG and VEP: Waveforms and What Each Localises",erg eog vep,—,—,"Sibling",/topics/retina
+70,Tests,"Corneal Topography vs Tomography: Reading the Maps",corneal topography interpretation,—,—,"Sibling",/topics/cornea
+71,Tests,"Specular Microscopy and Endothelial Cell Counts",specular microscopy,—,—,"Sibling",/topics/cornea
+72,Tests,"Tear Break-Up Time, Rose Bengal and Lissamine Green",tear break up time,—,—,"Sibling of proven Schirmer page",/topics/cornea
+73,Tests,"Retinoscopy: Neutralisation, Working Distance and Common Errors",retinoscopy technique,—,—,"Sibling",/products/optics-notes
+74,Tests,"Perimetry: Reading a Humphrey Printout Out Loud",visual field interpretation,—,—,"Sibling",/products/read-ophthalmology-reports-tests
+75,Tests,"OCT Interpretation: Ten Scans You Must Recognise",oct interpretation,—,—,"Sibling",/products/read-ophthalmology-reports-tests
+76,Tests,"FFA Phases and Classic Angiographic Patterns",ffa interpretation,—,—,"Sibling",/products/read-ophthalmology-reports-tests
+77,Tests,"Exophthalmometry: Hertel Technique and Normal Values",hertel exophthalmometer,—,—,"Sibling",/topics/oculoplastics
+78,Tests,"Slit Lamp Illumination Techniques: All Seven, With Uses",slit lamp illumination techniques,—,—,"Sibling",/osce
+79,Tests,"Applanation Tonometry Sources of Error",applanation tonometry error,—,—,"Sibling",/topics/glaucoma
+80,Tests,"Colour Vision Testing: Ishihara, Farnsworth, City University",colour vision test ophthalmology,—,—,"Sibling",/osce
+81,Tests,"Contrast Sensitivity and Glare Testing",contrast sensitivity testing,—,—,"Sibling",/products/optics-notes
+82,Tests,"Corneal Sensation Testing and Cochet-Bonnet Aesthesiometer",corneal sensation test,—,—,"Sibling",/topics/cornea
+83,Classifications,"Betts Classification of Ocular Trauma (BETTS) Explained",betts classification,320,14,"MEASURED — aios proceedings #3 at KD 14",/topics/cornea
+84,Classifications,"Uveitis Classification: The SUN Working Group Criteria",uveitis classification,210,36,"MEASURED — aios PDF ranks",/topics/uveitis
+85,Classifications,"Blindness Categories: WHO and ICD-10/ICD-11 Coding",blindness icd 10,320,32,"MEASURED — icoph.org ranks",/glossary
+86,Classifications,"ETDRS vs ICDR Diabetic Retinopathy Grading Side by Side",diabetic retinopathy classification,—,—,"Sibling of proven classification format",/topics/retina
+87,Classifications,"ICROP 3: Current ROP Classification and Screening Criteria",icrop 3 classification,—,—,"Sibling",/topics/pediatric-ophthalmology
+88,Classifications,"LOCS III Cataract Grading With Images",locs iii grading,—,—,"Sibling",/topics/cataract
+89,Classifications,"IC3D Corneal Dystrophy Classification",ic3d classification,—,—,"Sibling",/topics/cornea
+90,Classifications,"Amsler-Krumeich Keratoconus Grading",amsler krumeich classification,—,—,"Sibling",/topics/cornea
+91,Classifications,"Chandler Classification of Orbital Cellulitis",chandler classification,—,—,"Sibling",/topics/oculoplastics
+92,Classifications,"PVR Classification and Retinal Detachment Grading",pvr classification,—,—,"Sibling",/topics/retina
+93,Classifications,"Thyroid Eye Disease: NOSPECS, VISA and EUGOGO Compared",nospecs classification,—,—,"Sibling",/topics/oculoplastics
+94,Classifications,"Hyphema Grading and Management Thresholds",hyphema grading,—,—,"Sibling",/topics/cornea
+95,Classifications,"Angle Recession and Post-Traumatic Glaucoma Grading",angle recession glaucoma,—,—,"Sibling",/topics/glaucoma
+96,Classifications,"Snellen vs LogMAR: Conversion Table and Why It Matters",logmar conversion,—,—,"Sibling",/products/optics-notes
+97,Classifications,"Foster Classification of Angle Closure Disease",foster classification glaucoma,—,—,"Sibling",/topics/glaucoma
+98,Classifications,"Retinoblastoma Grouping: ICRB and Reese-Ellsworth",icrb classification,—,—,"Sibling",/topics/pediatric-ophthalmology
+99,Classifications,"Corneal Ulcer Grading and When to Culture",corneal ulcer grading,—,—,"Sibling",/topics/cornea
+100,Classifications,"Ptosis Severity Grading and Levator Function Scale",ptosis grading,—,—,"Sibling",/topics/oculoplastics
+101,Classifications,"Strabismus Classification: Comitant vs Incomitant",strabismus classification,—,—,"Sibling",/topics/pediatric-ophthalmology
+102,Classifications,"Glaucoma Staging: HAP, GSS and Visual Field Severity",glaucoma staging system,—,—,"Sibling",/topics/glaucoma
+103,Fellowships,"Ophthalmology Fellowships in India: Complete Directory by Subspecialty",fellowship in ophthalmology in india,210,11,"MEASURED — aios.org #1 at KD 11. Eyedocs' whole traffic model is directory pages",/exams/fellowship
+104,Fellowships,"Ophthalmology Fellowships Worldwide: Routes and Eligibility",ophthalmology fellowships,590,25,"MEASURED — icoph.org #1, 76 clicks/mo",/exams/fellowship
+105,Fellowships,"Cornea Fellowship in India: Institutes, Duration, Stipend",cornea fellowship in india,140,6,"MEASURED — aios #4 at KD 6. Lowest-difficulty term in the entire export",/exams/fellowship
+106,Fellowships,"Medical Retina Fellowship: Where to Apply and What It Covers",medical retina fellowship,170,8,"MEASURED — aios #4 at KD 8",/exams/fellowship
+107,Fellowships,"Phaco and Refractive Fellowships in India",phaco refractive fellowship in india,140,9,"MEASURED — aios ranks",/exams/fellowship
+108,Fellowships,"Short-Term Fellowships in Ophthalmology: The Realistic Options",short term fellowship in ophthalmology,170,7,"MEASURED — aios #3 at KD 7",/exams/fellowship
+109,Fellowships,"Ophthalmologist Jobs in India: Where Vacancies Are Actually Posted",ophthalmologist jobs in india,140,17,"MEASURED — aios #7",/about
+110,Fellowships,"ICO Fellowship: How to Apply and What It Funds",ico fellowship,—,—,"Sibling — icoph ranks for international fellow (260)",/exams/ico-fico
+111,Fellowships,"Vitreoretinal Surgery Fellowship in India: Institute Directory",vitreoretinal fellowship india,—,—,"Sibling of proven cornea/retina fellowship pages",/exams/fellowship
+112,Fellowships,"Glaucoma Fellowship in India: Institutes and Selection",glaucoma fellowship india,—,—,"Sibling",/exams/fellowship
+113,Fellowships,"Oculoplasty Fellowship in India",oculoplasty fellowship india,—,—,"Sibling",/exams/fellowship
+114,Fellowships,"Paediatric Ophthalmology and Squint Fellowship in India",pediatric ophthalmology fellowship india,—,—,"Sibling",/exams/fellowship
+115,Fellowships,"Uveitis Fellowship in India",uveitis fellowship india,—,—,"Sibling",/exams/fellowship
+116,Fellowships,"Neuro-Ophthalmology Fellowship in India",neuro ophthalmology fellowship india,—,—,"Sibling",/exams/fellowship
+117,Fellowships,"Cataract and IOL Fellowship: Short Courses Compared",cataract fellowship india,—,—,"Sibling",/exams/fellowship
+118,Fellowships,"LVPEI Fellowships: Programmes, Eligibility, Application Window",lvpei fellowship,—,—,"Institute page — the Eyedocs hospital-directory model, Indian version",/exams/fellowship
+119,Fellowships,"Sankara Nethralaya Fellowships: Complete Guide",sankara nethralaya fellowship,—,—,"Institute page",/exams/fellowship
+120,Fellowships,"Aravind Eye Hospital Fellowships and Training",aravind fellowship,—,—,"Institute page",/exams/fellowship
+121,Fellowships,"AIIMS Dr R P Centre: Residency and Fellowship Routes",rp centre aiims ophthalmology,—,—,"Institute page",/exams/fellowship
+122,Fellowships,"PGIMER Chandigarh Ophthalmology: Training Overview",pgimer ophthalmology,—,—,"Institute page",/exams/fellowship
+123,Fellowships,"Narayana Nethralaya Fellowships",narayana nethralaya fellowship,—,—,"Institute page",/exams/fellowship
+124,Fellowships,"Dr Agarwal's Eye Hospital Fellowships",dr agarwals fellowship,—,—,"Institute page",/exams/fellowship
+125,Fellowships,"Sankara Eye Foundation Fellowship Programmes",sankara eye fellowship,—,—,"Institute page",/exams/fellowship
+126,Fellowships,"MM Joshi Eye Institute Fellowships",mm joshi eye institute fellowship,—,—,"Institute page",/exams/fellowship
+127,Fellowships,"Regional Institutes of Ophthalmology: State-by-State List",regional institute of ophthalmology,—,—,"Directory page",/exams/fellowship
+128,Fellowships,"FNB Ophthalmology: Specialities, Seats and How It Differs From FAICO",fnb ophthalmology,—,—,"Sibling — PrepGuidance owns this space",/exams/fellowship
+129,Fellowships,"NBE Fellowship vs University Fellowship vs FAICO: Which Counts Where",ophthalmology fellowship comparison india,—,—,"Sibling",/exams/fellowship
+130,Fellowships,"Ophthalmology Training in the UK for Overseas Graduates",ophthalmology training uk overseas,—,—,"Sibling",/exams/frcophth
+131,Fellowships,"Stipends and Duration Compared Across Indian Ophthalmology Fellowships",ophthalmology fellowship stipend india,—,—,"Directory-style comparison table",/exams/fellowship
+132,Fellowships,"Ophthalmology Fellowship Application Calendar (Rolling Dates)",ophthalmology fellowship application dates,—,—,"Evergreen page updated per cycle",/exams/fellowship
+133,Exam Entities,"OKAT Exam Guide: Pattern, Syllabus, Dates",okat exam,1300,25,"MEASURED — aios #2. Your nav advertises OKAT/MAICO with no page behind it",/exams
+134,Exam Entities,"ICO Exam: All Parts, Fees, Centres and Dates",ico exam,320,16,"MEASURED — icoph #1 (256 clicks/mo)",/exams/ico-fico
+135,Exam Entities,"FICO Exam: Advanced ICO Explained",fico exam,140,16,"MEASURED — icoph #1; you rank #27 on a query-param URL",/exams/ico-fico
+136,Exam Entities,"Duke-Elder Exam: Format and Preparation",duke elder exam,320,9,"MEASURED — eyedocs #4 at KD 9",/exams
+137,Exam Entities,"DNB Ophthalmology: Complete Exam Guide",dnb ophthalmology,880,13,"MEASURED — you rank #17 on a product page. Needs a real guide page",/exams/dnb
+138,Exam Entities,"DNB Ophthalmology Question Papers: Year-Wise Topic Analysis",dnb ophthalmology question papers,140,18,"MEASURED — you rank #25",/products/dnb-do-past-5-year-papers
+139,Exam Entities,"Ophthalmology MCQ: Free Practice Sets by Topic",ophthalmology mcq,390,11,"MEASURED — you rank #5. Closest thing you have to a winnable #1",/free-mcqs
+140,Exam Entities,"MAICO Assessment: What It Is and How It Relates to OKAT",maico aios,—,—,"Sibling — your nav names it, nothing ranks",/exams
+141,Exam Entities,"FAICO Exam Pattern 2026: MCQ and OSCE Structure",faico exam pattern,—,—,"You have post 44 on .com already — consolidate, don't duplicate",/exams/faico
+142,Exam Entities,"Is FAICO Worth It? Honest Career-Value Assessment",is faico worth it,—,—,"You have post 45 on .com — consolidate",/exams/faico
+143,Exam Entities,"Ophthalmology Foundation Exam vs ICO: Which to Choose",ophthalmology foundation vs ico,—,—,"You have posts 48 and 52 on .com — consolidate",/exams
+144,Exam Entities,"PD-CET: Pattern, Cut-offs and Seat Matrix",pdcet ophthalmology,—,—,"No competitor owns this. Wide open",/exams/pd-cet
+145,Basic Sciences,"Layers of the Eye: All Three Coats, Exam-Level Detail",layers of the eye,5400,45,"MEASURED — hiseyeness #5, 216 clicks/mo. High KD, lay-intent SERP",/products/anatomy-notes
+146,Basic Sciences,"Aqueous vs Vitreous Humour: Composition, Flow, Clinical Relevance",aqueous humor and vitreous humor,1300,25,"MEASURED — hiseyeness #3 at KD 25. Best risk/reward in this group",/products/anatomy-notes
+147,Basic Sciences,"Aqueous Humour: Production, Drainage and Why It Matters in Glaucoma",aqueous humor function,1600,54,"MEASURED — hiseyeness #2",/topics/glaucoma
+148,Basic Sciences,"Vitreous Humour: Structure, Ageing and Surgical Relevance",vitreous humor function,1000,46,"MEASURED — hiseyeness #6",/topics/retina
+149,Basic Sciences,"Outermost Layer of the Eye: Cornea and Sclera in Detail",outermost layer of eye,880,40,"MEASURED — hiseyeness #1",/products/anatomy-notes
+150,Basic Sciences,"Asthenopia: Causes, Workup and Management",asthenopia,3600,44,"MEASURED — hiseyeness #15 only. Weakly defended",/products/optics-notes
+151,Basic Sciences,"Eyelid Anatomy and Function: Layer by Layer",eyelid function,720,54,"MEASURED — hiseyeness #15",/products/eyelids-notes
+152,Basic Sciences,"Refractive Indices of the Ocular Media (and Every Optics Constant)",refractive index of aqueous humour,170,29,"MEASURED — hiseyeness #7",/products/optics-notes
+153,Basic Sciences,"Middle Layer of the Eye: The Uveal Tract",middle layer of the eye,390,21,"MEASURED — hiseyeness #3 at KD 21",/topics/uveitis
+154,Basic Sciences,"Extraocular Muscles: Origins, Insertions, Actions, Innervation",extraocular muscles anatomy,—,—,"Sibling of proven anatomy format",/products/anatomy-notes
+155,Basic Sciences,"Orbital Anatomy: Walls, Foramina and Their Contents",orbit anatomy ophthalmology,—,—,"Sibling",/products/anatomy-notes
+156,Basic Sciences,"Visual Pathway: Lesion-by-Lesion Field Defects",visual pathway lesions,—,—,"Sibling",/topics/neuro-ophthalmology
+157,Basic Sciences,"Retinal Layers: All Ten, With OCT Correlation",retinal layers,—,—,"Sibling",/topics/retina
+158,Basic Sciences,"Corneal Layers and the Physiology of Transparency",corneal layers,—,—,"Sibling",/topics/cornea
+159,Basic Sciences,"Blood Supply of the Eye and Ocular Circulation",blood supply of eye,—,—,"Sibling",/products/anatomy-notes
+160,Basic Sciences,"Lacrimal Apparatus: Anatomy and Tear Film Physiology",lacrimal apparatus anatomy,—,—,"Sibling",/topics/oculoplastics
+161,Basic Sciences,"Accommodation and Presbyopia: Mechanism and Numbers",accommodation mechanism eye,—,—,"Sibling",/products/optics-notes
+162,Basic Sciences,"Photoreceptors and Phototransduction Cascade",phototransduction,—,—,"Sibling",/topics/retina
+163,Basic Sciences,"Cranial Nerves in Ophthalmology: III, IV, VI and Their Palsies",cranial nerve palsy eye,—,—,"Sibling",/topics/neuro-ophthalmology

@@ -1,0 +1,364 @@
+<title>The Eponym Goldmine</title>
+<style>
+:root {
+  --ground: #F6F7F8; --panel: #FFFFFF; --ink: #12181D; --ink-2: #4A555E; --ink-3: #7A868F;
+  --rule: #DCE1E5; --rule-soft: #E9EDEF;
+  --accent: #14528C; --accent-soft: #E7EEF6;
+  --spark: #6E7B12; --spark-soft: #EFF2DC;
+  --alert: #8C2F2F; --alert-soft: #F7E9E9;
+  --shadow: 0 1px 2px rgba(18,24,29,.06), 0 8px 24px -16px rgba(18,24,29,.28);
+  --display: ui-serif, Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0D1216; --panel: #141B21; --ink: #E9EDF0; --ink-2: #A6B2BB; --ink-3: #78858E;
+    --rule: #26313A; --rule-soft: #1D262D;
+    --accent: #74A8DC; --accent-soft: #17293B;
+    --spark: #B9C750; --spark-soft: #232916;
+    --alert: #E08585; --alert-soft: #2E1B1B;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0D1216; --panel: #141B21; --ink: #E9EDF0; --ink-2: #A6B2BB; --ink-3: #78858E;
+  --rule: #26313A; --rule-soft: #1D262D; --accent: #74A8DC; --accent-soft: #17293B;
+  --spark: #B9C750; --spark-soft: #232916; --alert: #E08585; --alert-soft: #2E1B1B;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--body);
+  font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 44px; }
+header { display: flex; flex-direction: column; gap: 14px; border-bottom: 2px solid var(--ink); padding-bottom: 24px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4.6vw, 46px); line-height: 1.08;
+  margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+.lede { margin: 0; max-width: 64ch; color: var(--ink-2); font-size: 17px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+.stat { background: var(--panel); padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.stat b { font-family: var(--display); font-size: 28px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; }
+.stat span { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.finding { background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--alert);
+  border-radius: 3px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow); }
+.finding h2 { margin: 0; font-family: var(--display); font-size: 22px; font-weight: 600; }
+.finding p { margin: 0; color: var(--ink-2); font-size: 15px; max-width: 76ch; }
+h2 { font-family: var(--display); font-size: 25px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+.cluster { display: flex; flex-direction: column; gap: 12px; }
+.chead { display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  flex-wrap: wrap; border-bottom: 1px solid var(--ink); padding-bottom: 8px; }
+.count { margin: 0; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+.note { margin: 0; max-width: 82ch; color: var(--ink-2); font-size: 15px; }
+.scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--panel); box-shadow: var(--shadow); }
+table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 14px; }
+.narrow table { min-width: 480px; }
+th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3); font-weight: 500; padding: 10px 12px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+td { padding: 9px 12px; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.idx { font-family: var(--mono); font-size: 12px; width: 44px; color: var(--ink-3); border-left: 3px solid transparent; }
+.r-m .idx { border-left-color: var(--accent); color: var(--accent); }
+.r-you { background: var(--alert-soft); }
+.post { min-width: 280px; }
+.kw { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); }
+.dim { color: var(--ink-3); }
+.vol { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); }
+.ev { color: var(--ink-3); font-size: 13px; min-width: 260px; }
+.chip { display: inline-block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .04em;
+  padding: 1px 6px; border-radius: 2px; white-space: nowrap; margin-right: 4px; }
+.c-m { background: var(--accent-soft); color: var(--accent); }
+.c-s { background: var(--spark-soft); color: var(--spark); }
+.dupe { display: inline-block; font-family: var(--mono); font-size: 12px; background: var(--alert-soft);
+  color: var(--alert); padding: 1px 8px; border-radius: 2px; }
+footer { border-top: 1px solid var(--rule); padding-top: 20px; color: var(--ink-3); font-size: 14px;
+  max-width: 76ch; display: flex; flex-direction: column; gap: 10px; }
+footer strong { color: var(--ink-2); font-weight: 600; }
+@media (max-width: 620px) { .wrap { padding: 36px 16px 64px; } }
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">OphthaMCQ · content ideas derived from ranked-keyword data</p>
+  <h1>Your best-performing page is a product PDF nobody wrote for search</h1>
+  <p class="lede">163 content ideas, every one traced to a keyword that something in the export already ranks for — yours, or a competitor's. The measured ones carry real volume and difficulty from your data. The inferred ones are siblings of a format that has already been proven to rank in this niche.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>163</b><span>ideas</span></div>
+  <div class="stat"><b>51</b><span>with measured volume</span></div>
+  <div class="stat"><b>53k</b><span>measured vol/mo</span></div>
+  <div class="stat"><b>77</b><span>your current visits/mo</span></div>
+  <div class="stat"><b>39</b><span>duplicate URLs on 6 terms</span></div>
+</div>
+
+<section class="finding">
+  <h2>Before anything is published: six terms, thirty-nine competing URLs</h2>
+  <p>You are not losing to competitors on these queries. You are losing to yourself. Eight of your own URLs fight for <span class="kw">fico ophthalmology</span>; seven fight for <span class="kw">faico full form</span>. Google is picking a different page each time and none of them accumulate authority. The <span class="kw">?page=0</span> parameter and the www / non-www split multiply it further. Consolidate to one canonical page per term first — that alone should move existing positions without a single new post.</p>
+  <div class="scroll narrow"><table>
+    <thead><tr><th>Term</th><th class="num">Volume</th><th class="num">Your competing URLs</th></tr></thead>
+    <tbody><tr><td class="kw">faico full form</td><td class="num vol">110</td><td class="num"><span class="dupe">7</span></td></tr>
+<tr><td class="kw">fico ophthalmology</td><td class="num vol">590</td><td class="num"><span class="dupe">8</span></td></tr>
+<tr><td class="kw">fico full form in ophthalmology</td><td class="num vol">110</td><td class="num"><span class="dupe">8</span></td></tr>
+<tr><td class="kw">faico ophthalmology</td><td class="num vol">110</td><td class="num"><span class="dupe">6</span></td></tr>
+<tr><td class="kw">faico full form in medical</td><td class="num vol">260</td><td class="num"><span class="dupe">5</span></td></tr>
+<tr><td class="kw">aios faico</td><td class="num vol">110</td><td class="num"><span class="dupe">5</span></td></tr></tbody>
+  </table></div>
+</section>
+
+<section class="cluster">
+  <div class="chead"><h2>What each site in the export actually lives on</h2>
+  <p class="count">monthly organic visits, derived from the traffic % column</p></div>
+  <div class="scroll narrow"><table>
+    <thead><tr><th>Domain</th><th class="num">Visits/mo</th><th>Traffic engine</th></tr></thead>
+    <tbody><tr class="r-you"><td class="kw">ophthamcq.com</td><td class="num vol">77</td><td class="ev">Everything comes from FAICO. One theme, six competing URLs each.</td></tr>
+<tr class=""><td class="kw">icoph.org</td><td class="num vol">3,440</td><td class="ev">Owns every ICO/FICO definition query from four institutional pages.</td></tr>
+<tr class=""><td class="kw">aios.org</td><td class="num vol">3,372</td><td class="ev">IJO journal page alone pulls 468/mo. Fellowship directory at KD 6–11.</td></tr>
+<tr class=""><td class="kw">eyedocs.co.uk</td><td class="num vol">2,867</td><td class="ev">Hospital directory + one clinical concept per page. No sitemap, no llms.txt.</td></tr>
+<tr class=""><td class="kw">hiseyeness.com</td><td class="num vol">2,590</td><td class="ev">Nine anatomy pages. Pure basic-science explainers.</td></tr></tbody>
+  </table></div>
+  <p class="note">Not one of these four competitors gets its traffic from exam-prep marketing copy. Two run directories, one runs single-concept clinical articles, one runs anatomy explainers. All four are formats you can build, and three of them sit directly on top of products you already sell.</p>
+</section>
+
+
+<section class="cluster">
+  <div class="chead">
+    <div><h2>Full-form and definition queries</h2></div>
+    <p class="count">12 ideas · 12 with measured volume</p>
+  </div>
+  <p class="note">Twelve terms, all with measured volume, most at KD under 25. icoph.org and aios.org own these with a single institutional page each — no exam-prep site is competing. You already rank on four of them, just from the wrong pages and too many of them. One page per acronym, answer in the first sentence, FAQ schema.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Target keyword</th><th class="num">Vol</th><th class="num">KD</th><th>Evidence</th><th>Links to</th></tr></thead><tbody>
+<tr class="r-m"><td class="num idx">1</td><td class="post">FICO Full Form: What FICO Means in Ophthalmology and Who Can Sit It</td><td class="kw">fico full form</td><td class="num vol">3,600</td><td class="num vol">23</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph.org ranks #3; you rank nowhere with a dedicated page</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr class="r-m"><td class="num idx">2</td><td class="post">ICO Full Form and What the International Council of Ophthalmology Actually Does</td><td class="kw">ico full form</td><td class="num vol">2,400</td><td class="num vol">57</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph.org #5; high KD, long game</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr class="r-m"><td class="num idx">3</td><td class="post">FICO Full Form in Medical: The Exam, Not the Credit Score</td><td class="kw">fico full form in medical</td><td class="num vol">590</td><td class="num vol">10</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph #1; KD 10, you can take this</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr class="r-m"><td class="num idx">4</td><td class="post">FAICO Full Form in Medical and How the Fellowship Works</td><td class="kw">faico full form in medical</td><td class="num vol">260</td><td class="num vol">10</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — you already rank #4–9 across 5 URLs (cannibalised)</td><td class="kw dim">/exams/faico</td></tr>
+<tr class="r-m"><td class="num idx">5</td><td class="post">FAICO Full Form: Fellowship of All India Ophthalmological Society</td><td class="kw">faico full form</td><td class="num vol">110</td><td class="num vol">9</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — you hold 8 competing URLs for this one term</td><td class="kw dim">/exams/faico</td></tr>
+<tr class="r-m"><td class="num idx">6</td><td class="post">FICO Full Form in Ophthalmology</td><td class="kw">fico full form in ophthalmology</td><td class="num vol">110</td><td class="num vol">8</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph #1, you hold 8 competing URLs</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr class="r-m"><td class="num idx">7</td><td class="post">FAICO Ophthalmology: What the Qualification Is Worth</td><td class="kw">faico ophthalmology</td><td class="num vol">110</td><td class="num vol">10</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios.org #1, you #4</td><td class="kw dim">/exams/faico</td></tr>
+<tr class="r-m"><td class="num idx">8</td><td class="post">AIOS Full Form and What Membership Gets You</td><td class="kw">aios full form</td><td class="num vol">320</td><td class="num vol">23</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios.org #1</td><td class="kw dim">/exams/faico</td></tr>
+<tr class="r-m"><td class="num idx">9</td><td class="post">AIOC Full Form: The AIOS Annual Conference Explained</td><td class="kw">aioc full form</td><td class="num vol">170</td><td class="num vol">24</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios.org ranks</td><td class="kw dim">/exams/faico</td></tr>
+<tr class="r-m"><td class="num idx">10</td><td class="post">OKAT Full Form and How the AIOS Assessment Test Works</td><td class="kw">okat</td><td class="num vol">1,300</td><td class="num vol">25</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios.org #2; your nav says OKAT/MAICO but you have no page</td><td class="kw dim">/exams</td></tr>
+<tr class="r-m"><td class="num idx">11</td><td class="post">IJO: Indian Journal of Ophthalmology — Scope, Submission, Access</td><td class="kw">ijo</td><td class="num vol">3,600</td><td class="num vol">20</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios.org #2 (468 clicks/mo, their single biggest page)</td><td class="kw dim">/resources</td></tr>
+<tr class="r-m"><td class="num idx">12</td><td class="post">OPH / Ophth Abbreviations Used in Exam Papers</td><td class="kw">oph full form</td><td class="num vol">390</td><td class="num vol">18</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph ranks #15</td><td class="kw dim">/glossary</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <div><h2>Named signs, rings, spots and lines</h2></div>
+    <p class="count">35 ideas · 7 with measured volume</p>
+  </div>
+  <p class="note">The most important finding in the export. Your Rings, Dots, Lines & Spots product page ranks for fincham test (1,900), mittendorf dot (880) and coats white ring (210) at positions 38, 31 and 18 — with no optimisation, from a page that isn't even an article. Split that one page into a page per sign. This is a format you already have the source material for, and almost nobody defends these terms.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Target keyword</th><th class="num">Vol</th><th class="num">KD</th><th>Evidence</th><th>Links to</th></tr></thead><tbody>
+<tr class="r-m"><td class="num idx">13</td><td class="post">Fincham Test: Technique, Interpretation and Exam Answer</td><td class="kw">fincham test</td><td class="num vol">1,900</td><td class="num vol">19</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — your rings-dots page ranks #38 unoptimised. Biggest single miss on the site</td><td class="kw dim">/products/rings-dots-lines-spots-guide</td></tr>
+<tr class="r-m"><td class="num idx">14</td><td class="post">Mittendorf Dot: Origin, Appearance and Differentials</td><td class="kw">mittendorf dot</td><td class="num vol">880</td><td class="num vol">19</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — your rings-dots page ranks #31 unoptimised</td><td class="kw dim">/products/rings-dots-lines-spots-guide</td></tr>
+<tr class="r-m"><td class="num idx">15</td><td class="post">Coats White Ring: What It Is and Why It&#x27;s Asked</td><td class="kw">coats white ring</td><td class="num vol">210</td><td class="num vol">19</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — you rank #18; hiseyeness also ranks</td><td class="kw dim">/products/rings-dots-lines-spots-guide</td></tr>
+<tr class="r-m"><td class="num idx">16</td><td class="post">Bull&#x27;s Eye Maculopathy: Complete Differential</td><td class="kw">bull&#x27;s eye maculopathy</td><td class="num vol">390</td><td class="num vol">17</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — eyedocs.co.uk ranks #3</td><td class="kw dim">/topics/retina</td></tr>
+<tr class="r-m"><td class="num idx">17</td><td class="post">Keratic Precipitates: Types, Distribution and What Each Suggests</td><td class="kw">keratic precipitates</td><td class="num vol">480</td><td class="num vol">26</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — eyedocs #9</td><td class="kw dim">/topics/uveitis</td></tr>
+<tr class="r-m"><td class="num idx">18</td><td class="post">Megalocornea: Definition, Associations and Differentials</td><td class="kw">megalocornea</td><td class="num vol">1,900</td><td class="num vol">38</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — eyedocs #3 (45 clicks/mo)</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class="r-m"><td class="num idx">19</td><td class="post">Fuchs Heterochromic Iridocyclitis: Signs and Cataract Surgery Pitfalls</td><td class="kw">fuchs heterochromic</td><td class="num vol">260</td><td class="num vol">28</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — eyedocs ranks</td><td class="kw dim">/topics/uveitis</td></tr>
+<tr class=""><td class="num idx">20</td><td class="post">Kayser-Fleischer Ring: Where to Look and What It Means</td><td class="kw">kayser fleischer ring</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling of the proven rings-dots cluster</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">21</td><td class="post">Fleischer Ring and the Keratoconus Sign Set</td><td class="kw">fleischer ring</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">22</td><td class="post">Vossius Ring: Trauma Sign You Must Not Miss</td><td class="kw">vossius ring</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cataract</td></tr>
+<tr class=""><td class="num idx">23</td><td class="post">Weiss Ring and Posterior Vitreous Detachment</td><td class="kw">weiss ring</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">24</td><td class="post">Krukenberg Spindle: Pigment Dispersion Explained</td><td class="kw">krukenberg spindle</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class=""><td class="num idx">25</td><td class="post">Hudson-Stahli Line, Ferry Line, Stocker Line: Iron Lines Compared</td><td class="kw">corneal iron lines</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling — one page covering the whole set</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">26</td><td class="post">Sampaolesi Line and Gonioscopic Pigment Signs</td><td class="kw">sampaolesi line</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class=""><td class="num idx">27</td><td class="post">Khodadoust Line and Graft Rejection Signs</td><td class="kw">khodadoust line</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">28</td><td class="post">Arlt&#x27;s Line and the Trachoma Sign Sequence</td><td class="kw">arlt line trachoma</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">29</td><td class="post">Horner-Trantas Dots in Vernal Keratoconjunctivitis</td><td class="kw">horner trantas dots</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">30</td><td class="post">Bitot&#x27;s Spots and the Vitamin A Deficiency Grading</td><td class="kw">bitot spots</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">31</td><td class="post">Roth Spots: The Full Differential Beyond Endocarditis</td><td class="kw">roth spots</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">32</td><td class="post">Elschnig Spots and Siegrist Streaks in Hypertensive Choroidopathy</td><td class="kw">elschnig spots</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">33</td><td class="post">Dalen-Fuchs Nodules and Sympathetic Ophthalmia</td><td class="kw">dalen fuchs nodules</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/uveitis</td></tr>
+<tr class=""><td class="num idx">34</td><td class="post">Koeppe vs Busacca Nodules: Telling Them Apart</td><td class="kw">koeppe busacca nodules</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/uveitis</td></tr>
+<tr class=""><td class="num idx">35</td><td class="post">Lisch Nodules and Neurofibromatosis in the Eye</td><td class="kw">lisch nodules</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/neuro-ophthalmology</td></tr>
+<tr class=""><td class="num idx">36</td><td class="post">Brushfield Spots and Ocular Signs of Down Syndrome</td><td class="kw">brushfield spots</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">37</td><td class="post">Cherry-Red Spot: Six Causes and How to Separate Them</td><td class="kw">cherry red spot</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">38</td><td class="post">Cotton Wool Spots vs Hard Exudates vs Drusen</td><td class="kw">cotton wool spots</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">39</td><td class="post">Salt-and-Pepper Fundus: Causes and Exam Framing</td><td class="kw">salt and pepper fundus</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">40</td><td class="post">Leopard Spot Fundus and Its Differentials</td><td class="kw">leopard spot fundus</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">41</td><td class="post">Silver Wiring and Copper Wiring in Hypertensive Retinopathy</td><td class="kw">copper wiring retina</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">42</td><td class="post">Sea-Fan Neovascularisation in Sickle Retinopathy</td><td class="kw">sea fan neovascularization</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">43</td><td class="post">Vogt&#x27;s Limbal Girdle and Age-Related Corneal Changes</td><td class="kw">vogt limbal girdle</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">44</td><td class="post">Haab&#x27;s Striae vs Descemet&#x27;s Tears in Trauma</td><td class="kw">haab striae</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">45</td><td class="post">Vogt&#x27;s Striae, Munson&#x27;s Sign, Rizzuti&#x27;s Sign: The Keratoconus Set</td><td class="kw">keratoconus signs</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">46</td><td class="post">Snowballs, Snowbanking and Pars Planitis Signs</td><td class="kw">snowbanking uveitis</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/uveitis</td></tr>
+<tr class=""><td class="num idx">47</td><td class="post">Candle-Wax Drippings and Sarcoid Ocular Signs</td><td class="kw">candle wax drippings</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/uveitis</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <div><h2>Clinical tests, instruments and procedures</h2></div>
+    <p class="count">35 ideas · 6 with measured volume</p>
+  </div>
+  <p class="note">Eyedocs' single best clinical page is schirmer test (1,900, 123 clicks/mo) and their focimeter page ranks #1 at KD 12. This is the proven format in the niche and it maps exactly onto your OSCE and viva products. barrett toric calculator at 8,100 is the largest unclaimed term in the whole dataset — currently held at #16 by a 2017 conference abstract.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Target keyword</th><th class="num">Vol</th><th class="num">KD</th><th>Evidence</th><th>Links to</th></tr></thead><tbody>
+<tr class="r-m"><td class="num idx">48</td><td class="post">Schirmer Test: Types, Values and the Viva Answer</td><td class="kw">schirmer test</td><td class="num vol">1,900</td><td class="num vol">26</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — eyedocs #2, 123 clicks/mo, their #1 clinical page</td><td class="kw dim">/osce</td></tr>
+<tr class="r-m"><td class="num idx">49</td><td class="post">How to Use a Focimeter, Step by Step</td><td class="kw">focimeter</td><td class="num vol">320</td><td class="num vol">12</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — eyedocs ranks #1 with 42 clicks/mo at KD 12</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class="r-m"><td class="num idx">50</td><td class="post">Direct Ophthalmoscopy: Technique, Optics and Viva Questions</td><td class="kw">fundoscopy ophthalmoscopy</td><td class="num vol">2,400</td><td class="num vol">31</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — eyedocs #10</td><td class="kw dim">/osce</td></tr>
+<tr class="r-m"><td class="num idx">51</td><td class="post">Barrett Toric Calculator: How to Use It and When It Beats SRK/T</td><td class="kw">barrett toric calculator</td><td class="num vol">8,100</td><td class="num vol">24</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios proceedings page ranks #16 on an 8.1K term. Largest unclaimed volume in the whole dataset</td><td class="kw dim">/topics/cataract</td></tr>
+<tr class="r-m"><td class="num idx">52</td><td class="post">Autorefractometer Results: How to Read and Why Retinoscopy Still Wins</td><td class="kw">auto refractometer results</td><td class="num vol">210</td><td class="num vol">31</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios proceedings #5</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class="r-m"><td class="num idx">53</td><td class="post">IVMP: Intravenous Methylprednisolone Protocols in Ophthalmology</td><td class="kw">ivmp</td><td class="num vol">210</td><td class="num vol">21</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios proceedings ranks</td><td class="kw dim">/topics/neuro-ophthalmology</td></tr>
+<tr class=""><td class="num idx">54</td><td class="post">Seidel Test: Technique and Interpretation</td><td class="kw">seidel test</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling of proven Schirmer/focimeter format</td><td class="kw dim">/osce</td></tr>
+<tr class=""><td class="num idx">55</td><td class="post">Jones Dye Test I and II Explained</td><td class="kw">jones dye test</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/oculoplastics</td></tr>
+<tr class=""><td class="num idx">56</td><td class="post">Syringing and Probing: Practical Technique and Viva</td><td class="kw">lacrimal syringing</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/osce</td></tr>
+<tr class=""><td class="num idx">57</td><td class="post">Gonioscopy Grading: Shaffer vs Spaeth vs Van Herick</td><td class="kw">gonioscopy grading</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class=""><td class="num idx">58</td><td class="post">Hirschberg and Krimsky Tests: Estimating Deviation</td><td class="kw">hirschberg test</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">59</td><td class="post">Prism Bar Cover Test: How to Perform and Record</td><td class="kw">prism cover test</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/osce</td></tr>
+<tr class=""><td class="num idx">60</td><td class="post">Worth Four-Dot Test: Interpretation Table</td><td class="kw">worth four dot test</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">61</td><td class="post">Maddox Rod and Double Maddox Rod Testing</td><td class="kw">maddox rod test</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">62</td><td class="post">Bagolini Striated Glasses and Sensory Testing</td><td class="kw">bagolini striated glasses</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">63</td><td class="post">Swinging Flashlight Test and Grading an RAPD</td><td class="kw">rapd test</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/neuro-ophthalmology</td></tr>
+<tr class=""><td class="num idx">64</td><td class="post">Amsler Grid: Administration and Patterns</td><td class="kw">amsler grid</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">65</td><td class="post">Tonometry Compared: Goldmann, iCare, NCT, Perkins, Tono-Pen</td><td class="kw">types of tonometry</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class=""><td class="num idx">66</td><td class="post">Pachymetry and Corneal Thickness Correction Factors</td><td class="kw">pachymetry</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class=""><td class="num idx">67</td><td class="post">Keratometry: Principles, Javal-Schiotz vs Bausch-Lomb</td><td class="kw">keratometry principle</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class=""><td class="num idx">68</td><td class="post">A-Scan vs B-Scan Biometry: Indications and Errors</td><td class="kw">a scan b scan ophthalmology</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cataract</td></tr>
+<tr class=""><td class="num idx">69</td><td class="post">ERG, EOG and VEP: Waveforms and What Each Localises</td><td class="kw">erg eog vep</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">70</td><td class="post">Corneal Topography vs Tomography: Reading the Maps</td><td class="kw">corneal topography interpretation</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">71</td><td class="post">Specular Microscopy and Endothelial Cell Counts</td><td class="kw">specular microscopy</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">72</td><td class="post">Tear Break-Up Time, Rose Bengal and Lissamine Green</td><td class="kw">tear break up time</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling of proven Schirmer page</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">73</td><td class="post">Retinoscopy: Neutralisation, Working Distance and Common Errors</td><td class="kw">retinoscopy technique</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class=""><td class="num idx">74</td><td class="post">Perimetry: Reading a Humphrey Printout Out Loud</td><td class="kw">visual field interpretation</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/read-ophthalmology-reports-tests</td></tr>
+<tr class=""><td class="num idx">75</td><td class="post">OCT Interpretation: Ten Scans You Must Recognise</td><td class="kw">oct interpretation</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/read-ophthalmology-reports-tests</td></tr>
+<tr class=""><td class="num idx">76</td><td class="post">FFA Phases and Classic Angiographic Patterns</td><td class="kw">ffa interpretation</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/read-ophthalmology-reports-tests</td></tr>
+<tr class=""><td class="num idx">77</td><td class="post">Exophthalmometry: Hertel Technique and Normal Values</td><td class="kw">hertel exophthalmometer</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/oculoplastics</td></tr>
+<tr class=""><td class="num idx">78</td><td class="post">Slit Lamp Illumination Techniques: All Seven, With Uses</td><td class="kw">slit lamp illumination techniques</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/osce</td></tr>
+<tr class=""><td class="num idx">79</td><td class="post">Applanation Tonometry Sources of Error</td><td class="kw">applanation tonometry error</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class=""><td class="num idx">80</td><td class="post">Colour Vision Testing: Ishihara, Farnsworth, City University</td><td class="kw">colour vision test ophthalmology</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/osce</td></tr>
+<tr class=""><td class="num idx">81</td><td class="post">Contrast Sensitivity and Glare Testing</td><td class="kw">contrast sensitivity testing</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class=""><td class="num idx">82</td><td class="post">Corneal Sensation Testing and Cochet-Bonnet Aesthesiometer</td><td class="kw">corneal sensation test</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <div><h2>Grading and classification systems</h2></div>
+    <p class="count">20 ideas · 3 with measured volume</p>
+  </div>
+  <p class="note">Betts classification sits at KD 14 with a conference-proceedings page ranking #3. Classification queries are short, unambiguous, and residents search them mid-revision. Each one is a table plus a mnemonic plus five MCQs.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Target keyword</th><th class="num">Vol</th><th class="num">KD</th><th>Evidence</th><th>Links to</th></tr></thead><tbody>
+<tr class="r-m"><td class="num idx">83</td><td class="post">Betts Classification of Ocular Trauma (BETTS) Explained</td><td class="kw">betts classification</td><td class="num vol">320</td><td class="num vol">14</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios proceedings #3 at KD 14</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class="r-m"><td class="num idx">84</td><td class="post">Uveitis Classification: The SUN Working Group Criteria</td><td class="kw">uveitis classification</td><td class="num vol">210</td><td class="num vol">36</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios PDF ranks</td><td class="kw dim">/topics/uveitis</td></tr>
+<tr class="r-m"><td class="num idx">85</td><td class="post">Blindness Categories: WHO and ICD-10/ICD-11 Coding</td><td class="kw">blindness icd 10</td><td class="num vol">320</td><td class="num vol">32</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph.org ranks</td><td class="kw dim">/glossary</td></tr>
+<tr class=""><td class="num idx">86</td><td class="post">ETDRS vs ICDR Diabetic Retinopathy Grading Side by Side</td><td class="kw">diabetic retinopathy classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling of proven classification format</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">87</td><td class="post">ICROP 3: Current ROP Classification and Screening Criteria</td><td class="kw">icrop 3 classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">88</td><td class="post">LOCS III Cataract Grading With Images</td><td class="kw">locs iii grading</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cataract</td></tr>
+<tr class=""><td class="num idx">89</td><td class="post">IC3D Corneal Dystrophy Classification</td><td class="kw">ic3d classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">90</td><td class="post">Amsler-Krumeich Keratoconus Grading</td><td class="kw">amsler krumeich classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">91</td><td class="post">Chandler Classification of Orbital Cellulitis</td><td class="kw">chandler classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/oculoplastics</td></tr>
+<tr class=""><td class="num idx">92</td><td class="post">PVR Classification and Retinal Detachment Grading</td><td class="kw">pvr classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">93</td><td class="post">Thyroid Eye Disease: NOSPECS, VISA and EUGOGO Compared</td><td class="kw">nospecs classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/oculoplastics</td></tr>
+<tr class=""><td class="num idx">94</td><td class="post">Hyphema Grading and Management Thresholds</td><td class="kw">hyphema grading</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">95</td><td class="post">Angle Recession and Post-Traumatic Glaucoma Grading</td><td class="kw">angle recession glaucoma</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class=""><td class="num idx">96</td><td class="post">Snellen vs LogMAR: Conversion Table and Why It Matters</td><td class="kw">logmar conversion</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class=""><td class="num idx">97</td><td class="post">Foster Classification of Angle Closure Disease</td><td class="kw">foster classification glaucoma</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class=""><td class="num idx">98</td><td class="post">Retinoblastoma Grouping: ICRB and Reese-Ellsworth</td><td class="kw">icrb classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">99</td><td class="post">Corneal Ulcer Grading and When to Culture</td><td class="kw">corneal ulcer grading</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">100</td><td class="post">Ptosis Severity Grading and Levator Function Scale</td><td class="kw">ptosis grading</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/oculoplastics</td></tr>
+<tr class=""><td class="num idx">101</td><td class="post">Strabismus Classification: Comitant vs Incomitant</td><td class="kw">strabismus classification</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/pediatric-ophthalmology</td></tr>
+<tr class=""><td class="num idx">102</td><td class="post">Glaucoma Staging: HAP, GSS and Visual Field Severity</td><td class="kw">glaucoma staging system</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/glaucoma</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <div><h2>Fellowship and institution directory</h2></div>
+    <p class="count">30 ideas · 7 with measured volume</p>
+  </div>
+  <p class="note">This is how Eyedocs actually gets its traffic — not exam content, but hundreds of hospital-review pages ranking for entity queries. The Indian equivalent is a fellowship and institute directory, and aios.org proves the demand at absurdly low difficulty: cornea fellowship in india is KD 6, short term fellowship KD 7, medical retina KD 8. Nobody has built this properly.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Target keyword</th><th class="num">Vol</th><th class="num">KD</th><th>Evidence</th><th>Links to</th></tr></thead><tbody>
+<tr class="r-m"><td class="num idx">103</td><td class="post">Ophthalmology Fellowships in India: Complete Directory by Subspecialty</td><td class="kw">fellowship in ophthalmology in india</td><td class="num vol">210</td><td class="num vol">11</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios.org #1 at KD 11. Eyedocs&#x27; whole traffic model is directory pages</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class="r-m"><td class="num idx">104</td><td class="post">Ophthalmology Fellowships Worldwide: Routes and Eligibility</td><td class="kw">ophthalmology fellowships</td><td class="num vol">590</td><td class="num vol">25</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph.org #1, 76 clicks/mo</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class="r-m"><td class="num idx">105</td><td class="post">Cornea Fellowship in India: Institutes, Duration, Stipend</td><td class="kw">cornea fellowship in india</td><td class="num vol">140</td><td class="num vol">6</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios #4 at KD 6. Lowest-difficulty term in the entire export</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class="r-m"><td class="num idx">106</td><td class="post">Medical Retina Fellowship: Where to Apply and What It Covers</td><td class="kw">medical retina fellowship</td><td class="num vol">170</td><td class="num vol">8</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios #4 at KD 8</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class="r-m"><td class="num idx">107</td><td class="post">Phaco and Refractive Fellowships in India</td><td class="kw">phaco refractive fellowship in india</td><td class="num vol">140</td><td class="num vol">9</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios ranks</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class="r-m"><td class="num idx">108</td><td class="post">Short-Term Fellowships in Ophthalmology: The Realistic Options</td><td class="kw">short term fellowship in ophthalmology</td><td class="num vol">170</td><td class="num vol">7</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios #3 at KD 7</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class="r-m"><td class="num idx">109</td><td class="post">Ophthalmologist Jobs in India: Where Vacancies Are Actually Posted</td><td class="kw">ophthalmologist jobs in india</td><td class="num vol">140</td><td class="num vol">17</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios #7</td><td class="kw dim">/about</td></tr>
+<tr class=""><td class="num idx">110</td><td class="post">ICO Fellowship: How to Apply and What It Funds</td><td class="kw">ico fellowship</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling — icoph ranks for international fellow (260)</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr class=""><td class="num idx">111</td><td class="post">Vitreoretinal Surgery Fellowship in India: Institute Directory</td><td class="kw">vitreoretinal fellowship india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling of proven cornea/retina fellowship pages</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">112</td><td class="post">Glaucoma Fellowship in India: Institutes and Selection</td><td class="kw">glaucoma fellowship india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">113</td><td class="post">Oculoplasty Fellowship in India</td><td class="kw">oculoplasty fellowship india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">114</td><td class="post">Paediatric Ophthalmology and Squint Fellowship in India</td><td class="kw">pediatric ophthalmology fellowship india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">115</td><td class="post">Uveitis Fellowship in India</td><td class="kw">uveitis fellowship india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">116</td><td class="post">Neuro-Ophthalmology Fellowship in India</td><td class="kw">neuro ophthalmology fellowship india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">117</td><td class="post">Cataract and IOL Fellowship: Short Courses Compared</td><td class="kw">cataract fellowship india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">118</td><td class="post">LVPEI Fellowships: Programmes, Eligibility, Application Window</td><td class="kw">lvpei fellowship</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page — the Eyedocs hospital-directory model, Indian version</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">119</td><td class="post">Sankara Nethralaya Fellowships: Complete Guide</td><td class="kw">sankara nethralaya fellowship</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">120</td><td class="post">Aravind Eye Hospital Fellowships and Training</td><td class="kw">aravind fellowship</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">121</td><td class="post">AIIMS Dr R P Centre: Residency and Fellowship Routes</td><td class="kw">rp centre aiims ophthalmology</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">122</td><td class="post">PGIMER Chandigarh Ophthalmology: Training Overview</td><td class="kw">pgimer ophthalmology</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">123</td><td class="post">Narayana Nethralaya Fellowships</td><td class="kw">narayana nethralaya fellowship</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">124</td><td class="post">Dr Agarwal&#x27;s Eye Hospital Fellowships</td><td class="kw">dr agarwals fellowship</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">125</td><td class="post">Sankara Eye Foundation Fellowship Programmes</td><td class="kw">sankara eye fellowship</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">126</td><td class="post">MM Joshi Eye Institute Fellowships</td><td class="kw">mm joshi eye institute fellowship</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Institute page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">127</td><td class="post">Regional Institutes of Ophthalmology: State-by-State List</td><td class="kw">regional institute of ophthalmology</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Directory page</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">128</td><td class="post">FNB Ophthalmology: Specialities, Seats and How It Differs From FAICO</td><td class="kw">fnb ophthalmology</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling — PrepGuidance owns this space</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">129</td><td class="post">NBE Fellowship vs University Fellowship vs FAICO: Which Counts Where</td><td class="kw">ophthalmology fellowship comparison india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">130</td><td class="post">Ophthalmology Training in the UK for Overseas Graduates</td><td class="kw">ophthalmology training uk overseas</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/exams/frcophth</td></tr>
+<tr class=""><td class="num idx">131</td><td class="post">Stipends and Duration Compared Across Indian Ophthalmology Fellowships</td><td class="kw">ophthalmology fellowship stipend india</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Directory-style comparison table</td><td class="kw dim">/exams/fellowship</td></tr>
+<tr class=""><td class="num idx">132</td><td class="post">Ophthalmology Fellowship Application Calendar (Rolling Dates)</td><td class="kw">ophthalmology fellowship application dates</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Evergreen page updated per cycle</td><td class="kw dim">/exams/fellowship</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <div><h2>Exam pages you don&#x27;t have</h2></div>
+    <p class="count">12 ideas · 7 with measured volume</p>
+  </div>
+  <p class="note">OKAT has 1,300 searches and your own navigation advertises OKAT/MAICO with no page behind it. Duke-Elder is KD 9. You rank #5 for ophthalmology mcq and #17 for dnb ophthalmology from product pages that were never written to rank.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Target keyword</th><th class="num">Vol</th><th class="num">KD</th><th>Evidence</th><th>Links to</th></tr></thead><tbody>
+<tr class="r-m"><td class="num idx">133</td><td class="post">OKAT Exam Guide: Pattern, Syllabus, Dates</td><td class="kw">okat exam</td><td class="num vol">1,300</td><td class="num vol">25</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — aios #2. Your nav advertises OKAT/MAICO with no page behind it</td><td class="kw dim">/exams</td></tr>
+<tr class="r-m"><td class="num idx">134</td><td class="post">ICO Exam: All Parts, Fees, Centres and Dates</td><td class="kw">ico exam</td><td class="num vol">320</td><td class="num vol">16</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph #1 (256 clicks/mo)</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr class="r-m"><td class="num idx">135</td><td class="post">FICO Exam: Advanced ICO Explained</td><td class="kw">fico exam</td><td class="num vol">140</td><td class="num vol">16</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — icoph #1; you rank #27 on a query-param URL</td><td class="kw dim">/exams/ico-fico</td></tr>
+<tr class="r-m"><td class="num idx">136</td><td class="post">Duke-Elder Exam: Format and Preparation</td><td class="kw">duke elder exam</td><td class="num vol">320</td><td class="num vol">9</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — eyedocs #4 at KD 9</td><td class="kw dim">/exams</td></tr>
+<tr class="r-m"><td class="num idx">137</td><td class="post">DNB Ophthalmology: Complete Exam Guide</td><td class="kw">dnb ophthalmology</td><td class="num vol">880</td><td class="num vol">13</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — you rank #17 on a product page. Needs a real guide page</td><td class="kw dim">/exams/dnb</td></tr>
+<tr class="r-m"><td class="num idx">138</td><td class="post">DNB Ophthalmology Question Papers: Year-Wise Topic Analysis</td><td class="kw">dnb ophthalmology question papers</td><td class="num vol">140</td><td class="num vol">18</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — you rank #25</td><td class="kw dim">/products/dnb-do-past-5-year-papers</td></tr>
+<tr class="r-m"><td class="num idx">139</td><td class="post">Ophthalmology MCQ: Free Practice Sets by Topic</td><td class="kw">ophthalmology mcq</td><td class="num vol">390</td><td class="num vol">11</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — you rank #5. Closest thing you have to a winnable #1</td><td class="kw dim">/free-mcqs</td></tr>
+<tr class=""><td class="num idx">140</td><td class="post">MAICO Assessment: What It Is and How It Relates to OKAT</td><td class="kw">maico aios</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling — your nav names it, nothing ranks</td><td class="kw dim">/exams</td></tr>
+<tr class=""><td class="num idx">141</td><td class="post">FAICO Exam Pattern 2026: MCQ and OSCE Structure</td><td class="kw">faico exam pattern</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> You have post 44 on .com already — consolidate, don&#x27;t duplicate</td><td class="kw dim">/exams/faico</td></tr>
+<tr class=""><td class="num idx">142</td><td class="post">Is FAICO Worth It? Honest Career-Value Assessment</td><td class="kw">is faico worth it</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> You have post 45 on .com — consolidate</td><td class="kw dim">/exams/faico</td></tr>
+<tr class=""><td class="num idx">143</td><td class="post">Ophthalmology Foundation Exam vs ICO: Which to Choose</td><td class="kw">ophthalmology foundation vs ico</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> You have posts 48 and 52 on .com — consolidate</td><td class="kw dim">/exams</td></tr>
+<tr class=""><td class="num idx">144</td><td class="post">PD-CET: Pattern, Cut-offs and Seat Matrix</td><td class="kw">pdcet ophthalmology</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> No competitor owns this. Wide open</td><td class="kw dim">/exams/pd-cet</td></tr>
+</tbody></table></div>
+</section>
+<section class="cluster">
+  <div class="chead">
+    <div><h2>Anatomy and physiology explainers</h2></div>
+    <p class="count">19 ideas · 9 with measured volume</p>
+  </div>
+  <p class="note">hiseyeness.com pulls ~2,600 visits a month from nine anatomy pages. Volumes are big (layers of the eye 5,400, aqueous humor 6,600) but KD is 40–58 and the SERP intent is students and laypeople, not PG residents. Take the low-KD ones only — aqueous vs vitreous at KD 25, middle layer of the eye at KD 21 — and write them at ICO Basic Visual Sciences level with MCQs attached, which is a genuinely different page from what ranks now.</p>
+  <div class="scroll"><table>
+<thead><tr><th class="num">#</th><th>Post</th><th>Target keyword</th><th class="num">Vol</th><th class="num">KD</th><th>Evidence</th><th>Links to</th></tr></thead><tbody>
+<tr class="r-m"><td class="num idx">145</td><td class="post">Layers of the Eye: All Three Coats, Exam-Level Detail</td><td class="kw">layers of the eye</td><td class="num vol">5,400</td><td class="num vol">45</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #5, 216 clicks/mo. High KD, lay-intent SERP</td><td class="kw dim">/products/anatomy-notes</td></tr>
+<tr class="r-m"><td class="num idx">146</td><td class="post">Aqueous vs Vitreous Humour: Composition, Flow, Clinical Relevance</td><td class="kw">aqueous humor and vitreous humor</td><td class="num vol">1,300</td><td class="num vol">25</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #3 at KD 25. Best risk/reward in this group</td><td class="kw dim">/products/anatomy-notes</td></tr>
+<tr class="r-m"><td class="num idx">147</td><td class="post">Aqueous Humour: Production, Drainage and Why It Matters in Glaucoma</td><td class="kw">aqueous humor function</td><td class="num vol">1,600</td><td class="num vol">54</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #2</td><td class="kw dim">/topics/glaucoma</td></tr>
+<tr class="r-m"><td class="num idx">148</td><td class="post">Vitreous Humour: Structure, Ageing and Surgical Relevance</td><td class="kw">vitreous humor function</td><td class="num vol">1,000</td><td class="num vol">46</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #6</td><td class="kw dim">/topics/retina</td></tr>
+<tr class="r-m"><td class="num idx">149</td><td class="post">Outermost Layer of the Eye: Cornea and Sclera in Detail</td><td class="kw">outermost layer of eye</td><td class="num vol">880</td><td class="num vol">40</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #1</td><td class="kw dim">/products/anatomy-notes</td></tr>
+<tr class="r-m"><td class="num idx">150</td><td class="post">Asthenopia: Causes, Workup and Management</td><td class="kw">asthenopia</td><td class="num vol">3,600</td><td class="num vol">44</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #15 only. Weakly defended</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class="r-m"><td class="num idx">151</td><td class="post">Eyelid Anatomy and Function: Layer by Layer</td><td class="kw">eyelid function</td><td class="num vol">720</td><td class="num vol">54</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #15</td><td class="kw dim">/products/eyelids-notes</td></tr>
+<tr class="r-m"><td class="num idx">152</td><td class="post">Refractive Indices of the Ocular Media (and Every Optics Constant)</td><td class="kw">refractive index of aqueous humour</td><td class="num vol">170</td><td class="num vol">29</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #7</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class="r-m"><td class="num idx">153</td><td class="post">Middle Layer of the Eye: The Uveal Tract</td><td class="kw">middle layer of the eye</td><td class="num vol">390</td><td class="num vol">21</td><td class="ev"><span class="chip c-m">measured</span> MEASURED — hiseyeness #3 at KD 21</td><td class="kw dim">/topics/uveitis</td></tr>
+<tr class=""><td class="num idx">154</td><td class="post">Extraocular Muscles: Origins, Insertions, Actions, Innervation</td><td class="kw">extraocular muscles anatomy</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling of proven anatomy format</td><td class="kw dim">/products/anatomy-notes</td></tr>
+<tr class=""><td class="num idx">155</td><td class="post">Orbital Anatomy: Walls, Foramina and Their Contents</td><td class="kw">orbit anatomy ophthalmology</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/anatomy-notes</td></tr>
+<tr class=""><td class="num idx">156</td><td class="post">Visual Pathway: Lesion-by-Lesion Field Defects</td><td class="kw">visual pathway lesions</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/neuro-ophthalmology</td></tr>
+<tr class=""><td class="num idx">157</td><td class="post">Retinal Layers: All Ten, With OCT Correlation</td><td class="kw">retinal layers</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">158</td><td class="post">Corneal Layers and the Physiology of Transparency</td><td class="kw">corneal layers</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/cornea</td></tr>
+<tr class=""><td class="num idx">159</td><td class="post">Blood Supply of the Eye and Ocular Circulation</td><td class="kw">blood supply of eye</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/anatomy-notes</td></tr>
+<tr class=""><td class="num idx">160</td><td class="post">Lacrimal Apparatus: Anatomy and Tear Film Physiology</td><td class="kw">lacrimal apparatus anatomy</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/oculoplastics</td></tr>
+<tr class=""><td class="num idx">161</td><td class="post">Accommodation and Presbyopia: Mechanism and Numbers</td><td class="kw">accommodation mechanism eye</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/products/optics-notes</td></tr>
+<tr class=""><td class="num idx">162</td><td class="post">Photoreceptors and Phototransduction Cascade</td><td class="kw">phototransduction</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/retina</td></tr>
+<tr class=""><td class="num idx">163</td><td class="post">Cranial Nerves in Ophthalmology: III, IV, VI and Their Palsies</td><td class="kw">cranial nerve palsy eye</td><td class="num vol">—</td><td class="num vol">—</td><td class="ev"><span class="chip c-s">inferred</span> Sibling</td><td class="kw dim">/topics/neuro-ophthalmology</td></tr>
+</tbody></table></div>
+</section>
+
+<footer>
+  <p><strong>Measured vs inferred.</strong> Volume and KD on measured rows come straight from your export. Inferred rows have no volume data — they are siblings of a format proven to rank in the same SERP neighbourhood, and should be validated before they are prioritised over a measured term.</p>
+  <p><strong>Where these publish.</strong> Your ranking content currently sits on ophthamcq.com/app-blog while the ophthamcq.org blog is empty. Pick one before publishing 163 posts, or the cannibalisation above repeats at ten times the scale.</p>
+</footer>
+</div>
