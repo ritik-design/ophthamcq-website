@@ -7,6 +7,7 @@ import { copyFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import stripEditorialSections from './src/utils/remark-strip-editorial.js';
+import indexNow from './src/integrations/indexnow.js';
 
 /**
  * @astrojs/sitemap writes sitemap-index.xml + sitemap-0.xml.
@@ -53,7 +54,7 @@ export default defineConfig({
   },
   // Canonical host is apex (www redirects to non-www in production).
   site: 'https://ophthamcq.org',
-  integrations: [sitemap(), sitemapXmlAlias()],
+  integrations: [sitemap(), sitemapXmlAlias(), indexNow()],
   markdown: {
     remarkPlugins: [stripEditorialSections],
   },
