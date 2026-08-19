@@ -13,8 +13,6 @@ estimated_read_time: "10 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Exam Anxiety and Burnout in Residency: A Study-Load Support Guide
-
 Exam anxiety and burnout are not evidence of weak commitment. Residency can combine clinical responsibility, night duty, exam uncertainty, family obligations and financial pressure. When the system starts failing, the first useful step is often practical: identify the load, reduce what can be reduced, and bring a trusted person into the plan early.
 
 This is an educational workload guide, not mental-health diagnosis or treatment. It does not tell you whether you have anxiety, depression or burnout, and it does not replace a clinician, local support service or emergency care. If you feel unsafe, have thoughts of self-harm, cannot function, or have severe or persistent symptoms, seek urgent local professional help or emergency services and tell someone you trust now.

@@ -1,7 +1,7 @@
 ---
 title: "Case Presentation Format for the Ophthalmology Practical Exam"
 proposed_slug: "case-presentation-format-for-the-ophthalmology-practical-exam"
-meta_description: "A timed ophthalmology practical case-presentation framework: focused history, reproducible examination order, diagnostic reasoning, viva recovery lines and rehearsal grid."
+meta_description: "A timed ophthalmology practical case-presentation framework: focused history, reproducible examination order, diagnostic reasoning"
 excerpt: "Present a claim, the evidence for it, and the uncertainty that remains. That is a practical case presentation the examiner can follow."
 category: "OSCE"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -12,8 +12,6 @@ target_page: "/products/case-presentation-format-notes"
 estimated_read_time: "14 minutes"
 fact_check_date: "2026-08-18"
 ---
-
-# Case Presentation Format for the Ophthalmology Practical Exam
 
 An ophthalmology practical case presentation is a clinical argument in a fixed order: state the problem, give the findings that support it, then say what is still uncertain. A reliable default is **one-line summary → focused history → reproducible examination → positive findings and relevant negatives → provisional diagnosis and differential → targeted discussion**. It is stronger than reading a complete clerking aloud because it lets the examiner see how each fact changes your thinking.
 

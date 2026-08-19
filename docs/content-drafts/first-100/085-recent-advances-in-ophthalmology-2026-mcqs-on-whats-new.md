@@ -14,8 +14,6 @@ estimated_read_time: "14 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Recent Advances in Ophthalmology 2026: MCQs on What's New
-
 “Recent advances” is not a list of buzzwords to memorise once. For an examination answer, an update needs four labels: the entity, its mechanism, the evidence source, and the jurisdiction/date for any regulatory statement. A promising trial, a regulatory decision, local availability and routine practice are different claims.
 
 Use this as closed-book retrieval practice. Answer five questions at a time, then write the source you would open to verify each missed update. The examples below are deliberately anchored to published reports and durable concepts; they do **not** claim a current 2026 approval, indication, dose, availability or guideline recommendation. This is postgraduate exam education, not patient-care advice.

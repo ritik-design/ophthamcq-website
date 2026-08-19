@@ -3,9 +3,11 @@ title: "How to Apply for FAICO: Documents, Deadlines and Common Rejections"
 publication_action: "long-form-rewrite-after-live-serp-and-source-research"
 proposed_slug: "how-to-apply-for-faico"
 meta_description: "A source-led FAICO application checklist covering current AIOS eligibility, documents, timing and file-quality checks before you submit."
+excerpt: "A source-led FAICO application checklist covering current AIOS eligibility, documents, timing and file-quality checks before you submit."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "faico eligibility"
 secondary_keywords: ["FAICO application", "FAICO documents", "FAICO deadline", "FAICO 2026"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/014-faico-application-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# How to Apply for FAICO: Documents, Deadlines and Common Rejections
 
 FAICO eligibility is decided against the current All India Ophthalmological Society (AIOS) rules, not against an old coaching checklist. On the AIOS FAICO page checked on 18 August 2026, a candidate must be an AIOS member, hold a Government of India-recognised postgraduate ophthalmology qualification (or a recognised international qualification), and meet the stated post-PG experience plus subspecialty-training or practical-work route. The same page gives a 30 September 2026 cut-off for the experience requirements for that written-examination year.
 

@@ -15,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/059-sutures-and-needles-in-ophthalmic-surgery-serp-brief.md"
 ---
 
-# Sutures and Needles in Ophthalmic Surgery: A Viva-Proof Reference
-
 When a suture packet appears in an ophthalmology viva, read the packet before you recite a use. The strong answer is: **material, filament structure, absorbability, size, needle anatomy, then a qualified tissue context.** That order protects you from three frequent errors: calling a trade name the material, treating 10-0 as a complete answer, and claiming that one suture is always correct for a named operation.
 
 This is postgraduate exam education for doctors, not operative instruction. Material selection, needle configuration and technique depend on the tissue, procedure, operative plan, surgeon and local protocol. In a station, the printed manufacturer information is more reliable than identifying a suture by colour, a remembered code or the tray it happens to be on.

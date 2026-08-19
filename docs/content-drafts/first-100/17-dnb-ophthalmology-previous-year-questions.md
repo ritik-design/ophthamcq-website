@@ -3,15 +3,15 @@ title: "DNB Ophthalmology Previous Year Questions: What Repeats and How Often"
 publication_action: "new-blog-article"
 proposed_slug: "dnb-ophthalmology-previous-year-questions"
 meta_description: "Use DNB Ophthalmology previous-year questions to find repeatable concepts, not guaranteed repeats. Build a topic log, error map and practical revision loop."
+excerpt: "Use DNB Ophthalmology previous-year questions to find repeatable concepts, not guaranteed repeats."
 category: "Exam Strategy"
 author: "Dr. OphthaMCQ Editorial Team"
+date: "2026-08-18"
 status: "reviewed-draft"
 primary_keyword: "dnb ophthalmology previous year questions"
 secondary_keywords: ["dnb ophthal past papers", "dnb ophthalmology repeat questions"]
 fact_check_date: "2026-08-18"
 ---
-
-# DNB Ophthalmology Previous Year Questions: What Repeats and How Often
 
 Previous-year questions repeat concepts more reliably than they repeat wording. The useful question is not “Will this stem come again?” but “Which decision has been tested repeatedly across different clinical contexts?”
 

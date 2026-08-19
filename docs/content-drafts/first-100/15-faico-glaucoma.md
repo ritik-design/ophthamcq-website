@@ -3,9 +3,11 @@ title: "FAICO Glaucoma: Syllabus Map and High-Yield Question Areas"
 publication_action: "long-form-rewrite-after-live-serp-and-source-research"
 proposed_slug: "faico-glaucoma"
 meta_description: "A source-led FAICO Glaucoma revision map for mechanisms, OCT, fields, lasers, surgery, complications and viva reasoning—without invented weightage."
+excerpt: "A source-led FAICO Glaucoma revision map for mechanisms, OCT, fields, lasers, surgery, complications and viva reasoning—without invented weightage."
 category: "Exam Strategy"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "faico glaucoma"
 secondary_keywords: ["FAICO glaucoma syllabus", "FAICO glaucoma questions", "glaucoma fellowship viva"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/015-faico-glaucoma-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# FAICO Glaucoma: Syllabus Map and High-Yield Question Areas
 
 There is no published AIOS FAICO Glaucoma topic-weightage table that you should treat as an official syllabus. AIOS currently lists Glaucoma among FAICO fellowship awards, but its live FAICO page does not provide a glaucoma paper blueprint. Prepare for subspecialty depth instead: mechanism and angle anatomy, evidence of glaucomatous damage, target-pressure reasoning, treatment principles, laser and surgical complications, and the ability to explain an image or case in a disciplined order.
 

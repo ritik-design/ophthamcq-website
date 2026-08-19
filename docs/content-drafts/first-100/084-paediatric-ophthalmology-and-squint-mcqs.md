@@ -16,8 +16,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/084-paediatric-ophthalmology-squint-mcqs-serp-brief.md"
 ---
 
-# Paediatric Ophthalmology and Squint MCQs: 40 Explained Questions
-
 In paediatric ophthalmology, start with **age, visual behaviour, alignment and the red reflex**. That sequence prevents two exam mistakes: calling a structural disorder amblyopia before examining the eye, and calling an apparent squint benign before excluding a concerning cause. These questions are for ophthalmology examination revision, not assessment or treatment advice for an individual child.
 
 For each answer, identify the kind of decision it tests: a **red flag**, an **alignment test**, a **visual-development mechanism**, or a **classification descriptor**. A correct label without that decision step is fragile knowledge. After the set, return to the [paediatric ophthalmology and squint topic guide](/topics/pediatric-ophthalmology) for an organised review.

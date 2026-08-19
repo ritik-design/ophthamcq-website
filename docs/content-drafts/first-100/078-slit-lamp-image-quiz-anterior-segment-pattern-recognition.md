@@ -13,8 +13,6 @@ estimated_read_time: "10 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Slit-Lamp Image Quiz: Anterior-Segment Pattern Recognition
-
 This is a **text-first quiz framework**, not a set of slit-lamp photographs. It is designed to make the eventual photo quiz safer and more useful: read the location, layer, morphology, distribution and associated inflammation before you name a disease. That order is a good guard against the common exam error of recognising one memorable sign and ignoring the rest of the stem.
 
 No clinical images, patient photographs, image captions, licences or provenance records are included in this repository. Consequently, this draft must **not** be published or represented as an image/photo quiz until a final editor supplies cleared, clinically verified images with an asset record and an educational caption for every prompt. The text may support postgraduate examination revision; it is not patient-specific diagnosis or management advice.

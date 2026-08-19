@@ -2,16 +2,16 @@
 title: "PD-CET Previous Year Questions: Topic-Wise Breakdown"
 proposed_slug: "pd-cet-previous-year-questions-topic-wise-breakdown"
 meta_description: "Use PD-CET previous-year questions properly: verify provenance, code topics and error types, and turn recalls into a source-checked revision system."
+excerpt: "Use PD-CET previous-year questions properly: verify provenance, code topics and error types, and turn recalls into a source-checked revision system."
 category: "Ophthalmology Exams"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "12 minutes"
 status: "longform-researched-draft"
 primary_keyword: "pdcet previous year question paper"
 secondary_keywords: ["PD-CET previous year questions", "PD-CET question paper", "PD-CET ophthalmology MCQs"]
 fact_check_date: "2026-08-18"
 ---
-
-# PD-CET Previous Year Questions: Topic-Wise Breakdown
 
 ## The useful answer: treat a past question as evidence, not a prediction
 

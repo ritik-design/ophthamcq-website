@@ -2,17 +2,17 @@
 title: "FICO (Advanced ICO): Who It's For, What Changes After BVS"
 proposed_slug: "fico-advanced-ico-after-bvs"
 meta_description: "A safe, current-information-first guide to the FICO/Advanced ICO route after BVS: terminology, planning, verification and paper-specific revision."
+excerpt: "A safe, current-information-first guide to the FICO/Advanced ICO route after BVS: terminology, planning, verification and paper-specific revision."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 status: "ready-for-thestacc"
 publication_action: "create-after-blog-platform-restored"
 primary_keyword: "fico exam"
 target_page: "/exams/ico-fico"
 fact_check_date: "2026-08-18"
 ---
-
-# FICO (Advanced ICO): Who It's For, What Changes After BVS
 
 **FICO means Fellow of the International Council of Ophthalmology. It is not FAICO, and it is not a shortcut label for every ICO paper.** If you are planning the route after Basic Visual Sciences (BVS), use current [ICO Examinations information](https://icoph.org/ico-examination/) to establish your actual requirements. Eligibility, required components, sequence, dates, fees, attempts and award conditions are administrative facts that must be verified live for your own application.
 

@@ -3,9 +3,11 @@ title: "FRCOphth Part 1 Syllabus & Exam Pattern (2026): Every Section Explained"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "frcophth-part-1-syllabus-exam-pattern"
 meta_description: "A source-led guide to the FRCOphth Part 1 syllabus and current format, plus a practical revision matrix for doctors preparing around clinical work."
+excerpt: "A source-led guide to the FRCOphth Part 1 syllabus and current format, plus a practical revision matrix for doctors preparing around clinical work."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "13 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "frcophth part 1 syllabus"
 secondary_keywords:
@@ -17,8 +19,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/001-frcophth-part-1-syllabus-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# FRCOphth Part 1 Syllabus & Exam Pattern (2026): Every Section Explained
 
 The FRCOphth Part 1 syllabus is not a list to memorise from a coaching handout. The Royal College of Ophthalmologists (RCOphth) assesses the learning outcomes for years 1 and 2 of the Ophthalmic Specialist Training curriculum. For the current examination format, RCOphth states that Part 1 consists of two MCQ papers on one day, with 90 questions and two hours for each paper.
 

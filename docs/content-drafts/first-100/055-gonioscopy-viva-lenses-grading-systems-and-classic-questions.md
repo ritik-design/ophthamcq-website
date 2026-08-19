@@ -15,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/055-gonioscopy-viva-serp-brief.md"
 ---
 
-# Gonioscopy Viva: Lenses, Grading Systems and Classic Questions
-
 Start a gonioscopy viva with the optical reason for the lens. The iridocorneal angle is not normally visible directly at the cornea–air interface because light emerging from it undergoes total internal reflection. A gonioscopy lens changes that interface so angle structures can be viewed. Then move straight to a reproducible report: **method, quadrant, most posterior structure, configuration, pigmentation, synechiae and indentation finding**.
 
 This is postgraduate examination education, not a guide to making a patient-specific diagnosis or treatment decision. Lens handling, illumination and documentation are learned with supervision and may vary by unit and lens design. The [European Glaucoma Society guideline](https://bjo.bmj.com/content/105/Suppl_1/1) places gonioscopy within angle assessment; it does not turn one grade or sign into a management instruction.

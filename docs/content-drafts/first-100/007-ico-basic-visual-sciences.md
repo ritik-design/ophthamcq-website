@@ -2,17 +2,17 @@
 title: "ICO Basic Visual Sciences (BVS): Syllabus, Question Style and High-Yield Areas"
 proposed_slug: "ico-basic-visual-sciences-bvs-syllabus-question-style"
 meta_description: "A source-led ICO Visual Sciences (BVS) guide: current question format, revision map, eight-week plan, timed practice method and error-log system."
+excerpt: "A source-led ICO Visual Sciences (BVS) guide: current question format, revision map, eight-week plan, timed practice method and error-log system."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 status: "ready-for-thestacc"
 publication_action: "create-after-blog-platform-restored"
 primary_keyword: "ico bvs exam"
 target_page: "/exams/ico-fico"
 fact_check_date: "2026-08-18"
 ---
-
-# ICO Basic Visual Sciences (BVS): Syllabus, Question Style and High-Yield Areas
 
 **ICO Visual Sciences is an applied basic-science examination: learn the mechanism, represent it accurately, then identify the single best answer under time.** The current ICO component page describes a three-hour paper of 120 multiple-choice questions, each with four options and one single best answer. It also states that correct answers receive a positive mark, while incorrect or blank answers receive no mark. Confirm the live candidate information, dates and registration details directly with ICO before you plan a sitting.
 

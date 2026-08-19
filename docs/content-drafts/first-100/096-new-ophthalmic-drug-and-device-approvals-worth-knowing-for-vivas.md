@@ -1,7 +1,7 @@
 ---
 title: "New Ophthalmic Drug and Device Approvals Worth Knowing for Vivas"
 proposed_slug: "new-ophthalmic-drug-and-device-approvals-worth-knowing-for-vivas"
-meta_description: "A viva-safe way to discuss new ophthalmic drugs and devices: distinguish approval from evidence, verify jurisdiction and date, then state mechanism, indication and limitation."
+meta_description: "A viva-safe way to discuss new ophthalmic drugs and devices: distinguish approval from evidence, verify jurisdiction and date, then state mechanism"
 excerpt: "In a viva, an approval is never just a product name. State where, when, for whom and on what evidence."
 category: "Career"
 author: "Dr. OphthaMCQ Editorial Team"

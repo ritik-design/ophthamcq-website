@@ -16,8 +16,6 @@ research_brief: "docs/content-research/028-amd-anti-vegf-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
 
-# AMD and Anti-VEGF: Trials, Dosing Regimens and High-Yield Points
-
 The safest answer to an AMD anti-VEGF trial question has five parts: **phenotype**, **study population**, **intervention/comparator**, **dosing language**, and **outcome/limitation**. Do not memorise MARINA, ANCHOR, CATT, IVAN and VIEW as a bare acronym list. Their value in an examination is that each teaches a different question: registration-era efficacy against a control, comparison between agents, comparison between dosing strategies, or interval-based non-inferiority design. This is exam education for doctors, not a recommendation for a particular patient’s injection schedule.
 
 ## First identify the AMD phenotype and the imaging question

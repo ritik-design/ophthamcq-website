@@ -16,8 +16,6 @@ research_brief: "docs/content-research/027-diabetic-retinopathy-classification-s
 status: "long-form-rewrite-draft"
 ---
 
-# Diabetic Retinopathy Classification: ETDRS, ICDR and Exam Traps
-
 The first rule in a diabetic-retinopathy answer is to name the system you are using. The **International Clinical Diabetic Retinopathy (ICDR) severity scale** is a practical five-step clinical communication scale. **ETDRS** is a much more granular, photograph-based research severity scale. They are related, but their labels are not interchangeable.[^icdr][^etdrs] This article is examination education for ophthalmologists and trainees, not screening, diagnostic or treatment advice for an individual patient.
 
 ## The direct answer: ICDR before ETDRS

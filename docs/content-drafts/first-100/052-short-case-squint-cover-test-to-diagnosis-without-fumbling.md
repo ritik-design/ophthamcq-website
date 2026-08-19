@@ -15,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/052-short-case-squint-cover-test-serp-brief.md"
 ---
 
-# Short Case: Squint — Cover Test to Diagnosis Without Fumbling
-
 A squint short case is scored on what you make observable. Set fixation, look before you touch the patient, then report the *test condition*, *eye movement* and *interpretation* in that order. Cover–uncover looks for a manifest deviation. Alternate cover dissociates fusion and reveals the total alignment error. Neither test, by itself, gives you permission to invent a cause or a treatment plan.
 
 This is an examination-rehearsal guide for ophthalmology postgraduates. It is not a patient-specific diagnostic or management pathway. In a real clinical encounter, incomplete history, acute symptoms or a new motility deficit require appropriate senior and local-protocol input.

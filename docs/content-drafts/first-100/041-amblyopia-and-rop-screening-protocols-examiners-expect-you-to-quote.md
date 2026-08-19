@@ -2,9 +2,11 @@
 title: "Amblyopia and ROP Screening: Protocols Examiners Expect You to Quote"
 proposed_slug: "amblyopia-and-rop-screening-protocols-examiners-expect-you-to-quote"
 meta_description: "An exam-first guide to amblyopia assessment and ROP screening: what to screen, what to document, and how to quote a protocol without inventing one."
+excerpt: "An exam-first guide to amblyopia assessment and ROP screening: what to screen, what to document, and how to quote a protocol without inventing one."
 category: "Paediatric Ophthalmology"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "12 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "rop screening guidelines"
 secondary_keywords: ["amblyopia screening", "ROP screening criteria", "ROP classification", "paediatric ophthalmology MCQ"]
@@ -12,8 +14,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/041-amblyopia-and-rop-screening-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# Amblyopia and ROP Screening: Protocols Examiners Expect You to Quote
 
 The high-yield distinction is simple: amblyopia screening looks for a child at risk of abnormal visual development, whereas retinopathy of prematurity (ROP) screening is a serial retinal examination programme for eligible preterm infants. They are not interchangeable “paediatric screening” answers. In a viva, state the population, the tool, the finding that triggers escalation and the protocol you are quoting.
 

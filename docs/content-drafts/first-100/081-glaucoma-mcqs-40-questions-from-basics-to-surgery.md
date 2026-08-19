@@ -16,8 +16,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/081-glaucoma-mcqs-serp-brief.md"
 ---
 
-# Glaucoma MCQs: 40 Questions From Basics to Surgery
-
 This is revision material for ophthalmology examinations, not a protocol for managing an individual eye. Before choosing an answer, place the stem in one of four bins: **angle and mechanism; pressure and aqueous route; optic-nerve structure; or visual function**. That ordering prevents the common error of calling an eye “glaucoma” from one pressure reading or one red OCT sector alone.[^egs]
 
 The questions deliberately move from definitions to procedures. Try each answer first, then read the explanation as an error-log entry. A useful second pass is to tag every miss as *mechanism*, *sign*, *test* or *intervention*; revise that gap in the [glaucoma topic guide](/topics/glaucoma) before doing another mixed set.

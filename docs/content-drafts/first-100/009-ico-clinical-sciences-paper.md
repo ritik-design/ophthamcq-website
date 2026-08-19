@@ -2,17 +2,17 @@
 title: "ICO Clinical Sciences Paper: Structure, Scoring and Preparation Route"
 proposed_slug: "ico-clinical-sciences-paper-structure-scoring-preparation"
 meta_description: "Prepare for the ICO Clinical Sciences paper with a clinical-reasoning grid, image-review workflow, timed-question loop and official-rule check."
+excerpt: "Prepare for the ICO Clinical Sciences paper with a clinical-reasoning grid, image-review workflow, timed-question loop and official-rule check."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 status: "ready-for-thestacc"
 publication_action: "create-after-blog-platform-restored"
 primary_keyword: "ico clinical sciences exam"
 target_page: "/exams/ico-fico"
 fact_check_date: "2026-08-18"
 ---
-
-# ICO Clinical Sciences Paper: Structure, Scoring and Preparation Route
 
 **Prepare ICO Clinical Sciences as a sequence of clinical decisions, not as a list of diseases.** For your current paper structure, eligibility, scoring, timing and candidate rules, begin with [ICO Examinations](https://icoph.org/ico-examination/). Those facts are sitting-specific and should not be taken from a historical recall, a coaching note or this article.
 

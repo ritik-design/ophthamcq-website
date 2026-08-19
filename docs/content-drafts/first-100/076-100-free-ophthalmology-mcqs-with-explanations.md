@@ -13,8 +13,6 @@ estimated_read_time: "45 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# 100 Free Ophthalmology MCQs With Explanations
-
 This is a 100-question diagnostic drawn directly from the free MCQs currently available on OphthaMCQ. It covers anatomy, optics, cornea, lens, glaucoma and uveitis. It is revision material for postgraduate ophthalmology examinations—not patient-specific clinical advice.
 
 The useful unit here is not a raw score. Do the questions in blocks of 20, choose an option before opening the answer, then write down the *discriminator*: the finding, mechanism, formula, anatomy relation or wording that separated the right answer from the most tempting wrong one. A guessed-right answer belongs in the same error log as a wrong answer.

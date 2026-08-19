@@ -3,9 +3,11 @@ title: "Corneal Dystrophies Made Memorable: IC3D Classification and Mnemonics"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "corneal-dystrophies-made-memorable-ic3d-classification-and-mnemonics"
 meta_description: "A layer-first, IC3D-aware guide to corneal dystrophies: classic patterns, discriminators, safe mnemonics and viva-ready answers for PG exams."
+excerpt: "A layer-first, IC3D-aware guide to corneal dystrophies: classic patterns, discriminators, safe mnemonics and viva-ready answers for PG exams."
 category: "Topics"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "12 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "corneal dystrophies mnemonics"
 secondary_keywords: ["IC3D corneal dystrophies", "granular lattice macular dystrophy", "corneal dystrophies classification"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/032-corneal-dystrophies-mnemonics-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# Corneal Dystrophies Made Memorable: IC3D Classification and Mnemonics
 
 For an exam question on corneal dystrophy, start with the **anatomic level of the abnormality**. Then describe its pattern, decide whether the cornea between lesions is clear or diffusely involved, and only then add inheritance, pathology or a gene if the stem asks for it. That sequence is safer than trying to identify a disorder from a mnemonic alone.
 

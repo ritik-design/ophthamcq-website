@@ -2,9 +2,11 @@
 title: "Ptosis: Classification, Measurements and Choosing the Right Surgery"
 proposed_slug: "ptosis-classification-measurements-and-choosing-the-right-surgery"
 meta_description: "Revise ptosis classification, lid measurements, safety checks and operation-selection logic for ophthalmology MCQs, OSCEs and vivas."
+excerpt: "Revise ptosis classification, lid measurements, safety checks and operation-selection logic for ophthalmology MCQs, OSCEs and vivas."
 category: "Oculoplastics"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "ptosis classification"
 secondary_keywords: ["ptosis measurements", "MRD1", "levator function", "ptosis surgery"]
@@ -12,8 +14,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/042-ptosis-classification-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# Ptosis: Classification, Measurements and Choosing the Right Surgery
 
 Ptosis is an abnormally low upper-lid position. The exam answer is not “levator resection” followed by a list of measurements. First decide whether the lid is truly low, identify the mechanism, measure the lid with the frontalis relaxed, and check the pupil, ocular motility, cornea and fellow lid. Only then can you discuss a procedure as a conditional option.
 

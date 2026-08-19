@@ -6,6 +6,7 @@ excerpt: "In an RD long case, describe the retina before naming the operation: t
 category: "OSCE"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "12 minutes"
 last_updated: "2026-08-18"
 status: "long-form-rewrite-draft"
 publication_action: "create-after-blog-platform-restored"
@@ -15,8 +16,6 @@ target_page: "/osce"
 fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/050-long-case-retinal-detachment-serp-brief.md"
 ---
-
-# Long Case: Retinal Detachment — What to Show and What to Say
 
 A good retinal-detachment long case is a map, not a list of symptoms. State the eye, the likely type of detachment, extent, macular status, retinal breaks or traction, proliferative vitreoretinopathy (PVR), and relevant fellow-eye findings. Then say what remains uncertain. That sequence tells the examiner that you can examine a detached retina systematically before discussing management.[^statpearls]
 

@@ -13,8 +13,6 @@ estimated_read_time: "14 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Pupil Abnormalities and Visual Field Defects: The Two Guaranteed Questions
-
 Pupil and field-defect stems are common ophthalmology exam material, but no question is guaranteed. The dependable approach is to **describe the finding before you localise it**. For a pupil, write size, light response, near response and the lighting condition that changes anisocoria. For a field, draw the missing half of visual space before attaching “chiasm” or “radiations” to it.
 
 This is exam education for clinicians. A pupil abnormality, acute visual loss or new field defect in practice needs its own supervised assessment; an MCQ framework is not a clinical triage protocol.

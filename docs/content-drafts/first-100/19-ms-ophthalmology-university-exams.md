@@ -3,15 +3,15 @@ title: "MS Ophthalmology University Exams: How They Differ From DNB"
 publication_action: "new-blog-article"
 proposed_slug: "ms-ophthalmology-university-exams"
 meta_description: "Compare MS Ophthalmology university exams with DNB preparation without assuming a universal pattern: syllabus, local rules, theory and practical preparation."
+excerpt: "Compare MS Ophthalmology university exams with DNB preparation without assuming a universal pattern: syllabus, local rules, theory and practical preparation."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
+date: "2026-08-18"
 status: "reviewed-draft"
 primary_keyword: "ms ophthalmology exam preparation"
 secondary_keywords: ["ms ophthalmology university exam", "ms vs dnb ophthalmology"]
 fact_check_date: "2026-08-18"
 ---
-
-# MS Ophthalmology University Exams: How They Differ From DNB
 
 MS Ophthalmology examinations are governed by the relevant university, while DNB requirements are governed by NBEMS. That single distinction makes a universal paper pattern misleading: your university’s regulations, timetable, internal assessment rules and practical instructions are the documents that matter.
 

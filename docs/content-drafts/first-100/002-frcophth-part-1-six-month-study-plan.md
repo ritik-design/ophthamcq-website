@@ -2,9 +2,11 @@
 title: "How to Prepare for FRCOphth Part 1: A 6-Month Study Plan"
 proposed_slug: "frcophth-part-1-six-month-study-plan"
 meta_description: "A source-led, six-month FRCOphth Part 1 study plan for working ophthalmology trainees, with weekly outputs, mixed-question blocks and mock debriefs."
+excerpt: "A source-led, six-month FRCOphth Part 1 study plan for working ophthalmology trainees, with weekly outputs, mixed-question blocks and mock debriefs."
 category: "Exam Strategy"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "10 minutes"
 last_updated: "2026-08-18"
 status: "long-form-rewrite-draft"
 publication_action: "create-after-blog-platform-restored"
@@ -14,8 +16,6 @@ target_page: "/exams/frcophth"
 fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/002-frcophth-part-1-six-month-study-plan-serp-brief.md"
 ---
-
-# How to Prepare for FRCOphth Part 1: A 6-Month Study Plan
 
 A six-month FRCOphth Part 1 plan works when every week leaves you with decisions you can retrieve, questions attempted under a limit, and errors converted into a next task. It fails when the plan is only “finish a textbook by month four”. RCOphth currently describes Part 1 as two same-day MCQ papers, each with 90 questions and two hours. It uses standard setting rather than a fixed pass percentage. Build your revision around repeated decisions and two-paper stamina, then check the live [RCOphth Part 1 page](https://www.rcophth.ac.uk/exams/rcophth-exams/part-1-frcophth-exam/) and [exams calendar](https://www.rcophth.ac.uk/examinations/) for your own sitting.
 

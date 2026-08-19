@@ -13,8 +13,6 @@ estimated_read_time: "11 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Practising Ophthalmology in the UK: FRCOphth, GMC and the Employment Route
-
 For an Indian-trained ophthalmologist, “the UK route” is not one route and FRCOphth is not a passport to a job. The College examination system, GMC registration/licensing, an employer’s selection process and immigration/right-to-work requirements are separate decisions administered by different bodies. A document that helps on one track may be irrelevant to another.
 
 This guide is an orientation framework, not immigration, legal, employment or registration advice. It makes no promise of GMC registration, a visa, a training number, a fellowship, an NHS job or consultant recognition. Those outcomes depend on your individual facts and the current written rules.

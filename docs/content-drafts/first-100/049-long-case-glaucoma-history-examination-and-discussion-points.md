@@ -1,7 +1,7 @@
 ---
 title: "Long Case: Glaucoma — History, Examination and Discussion Points"
 proposed_slug: "long-case-glaucoma-history-examination-and-discussion-points"
-meta_description: "Prepare a glaucoma long case with a focused history, examination order, angle-disc-field-OCT correlation, reliability checks, differential reasoning and likely viva branches."
+meta_description: "Prepare a glaucoma long case with a focused history, examination order, angle-disc-field-OCT correlation, reliability checks"
 excerpt: "A glaucoma long case is a correlation exercise: pressure context, angle, optic nerve and function must tell one coherent story."
 category: "OSCE"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -12,8 +12,6 @@ target_page: "/osce"
 estimated_read_time: "15 minutes"
 fact_check_date: "2026-08-18"
 ---
-
-# Long Case: Glaucoma — History, Examination and Discussion Points
 
 In a glaucoma long case, do not present an IOP number and wait for the viva. Build a correlation: **clinical context and angle → pressure measurement → optic-nerve structure → visual function**. Your working diagnosis is credible only when the available evidence fits together and you state the limitations of any test that does not fit.
 

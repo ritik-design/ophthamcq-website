@@ -14,8 +14,6 @@ estimated_read_time: "14 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Retina MCQs: 40 Questions Across DR, AMD and RD
-
 Retina MCQs become faster when you decide what the stem is actually asking you to label. Is it a lesion, a layer, a mechanism of detachment, or an imaging behaviour? That first decision prevents common swaps: IRMA for neovascularisation, staining for leakage, or tractional for rhegmatogenous detachment.
 
 Use this as closed-book retrieval practice. Answer a block of five before looking at its explanations. For every miss, write one contrast sentence — not a whole paragraph — such as “IRMA stays intraretinal; neovascularisation grows at the retinal surface.” The questions are for postgraduate ophthalmology exam revision, not patient-specific assessment or management instruction.

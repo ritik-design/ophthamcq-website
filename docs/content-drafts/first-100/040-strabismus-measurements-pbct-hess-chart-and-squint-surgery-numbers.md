@@ -13,8 +13,6 @@ estimated_read_time: "14 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Strabismus Measurements: PBCT, Hess Chart and Squint Surgery Numbers
-
 The prism bar cover test (PBCT) gives a deviation measured under stated conditions. It does not give a diagnosis by itself, and it certainly does not create a universal surgical prescription. In an exam, score well by reporting **what was measured, how it was dissociated, at which fixation distance, with which correction, and which eye fixed** before interpreting the number.
 
 This article is for ophthalmology exam preparation. Measurements and surgical plans for a real patient require an orthoptic assessment, refraction, sensory evaluation, motility examination and a surgeon’s case-specific judgement.

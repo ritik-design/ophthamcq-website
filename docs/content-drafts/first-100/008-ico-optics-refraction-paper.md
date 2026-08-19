@@ -2,17 +2,17 @@
 title: "ICO Optics & Refraction Paper: What to Study and What to Skip"
 proposed_slug: "ico-optics-refraction-paper-study-priorities"
 meta_description: "A calculation-first ICO Optics & Refraction study plan: build a current coverage map, practise the mechanics, review errors and avoid obsolete assumptions."
+excerpt: "A calculation-first ICO Optics & Refraction study plan: build a current coverage map, practise the mechanics, review errors and avoid obsolete assumptions."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "10 minutes"
 status: "ready-for-thestacc"
 publication_action: "create-after-blog-platform-restored"
 primary_keyword: "ico optics and refraction exam"
 target_page: "/exams/ico-fico"
 fact_check_date: "2026-08-18"
 ---
-
-# ICO Optics & Refraction Paper: What to Study and What to Skip
 
 **For the ICO Optics & Refraction paper, learn the machinery well enough to derive an answer under pressure.** A formula sheet helps, but it is not the study plan. Start with the current [ICO Examinations information](https://icoph.org/ico-examination/), make a personal coverage map from the material for your sitting, then use calculation drills and clinically framed questions to expose the gaps.
 

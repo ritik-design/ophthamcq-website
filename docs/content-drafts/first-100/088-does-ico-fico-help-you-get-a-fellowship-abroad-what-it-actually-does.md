@@ -14,8 +14,6 @@ estimated_read_time: "13 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Does ICO/FICO Help You Get a Fellowship Abroad? What It Actually Does
-
 ICO/FICO can be a truthful line on an application if you have earned the exact credential and can document it. That is the narrow answer. It does not, by itself, grant a clinical licence, confirm that you meet a programme’s entry rule, create a visa/work route, obtain funding, guarantee an interview or secure a fellowship post.
 
 That distinction is not pessimism; it is how you avoid spending months on the wrong bottleneck. The International Council of Ophthalmology (ICO) is the authority for its examinations. A host programme is the authority for its selection criteria. The host-country regulator is the authority for registration, and the relevant employer/immigration process controls work permission. Those are separate systems.

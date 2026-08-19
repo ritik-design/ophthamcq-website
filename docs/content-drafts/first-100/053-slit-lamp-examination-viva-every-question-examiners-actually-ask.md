@@ -6,6 +6,7 @@ excerpt: "In a slit-lamp viva, name the illumination technique, the structure it
 category: "OSCE"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 status: "long-form-rewrite-draft"
 publication_action: "create-after-blog-platform-restored"
@@ -15,8 +16,6 @@ target_page: "/osce"
 fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/053-slit-lamp-examination-viva-serp-brief.md"
 ---
-
-# Slit Lamp Examination Viva: Every Question Examiners Actually Ask
 
 The reliable slit-lamp viva answer has three parts: name the illumination method, say what plane or interface it shows, then describe the finding before diagnosing it. A slit lamp combines binocular magnified observation with a controllable beam; the value is not the instrument name but the way you alter beam width, angle, height, magnification and filters to make a sign visible.[^eyewiki]
 

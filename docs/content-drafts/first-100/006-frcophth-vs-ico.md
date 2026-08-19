@@ -2,17 +2,17 @@
 title: "FRCOphth vs ICO: Which Exam Should an Indian Ophthalmology Resident Take?"
 proposed_slug: "frcophth-vs-ico-indian-ophthalmology-resident"
 meta_description: "A source-led FRCOphth vs ICO comparison for Indian ophthalmology residents: pathway, prerequisites, career questions, logistics checks and study planning."
+excerpt: "A source-led FRCOphth vs ICO comparison for Indian ophthalmology residents: pathway, prerequisites, career questions, logistics checks and study planning."
 category: "Exam Comparisons"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 status: "ready-for-thestacc"
 publication_action: "create-after-blog-platform-restored"
 primary_keyword: "frcophth vs ico"
 target_page: "/exams"
 fact_check_date: "2026-08-18"
 ---
-
-# FRCOphth vs ICO: Which Exam Should an Indian Ophthalmology Resident Take?
 
 **Neither FRCOphth nor ICO is “better” in the abstract. Choose the exam route that answers a defined career or learning question, after checking the relevant regulator or employer separately.** FRCOphth is administered by The Royal College of Ophthalmologists; the ICO examinations are administered by the International Council of Ophthalmology. Their component structures, prerequisites and current operational arrangements are not interchangeable.
 

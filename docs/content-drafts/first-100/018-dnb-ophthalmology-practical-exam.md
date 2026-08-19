@@ -3,9 +3,11 @@ title: "DNB Ophthalmology Practical Exam: Cases, Viva and Examiner Expectations"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "dnb-ophthalmology-practical-exam"
 meta_description: "A source-led DNB Ophthalmology practical-exam rehearsal framework for cases, viva, instruments and session-specific NBEMS instructions."
+excerpt: "A source-led DNB Ophthalmology practical-exam rehearsal framework for cases, viva, instruments and session-specific NBEMS instructions."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "dnb ophthalmology practical exam"
 secondary_keywords: ["DNB Ophthalmology viva", "DNB Ophthalmology practical cases", "DNB Ophthalmology OSCE"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/018-dnb-ophthalmology-practical-exam-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# DNB Ophthalmology Practical Exam: Cases, Viva and Examiner Expectations
 
 The DNB Ophthalmology practical exam is best prepared as a **rehearsal problem**, not as a hunt for a fixed list of “sure cases.” NBEMS runs the DNB Final as a theory-and-practical examination. Its [official DNB/DrNB Exit Examinations page](https://natboard.edu.in/viewnbeexam?exam=dnb) states that a candidate who qualifies theory is permitted to appear in practical. Its live [practical-exam portal](https://exam.natboard.edu.in/candidates/viewpracticalexam.php) is session-specific: it publishes scheduling information and includes an OSCE-component indicator. Your current candidate instructions, admit card and portal entry are the authority for your own session.
 

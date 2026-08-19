@@ -3,9 +3,11 @@ title: "ICO Exam Registration, Dates, Fees and Test Centres in India"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "ico-exam-registration-dates-fees-test-centres-india"
 meta_description: "A current, source-led ICO registration guide for Indian ophthalmologists: dates, fees, centres, documents, payment and the checks to make before submitting."
+excerpt: "A current, source-led ICO registration guide for Indian ophthalmologists: dates, fees, centres, documents, payment and the checks to make before submitting."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "ico exam registration india"
 secondary_keywords: ["ICO exam dates", "ICO exam fees", "ICO test centres India", "ICO examination registration"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/011-ico-exam-registration-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# ICO Exam Registration, Dates, Fees and Test Centres in India
 
 For the 2026 ICO standard and Advanced examinations, the International Council of Ophthalmology lists **19 October 2026** as the examination date and **17 August 2026** as the registration-and-payment deadline. The deadline is close enough that this guide should be used as a checklist, not as a substitute for the live application portal. The paper you choose, your eligibility, centre capacity and the fee displayed to you are all part of the actual transaction.
 

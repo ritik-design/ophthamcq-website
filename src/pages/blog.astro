@@ -9,7 +9,8 @@ type LocalPostModule = { frontmatter: Record<string, string> };
 const posts = Object.entries(localPosts as Record<string, LocalPostModule>)
   .filter(([path]) => !/\/(17|18|19|077|078)-/.test(path))
   .map(([, { frontmatter }]) => frontmatter)
-  .filter((post) => post.proposed_slug);
+  .filter((post) => post.proposed_slug)
+  .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
 function readTime(post: Record<string, string>) {
   return post.estimated_read_time || 'Read';

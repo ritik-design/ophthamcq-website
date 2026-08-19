@@ -16,8 +16,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/087-ophthalmology-subspecialty-choice-serp-brief.md"
 ---
 
-# How to Choose an Ophthalmology Subspecialty: An Honest Comparison
-
 The useful question is not “Which subspecialty is best?” It is: **which work would I still want to do repeatedly when the clinic is full, the case is not glamorous, and I am accountable for the follow-up?** A fellowship title, an admired mentor or a single impressive operating list can start exploration; none is enough to choose a decade of work.
 
 This is career decision support for ophthalmologists, not a ranking, employment forecast or fellowship-placement guide. Income, call burden, autonomy, procedure volume and satisfaction vary substantially with country, city, hospital type, referral system, team role, local regulation and the individual service. Do not use a generic comparison to promise any of those outcomes.

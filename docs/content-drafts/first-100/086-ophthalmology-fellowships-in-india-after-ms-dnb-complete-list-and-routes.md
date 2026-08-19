@@ -13,8 +13,6 @@ estimated_read_time: "11 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Ophthalmology Fellowships in India After MS/DNB: Routes and a Current-List Method
-
 There is no honest, permanently complete list of ophthalmology fellowships in India. Posts open and close by institution, department, intake and subspecialty; duration, eligibility, stipend, registration requirements and application route can change with a new notice. A list that gives those facts without a dated primary source is worse than incomplete—it can send you to the wrong application route.
 
 The practical alternative is a **current-list method**: decide the clinical route you want, identify institutions you would genuinely join, and keep only opportunities supported by the recruiting institution’s current page or notice. This is career planning for doctors after MS/DNB, not a guarantee of selection or a substitute for an institution’s written terms.

@@ -3,9 +3,11 @@ title: "DNB Ophthalmology Previous Year Questions: What Repeats and How Often"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "dnb-ophthalmology-previous-year-questions"
 meta_description: "How DNB Ophthalmology residents can use previous-year questions and candidate recalls without confusing recurring concepts with an official blueprint."
+excerpt: "How DNB Ophthalmology residents can use previous-year questions and candidate recalls without confusing recurring concepts with an official blueprint."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "dnb ophthalmology previous year questions"
 secondary_keywords: ["DNB Ophthalmology past papers", "DNB Ophthalmology repeated questions", "DNB final ophthalmology preparation"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/017-dnb-ophthalmology-previous-year-questions-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# DNB Ophthalmology Previous Year Questions: What Repeats and How Often
 
 Previous-year questions are useful for DNB Ophthalmology when you use them as evidence about **concepts you must retrieve**, not as a promise that a remembered stem will return unchanged. NBEMS does not publish a public repeat-frequency table for ophthalmology. A responsible answer to “what repeats?” is therefore: recurring principles, standard comparisons and familiar decision points may recur in different wording; a candidate recall is not an official paper or a prediction.
 

@@ -14,8 +14,6 @@ estimated_read_time: "14 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# How to Publish Your First Case Report as an Ophthalmology Resident
-
 The first useful question is not “Which journal will take this?” It is “What can another clinician learn from this case that is specific, documented and honestly bounded?” A rare diagnosis is not automatically a reportable lesson, and a dramatic image is not a substitute for chronology, differential reasoning and permission.
 
 This guide is for ophthalmology residents preparing a scholarly case report. It is not legal, ethics, privacy, employment or publication advice. Local institutional policies, the responsible consultant, the patient-consent process and the target journal’s current instructions control the work. No checklist can guarantee acceptance or publication.

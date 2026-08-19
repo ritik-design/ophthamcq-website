@@ -13,8 +13,6 @@ estimated_read_time: "15 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Optics and Refraction Formula Sheet Every Ophthalmology PG Needs
-
 For an ophthalmology optics calculation, write the diagram, declare the sign convention, convert the unit, then calculate. That sequence is more reliable than memorising a page of equations. The formulas below are a postgraduate revision framework. They are not an individual refraction, contact-lens fitting or IOL-calculation protocol.
 
 Different texts may define distances and signs from different reference points. The formula is only correct within its convention. In the examples below, use metres for distances when the answer is in dioptres (D), and state the convention demanded by your paper.

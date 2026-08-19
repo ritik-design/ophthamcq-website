@@ -14,8 +14,6 @@ estimated_read_time: "12 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Fundus Image Quiz: 25 Photos, Can You Name Them All?
-
 This is a text-first production framework for a future labelled fundus-image quiz. It does **not** contain, supply or claim to contain 25 clinical photographs. A photograph may be added only after its rights, provenance, de-identification and caption have been cleared. Until then, use the 25 prompts below to rehearse the answer structure rather than to make a diagnosis from an imagined image.
 
 For each future image, give three answers before revealing the caption:

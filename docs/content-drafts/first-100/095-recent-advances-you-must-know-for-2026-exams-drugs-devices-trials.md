@@ -13,8 +13,6 @@ estimated_read_time: "11 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Recent Advances for Ophthalmology Exams: How to Revise Drugs, Devices and Trials
-
 “Recent advances” is not a list of brand names. It is a testing format: an examiner gives you a new therapy, device, imaging model or trial and asks whether you can connect mechanism to clinical problem, study design, endpoint and limitation. The answer becomes unsafe when a trial finding is silently converted into a claim about current approval, local availability or a treatment choice.
 
 This is postgraduate exam education, not patient-treatment or regulatory advice. All approval, indication, availability, label, guideline and reimbursement statements are deliberately withheld for final jurisdiction-specific checking. A paper can remain true while its 2026 regulatory meaning changes.

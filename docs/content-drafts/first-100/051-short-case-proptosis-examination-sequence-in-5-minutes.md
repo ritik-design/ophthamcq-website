@@ -17,8 +17,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/051-proptosis-examination-serp-brief.md"
 ---
 
-# Short Case: Proptosis — Examination Sequence in 5 Minutes
-
 A proptosis short case is best handled as a sequence: establish that the globe is forward or displaced, describe the pattern, document visual function and only then organise the differential. In five minutes, an examiner can see whether you have a safe, repeatable order. They do not need a premature label such as thyroid eye disease, cellulitis or tumour.
 
 This is a postgraduate examination-revision framework for doctors. It is not a protocol for assessing or managing a patient. In clinical work, use supervision, local pathways and current specialist guidance.

@@ -2,17 +2,17 @@
 title: "FRCOphth Eligibility, Fees and Exam Dates for International Candidates"
 proposed_slug: "frcophth-eligibility-fees-dates-international-candidates"
 meta_description: "A source-led FRCOphth application guide for international candidates: eligibility, component prerequisites, documents, live fee/date checks and booking safeguards."
+excerpt: "A source-led FRCOphth application guide for international candidates: eligibility, component prerequisites, documents, live fee/date checks and booking safeguards."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 status: "ready-for-thestacc"
 publication_action: "create-after-blog-platform-restored"
 primary_keyword: "frcophth eligibility international"
 target_page: "/exams/frcophth"
 fact_check_date: "2026-08-18"
 ---
-
-# FRCOphth Eligibility, Fees and Exam Dates for International Candidates
 
 **International candidates should treat FRCOphth entry as a live, component-specific administrative process.** Nationality alone does not answer eligibility. For the component you intend to sit, use the current RCOphth page, its linked rules and the live application route. Then separate exam entry from GMC registration, immigration, and employment or training requirements. They are different decisions, owned by different organisations.
 

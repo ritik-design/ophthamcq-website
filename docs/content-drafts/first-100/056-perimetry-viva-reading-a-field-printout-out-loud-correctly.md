@@ -15,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/056-perimetry-viva-serp-brief.md"
 ---
 
-# Perimetry Viva: Reading a Field Printout Out Loud, Correctly
-
 The safest visual-field viva answer has seven moves: **identify the test, judge whether it is interpretable, locate the loss, compare total with pattern deviation, describe the meridian relationship, state the global indices, then correlate it with structure and the rest of the examination.** A grey scale is an overview, not a diagnosis. A cluster of probability symbols is evidence to explain, not a licence to announce glaucoma or a neurological lesion from one printout.
 
 This is postgraduate examination education for doctors. It is not a patient-specific diagnostic or management algorithm. Automated perimetry programmes, printout layout and reliability flags vary by perimeter and software version; name what is printed in front of you.

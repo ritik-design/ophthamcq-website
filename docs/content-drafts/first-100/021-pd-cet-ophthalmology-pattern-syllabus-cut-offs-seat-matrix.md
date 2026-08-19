@@ -2,16 +2,16 @@
 title: "PD-CET Ophthalmology: Pattern, Syllabus, Cut-offs and Seat Matrix"
 proposed_slug: "pd-cet-ophthalmology-pattern-syllabus-cut-offs-seat-matrix"
 meta_description: "Read the current PD-CET notification correctly: separate pattern, syllabus, cut-off and seat-matrix facts, then build a source-led ophthalmology revision plan."
+excerpt: "Read the current PD-CET notification correctly: separate pattern, syllabus, cut-off and seat-matrix facts, then build a source-led ophthalmology revision plan."
 category: "Ophthalmology Exams"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "12 minutes"
 status: "longform-researched-draft"
 primary_keyword: "pdcet ophthalmology"
 secondary_keywords: ["PD-CET pattern", "PD-CET syllabus", "PD-CET cut off", "PD-CET seat matrix"]
 fact_check_date: "2026-08-18"
 ---
-
-# PD-CET Ophthalmology: Pattern, Syllabus, Cut-offs and Seat Matrix
 
 ## The answer in one line: use the current official cycle, not a previous-year summary
 

@@ -2,9 +2,11 @@
 title: "FRCOphth Part 2 Written: Format, Timing and What Gets Asked"
 proposed_slug: "frcophth-part-2-written-crq-mcq-format"
 meta_description: "A current, source-linked guide to the FRCOphth Part 2 Written format and a clinical-decision revision system for senior ophthalmology trainees."
+excerpt: "A current, source-linked guide to the FRCOphth Part 2 Written format and a clinical-decision revision system for senior ophthalmology trainees."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "12 minutes"
 last_updated: "2026-08-18"
 status: "long-form-rewrite-draft"
 publication_action: "create-after-blog-platform-restored"
@@ -14,8 +16,6 @@ target_page: "/exams/frcophth"
 fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/003-frcophth-part-2-written-serp-brief.md"
 ---
-
-# FRCOphth Part 2 Written: Format, Timing and What Gets Asked
 
 The current FRCOphth Part 2 Written is not a CRQ paper with a few MCQs added on. RCOphth describes it as an online exam of **two 90-question multiple-choice papers on the same day**. It assesses the application of clinical knowledge to diagnosis, investigation and management of ophthalmic conditions. If a preparation page tells you that a current CRQ component determines the format, treat that as historical or unverified until your own current College documentation confirms it. Check the live [RCOphth Part 2 Written page](https://www.rcophth.ac.uk/exams/rcophth-exams/part-2-frcophth-written-exam/) and [exams calendar](https://www.rcophth.ac.uk/examinations/) before acting on dates, applications or technical arrangements.
 

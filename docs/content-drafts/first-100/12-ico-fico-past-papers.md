@@ -3,9 +3,11 @@ title: "ICO/FICO Past Papers: How to Use Them Without Wasting Them"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "ico-fico-past-papers"
 meta_description: "A practical method for using ICO/FICO past papers and candidate recalls: preserve papers, verify concepts, build an error map and rehearse exam decisions."
+excerpt: "A practical method for using ICO/FICO past papers and candidate recalls: preserve papers, verify concepts, build an error map and rehearse exam decisions."
 category: "Exam Strategy"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "ico past papers"
 secondary_keywords: ["FICO past papers", "ICO exam previous questions", "ICO exam preparation"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/012-ico-fico-past-papers-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# ICO/FICO Past Papers: How to Use Them Without Wasting Them
 
 ICO/FICO past papers are most valuable when they become an **error-mapping system**, not when they become a list of answers you can recognise. The first timed pass tells you where your clinical reasoning, optics, basic science or pace breaks down. The review then has to verify the underlying point in a reliable source and turn it into a retrieval task. If you only read explanations, you will feel familiar with the material without proving that you can choose between close options under time pressure.
 

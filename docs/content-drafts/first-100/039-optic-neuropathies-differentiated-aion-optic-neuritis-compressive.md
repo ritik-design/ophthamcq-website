@@ -13,8 +13,6 @@ estimated_read_time: "14 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Optic Neuropathies Differentiated: AION, Optic Neuritis, Compressive
-
 For an optic-neuropathy MCQ, do not start by matching age to a disease name. First confirm the syndrome, then rank the causes by **tempo, pain, disc appearance, field pattern and associated context**. AION, optic neuritis and compression overlap enough that one “classic” feature is rarely sufficient. The strongest answer explains why the leading option fits better than the nearest alternative.
 
 This is a source-led revision framework for doctors. It is not a diagnostic pathway for an individual with visual loss. In clinical practice, sudden or progressive loss, particularly with features concerning for arteritic ischaemia or compression, requires urgent senior-led assessment under local pathways.

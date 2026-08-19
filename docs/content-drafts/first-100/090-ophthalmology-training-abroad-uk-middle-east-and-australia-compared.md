@@ -16,8 +16,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/090-ophthalmology-training-abroad-serp-brief.md"
 ---
 
-# Ophthalmology Training Abroad: UK, Middle East and Australia Compared
-
 “Training abroad” is not one route. It may mean entry to a formal training programme, a time-limited fellowship, a supervised clinical post, an unsupervised service job, an observership or research. Those roles have different legal authority, learning value, recruitment processes and document requirements. Comparing countries before defining the role is how applicants collect impressive advice that does not apply to them.
 
 This is an orientation and evidence-gathering guide for ophthalmologists. It does not predict registration, visa approval, job offers, pay, training recognition, specialty-entry success or migration outcomes. Those decisions are made by current regulators, employers, immigration authorities, training bodies and individual programmes—not by an exam credential, an agency post or this article.

@@ -1,7 +1,7 @@
 ---
 title: "What to Do in the Last 7 Days Before an Ophthalmology Exam"
 proposed_slug: "what-to-do-in-the-last-7-days-before-an-ophthalmology-exam"
-meta_description: "A seven-day ophthalmology exam plan for residents: consolidate error logs, practise exam mechanics, check logistics and protect sleep without learning an entire new syllabus."
+meta_description: "A seven-day ophthalmology exam plan for residents: consolidate error logs, practise exam mechanics"
 excerpt: "The final week is for retrieval, error correction and logistics. Do not turn it into a late attempt at finishing every textbook."
 category: "Career"
 author: "Dr. OphthaMCQ Editorial Team"

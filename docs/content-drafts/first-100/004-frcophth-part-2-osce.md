@@ -2,9 +2,11 @@
 title: "FRCOphth Part 2 OSCE: All Stations, Marking and How to Rehearse"
 proposed_slug: "frcophth-part-2-osce-stations-marking-rehearsal"
 meta_description: "A source-linked FRCOphth Part 2 OSCE rehearsal guide covering the current station families, timing, marking boundary and feedback system."
+excerpt: "A source-linked FRCOphth Part 2 OSCE rehearsal guide covering the current station families, timing, marking boundary and feedback system."
 category: "OSCE and Viva"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "12 minutes"
 last_updated: "2026-08-18"
 status: "long-form-rewrite-draft"
 publication_action: "create-after-blog-platform-restored"
@@ -14,8 +16,6 @@ target_page: "/osce"
 fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/004-frcophth-part-2-osce-serp-brief.md"
 ---
-
-# FRCOphth Part 2 OSCE: All Stations, Marking and How to Rehearse
 
 FRCOphth Part 2 OSCE preparation should begin by correcting the label. The current RCOphth Part 2 **Oral** examination has two components: a structured viva and an OSCE. The OSCE has six published station families: anterior segment; glaucoma and lid; posterior segment; strabismus and orbit; neuro-ophthalmology; and communication skills. RCOphth says the five clinical stations last 20 minutes each, while the communication station runs alongside the structured viva and lasts 10 minutes. Practise these station families and the observable task, not a rumoured list of recalled cases. Confirm your own sitting’s instructions through the [RCOphth Part 2 Oral page](https://www.rcophth.ac.uk/exams/rcophth-exams/part-2-frcophth-oral-exam/) and [exams calendar](https://www.rcophth.ac.uk/examinations/).
 

@@ -3,9 +3,11 @@ title: "Keratoplasty Types (PK, DALK, DSAEK, DMEK) Compared for Exams"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "keratoplasty-types-pk-dalk-dsaek-dmek-compared-for-exams"
 meta_description: "Compare PK, DALK, DSAEK and DMEK by diseased layer, graft tissue, retained host tissue, indications and viva traps for ophthalmology exams."
+excerpt: "Compare PK, DALK, DSAEK and DMEK by diseased layer, graft tissue, retained host tissue, indications and viva traps for ophthalmology exams."
 category: "Topics"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "keratoplasty types"
 secondary_keywords: ["PK versus DALK", "DSAEK versus DMEK", "corneal transplant types"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/034-keratoplasty-types-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# Keratoplasty Types (PK, DALK, DSAEK, DMEK) Compared for Exams
 
 The simplest way to answer a keratoplasty question is to name the **diseased corneal layer** and then choose the operation that replaces that layer while preserving healthy host tissue where appropriate. Penetrating keratoplasty (PK) is full thickness. Deep anterior lamellar keratoplasty (DALK) replaces anterior stroma while retaining host Descemet membrane and endothelium. DSAEK and DMEK are posterior lamellar/endothelial procedures, but their donor tissue differs.
 

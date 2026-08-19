@@ -3,9 +3,11 @@ title: "Infective Keratitis: Workup Algorithm and Exam-Ready Answers"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "infective-keratitis-workup-algorithm-and-exam-ready-answers"
 meta_description: "A source-led postgraduate framework for infective keratitis: describe the ulcer, frame sampling, compare patterns and answer common viva questions safely."
+excerpt: "A source-led postgraduate framework for infective keratitis: describe the ulcer, frame sampling, compare patterns and answer common viva questions safely."
 category: "Topics"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "keratitis mcq"
 secondary_keywords: ["infective keratitis workup", "corneal ulcer viva", "microbial keratitis examination"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/033-infective-keratitis-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# Infective Keratitis: Workup Algorithm and Exam-Ready Answers
 
 The best answer to an infective-keratitis stem is **description before diagnosis**. State the visual status and the corneal findings in a reproducible order, identify the risk context, then explain why sampling, escalation and treatment decisions depend on severity and local protocol. A feathery infiltrate, a contact-lens history or severe pain can change the differential; none independently proves an organism.
 

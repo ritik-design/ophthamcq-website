@@ -13,8 +13,6 @@ estimated_read_time: "12 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Cornea MCQs: 40 Text-First Image-Pattern Questions
-
 These are text-first pattern stems, deliberately not a substitute for cleared slit-lamp photographs or supervised clinical examination. In a real image question, first describe what is present—site, corneal layer, edge, stain, depth and associated sign—then give the most likely diagnosis. That sequence protects you from recognising one memorable sign and overcalling a disease.
 
 This is exam education for postgraduate doctors, not a guide to diagnosing or treating a painful red eye. Infective keratitis and corneal thinning require clinical assessment and current local protocols. The MCQs use the examination-level morphology and anatomy supported by the source ledger at the end.

@@ -17,8 +17,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/054-direct-vs-indirect-ophthalmoscopy-serp-brief.md"
 ---
 
-# Direct vs Indirect Ophthalmoscopy: Optics, Technique and Viva Answers
-
 Direct ophthalmoscopy gives a close, monocular, erect and highly magnified view of a limited retinal area. Binocular indirect ophthalmoscopy uses a condensing lens to create an inverted aerial image: the view is less magnified but wider, binocular and more useful for a broad retinal survey. In a viva, give that contrast first. Then explain what it changes at the bedside.
 
 This is postgraduate examination education for doctors, not a retinal-assessment protocol. Dilation, scleral depression and the examination of an unwell or symptomatic person depend on the clinical setting, consent, supervision and current local practice.

@@ -13,8 +13,6 @@ estimated_read_time: "10 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# AIOS Membership: How to Verify Costs, Benefits and FAICO Requirements
-
 AIOS membership is an administrative record held by the All India Ophthalmological Society, not a shortcut around an examination application. If you are considering FAICO, treat membership, examination eligibility, application payment and preparation as four separate checks. The AIOS FAICO page currently presents membership as an eligibility condition, but the current notice—not this article, an old PDF or a fee screenshot—controls your application.
 
 This guide deliberately withholds mutable amounts, dates, categories, benefit lists, centre details and document rules. They may be visible on an official page today and different tomorrow. OphthaMCQ is independent of AIOS and is not affiliated with, endorsed by or authorised to interpret AIOS membership or FAICO rules.

@@ -14,8 +14,6 @@ estimated_read_time: "13 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# First-Year Ophthalmology Resident Survival Guide
-
 First year is a transition into a clinical system, not a test of whether you can appear independent on day one. The useful early habits are modest: know your permitted role, prepare for the task in front of you, observe carefully, document within your department’s standard, ask a precise question, and check what the senior team concluded.
 
 Local protocols, named supervisors, duty arrangements, patient-safety processes and institutional policy always control clinical work. This is an orientation and learning guide for residents, not patient-specific clinical advice, a procedure manual, a universal curriculum or a promise about competence, examinations or career outcomes.

@@ -13,8 +13,6 @@ estimated_read_time: "14 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Long Case: Mature Cataract — Full Presentation and Likely Viva
-
 A mature cataract long case is not scored by recognising a white lens alone. Present the functional complaint and lens finding clearly, then show that you have assessed the cornea, anterior chamber, pressure, pupil, fellow eye and the limits of posterior-segment assessment. Your final statement should distinguish **what is observed**, **what is likely**, and **what remains unknown because the media are opaque**.
 
 This is exam-revision material for ophthalmologists in training. It is not an instruction to assess, investigate or treat a particular patient. Real clinical decisions require the complete patient context, current local protocol and supervision.

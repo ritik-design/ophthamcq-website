@@ -2,9 +2,11 @@
 title: "Lacrimal System, Syringing and DCR: Practical and Theory Overlap"
 proposed_slug: "lacrimal-system-syringing-and-dcr-practical-and-theory-overlap"
 meta_description: "An exam-first lacrimal-system guide: anatomy, syringing interpretation, DCR principles, viva scripts and common MCQ traps."
+excerpt: "An exam-first lacrimal-system guide: anatomy, syringing interpretation, DCR principles, viva scripts and common MCQ traps."
 category: "Oculoplastics"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "12 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "dcr surgery mcq"
 secondary_keywords: ["lacrimal syringing", "dacryocystorhinostomy", "nasolacrimal duct obstruction", "DCR viva"]
@@ -12,8 +14,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/043-lacrimal-system-syringing-and-dcr-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# Lacrimal System, Syringing and DCR: Practical and Theory Overlap
 
 Dacryocystorhinostomy (DCR) is a bypass operation that creates a drainage route between the lacrimal sac and the nasal cavity. That definition is useful, but it is not the first line of a good answer. In a lacrimal station, start with anatomy and localisation: where is the complaint arising, what did examination show, and what does irrigation suggest? Only then explain why a DCR may be considered.
 

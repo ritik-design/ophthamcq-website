@@ -3,9 +3,11 @@ title: "FAICO Exam Guide: Eligibility, Subspecialties, Pattern and Timeline"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "faico-exam-guide"
 meta_description: "A current, AIOS-source-led FAICO guide covering eligibility, the 11 subspecialties, online MCQ, OSCE/viva timeline, documents, centres and preparation."
+excerpt: "A current, AIOS-source-led FAICO guide covering eligibility, the 11 subspecialties, online MCQ, OSCE/viva timeline, documents, centres and preparation."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
+estimated_read_time: "11 minutes"
 last_updated: "2026-08-18"
 primary_keyword: "FAICO exam"
 secondary_keywords: ["FAICO eligibility", "FAICO subspecialties", "FAICO exam pattern", "FAICO exam dates"]
@@ -13,8 +15,6 @@ fact_check_date: "2026-08-18"
 research_brief: "docs/content-research/013-faico-exam-guide-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
-
-# FAICO Exam Guide: Eligibility, Subspecialties, Pattern and Timeline
 
 FAICO is the **Fellow of the All India Collegium of Ophthalmology** assessment administered through the All India Ophthalmological Society (AIOS). It is a subspecialty assessment, not an entry-level postgraduate examination and not the same qualification as FICO. For the 2026 cycle, AIOS lists an online MCQ test followed by OSCE and viva stages, with eligibility built around AIOS membership, a recognised postgraduate ophthalmology qualification and defined post-PG/subspecialty experience.
 

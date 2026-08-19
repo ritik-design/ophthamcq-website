@@ -14,8 +14,6 @@ estimated_read_time: "13 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Studying While On Call: A Realistic System for Ophthalmology Residents
-
 An on-call roster does not need a fictional two-hour evening study plan. It needs a menu of tasks that can survive interruption. The core rule is simple: clinical duties, handover, supervision arrangements and local fatigue policy come first. Revision is for genuine quiet gaps and protected time, never a reason to be unavailable or to work through a task that needs your attention.
 
 This system uses retrieval practice and distributed practice as learning principles, not promises. The evidence does not prescribe one schedule for every resident, prove an exam outcome, or determine when any individual is sufficiently rested. Use your programme’s actual rules and adjust the plan to your real roster.

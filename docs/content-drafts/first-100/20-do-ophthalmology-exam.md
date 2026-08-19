@@ -3,15 +3,15 @@ title: "DO Ophthalmology Exam: Syllabus, Practicals and Next Steps After DO"
 publication_action: "new-blog-article"
 proposed_slug: "do-ophthalmology-exam"
 meta_description: "A document-first DO Ophthalmology exam guide: map your university syllabus, rehearse practicals and use past questions without importing another university's rules."
+excerpt: "A document-first DO Ophthalmology exam guide: map your university syllabus, rehearse practicals and use past questions without importing another university's rules."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
+date: "2026-08-18"
 status: "longform-researched-draft"
 primary_keyword: "do ophthalmology exam"
 secondary_keywords: ["do ophthalmology syllabus", "do ophthalmology practical", "diploma ophthalmology final exam"]
 fact_check_date: "2026-08-18"
 ---
-
-# DO Ophthalmology Exam: Syllabus, Practicals and Next Steps After DO
 
 ## Start with this: there is no single DO final-exam blueprint
 

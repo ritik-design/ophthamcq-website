@@ -13,8 +13,6 @@ estimated_read_time: "11 minutes"
 fact_check_date: "2026-08-18"
 ---
 
-# Optics and Refraction MCQs With Worked Solutions
-
 Optics questions are seldom lost because the formula is unknown. They are lost because metres become centimetres, a sign convention is silently dropped, or the candidate answers the power meridian instead of the written cylinder axis. Use the same sequence every time: write the known quantity with its unit, select the relationship, do the arithmetic, then ask whether the optical direction makes sense.
 
 This is postgraduate exam revision, not a clinical prescription guide. Refraction conventions and exact clinical decisions vary with the setting and reference; the questions below test durable principles rather than a patient-specific plan.

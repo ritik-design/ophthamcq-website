@@ -8,9 +8,11 @@ export interface Props {
   title?: string;
   description?: string;
   image?: string;
+  robots?: string;
+  ogType?: string;
 }
 
-const { title = SITE.name, description = SITE.description, image = '/og-image.jpg' } = Astro.props;
+const { title = SITE.name, description = SITE.description, image = '/og-image.jpg', robots = 'index, follow', ogType = 'website' } = Astro.props;
 const pageTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
 const canonicalUrl = new URL(Astro.url.pathname, SITE.url).href;
 const absoluteImage = new URL(image, SITE.url).href;
@@ -34,12 +36,12 @@ const absoluteImage = new URL(image, SITE.url).href;
 
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={robots} />
     <title>{pageTitle}</title>
 
     <link rel="canonical" href={canonicalUrl} />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />

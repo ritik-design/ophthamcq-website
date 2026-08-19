@@ -16,8 +16,6 @@ research_brief: "docs/content-research/026-glaucoma-mcq-serp-brief.md"
 status: "long-form-rewrite-draft"
 ---
 
-# Glaucoma High-Yield Facts for PG Exams (+30 Practice MCQs)
-
 For an exam stem on glaucoma, build the answer in four moves: identify the **angle and mechanism**, interpret **IOP in context**, demonstrate **structural optic-nerve/RNFL damage**, and correlate it with **function**. Raised IOP is an important risk factor and treatment target, but it is not the definition of glaucoma; glaucomatous optic neuropathy can occur when measured IOP lies within the population reference range.[^egs] This is education for ophthalmology examinations, not advice for diagnosing or treating an individual patient.
 
 ## The answer framework that prevents most glaucoma errors

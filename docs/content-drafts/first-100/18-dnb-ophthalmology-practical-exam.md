@@ -3,15 +3,15 @@ title: "DNB Ophthalmology Practical Exam: Cases, Viva and Examiner Expectations"
 publication_action: "new-blog-article"
 proposed_slug: "dnb-ophthalmology-practical-exam"
 meta_description: "Prepare for a DNB Ophthalmology practical with a repeatable case, instrument, investigation and viva-response framework. Confirm the current official format with NBEMS."
+excerpt: "Prepare for a DNB Ophthalmology practical with a repeatable case, instrument, investigation and viva-response framework."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
+date: "2026-08-18"
 status: "reviewed-draft"
 primary_keyword: "dnb ophthalmology practical exam"
 secondary_keywords: ["dnb ophthalmology viva", "dnb ophthalmology cases"]
 fact_check_date: "2026-08-18"
 ---
-
-# DNB Ophthalmology Practical Exam: Cases, Viva and Examiner Expectations
 
 The current DNB practical format must be confirmed from NBEMS and centre instructions. What remains useful across formats is a disciplined response: identify the task, state decisive findings, give the conclusion, defend the next principle and recognise the complication that changes urgency.
 
