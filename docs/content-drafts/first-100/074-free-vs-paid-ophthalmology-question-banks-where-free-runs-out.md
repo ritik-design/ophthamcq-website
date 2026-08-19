@@ -22,7 +22,7 @@ That is the useful free-versus-paid distinction. Paid does not mean better learn
 Start free if you have not yet proved that you will answer, review and revisit questions. Move to a paid resource only when the free diagnostic reveals a named bottleneck and the product’s current page shows that it addresses that bottleneck.
 
 | Your present situation | Start with | What would justify paying | What payment cannot replace |
-|---|---|---|
+|---|---|---|---|
 | You have not mapped weak topics | A small free mixed block and an error log | Nothing yet; first identify the gap | Honest review of wrong and guessed-right answers |
 | You miss facts but do not know why | Free questions plus a reference or notes | A resource whose sample explanations make the repair route clear | Reading the underlying concept |
 | You repeatedly run out of questions in a named exam area | Free questions for diagnosis | More current, relevant practice in that exact area after you inspect the live product | Re-testing old errors |

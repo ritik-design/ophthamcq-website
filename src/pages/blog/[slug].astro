@@ -98,20 +98,51 @@ const articleSchema = {
     border-radius: 0 0.75rem 0.75rem 0;
     font-style: italic;
   }
+  /* Tables are wrapped in .table-scroll by rehype-wrap-tables so a wide table
+     scrolls inside its own box instead of dragging the page sideways. */
+  .thestacc-content .table-scroll {
+    margin: 1.5rem 0;
+    /* Fades the right edge while there is more table to scroll to, so the
+       overflow is discoverable rather than silently cut off. */
+    background:
+      linear-gradient(to right, #fff 30%, transparent) left / 3rem 100% no-repeat,
+      linear-gradient(to left, #fff 30%, transparent) right / 3rem 100% no-repeat,
+      radial-gradient(farthest-side at 0 50%, rgb(15 23 42 / 0.12), transparent) left / 1rem 100% no-repeat,
+      radial-gradient(farthest-side at 100% 50%, rgb(15 23 42 / 0.12), transparent) right / 1rem 100% no-repeat;
+    background-attachment: local, local, scroll, scroll;
+  }
+  .thestacc-content .table-scroll:focus-visible {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
   .thestacc-content table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
+    margin: 0;
     font-size: 0.95rem;
   }
+  /* Below these widths columns collapse into one-word-per-line mush, so let the
+     container scroll instead. Two-column tables stay fluid at any width. */
+  .thestacc-content table[data-cols="3"] { min-width: 34rem; }
+  .thestacc-content table[data-cols="4"] { min-width: 44rem; }
+  .thestacc-content table[data-cols="5"] { min-width: 52rem; }
+  .thestacc-content table[data-cols="6"] { min-width: 60rem; }
+  .thestacc-content table[data-cols="7"] { min-width: 68rem; }
   .thestacc-content th,
   .thestacc-content td {
     border: 1px solid #e2e8f0;
     padding: 0.75rem 1rem;
     text-align: left;
+    vertical-align: top;
   }
   .thestacc-content th {
     background-color: #f1f5f9;
     font-weight: 600;
+  }
+  @media (max-width: 640px) {
+    .thestacc-content table { font-size: 0.875rem; }
+    .thestacc-content th,
+    .thestacc-content td { padding: 0.625rem 0.75rem; }
   }
 </style>

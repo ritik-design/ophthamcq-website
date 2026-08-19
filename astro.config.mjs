@@ -7,6 +7,7 @@ import { copyFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import stripEditorialSections from './src/utils/remark-strip-editorial.js';
+import rehypeWrapTables from './src/utils/rehype-wrap-tables.js';
 import indexNow from './src/integrations/indexnow.js';
 
 /**
@@ -57,6 +58,7 @@ export default defineConfig({
   integrations: [sitemap(), sitemapXmlAlias(), indexNow()],
   markdown: {
     remarkPlugins: [stripEditorialSections],
+    rehypePlugins: [rehypeWrapTables],
   },
   vite: {
     plugins: [tailwindcss()],
