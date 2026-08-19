@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Layers of the Eye: All Three Coats in Exam-Level Detail",
+      "description": "Master the three layers of the eye—fibrous, vascular and neural—with anatomy, histology, embryology, clinical correlations, viva traps and MCQs.",
+      "datePublished": "2026-08-17",
+      "author": { "@type": "Organization", "name": "Dr. OphthaMCQ Editorial Team" },
+      "publisher": { "@type": "Organization", "name": "OphthaMCQ" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What are the three layers of the eye?", "acceptedAnswer": { "@type": "Answer", "text": "They are the outer fibrous coat, middle vascular coat or uvea, and inner neural coat or retina." } },
+        { "@type": "Question", "name": "Which layer of the eye contains the retina?", "acceptedAnswer": { "@type": "Answer", "text": "The retina forms the inner neural coat." } },
+        { "@type": "Question", "name": "Is the choroid part of the retina?", "acceptedAnswer": { "@type": "Answer", "text": "No. The choroid is the posterior portion of the middle vascular coat and supplies the outer retina." } },
+        { "@type": "Question", "name": "Where does the cornea become sclera?", "acceptedAnswer": { "@type": "Answer", "text": "They meet at the corneoscleral limbus." } },
+        { "@type": "Question", "name": "What separates the retina from the choroid?", "acceptedAnswer": { "@type": "Answer", "text": "The RPE is apposed to Bruch membrane at the interface with the choriocapillaris." } }
+      ]
+    }
+  ]
+}

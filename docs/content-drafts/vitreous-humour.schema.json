@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://ophthamcq.org/blog/vitreous-humour-structure-function/#article",
+      "headline": "Vitreous Humour: Anatomy, Function and PVD",
+      "description": "Revise vitreous humour anatomy, composition, attachments, ageing, PVD, vitreomacular traction and surgical relevance with tables and MCQs.",
+      "datePublished": "2026-08-17",
+      "dateModified": "2026-08-17",
+      "author": { "@type": "Organization", "name": "Dr. OphthaMCQ Editorial Team" },
+      "publisher": { "@type": "Organization", "name": "OphthaMCQ", "url": "https://ophthamcq.org/" },
+      "mainEntityOfPage": "https://ophthamcq.org/blog/vitreous-humour-structure-function/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ophthamcq.org/blog/vitreous-humour-structure-function/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the main function of the vitreous humour?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The vitreous provides a transparent optical path and a hydrated mechanical matrix. It also permits molecular diffusion and influences adhesion between the posterior cortex and retina." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the vitreous humour made of?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is 98 to 99.7% water with a sparse matrix of collagen and hyaluronan. Type II collagen is the predominant fibrillar collagen." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the strongest vitreous attachment?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The vitreous base, which straddles the ora serrata, is the strongest vitreoretinal attachment." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between synchysis and syneresis?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Synchysis is liquefaction of vitreous gel. Syneresis is aggregation and collapse of the remaining gel." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does PVD sometimes cause a retinal tear?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A focal adhesion can remain fixed while surrounding vitreous moves, concentrating traction on the retina and producing a break." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ophthamcq.org/blog/vitreous-humour-structure-function/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ophthamcq.org/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ophthamcq.org/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Vitreous Humour: Anatomy, Function and PVD" }
+      ]
+    }
+  ]
+}

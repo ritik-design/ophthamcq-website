@@ -1,81 +1,77 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
-import Illustration from '../components/Illustration.astro';
-import PageHero from '../components/PageHero.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
-import { fetchBlogList, normalizeBlog, truncateExcerpt } from '../lib/thestacc';
 
-const apiPosts = await fetchBlogList();
-const posts = apiPosts.map(normalizeBlog);
+const localPosts = import.meta.glob('../../docs/content-drafts/first-100/*.md', { eager: true });
+type LocalPostModule = { frontmatter: Record<string, string> };
+
+const posts = Object.entries(localPosts as Record<string, LocalPostModule>)
+  .filter(([path]) => !/\/(17|18|19|077|078)-/.test(path))
+  .map(([, { frontmatter }]) => frontmatter)
+  .filter((post) => post.proposed_slug);
+
+function readTime(post: Record<string, string>) {
+  return post.estimated_read_time || 'Read';
+}
+
+function truncateExcerpt(text = '', maxLength = 155) {
+  if (text.length <= maxLength) return text;
+  const truncated = text.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  return `${lastSpace > 0 ? truncated.slice(0, lastSpace) : truncated}...`;
+}
 ---
 
 <Layout
   title="Blog — Exam Strategy, MCQs, Study Tips & Career Guides"
-  description="Expert-written articles on ophthalmology exam preparation. Study plans, topic MCQs, career guides, and clinical cases."
+  description="Source-led articles on ophthalmology exam preparation: study plans, topic MCQs, practical revision and career guides."
 >
-  <PageHero
-    eyebrow="Strategy · MCQs · Career"
-    eyebrowIcon="bookOpen"
-    titleHtml={`Ophthalmology <span class="text-sky-600">Exam Blog</span>`}
-    description="Expert-written guides, MCQs, and strategies to help you pass FRCOphth, ICO/FICO, FAICO, DNB and more — written by doctors who sat these exams."
-    primaryCta={{ href: '/free-mcqs', label: 'Practice free MCQs' }}
-    secondaryCta={{ href: '/notes', label: 'Browse notes' }}
-    trust={[
-      { value: `${posts.length || '—'}`, label: 'Articles' },
-      { value: 'Weekly', label: 'Updates' },
-      { value: 'Free', label: 'To read' },
-    ]}
-    illustration="blog"
-    floatLabel="Exam strategy"
-    floatSub="Written by passers"
-    floatIcon="badgeCheck"
-  />
-
-  <div class="bg-slate-50 py-16 lg:py-24">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      {posts.length === 0 && (
-        <div class="text-center py-16">
-          <p class="text-slate-600">No blog posts found. Publish a post in TheStacc first.</p>
+  <section class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700">OphthaMCQ editorial library</p>
+      <div class="mt-5 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <div class="max-w-3xl">
+          <h1 class="font-display text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Ophthalmology exam guides, without the noise.</h1>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">Source-led study plans, clinical revision frameworks, MCQs and career guides for postgraduate ophthalmology exams.</p>
         </div>
+        <div class="flex shrink-0 gap-8 border-l border-slate-200 pl-6 text-sm">
+          <div><strong class="block text-2xl text-slate-950">{posts.length}</strong><span class="text-slate-500">Articles</span></div>
+          <div><strong class="block text-2xl text-slate-950">Free</strong><span class="text-slate-500">To read</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-14 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 flex items-center justify-between gap-4">
+        <h2 class="text-lg font-semibold text-slate-950">All articles</h2>
+        <a href="/free-mcqs" class="text-sm font-semibold text-sky-700 hover:text-sky-900">Practice free MCQs <span aria-hidden="true">→</span></a>
+      </div>
+
+      {posts.length === 0 && (
+        <div class="text-center py-16"><p class="text-slate-600">No blog posts are available yet.</p></div>
       )}
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 md:grid-cols-2 lg:grid-cols-3">
         {posts.map(post => (
-          <a href={`/blog/${post.slug}/`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all">
-            <div class="h-48 bg-slate-100 flex items-center justify-center overflow-hidden group-hover:bg-sky-50 transition-colors">
-              {post.featured_image ? (
-                <img src={post.featured_image} alt={post.title} class="w-full h-full object-cover" />
-              ) : (
-                <div class="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Illustration name={post.illustration} class="w-12 h-12" />
-                </div>
-              )}
+          <a href={`/blog/${post.proposed_slug}/`} class="group flex min-h-72 flex-col bg-white p-6 transition-colors hover:bg-sky-50/60 sm:p-7">
+            <div class="flex items-center justify-between gap-3">
+              <span class="inline-flex items-center rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-700">{post.category || 'General'}</span>
+              <span class="text-xs text-slate-400">{readTime(post)}</span>
             </div>
-            <div class="p-6 flex-1 flex flex-col">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="inline-flex items-center rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-700">
-                  {post.category || 'General'}
-                </span>
-                <span class="text-xs text-slate-400">{post.readTime}</span>
-              </div>
-              <h2 class="text-base font-bold text-slate-900 mb-2 group-hover:text-sky-700 transition-colors">
-                {post.title}
-              </h2>
-              <p class="text-sm text-slate-600 leading-relaxed flex-1">{truncateExcerpt(post.meta_description || post.excerpt)}</p>
-              <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span class="text-xs text-slate-400">{post.date}</span>
-                <span class="text-sm font-medium text-sky-600 group-hover:text-sky-700 flex items-center gap-1">
-                  Read
-                  <Icon name="chevronRight" class="w-4 h-4" />
-                </span>
-              </div>
+            <h2 class="mt-6 text-xl font-bold leading-snug text-slate-950 transition-colors group-hover:text-sky-800">{post.title}</h2>
+            <p class="mt-3 flex-1 text-sm leading-6 text-slate-600">{truncateExcerpt(post.meta_description || post.excerpt || '')}</p>
+            <div class="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
+              <span class="text-xs text-slate-400">{post.date}</span>
+              <span class="flex items-center gap-1 text-sm font-medium text-sky-600 group-hover:text-sky-700">Read <Icon name="chevronRight" class="w-4 h-4" /></span>
             </div>
           </a>
         ))}
       </div>
     </div>
-  </div>
+  </section>
 
   <FinalCTA />
 </Layout>

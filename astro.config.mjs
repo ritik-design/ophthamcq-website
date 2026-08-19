@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { copyFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import stripEditorialSections from './src/utils/remark-strip-editorial.js';
 
 /**
  * @astrojs/sitemap writes sitemap-index.xml + sitemap-0.xml.
@@ -53,6 +54,9 @@ export default defineConfig({
   // Canonical host is apex (www redirects to non-www in production).
   site: 'https://ophthamcq.org',
   integrations: [sitemap(), sitemapXmlAlias()],
+  markdown: {
+    remarkPlugins: [stripEditorialSections],
+  },
   vite: {
     plugins: [tailwindcss()],
   },
