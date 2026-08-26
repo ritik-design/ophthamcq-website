@@ -1,5 +1,6 @@
 ---
 title: "DNB Ophthalmology Practical Exam: Cases, Viva and Examiner Expectations"
+seo_title: "DNB Ophthalmology Practical Exam"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "dnb-ophthalmology-practical-exam"
 meta_description: "A source-led DNB Ophthalmology practical-exam rehearsal framework for cases, viva, instruments and session-specific NBEMS instructions."
@@ -109,7 +110,7 @@ Many residents prepare instruments as flash-card photographs. That is only the f
 
 For example, an OCT is not merely “used for macula.” Be prepared to say what scan pattern you see, what layer or space is involved, how acquisition/segmentation can mislead, and which close diagnoses an OCT alone cannot settle. For tonometry, distinguish the method’s principle from factors that can affect a reading. For a drug discussion, start with class and mechanism, then move to ophthalmic use and the adverse effect that makes the examiner ask the next question.
 
-The site has verified optional resources for focused rehearsal: [Ophthalmology Case Presentation Format](/products/case-presentation-format-notes) and [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva). Review the sample and decide whether it fits your own notes system. They are preparation products, not NBEMS materials and not a substitute for current instructions.
+The site has verified optional resources for focused rehearsal: [Ophthalmology Case Presentation Format](/products/case-presentation-format-notes/) and [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva/). Review the sample and decide whether it fits your own notes system. They are preparation products, not NBEMS materials and not a substitute for current instructions.
 
 ## How to answer when you do not know
 
@@ -160,7 +161,7 @@ Avoid these common traps:
 - **Reading only cases.** Instruments, drugs, imaging and investigations need the same structured rehearsal.
 - **Using a previous batch’s format as current fact.** Your current NBEMS communication wins.
 
-For a broader route that joins theory and clinical preparation, see the [DNB Ophthalmology preparation hub](/exams/dnb). If you are designing a full practical-rehearsal schedule, [OSCE, Practical & Viva Voce Ready](/osce) is the site’s dedicated verified route. Neither page overrides NBEMS instructions for your session.
+For a broader route that joins theory and clinical preparation, see the [DNB Ophthalmology preparation hub](/exams/dnb/). If you are designing a full practical-rehearsal schedule, [OSCE, Practical & Viva Voce Ready](/osce/) is the site’s dedicated verified route. Neither page overrides NBEMS instructions for your session.
 
 ## Practical-day checklist
 

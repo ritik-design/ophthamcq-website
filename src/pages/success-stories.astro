@@ -78,8 +78,9 @@ const relatedProducts = PRODUCTS.slice(0, 4);
 ---
 
 <Layout
-  title="Ophthalmology Exam Success Stories — Passed FRCOphth, ICO, FAICO, DNB"
-  description="Real testimonials and reviews from ophthalmology residents who cleared FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS using OphthaMCQ. Read how they passed on first attempt."
+  breadcrumbs={[{ name: 'Success Stories' }]}
+  title="Ophthalmology Exam Success Stories & Reviews"
+  description="Testimonials from ophthalmology residents who cleared FRCOphth, ICO/FICO, FAICO and DNB with OphthaMCQ, and what topped their study stack."
 >
   <PageHero
     eyebrow="Real doctors. Real exams. Real passes."
@@ -87,8 +88,8 @@ const relatedProducts = PRODUCTS.slice(0, 4);
     accent="emerald"
     titleHtml={`Ophthalmology Exam <span class="text-sky-600">Success Stories</span>`}
     description="How residents passed FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS using OphthaMCQ — what worked, what they wish they had done differently, and what topped their study stack."
-    primaryCta={{ href: '/free-mcqs', label: 'Start free practice' }}
-    secondaryCta={{ href: '/notes', label: 'Browse notes' }}
+    primaryCta={{ href: '/free-mcqs/', label: 'Start free practice' }}
+    secondaryCta={{ href: '/notes/', label: 'Browse notes' }}
     trust={[
       { value: '15k+', label: 'Residents' },
       { value: '83%', label: 'First pass' },
@@ -152,7 +153,7 @@ const relatedProducts = PRODUCTS.slice(0, 4);
             ))}
           </div>
           <div class="mt-8">
-            <a href={`/exams/${group.slug}`} class="inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800">
+            <a href={`/exams/${group.slug}/`} class="inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800">
               See the {group.name.split(' — ')[0]} exam guide
               <Icon name="chevronRight" class="w-4 h-4" />
             </a>
@@ -222,11 +223,11 @@ const relatedProducts = PRODUCTS.slice(0, 4);
         Anonymous submissions welcome.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-sky-700 hover:bg-sky-50 transition-colors">
+        <a href="/contact/" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-sky-700 hover:bg-sky-50 transition-colors">
           Share Your Story
           <Icon name="arrowRight" class="w-4 h-4" />
         </a>
-        <a href="/free-mcqs" class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+        <a href="/free-mcqs/" class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
           Try Free MCQs
         </a>
       </div>
@@ -252,7 +253,7 @@ const relatedProducts = PRODUCTS.slice(0, 4);
               </div>
             )}
             <div class="h-44 bg-slate-100 overflow-hidden">
-              <img src={p.image} alt={p.fullName} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img src={p.image} alt={p.fullName} width={p.imageWidth} height={p.imageHeight} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
             </div>
             <div class="flex flex-col flex-1 p-5">
               <h3 class="text-base font-bold text-slate-900 mb-1">{p.name}</h3>
@@ -270,7 +271,7 @@ const relatedProducts = PRODUCTS.slice(0, 4);
         ))}
       </div>
       <div class="mt-10 text-center">
-        <a href="/notes" class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+        <a href="/notes/" class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
           Browse all notes & MCQ products
           <Icon name="chevronRight" class="w-4 h-4" />
         </a>
@@ -298,9 +299,9 @@ const relatedProducts = PRODUCTS.slice(0, 4);
         ))}
       </div>
       <div class="mt-10 grid sm:grid-cols-3 gap-4 text-center">
-        <a href="/resources" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Free Resources</a>
-        <a href="/exams" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Exam Guides</a>
-        <a href="/contact" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Share Your Story</a>
+        <a href="/resources/" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Free Resources</a>
+        <a href="/exams/" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Exam Guides</a>
+        <a href="/contact/" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Share Your Story</a>
       </div>
     </div>
   </section>

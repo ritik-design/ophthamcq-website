@@ -1,5 +1,6 @@
 ---
 title: "ICO Exam Registration, Dates, Fees and Test Centres in India"
+seo_title: "ICO Exam Registration, Dates & Fees in India"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "ico-exam-registration-dates-fees-test-centres-india"
 meta_description: "A current, source-led ICO registration guide for Indian ophthalmologists: dates, fees, centres, documents, payment and the checks to make before submitting."
@@ -26,7 +27,7 @@ Create or sign in to the ICO account used for examinations, select the correct c
 
 The route is straightforward only when you have chosen the right paper. The ICO Standard Examinations are Visual Sciences, Optics, Refraction and Instruments (ORI), and Clinical Ophthalmology. Clinical Ophthalmology follows passes in the first two components or an ICO-recognised equivalent. The Advanced 115 examination follows completion of all three Standard components or a recognised equivalent. Passing Advanced plus a local face-to-face ophthalmology examination is the stated route to the FICO post-nominal; it is not the same assessment as FAICO.
 
-For the broader academic route and optional question practice, start with the [ICO / FICO preparation guide](/exams/ico-fico). Use official ICO documents for rules; a preparation guide cannot confirm your application status.
+For the broader academic route and optional question practice, start with the [ICO / FICO preparation guide](/exams/ico-fico/). Use official ICO documents for rules; a preparation guide cannot confirm your application status.
 
 ## Dates: use the live notice, then work backwards
 
@@ -128,7 +129,7 @@ The useful lesson is procedural: do not merely stop attending or cancel a hotel.
 
 Once the portal confirms your paper and centre, work backwards from the examination rather than from a generic six-month timetable. Reserve the final 10–14 days for mixed timed blocks, error-log retrieval and image interpretation. Before that, divide the syllabus into repeatable decisions: anatomy pathways, optics calculations, pathology patterns, investigations, pharmacology and clinical differentials.
 
-The [free ICO / FICO MCQs](/free-mcqs/ico-fico) can provide brief retrieval sessions between reference-based study. If you want to inspect an optional commercial resource, [ICO/FICO Past Papers](/products/ico-fico-past-papers) is a product page. Neither is an official ICO paper, registration service or performance guarantee.
+The [free ICO / FICO MCQs](/free-mcqs/ico-fico/) can provide brief retrieval sessions between reference-based study. If you want to inspect an optional commercial resource, [ICO/FICO Past Papers](/products/ico-fico-past-papers/) is a product page. Neither is an official ICO paper, registration service or performance guarantee.
 
 ## Registration-day checklist
 

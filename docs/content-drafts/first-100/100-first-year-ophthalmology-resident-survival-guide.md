@@ -88,7 +88,7 @@ A first year can generate endless topics. Avoid building an endless resource pil
 2. **A correction:** something a senior explained or a question you missed, expressed as a small contrast prompt.
 3. **A foundation:** one concept that makes the week’s observations easier to understand.
 
-Use closed-book recall before you check the source. The [free ophthalmology MCQs](/free-mcqs) give a verified route to short question practice, and the [ophthalmology glossary](/glossary) can clarify a term before you return to the primary task. The [resources hub](/resources) can help you choose a broader study route. None replaces supervised clinical learning or proves that you have mastered a skill.
+Use closed-book recall before you check the source. The [free ophthalmology MCQs](/free-mcqs/) give a verified route to short question practice, and the [ophthalmology glossary](/glossary/) can clarify a term before you return to the primary task. The [resources hub](/resources/) can help you choose a broader study route. None replaces supervised clinical learning or proves that you have mastered a skill.
 
 Set one protected review period each week if your roster permits. Use it to remove resolved questions, choose the next three items and identify anything that belongs in a formal teaching discussion rather than personal revision. A queue that stays short is easier to restart after calls and clinic days.
 
@@ -104,7 +104,7 @@ This approach is also useful in multidisciplinary work. Do not assume you unders
 
 Arrive prepared to learn, but do not arrive with an assumed procedural role. Confirm what the team wants you to do, observe or prepare, and ask who gives direction if the plan changes. Observe the team’s communication and local safety checks rather than trying to reproduce a technique from an online summary. Keep learning notes de-identified and check them with a supervisor before treating them as a rule.
 
-If you want structured examination/practical preparation, the [OSCE, Practical & Viva Voce Ready page](/osce) is a verified resource route. It does not authorise procedures, replace clinical supervision or set your programme’s competency rules.
+If you want structured examination/practical preparation, the [OSCE, Practical & Viva Voce Ready page](/osce/) is a verified resource route. It does not authorise procedures, replace clinical supervision or set your programme’s competency rules.
 
 ## When the right next step is escalation, not revision
 

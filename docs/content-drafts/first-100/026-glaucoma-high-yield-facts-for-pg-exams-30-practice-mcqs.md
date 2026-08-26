@@ -1,5 +1,6 @@
 ---
 title: "Glaucoma High-Yield Facts for PG Exams (+30 Practice MCQs)"
+seo_title: "Glaucoma MCQs: 30 High-Yield Practice Questions"
 proposed_slug: "glaucoma-high-yield-facts-for-pg-exams-30-practice-mcqs"
 meta_description: "Revise glaucoma with 30 explained MCQs, a four-domain answer framework, angle and optic-nerve discriminators, and source-linked facts for PG exams."
 excerpt: "A source-led glaucoma recall set for ophthalmology PG examination revision."
@@ -155,7 +156,7 @@ Spend ten minutes drawing aqueous flow and the angle-closure mechanisms. Spend t
 
 Keep these pairs separate: appositional contact versus peripheral anterior synechiae; IRMA (a retina term) versus disc haemorrhage; ocular hypertension versus POAG; narrow angle versus angle-closure glaucoma; and a structural test abnormality versus confirmed progression. A well-written answer often wins marks by refusing the false equivalence built into the distractor.
 
-For organised topic revision, the site’s [glaucoma study guide](/topics/glaucoma) is the relevant hub. The [Glaucoma Exam Ready Notes](/products/glaucoma-notes) product page and [free high-yield MCQs](/free-mcqs/high-yield) are existing OphthaMCQ resources; neither is an official guideline or a substitute for supervised clinical judgement.
+For organised topic revision, the site’s [glaucoma study guide](/topics/glaucoma/) is the relevant hub. The [Glaucoma Exam Ready Notes](/products/glaucoma-notes/) product page and [free high-yield MCQs](/free-mcqs/high-yield/) are existing OphthaMCQ resources; neither is an official guideline or a substitute for supervised clinical judgement.
 
 ## Sources
 

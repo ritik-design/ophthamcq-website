@@ -4,18 +4,90 @@ import { SITE } from '../config';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
+export interface Breadcrumb {
+  name: string;
+  /** Omit on the final crumb — the current page needs no self-link. */
+  href?: string;
+}
+
 export interface Props {
   title?: string;
   description?: string;
   image?: string;
   robots?: string;
   ogType?: string;
+  /** Trail after Home. Renders a BreadcrumbList node; Home is prepended here. */
+  breadcrumbs?: Breadcrumb[];
+  /** Extra JSON-LD nodes (Product, FAQPage, Article…) merged into the @graph. */
+  schema?: Record<string, unknown>[];
 }
 
-const { title = SITE.name, description = SITE.description, image = '/og-image.jpg', robots = 'index, follow', ogType = 'website' } = Astro.props;
+const {
+  title = SITE.name,
+  description = SITE.description,
+  image = '/og-image.jpg',
+  robots = 'index, follow',
+  ogType = 'website',
+  breadcrumbs,
+  schema = [],
+} = Astro.props;
+
 const pageTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
 const canonicalUrl = new URL(Astro.url.pathname, SITE.url).href;
 const absoluteImage = new URL(image, SITE.url).href;
+
+const ORG_ID = `${SITE.url}/#organization`;
+const isHome = Astro.url.pathname === '/';
+
+/**
+ * One @graph per page. The Organization node is the entity every other node
+ * points at, so it ships site-wide rather than only on the homepage.
+ */
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'Organization',
+    '@id': ORG_ID,
+    name: SITE.name,
+    url: SITE.url,
+    description: SITE.description,
+    logo: { '@type': 'ImageObject', url: `${SITE.url}/logo.png` },
+    sameAs: [
+      'https://www.ophthamcq.com',
+      'https://play.google.com/store/apps/details?id=com.bktxsx.ucjcrq',
+      'https://apps.apple.com/in/app/ophtha-mcq-faico-ico-pdcet-frc/id6759045904',
+    ],
+  },
+];
+
+if (isHome) {
+  graph.push({
+    '@type': 'WebSite',
+    '@id': `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    description: SITE.description,
+    publisher: { '@id': ORG_ID },
+    inLanguage: 'en',
+  });
+}
+
+if (breadcrumbs?.length) {
+  const trail = [{ name: 'Home', href: '/' }, ...breadcrumbs];
+  graph.push({
+    '@type': 'BreadcrumbList',
+    '@id': `${canonicalUrl}#breadcrumbs`,
+    itemListElement: trail.map((crumb, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: crumb.name,
+      ...(crumb.href ? { item: new URL(crumb.href, SITE.url).href } : {}),
+    })),
+  });
+}
+
+graph.push(...schema);
+
+const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
 ---
 
 <!DOCTYPE html>
@@ -61,6 +133,8 @@ const absoluteImage = new URL(image, SITE.url).href;
 
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="apple-touch-icon" href="/logo.png" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />

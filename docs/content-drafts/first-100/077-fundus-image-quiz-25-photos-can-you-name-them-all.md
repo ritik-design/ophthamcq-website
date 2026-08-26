@@ -110,7 +110,7 @@ Until that checklist is complete, publish this only as a text-first editorial pl
 
 ## Continue the revision without images
 
-Use the image blueprint as a closed-book oral drill: choose an entry, state the intended label, then say what the caption would need to visibly prove. Next, take a mixed set of [high-yield free MCQs](/free-mcqs/high-yield), where the response does not depend on an unavailable clinical photograph. The [retina study guide](/topics/retina) is the broader topic route, while the [ophthalmology glossary](/glossary) is useful for checking a term before retrying a prompt.
+Use the image blueprint as a closed-book oral drill: choose an entry, state the intended label, then say what the caption would need to visibly prove. Next, take a mixed set of [high-yield free MCQs](/free-mcqs/high-yield/), where the response does not depend on an unavailable clinical photograph. The [retina study guide](/topics/retina/) is the broader topic route, while the [ophthalmology glossary](/glossary/) is useful for checking a term before retrying a prompt.
 
 ## Sources and scope
 

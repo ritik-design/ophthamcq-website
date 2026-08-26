@@ -1,5 +1,6 @@
 ---
 title: "Phacoemulsification Step by Step: Complications and Their Management"
+seo_title: "Phacoemulsification Step by Step"
 proposed_slug: "phacoemulsification-step-by-step-complications-and-their-management"
 meta_description: "An exam-focused phaco sequence: purpose of each stage, complication recognition, safe first principles and viva answers for ophthalmology residents."
 excerpt: "An exam-focused phaco sequence: purpose of each stage, complication recognition, safe first principles and viva answers for ophthalmology residents."
@@ -31,7 +32,7 @@ If you forget a detail, reconstruct the operation by asking what must be true be
 | Cortex removal | removes residual lens material without destabilising capsule or zonules | direction of traction and awareness of a weak quadrant |
 | IOL and closure | restores optical rehabilitation when support permits and leaves a secure eye | IOL location follows support, not habit |
 
-The [cataract study guide](/topics/cataract) is the broader topic hub. This article focuses on the sequence-and-complication reasoning that turns a long surgical viva into a set of decisions.
+The [cataract study guide](/topics/cataract/) is the broader topic hub. This article focuses on the sequence-and-complication reasoning that turns a long surgical viva into a set of decisions.
 
 ## Before the incision: predict the problem
 
@@ -97,7 +98,7 @@ Endophthalmitis is an urgent clinical concern, not a memorisation exercise. In a
 
 **“Which IOL would you use?”** First establish whether the bag and zonules provide support. A candidate who asks for the relevant anatomy before naming a lens is demonstrating judgement.
 
-For structured practical revision, use the site’s [OSCE, Practical & Viva Voce resource](/osce). It should supplement, never replace, theatre supervision, wet-lab practice and current departmental protocols.
+For structured practical revision, use the site’s [OSCE, Practical & Viva Voce resource](/osce/). It should supplement, never replace, theatre supervision, wet-lab practice and current departmental protocols.
 
 ## Rapid recall grid
 

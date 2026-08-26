@@ -28,7 +28,7 @@ Create a table with year, topic, decision, source and error type. Examples of de
 
 Candidate recalls are not official papers. Check uncertain keys against current references and the active [NBEMS](https://natboard.edu.in/) notice. A past-paper trend should guide reading priority, never replace the syllabus.
 
-Use the [DNB Ophthalmology guide](/exams/dnb) for the broader preparation route. To inspect the matching resource, see [DNB / DO Past 5 Year Papers](/products/dnb-do-past-5-year-papers). The page is a product preview; it does not claim to reproduce an official NBEMS paper.
+Use the [DNB Ophthalmology guide](/exams/dnb/) for the broader preparation route. To inspect the matching resource, see [DNB / DO Past 5 Year Papers](/products/dnb-do-past-5-year-papers/). The page is a product preview; it does not claim to reproduce an official NBEMS paper.
 
 ## Sources and links
 

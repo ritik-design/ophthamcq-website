@@ -1,5 +1,6 @@
 ---
 title: "Case Presentation Format for the Ophthalmology Practical Exam"
+seo_title: "Ophthalmology Case Presentation Format"
 proposed_slug: "case-presentation-format-for-the-ophthalmology-practical-exam"
 meta_description: "A timed ophthalmology practical case-presentation framework: focused history, reproducible examination order, diagnostic reasoning"
 excerpt: "Present a claim, the evidence for it, and the uncertainty that remains. That is a practical case presentation the examiner can follow."
@@ -133,7 +134,7 @@ After examining a case, prepare one page only. Present from it aloud, then compa
 | uncertainty | missing information named honestly |
 | viva readiness | two differentials and one discriminator each |
 
-Run the same case twice. In run one, speak normally. In run two, have a colleague interrupt after your history and after your diagnosis. That rehearsal exposes whether you understand the case or only remember the paragraphs. Use the [OphthaMCQ case-presentation format resource](/products/case-presentation-format-notes) if a fixed practical template would help your notebook; use the [OSCE, Practical & Viva Voce Ready bundle](/osce) for wider station practice. For topic-specific correlation before a glaucoma or cataract case, the verified on-site [glaucoma study guide](/topics/glaucoma) and [cataract study guide](/topics/cataract) are relevant revision routes. DNB candidates can also use [DNB / MS / DO past five-year papers](/products/dnb-do-past-5-year-papers) to identify recurring discussion themes.
+Run the same case twice. In run one, speak normally. In run two, have a colleague interrupt after your history and after your diagnosis. That rehearsal exposes whether you understand the case or only remember the paragraphs. Use the [OphthaMCQ case-presentation format resource](/products/case-presentation-format-notes/) if a fixed practical template would help your notebook; use the [OSCE, Practical & Viva Voce Ready bundle](/osce/) for wider station practice. For topic-specific correlation before a glaucoma or cataract case, the verified on-site [glaucoma study guide](/topics/glaucoma/) and [cataract study guide](/topics/cataract/) are relevant revision routes. DNB candidates can also use [DNB / MS / DO past five-year papers](/products/dnb-do-past-5-year-papers/) to identify recurring discussion themes.
 
 ## Match the format to the case without losing the logic
 

@@ -200,7 +200,7 @@ This is exam education for postgraduate doctors, not a guide to diagnosing or tr
 
 After a block, label each wrong question as `layer`, `morphology`, `context`, `eponym`, or `graft tissue`. Then redo one unseen question from that label. A candidate who repeatedly calls the Fleischer ring a Descemet finding does not need another 40 random questions; they need a two-column epithelial-versus-Descemet comparison.
 
-For a broader written cornea revision route, use the verified [cornea study guide](/topics/cornea). For mixed recall after this topic block, use [general ophthalmology MCQs](/free-mcqs/general). The [Handwritten Exam Ready Notes collection](/notes) is a relevant notes route; check the current product scope before choosing any individual resource.
+For a broader written cornea revision route, use the verified [cornea study guide](/topics/cornea/). For mixed recall after this topic block, use [general ophthalmology MCQs](/free-mcqs/general/). The [Handwritten Exam Ready Notes collection](/notes/) is a relevant notes route; check the current product scope before choosing any individual resource.
 
 ## Sources and scope
 

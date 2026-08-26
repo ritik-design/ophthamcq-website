@@ -1,5 +1,6 @@
 ---
 title: "FRCOphth Part 2 Written: Format, Timing and What Gets Asked"
+seo_title: "FRCOphth Part 2 Written: Format and Preparation"
 proposed_slug: "frcophth-part-2-written-crq-mcq-format"
 meta_description: "A current, source-linked guide to the FRCOphth Part 2 Written format and a clinical-decision revision system for senior ophthalmology trainees."
 excerpt: "A current, source-linked guide to the FRCOphth Part 2 Written format and a clinical-decision revision system for senior ophthalmology trainees."
@@ -91,7 +92,7 @@ Each category has a different repair. Knowledge gaps need a named source and a r
 | I changed answer | “trust first instinct” | record why the change was made and whether new evidence justified it |
 | I was slow | do more random questions | identify whether delay was knowledge, reading or decision threshold |
 
-Use the [free MCQ bank](/free-mcqs) for short retrieval sessions if useful, but treat it as practice rather than an exam blueprint. The [FRCOphth preparation guide](/exams/frcophth) is the site’s broad route map. Neither is an RCOphth document.
+Use the [free MCQ bank](/free-mcqs/) for short retrieval sessions if useful, but treat it as practice rather than an exam blueprint. The [FRCOphth preparation guide](/exams/frcophth/) is the site’s broad route map. Neither is an RCOphth document.
 
 ## Rehearse the two-paper day
 
@@ -118,7 +119,7 @@ Repeat this cycle in the later phase rather than attempting to “finish” ever
 
 **Week 4: simulate and repair.** Do a timed block or two-paper rehearsal appropriate to your phase. Limit the following review to recurring errors and make the next cycle from evidence, not anxiety.
 
-If a question resource fits your planned practice, [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs) is an optional OphthaMCQ product page. Its current details and purchase terms should be checked on the store. Do not treat a commercial product as College endorsement; OphthaMCQ is independent and not affiliated with RCOphth.
+If a question resource fits your planned practice, [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs/) is an optional OphthaMCQ product page. Its current details and purchase terms should be checked on the store. Do not treat a commercial product as College endorsement; OphthaMCQ is independent and not affiliated with RCOphth.
 
 ## What to stop doing
 

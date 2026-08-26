@@ -38,7 +38,8 @@ const categoryColors: Record<string, string> = {
 ---
 
 <Layout
-  title={`Ophthalmology Glossary — ${totalCount}+ Essential Terms & Definitions`}
+  breadcrumbs={[{ name: 'Glossary' }]}
+  title={`Ophthalmology Glossary: ${totalCount}+ Terms Defined`}
   description={`Comprehensive glossary of ${totalCount}+ ophthalmology terms with concise definitions for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS exam preparation.`}
 >
   <PageHero
@@ -47,7 +48,7 @@ const categoryColors: Record<string, string> = {
     titleHtml={`Ophthalmology <span class="text-sky-600">Glossary</span>`}
     description="The definitions you need for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS — all on one page, searchable, and grouped by sub-specialty."
     primaryCta={{ href: '#glossary-search', label: 'Jump to search' }}
-    secondaryCta={{ href: '/free-mcqs', label: 'Practice free MCQs' }}
+    secondaryCta={{ href: '/free-mcqs/', label: 'Practice free MCQs' }}
     trust={[
       { value: `${totalCount}`, label: 'Terms' },
       { value: `${CATEGORIES.length}`, label: 'Categories' },
@@ -170,7 +171,7 @@ const categoryColors: Record<string, string> = {
       </div>
 
       <div class="mt-12 text-center">
-        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+        <a href="/free-mcqs/" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
           Test Yourself with Free MCQs
           <Icon name="arrowRight" class="w-4 h-4" />
         </a>

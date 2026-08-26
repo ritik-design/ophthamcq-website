@@ -1,5 +1,6 @@
 ---
 title: "MS Ophthalmology University Exams: How They Differ From DNB"
+seo_title: "MS Ophthalmology University Exams"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "ms-ophthalmology-university-exams-vs-dnb"
 meta_description: "A practical comparison of MS Ophthalmology university examinations and DNB Final: what is portable, what is local, and how to plan without false assumptions."
@@ -95,7 +96,7 @@ Both groups benefit from an error log, but it must identify the error type. “G
 
 ### Practical rehearsal before the final fortnight
 
-Even if your administrative sequence differs, keep light clinical presentation rehearsal running during theory preparation. Once each week, take one case, one image/investigation, one instrument and one drug. Ask a peer to interrupt after your first answer with “why?”, “what is the alternative?” and “what would distinguish it?” The [DNB Ophthalmology preparation hub](/exams/dnb) is a verified route for DNB-specific context; the generic rehearsal method remains useful for MS residents too.
+Even if your administrative sequence differs, keep light clinical presentation rehearsal running during theory preparation. Once each week, take one case, one image/investigation, one instrument and one drug. Ask a peer to interrupt after your first answer with “why?”, “what is the alternative?” and “what would distinguish it?” The [DNB Ophthalmology preparation hub](/exams/dnb/) is a verified route for DNB-specific context; the generic rehearsal method remains useful for MS residents too.
 
 ## The local wrapper: how an MS resident should adapt the core
 
@@ -123,7 +124,7 @@ Build the assessment dossier. Take a short mixed diagnostic set and two observed
 
 Run two theory/retrieval sessions, one image/interpretation session and one oral/case session each week. Pair a mechanism with a case: optics with refraction/instrument questions, glaucoma mechanisms with disc/field discussion, retina classification with imaging interpretation. DNB and MS peers can do much of this together because the task is knowledge retrieval and clinical reasoning, not administrator-specific paperwork.
 
-Use [free general ophthalmology MCQs](/free-mcqs/general) for short, topic-mixed retrieval practice if it fits your approach. Free questions are a practice prompt, not a representation of a university or NBEMS paper.
+Use [free general ophthalmology MCQs](/free-mcqs/general/) for short, topic-mixed retrieval practice if it fits your approach. Free questions are a practice prompt, not a representation of a university or NBEMS paper.
 
 ### Weeks 4–2: simulate your own wrapper
 
@@ -137,7 +138,7 @@ Review error-log themes, diagrams, comparison tables, frequent calculation mista
 
 They transfer at the level of a concept, not as a map of the other exam. A DNB recall that triggers revision of retinal vascular anatomy, optics or uveitis classification can be valuable for an MS resident. It cannot prove that the MS university will test the same wording, quantity or station. The reverse is true for university papers used by a DNB candidate.
 
-The same rule applies to commercial material. A question bank or note set can help you find and test weak areas, but it is not the official syllabus or an endorsement by a university, NBEMS or NMC. If you want a separate practical-rehearsal route, [OSCE, Practical & Viva Voce Ready](/osce) is a verified OphthaMCQ page for DNB/MS/DO practical candidates. Inspect it as an optional resource; keep official local instructions in charge.
+The same rule applies to commercial material. A question bank or note set can help you find and test weak areas, but it is not the official syllabus or an endorsement by a university, NBEMS or NMC. If you want a separate practical-rehearsal route, [OSCE, Practical & Viva Voce Ready](/osce/) is a verified OphthaMCQ page for DNB/MS/DO practical candidates. Inspect it as an optional resource; keep official local instructions in charge.
 
 ## A decision checklist before you copy another resident’s plan
 

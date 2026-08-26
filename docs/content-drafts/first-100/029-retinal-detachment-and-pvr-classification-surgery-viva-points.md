@@ -1,5 +1,6 @@
 ---
 title: "Retinal Detachment and PVR: Classification, Surgery and Viva Points"
+seo_title: "Retinal Detachment MCQs: Classification & Surgery"
 proposed_slug: "retinal-detachment-and-pvr-classification-surgery-viva-points"
 meta_description: "Revise retinal detachment mechanisms, PVR classification, operative principles and a structured viva answer for ophthalmology PG exams."
 excerpt: "A mechanism-first guide to retinal detachment, proliferative vitreoretinopathy and exam-station reporting."
@@ -119,7 +120,7 @@ This speech has a useful safety feature: it demonstrates clinical structure with
 
 Make three columns in your notebook: **mechanism**, **morphology**, **principle**. For every past-paper image, force yourself to write one sentence in each column. For example: “RRD because a horseshoe tear permits subretinal fluid; subtotal mobile detachment with macula involved and no visible PVR; identify all breaks, manage traction and use a configuration-appropriate support method.” Then check the marking scheme and correct only the missing observation. This is higher yield than collecting isolated lists of surgical eponyms.
 
-For broader retinal revision, use the verified [retina study guide](/topics/retina). If you are consolidating retina notes, the site’s [Retina Deciphered page](/products/retina-deciphered) is the relevant on-site route. For practical-exam preparation, review the [OSCE, Practical & Viva Voce Ready bundle](/osce); for a short self-test, use [high-yield free MCQs](/free-mcqs/high-yield). These resources support study planning; they do not replace supervised clinical training.
+For broader retinal revision, use the verified [retina study guide](/topics/retina/). If you are consolidating retina notes, the site’s [Retina Deciphered page](/products/retina-deciphered/) is the relevant on-site route. For practical-exam preparation, review the [OSCE, Practical & Viva Voce Ready bundle](/osce/); for a short self-test, use [high-yield free MCQs](/free-mcqs/high-yield/). These resources support study planning; they do not replace supervised clinical training.
 
 ## Sources
 

@@ -1,5 +1,6 @@
 ---
 title: "Diabetic Retinopathy Classification: ETDRS, ICDR and Exam Traps"
+seo_title: "Diabetic Retinopathy Classification"
 proposed_slug: "diabetic-retinopathy-classification-etdrs-icdr-exam-traps"
 meta_description: "Learn diabetic retinopathy classification without mixing ETDRS and ICDR: 4-2-1, DMO terminology, image-answer method and explained exam traps."
 excerpt: "A source-linked classification guide for ophthalmology PGs."
@@ -140,7 +141,7 @@ One practical safeguard follows from that distinction: never write a mixed label
 
 In a single-best-answer paper, underline the system named in the stem before inspecting the options. It is a simple action that avoids a preventable terminology error.
 
-For broader retina revision, use the verified [retina study guide](/topics/retina). [Retina Deciphered](/products/retina-deciphered) and the site’s [free high-yield MCQs](/free-mcqs/high-yield) are existing OphthaMCQ resources; they are not official diabetic-retinopathy guidance.
+For broader retina revision, use the verified [retina study guide](/topics/retina/). [Retina Deciphered](/products/retina-deciphered/) and the site’s [free high-yield MCQs](/free-mcqs/high-yield/) are existing OphthaMCQ resources; they are not official diabetic-retinopathy guidance.
 
 ## Sources
 

@@ -1,5 +1,6 @@
 ---
 title: "Ophthalmology Training Abroad: UK, Middle East and Australia Compared"
+seo_title: "Ophthalmology Residency Abroad: UK, Gulf, Australia"
 proposed_slug: "ophthalmology-training-abroad-uk-middle-east-and-australia-compared"
 meta_description: "A regulator-first comparison of UK, Middle East and Australia routes for ophthalmologists: job type, registration, documents, supervision and verification."
 excerpt: "Country is the wrong first filter. Compare the exact role, regulator and evidence pathway you can complete."
@@ -50,7 +51,7 @@ Start with the job advertisement, not a social-media summary. Classify it:
 
 An examination credential can be valuable evidence of knowledge for its intended purpose. It is not prudent to describe it as a licence, visa, job offer or automatic route into a training number. Likewise, a “clinical fellow” title does not itself disclose how much supervised learning, independent service, theatre time or protected teaching the post contains. Ask the employer for the current job description and then verify the professional-registration route directly with the GMC.
 
-The [FRCOphth guide](/exams/frcophth) can help candidates organise exam preparation. It is not regulator advice and does not establish eligibility for a UK job or registration route.
+The [FRCOphth guide](/exams/frcophth/) can help candidates organise exam preparation. It is not regulator advice and does not establish eligibility for a UK job or registration route.
 
 ## Middle East: “which regulator?” is the first question
 
@@ -114,7 +115,7 @@ This is especially valuable when advice conflicts. Do not solve a conflict by ch
 
 ## How exam preparation fits—and where it stops
 
-Ophthalmology exams may be relevant to an employer, a College, a personal study plan or a fellowship-selection process. Their relevance must be confirmed by the organisation making the decision. Use the [ophthalmology exams hub](/exams) to orient your revision, and the [ICO/FICO guide](/exams/ico-fico) for that examination pathway. These are educational resources only: they do not confer registration, licensure, immigration permission, employer endorsement or a job.
+Ophthalmology exams may be relevant to an employer, a College, a personal study plan or a fellowship-selection process. Their relevance must be confirmed by the organisation making the decision. Use the [ophthalmology exams hub](/exams/) to orient your revision, and the [ICO/FICO guide](/exams/ico-fico/) for that examination pathway. These are educational resources only: they do not confer registration, licensure, immigration permission, employer endorsement or a job.
 
 ## Editorial QA and link manifest
 

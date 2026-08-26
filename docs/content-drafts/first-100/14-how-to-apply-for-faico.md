@@ -1,5 +1,6 @@
 ---
 title: "How to Apply for FAICO: Documents, Deadlines and Common Rejections"
+seo_title: "How to Apply for FAICO: Documents & Deadlines"
 publication_action: "long-form-rewrite-after-live-serp-and-source-research"
 proposed_slug: "how-to-apply-for-faico"
 meta_description: "A source-led FAICO application checklist covering current AIOS eligibility, documents, timing and file-quality checks before you submit."
@@ -108,7 +109,7 @@ Each has the same solution: map each claim to one clean official record, use the
 
 ## Keep paperwork and FAICO preparation as separate tracks
 
-Your application establishes eligibility; it does not prepare you for subject depth. Once the documents are controlled, build a clinical revision plan around the particular FAICO specialty. The site’s [FAICO preparation guide](/exams/faico) is the appropriate broad on-site route map. You can use [free FAICO sample questions](/free-mcqs/faico) for short retrieval blocks, and inspect [FAICO MCQs](/products/faico-mcqs) if its format fits your independent revision system. These are preparation resources, not AIOS material and not evidence of eligibility.
+Your application establishes eligibility; it does not prepare you for subject depth. Once the documents are controlled, build a clinical revision plan around the particular FAICO specialty. The site’s [FAICO preparation guide](/exams/faico/) is the appropriate broad on-site route map. You can use [free FAICO sample questions](/free-mcqs/faico/) for short retrieval blocks, and inspect [FAICO MCQs](/products/faico-mcqs/) if its format fits your independent revision system. These are preparation resources, not AIOS material and not evidence of eligibility.
 
 A useful working-week split is one administrative block until submission is confirmed, then protected subject blocks for reading, questions, imaging and oral explanation. Keep a two-column log: application actions on the left; clinical errors on the right. Mixing them creates the familiar result of repeatedly checking documents while neither revising nor resolving the actual uncertainty.
 

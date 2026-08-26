@@ -1,7 +1,8 @@
 ---
 title: "Long Case: Mature Cataract — Full Presentation and Likely Viva"
+seo_title: "Cataract Long Case: Presentation and Viva Points"
 proposed_slug: "long-case-mature-cataract-full-presentation-and-likely-viva"
-meta_description: "Rehearse a mature cataract long case: spoken presentation, focused examination, blocked-fundus reasoning, investigation purpose and likely ophthalmology viva branches."
+meta_description: "Rehearse a mature cataract long case: spoken presentation, focused examination, blocked-fundus reasoning and the likely viva branches."
 excerpt: "In a dense cataract case, the marks are in what you assess around the opaque lens and what you do not pretend to know behind it."
 category: "OSCE"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -125,7 +126,7 @@ Do not offer a numerical or guaranteed outcome. Say: “Visual prognosis depends
 
 Practise once with the card, then present without it in 90 seconds. On the second run, ask a colleague to interrupt with “Why is the fundus not seen?”, “Why do you want that test?”, and “What makes this mature rather than another white cataract?” If your response becomes a treatment lecture, stop and restate the question, finding and uncertainty.
 
-For broader cataract terminology, use the verified on-site [cataract study guide](/topics/cataract). For a fixed spoken-case framework, use the [case-presentation format resource](/products/case-presentation-format-notes). The [OSCE, Practical & Viva Voce Ready bundle](/osce) is the relevant practical-revision route, while [Short Term Phaco Notes](/products/short-term-phaco) is a separate on-site study resource for phaco terminology. These links are study aids, not clinical protocols.
+For broader cataract terminology, use the verified on-site [cataract study guide](/topics/cataract/). For a fixed spoken-case framework, use the [case-presentation format resource](/products/case-presentation-format-notes/). The [OSCE, Practical & Viva Voce Ready bundle](/osce/) is the relevant practical-revision route, while [Short Term Phaco Notes](/products/short-term-phaco/) is a separate on-site study resource for phaco terminology. These links are study aids, not clinical protocols.
 
 ## Distinguish morphology, mechanism and planning discussion
 

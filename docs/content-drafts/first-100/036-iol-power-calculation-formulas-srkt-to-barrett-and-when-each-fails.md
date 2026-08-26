@@ -1,5 +1,6 @@
 ---
 title: "IOL Power Calculation Formulas: SRK/T to Barrett, and When Each Fails"
+seo_title: "IOL Power Calculation Formulas"
 proposed_slug: "iol-power-calculation-formulas-srkt-to-barrett-and-when-each-fails"
 meta_description: "Exam-focused IOL power calculation: formula generations, effective lens position, biometry checks, outlier eyes and a reproducible viva framework."
 excerpt: "Exam-focused IOL power calculation: formula generations, effective lens position, biometry checks, outlier eyes and a reproducible viva framework."
@@ -31,7 +32,7 @@ Before debating formulas, say this in a viva: “I would verify the biometry, co
 | IOL constant | ties the formula to the particular lens and surgical system | using an unoptimised/default constant as if universal |
 | Target | makes the intended refractive result explicit | not discussing anisometropia, fellow eye or clinical target rationale |
 
-The [cataract study guide](/topics/cataract) gives the broader exam context. The purpose here is to make formula questions answerable from first principles.
+The [cataract study guide](/topics/cataract/) gives the broader exam context. The purpose here is to make formula questions answerable from first principles.
 
 ## Formula families: what each added
 
@@ -108,7 +109,7 @@ The word “management” should be handled cautiously in an educational article
 
 “IOL power prediction starts with repeatable axial length and corneal measurements, an appropriate IOL constant and a stated target. I would use current validated formulae rather than rely on one historical rule, compare outputs, and investigate disagreement. In a short or long eye, altered cornea or post-refractive-surgery case, I would check raw biometry and use a dedicated strategy because ELP and corneal-power assumptions may be less reliable. I would not select a lens from one formula printout alone.”
 
-For broader revision, use [OphthaMCQ notes](/notes) alongside current texts and a supervisor-led biometry review.
+For broader revision, use [OphthaMCQ notes](/notes/) alongside current texts and a supervisor-led biometry review.
 
 ## Worked reasoning examples for an exam
 

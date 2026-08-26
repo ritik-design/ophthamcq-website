@@ -1,5 +1,6 @@
 ---
 title: "Ophthalmic Instruments Viva: The Complete List With Uses and Traps"
+seo_title: "Ophthalmology Instruments Viva: Complete List"
 proposed_slug: "ophthalmic-instruments-viva-the-complete-list-with-uses-and-traps"
 meta_description: "A postgraduate ophthalmology instruments-viva guide: identify core tray instruments, explain the working end, state the use and avoid common confusion pairs."
 excerpt: "Use a four-part answer: name, design clue, primary role and nearest confusion pair."
@@ -127,7 +128,7 @@ Not every station is an operating tray. Some mix examination equipment with surg
 | **Schiøtz tonometer** | Indentation tonometer with plunger and scale | Measures IOP by indentation principle | Distinguish it from applanation tonometry rather than claiming they use the same principle. |
 | **Lacrimal probe** | Slender probe of a specific lacrimal pattern | Explores a lacrimal passage in an appropriate procedural context | It differs from a punctal dilator in tip form and intended function. |
 
-If you need to repair terminology while revising a mixed station, use the verified [ophthalmology glossary](/glossary). For the optical distinctions, revise the principle rather than trusting a photograph alone; angle and fundus lenses can look deceptively similar at speed.
+If you need to repair terminology while revising a mixed station, use the verified [ophthalmology glossary](/glossary/). For the optical distinctions, revise the principle rather than trusting a photograph alone; angle and fundus lenses can look deceptively similar at speed.
 
 ## Ten classic confusion pairs
 
@@ -157,7 +158,7 @@ Build a card for each item with only four fields: a sketch/photo, the working-en
 
 After ten instruments, repeat only the misses. Photograph labels from your own department’s teaching tray only where permitted, because local eponyms and patterns vary. For operating-room use, instrument choice, assembly, sterile processing and handling must follow local policy, manufacturer instructions and direct supervision. Reprocessing is not a minor detail in intraocular surgery; the literature on toxic anterior segment syndrome includes instrument-cleaning factors, which is why this article deliberately does not offer a homemade cleaning protocol ([peer-reviewed review](https://pubmed.ncbi.nlm.nih.gov/27697240/)).
 
-For a structured image-and-list revision route, see [Instruments in Ophthalmology notes](/products/instruments-in-ophthalmology-notes). If your practical station combines devices with drugs, [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva) is the adjacent topic route. Rehearse the spoken station format through the [OSCE, Practical & Viva Voce Ready bundle](/osce). These are revision resources, not a replacement for supervised local instrument training.
+For a structured image-and-list revision route, see [Instruments in Ophthalmology notes](/products/instruments-in-ophthalmology-notes/). If your practical station combines devices with drugs, [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva/) is the adjacent topic route. Rehearse the spoken station format through the [OSCE, Practical & Viva Voce Ready bundle](/osce/). These are revision resources, not a replacement for supervised local instrument training.
 
 For broader formal learning indexes, the [American Academy of Ophthalmology education catalogue](https://www.aao.org/education/education-browse) is a verified professional-college gateway. It does not define the contents of your department’s instrument tray; revise that local set separately.
 

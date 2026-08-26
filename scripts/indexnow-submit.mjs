@@ -15,6 +15,7 @@
  *   node scripts/indexnow-submit.mjs              # submit changed posts
  *   node scripts/indexnow-submit.mjs --dry-run    # show what would be sent
  *   node scripts/indexnow-submit.mjs --all        # ignore state, submit every post
+ *   node scripts/indexnow-submit.mjs --sitemap    # submit every URL in the built sitemap
  *   node scripts/indexnow-submit.mjs --quiet      # only warn/error output
  *
  * Exit codes: 0 = success or nothing to do, 1 = submission failed.
@@ -43,7 +44,8 @@ const MAX_URLS_PER_REQUEST = 10000;
 
 const args = new Set(process.argv.slice(2));
 const DRY_RUN = args.has('--dry-run');
-const SUBMIT_ALL = args.has('--all');
+const SUBMIT_SITEMAP = args.has('--sitemap');
+const SUBMIT_ALL = args.has('--all') || SUBMIT_SITEMAP;
 const QUIET = args.has('--quiet');
 
 const log = (...a) => !QUIET && console.log(...a);
@@ -134,6 +136,28 @@ async function collectPosts() {
   return posts;
 }
 
+/**
+ * Every URL in the built sitemap, for --sitemap.
+ *
+ * The per-post hashing below only tracks blog articles. After a site-wide
+ * change — new titles, descriptions or structured data on all 160 pages —
+ * the whole sitemap needs pushing, not just the posts.
+ */
+async function collectSitemapUrls() {
+  const path = join(ROOT, 'dist/client/sitemap-0.xml');
+  let xml;
+  try {
+    xml = await readFile(path, 'utf-8');
+  } catch (err) {
+    throw new Error(
+      `--sitemap needs a build first: ${path} not found (run \`npm run build\`).`,
+    );
+  }
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  if (urls.length === 0) throw new Error(`No <loc> entries in ${path}.`);
+  return urls;
+}
+
 async function readState() {
   try {
     const parsed = JSON.parse(await readFile(STATE_FILE, 'utf-8'));
@@ -184,6 +208,23 @@ async function submitBatch(urls, key, keyLocation) {
 
 async function main() {
   const { key, keyLocation } = await readKey();
+
+  if (SUBMIT_SITEMAP) {
+    const urls = await collectSitemapUrls();
+    log(`IndexNow: submitting all ${urls.length} sitemap URL(s).`);
+    if (DRY_RUN) {
+      for (const url of urls) log(`  would submit ${url}`);
+      return 0;
+    }
+    for (let i = 0; i < urls.length; i += MAX_URLS_PER_REQUEST) {
+      const batch = urls.slice(i, i + MAX_URLS_PER_REQUEST);
+      if (!(await submitBatch(batch, key, keyLocation))) return 1;
+    }
+    // Record the post hashes too, so the next incremental run is accurate.
+    await writeState(await collectPosts());
+    return 0;
+  }
+
   const posts = await collectPosts();
 
   if (posts.length === 0) {

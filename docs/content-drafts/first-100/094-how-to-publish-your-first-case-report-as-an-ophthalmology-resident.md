@@ -1,7 +1,8 @@
 ---
 title: "How to Publish Your First Case Report as an Ophthalmology Resident"
+seo_title: "How to Publish an Ophthalmology Case Report"
 proposed_slug: "how-to-publish-your-first-case-report-as-an-ophthalmology-resident"
-meta_description: "A source-led workflow for ophthalmology residents writing a first case report: learning point, consent, authorship, CARE checklist, journal fit and submission QA."
+meta_description: "A workflow for ophthalmology residents writing a first case report: learning point, consent, authorship, CARE checklist, journal fit and submission."
 excerpt: "A case report begins with a defensible learning message and the right permissions — not with a dramatic title or a journal shortlist."
 category: "Career"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -111,7 +112,7 @@ Keep a version log during this stage. Record who changed clinical wording, why a
 
 ## Build academic habits alongside clinical training
 
-A case report is one way to practise a transferable sequence: precise observation, chronology, source discipline, honest uncertainty and concise communication. The [free resources hub](/resources) is a route to general learning resources. A [case presentation format](/products/case-presentation-format-notes) may help you structure a clinical chronology before you turn it into manuscript prose; check its current sample and product information rather than assuming a publication function. The [fellowship preparation page](/exams/fellowship) and [ophthalmology glossary](/glossary) are further verified study routes, not publication or career-placement services.
+A case report is one way to practise a transferable sequence: precise observation, chronology, source discipline, honest uncertainty and concise communication. The [free resources hub](/resources/) is a route to general learning resources. A [case presentation format](/products/case-presentation-format-notes/) may help you structure a clinical chronology before you turn it into manuscript prose; check its current sample and product information rather than assuming a publication function. The [fellowship preparation page](/exams/fellowship/) and [ophthalmology glossary](/glossary/) are further verified study routes, not publication or career-placement services.
 
 ## Sources and scope
 

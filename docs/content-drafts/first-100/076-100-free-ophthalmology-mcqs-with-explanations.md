@@ -1,7 +1,7 @@
 ---
 title: "100 Free Ophthalmology MCQs With Explanations"
 proposed_slug: "100-free-ophthalmology-mcqs-with-explanations"
-meta_description: "Practise 100 free ophthalmology MCQs with answers and explanations from OphthaMCQ’s on-site free question bank. Review the rationale, then log the discriminator."
+meta_description: "Practise 100 free ophthalmology MCQs with answers and explanations from the OphthaMCQ on-site question bank. Review the rationale as you go."
 excerpt: "A 100-question diagnostic drawn directly from the on-site free ophthalmology MCQ bank: attempt, reveal, explain, and revisit."
 category: "Free MCQs"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -23,9 +23,9 @@ The useful unit here is not a raw score. Do the questions in blocks of 20, choos
 2. Reveal the answer and explanation after committing to an option.
 3. Label the error: **recall**, **mechanism**, **confused pair**, **calculation**, or **careless read**.
 4. Re-answer those concepts in a mixed set after two to three days; do not merely re-read the explanation.
-5. Use the [free MCQ hub](/free-mcqs) for further category practice. For a general mixed session, use [general ophthalmology questions](/free-mcqs/general); use [high-yield questions](/free-mcqs/high-yield) when you want a more selective revision block.
+5. Use the [free MCQ hub](/free-mcqs/) for further category practice. For a general mixed session, use [general ophthalmology questions](/free-mcqs/general/); use [high-yield questions](/free-mcqs/high-yield/) when you want a more selective revision block.
 
-The wording, option sets, keyed answers and explanations below are reproduced from the on-site free-question-bank dataset as checked on 18 August 2026. If the interactive bank changes, use the live [free MCQ hub](/free-mcqs) as the current version.
+The wording, option sets, keyed answers and explanations below are reproduced from the on-site free-question-bank dataset as checked on 18 August 2026. If the interactive bank changes, use the live [free MCQ hub](/free-mcqs/) as the current version.
 
 ## Anatomy & Embryology: questions 1–15
 
@@ -1743,11 +1743,11 @@ Methotrexate, mycophenolate mofetil and azathioprine are common first-line stero
 
 A pattern matters more than the total. If errors cluster in optics, isolate formulae and sign conventions before another mixed set. If they cluster in cornea, glaucoma or uveitis, state the distinguishing sign and mechanism aloud before returning to options. A question bank can show a gap; it cannot replace a current standard reference, guideline or supervisor when clinical decisions are involved.
 
-For topic-led revision, the [ophthalmology topics hub](/topics) is a useful next stop. The [glossary](/glossary) can help when a missed item is terminology rather than a concept. Keep the live [free MCQ hub](/free-mcqs) for fresh practice rather than repeating this fixed diagnostic immediately.
+For topic-led revision, the [ophthalmology topics hub](/topics/) is a useful next stop. The [glossary](/glossary/) can help when a missed item is terminology rather than a concept. Keep the live [free MCQ hub](/free-mcqs/) for fresh practice rather than repeating this fixed diagnostic immediately.
 
 ## Sources
 
-- [OphthaMCQ free MCQ hub](/free-mcqs) — public destination for the free question-bank experience; checked 18 August 2026. The 100 records in this article were matched to the on-site dataset, including every option, keyed answer and supplied explanation.
+- [OphthaMCQ free MCQ hub](/free-mcqs/) — public destination for the free question-bank experience; checked 18 August 2026. The 100 records in this article were matched to the on-site dataset, including every option, keyed answer and supplied explanation.
 - [Karpicke and Roediger, repeated retrieval during learning](https://pubmed.ncbi.nlm.nih.gov/16507066/) — used only for the retrieval-practice approach described above; accessed 18 August 2026.
 - [Cepeda et al., distributed practice review](https://pubmed.ncbi.nlm.nih.gov/16719566/) — used only for the spacing/retest suggestion; accessed 18 August 2026.
 

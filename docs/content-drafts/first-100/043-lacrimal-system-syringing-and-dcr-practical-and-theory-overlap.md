@@ -1,5 +1,6 @@
 ---
 title: "Lacrimal System, Syringing and DCR: Practical and Theory Overlap"
+seo_title: "Lacrimal System, Syringing and DCR"
 proposed_slug: "lacrimal-system-syringing-and-dcr-practical-and-theory-overlap"
 meta_description: "An exam-first lacrimal-system guide: anatomy, syringing interpretation, DCR principles, viva scripts and common MCQ traps."
 excerpt: "An exam-first lacrimal-system guide: anatomy, syringing interpretation, DCR principles, viva scripts and common MCQ traps."
@@ -130,7 +131,7 @@ For practicals, use a three-line summary: “This patient has [symptom and later
 
 **Days 6–7:** draw external and endonasal DCR as routes rather than surgical step lists. Finish with a mixed MCQ block and review every guessed answer.
 
-Use the [oculoplastics study guide](/topics/oculoplastics) for wider lacrimal and orbital context. For practical terminology, [Instruments, Drugs & Practical Viva](/products/instruments-drugs-practical-viva) is an optional site revision resource, and [general ophthalmology free MCQs](/free-mcqs/general) can be used for retrieval practice. Neither is a clinical protocol. The [OSCE and viva resource page](/osce) provides the site’s practical-exam route.
+Use the [oculoplastics study guide](/topics/oculoplastics/) for wider lacrimal and orbital context. For practical terminology, [Instruments, Drugs & Practical Viva](/products/instruments-drugs-practical-viva/) is an optional site revision resource, and [general ophthalmology free MCQs](/free-mcqs/general/) can be used for retrieval practice. Neither is a clinical protocol. The [OSCE and viva resource page](/osce/) provides the site’s practical-exam route.
 
 ## Frequent errors that lose marks
 

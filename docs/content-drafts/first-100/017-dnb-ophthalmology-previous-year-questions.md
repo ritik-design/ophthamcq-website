@@ -1,5 +1,6 @@
 ---
 title: "DNB Ophthalmology Previous Year Questions: What Repeats and How Often"
+seo_title: "DNB Ophthalmology Previous Year Questions"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "dnb-ophthalmology-previous-year-questions"
 meta_description: "How DNB Ophthalmology residents can use previous-year questions and candidate recalls without confusing recurring concepts with an official blueprint."
@@ -131,7 +132,7 @@ Stop doing a retina-only or glaucoma-only recall set in isolation. Mix domains. 
 
 Review only your high-importance concepts, repeated error classes and formula/pathway sheets. Keep a separate “do not re-read” list for obscure, low-confidence recollections. It is a useful guardrail: every item you exclude creates time for a verified weak area.
 
-For a wider structure that integrates theory and practical preparation, use the [DNB Ophthalmology preparation hub](/exams/dnb). Do not assume that a theory recall is a forecast of a practical station; practical planning needs its own rehearsal method.
+For a wider structure that integrates theory and practical preparation, use the [DNB Ophthalmology preparation hub](/exams/dnb/). Do not assume that a theory recall is a forecast of a practical station; practical planning needs its own rehearsal method.
 
 ## Errors that waste past papers
 
@@ -149,11 +150,11 @@ Recall wording can omit a critical negative, image or value. Preserve uncertaint
 
 ### Making the product the syllabus
 
-Past-paper material can organise practice, but it cannot replace the current curriculum, standard references or candidate instructions. If you want a source-labelled resource to use within this audit method, the site’s [Past 5-Year Question Papers DNB/DO](/products/dnb-do-past-5-year-papers) page is an optional route to inspect. It is not an NBEMS publication and does not predict questions.
+Past-paper material can organise practice, but it cannot replace the current curriculum, standard references or candidate instructions. If you want a source-labelled resource to use within this audit method, the site’s [Past 5-Year Question Papers DNB/DO](/products/dnb-do-past-5-year-papers/) page is an optional route to inspect. It is not an NBEMS publication and does not predict questions.
 
 ### Ignoring practical preparation until after theory
 
-NBEMS describes Final as theory followed by practical eligibility after theory qualification. That procedural sequence is not a reason to postpone all clinical presentation practice. Keep light, regular bedside and viva rehearsal alongside theory, then intensify it when the current practical instructions are available. The [OSCE, Practical & Viva Voce Ready bundle](/osce) is a separate preparation route; always let your current NBEMS candidate instruction control logistics and format.
+NBEMS describes Final as theory followed by practical eligibility after theory qualification. That procedural sequence is not a reason to postpone all clinical presentation practice. Keep light, regular bedside and viva rehearsal alongside theory, then intensify it when the current practical instructions are available. The [OSCE, Practical & Viva Voce Ready bundle](/osce/) is a separate preparation route; always let your current NBEMS candidate instruction control logistics and format.
 
 ## The one-page checklist
 

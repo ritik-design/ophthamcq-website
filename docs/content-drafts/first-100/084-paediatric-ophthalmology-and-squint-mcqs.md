@@ -1,5 +1,6 @@
 ---
 title: "Paediatric Ophthalmology and Squint MCQs: 40 Explained Questions"
+seo_title: "Paediatric Ophthalmology and Squint MCQs"
 proposed_slug: "paediatric-ophthalmology-and-squint-mcqs"
 meta_description: "Forty explained paediatric ophthalmology and squint MCQs covering visual development, alignment testing, leukocoria, ROP and childhood glaucoma."
 excerpt: "A paediatric MCQ set that starts with age, fixation and red flags before labels."
@@ -18,7 +19,7 @@ research_brief: "docs/content-research/084-paediatric-ophthalmology-squint-mcqs-
 
 In paediatric ophthalmology, start with **age, visual behaviour, alignment and the red reflex**. That sequence prevents two exam mistakes: calling a structural disorder amblyopia before examining the eye, and calling an apparent squint benign before excluding a concerning cause. These questions are for ophthalmology examination revision, not assessment or treatment advice for an individual child.
 
-For each answer, identify the kind of decision it tests: a **red flag**, an **alignment test**, a **visual-development mechanism**, or a **classification descriptor**. A correct label without that decision step is fragile knowledge. After the set, return to the [paediatric ophthalmology and squint topic guide](/topics/pediatric-ophthalmology) for an organised review.
+For each answer, identify the kind of decision it tests: a **red flag**, an **alignment test**, a **visual-development mechanism**, or a **classification descriptor**. A correct label without that decision step is fragile knowledge. After the set, return to the [paediatric ophthalmology and squint topic guide](/topics/pediatric-ophthalmology/) for an organised review.
 
 ## 1. First look: red reflex, leukocoria and visual development
 
@@ -190,7 +191,7 @@ For each answer, identify the kind of decision it tests: a **red flag**, an **al
 
 ## How to use the set on a second pass
 
-Sort wrong answers into three cards: **visual development** (amblyopia, fixation, red reflex), **alignment** (cover test, motility, refractive association), and **retinal classification** (zone, stage, extent, plus). Then do a mixed timed session in the [free MCQ hub](/free-mcqs). For practical-station language, the [OSCE and viva preparation page](/osce) is a useful companion; use current local neonatal and paediatric pathways for clinical care.
+Sort wrong answers into three cards: **visual development** (amblyopia, fixation, red reflex), **alignment** (cover test, motility, refractive association), and **retinal classification** (zone, stage, extent, plus). Then do a mixed timed session in the [free MCQ hub](/free-mcqs/). For practical-station language, the [OSCE and viva preparation page](/osce/) is a useful companion; use current local neonatal and paediatric pathways for clinical care.
 
 ## Editorial QA and link manifest
 

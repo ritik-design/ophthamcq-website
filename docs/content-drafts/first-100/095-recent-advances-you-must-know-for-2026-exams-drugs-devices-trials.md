@@ -1,5 +1,6 @@
 ---
 title: "Recent Advances for Ophthalmology Exams: How to Revise Drugs, Devices and Trials"
+seo_title: "Recent Advances for Ophthalmology Exams"
 proposed_slug: "recent-advances-you-must-know-for-2026-exams-drugs-devices-trials"
 meta_description: "A source-led system for revising ophthalmology recent advances: mechanisms, trial questions, endpoints, limitations and the final 2026 status check."
 excerpt: "A recent-advances answer needs a source date. Learn the clinical question, mechanism, endpoint and limitation before the headline."
@@ -148,7 +149,7 @@ At the final review, read every status line aloud with its date. If the date is 
 
 Do not chase every innovation. Choose the current syllabus/recent-advances themes your course or exam genuinely emphasises. For each selected item, be able to say one mechanism, one comparator, one endpoint, one result, one limitation and one source date. Delete any card that only says “new”, “better” or “approved” without an authority and date.
 
-Use [Recent Advances in Ophthalmology](/products/recent-advances-ophthalmology-notes) for the matching on-site notes route. Pair it with the [retina study guide](/topics/retina) when the advance is retina-based. Check current product scope and store terms before purchasing.
+Use [Recent Advances in Ophthalmology](/products/recent-advances-ophthalmology-notes/) for the matching on-site notes route. Pair it with the [retina study guide](/topics/retina/) when the advance is retina-based. Check current product scope and store terms before purchasing.
 
 ## Sources and scope boundary
 

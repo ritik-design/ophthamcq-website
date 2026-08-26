@@ -1,5 +1,6 @@
 ---
 title: "Free vs Paid Ophthalmology Question Banks: Where Free Runs Out"
+seo_title: "Free vs Paid Ophthalmology Question Banks"
 proposed_slug: "free-vs-paid-ophthalmology-question-banks-where-free-runs-out"
 meta_description: "Free ophthalmology MCQs can diagnose gaps and build a review habit. Use this decision framework to tell when a paid bank adds a real missing layer."
 excerpt: "Free questions are enough to test a revision loop. Pay only when you can name the exam-specific gap that a paid resource will fill."
@@ -74,7 +75,7 @@ An explanation should help you identify the missing distinction and the next sou
 
 If the answer is no, the issue could be explanation depth, but it could also be that the question is too far from your present level. Do not solve either uncertainty by assuming that a paid provider will be more useful. Inspect a sample of the exact paid resource first.
 
-OphthaMCQ’s [free ophthalmology MCQs](/free-mcqs) provide a no-purchase place to run this test. The repository documents 200 free MCQs with explanations. Use that number as an inventory fact, not as a claim that the free set represents a complete syllabus or a full examination simulation. You can also choose [high-yield free MCQs](/free-mcqs/high-yield) or [general ophthalmology questions](/free-mcqs/general) when a mixed block is no longer answering your question.
+OphthaMCQ’s [free ophthalmology MCQs](/free-mcqs/) provide a no-purchase place to run this test. The repository documents 200 free MCQs with explanations. Use that number as an inventory fact, not as a claim that the free set represents a complete syllabus or a full examination simulation. You can also choose [high-yield free MCQs](/free-mcqs/high-yield/) or [general ophthalmology questions](/free-mcqs/general/) when a mixed block is no longer answering your question.
 
 ## Where free runs out
 
@@ -90,7 +91,7 @@ More volume is useful only when it becomes deliberate re-retrieval. A resident w
 
 Past-paper work is a separate product job from a generic MCQ bank. It may help you see how a specific assessment frames topics, but it must never replace the current syllabus, candidate instructions or official regulations.
 
-For example, OphthaMCQ documents [Past 5-Year Question Papers DNB/DO](/products/dnb-do-past-5-year-papers) and [ICO/FICO Past Papers](/products/ico-fico-past-papers). Those links establish named product routes, not current contents, coverage dates, pricing, access terms or outcome claims. Open the live store page before buying, and use the relevant examining body as the authority for syllabus and format changes.
+For example, OphthaMCQ documents [Past 5-Year Question Papers DNB/DO](/products/dnb-do-past-5-year-papers/) and [ICO/FICO Past Papers](/products/ico-fico-past-papers/). Those links establish named product routes, not current contents, coverage dates, pricing, access terms or outcome claims. Open the live store page before buying, and use the relevant examining body as the authority for syllabus and format changes.
 
 The key question is narrow: “Do I need to practise the way this specific exam asks questions?” If yes, a product that documents that scope may be worth investigating. “I have heard past papers are essential” is not yet a purchase decision.
 
@@ -98,7 +99,7 @@ The key question is narrow: “Do I need to practise the way this specific exam 
 
 An MCQ explanation may tell you that your answer was wrong without providing the visual, derivation or topic structure you need to fix it. That is when a separate reference layer matters.
 
-You may use a standard text, a departmental teaching session, a personal error notebook, or a notes product. OphthaMCQ documents [Handwritten Exam Ready Notes](/notes) and individual topic products. Treat the current preview and store description as the evidence for a particular product’s scope. Do not infer that any notes line contains your exact topic, a particular update policy or a universal replacement for textbooks.
+You may use a standard text, a departmental teaching session, a personal error notebook, or a notes product. OphthaMCQ documents [Handwritten Exam Ready Notes](/notes/) and individual topic products. Treat the current preview and store description as the evidence for a particular product’s scope. Do not infer that any notes line contains your exact topic, a particular update policy or a universal replacement for textbooks.
 
 For a question bank, the better question is not “does it include notes?” It is “after I miss a question on Wednesday, can I repair the concept by Thursday and retrieve it again next week?” The answer can be yes with free material plus a library text. It can also be yes with a paid question-and-notes combination. The observable workflow is what matters.
 
@@ -106,7 +107,7 @@ For a question bank, the better question is not “does it include notes?” It 
 
 Question banks are most direct for written recall and discrimination. They are less direct for a slit-lamp demonstration, refraction technique, a long-case presentation or a viva in which another doctor interrupts your reasoning. No number of SBAs establishes that you can perform those tasks.
 
-If a practical examination is next, organise supervised rehearsal and spoken feedback. A resource can give you prompts, structures and checklists, but it cannot observe your examination sequence or challenge a vague answer in real time. OphthaMCQ’s [OSCE and practical preparation page](/osce) is a route to inspect for that different job. It is not evidence that buying any bundle substitutes for local clinical supervision or current exam instructions.
+If a practical examination is next, organise supervised rehearsal and spoken feedback. A resource can give you prompts, structures and checklists, but it cannot observe your examination sequence or challenge a vague answer in real time. OphthaMCQ’s [OSCE and practical preparation page](/osce/) is a route to inspect for that different job. It is not evidence that buying any bundle substitutes for local clinical supervision or current exam instructions.
 
 ## A 30-minute free-to-paid audit
 
@@ -132,7 +133,7 @@ Open the seller’s current page for the exact product. Check five things:
 
 Do not use old forum posts, search-result snippets or static comparison tables for items 4 and 5. They are often stale. Do not accept a testimonial as proof that the resource will cause your result. Individual experience is not a personal forecast.
 
-If you are considering a broad MCQ product, inspect [High Yield MCQs](/products/high-yield-mcqs) only as a current first-party product route. This article does not rank it, assert question totals, or state which examinations it covers. The same rule applies to any competitor: supplier descriptions are evidence of what the supplier says today, not independent proof of quality or suitability.
+If you are considering a broad MCQ product, inspect [High Yield MCQs](/products/high-yield-mcqs/) only as a current first-party product route. This article does not rank it, assert question totals, or state which examinations it covers. The same rule applies to any competitor: supplier descriptions are evidence of what the supplier says today, not independent proof of quality or suitability.
 
 ### Minutes 20–30: make the purchase rule
 
@@ -164,7 +165,7 @@ Before checkout, write one sentence: **“I am buying this because it gives me _
 
 The blank should name an exam-matched question pool, a specific past-paper layer, a topic-repair format or a practical-viva framework. It should not say “a pass,” “confidence,” “the best bank” or “what everyone uses.” Those are not measurable resource jobs.
 
-For a wider provider-selection framework, read the [ophthalmology question-bank comparison](/compare/best-ophthalmology-question-banks). It is complementary, not a substitute for checking live purchase terms. If your immediate question is how to revisit errors after you choose a resource, the [OphthaMCQ resources hub](/resources) is the relevant on-site starting point.
+For a wider provider-selection framework, read the [ophthalmology question-bank comparison](/compare/best-ophthalmology-question-banks/). It is complementary, not a substitute for checking live purchase terms. If your immediate question is how to revisit errors after you choose a resource, the [OphthaMCQ resources hub](/resources/) is the relevant on-site starting point.
 
 ## Bottom line
 

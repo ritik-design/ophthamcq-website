@@ -1,5 +1,6 @@
 ---
 title: "Exam Anxiety and Burnout in Residency: A Study-Load Support Guide"
+seo_title: "Exam Anxiety and Burnout in Residency"
 proposed_slug: "exam-anxiety-and-burnout-in-residency-practical-countermeasures"
 meta_description: "A non-diagnostic study-load support guide for ophthalmology residents facing exam anxiety or burnout: triage tasks, protect basics and seek appropriate help."
 excerpt: "When the load is too high, make it visible, reduce the next step and bring another person into the plan early."
@@ -63,7 +64,7 @@ Use three tiers:
 
 At the start of the week, schedule two standard blocks and one deep block only if the rota makes them plausible. Keep three minimum blocks as movable backups. When a duty changes, move the block; do not call the week “failed”.
 
-The [free resources hub](/resources) and [free ophthalmology MCQs](/free-mcqs) can support short, defined revision blocks. They are learning resources, not rest, treatment or a replacement for appropriate human support.
+The [free resources hub](/resources/) and [free ophthalmology MCQs](/free-mcqs/) can support short, defined revision blocks. They are learning resources, not rest, treatment or a replacement for appropriate human support.
 
 ## Make comparison less destructive
 
@@ -126,7 +127,7 @@ You do not need a polished explanation. Bring the concrete timeline: how long th
 
 ## When content resources help—and when they do not
 
-Use [Handwritten Exam Ready Notes](/notes) or another study resource only as part of a realistic plan. No question bank, notes product or timetable can guarantee an exam result or resolve anxiety/burnout. A resource is useful when it turns a specific gap into a bounded task; it is unhelpful when it becomes another unopened purchase or another reason to compare yourself with others.
+Use [Handwritten Exam Ready Notes](/notes/) or another study resource only as part of a realistic plan. No question bank, notes product or timetable can guarantee an exam result or resolve anxiety/burnout. A resource is useful when it turns a specific gap into a bounded task; it is unhelpful when it becomes another unopened purchase or another reason to compare yourself with others.
 
 The [AAO education catalogue](https://www.aao.org/education/education-browse) is a professional-learning directory, not a mental-health service. The same boundary applies to this article.
 

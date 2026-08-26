@@ -89,21 +89,21 @@ Khurana is therefore a reasonable companion for an Indian PG first pass, not a s
 
 For many DNB / MS / DO residents, begin with Kanski as the broad clinical anchor. Use Khurana where a quick first pass helps you establish a topic before teaching or theory revision. Bring in BCSC only for documented mechanisms or basic-science gaps. This avoids building three parallel reading backlogs.
 
-Use the [DNB Ophthalmology preparation guide](/exams/dnb) to organise the exam route, then test the topic with [general ophthalmology free MCQs](/free-mcqs/general). When an answer is wrong, label it recognition, mechanism, organisation, calculation or recall. That label determines the next resource. Do not interpret a run of questions as a prediction of examination performance.
+Use the [DNB Ophthalmology preparation guide](/exams/dnb/) to organise the exam route, then test the topic with [general ophthalmology free MCQs](/free-mcqs/general/). When an answer is wrong, label it recognition, mechanism, organisation, calculation or recall. That label determines the next resource. Do not interpret a run of questions as a prediction of examination performance.
 
-For practical preparation, neither Kanski nor BCSC replaces an authorised departmental list, patient-based learning, or timed oral rehearsal. Use the reference to understand the finding; use [OSCE, Practical & Viva Voce Ready](/osce) only as an OphthaMCQ study-resource route if its format suits your revision needs. Clinical care and local examination requirements remain the responsibility of supervisors and the relevant examining body.
+For practical preparation, neither Kanski nor BCSC replaces an authorised departmental list, patient-based learning, or timed oral rehearsal. Use the reference to understand the finding; use [OSCE, Practical & Viva Voce Ready](/osce/) only as an OphthaMCQ study-resource route if its format suits your revision needs. Clinical care and local examination requirements remain the responsibility of supervisors and the relevant examining body.
 
 ### ICO / FICO: syllabus first, then sections and synthesis
 
 Start at the official ICO information, identify the domains you need to cover, and map a small number of BCSC sections to the gaps exposed by practice. Use Kanski to connect that technical material to clinical patterns. A candidate who can define a mechanism but cannot recognise its clinical expression still needs the clinical map; a candidate who can recognise the pattern but cannot explain it may need the modular depth.
 
-The [ICO / FICO preparation guide](/exams/ico-fico) and [ICO / FICO sample questions](/free-mcqs/ico-fico) provide verified on-site routes for planning and retrieval. If you want to inspect the associated product before purchasing, use the sample pages of [ICO/FICO Past Papers](/products/ico-fico-past-papers). None of these links makes a publisher’s textbook an ICO reading list.
+The [ICO / FICO preparation guide](/exams/ico-fico/) and [ICO / FICO sample questions](/free-mcqs/ico-fico/) provide verified on-site routes for planning and retrieval. If you want to inspect the associated product before purchasing, use the sample pages of [ICO/FICO Past Papers](/products/ico-fico-past-papers/). None of these links makes a publisher’s textbook an ICO reading list.
 
 ### FRCOphth: curriculum alignment before brand loyalty
 
 FRCOphth candidates should begin with the current RCOphth curriculum and examination information, then use BCSC for defined core-science or sectional gaps and Kanski for clinical consolidation. Optics deserves separate written problem practice; no broad clinical read substitutes for working calculations. Do not select a title merely because it appears often in peer discussions. Select it because its contents solve a mapped curriculum gap.
 
-The [FRCOphth preparation guide](/exams/frcophth) is a planning route, not an official curriculum. Candidates comparing question-practice options can also inspect the sample pages of [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs). Keep the official College material beside any commercial or publisher resource, particularly where requirements may change.
+The [FRCOphth preparation guide](/exams/frcophth/) is a planning route, not an official curriculum. Candidates comparing question-practice options can also inspect the sample pages of [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs/). Keep the official College material beside any commercial or publisher resource, particularly where requirements may change.
 
 ## A reading loop that makes the comparison useful
 
@@ -125,7 +125,7 @@ This loop gives every book a defined role. Kanski supplies clinical connections.
 
 **Check edition-sensitive facts independently.** Prices, editions, availability, examination rules, classifications and guidelines change. Publisher pages and official bodies are the correct starting points; old PDFs, retailer descriptions and batch WhatsApp lists are not enough.
 
-**Separate reference reading from revision.** A reference restores understanding. A revision system makes it retrievable. [Handwritten Exam Ready Notes](/notes) can be a concise on-site revision layer, but they should not replace a primary reference or current authority where the concept is uncertain.
+**Separate reference reading from revision.** A reference restores understanding. A revision system makes it retrievable. [Handwritten Exam Ready Notes](/notes/) can be a concise on-site revision layer, but they should not replace a primary reference or current authority where the concept is uncertain.
 
 **Use a stopping rule.** Stop reading when you can explain the mechanism, distinguish the close alternatives and answer fresh questions. Continue only if a new error identifies a new gap. This is more defensible than finishing pages because they are there.
 

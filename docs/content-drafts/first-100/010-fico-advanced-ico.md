@@ -1,5 +1,6 @@
 ---
 title: "FICO (Advanced ICO): Who It's For, What Changes After BVS"
+seo_title: "FICO Exam (Advanced ICO): What Changes After BVS"
 proposed_slug: "fico-advanced-ico-after-bvs"
 meta_description: "A safe, current-information-first guide to the FICO/Advanced ICO route after BVS: terminology, planning, verification and paper-specific revision."
 excerpt: "A safe, current-information-first guide to the FICO/Advanced ICO route after BVS: terminology, planning, verification and paper-specific revision."
@@ -94,13 +95,13 @@ Past papers can reveal language, expected depth and recurring blind spots. They 
 
 For each past question, write one of three labels: principle secure; principle guessed; principle missing. Rework guessed and missing questions a week later from a different angle. If the answer key gives a fact without explaining the mechanism, use a current authoritative reference before making it a flashcard. This protects you against memorising an isolated answer.
 
-The verified [ICO/FICO Past Papers](/products/ico-fico-past-papers) page is a route to an OphthaMCQ resource whose current scope should be checked on the page/store. It is not a statement that past papers alone predict performance.
+The verified [ICO/FICO Past Papers](/products/ico-fico-past-papers/) page is a route to an OphthaMCQ resource whose current scope should be checked on the page/store. It is not a statement that past papers alone predict performance.
 
 ## A resource decision framework
 
 Choose resources by the job they perform. Use official ICO pages for administration. Use a core textbook or current reference for concept repair. Use topic-wise questions for diagnosing a narrow weakness. Use mixed questions and timed sets for selection and pace. Use images only with a structured description routine. Use a small error log for retention.
 
-For site navigation, the [ICO / FICO preparation guide](/exams/ico-fico) is the broader hub. The [free ICO/FICO sample questions](/free-mcqs/ico-fico) provide a low-stakes retrieval check. If BVS foundations need targeted practice, inspect the current [ICO Basic Visual Sciences MCQs](/products/ico-basic-visual-sciences) page. If optics is the weak lane, inspect [ICO Optics & Refraction MCQs Part A](/products/ico-optics-refraction-mcqs-part-a). These are independently operated OphthaMCQ resources; no ICO or AIOS endorsement is implied, and no result is promised.
+For site navigation, the [ICO / FICO preparation guide](/exams/ico-fico/) is the broader hub. The [free ICO/FICO sample questions](/free-mcqs/ico-fico/) provide a low-stakes retrieval check. If BVS foundations need targeted practice, inspect the current [ICO Basic Visual Sciences MCQs](/products/ico-basic-visual-sciences/) page. If optics is the weak lane, inspect [ICO Optics & Refraction MCQs Part A](/products/ico-optics-refraction-mcqs-part-a/). These are independently operated OphthaMCQ resources; no ICO or AIOS endorsement is implied, and no result is promised.
 
 ## Common errors that waste months
 

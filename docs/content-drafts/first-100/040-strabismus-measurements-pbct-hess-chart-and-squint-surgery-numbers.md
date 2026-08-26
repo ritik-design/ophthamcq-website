@@ -1,5 +1,6 @@
 ---
 title: "Strabismus Measurements: PBCT, Hess Chart and Squint Surgery Numbers"
+seo_title: "Strabismus MCQs: PBCT, Hess Chart and Surgery"
 proposed_slug: "strabismus-measurements-pbct-hess-chart-and-squint-surgery-numbers"
 meta_description: "An exam-first guide to PBCT, Hess-chart interpretation, primary and secondary deviation, and how to answer squint-surgery number questions safely."
 excerpt: "A prism-cover-test number is only useful when you state correction, fixation, distance, near, eye and prism direction."
@@ -158,7 +159,7 @@ Practise that sequence with another resident using a timer. It protects you agai
 
 ## Revision plan: convert every measurement into a sentence
 
-Do ten PBCT examples. For each, write a one-line report containing distance/near, correction, method, direction and magnitude. Then take five Hess charts and force yourself to name the smaller field before naming any muscle. Finally, take a set of mixed [general ophthalmology MCQs](/free-mcqs/general) so that strabismus is not always signposted by the question stem. The [pediatric ophthalmology guide](/topics/pediatric-ophthalmology) is the parent topic page for wider amblyopia, squint and paediatric revision; practical-station preparation is available through the site’s [OSCE and viva resources](/osce).
+Do ten PBCT examples. For each, write a one-line report containing distance/near, correction, method, direction and magnitude. Then take five Hess charts and force yourself to name the smaller field before naming any muscle. Finally, take a set of mixed [general ophthalmology MCQs](/free-mcqs/general/) so that strabismus is not always signposted by the question stem. The [pediatric ophthalmology guide](/topics/pediatric-ophthalmology/) is the parent topic page for wider amblyopia, squint and paediatric revision; practical-station preparation is available through the site’s [OSCE and viva resources](/osce/).
 
 ## Sources
 

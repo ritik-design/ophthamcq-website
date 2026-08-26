@@ -1,8 +1,9 @@
 ---
 title: "DO Ophthalmology Exam: Syllabus, Practicals and Next Steps After DO"
+seo_title: "DO Ophthalmology Exam: Syllabus and Next Steps"
 publication_action: "new-blog-article"
 proposed_slug: "do-ophthalmology-exam"
-meta_description: "A document-first DO Ophthalmology exam guide: map your university syllabus, rehearse practicals and use past questions without importing another university's rules."
+meta_description: "A document-first DO Ophthalmology exam guide: map your university syllabus, rehearse practicals and use past questions from the right source."
 excerpt: "A document-first DO Ophthalmology exam guide: map your university syllabus, rehearse practicals and use past questions without importing another university's rules."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -88,7 +89,7 @@ Use one card per real or simulated case. On the front: chief problem, duration, 
 
 Common practical failures are operational. Candidates lose the order of examination under pressure, fail to expose the eye adequately, name an instrument without its principle, or state an investigation result without describing its quality. Solve these with short repeated demonstrations. Ten minutes on a single instrument family with a partner is more valuable than an hour of passive scrolling through instrument photographs.
 
-The site’s [OSCE, Practical & Viva Voce Ready](/osce) page is a relevant preparation route for practising structured practical outputs. It is not a university practical instruction sheet. Use it after you have fixed your local format.
+The site’s [OSCE, Practical & Viva Voce Ready](/osce/) page is a relevant preparation route for practising structured practical outputs. It is not a university practical instruction sheet. Use it after you have fixed your local format.
 
 ## Use past questions to find themes, not to predict papers
 
@@ -96,7 +97,7 @@ Past questions are useful when they are traceable. Keep the original source, yea
 
 Create a topic ledger with columns for theme, micro-topic, task type, source, your confidence, error reason and verified reference. “Retina” is too broad. “Rhegmatogenous detachment: break–PVR mechanism distinction” is actionable. After twenty to thirty items, the ledger reveals whether your weakness is foundational knowledge, cross-topic discrimination, images, instruments or answer construction.
 
-Use a product only after checking its scope and fit. The [DNB / DO Past 5-Year Papers](/products/dnb-do-past-5-year-papers) page describes a preparation resource; it should not be read as an official archive or as proof that every question will recur. Preserve that distinction in your notes.
+Use a product only after checking its scope and fit. The [DNB / DO Past 5-Year Papers](/products/dnb-do-past-5-year-papers/) page describes a preparation resource; it should not be read as an official archive or as proof that every question will recur. Preserve that distinction in your notes.
 
 ## A four-week final-month plan that survives duty days
 
@@ -113,7 +114,7 @@ On an on-call day, use a minimum viable session: five retrieval prompts, one ima
 
 ## DO, DNB and the next step after the result
 
-The clinical knowledge overlap between DO and DNB can make the [DNB / MS / DO preparation guide](/exams/dnb) useful for broad topic revision. It does **not** mean the examination rules, eligibility, paper structure, result process or career pathways are interchangeable. Use only your university’s documents for the DO final examination, and NBEMS material only for DNB-specific decisions.
+The clinical knowledge overlap between DO and DNB can make the [DNB / MS / DO preparation guide](/exams/dnb/) useful for broad topic revision. It does **not** mean the examination rules, eligibility, paper structure, result process or career pathways are interchangeable. Use only your university’s documents for the DO final examination, and NBEMS material only for DNB-specific decisions.
 
 After the result, retain your marksheets, training records, logbook copies and the current university notification in a secure folder. For any registration, recognition, degree-conversion, fellowship or employment decision, verify the requirement directly with the relevant regulator, university, institution or programme. Regulations and recruitment criteria can change; a blog post or an old social-media screenshot is not enough evidence for a professional decision.
 

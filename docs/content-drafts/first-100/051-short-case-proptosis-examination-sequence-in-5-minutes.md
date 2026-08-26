@@ -1,7 +1,8 @@
 ---
 title: "Short Case: Proptosis — Examination Sequence in 5 Minutes"
+seo_title: "Proptosis Examination in 5 Minutes (Short Case)"
 proposed_slug: "short-case-proptosis-examination-sequence-in-5-minutes"
-meta_description: "A source-linked five-minute proptosis examination sequence for ophthalmology practical and viva revision: describe, measure, test visual function and present safely."
+meta_description: "A five-minute proptosis examination sequence for ophthalmology practical and viva revision: describe, measure, test visual function and present safely."
 excerpt: "A proptosis short case is scored on a reproducible examination and presentation, not on naming an orbital diagnosis too early."
 category: "OSCE"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -111,7 +112,7 @@ After visual function and motility, inspect and examine the structures that expl
 
 Lid retraction, soft-tissue change, exposure, motility restriction and proptosis are documented domains in thyroid eye disease assessment, but none is diagnostic on its own.[^2] In a viva, that distinction matters. “The lid signs make thyroid eye disease a differential” is defensible. “This is thyroid eye disease” is overconfident until history, systemic findings and relevant investigations support it.
 
-For broader oculoplastics revision, use the [oculoplastics study guide](/topics/oculoplastics). It is a topic map, not a substitute for a live examination or local clinical protocol.
+For broader oculoplastics revision, use the [oculoplastics study guide](/topics/oculoplastics/). It is a topic map, not a substitute for a live examination or local clinical protocol.
 
 ## Turn observations into a short-case presentation
 
@@ -145,7 +146,7 @@ Use this compact rehearsal card:
 | What finishes the case? | lids/surface, IOP when relevant, anterior segment, fundus, systemic and cranial-nerve completion |
 | How do you conclude? | compartment + tempo differential, then history/imaging correlation |
 
-For repeated practical rehearsal, the [OSCE, Practical & Viva Voce Ready bundle](/osce) is OphthaMCQ’s practical-exam resource page. If a structured write-up format would help your practice, inspect [Ophthalmology Case Presentation Format](/products/case-presentation-format-notes) before deciding whether it fits your preparation. OphthaMCQ is independent and is not affiliated with RCOphth, ICO, AIOS, NBE or AAO.
+For repeated practical rehearsal, the [OSCE, Practical & Viva Voce Ready bundle](/osce/) is OphthaMCQ’s practical-exam resource page. If a structured write-up format would help your practice, inspect [Ophthalmology Case Presentation Format](/products/case-presentation-format-notes/) before deciding whether it fits your preparation. OphthaMCQ is independent and is not affiliated with RCOphth, ICO, AIOS, NBE or AAO.
 
 ## Errors that make a competent candidate sound unsafe
 

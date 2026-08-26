@@ -3,22 +3,61 @@ import Layout from '../layouts/Layout.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 import PageHero from '../components/PageHero.astro';
 import { CATEGORIES } from '../data/categories';
+import { MCQS } from '../data/free-mcqs';
+
+const practiceMcqIds = new Set([1, 16, 46, 76, 106]);
+const practiceMcqs = MCQS.filter((mcq) => practiceMcqIds.has(mcq.id));
+
+const faqs = [
+  { question: 'Are these ophthalmology MCQs free?', answer: 'Yes. OphthaMCQ provides 200 free ophthalmology MCQs with answers and explanations. You can start a sample quiz without creating an account.' },
+  { question: 'Which postgraduate ophthalmology exams are covered?', answer: 'The exam-wise quizzes cover PD-CET, FAICO, ICO / FICO and FRCOphth. The high-yield and general ophthalmology sets are useful for mixed revision across major subspecialties.' },
+  { question: 'Do I see the answer and explanation after each MCQ?', answer: 'Yes. After you choose an option, the quiz identifies the correct answer and shows a concise explanation before you move to the next question.' },
+  { question: 'Can I download these ophthalmology MCQ questions as a PDF?', answer: 'This free bank is designed for browser-based practice with instant scoring, so a downloadable MCQ PDF is not currently offered on this page. OphthaMCQ does provide separate handwritten Exam Ready Notes PDFs with sample pages.' },
+  { question: 'Should I practise topic-wise or exam-wise MCQs?', answer: 'Use exam-wise MCQs when you are preparing for a defined paper and topic-wise questions when you need to find or repair a weak area. A practical revision week can include both: focused topic practice on most days and one mixed set at the end of the week.' },
+];
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Free Ophthalmology MCQs: Topic-Wise Practice With Explanations',
+  description: 'Practise 200 free ophthalmology MCQs with answers, explanations and instant scoring for PD-CET, FAICO, ICO / FICO, FRCOphth and postgraduate revision.',
+  datePublished: '2026-08-17',
+  dateModified: '2026-08-17',
+  mainEntityOfPage: 'https://ophthamcq.org/free-mcqs',
+  author: { '@type': 'Organization', name: 'Dr. OphthaMCQ Editorial Team' },
+  publisher: { '@type': 'Organization', name: 'OphthaMCQ', url: 'https://ophthamcq.org' },
+  about: ['Ophthalmology multiple-choice questions', 'Postgraduate ophthalmology examinations', 'PD-CET', 'FAICO', 'ICO / FICO', 'FRCOphth'],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
 ---
 
 <Layout
-  title="Free Ophthalmology MCQs by Exam — Practice & Buy Full Courses"
-  description="Try free sample MCQs for PD-CET, FAICO, ICO/FICO, FRCOphth, Fellowship, Exam Notes, and High-Yield topics. Unlock full courses with handwritten notes and past papers."
+  breadcrumbs={[{ name: 'Free MCQs' }]}
+  title="Free Ophthalmology MCQs With Answers & Explanations"
+  description="Practise 200 free ophthalmology MCQs with answers, explanations and instant scoring for PD-CET, FAICO, ICO/FICO, FRCOphth and PG revision."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <PageHero
     eyebrow="100% Free — No Signup — Instant Scoring"
     eyebrowIcon="sparkles"
     accent="emerald"
-    titleHtml={`Free <span class="text-sky-600">Ophthalmology MCQs</span> by Exam`}
-    description="Pick your exam or topic, answer a short sample quiz, then unlock the full course with notes, past papers, and thousands of MCQs."
+    titleHtml={`Free <span class="text-sky-600">Ophthalmology MCQs</span> With Explanations`}
+    description="Practise 200 ophthalmology MCQs with answers and concise explanations. Choose an exam-wise or mixed quiz, get instant feedback, and start without creating an account."
     primaryCta={{ href: '#categories', label: 'Choose a category' }}
-    secondaryCta={{ href: '/notes', label: 'Browse notes' }}
+    secondaryCta={{ href: '/notes/', label: 'Browse notes' }}
     trust={[
-      { value: '200+', label: 'Free MCQs' },
+      { value: '200', label: 'Free MCQs' },
       { value: `${CATEGORIES.length}`, label: 'Categories' },
       { value: '0 ₹', label: 'To start' },
     ]}
@@ -32,6 +71,10 @@ import { CATEGORIES } from '../data/categories';
   <!-- Category selection -->
   <div class="bg-slate-50 py-12 lg:py-16 min-h-[60vh]">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Start an ophthalmology quiz by exam</h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">Use an exam-specific set when your paper is fixed. Choose High Yield or General Ophthalmology for mixed-topic revision across the syllabus.</p>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {CATEGORIES.map((category) => (
           <CategoryCard category={category} />
@@ -39,4 +82,88 @@ import { CATEGORIES } from '../data/categories';
       </div>
     </div>
   </div>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-wider text-sky-700">A resident-first practice bank</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Ophthalmology MCQs with answers and explanations</h2>
+        <p class="mt-5 text-lg text-slate-600 leading-relaxed">An ophthalmology MCQ is useful only when the review changes what you do on the next question. Each free OphthaMCQ sample therefore gives you the answer and a concise explanation immediately after your choice. You can practise without a signup wall, then review the complete set when the logic is still fresh.</p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><div class="text-sm font-bold text-sky-700">1 · Choose deliberately</div><h3 class="mt-2 text-lg font-bold text-slate-900">Match the set to today’s job</h3><p class="mt-2 text-sm leading-relaxed text-slate-600">Use PD-CET, FAICO, ICO / FICO or FRCOphth for paper-specific practice. Use a mixed set to expose weak topics.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><div class="text-sm font-bold text-sky-700">2 · Commit to an answer</div><h3 class="mt-2 text-lg font-bold text-slate-900">Attempt before reading</h3><p class="mt-2 text-sm leading-relaxed text-slate-600">Answer closed-book. If you are unsure, identify the two most plausible options and state why one is better before selecting it.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6"><div class="text-sm font-bold text-sky-700">3 · Review the error</div><h3 class="mt-2 text-lg font-bold text-slate-900">Record the reason, not the score</h3><p class="mt-2 text-sm leading-relaxed text-slate-600">Label a miss as a knowledge gap, a recall failure or a stem-reading error. Revisit that concept before another mixed quiz.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Eye MCQs for PG exams: topic-wise or exam-wise?</h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-600">Use exam-wise practice to learn a paper’s mix and topic-wise practice to repair a specific gap. Most PG residents need both, but not in equal proportions every day.</p>
+      </div>
+      <div class="mt-10 overflow-x-auto rounded-2xl border border-slate-200 bg-white" tabindex="0" role="region" aria-label="Table, scroll horizontally to see more">
+        <table class="w-full min-w-[680px] text-left text-sm">
+          <thead class="bg-slate-100 text-slate-900"><tr><th class="px-5 py-4 font-bold">Practice mode</th><th class="px-5 py-4 font-bold">Use it when</th><th class="px-5 py-4 font-bold">Best next step</th></tr></thead>
+          <tbody class="divide-y divide-slate-200 text-slate-600">
+            <tr><td class="px-5 py-4 font-semibold text-slate-900">Exam-wise MCQs</td><td class="px-5 py-4">You have chosen PD-CET, FAICO, ICO / FICO or FRCOphth and need paper-relevant practice.</td><td class="px-5 py-4"><a class="font-semibold text-sky-700 hover:text-sky-800" href="/exams/">Check the matching exam guide</a> before planning the week.</td></tr>
+            <tr><td class="px-5 py-4 font-semibold text-slate-900">Topic-wise MCQs</td><td class="px-5 py-4">Your error log repeatedly points to one subspecialty such as glaucoma, retina or cornea.</td><td class="px-5 py-4"><a class="font-semibold text-sky-700 hover:text-sky-800" href="/topics/">Review the matching topic guide</a>, then reattempt a mixed set.</td></tr>
+            <tr><td class="px-5 py-4 font-semibold text-slate-900">Mixed ophthalmology quiz</td><td class="px-5 py-4">You want a baseline, a weekly check or rapid revision across subspecialties.</td><td class="px-5 py-4"><a class="font-semibold text-sky-700 hover:text-sky-800" href="/free-mcqs/general/">Start the General Ophthalmology quiz</a> and sort every miss by topic.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-wider text-emerald-700">Five-question check</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Practice ophthalmology MCQs with answers</h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-600">Answer each question before opening the explanation. These five questions sample anatomy, optics, cornea, glaucoma and retina from the free bank.</p>
+      </div>
+      <div class="mt-10 space-y-5">
+        {practiceMcqs.map((mcq, questionIndex) => (
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-7">
+            <div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide"><span class="text-sky-700">Question {questionIndex + 1}</span><span class="text-slate-400">·</span><span class="text-slate-500">{mcq.topic}</span></div>
+            <h3 class="mt-3 text-lg font-bold leading-relaxed text-slate-900">{mcq.q}</h3>
+            <ol class="mt-4 grid gap-2 sm:grid-cols-2" type="A">
+              {mcq.options.map((option) => <li class="ml-6 rounded-lg bg-white px-3 py-2 text-sm text-slate-700 marker:font-semibold marker:text-slate-500">{option}</li>)}
+            </ol>
+            <details class="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+              <summary class="cursor-pointer font-semibold text-emerald-800">Show answer and explanation</summary>
+              <div class="mt-3 text-sm leading-relaxed text-slate-700"><p><strong>Answer: {String.fromCharCode(65 + mcq.correct)}. {mcq.options[mcq.correct]}</strong></p><p class="mt-2">{mcq.explanation}</p></div>
+            </details>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50 py-16 lg:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Looking for an ophthalmology MCQ questions PDF?</h2>
+          <p class="mt-5 text-lg leading-relaxed text-slate-600">The free MCQ bank is browser-based because it can score your answer and reveal the explanation immediately. There is no downloadable general MCQ PDF on this page. If you need compact reading material between question sessions, preview the <a class="font-semibold text-sky-700 hover:text-sky-800" href="/notes/">Handwritten Exam Ready Notes</a>. For a larger mixed question set, review the <a class="font-semibold text-sky-700 hover:text-sky-800" href="/products/high-yield-mcqs/">High Yield MCQs</a> product page before going to the store.</p>
+        </div>
+        <aside class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
+          <h3 class="text-lg font-bold text-slate-900">A 30-minute duty-day session</h3>
+          <ol class="mt-4 space-y-3 text-sm leading-relaxed text-slate-700"><li><strong>20 minutes:</strong> complete one short quiz without notes.</li><li><strong>7 minutes:</strong> read every explanation, including correct answers.</li><li><strong>3 minutes:</strong> write one weak topic and the next action in your error log.</li></ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto"><h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Free ophthalmology MCQ FAQ</h2><p class="mt-4 text-lg text-slate-600">What the free bank includes and how to use it for PG revision.</p></div>
+      <div class="mt-10 space-y-4">
+        {faqs.map((faq) => <details class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6"><summary class="cursor-pointer list-none pr-8 text-base font-bold text-slate-900 marker:hidden">{faq.question}</summary><p class="mt-3 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-600">{faq.answer}</p></details>)}
+      </div>
+      <div class="mt-10 border-t border-slate-200 pt-6 text-sm leading-relaxed text-slate-500"><p><strong class="text-slate-700">Editorial note:</strong> This page is for postgraduate ophthalmology exam education, not patient guidance or a substitute for clinical judgement. Questions draw on standard ophthalmology references and are written by the Dr. OphthaMCQ Editorial Team.</p></div>
+    </div>
+  </section>
 </Layout>

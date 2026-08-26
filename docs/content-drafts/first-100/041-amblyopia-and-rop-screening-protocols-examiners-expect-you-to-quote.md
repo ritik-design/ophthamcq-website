@@ -1,5 +1,6 @@
 ---
 title: "Amblyopia and ROP Screening: Protocols Examiners Expect You to Quote"
+seo_title: "ROP and Amblyopia Screening Guidelines for Exams"
 proposed_slug: "amblyopia-and-rop-screening-protocols-examiners-expect-you-to-quote"
 meta_description: "An exam-first guide to amblyopia assessment and ROP screening: what to screen, what to document, and how to quote a protocol without inventing one."
 excerpt: "An exam-first guide to amblyopia assessment and ROP screening: what to screen, what to document, and how to quote a protocol without inventing one."
@@ -136,7 +137,7 @@ Use a short loop rather than rereading a chapter.
 
 **Days 11–14:** do a mixed paediatric block under time. Review guessed correct answers as carefully as wrong ones. Your final notes should fit on one page: the four verbs, the amblyopia mechanism table, ICROP3 descriptors and the ROP programme elements.
 
-For broader revision, use the [paediatric ophthalmology study guide](/topics/pediatric-ophthalmology), then test definitions with [general ophthalmology free MCQs](/free-mcqs/general). The [Rings, Dots, Lines & Spots guide](/products/rings-dots-lines-spots-guide) is a site study resource for image-pattern revision; it is not an ROP screening guideline.
+For broader revision, use the [paediatric ophthalmology study guide](/topics/pediatric-ophthalmology/), then test definitions with [general ophthalmology free MCQs](/free-mcqs/general/). The [Rings, Dots, Lines & Spots guide](/products/rings-dots-lines-spots-guide/) is a site study resource for image-pattern revision; it is not an ROP screening guideline.
 
 ## Common exam traps
 

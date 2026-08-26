@@ -238,8 +238,9 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Ophthalmology Question Bank FAQ — FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS"
-  description="Detailed answers about OphthaMCQ: how to prepare for FRCOphth, ICO/FICO exam pattern, FAICO and DNB question banks, pricing, refunds, device access and institutional plans."
+  breadcrumbs={[{ name: 'FAQ' }]}
+  title="Ophthalmology Exam & Question Bank FAQ"
+  description="Answers on FRCOphth, ICO/FICO, FAICO and DNB preparation with OphthaMCQ — exam coverage, content quality, pricing, refunds and device access."
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
@@ -248,8 +249,8 @@ const faqSchema = {
     eyebrowIcon="questionBank"
     titleHtml={`Frequently Asked <span class="text-sky-600">Questions</span>`}
     description="Honest, detailed answers about the OphthaMCQ ophthalmology question bank — exam coverage, content quality, pricing, refunds, device access and institutional plans for FRCOphth, ICO/FICO, FAICO, DNB, NEET-SS, PD-CET and OKAP."
-    primaryCta={{ href: '/free-mcqs', label: 'Try free MCQs' }}
-    secondaryCta={{ href: '/contact', label: 'Contact support' }}
+    primaryCta={{ href: '/free-mcqs/', label: 'Try free MCQs' }}
+    secondaryCta={{ href: '/contact/', label: 'Contact support' }}
     trust={[
       { value: `${allFaqs.length}+`, label: 'Answers' },
       { value: '6+', label: 'Topics' },
@@ -265,7 +266,7 @@ const faqSchema = {
   <div class="bg-slate-50 border-b border-slate-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid md:grid-cols-2 gap-4">
-        <a href="/free-mcqs" class="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md hover:border-sky-200 transition-all">
+        <a href="/free-mcqs/" class="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md hover:border-sky-200 transition-all">
           <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center shrink-0">
             <Illustration name="freeMcqs" class="w-9 h-9" />
           </div>
@@ -275,7 +276,7 @@ const faqSchema = {
           </div>
           <Icon name="chevronRight" class="w-5 h-5 text-slate-400 group-hover:text-sky-600 group-hover:translate-x-0.5 transition-all" />
         </a>
-        <a href="/glossary" class="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md hover:border-sky-200 transition-all">
+        <a href="/glossary/" class="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md hover:border-sky-200 transition-all">
           <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center shrink-0">
             <Illustration name="notes" class="w-9 h-9" />
           </div>
@@ -354,14 +355,14 @@ const faqSchema = {
           We answer every email from a real ophthalmologist on the team, usually within 4 working hours. Ask about exam strategy, product fit for your specific exam, or institutional pricing — whatever you need.
         </p>
         <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+          <a href="/contact/" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
             <Icon name="chat" class="w-4 h-4" />
             Contact support
           </a>
-          <a href="/about" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+          <a href="/about/" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
             Meet the team
           </a>
-          <a href="/pricing" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+          <a href="/pricing/" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
             See pricing
           </a>
         </div>

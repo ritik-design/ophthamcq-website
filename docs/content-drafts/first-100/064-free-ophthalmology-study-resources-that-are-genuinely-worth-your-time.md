@@ -1,5 +1,6 @@
 ---
 title: "Free Ophthalmology Study Resources That Are Genuinely Worth Your Time"
+seo_title: "Free Ophthalmology Study Resources Worth Your Time"
 proposed_slug: "free-ophthalmology-study-resources-that-are-genuinely-worth-your-time"
 meta_description: "Build a useful free ophthalmology study stack: official curricula, cases, images, evidence, MCQs and an error-review system for busy PG residents."
 excerpt: "Free resources are useful when each one has a defined job. Build a small stack for scope, explanation, images, retrieval and error repair."
@@ -39,7 +40,7 @@ An official curriculum is a boundary, not a reading list. It tells you the domai
 
 Turn the official headings into a live checklist. Mark each heading as green (can explain and answer), amber (recognise but cannot reason through), or red (no reliable first pass). The checklist stops free resources becoming a collection hobby. It also gives you a clean rule for choosing the next resource: pick the shortest one that changes an amber or red heading.
 
-On OphthaMCQ, the [exam guides](/exams) are planning routes for different candidate groups. They are not official regulations. Use them to organise revision, then return to the relevant examining body for dates, eligibility, curriculum and pattern changes.
+On OphthaMCQ, the [exam guides](/exams/) are planning routes for different candidate groups. They are not official regulations. Use them to organise revision, then return to the relevant examining body for dates, eligibility, curriculum and pattern changes.
 
 ## Use an explanation source for one precise gap
 
@@ -61,7 +62,7 @@ This is slower than watching at 1.75× while taking no notes, but it gives the m
 
 Ophthalmology exams reward recognition, but recognition alone is fragile. A fundus photograph, field plot, slit-lamp finding or OCT should trigger a structured response: what is shown, what else could look similar, and which feature decides between them.
 
-[EyeRounds](https://eyerounds.org/) publishes teaching cases with images and discussion. It is useful when a clinical photograph needs context rather than a one-line label. The practical method is to cover the diagnosis and caption first. State the anatomical site, three observed features, two differentials and the discriminator. Only then reveal the discussion. For a retina block, pair that exercise with the on-site [retina study guide](/topics/retina); for corneal material, use the [cornea study guide](/topics/cornea) as a topic map.
+[EyeRounds](https://eyerounds.org/) publishes teaching cases with images and discussion. It is useful when a clinical photograph needs context rather than a one-line label. The practical method is to cover the diagnosis and caption first. State the anatomical site, three observed features, two differentials and the discriminator. Only then reveal the discussion. For a retina block, pair that exercise with the on-site [retina study guide](/topics/retina/); for corneal material, use the [cornea study guide](/topics/cornea/) as a topic map.
 
 Do not turn image practice into patient-management rehearsal. For exam work, identify the finding, explain the relevant mechanism and know how a standard reference frames the differential. Clinical decisions require the patient, local practice, supervision and current guidance.
 
@@ -83,14 +84,14 @@ The following are separate from the external resources above. They are OphthaMCQ
 
 | Verified route | What is verified here | Best use | Boundary |
 |---|---|---|---|
-| [200 free ophthalmology MCQs](/free-mcqs) | the repository contains 200 questions with explanations | diagnose weak topics; practise retrieval; review distractors | not a substitute for an official syllabus or a reference check |
-| [Ophthalmology glossary](/glossary) | the repository contains a searchable term resource | settle a term quickly, then return to the topic | do not use a short definition as a full clinical explanation |
-| [Free resources hub](/resources) | an on-site directory of free routes and planning material | choose the next appropriate on-site tool | a hub is not evidence that every linked external item stays available |
-| [Note sample pages](/notes#free-samples) | the site contains preview assets for selected Exam Ready Notes | inspect format before considering a paid resource | a preview is not a full text or a claim about outcomes |
+| [200 free ophthalmology MCQs](/free-mcqs/) | the repository contains 200 questions with explanations | diagnose weak topics; practise retrieval; review distractors | not a substitute for an official syllabus or a reference check |
+| [Ophthalmology glossary](/glossary/) | the repository contains a searchable term resource | settle a term quickly, then return to the topic | do not use a short definition as a full clinical explanation |
+| [Free resources hub](/resources/) | an on-site directory of free routes and planning material | choose the next appropriate on-site tool | a hub is not evidence that every linked external item stays available |
+| [Note sample pages](/notes/#free-samples) | the site contains preview assets for selected Exam Ready Notes | inspect format before considering a paid resource | a preview is not a full text or a claim about outcomes |
 
 Use free MCQs diagnostically. A score alone is weak information. After a 15–20-question set, tag every error as recall, mechanism, image recognition, classification, calculation, wording trap or time pressure. Revisit the tagged concept through one explanation source, then do new questions two or three days later. The aim is to find a stable error pattern, not to repeat a familiar set until the percentage looks comfortable.
 
-If your target is specific, use the matching exam route before broad practice: [DNB / MS / DO preparation](/exams/dnb), [ICO / FICO preparation](/exams/ico-fico) or [FRCOphth preparation](/exams/frcophth). These are OphthaMCQ planning pages, not official curricula. The [general ophthalmology free MCQs](/free-mcqs/general) are a sensible mixed retrieval session when your error log has become too siloed.
+If your target is specific, use the matching exam route before broad practice: [DNB / MS / DO preparation](/exams/dnb/), [ICO / FICO preparation](/exams/ico-fico/) or [FRCOphth preparation](/exams/frcophth/). These are OphthaMCQ planning pages, not official curricula. The [general ophthalmology free MCQs](/free-mcqs/general/) are a sensible mixed retrieval session when your error log has become too siloed.
 
 Keep this distinction visible in your notes. An external case, curriculum or paper is cited because it is operated by its own publisher; it is not “an OphthaMCQ resource” merely because this article links to it. Conversely, a free OphthaMCQ route is a study tool with a defined scope, not an independent authority for changing regulations or clinical guidance. This small bit of labelling makes later revision safer: you can tell whether you need to revisit the examining body, the original source, or your own error log.
 

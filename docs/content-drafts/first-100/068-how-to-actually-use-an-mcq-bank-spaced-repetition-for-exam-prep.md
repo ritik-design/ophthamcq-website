@@ -1,5 +1,6 @@
 ---
 title: "How to Use an MCQ Bank: Spaced Repetition for Ophthalmology Exam Prep"
+seo_title: "How to Use an MCQ Bank for Ophthalmology Exams"
 proposed_slug: "how-to-actually-use-an-mcq-bank-spaced-repetition-for-exam-prep"
 meta_description: "Use an ophthalmology MCQ bank to build retrieval, not chase a percentage: a practical spaced-review workflow for residents."
 excerpt: "An MCQ becomes useful only when its explanation changes the next review decision. This workflow turns questions into an error-led revision system."
@@ -48,7 +49,7 @@ Use topic-wise questions at the beginning of a subject or when your error ledger
 
 On review, use a two-minute protocol. First, identify the error tag. Second, write one prompt that will still make sense without the original stem. “Review uveitis question 14” is not a prompt. “Which clinical feature separates anterior from intermediate uveitis in this classification?” is. Third, read only enough of a reliable reference to repair the missing connection. Copying a long explanation feels thorough but usually creates a note you will not revisit.
 
-Start with [free ophthalmology MCQs](/free-mcqs) if you need a broad diagnostic route, or use [general ophthalmology free MCQs](/free-mcqs/general) for mixed practice. Those are practice resources, not an official examination blueprint. Keep your current exam curriculum and instructions separate from all question-bank material.
+Start with [free ophthalmology MCQs](/free-mcqs/) if you need a broad diagnostic route, or use [general ophthalmology free MCQs](/free-mcqs/general/) for mixed practice. Those are practice resources, not an official examination blueprint. Keep your current exam curriculum and instructions separate from all question-bank material.
 
 ## Build a review queue that fits a working resident
 
@@ -75,7 +76,7 @@ An explanation has four jobs: correct the answer, explain why it is correct, sho
 
 For a mechanism error, use “Why does this sign occur?” For a discriminator error, use “Which feature makes A more likely than B?” For an image error, use “Describe this OCT/field/fundus pattern before naming it.” For a calculation, use “What are the units and sign convention before I use this formula?” These prompts force the kind of production a written paper or viva requires.
 
-Do not make a card for every fact in every explanation. Create prompts for repeated errors, high-consequence confusions and concepts you cannot reconstruct. A large card deck with no review discipline becomes another form of avoidance. The [ophthalmology glossary](/glossary) can repair a term quickly; definitions alone do not replace a mechanism or a clinical distinction.
+Do not make a card for every fact in every explanation. Create prompts for repeated errors, high-consequence confusions and concepts you cannot reconstruct. A large card deck with no review discipline becomes another form of avoidance. The [ophthalmology glossary](/glossary/) can repair a term quickly; definitions alone do not replace a mechanism or a clinical distinction.
 
 ## When to use topic-wise questions and when to mix them
 
@@ -104,7 +105,7 @@ Keep one row per repeatable problem, not one row per question. A practical forma
 
 “Secure” should mean you retrieved it from a changed stem or prompt, not that you read it twice. If a card remains uncertain after two honest attempts, return to a standard reference or discuss it with a senior/peer. A question-bank explanation may be concise by design; it is not always enough for a difficult mechanism.
 
-For topic organisation, the [glaucoma study guide](/topics/glaucoma) and [retina study guide](/topics/retina) are verified on-site context routes. They should help you decide which concept to revisit, rather than replacing a current primary reference where accuracy matters.
+For topic organisation, the [glaucoma study guide](/topics/glaucoma/) and [retina study guide](/topics/retina/) are verified on-site context routes. They should help you decide which concept to revisit, rather than replacing a current primary reference where accuracy matters.
 
 ## A four-week implementation plan
 
@@ -126,7 +127,7 @@ Look at the ledger by error type. If recall errors predominate, tighten short pr
 
 ## Paid banks and products: choose fit, then retain the method
 
-No purchase removes the need for explanations, source checks and delayed retrieval. If you are considering a paid practice route, check its current description, exam fit and sample material first. [High Yield MCQs](/products/high-yield-mcqs) is an OphthaMCQ product route; it is not an official exam resource and no product score predicts an outcome. For exam-specific planning, use the relevant [ICO / FICO guide](/exams/ico-fico), [FAICO guide](/exams/faico), [DNB guide](/exams/dnb) or [FRCOphth guide](/exams/frcophth) alongside current authority information.
+No purchase removes the need for explanations, source checks and delayed retrieval. If you are considering a paid practice route, check its current description, exam fit and sample material first. [High Yield MCQs](/products/high-yield-mcqs/) is an OphthaMCQ product route; it is not an official exam resource and no product score predicts an outcome. For exam-specific planning, use the relevant [ICO / FICO guide](/exams/ico-fico/), [FAICO guide](/exams/faico/), [DNB guide](/exams/dnb/) or [FRCOphth guide](/exams/frcophth/) alongside current authority information.
 
 The right bank is the one you can use consistently enough to expose mistakes, explain them and revisit them. The method survives a change of platform. The percentage does not.
 

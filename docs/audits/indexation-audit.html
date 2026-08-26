@@ -1,0 +1,970 @@
+<title>OphthaMCQ Indexation Audit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --ground: #eef1f5;
+    --sheet: #ffffff;
+    --sheet-alt: #f6f8fa;
+    --ink: #101820;
+    --ink-soft: #46545f;
+    --ink-faint: #78868f;
+    --rule: #d8dfe6;
+    --rule-soft: #e6ebf0;
+    --cobalt: #2350c8;
+    --cobalt-soft: #e7edfb;
+    --critical: #b3352b;
+    --critical-soft: #fbe9e7;
+    --warning: #a86a0c;
+    --warning-soft: #fbf1de;
+    --clear: #2c6d52;
+    --clear-soft: #e4f0ea;
+    --shadow: 0 1px 2px rgba(16, 24, 32, .05), 0 8px 24px -12px rgba(16, 24, 32, .12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0b1016;
+      --sheet: #131a22;
+      --sheet-alt: #171f28;
+      --ink: #e6ecf1;
+      --ink-soft: #a3b0bb;
+      --ink-faint: #74838f;
+      --rule: #27323d;
+      --rule-soft: #1e2831;
+      --cobalt: #7ea2ff;
+      --cobalt-soft: #182541;
+      --critical: #f0867a;
+      --critical-soft: #2e1a18;
+      --warning: #e0ab55;
+      --warning-soft: #2b2013;
+      --clear: #6cc39c;
+      --clear-soft: #14261f;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .6);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0b1016;
+    --sheet: #131a22;
+    --sheet-alt: #171f28;
+    --ink: #e6ecf1;
+    --ink-soft: #a3b0bb;
+    --ink-faint: #74838f;
+    --rule: #27323d;
+    --rule-soft: #1e2831;
+    --cobalt: #7ea2ff;
+    --cobalt-soft: #182541;
+    --critical: #f0867a;
+    --critical-soft: #2e1a18;
+    --warning: #e0ab55;
+    --warning-soft: #2b2013;
+    --clear: #6cc39c;
+    --clear-soft: #14261f;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .6);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--sheet);
+    border-left: 1px solid var(--rule-soft);
+    border-right: 1px solid var(--rule-soft);
+    min-height: 100vh;
+  }
+
+  .pad { padding: 0 clamp(20px, 5vw, 64px); }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    padding-top: clamp(36px, 6vw, 72px);
+    padding-bottom: clamp(28px, 4vw, 44px);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .stamp {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(38px, 6.5vw, 62px);
+    line-height: 1.04;
+    letter-spacing: -.015em;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+
+  h1 em { font-style: italic; color: var(--cobalt); }
+
+  .standfirst {
+    font-size: clamp(17px, 2.1vw, 20px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  /* ---------- verdict ---------- */
+
+  .verdict {
+    padding-top: clamp(28px, 4vw, 44px);
+    padding-bottom: clamp(28px, 4vw, 44px);
+    border-bottom: 1px solid var(--rule);
+    background: var(--sheet-alt);
+  }
+
+  .verdict-label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: 14px;
+  }
+
+  .verdict p {
+    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-size: clamp(22px, 3.2vw, 30px);
+    line-height: 1.34;
+    margin: 0 0 16px;
+    max-width: 44ch;
+    text-wrap: balance;
+  }
+
+  .verdict p:last-child { margin-bottom: 0; }
+
+  .verdict .sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 66ch;
+  }
+
+  /* ---------- vitals ---------- */
+
+  .vitals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .vital {
+    padding: 22px clamp(14px, 2.5vw, 22px);
+    border-right: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .vital:last-child { border-right: none; }
+
+  .vital-n {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: clamp(24px, 3.4vw, 30px);
+    font-weight: 600;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.02em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .vital-n.bad { color: var(--critical); }
+  .vital-n.warn { color: var(--warning); }
+  .vital-n.good { color: var(--clear); }
+
+  .vital-k {
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- sections ---------- */
+
+  section { padding-top: clamp(44px, 6vw, 76px); padding-bottom: 8px; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .sec-num {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: var(--cobalt);
+    flex: none;
+  }
+
+  h2 {
+    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(27px, 4vw, 37px);
+    line-height: 1.12;
+    letter-spacing: -.01em;
+    margin: 0;
+    flex: 1;
+  }
+
+  .sec-intro {
+    color: var(--ink-soft);
+    max-width: 68ch;
+    margin: 18px 0 30px;
+  }
+
+  /* ---------- findings ---------- */
+
+  .finding {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 0 20px;
+    padding: 24px 0 26px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .f-rail { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; }
+
+  .f-num {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 19px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-faint);
+    line-height: 1;
+  }
+
+  .f-bar { width: 4px; flex: 1; min-height: 26px; border-radius: 2px; }
+  .sev-critical .f-bar { background: var(--critical); }
+  .sev-major .f-bar { background: var(--warning); }
+  .sev-minor .f-bar { background: var(--rule); }
+
+  .f-body { min-width: 0; }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 0 4px;
+    letter-spacing: -.005em;
+    text-wrap: balance;
+  }
+
+  .f-tag {
+    display: inline-block;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 3px;
+    margin-bottom: 9px;
+  }
+
+  .sev-critical .f-tag { background: var(--critical-soft); color: var(--critical); }
+  .sev-major .f-tag { background: var(--warning-soft); color: var(--warning); }
+  .sev-minor .f-tag { background: var(--rule-soft); color: var(--ink-faint); }
+
+  .f-body p { margin: 0 0 10px; color: var(--ink-soft); max-width: 68ch; }
+  .f-body p:last-child { margin-bottom: 0; }
+  .f-body strong { color: var(--ink); font-weight: 600; }
+
+  .f-body code, .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .875em;
+    background: var(--sheet-alt);
+    border: 1px solid var(--rule-soft);
+    border-radius: 3px;
+    padding: 1px 5px;
+    word-break: break-word;
+  }
+
+  .evidence {
+    margin-top: 12px;
+    padding: 11px 14px;
+    background: var(--sheet-alt);
+    border-left: 2px solid var(--cobalt);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    overflow-x: auto;
+  }
+
+  .evidence b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- clear list ---------- */
+
+  .clear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background: var(--rule-soft);
+    border: 1px solid var(--rule-soft);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .clear-item { background: var(--sheet); padding: 16px 18px; }
+
+  .clear-item .ck {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--clear);
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .clear-item p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); }
+  .clear-item p strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- plan ---------- */
+
+  .plan-block { margin-bottom: 34px; }
+
+  .plan-when {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--cobalt-soft);
+  }
+
+  .plan-goal { font-size: 14px; color: var(--ink-faint); margin: 10px 0 14px; }
+
+  ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; }
+
+  ol.steps li {
+    counter-increment: s;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 0 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+
+  ol.steps li::before {
+    content: counter(s, decimal-leading-zero);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  ol.steps li > div { min-width: 0; }
+  ol.steps b { font-weight: 600; }
+  ol.steps span { display: block; font-size: 14.5px; color: var(--ink-soft); margin-top: 2px; }
+
+  /* ---------- table ---------- */
+
+  .table-wrap { overflow-x: auto; margin: 4px 0 8px; }
+
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14px; }
+
+  th {
+    text-align: left;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding: 0 14px 9px 0;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 10px 14px 10px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+
+  td:first-child { color: var(--ink); font-weight: 500; }
+  td.num { font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .pill {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .p-bad { background: var(--critical-soft); color: var(--critical); }
+  .p-warn { background: var(--warning-soft); color: var(--warning); }
+  .p-ok { background: var(--clear-soft); color: var(--clear); }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    margin-top: clamp(48px, 7vw, 80px);
+    padding-top: 26px;
+    padding-bottom: clamp(40px, 6vw, 64px);
+    border-top: 2px solid var(--ink);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px;
+    line-height: 1.8;
+    color: var(--ink-faint);
+    letter-spacing: .02em;
+  }
+
+  a { color: var(--cobalt); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, li:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+
+  @media (max-width: 560px) {
+    .finding { grid-template-columns: 30px 1fr; gap: 0 14px; }
+    .f-num { font-size: 16px; }
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead pad">
+    <div class="stamp">
+      <span>ophthamcq.org</span>
+      <span>Indexation &amp; organic-traffic audit</span>
+      <span>26 Aug 2026</span>
+      <span>158 URLs crawled</span>
+    </div>
+    <h1>The site is not broken.<br>It is <em>invisible</em>.</h1>
+    <p class="standfirst">
+      A full crawl of all 158 published URLs found zero broken pages, zero canonical faults and zero
+      duplicate titles. The technical build is sound. The reason nothing ranks is that the content
+      went live eight days ago on a domain no other page on the web has ever linked to — while a
+      second domain you already own holds the brand in Google and receives 701 one-way links from
+      this one.
+    </p>
+  </header>
+
+  <div class="verdict pad">
+    <div class="verdict-label">Assessment</div>
+    <p>Three causes, in order of weight: age, isolation, and a self-inflicted split between two domains.</p>
+    <p class="sub">
+      Neither Google nor Bing returns a single result for <span class="mono">site:ophthamcq.org</span>.
+      That is not a penalty and not a crawl block — Googlebot and Bingbot both receive clean
+      <span class="mono">200</span>s with fully rendered HTML. It is what a brand-new domain with no
+      inbound links looks like in week two. Everything below is ordered by how much it is holding
+      that back.
+    </p>
+  </div>
+
+  <div class="vitals">
+    <div class="vital"><span class="vital-n bad">0</span><span class="vital-k">URLs indexed in Google or Bing</span></div>
+    <div class="vital"><span class="vital-n bad">0</span><span class="vital-k">External pages linking to the domain</span></div>
+    <div class="vital"><span class="vital-n warn">8</span><span class="vital-k">Days since the 99-post blog launched</span></div>
+    <div class="vital"><span class="vital-n">701</span><span class="vital-k">Outbound links to ophthamcq.com</span></div>
+    <div class="vital"><span class="vital-n good">158</span><span class="vital-k">Live URLs, all returning 200</span></div>
+    <div class="vital"><span class="vital-n good">287k</span><span class="vital-k">Words of indexable content</span></div>
+  </div>
+
+  <!-- ============ TIER 1 ============ -->
+  <section class="pad">
+    <div class="sec-head">
+      <span class="sec-num">TIER I</span>
+      <h2>Why nothing is indexed yet</h2>
+    </div>
+    <p class="sec-intro">
+      These five explain the zero. Fix them and pages start entering the index within days to weeks —
+      nothing below Tier I matters until they are addressed.
+    </p>
+
+    <div class="finding sev-critical">
+      <div class="f-rail"><span class="f-num">1</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Root cause</span>
+        <h3>The entire blog is eight days old</h3>
+        <p>
+          All 103 content drafts carry the same publication date and the last commit landed the day
+          after. Ninety-nine of your 158 URLs — <strong>63% of the site</strong> — have existed for
+          just over a week. Google routinely takes two to eight weeks to crawl, render and index new
+          pages on a domain it has no history with. There is no version of this where week-two
+          traffic exists.
+        </p>
+        <div class="evidence"><b>date:</b> "2026-08-18" × 103 drafts &nbsp;·&nbsp; <b>last commit:</b> 2026-08-19 &nbsp;·&nbsp; <b>today:</b> 2026-08-26</div>
+      </div>
+    </div>
+
+    <div class="finding sev-critical">
+      <div class="f-rail"><span class="f-num">2</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Root cause</span>
+        <h3>No page anywhere on the web links to ophthamcq.org</h3>
+        <p>
+          A literal-string search for the domain returns nothing — not a directory, not a forum post,
+          not a social profile. Google's primary discovery mechanism is links, and there are none to
+          follow. A sitemap tells Google what exists; links tell it what is worth crawling. Without
+          them, crawl budget on a new <span class="mono">.org</span> stays near the floor.
+        </p>
+        <p>
+          This is the single highest-leverage gap in the audit. One link from a domain Google already
+          trusts will do more in a fortnight than any on-page change in this report.
+        </p>
+      </div>
+    </div>
+
+    <div class="finding sev-critical">
+      <div class="f-rail"><span class="f-num">3</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Root cause</span>
+        <h3>ophthamcq.com already owns the brand, and this site feeds it</h3>
+        <p>
+          <span class="mono">ophthamcq.com</span> is live on Vercel, indexed, and ranks first for the
+          brand name. Every one of your 158 <span class="mono">.org</span> pages links out to it —
+          <strong>701 links in total</strong>, 24 on the homepage alone, every "Buy Now" and every
+          product CTA. The <span class="mono">.com</span> links back <strong>zero</strong> times.
+        </p>
+        <p>
+          So the content site exports all of its authority to the storefront and receives none in
+          return, while Google is left to work out which of two near-identical properties is the real
+          OphthaMCQ. Today the answer is the <span class="mono">.com</span>, and the
+          <span class="mono">.org</span> reads as a satellite pointing at it.
+        </p>
+        <div class="evidence">
+          <b>ophthamcq.com</b> → indexed, ranks for brand · 24-URL sitemap · Vercel<br>
+          <b>ophthamcq.org</b> → 0 results · 158-URL sitemap · Cloudflare<br>
+          <b>.org → .com:</b> 701 links across 158/158 pages &nbsp;·&nbsp; <b>.com → .org:</b> 0
+        </div>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">4</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Amplifier</span>
+        <h3>Ninety-nine posts published on a single day</h3>
+        <p>
+          Every draft shares one date, so from Google's side the site went from nothing to a
+          289,000-word archive overnight. On an established domain that is fine. On an eight-day-old
+          one with no link history it looks like a content dump, and dumps get crawled cautiously and
+          slowly rather than eagerly.
+        </p>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">5</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Amplifier</span>
+        <h3>Nothing was ever actively pushed to an index</h3>
+        <p>
+          The IndexNow integration exists and the key file is live, but the build hook is gated behind
+          <span class="mono">INDEXNOW_SUBMIT=1</span> and Bing shows zero indexed URLs — strong
+          evidence it has never actually run. Separately, <strong>not one of the 158 sitemap entries
+          carries a <span class="mono">&lt;lastmod&gt;</span></strong>, so crawlers get no freshness
+          signal and no reason to prioritise anything.
+        </p>
+        <div class="evidence">
+          <b>/sitemap.xml</b> 158 &lt;loc&gt;, <b>0 &lt;lastmod&gt;</b>, 0 &lt;changefreq&gt;<br>
+          <b>IndexNow key</b> /3c23d59…715.txt → 200 (published, apparently never used)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIER 2 ============ -->
+  <section class="pad">
+    <div class="sec-head">
+      <span class="sec-num">TIER II</span>
+      <h2>Why traffic would stay thin even after indexing</h2>
+    </div>
+    <p class="sec-intro">
+      Assume Tier I is solved and all 158 pages enter the index tomorrow. These are the reasons the
+      pages that matter most would still underperform.
+    </p>
+
+    <div class="finding sev-critical">
+      <div class="f-rail"><span class="f-num">6</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Highest impact</span>
+        <h3>The free-MCQ pages contain no indexable MCQs</h3>
+        <p>
+          <span class="mono">src/data/free-mcqs.ts</span> holds 193 real questions with options and
+          explanations. <strong>Not one of them appears in the HTML Google receives.</strong> They are
+          serialised into a 75 KB inline <span class="mono">&lt;script&gt;</span> and injected into
+          the DOM by the quiz engine — and the engine renders one question at a time, so even a fully
+          rendered page exposes a single question out of ten.
+        </p>
+        <p>
+          The result: seven pages targeting <em>free ophthalmology MCQs</em>, the highest-intent term
+          the whole site is built around, average 350 words of boilerplate and a price list. This is
+          the largest gap between content you own and content Google can see.
+        </p>
+        <div class="evidence">
+          Question strings present in served HTML of /free-mcqs/general/: <b>0 of 193</b><br>
+          /free-mcqs/ 308w · /frcophth/ 327w · /high-yield/ 346w · /faico/ 350w · /pdcet/ 354w · /general/ 382w · /ico-fico/ 383w
+        </div>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">7</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">CTR</span>
+        <h3>141 of 158 titles are too long to survive the SERP</h3>
+        <p>
+          Google truncates around 60&ndash;65 characters. Your product titles run to
+          <strong>118</strong>, stacking every exam name plus the brand into one string. When a title
+          overflows Google either cuts it mid-phrase or rewrites it entirely, and you lose control of
+          the one line that decides whether anyone clicks.
+        </p>
+        <div class="evidence">
+          <b>118 ch</b> — "Retina Deciphered Handwritten Notes for DNB, MS, ICO, FICO &amp; FRCOphth | Exam Ready Retina Revision PDF | OphthaMCQ"<br>
+          Also: 21 meta descriptions under 70 characters, 24 over 160.
+        </div>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">8</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Rich results</span>
+        <h3>Fifty-eight pages carry no structured data at all</h3>
+        <p>
+          The 98 blog posts have proper <span class="mono">Article</span> schema. Nothing else does.
+          All <strong>21 product pages display ₹ prices with no <span class="mono">Product</span>
+          schema</strong>, so no price, availability or rating can appear in search results. There is
+          no <span class="mono">BreadcrumbList</span> anywhere on the site and no
+          <span class="mono">WebSite</span> or standalone <span class="mono">Organization</span> node,
+          which is what a brand needs for a knowledge panel and sitelinks.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Schema type</th><th>Pages</th><th>Expected</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Article</td><td class="num">98</td><td class="num">98</td><td><span class="pill p-ok">OK</span></td></tr>
+              <tr><td>FAQPage</td><td class="num">1</td><td class="num">1</td><td><span class="pill p-ok">OK</span></td></tr>
+              <tr><td>Product</td><td class="num">1</td><td class="num">21</td><td><span class="pill p-bad">MISSING 20</span></td></tr>
+              <tr><td>BreadcrumbList</td><td class="num">0</td><td class="num">158</td><td><span class="pill p-bad">ABSENT</span></td></tr>
+              <tr><td>WebSite / SearchAction</td><td class="num">0</td><td class="num">1</td><td><span class="pill p-bad">ABSENT</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">9</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Thin content</span>
+        <h3>Your four commercial comparison pages average 245 words</h3>
+        <p>
+          <span class="mono">/compare/*</span> targets the most valuable queries on the site — people
+          comparing question banks are people about to buy. All four are under 260 words, which is not
+          enough to outrank a competitor's genuine comparison, and they sit alongside 17 other pages
+          under 500 words.
+        </p>
+        <div class="evidence">
+          /compare/ophthamcq-vs-prepguidance/ <b>236w</b> · /compare/ophthoquestions-vs-ophthamcq/ <b>240w</b><br>
+          /compare/best-app-for-ophthalmology-mcqs/ <b>245w</b> · /compare/best-ophthalmology-question-banks/ <b>259w</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">10</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Site architecture</span>
+        <h3>The blog posts barely link to each other</h3>
+        <p>
+          Across 103 drafts there are <strong>14 blog-to-blog links in total</strong>, reaching 14
+          distinct posts. Eighty-five posts have no inbound link from any sibling article. The 444
+          internal links that do exist almost all point at hub pages — <span class="mono">/osce</span>,
+          <span class="mono">/free-mcqs</span>, <span class="mono">/glossary</span>.
+        </p>
+        <p>
+          Nothing is orphaned, since <span class="mono">/blog/</span> lists all 99. But there are no
+          topical clusters, so Google sees 99 unrelated documents rather than a body of authority on
+          FRCOphth, on DNB, on OSCE. Clustering is how a new site earns topical trust without
+          backlinks — and it is the one Tier II fix that partially compensates for finding 2.
+        </p>
+        <div class="evidence">Internal links: <b>444 total</b> · <b>4.3 avg/post</b> · blog→blog: <b>14</b> · posts with zero sibling inbound links: <b>85</b></div>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">11</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Policy risk</span>
+        <h3>Self-serving review markup on the homepage</h3>
+        <p>
+          The homepage ships a <span class="mono">Product</span> node for OphthaMCQ itself carrying
+          <span class="mono">aggregateRating 4.8</span> with <span class="mono">reviewCount
+          2400</span> and five hand-written five-star reviews. Google's structured-data policy makes
+          reviews about the entity that controls the page ineligible for rich results, and unverifiable
+          aggregate counts on your own brand are exactly the pattern that draws a manual action.
+        </p>
+        <p>
+          On a domain with no track record, a manual action would be far more costly than the star
+          rating is worth. Move the testimonials to visible page content and drop the
+          <span class="mono">aggregateRating</span> — or attach <span class="mono">Product</span>
+          schema to the individual product pages, where genuine purchase reviews legitimately belong.
+        </p>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">12</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Distribution</span>
+        <h3>Every social share renders blank</h3>
+        <p>
+          All 158 pages declare <span class="mono">og:image = /og-image.jpg</span>. That file returns
+          <strong>404</strong>. Every WhatsApp forward, every Telegram drop into a residents' group,
+          every LinkedIn post shows an empty card — on a site whose audience shares study material
+          through exactly those channels. Given finding 2, this is also the channel most likely to
+          produce your first real inbound links.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIER 3 ============ -->
+  <section class="pad">
+    <div class="sec-head">
+      <span class="sec-num">TIER III</span>
+      <h2>Technical hygiene</h2>
+    </div>
+    <p class="sec-intro">
+      Real defects, none of them the reason for the zero. Worth clearing in a single pass.
+    </p>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">13</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Duplicate origin</span>
+        <h3>http:// serves 200 instead of redirecting, and there is no HSTS</h3>
+        <p>
+          <span class="mono">http://ophthamcq.org/blog/</span> returns a full <span class="mono">200
+          OK</span> rather than a 301 to HTTPS, and no <span class="mono">Strict-Transport-Security</span>
+          header is set. That is a complete second copy of all 158 pages on an insecure origin. The
+          <span class="mono">www</span> → apex redirect and trailing-slash normalisation both work
+          correctly, so this is the one redirect rule missing.
+        </p>
+      </div>
+    </div>
+
+    <div class="finding sev-major">
+      <div class="f-rail"><span class="f-num">14</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Robots</span>
+        <h3>Cloudflare is injecting its own robots.txt above yours</h3>
+        <p>
+          The file served at <span class="mono">/robots.txt</span> is not the one in
+          <span class="mono">public/</span>. Cloudflare's managed AI-crawler block is prepended to it,
+          producing <strong>two conflicting <span class="mono">User-agent: *</span> groups</strong> and
+          a <span class="mono">Disallow: /</span> followed later by <span class="mono">Allow: /</span>
+          for GPTBot, ClaudeBot, CCBot, PerplexityBot, Google-Extended, Bytespider, Amazonbot,
+          Applebot-Extended and meta-externalagent.
+        </p>
+        <p>
+          Googlebot is unaffected — it is never disallowed and resolves conflicts in favour of Allow.
+          But AI crawlers that honour the first matching group will read <span class="mono">Disallow</span>
+          and leave. In 2026, with students routinely asking ChatGPT which question bank to use, that
+          is a live channel closing itself. Decide the policy in one place: either turn off Cloudflare's
+          managed robots.txt and keep yours, or delete yours and let Cloudflare's stand.
+        </p>
+      </div>
+    </div>
+
+    <div class="finding sev-minor">
+      <div class="f-rail"><span class="f-num">15</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Layout stability</span>
+        <h3>No image carries width or height</h3>
+        <p>
+          Zero of the 17 homepage images declare dimensions, so the browser cannot reserve space and
+          every one contributes to layout shift. Product images are also hot-linked from
+          <span class="mono">appx-content-v2.classx.co.in</span> as raw PNGs with no
+          <span class="mono">srcset</span> and no WebP — a third-party dependency in your largest
+          contentful paint.
+        </p>
+      </div>
+    </div>
+
+    <div class="finding sev-minor">
+      <div class="f-rail"><span class="f-num">16</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Housekeeping</span>
+        <h3>Duplicate sitemaps and short product descriptions</h3>
+        <p>
+          <span class="mono">/sitemap.xml</span> and <span class="mono">/sitemap-0.xml</span> are
+          byte-identical (14,566 bytes each) — harmless, but submit only one. Separately, product meta
+          descriptions are marketing taglines rather than search copy: <em>"Build Unshakeable
+          Foundations. Revise Anatomy the Exam Way."</em> is 44 characters and contains none of the
+          terms the page targets.
+        </p>
+      </div>
+    </div>
+
+    <div class="finding sev-critical">
+      <div class="f-rail"><span class="f-num">17</span><span class="f-bar"></span></div>
+      <div class="f-body">
+        <span class="f-tag">Security · not SEO</span>
+        <h3>A live API key is committed in the repository</h3>
+        <p>
+          <span class="mono">src/lib/thestacc.ts</span> hardcodes a production key as a fallback, with
+          a source comment acknowledging it. It is in the repo and in git history. Unrelated to
+          indexing, but it should be rotated before anything else in this report ships.
+        </p>
+        <div class="evidence"><b>src/lib/thestacc.ts</b> — <span class="mono">FALLBACK_API_KEY = 'pk_live_gHcZ…GkUms'</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLEAN ============ -->
+  <section class="pad">
+    <div class="sec-head">
+      <span class="sec-num">CLEARED</span>
+      <h2>What the crawl found in good order</h2>
+    </div>
+    <p class="sec-intro">
+      Worth stating plainly, because it narrows the diagnosis: the usual suspects were all tested and
+      all came back clean. Nothing is blocking the crawler.
+    </p>
+
+    <div class="clear-grid">
+      <div class="clear-item">
+        <span class="ck">Crawlability</span>
+        <p>Googlebot and Bingbot both receive <strong>200 with full HTML</strong>. No challenge page, no <span class="mono">X-Robots-Tag</span>, no <span class="mono">noindex</span> on any page.</p>
+      </div>
+      <div class="clear-item">
+        <span class="ck">URL integrity</span>
+        <p><strong>158 of 158</strong> sitemap URLs return 200. Zero broken entries, zero redirect chains, zero canonical mismatches, zero missing canonicals.</p>
+      </div>
+      <div class="clear-item">
+        <span class="ck">On-page basics</span>
+        <p>Zero duplicate titles, zero duplicate descriptions, <strong>exactly one H1 per page</strong> across all 158.</p>
+      </div>
+      <div class="clear-item">
+        <span class="ck">Content depth</span>
+        <p><strong>90 pages exceed 2,000 words</strong>; blog median 2,364. Each post is backed by its own SERP research brief. Quality is genuinely not the problem.</p>
+      </div>
+      <div class="clear-item">
+        <span class="ck">Performance</span>
+        <p>Homepage <strong>17.8 KB over the wire</strong> (brotli), TTFB ~100&ndash;150 ms, Cloudflare cache HIT, immutable asset caching. Speed is not a factor here.</p>
+      </div>
+      <div class="clear-item">
+        <span class="ck">Measurement</span>
+        <p>Search Console verification present in DNS, GA4 <span class="mono">G-959MHBVS4L</span> firing site-wide, <span class="mono">llms.txt</span> published.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLAN ============ -->
+  <section class="pad">
+    <div class="sec-head">
+      <span class="sec-num">PLAN</span>
+      <h2>What to do, in order</h2>
+    </div>
+    <p class="sec-intro">
+      Sequenced by what actually unblocks indexing rather than by effort. Week 1 is almost entirely
+      distribution and plumbing; it matters more than every code change beneath it.
+    </p>
+
+    <div class="plan-block">
+      <div class="plan-when">Week 1 · get discovered</div>
+      <p class="plan-goal">Target: first URLs appearing in Google's index within 10&ndash;14 days.</p>
+      <ol class="steps">
+        <li><div><b>Link ophthamcq.com → ophthamcq.org.</b><span>The single highest-leverage action available. Put a real navigation link on the .com — header, footer, and a "Study guides" entry. It costs nothing and it is the only trusted link you can grant yourself.</span></div></li>
+        <li><div><b>Submit the sitemap in Search Console and request indexing on 20 priority URLs.</b><span>Homepage, the six exam hubs, the four compare pages, and your nine strongest posts. Verification is already in DNS, so this is minutes of work.</span></div></li>
+        <li><div><b>Add <span class="mono">&lt;lastmod&gt;</span> to the sitemap.</b><span>Drive it from file mtime or frontmatter <span class="mono">last_updated</span>. Without it crawlers have no freshness signal on any of 158 URLs.</span></div></li>
+        <li><div><b>Run IndexNow for real.</b><span>Set <span class="mono">INDEXNOW_SUBMIT=1</span> in the deploy environment and submit all 158 URLs once. Bing indexes far faster than Google on new domains and will confirm the pipeline works.</span></div></li>
+        <li><div><b>Ship an og-image and force HTTPS.</b><span>Fixes findings 12 and 13 together — one asset, one redirect rule, plus an HSTS header.</span></div></li>
+        <li><div><b>Post the best five articles where the audience already is.</b><span>Ophthalmology residency subreddits, FRCOphth and DNB Telegram and WhatsApp groups, AIOS forums, LinkedIn. This is how you manufacture the first links Google needs.</span></div></li>
+      </ol>
+    </div>
+
+    <div class="plan-block">
+      <div class="plan-when">Week 2 · make the pages worth ranking</div>
+      <p class="plan-goal">Target: the commercial and high-intent pages can compete once crawled.</p>
+      <ol class="steps">
+        <li><div><b>Server-render the MCQs.</b><span>Emit all ten questions, options and explanations into static HTML, then let the quiz engine progressively enhance them. Turns seven 350-word shells into seven substantial pages on your best keyword.</span></div></li>
+        <li><div><b>Rewrite all 141 over-length titles to 55&ndash;60 characters.</b><span>One primary keyword plus the brand. Drop the exam-name pile-up — that belongs in H2s and body copy.</span></div></li>
+        <li><div><b>Add Product schema to all 21 product pages.</b><span>Name, image, description, offers with the ₹ price, availability and currency. The prices are already on the page; only the markup is missing.</span></div></li>
+        <li><div><b>Add BreadcrumbList site-wide and a WebSite node on the homepage.</b><span>Both belong in <span class="mono">Layout.astro</span>, so it is one edit for all 158 pages.</span></div></li>
+        <li><div><b>Remove the homepage aggregateRating.</b><span>Keep the testimonials as visible content. Reattach review markup to individual products later, once you have verifiable purchase reviews.</span></div></li>
+        <li><div><b>Rewrite the 21 short meta descriptions.</b><span>140&ndash;155 characters, leading with the term the page targets.</span></div></li>
+      </ol>
+    </div>
+
+    <div class="plan-block">
+      <div class="plan-when">Weeks 3&ndash;4 · build topical authority</div>
+      <p class="plan-goal">Target: clustered topics Google can recognise as expertise, not 99 loose documents.</p>
+      <ol class="steps">
+        <li><div><b>Build internal link clusters.</b><span>Group the 99 posts by exam — FRCOphth, DNB, ICO/FICO, FAICO, PDCET, OSCE — give each a hub page, and link every post to its hub and to three or four siblings. Target 8&ndash;12 internal links per post, up from 4.3.</span></div></li>
+        <li><div><b>Expand the four compare pages to 1,200&ndash;1,800 words.</b><span>Real feature tables, real pricing, honest strengths of the alternative. These are your highest-converting queries and currently your thinnest pages.</span></div></li>
+        <li><div><b>Resolve the two-domain split deliberately.</b><span>Either consolidate onto one domain, or keep both with the .com as storefront and the .org as the content property — and in that case give the .org its own footer identity and reciprocal links so it stops reading as a satellite.</span></div></li>
+        <li><div><b>Settle the robots.txt conflict.</b><span>Pick Cloudflare's managed file or your own, not both, and make the AI-crawler policy consistent in whichever survives.</span></div></li>
+        <li><div><b>Add width and height to every image; self-host the product images as WebP.</b><span>Removes both the layout shift and the third-party dependency in LCP.</span></div></li>
+      </ol>
+    </div>
+
+    <div class="plan-block">
+      <div class="plan-when">Ongoing</div>
+      <p class="plan-goal">Target: compounding, and honest expectations about the curve.</p>
+      <ol class="steps">
+        <li><div><b>Rotate the leaked API key.</b><span>Before any of the above ships.</span></div></li>
+        <li><div><b>Publish on a cadence, not in batches.</b><span>Two to four posts a week from the remaining 164 planned ideas beats another hundred-post drop.</span></div></li>
+        <li><div><b>Watch Search Console, not Analytics.</b><span>Coverage and Impressions move weeks before Clicks does. Impressions rising with clicks flat is the expected shape at month one — not a failure.</span></div></li>
+      </ol>
+    </div>
+
+    <p class="sec-intro" style="margin-top:34px">
+      Realistic timeline: first indexed pages in <strong>10&ndash;20 days</strong> once week 1 ships,
+      first meaningful impressions at <strong>6&ndash;10 weeks</strong>, first material organic traffic
+      at <strong>3&ndash;5 months</strong>. That curve is the normal cost of a new domain — the content
+      to fill it is already written and already good.
+    </p>
+  </section>
+
+  <footer class="pad">
+    OPHTHAMCQ.ORG · INDEXATION &amp; ORGANIC-TRAFFIC AUDIT · 26 AUGUST 2026<br>
+    Method: full crawl of all 158 sitemap URLs as Googlebot · live header, redirect and robots
+    inspection · source review of the Astro build at ~/ophthamcq-website · index checks against
+    Google and Bing.<br>
+    Every figure cited was measured during this audit. Backlink count is inferred from search
+    visibility, not from a link index.
+  </footer>
+
+</div>

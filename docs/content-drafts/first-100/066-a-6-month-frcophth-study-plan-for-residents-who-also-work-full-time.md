@@ -1,5 +1,6 @@
 ---
 title: "A 6-Month FRCOphth Study Plan for Residents Who Also Work Full Time"
+seo_title: "6-Month FRCOphth Study Plan for Working Doctors"
 proposed_slug: "a-6-month-frcophth-study-plan-for-residents-who-also-work-full-time"
 meta_description: "A rota-resilient six-month FRCOphth Part 1 study plan for working residents: capacity modes, an error-log system, mock review and a recovery rule."
 excerpt: "A workable FRCOphth plan has a normal week, an on-call week and a recovery rule before the first chapter is opened."
@@ -134,9 +135,9 @@ Use this as a pattern, then scale it to your rota. It is intentionally not a pro
 | Two micro-sessions | cards, diagrams or five calculations | spaced recall |
 | Weekend block | review, spoken explanation and next-week plan | updated error log and capacity choice |
 
-The [FRCOphth preparation guide](/exams/frcophth) can orient your wider OphthaMCQ route, but it is not an official curriculum. Use [free FRCOphth sample questions](/free-mcqs/frcophth) for a short retrieval block once a concept has been checked. If you are considering a commercial resource, inspect the [FRCOphth Step 1 MCQs sample page](/products/frcophth-step-1-mcqs) for its current information; it is optional study material, not a College-endorsed tool and not a substitute for the current RCOphth source.
+The [FRCOphth preparation guide](/exams/frcophth/) can orient your wider OphthaMCQ route, but it is not an official curriculum. Use [free FRCOphth sample questions](/free-mcqs/frcophth/) for a short retrieval block once a concept has been checked. If you are considering a commercial resource, inspect the [FRCOphth Step 1 MCQs sample page](/products/frcophth-step-1-mcqs/) for its current information; it is optional study material, not a College-endorsed tool and not a substitute for the current RCOphth source.
 
-For concise repeat revision, [Handwritten Exam Ready Notes](/notes) can be a useful on-site route after you have verified the concept in a primary reference. Notes compress information; they do not resolve an uncertain rule, a difficult mechanism or a changing examination instruction. The broader [resource hub](/resources) is useful when you need a format other than another textbook.
+For concise repeat revision, [Handwritten Exam Ready Notes](/notes/) can be a useful on-site route after you have verified the concept in a primary reference. Notes compress information; they do not resolve an uncertain rule, a difficult mechanism or a changing examination instruction. The broader [resource hub](/resources/) is useful when you need a format other than another textbook.
 
 ## The plan in one sentence
 

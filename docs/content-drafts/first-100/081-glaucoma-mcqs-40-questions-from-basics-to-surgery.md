@@ -1,7 +1,7 @@
 ---
 title: "Glaucoma MCQs: 40 Questions From Basics to Surgery"
 proposed_slug: "glaucoma-mcqs-40-questions-from-basics-to-surgery"
-meta_description: "Forty explained glaucoma MCQs for ophthalmology PG revision: angle assessment, disc and field correlation, drops, lasers, filtering surgery and childhood glaucoma."
+meta_description: "Forty explained glaucoma MCQs for PG revision: angle assessment, disc and field correlation, drops, lasers, filtering surgery and childhood glaucoma."
 excerpt: "A progression-based glaucoma MCQ set: identify the mechanism before selecting the next fact."
 category: "Free MCQs"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -18,7 +18,7 @@ research_brief: "docs/content-research/081-glaucoma-mcqs-serp-brief.md"
 
 This is revision material for ophthalmology examinations, not a protocol for managing an individual eye. Before choosing an answer, place the stem in one of four bins: **angle and mechanism; pressure and aqueous route; optic-nerve structure; or visual function**. That ordering prevents the common error of calling an eye “glaucoma” from one pressure reading or one red OCT sector alone.[^egs]
 
-The questions deliberately move from definitions to procedures. Try each answer first, then read the explanation as an error-log entry. A useful second pass is to tag every miss as *mechanism*, *sign*, *test* or *intervention*; revise that gap in the [glaucoma topic guide](/topics/glaucoma) before doing another mixed set.
+The questions deliberately move from definitions to procedures. Try each answer first, then read the explanation as an error-log entry. A useful second pass is to tag every miss as *mechanism*, *sign*, *test* or *intervention*; revise that gap in the [glaucoma topic guide](/topics/glaucoma/) before doing another mixed set.
 
 ## 1. Foundations: what is actually being tested?
 
@@ -192,7 +192,7 @@ The questions deliberately move from definitions to procedures. Try each answer 
 
 ## A 20-minute second-pass routine
 
-Redo only the questions you missed, but say the answer in a complete sentence: “This is a secondary open-angle mechanism because …”; “this field pattern is glaucomatous because …”; or “this procedure changes production/outflow by …”. That small discipline exposes memorised labels without mechanisms. Then use the site’s [free ophthalmology MCQs](/free-mcqs) for an untimed mixed check. If you want a topic-organised revision layer, inspect the published [Glaucoma Exam Ready Notes](/products/glaucoma-notes) and its sample; verify current product details on the page before purchase.
+Redo only the questions you missed, but say the answer in a complete sentence: “This is a secondary open-angle mechanism because …”; “this field pattern is glaucomatous because …”; or “this procedure changes production/outflow by …”. That small discipline exposes memorised labels without mechanisms. Then use the site’s [free ophthalmology MCQs](/free-mcqs/) for an untimed mixed check. If you want a topic-organised revision layer, inspect the published [Glaucoma Exam Ready Notes](/products/glaucoma-notes/) and its sample; verify current product details on the page before purchase.
 
 For source checking, use the European Glaucoma Society guidance and AAO Preferred Practice Pattern rather than treating this set as a clinical manual. Examination rules, guidelines and drug information should be rechecked at final editorial review.
 

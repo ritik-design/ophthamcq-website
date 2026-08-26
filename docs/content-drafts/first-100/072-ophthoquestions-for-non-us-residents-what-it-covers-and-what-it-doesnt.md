@@ -1,5 +1,6 @@
 ---
 title: "OphthoQuestions Review for Non-US Residents: A Practical Exam-Fit Audit"
+seo_title: "OphthoQuestions Review for Non-US Residents"
 proposed_slug: "ophthoquestions-for-non-us-residents-what-it-covers-and-what-it-doesnt"
 meta_description: "A source-led OphthoQuestions review for non-US residents: verify exam fit, explanations and local-format gaps before making it your primary bank."
 excerpt: "OphthoQuestions names several international examinations. That is a starting point for a non-US resident, not proof that it maps to your local written, practical or viva assessment."
@@ -40,7 +41,7 @@ The provider should never be your source of truth for examination rules. Use the
 
 This table is intentionally not a ranking. It tells you which authority owns the decision. The provider’s FAQ lists ICO and EBOD among the examinations it says it serves, but that should trigger a more specific audit, not a shortcut. “ICO” does not identify which component you need this month. “FRCOphth” does not by itself tell you whether the questions fit the paper you are sitting. The smaller the final revision window, the more exact that mapping must become.
 
-For a UK route, the [FRCOphth guide](/exams/frcophth) can help you organise an OphthaMCQ-facing study plan, but it is not a College notice. For ICO / FICO candidates, the [ICO / FICO guide](/exams/ico-fico) is a study orientation page; confirm rules and components with the ICO. Those distinctions are worth writing into your plan because they prevent a commercial resource from quietly becoming your syllabus.
+For a UK route, the [FRCOphth guide](/exams/frcophth/) can help you organise an OphthaMCQ-facing study plan, but it is not a College notice. For ICO / FICO candidates, the [ICO / FICO guide](/exams/ico-fico/) is a study orientation page; confirm rules and components with the ICO. Those distinctions are worth writing into your plan because they prevent a commercial resource from quietly becoming your syllabus.
 
 ## Run a 20-minute exam-fit audit before you subscribe
 
@@ -72,7 +73,7 @@ Ten questions cannot validate an entire catalogue. They can, however, reveal obv
 
 Write what the bank does not practise. Common examples are local previous-paper style, CRQs, clinical examination sequence, viva delivery, specimen/instrument identification and institution-specific practical conventions. This is not a criticism of a written bank. It is a guardrail against asking it to do a job it was never designed to do.
 
-If you are revising DNB / MS / DO, use the [DNB preparation guide](/exams/dnb) to organise the relevant OphthaMCQ resources, then verify current official requirements independently. If your remaining gap is examination technique rather than factual recall, a written MCQ bank is not the next tool. The [Practical / OSCE / Viva bundle](/osce) is an on-site route to inspect for practical-revision material; its product and store pages, not this article, control its current terms.
+If you are revising DNB / MS / DO, use the [DNB preparation guide](/exams/dnb/) to organise the relevant OphthaMCQ resources, then verify current official requirements independently. If your remaining gap is examination technique rather than factual recall, a written MCQ bank is not the next tool. The [Practical / OSCE / Viva bundle](/osce/) is an on-site route to inspect for practical-revision material; its product and store pages, not this article, control its current terms.
 
 ### 5. Decide the role before you pay
 
@@ -96,9 +97,9 @@ Clinical content overlaps across borders. A question about a retinal sign, optic
 4. Write one short error-log prompt, not a page of notes.
 5. Re-test the same concept later with a different question or image.
 
-That workflow travels well. It does not depend on the bank being the official source or being designed for your final paper. For a no-purchase diagnostic, use [general ophthalmology free MCQs](/free-mcqs/general) to test whether you actually review explanations and record errors. The route is an OphthaMCQ practice resource, not an official paper or an examination predictor.
+That workflow travels well. It does not depend on the bank being the official source or being designed for your final paper. For a no-purchase diagnostic, use [general ophthalmology free MCQs](/free-mcqs/general/) to test whether you actually review explanations and record errors. The route is an OphthaMCQ practice resource, not an official paper or an examination predictor.
 
-The same boundary applies to product choice. If you want to inspect an India-focused on-site question-resource route, [High Yield MCQs](/products/high-yield-mcqs) is a valid product page. Inspect its own description and current store hand-off rather than assuming a feature from a comparison article. If you want a direct provider comparison, read the [OphthoQuestions and OphthaMCQ comparison](/compare/ophthoquestions-vs-ophthamcq) after checking both providers’ current pages. That comparison is a decision aid, not a substitute for live terms.
+The same boundary applies to product choice. If you want to inspect an India-focused on-site question-resource route, [High Yield MCQs](/products/high-yield-mcqs/) is a valid product page. Inspect its own description and current store hand-off rather than assuming a feature from a comparison article. If you want a direct provider comparison, read the [OphthoQuestions and OphthaMCQ comparison](/compare/ophthoquestions-vs-ophthamcq/) after checking both providers’ current pages. That comparison is a decision aid, not a substitute for live terms.
 
 ## Where non-US candidates can lose time
 

@@ -1,5 +1,6 @@
 ---
 title: "AIOS Membership: How to Verify Costs, Benefits and FAICO Requirements"
+seo_title: "AIOS Membership: Costs, Benefits & FAICO Rules"
 proposed_slug: "aios-membership-what-it-costs-what-you-get-why-faico-needs-it"
 meta_description: "A source-led AIOS membership and FAICO checklist: verify the current category, fees, benefits, documents and eligibility from official notices."
 excerpt: "Do not plan FAICO from an old fee screenshot. Match your membership record to the current AIOS notice first."
@@ -36,7 +37,7 @@ The [AIOS FAICO information page](https://www.aios.org/article-66-about-faico.ph
 
 Do not turn “I am an AIOS member” into “I can apply”. A notice can contain additional qualification, experience, document, timing or speciality requirements. Conversely, do not decide you are ineligible from a forwarded screenshot; query the official AIOS route when the current wording does not answer your specific administrative question.
 
-For the study plan once your administrative route is confirmed, use the internal [FAICO preparation guide](/exams/faico). It is an exam-preparation resource, not an AIOS rulebook or eligibility opinion.
+For the study plan once your administrative route is confirmed, use the internal [FAICO preparation guide](/exams/faico/). It is an exam-preparation resource, not an AIOS rulebook or eligibility opinion.
 
 ## Your notice-first workflow
 
@@ -90,7 +91,7 @@ This avoids two bad decisions: paying for a presumed benefit that is not current
 
 ## After eligibility is clear: switch to exam preparation
 
-Once the official requirement is confirmed, stop repeatedly re-reading membership threads. Begin with [free FAICO sample questions](/free-mcqs/faico) to identify topic gaps. Then decide whether the current scope of [FAICO MCQs](/products/faico-mcqs) suits your revision needs; that page is product information, and its live store terms should be checked before any purchase.
+Once the official requirement is confirmed, stop repeatedly re-reading membership threads. Begin with [free FAICO sample questions](/free-mcqs/faico/) to identify topic gaps. Then decide whether the current scope of [FAICO MCQs](/products/faico-mcqs/) suits your revision needs; that page is product information, and its live store terms should be checked before any purchase.
 
 Keep your preparation and application folders separate. One contains MCQ errors, topic plans and mock results. The other contains notices, receipts and documentary evidence. Mixing them is how an application deadline gets buried in a study folder.
 

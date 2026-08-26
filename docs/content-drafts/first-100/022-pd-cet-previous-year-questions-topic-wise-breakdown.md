@@ -1,8 +1,8 @@
 ---
 title: "PD-CET Previous Year Questions: Topic-Wise Breakdown"
 proposed_slug: "pd-cet-previous-year-questions-topic-wise-breakdown"
-meta_description: "Use PD-CET previous-year questions properly: verify provenance, code topics and error types, and turn recalls into a source-checked revision system."
-excerpt: "Use PD-CET previous-year questions properly: verify provenance, code topics and error types, and turn recalls into a source-checked revision system."
+meta_description: "Use PD-CET previous-year questions properly: check where each recall came from, code topics and error types, and build a source-checked revision system."
+excerpt: "Use PD-CET previous-year questions properly: check where each recall came from, code topics and error types, and build a source-checked revision system."
 category: "Ophthalmology Exams"
 author: "Dr. OphthaMCQ Editorial Team"
 date: "2026-08-18"
@@ -115,7 +115,7 @@ A guessed correct answer deserves review because it may collapse when the stem c
 
 ## How to use a practice bank without mistaking it for a past paper
 
-An explained practice set can help you apply the same ledger method. The [PD-CET free MCQs](/free-mcqs/pdcet) page is a free on-site practice route; it should not be described as an official PD-CET paper. Use each explanation to identify the tested micro-topic, then cross-check any fact that conflicts with your prescribed reference. A dedicated resource such as the [PDCET MCQs product page](/products/pdcet-mcqs) may be considered on its stated scope, but no question bank can establish current admissions rules or guarantee a score.
+An explained practice set can help you apply the same ledger method. The [PD-CET free MCQs](/free-mcqs/pdcet/) page is a free on-site practice route; it should not be described as an official PD-CET paper. Use each explanation to identify the tested micro-topic, then cross-check any fact that conflicts with your prescribed reference. A dedicated resource such as the [PDCET MCQs product page](/products/pdcet-mcqs/) may be considered on its stated scope, but no question bank can establish current admissions rules or guarantee a score.
 
 Questions from different resources become more valuable when you tag them identically. If an official item, a recall and a practice MCQ all test the same mechanism, you have a meaningful learning signal. If they share only a broad specialty heading, you have three opportunities to practise, not evidence that the exact question is recurring.
 
@@ -159,7 +159,7 @@ group has agreed on an answer.
 5. Repeat the missed/guessed concepts after roughly 48 hours.
 6. End the week with a mixed review and choose next week’s two repair priorities.
 
-Keep a separate file for current notification facts, such as marking or dates. Do not let these mutable administrative details leak into your clinical recall ledger. For that distinction and broader preparation architecture, see the [PD-CET guide](/exams/pd-cet).
+Keep a separate file for current notification facts, such as marking or dates. Do not let these mutable administrative details leak into your clinical recall ledger. For that distinction and broader preparation architecture, see the [PD-CET guide](/exams/pd-cet/).
 
 ## Sources
 

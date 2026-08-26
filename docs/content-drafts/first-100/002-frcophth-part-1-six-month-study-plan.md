@@ -1,5 +1,6 @@
 ---
 title: "How to Prepare for FRCOphth Part 1: A 6-Month Study Plan"
+seo_title: "How to Prepare for FRCOphth Part 1"
 proposed_slug: "frcophth-part-1-six-month-study-plan"
 meta_description: "A source-led, six-month FRCOphth Part 1 study plan for working ophthalmology trainees, with weekly outputs, mixed-question blocks and mock debriefs."
 excerpt: "A source-led, six-month FRCOphth Part 1 study plan for working ophthalmology trainees, with weekly outputs, mixed-question blocks and mock debriefs."
@@ -97,7 +98,7 @@ Use a three-step review after every block:
 
 Start with two mixed blocks weekly. One may be untimed to expose gaps; one should use a limit to expose pace and reading errors. Review wrong answers and uncertain correct answers. A high question count with no analysis builds familiarity with stems, not necessarily dependable clinical-science decisions.
 
-Keep resources narrow. Pick a main source per domain and a reliable question source instead of collecting every recommendation. If compact written revision helps between clinical sessions, inspect the [Handwritten Exam Ready Notes](/notes) and decide whether a preview genuinely fits your system. For short browser-based retrieval, the [free MCQ bank](/free-mcqs) is available. Neither is an official RCOphth specification or a substitute for the current curriculum.
+Keep resources narrow. Pick a main source per domain and a reliable question source instead of collecting every recommendation. If compact written revision helps between clinical sessions, inspect the [Handwritten Exam Ready Notes](/notes/) and decide whether a preview genuinely fits your system. For short browser-based retrieval, the [free MCQ bank](/free-mcqs/) is available. Neither is an official RCOphth specification or a substitute for the current curriculum.
 
 ## Month 5: rehearse the two-paper day
 
@@ -146,7 +147,7 @@ At week end, ask: which three decisions remain unreliable, what failure type cau
 - Changing the plan after every score instead of after a reviewed pattern.
 - Forgetting administration: eligibility, applications, fees and technical checks belong to current RCOphth documents.
 
-For the broader route map, use the [FRCOphth preparation guide](/exams/frcophth). [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs) is an optional question-practice product page; check current store terms before buying. OphthaMCQ is independent and is not affiliated with RCOphth.
+For the broader route map, use the [FRCOphth preparation guide](/exams/frcophth/). [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs/) is an optional question-practice product page; check current store terms before buying. OphthaMCQ is independent and is not affiliated with RCOphth.
 
 ## Internal-link plan
 

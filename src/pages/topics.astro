@@ -66,7 +66,8 @@ const topicFaqs = [
 ---
 
 <Layout
-  title="Ophthalmology Topics — Retina, Cornea, Glaucoma Study Guides & MCQs"
+  breadcrumbs={[{ name: 'Topics' }]}
+  title="Ophthalmology Topics: Study Guides & MCQs"
   description="Topic-wise ophthalmology study: retina, cornea, glaucoma, cataract, uveitis, neuro-ophth and more. High-yield notes, MCQs and glossary by subspecialty."
 >
   <PageHero
@@ -74,7 +75,7 @@ const topicFaqs = [
     eyebrowIcon="eye"
     titleHtml={`Topic-Wise <span class="text-sky-600">Ophthalmology Study</span>`}
     description="Master ophthalmology by subspecialty. High-yield topics, MCQs, glossary terms and study guides for every PG exam."
-    primaryCta={{ href: '/free-mcqs', label: 'Try topic MCQs' }}
+    primaryCta={{ href: '/free-mcqs/', label: 'Try topic MCQs' }}
     secondaryCta={{ href: '#topics', label: 'Browse topics' }}
     trust={[
       { value: `${topics.length}+`, label: 'Topics' },
@@ -98,7 +99,7 @@ const topicFaqs = [
           const mcqCount = mcqsByTopic[topic.mcqTopic] || 0;
           const termCount = glossaryByCategory[topic.glossaryCategory] || 0;
           return (
-            <a href={`/topics/${topic.slug}`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <a href={`/topics/${topic.slug}/`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
               <div class="w-12 h-12 rounded-lg bg-sky-50 flex items-center justify-center mb-4">
                 <Illustration name="questionBank" class="w-8 h-8" />
               </div>
@@ -155,7 +156,7 @@ const topicFaqs = [
       <ol class="space-y-3">
         {ranking.map((t, i) => (
           <li>
-            <a href={`/topics/${t.slug}`} class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 hover:border-sky-200 hover:shadow-sm transition-all">
+            <a href={`/topics/${t.slug}/`} class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 hover:border-sky-200 hover:shadow-sm transition-all">
               <div class="shrink-0 w-9 h-9 rounded-full bg-sky-50 text-sky-700 flex items-center justify-center font-bold">{i + 1}</div>
               <div class="flex-1">
                 <div class="font-semibold text-slate-900">{t.name}</div>
@@ -192,7 +193,7 @@ const topicFaqs = [
                   <div class="text-xs text-slate-500">glossary terms</div>
                 </div>
               </div>
-              <a href={`/topics/${topic.slug}`} class="text-sm font-semibold text-sky-700 hover:text-sky-800 flex items-center gap-1">
+              <a href={`/topics/${topic.slug}/`} class="text-sm font-semibold text-sky-700 hover:text-sky-800 flex items-center gap-1">
                 Open guide <Icon name="chevronRight" class="w-4 h-4" />
               </a>
             </div>
@@ -209,22 +210,22 @@ const topicFaqs = [
         <p class="mt-4 text-lg text-slate-600">Use topic guides alongside our MCQs, glossary, notes and exam pages.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a href="/free-mcqs" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+        <a href="/free-mcqs/" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
           <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="mcq" class="w-5 h-5 text-sky-600" /></div>
           <h3 class="text-base font-bold text-slate-900 mb-1">50 Free MCQs</h3>
           <p class="text-sm text-slate-600">Sample questions across every subspecialty, scored instantly.</p>
         </a>
-        <a href="/glossary" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+        <a href="/glossary/" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
           <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="bookOpen" class="w-5 h-5 text-sky-600" /></div>
           <h3 class="text-base font-bold text-slate-900 mb-1">316-term Glossary</h3>
           <p class="text-sm text-slate-600">Filterable by subspecialty with exam-ready definitions.</p>
         </a>
-        <a href="/notes" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+        <a href="/notes/" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
           <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="notes" class="w-5 h-5 text-sky-600" /></div>
           <h3 class="text-base font-bold text-slate-900 mb-1">Handwritten Notes</h3>
           <p class="text-sm text-slate-600">Per-topic notes distilled from Kanski, Ryan and Elkington.</p>
         </a>
-        <a href="/exams" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
+        <a href="/exams/" class="rounded-2xl border border-slate-200 bg-white p-6 hover:border-sky-200 hover:shadow-md transition-all">
           <div class="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-3"><Icon name="graduationCap" class="w-5 h-5 text-sky-600" /></div>
           <h3 class="text-base font-bold text-slate-900 mb-1">Exam Guides</h3>
           <p class="text-sm text-slate-600">FRCOphth, ICO, FAICO, DNB, NEET-SS, PD-CET and OKAPs prep paths.</p>

@@ -1,7 +1,7 @@
 ---
 title: "OKAP Exam Explained for Residents Outside the US"
 proposed_slug: "okat-exam-explained-for-residents-outside-the-us"
-meta_description: "What the US OKAP assessment is, what an international ophthalmology resident should verify, and how to use OKAP-style study material without abandoning a local blueprint."
+meta_description: "What the US OKAP assessment is, what an international ophthalmology resident should verify, and how to use OKAP-style material alongside a local blueprint."
 excerpt: "Use OKAP as a breadth and reasoning audit, not as a universal credential or a replacement for your own examination."
 category: "Ophthalmology Exams"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -50,7 +50,7 @@ The ACGME requirements describe an organised residency framework with curriculum
 
 Therefore, use a two-column planning sheet. In the left column list your own required examination domains, format and calendar. In the right column list the OKAP-style content or question sets you want to use. Every right-column activity must support a left-column requirement. If it does not, it may still be intellectually enjoyable, but it is not first-priority exam work.
 
-The [ophthalmology exams hub](/exams) is a useful starting point for the exam pathways currently represented on OphthaMCQ. It is not an OKAP registration page, and there is intentionally no link to `/exams/okaps`: that internal route is invalid.
+The [ophthalmology exams hub](/exams/) is a useful starting point for the exam pathways currently represented on OphthaMCQ. It is not an OKAP registration page, and there is intentionally no link to `/exams/okaps`: that internal route is invalid.
 
 ## What transfers well from OKAP-style work
 
@@ -62,7 +62,7 @@ International residents can become highly fluent in the cases seen frequently in
 
 ### 2. Image and data interpretation
 
-Questions based on fundus photographs, OCT, fields, fluorescein angiography, gonioscopy or external photographs train a valuable exam skill: extract the discriminating feature before reading options too closely. Build a note for each missed image with three fields: the feature, the closest distractor, and the reason the distractor fails. The [retina guide](/topics/retina) and [neuro-ophthalmology guide](/topics/neuro-ophthalmology) can support general revision, but use standard references and your own curriculum to settle uncertain facts.
+Questions based on fundus photographs, OCT, fields, fluorescein angiography, gonioscopy or external photographs train a valuable exam skill: extract the discriminating feature before reading options too closely. Build a note for each missed image with three fields: the feature, the closest distractor, and the reason the distractor fails. The [retina guide](/topics/retina/) and [neuro-ophthalmology guide](/topics/neuro-ophthalmology/) can support general revision, but use standard references and your own curriculum to settle uncertain facts.
 
 ### 3. Close-option reasoning
 
@@ -88,7 +88,7 @@ Do not compare a percentile, raw score or anecdotal “good score” across coun
 
 ### Practical and viva preparation
 
-Question work cannot rehearse an instrument handling station, a concise case presentation, a communication task or an oral defence. If your examination contains practical or viva elements, schedule those skills separately with appropriate supervisors and local requirements. OphthaMCQ's [OSCE, Practical & Viva resources](/osce) are positioned for the site’s listed pathways; always align rehearsal to your actual assessment rules.
+Question work cannot rehearse an instrument handling station, a concise case presentation, a communication task or an oral defence. If your examination contains practical or viva elements, schedule those skills separately with appropriate supervisors and local requirements. OphthaMCQ's [OSCE, Practical & Viva resources](/osce/) are positioned for the site’s listed pathways; always align rehearsal to your actual assessment rules.
 
 ## A four-week OKAP-style breadth audit
 
@@ -121,7 +121,7 @@ For example, do not write “review optic neuritis”. Write “localise before 
 
 Pick one core source for each major domain, one image source, one question source and your examination's official blueprint. Add a resource only when it has a clear job. A book can fill foundations. A question bank can expose retrieval failures. A peer group can rehearse explanations. None replaces a curriculum map.
 
-Use [free ophthalmology MCQs](/free-mcqs) for additional retrieval practice across topics. Keep your own error log as the master document. It is more valuable than a large collection of PDFs because it records your actual failures under time.
+Use [free ophthalmology MCQs](/free-mcqs/) for additional retrieval practice across topics. Keep your own error log as the master document. It is more valuable than a large collection of PDFs because it records your actual failures under time.
 
 ## Decision checklist for a resident outside the US
 

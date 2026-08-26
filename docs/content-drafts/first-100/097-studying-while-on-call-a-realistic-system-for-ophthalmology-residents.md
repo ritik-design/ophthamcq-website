@@ -1,5 +1,6 @@
 ---
 title: "Studying While On Call: A Realistic System for Ophthalmology Residents"
+seo_title: "How to Study During Ophthalmology Residency"
 proposed_slug: "studying-while-on-call-a-realistic-system-for-ophthalmology-residents"
 meta_description: "A realistic on-call study system for ophthalmology residents: task-size menus, interruption notes, post-call reset and retrieval-practice review."
 excerpt: "Make revision fit the gap you actually have, while clinical duties, handover and local fatigue policies remain first."
@@ -89,7 +90,7 @@ The “minimum” version keeps the system alive during crowded weeks. The “id
 
 ## Make the material phone-friendly but source-conscious
 
-Use short material for short gaps, but keep a source trail for anything you do not understand. The [free ophthalmology MCQs](/free-mcqs) are one verified route for a brief closed-book set; the [general MCQ quiz](/free-mcqs/general) offers a mixed second pass. The [ophthalmology glossary](/glossary) is useful when one definition is blocking a question. For longer planning, use the [resources hub](/resources) and the [Handwritten Exam Ready Notes](/notes) page only to inspect current resource information.
+Use short material for short gaps, but keep a source trail for anything you do not understand. The [free ophthalmology MCQs](/free-mcqs/) are one verified route for a brief closed-book set; the [general MCQ quiz](/free-mcqs/general/) offers a mixed second pass. The [ophthalmology glossary](/glossary/) is useful when one definition is blocking a question. For longer planning, use the [resources hub](/resources/) and the [Handwritten Exam Ready Notes](/notes/) page only to inspect current resource information.
 
 Do not turn the number of installed apps, open PDFs or saved tabs into a measure of preparation. Keep one question source, one error queue and one reliable place to verify a term. On a busy roster, fewer moving parts make it easier to resume a task without choosing a new system every week.
 

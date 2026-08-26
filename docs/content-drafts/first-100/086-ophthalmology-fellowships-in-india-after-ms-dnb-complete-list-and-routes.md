@@ -1,5 +1,6 @@
 ---
 title: "Ophthalmology Fellowships in India After MS/DNB: Routes and a Current-List Method"
+seo_title: "Ophthalmology Fellowships in India After MS/DNB"
 proposed_slug: "ophthalmology-fellowships-in-india-after-ms-dnb-complete-list-and-routes"
 meta_description: "Find ophthalmology fellowship routes in India after MS/DNB without relying on stale lists: build a verified shortlist, assess posts and apply well."
 excerpt: "There is no stable single fellowship list. Build a dated shortlist from recruiting institutions and compare the work you will actually do."
@@ -124,7 +125,7 @@ Do not use a generic “I am passionate about ophthalmology” cover note for ev
 
 Many programmes use a CV screen and a clinical discussion rather than one national fellowship examination. Rehearse a compact case presentation: problem representation, relevant examination and imaging, differential, what you did under supervision, what you would escalate, and what you learned. Never claim an independent procedure that you merely observed.
 
-If the route also requires formal exam revision, the [fellowship preparation guide](/exams/fellowship) helps separate career selection from exam preparation. For practical communication rehearsal, inspect the [OSCE, Practical & Viva Voce Ready route](/osce). These internal pages are study resources, not an application authority; the institution’s written notice governs its process.
+If the route also requires formal exam revision, the [fellowship preparation guide](/exams/fellowship/) helps separate career selection from exam preparation. For practical communication rehearsal, inspect the [OSCE, Practical & Viva Voce Ready route](/osce/). These internal pages are study resources, not an application authority; the institution’s written notice governs its process.
 
 ## The final 24-hour verification rule
 

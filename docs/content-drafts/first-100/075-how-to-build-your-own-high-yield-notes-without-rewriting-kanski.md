@@ -1,5 +1,6 @@
 ---
 title: "How to Build Your Own High-Yield Notes (Without Rewriting Kanski)"
+seo_title: "How to Make Your Own Ophthalmology Notes"
 proposed_slug: "how-to-build-your-own-high-yield-notes-without-rewriting-kanski"
 meta_description: "Build ophthalmology revision notes from errors, source checks and recall prompts—not textbook transcription. A practical high-yield workflow for PG exams."
 excerpt: "Your note should preserve the discriminator you miss and the prompt that makes you retrieve it, not reproduce a textbook chapter."
@@ -44,7 +45,7 @@ Capture an item when at least one of these conditions applies.
 
 This is a high bar by design. An interesting fact is not automatically a note. A fact that you cannot retrieve, confuse with a neighbour, or need to reproduce under exam conditions is a candidate.
 
-Use the same rule with free practice. A short set of [free ophthalmology MCQs](/free-mcqs) can supply enough diagnostic errors to start an error log; it does not need to become a giant notebook. If you are choosing questions by subject, the [high-yield category](/free-mcqs/high-yield) is a verified route to inspect. Record the *reason* for the miss, not simply the topic label.
+Use the same rule with free practice. A short set of [free ophthalmology MCQs](/free-mcqs/) can supply enough diagnostic errors to start an error log; it does not need to become a giant notebook. If you are choosing questions by subject, the [high-yield category](/free-mcqs/high-yield/) is a verified route to inspect. Record the *reason* for the miss, not simply the topic label.
 
 ## Make five note shapes, not one giant master document
 
@@ -68,7 +69,7 @@ Use a diagram when the relationship itself is examinable: a pathway, a layer seq
 
 The act of creating a drawing can be a useful elaborative task in experimental learning research, but it is not magic and it is not mandatory for every topic. The relevant test is simpler: can you reconstruct the relationship without looking? If a diagram cannot be redrawn or explained aloud from the blank version, adding colour will not solve the problem.
 
-For basic terminology repair before a source check, use the [ophthalmology glossary](/glossary). It is a lookup aid, not a substitute for a current reference where a classification, recommendation or measurement needs verification.
+For basic terminology repair before a source check, use the [ophthalmology glossary](/glossary/). It is a lookup aid, not a substitute for a current reference where a classification, recommendation or measurement needs verification.
 
 ### 3. The formula card
 
@@ -76,7 +77,7 @@ Use this for optics and refraction. One card should include the formula, units, 
 
 For example, the prompt side might ask: “Which convention changes the sign here, and what happens if the value is doubled?” The answer side shows the working, not merely the final number. Re-do the changed problem with the source closed. A card that you can only solve when the original example is visible is not ready for a timed paper.
 
-If you use a prepared foundation instead of rebuilding every page, inspect the topic-specific [Optics & Refraction Notes](/products/optics-notes) sample route, then add your own error prompts separately. A supplied resource may save setup time; it does not perform the recall step for you.
+If you use a prepared foundation instead of rebuilding every page, inspect the topic-specific [Optics & Refraction Notes](/products/optics-notes/) sample route, then add your own error prompts separately. A supplied resource may save setup time; it does not perform the recall step for you.
 
 ### 4. The image-pattern card
 
@@ -154,7 +155,7 @@ You do not need to create every foundation page from zero. A standard reference 
 
 Use a textbook when you need to understand, verify or resolve a contradiction. Use a compact revision page when you need a scaffold for a broad topic. Then add only the margin note that comes from your own error: a missing discriminator, a troublesome image cue, a formula unit or a viva sequence.
 
-OphthaMCQ’s [Handwritten Exam Ready Notes](/notes) category and its verified product sample routes let you inspect available material. Treat any prepared note as a revision input to evaluate for your exam and source-check needs, not as proof of a learning outcome. If anatomy is the immediate gap, the [Anatomy Notes](/products/anatomy-notes) route is a relevant place to inspect a topic resource; your personal error layer still needs its own prompts and reviews.
+OphthaMCQ’s [Handwritten Exam Ready Notes](/notes/) category and its verified product sample routes let you inspect available material. Treat any prepared note as a revision input to evaluate for your exam and source-check needs, not as proof of a learning outcome. If anatomy is the immediate gap, the [Anatomy Notes](/products/anatomy-notes/) route is a relevant place to inspect a topic resource; your personal error layer still needs its own prompts and reviews.
 
 Avoid the false choice between “I must make everything myself” and “I will only read supplied notes.” The useful division is: borrow the map where it helps; build the retrieval prompts where your own mistakes demand them.
 
@@ -184,7 +185,7 @@ Before keeping any page, ask four questions:
 
 Four yeses means the note is earning its place. A no on any line tells you what to fix: source quality, relevance, prompt design or review scheduling. It does not tell you to buy another notebook or rewrite another chapter.
 
-For more study materials and route-verified resources, start at the [OphthaMCQ resources hub](/resources). Keep the final decision clinical and exam-specific: source accuracy first, then compression, then repeated retrieval.
+For more study materials and route-verified resources, start at the [OphthaMCQ resources hub](/resources/). Keep the final decision clinical and exam-specific: source accuracy first, then compression, then repeated retrieval.
 
 ## Sources
 

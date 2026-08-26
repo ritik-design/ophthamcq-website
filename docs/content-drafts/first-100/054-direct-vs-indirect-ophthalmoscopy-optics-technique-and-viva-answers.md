@@ -1,5 +1,6 @@
 ---
 title: "Direct vs Indirect Ophthalmoscopy: Optics, Technique and Viva Answers"
+seo_title: "Direct vs Indirect Ophthalmoscopy"
 proposed_slug: "direct-vs-indirect-ophthalmoscopy-optics-technique-and-viva-answers"
 meta_description: "A source-linked direct versus indirect ophthalmoscopy viva guide: image formation, field, stereopsis, technique, reporting and examiner follow-ups."
 excerpt: "The comparison table earns the opening marks. The better answer connects each optical difference to what you can examine."
@@ -118,7 +119,7 @@ Because the aerial image is inverted, movements are counterintuitive at first. D
 
 BIO gives the examiner two views of the aerial image, allowing depth perception. In a viva, connect it to morphology: “Stereopsis helps me judge the contour of retinal elevation, depression or traction.” Do not claim that stereopsis alone identifies the cause of a lesion.
 
-The [retina study guide](/topics/retina) is useful for revising the lesions that may follow an instrument question. It does not replace supervised examination technique.
+The [retina study guide](/topics/retina/) is useful for revising the lesions that may follow an instrument question. It does not replace supervised examination technique.
 
 ## What to say when the examiner changes the scenario
 
@@ -166,7 +167,7 @@ Run this with a colleague. One person is the candidate, one is the examiner.
 
 If the answer becomes a list of slogans, return to one question: what does this optical property change in the view? That is the bridge between an optics viva and a competent practical examination.
 
-For broader instrument rehearsal, the [OSCE, Practical & Viva Voce Ready bundle](/osce) is OphthaMCQ’s practical-preparation resource page. The [Instruments in Ophthalmology](/products/instruments-in-ophthalmology-notes) page is a relevant product preview for candidates who want a structured instrument resource. Review current details on the OphthaMCQ store before purchase. OphthaMCQ is independent and is not affiliated with RCOphth, ICO, AIOS, NBE or AAO.
+For broader instrument rehearsal, the [OSCE, Practical & Viva Voce Ready bundle](/osce/) is OphthaMCQ’s practical-preparation resource page. The [Instruments in Ophthalmology](/products/instruments-in-ophthalmology-notes/) page is a relevant product preview for candidates who want a structured instrument resource. Review current details on the OphthaMCQ store before purchase. OphthaMCQ is independent and is not affiliated with RCOphth, ICO, AIOS, NBE or AAO.
 
 ## Internal-link manifest
 

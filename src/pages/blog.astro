@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import { clustersWithPosts } from '../utils/blog-clusters.js';
 
 const localPosts = import.meta.glob('../../docs/content-drafts/first-100/*.md', { eager: true });
 type LocalPostModule = { frontmatter: Record<string, string> };
@@ -11,6 +12,8 @@ const posts = Object.entries(localPosts as Record<string, LocalPostModule>)
   .map(([, { frontmatter }]) => frontmatter)
   .filter((post) => post.proposed_slug)
   .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+const clusters = clustersWithPosts(posts);
 
 function readTime(post: Record<string, string>) {
   return post.estimated_read_time || 'Read';
@@ -25,7 +28,8 @@ function truncateExcerpt(text = '', maxLength = 155) {
 ---
 
 <Layout
-  title="Blog — Exam Strategy, MCQs, Study Tips & Career Guides"
+  breadcrumbs={[{ name: 'Blog' }]}
+  title="Ophthalmology Exam Blog: Strategy, MCQs, Careers"
   description="Source-led articles on ophthalmology exam preparation: study plans, topic MCQs, practical revision and career guides."
 >
   <section class="border-b border-slate-200 bg-white">
@@ -44,11 +48,50 @@ function truncateExcerpt(text = '', maxLength = 155) {
     </div>
   </section>
 
+  <!-- Topical clusters: gives readers and crawlers the shape of the archive
+       instead of one flat list of 98 unrelated articles. -->
+  <section class="border-b border-slate-200 bg-white py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-semibold text-slate-950">Browse by exam and theme</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {clusters.map(({ cluster, posts: clusterPosts }) => (
+          <div class="rounded-2xl border border-slate-200 p-5">
+            <div class="flex items-baseline justify-between gap-3">
+              <h3 class="text-base font-bold text-slate-900 m-0">{cluster.name}</h3>
+              <span class="shrink-0 text-xs font-medium text-slate-400 tabular-nums">
+                {clusterPosts.length}
+              </span>
+            </div>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{cluster.blurb}</p>
+            <ul class="mt-4 space-y-1.5 list-none p-0">
+              {clusterPosts.slice(0, 4).map(p => (
+                <li>
+                  <a
+                    href={`/blog/${p.proposed_slug}/`}
+                    class="text-sm text-sky-700 hover:text-sky-900 hover:underline"
+                  >
+                    {p.seo_title || p.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={cluster.hub.href}
+              class="mt-4 inline-block text-sm font-semibold text-slate-700 hover:text-sky-700"
+            >
+              {cluster.hub.label} <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="bg-slate-50 py-14 lg:py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mb-8 flex items-center justify-between gap-4">
         <h2 class="text-lg font-semibold text-slate-950">All articles</h2>
-        <a href="/free-mcqs" class="text-sm font-semibold text-sky-700 hover:text-sky-900">Practice free MCQs <span aria-hidden="true">→</span></a>
+        <a href="/free-mcqs/" class="text-sm font-semibold text-sky-700 hover:text-sky-900">Practice free MCQs <span aria-hidden="true">→</span></a>
       </div>
 
       {posts.length === 0 && (

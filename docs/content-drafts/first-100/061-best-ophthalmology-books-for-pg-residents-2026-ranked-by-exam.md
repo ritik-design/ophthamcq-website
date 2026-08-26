@@ -1,7 +1,8 @@
 ---
 title: "Ophthalmology Books for PG Residents: Choose by Exam and Task"
+seo_title: "Best Ophthalmology Books for PG Residents 2026"
 proposed_slug: "best-ophthalmology-books-for-pg-residents-2026-ranked-by-exam"
-meta_description: "Choose ophthalmology books by exam, learning task and available time. Compare broad clinical, BCSC, specialist and revision references without a false universal ranking."
+meta_description: "Choose ophthalmology books by exam, learning task and available time. Compare broad clinical, BCSC, specialist and revision references."
 excerpt: "There is no objectively best ophthalmology book for every PG. Build a small stack around the decision your next examination actually asks you to make."
 category: "Resources"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -84,9 +85,9 @@ If optics is a recurring weakness, protect two short sessions a week rather than
 
 An Indian resident may reasonably use Kanski, BCSC, a concise regional text and a topic reference in the same plan. The error is treating any of them as a universal MS / DNB blueprint. University theory, DNB formats, departmental teaching and local practical expectations can differ. Check the current notice or syllabus, then use the book for the precise job it does well.
 
-For DNB theory, a broad clinical reference plus error-led depth is usually more manageable than a wholesale specialist-library plan. Tie it to the [DNB Ophthalmology preparation guide](/exams/dnb), then test knowledge using [general ophthalmology free MCQs](/free-mcqs/general). The MCQ result is diagnostic: it tells you where to open the book next. It is not an outcome prediction.
+For DNB theory, a broad clinical reference plus error-led depth is usually more manageable than a wholesale specialist-library plan. Tie it to the [DNB Ophthalmology preparation guide](/exams/dnb/), then test knowledge using [general ophthalmology free MCQs](/free-mcqs/general/). The MCQ result is diagnostic: it tells you where to open the book next. It is not an outcome prediction.
 
-For ICO / FICO and FRCOphth, begin with the current official requirements, then choose the reference form that matches the gap: BCSC-style modular reading for a defined section, clinical text for synthesis, Elkington for optics, or a specialist reference for persistent subspecialty weakness. The [ICO / FICO preparation guide](/exams/ico-fico) and [FRCOphth preparation guide](/exams/frcophth) can keep the study plan connected to the relevant examination route without pretending to publish an official book list.
+For ICO / FICO and FRCOphth, begin with the current official requirements, then choose the reference form that matches the gap: BCSC-style modular reading for a defined section, clinical text for synthesis, Elkington for optics, or a specialist reference for persistent subspecialty weakness. The [ICO / FICO preparation guide](/exams/ico-fico/) and [FRCOphth preparation guide](/exams/frcophth/) can keep the study plan connected to the relevant examination route without pretending to publish an official book list.
 
 For a practical or viva, textbook depth alone does not create fluent answers. You need timed verbal rehearsal: identify the finding or object, state the mechanism or significance, give one differential or caution, and stop. Use the department’s authorised case and instrument lists. A book helps you understand the answer; repeated spoken retrieval makes it available when an examiner is waiting.
 
@@ -104,7 +105,7 @@ Choose a specialist source, optics text or basic-science section for a documente
 
 ### Layer 3: retrieval system
 
-Keep an annotated syllabus, error log, previous-question themes, formula sheet and concise revision material. [Handwritten Exam Ready Notes](/notes) can be used as an on-site revision route when you want structured topic-wise material, but it should not replace checking a primary reference when a concept, classification or current guidance is uncertain. Notes compress; they do not make a source unnecessary.
+Keep an annotated syllabus, error log, previous-question themes, formula sheet and concise revision material. [Handwritten Exam Ready Notes](/notes/) can be used as an on-site revision route when you want structured topic-wise material, but it should not replace checking a primary reference when a concept, classification or current guidance is uncertain. Notes compress; they do not make a source unnecessary.
 
 The layers work in sequence: question or case exposes the gap, the reference repairs the logic, and retrieval tests whether the repair held. A reading plan without the third layer tends to feel productive while leaving the information inaccessible under timed conditions.
 
@@ -133,7 +134,7 @@ Check these five things.
 - **Time cost:** Decide which existing resource this will replace. If the answer is “none,” do not add it yet.
 - **Retrieval plan:** Put a question session, calculation set, image set or oral rehearsal next to the reading session.
 
-Use the [OphthaMCQ resource hub](/resources) to organise broader study resources, then keep your shelf limited enough that every book earns repeated use. The best comparison outcome is not a winner’s medal for a title. It is a clear reason for the next book, chapter and question set in your own plan.
+Use the [OphthaMCQ resource hub](/resources/) to organise broader study resources, then keep your shelf limited enough that every book earns repeated use. The best comparison outcome is not a winner’s medal for a title. It is a clear reason for the next book, chapter and question set in your own plan.
 
 ## Sources and publication check
 

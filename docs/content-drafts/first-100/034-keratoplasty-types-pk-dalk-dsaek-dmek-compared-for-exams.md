@@ -1,5 +1,6 @@
 ---
 title: "Keratoplasty Types (PK, DALK, DSAEK, DMEK) Compared for Exams"
+seo_title: "Keratoplasty Types Compared: PK, DALK, DSAEK, DMEK"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "keratoplasty-types-pk-dalk-dsaek-dmek-compared-for-exams"
 meta_description: "Compare PK, DALK, DSAEK and DMEK by diseased layer, graft tissue, retained host tissue, indications and viva traps for ophthalmology exams."
@@ -165,7 +166,7 @@ Before an exam, redraw this from memory:
 | Named endothelial-rejection sign? | Khodadoust line |
 | First question in an indication stem? | Which corneal layer is diseased? |
 
-Then review [the cornea study guide](/topics/cornea) for the surrounding disease framework. For practical-answer rehearsal, [OSCE, Practical & Viva Voce Ready](/osce) is the relevant site resource, and [Handwritten Exam Ready Notes](/notes) provides the broader revision collection. Product pages describe their own contents; none is a substitute for supervised surgical training or current clinical guidance.
+Then review [the cornea study guide](/topics/cornea/) for the surrounding disease framework. For practical-answer rehearsal, [OSCE, Practical & Viva Voce Ready](/osce/) is the relevant site resource, and [Handwritten Exam Ready Notes](/notes/) provides the broader revision collection. Product pages describe their own contents; none is a substitute for supervised surgical training or current clinical guidance.
 
 ## Internal-link plan
 

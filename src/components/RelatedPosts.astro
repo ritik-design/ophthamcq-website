@@ -1,0 +1,65 @@
+---
+/**
+ * Cluster navigation at the foot of every blog post.
+ *
+ * Gives each article six sibling links plus its cluster hub, replacing an
+ * archive where 85 of 99 posts had no inbound link from any other post.
+ */
+import Icon from './Icon.astro';
+import { relatedPosts } from '../utils/blog-clusters.js';
+
+export interface Props {
+  post: Record<string, any>;
+  allPosts: Record<string, any>[];
+}
+
+const { post, allPosts } = Astro.props;
+const { cluster, posts } = relatedPosts(post, allPosts, 6);
+---
+
+{
+  posts.length > 0 && (
+    <nav aria-labelledby="related-heading" class="bg-slate-50 border-t border-slate-200 py-16 lg:py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700 mb-3">
+          {cluster.name}
+        </p>
+        <h2 id="related-heading" class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          More on {cluster.name}
+        </h2>
+        <p class="mt-3 text-slate-600 max-w-2xl">{cluster.blurb}</p>
+
+        <ul class="mt-8 grid sm:grid-cols-2 gap-4 list-none p-0 m-0">
+          {posts.map((related) => (
+            <li>
+              <a
+                href={`/blog/${related.proposed_slug}/`}
+                class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 hover:border-sky-300 hover:shadow-sm transition-all"
+              >
+                <span class="text-base font-semibold text-slate-900 leading-snug">
+                  {related.seo_title || related.title}
+                </span>
+                {related.excerpt && (
+                  <span class="mt-2 text-sm text-slate-600 leading-relaxed line-clamp-3">
+                    {related.excerpt}
+                  </span>
+                )}
+                {related.estimated_read_time && (
+                  <span class="mt-3 text-xs text-slate-400">{related.estimated_read_time}</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={cluster.hub.href}
+          class="mt-8 inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors"
+        >
+          {cluster.hub.label}
+          <Icon name="arrowRight" class="w-4 h-4" />
+        </a>
+      </div>
+    </nav>
+  )
+}

@@ -1,0 +1,25 @@
+# Cloudflare Workers static-asset headers.
+#
+# HSTS is the half of the http -> https fix that lives in the repo. The other
+# half is the zone setting "SSL/TLS > Edge Certificates > Always Use HTTPS",
+# which has to be switched on in the Cloudflare dashboard — see
+# docs/audits/DEPLOY-CHECKLIST.md. Without it, http://ophthamcq.org still
+# answers 200 for a first-time visitor and duplicates the whole site.
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Fingerprinted build output is safe to cache forever.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Downloadable study material — long cache, but revalidatable.
+/note-pdfs/*
+  Cache-Control: public, max-age=604800
+/practical-pdfs/*
+  Cache-Control: public, max-age=604800
+/note-previews/*
+  Cache-Control: public, max-age=604800

@@ -1,5 +1,6 @@
 ---
 title: "Ophthalmic Drugs Viva: Bottles, Colours, Doses and Contraindications"
+seo_title: "Ophthalmology Drugs Viva: Doses and Cautions"
 proposed_slug: "ophthalmic-drugs-viva-bottles-colours-doses-and-contraindications"
 meta_description: "A label-first ophthalmic drugs viva framework: identify the class, state the mechanism, handle dose questions and avoid bottle-colour traps."
 excerpt: "Read the label first. Bottle colour may jog recall, but it cannot identify a medicine or supply its dose."
@@ -122,7 +123,7 @@ Build a drug tray deck with a photograph or label transcription on the front and
 
 Practise with mixed cards. Put a fixed combination beside its components, a staining strip beside an anaesthetic vial, and two dilators with different cycloplegic effects together. Mark errors as **label-reading**, **class**, **mechanism**, **caution**, or **dose-source** errors. The next revision session should target the error category, not merely repeat the whole list.
 
-For structured drug-station revision, use the [Ophthalmology Drugs Practical PDF](/products/ophthalmology-drugs-practical-pdf). The [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva) is the relevant combined tray-station resource. For broader practical preparation, see the [OSCE, Practical & Viva Voce Ready bundle](/osce). These are revision resources, not clinical protocols; verify every live dose and product warning against the current authorised source used by your institution.
+For structured drug-station revision, use the [Ophthalmology Drugs Practical PDF](/products/ophthalmology-drugs-practical-pdf/). The [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva/) is the relevant combined tray-station resource. For broader practical preparation, see the [OSCE, Practical & Viva Voce Ready bundle](/osce/). These are revision resources, not clinical protocols; verify every live dose and product warning against the current authorised source used by your institution.
 
 ## Sources and currency boundary
 

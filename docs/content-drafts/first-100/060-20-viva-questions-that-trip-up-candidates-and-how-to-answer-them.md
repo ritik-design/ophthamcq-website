@@ -1,5 +1,6 @@
 ---
 title: "20 Viva Questions That Trip Up Candidates — and How to Answer Them"
+seo_title: "20 Ophthalmology Viva Questions and Answers"
 proposed_slug: "20-viva-questions-that-trip-up-candidates-and-how-to-answer-them"
 meta_description: "Twenty high-yield ophthalmology viva question patterns with first sentences, discriminating points and stop lines for PG practical-exam revision."
 excerpt: "Difficult viva questions usually punish an unstructured answer, not a missing obscure fact."
@@ -215,7 +216,7 @@ Do not read all twenty repeatedly. Rehearse them in four rounds of five.
 3. **Score only four fields:** definition/identification, principle, discriminator and stop line.
 4. **Repair the missing field:** write one replacement sentence, then repeat the same card at the end of the round.
 
-After night duty, this is more useful than trying to memorise a ten-line model answer. If reports are the weak area, use [How to Read Ophthalmology Reports/Tests](/products/read-ophthalmology-reports-tests). For mixed instrument or bottle stations, use [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva). Build full timed stations around the [OSCE, Practical & Viva Voce Ready bundle](/osce), and use the [ophthalmology glossary](/glossary) to repair imprecise terms. These are revision routes, not official examination material or a substitute for supervised clinical training.
+After night duty, this is more useful than trying to memorise a ten-line model answer. If reports are the weak area, use [How to Read Ophthalmology Reports/Tests](/products/read-ophthalmology-reports-tests/). For mixed instrument or bottle stations, use [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva/). Build full timed stations around the [OSCE, Practical & Viva Voce Ready bundle](/osce/), and use the [ophthalmology glossary](/glossary/) to repair imprecise terms. These are revision routes, not official examination material or a substitute for supervised clinical training.
 
 The [RCOphth OST curriculum update gateway](https://www.rcophth.ac.uk/training-careers/training-routes/ophthalmic-specialist-training/the-ost-curriculum-2024/ost-curriculum-updates/) is a useful professional-college reference for broader training context. It does not prescribe an Indian university’s viva questions or marking scheme.
 

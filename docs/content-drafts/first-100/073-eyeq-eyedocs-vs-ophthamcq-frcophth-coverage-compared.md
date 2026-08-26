@@ -1,5 +1,6 @@
 ---
 title: "eyeQ (Eyedocs) vs OphthaMCQ for FRCOphth: Compare the Component, Not the Brand"
+seo_title: "eyeQ (Eyedocs) vs OphthaMCQ for FRCOphth"
 proposed_slug: "eyeq-eyedocs-vs-ophthamcq-frcophth-coverage-compared"
 meta_description: "A component-first comparison of eyeQ and OphthaMCQ for FRCOphth: what to verify for Part 1, Part 2 Written, refraction and oral preparation."
 excerpt: "For FRCOphth, the useful comparison is not a brand-level winner. It is whether a resource rehearses the component you sit next."
@@ -32,7 +33,7 @@ Use eyeQ or OphthaMCQ only after you can answer this question: **which FRCOphth 
 
 That distinction prevents a common mistake: buying a bank because it is described as “for FRCOphth,” then expecting it to replace a different assessment modality. The College says Part 1 assesses basic sciences relevant to ophthalmology; Part 2 Written assesses applied knowledge and clinical understanding through single-best-answer questions; Part 2 Oral assesses clinical reasoning, communication and decision-making. Those are related but non-interchangeable jobs.
 
-The [OphthaMCQ FRCOphth preparation guide](/exams/frcophth) is a useful orientation page for mapping your study plan. Treat the RCOphth pages as the deciding source whenever a rule or component detail affects an application or exam booking.
+The [OphthaMCQ FRCOphth preparation guide](/exams/frcophth/) is a useful orientation page for mapping your study plan. Treat the RCOphth pages as the deciding source whenever a rule or component detail affects an application or exam booking.
 
 ## What eyeQ currently says it covers
 
@@ -57,13 +58,13 @@ If most mistakes are repaired by the explanation and you can name the next sourc
 
 ## What OphthaMCQ documents for FRCOphth
 
-OphthaMCQ’s site documents a product named [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs). Its product description positions it for Part 1 / Step 1 practice and describes explanations and exam tips. The site also documents Handwritten Exam Ready Notes and a Practical / OSCE / Viva line elsewhere in its catalogue. Those first-party descriptions establish that these product lines exist; they do not prove present coverage, access terms, update policy or results. Check the current store page before buying.
+OphthaMCQ’s site documents a product named [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs/). Its product description positions it for Part 1 / Step 1 practice and describes explanations and exam tips. The site also documents Handwritten Exam Ready Notes and a Practical / OSCE / Viva line elsewhere in its catalogue. Those first-party descriptions establish that these product lines exist; they do not prove present coverage, access terms, update policy or results. Check the current store page before buying.
 
 The practical consequence is that an OphthaMCQ Part 1 candidate should assess the Part 1 product as a Part 1 tool. It may be relevant if your immediate bottleneck is basic sciences, applied written recall or converting an explanation into an error-log prompt. It is not honest to treat a Part 1 MCQ bank as proof of readiness for the Refraction Certificate or Part 2 Oral.
 
 This product may make sense for a candidate who wants a documented Part 1 bank and also prefers to organise remediation around written note material. It may make less sense as the only paid resource for someone whose next problem is a spoken long case, clinical refraction technique or Part 2 Oral communication. In either case, do a small sample first and record what it changes in your next revision block.
 
-You can use [FRCOphth free MCQs](/free-mcqs/frcophth) for that sample loop. A sample is not a score predictor. Its value is diagnostic: it shows whether you can read the explanation, identify the missing concept and schedule a re-test without creating a pile of unreviewed questions.
+You can use [FRCOphth free MCQs](/free-mcqs/frcophth/) for that sample loop. A sample is not a score predictor. Its value is diagnostic: it shows whether you can read the explanation, identify the missing concept and schedule a re-test without creating a pile of unreviewed questions.
 
 ## The comparison that is fair to both resources
 
@@ -80,7 +81,7 @@ The table below deliberately excludes price, question counts, “best for” lab
 
 This is why a universal winner would be misleading. A Part 1 candidate could reasonably prefer the resource whose current sample better exposes and repairs basic-science errors. A Part 2 Written candidate should give extra weight to current clinical-question fit. A candidate scheduled for refraction or oral work needs a different modality regardless of which written bank they own.
 
-For a wider, non-FRCOphth-specific provider overview, use the [broader ophthalmology question-bank comparison](/compare/best-ophthalmology-question-banks). Recheck providers’ own pages rather than relying on its time-sensitive price or feature rows.
+For a wider, non-FRCOphth-specific provider overview, use the [broader ophthalmology question-bank comparison](/compare/best-ophthalmology-question-banks/). Recheck providers’ own pages rather than relying on its time-sensitive price or feature rows.
 
 ## Build a two-resource plan rather than a single-resource fantasy
 

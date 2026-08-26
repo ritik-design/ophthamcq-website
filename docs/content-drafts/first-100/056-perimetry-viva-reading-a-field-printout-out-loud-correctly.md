@@ -1,7 +1,8 @@
 ---
 title: "Perimetry Viva: Reading a Field Printout Out Loud, Correctly"
+seo_title: "Visual Field Interpretation for the Perimetry Viva"
 proposed_slug: "perimetry-viva-reading-a-field-printout-out-loud-correctly"
-meta_description: "A postgraduate visual-field interpretation framework for reading perimetry printouts: reliability, deviation plots, indices, defect patterns and viva presentation."
+meta_description: "A visual-field interpretation framework for reading perimetry printouts: reliability, deviation plots, indices, defect patterns and viva presentation."
 excerpt: "Read the patient and test before the plot. Describe the field before you name the disease."
 category: "OSCE"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -90,13 +91,13 @@ Most field-viva marks sit in the description. Give laterality, location, depth a
 
 Retinal nerve fibre layer patterns and many glaucomatous defects tend to respect the horizontal meridian. A nasal step is a difference in sensitivity across the horizontal meridian on the nasal side. An arcuate defect follows the course of nerve fibre bundles and may extend from the blind-spot region towards the nasal field. A paracentral defect lies near fixation. In an exam, do not call every superior or inferior cluster “arcuate”: state whether its curve, blind-spot relationship and horizontal-meridian behaviour actually support that description.
 
-For a glaucoma-shaped printout, a disciplined statement is: “There is a localised [superior/inferior] arcuate-pattern defect, extending [from/towards] [location], with [nasal-step/paracentral] involvement if visible, and it respects the horizontal meridian.” Then say that disc, OCT and repeat-field correlation are required. The [glaucoma MCQs and study guide](/topics/glaucoma) is the relevant broader revision page; it is not evidence that every arcuate-looking field is glaucomatous.
+For a glaucoma-shaped printout, a disciplined statement is: “There is a localised [superior/inferior] arcuate-pattern defect, extending [from/towards] [location], with [nasal-step/paracentral] involvement if visible, and it respects the horizontal meridian.” Then say that disc, OCT and repeat-field correlation are required. The [glaucoma MCQs and study guide](/topics/glaucoma/) is the relevant broader revision page; it is not evidence that every arcuate-looking field is glaucomatous.
 
 ### Does it respect the vertical meridian?
 
 Defects that respect the vertical meridian raise a localisation question rather than a final diagnosis. A homonymous pattern requires corresponding loss in the same side of visual space across both eyes; a bitemporal pattern requires temporal loss in both eyes. You cannot honestly declare either from one eye's field. Put both printouts side by side, confirm the eye labels and use the blind spots for orientation.
 
-A good neuro-ophthalmology viva sentence is: “Across the two fields there is [or is not] a congruent defect respecting the vertical meridian; if confirmed and reliable, that pattern would warrant correlation with the neuro-ophthalmic examination and the clinical context.” For associated terminology and broader study, use the [neuro-ophthalmology study guide](/topics/neuro-ophthalmology). Avoid the leap from “vertical” to a named lesion when the station has supplied only a partial or unreliable field.
+A good neuro-ophthalmology viva sentence is: “Across the two fields there is [or is not] a congruent defect respecting the vertical meridian; if confirmed and reliable, that pattern would warrant correlation with the neuro-ophthalmic examination and the clinical context.” For associated terminology and broader study, use the [neuro-ophthalmology study guide](/topics/neuro-ophthalmology/). Avoid the leap from “vertical” to a named lesion when the station has supplied only a partial or unreliable field.
 
 ### Is the reduction diffuse?
 
@@ -171,7 +172,7 @@ Repeat the drill with a field that looks superficially similar but has a differe
 - Claiming progression from one printout rather than a comparable series.
 - Giving patient-specific treatment or imaging instructions when the station asks only for field interpretation.
 
-For planned report-reading revision, the OphthaMCQ [report-and-test revision resource](/products/read-ophthalmology-reports-tests) is the closest product page. Practical station rehearsal belongs with the [OSCE, Practical & Viva Voce Ready bundle](/osce). These are revision resources; they do not replace supervised perimetry practice or clinical judgement.
+For planned report-reading revision, the OphthaMCQ [report-and-test revision resource](/products/read-ophthalmology-reports-tests/) is the closest product page. Practical station rehearsal belongs with the [OSCE, Practical & Viva Voce Ready bundle](/osce/). These are revision resources; they do not replace supervised perimetry practice or clinical judgement.
 
 ## Sources
 

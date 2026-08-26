@@ -1,5 +1,6 @@
 ---
 title: "ICO/FICO Past Papers: How to Use Them Without Wasting Them"
+seo_title: "ICO/FICO Past Papers: How to Use Them Properly"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "ico-fico-past-papers"
 meta_description: "A practical method for using ICO/FICO past papers and candidate recalls: preserve papers, verify concepts, build an error map and rehearse exam decisions."
@@ -161,7 +162,7 @@ Do not repeat a paper the next day. That mostly measures memory for wording. Spa
 
 ## Where an ICO/FICO paper resource fits
 
-The [ICO / FICO preparation guide](/exams/ico-fico) is the site’s route overview. [Free ICO / FICO MCQs](/free-mcqs/ico-fico) can supply short retrieval blocks between source-led study. The [ICO/FICO Past Papers](/products/ico-fico-past-papers) page is an optional product preview. Review its description before purchase and do not infer that it contains official ICO papers or that it predicts an examination.
+The [ICO / FICO preparation guide](/exams/ico-fico/) is the site’s route overview. [Free ICO / FICO MCQs](/free-mcqs/ico-fico/) can supply short retrieval blocks between source-led study. The [ICO/FICO Past Papers](/products/ico-fico-past-papers/) page is an optional product preview. Review its description before purchase and do not infer that it contains official ICO papers or that it predicts an examination.
 
 The commercial decision is separate from the learning method. Whatever paper source you use, preserve a clean copy, verify the facts and convert errors into scheduled retrieval.
 

@@ -1,5 +1,6 @@
 ---
 title: "A 30-Day FAICO Revision Plan Built Around Past Questions"
+seo_title: "30-Day FAICO Revision Plan From Past Questions"
 proposed_slug: "a-30-day-faico-revision-plan-built-around-past-questions"
 meta_description: "A 30-day FAICO revision plan for turning legitimate past-question themes into targeted reading, mixed recall and spoken subspecialty explanations."
 excerpt: "Use past questions to find recurring decisions and repair weak themes. They are a revision map, not a prediction of the next paper."
@@ -15,7 +16,7 @@ fact_check_date: "2026-08-18"
 
 Thirty days can make a FAICO revision plan sharper if you already have a working base in your chosen subspecialty. It is not enough time to build that base from zero or to read every reference cover to cover. Use legitimate past-question material to identify recurring decisions, repair the weak themes it reveals, then practise explaining those decisions under time. A familiar recalled question is not a forecast of the next examination.
 
-Before choosing Day 1, check the current [AIOS About FAICO page](https://www.aios.org/article-66-about-faico.php), your candidate communication and the live application route. AIOS is the authority for the cycle’s eligibility, specialty, assessment arrangement, dates, fees, centres and instructions. This article deliberately does not repeat those volatile facts. The [FAICO preparation guide](/exams/faico) is an OphthaMCQ planning route, not an AIOS notice.
+Before choosing Day 1, check the current [AIOS About FAICO page](https://www.aios.org/article-66-about-faico.php), your candidate communication and the live application route. AIOS is the authority for the cycle’s eligibility, specialty, assessment arrangement, dates, fees, centres and instructions. This article deliberately does not repeat those volatile facts. The [FAICO preparation guide](/exams/faico/) is an OphthaMCQ planning route, not an AIOS notice.
 
 ## The operating rule: questions identify work; they do not replace it
 
@@ -74,7 +75,7 @@ Each day, work on one red theme in two blocks. In the first block, attempt 5–1
 
 A useful comparison sheet has five rows: definition or mechanism, positive clue, nearest alternative, investigation or image pattern, and exception or complication. It is much more usable in the final week than copied paragraphs. On the following day, test the same theme with fresh wording or a different image. If the wrong answer returns, the repair did not work yet; change the explanation source or narrow the theme further.
 
-For general topic mapping, the [glaucoma study guide](/topics/glaucoma) and [retina study guide](/topics/retina) can help locate broad subspecialty areas. They are not a substitute for a current primary reference or guideline where an answer depends on a nuanced or changing recommendation.
+For general topic mapping, the [glaucoma study guide](/topics/glaucoma/) and [retina study guide](/topics/retina/) can help locate broad subspecialty areas. They are not a substitute for a current primary reference or guideline where an answer depends on a nuanced or changing recommendation.
 
 ## Days 8–12: add images, investigations and complications
 
@@ -88,7 +89,7 @@ The middle of the sprint is where many candidates over-read. Instead, choose one
 
 If you use a question bank at this stage, review why the distractors were attractive. A distractor can reveal that you mixed levels of reasoning: diagnosis versus investigation, investigation versus interpretation, or principle versus complication. That information is more valuable than whether your first-pass percentage rises by a few points.
 
-The site has [free FAICO sample questions](/free-mcqs/faico) as a retrieval route. Use them as practice material, not as an AIOS paper. If you are considering the paid [FAICO MCQs](/products/faico-mcqs), inspect its current description and sample information before purchase; OphthaMCQ is an independent preparation provider and does not set the FAICO assessment.
+The site has [free FAICO sample questions](/free-mcqs/faico/) as a retrieval route. Use them as practice material, not as an AIOS paper. If you are considering the paid [FAICO MCQs](/products/faico-mcqs/), inspect its current description and sample information before purchase; OphthaMCQ is an independent preparation provider and does not set the FAICO assessment.
 
 ## Days 13–17: make the questions less recognisable
 
@@ -124,7 +125,7 @@ Review the simulation on the same day. Separate a knowledge error from a perform
 
 By now, your control sheet should be small. Keep one page for each remaining red theme, one master sheet of recurrent qualifiers and a list of five spoken prompts. Stop making fresh notes unless a new source corrects a genuine error. This is also the time to re-test earlier red themes in mixed material; an answer that is correct only in its original topic pile has not fully transferred.
 
-If you have used the [OphthaMCQ free resources hub](/resources), return only to the route that fixes a named gap. A glossary can clarify terminology, a topic guide can provide orientation, and an MCQ set can test retrieval. None replaces the official candidate information for your FAICO cycle.
+If you have used the [OphthaMCQ free resources hub](/resources/), return only to the route that fixes a named gap. A glossary can clarify terminology, a topic guide can provide orientation, and an MCQ set can test retrieval. None replaces the official candidate information for your FAICO cycle.
 
 ## Days 29–30: taper without pretending the work is finished
 

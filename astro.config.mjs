@@ -9,6 +9,9 @@ import { fileURLToPath } from 'node:url';
 import stripEditorialSections from './src/utils/remark-strip-editorial.js';
 import rehypeWrapTables from './src/utils/rehype-wrap-tables.js';
 import indexNow from './src/integrations/indexnow.js';
+import { createLastmodResolver } from './src/utils/lastmod.js';
+
+const lastmodFor = createLastmodResolver(process.cwd());
 
 /**
  * @astrojs/sitemap writes sitemap-index.xml + sitemap-0.xml.
@@ -55,7 +58,17 @@ export default defineConfig({
   },
   // Canonical host is apex (www redirects to non-www in production).
   site: 'https://ophthamcq.org',
-  integrations: [sitemap(), sitemapXmlAlias(), indexNow()],
+  integrations: [
+    sitemap({
+      // Crawlers get no freshness signal without this — see src/utils/lastmod.js.
+      serialize(item) {
+        item.lastmod = lastmodFor(new URL(item.url).pathname);
+        return item;
+      },
+    }),
+    sitemapXmlAlias(),
+    indexNow(),
+  ],
   markdown: {
     remarkPlugins: [stripEditorialSections],
     rehypePlugins: [rehypeWrapTables],

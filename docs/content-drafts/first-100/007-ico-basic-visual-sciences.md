@@ -1,5 +1,6 @@
 ---
 title: "ICO Basic Visual Sciences (BVS): Syllabus, Question Style and High-Yield Areas"
+seo_title: "ICO Basic Visual Sciences (BVS)"
 proposed_slug: "ico-basic-visual-sciences-bvs-syllabus-question-style"
 meta_description: "A source-led ICO Visual Sciences (BVS) guide: current question format, revision map, eight-week plan, timed practice method and error-log system."
 excerpt: "A source-led ICO Visual Sciences (BVS) guide: current question format, revision map, eight-week plan, timed practice method and error-log system."
@@ -24,7 +25,7 @@ The ICO describes its Standard Examinations as three subject areas: Visual Scien
 
 In practical terms, Visual Sciences is not a detached hurdle. It supplies the language you will use later: optics for refraction and instruments; retinal physiology for visual function; inflammation and microbiology for clinical reasoning; epidemiology for interpreting evidence. That is why a memorised list of isolated facts collapses under mixed questioning.
 
-Use the [ICO / FICO preparation guide](/exams/ico-fico) to navigate the broader route. The official [ICO examination overview](https://icoph.org/ico-examination/) is the authority for current dates, registration and pathway conditions.
+Use the [ICO / FICO preparation guide](/exams/ico-fico/) to navigate the broader route. The official [ICO examination overview](https://icoph.org/ico-examination/) is the authority for current dates, registration and pathway conditions.
 
 ## Current question style: what it changes in your preparation
 
@@ -99,7 +100,7 @@ Candidates often ask for the “most repeated” BVS list. A third-party list ma
 
 These are not predictions about question frequency. They are foundations that make later ICO papers easier to learn and give you more than one retrieval route for the same fact. Follow the official syllabus if it requires a domain that your personal list omits.
 
-For optics-focused consolidation, the on-site [Optics & Refraction Notes page](/products/optics-notes) describes an OphthaMCQ resource. Check its live product description and sample yourself; it is not an ICO syllabus or endorsement.
+For optics-focused consolidation, the on-site [Optics & Refraction Notes page](/products/optics-notes/) describes an OphthaMCQ resource. Check its live product description and sample yourself; it is not an ICO syllabus or endorsement.
 
 ## An eight-week template for a resident who is working
 
@@ -147,7 +148,7 @@ Keep one page with your component, official URLs, access date, booking confirmat
 4. Draw one anatomy diagram and complete five optics/statistics calculations from your named source.
 5. Book two protected 45-minute sessions and one mixed-question session for the coming week.
 
-If you want a practice resource after this baseline, review the [ICO Basic Visual Sciences MCQs page](/products/ico-basic-visual-sciences). It describes an OphthaMCQ product; purchase decisions and the current product scope belong to the live store listing, not this article. You can also use the [free ICO/FICO MCQs](/free-mcqs/ico-fico) as a low-friction start to an error log.
+If you want a practice resource after this baseline, review the [ICO Basic Visual Sciences MCQs page](/products/ico-basic-visual-sciences/). It describes an OphthaMCQ product; purchase decisions and the current product scope belong to the live store listing, not this article. You can also use the [free ICO/FICO MCQs](/free-mcqs/ico-fico/) as a low-friction start to an error log.
 
 ## Sources
 

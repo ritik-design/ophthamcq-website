@@ -5,6 +5,7 @@ import Icon from '../components/Icon.astro';
 import Illustration from '../components/Illustration.astro';
 import PageHero from '../components/PageHero.astro';
 import { NOTE_PREVIEWS } from '../data/note-previews';
+import { imageSize } from '../utils/image-size.js';
 
 const noteProducts = PRODUCTS.filter(p => p.category === 'notes');
 const previewById = new Set(NOTE_PREVIEWS.map(p => p.productId));
@@ -80,15 +81,16 @@ const notesFaq = [
 ---
 
 <Layout
-  title="Handwritten Ophthalmology Notes — Exam Ready for FRCOphth, DNB, ICO, FAICO"
-  description="Handwritten ophthalmology notes distilled from Kanski, Ryan, Elkington and BCSC. Exam-ready PG study material for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS residents."
+  breadcrumbs={[{ name: 'Notes' }]}
+  title="Handwritten Ophthalmology Notes for PG Exams"
+  description="Handwritten ophthalmology notes distilled from Kanski, Ryan, Elkington and BCSC — exam-ready PG material for FRCOphth, ICO/FICO, FAICO and DNB."
 >
   <PageHero
     eyebrow="PG Ophthalmology Study Material"
     eyebrowIcon="notes"
     titleHtml={`Handwritten <span class="text-sky-600">Exam Notes</span> for Ophthalmology`}
     description="The world's only ophthalmology exam-ready notes designed for FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS. No 50-page chapters — just the exact points the exam tests, written by doctors who passed."
-    primaryCta={{ href: '/free-mcqs', label: 'Try 200 Free MCQs' }}
+    primaryCta={{ href: '/free-mcqs/', label: 'Try 200 Free MCQs' }}
     secondaryCta={{ href: '#free-samples', label: 'Browse Full PDFs' }}
     trust={[
       { value: '8+', label: 'Note sets' },
@@ -178,7 +180,7 @@ const notesFaq = [
               </div>
             ))}
           </div>
-          <a href="/topics" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800">
+          <a href="/topics/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:text-sky-800">
             Explore all topics
             <Icon name="chevronRight" class="w-4 h-4" />
           </a>
@@ -202,13 +204,15 @@ const notesFaq = [
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {sampleNotes.map(({ preview, product }) => (
           <a
-            href={`/products/${product.id}#sample-pdf`}
+            href={`/products/${product.id}/#sample-pdf`}
             class="group flex flex-col rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden hover:shadow-lg hover:border-sky-200 transition-all"
           >
             <div class="relative h-48 bg-slate-200 overflow-hidden">
               <img
                 src={`/note-previews/${product.id}/page-01.webp`}
                 alt={`${product.name} cover sample`}
+                width={imageSize(`/note-previews/${product.id}/page-01.webp`)?.width}
+                height={imageSize(`/note-previews/${product.id}/page-01.webp`)?.height}
                 loading="lazy"
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
               />
@@ -245,6 +249,8 @@ const notesFaq = [
               <img
                 src={n.image}
                 alt={n.fullName}
+                width={n.imageWidth}
+                height={n.imageHeight}
                 loading="lazy"
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -260,7 +266,7 @@ const notesFaq = [
               <div class="flex flex-col gap-2">
                 {previewById.has(n.id) && (
                   <a
-                    href={`/products/${n.id}#sample-pdf`}
+                    href={`/products/${n.id}/#sample-pdf`}
                     class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-colors"
                   >
                     View full PDF
@@ -357,7 +363,7 @@ const notesFaq = [
         {notesByExam.map(group => {
           const items = group.bundle.map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
           return (
-            <a href={`/exams/${group.slug}`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+            <a href={`/exams/${group.slug}/`} class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
               <div class="flex items-center justify-between mb-3">
                 <h3 class="text-lg font-bold text-slate-900">{group.exam}</h3>
                 <Icon name="chevronRight" class="w-5 h-5 text-slate-400 group-hover:text-sky-600 group-hover:translate-x-0.5 transition-all" />
@@ -387,11 +393,11 @@ const notesFaq = [
         see exactly how we explain things — then decide which note bundle to invest in.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/free-mcqs" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-sky-700 hover:bg-sky-50 transition-colors">
+        <a href="/free-mcqs/" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-sky-700 hover:bg-sky-50 transition-colors">
           Practice 200 Free MCQs
           <Icon name="arrowRight" class="w-4 h-4" />
         </a>
-        <a href="/glossary" class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+        <a href="/glossary/" class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
           Browse 316-term Glossary
         </a>
       </div>
@@ -430,7 +436,7 @@ const notesFaq = [
           ))}
         </div>
         <div class="mt-10 text-center">
-          <a href="/success-stories" class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+          <a href="/success-stories/" class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
             Read all success stories
             <Icon name="chevronRight" class="w-4 h-4" />
           </a>
@@ -459,9 +465,9 @@ const notesFaq = [
         ))}
       </div>
       <div class="mt-10 grid sm:grid-cols-3 gap-4 text-center">
-        <a href="/resources" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Free Resources</a>
-        <a href="/pricing" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">See Pricing</a>
-        <a href="/contact" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Talk to Us</a>
+        <a href="/resources/" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Free Resources</a>
+        <a href="/pricing/" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">See Pricing</a>
+        <a href="/contact/" class="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 transition-all">Talk to Us</a>
       </div>
     </div>
   </section>

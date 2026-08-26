@@ -1,5 +1,6 @@
 ---
 title: "Ophthalmology Apps for Residents: Choose by Study Job, Not Star Rating"
+seo_title: "Best Ophthalmology Apps for Residents 2026"
 proposed_slug: "best-ophthalmology-apps-for-residents-2026"
 meta_description: "Choose an ophthalmology app by study job: MCQ retrieval, source checking, image learning, note review or calculation. A resident-focused comparison framework."
 excerpt: "No ophthalmology app is best for every resident. Choose the smallest app stack that fixes a named study problem and check the live store listing before installing."
@@ -46,13 +47,13 @@ Try this five-question audit during any sample or trial:
 
 If the explanation only states the correct option, the app may provide practice but not much repair. If it cites a source, open the source for a claim that feels unfamiliar, current or contentious. If it does not match the paper or specialty you are preparing for, keep it as broad learning material rather than using it to drive final-week revision.
 
-For a no-purchase diagnostic, [free ophthalmology MCQs](/free-mcqs) offer an on-site question route. The repository verifies that the route contains questions with explanations; it is not presented as an official paper or a prediction of any result. For a mixed session, [general ophthalmology free MCQs](/free-mcqs/general) are more useful than resetting a familiar topic set merely to improve a percentage.
+For a no-purchase diagnostic, [free ophthalmology MCQs](/free-mcqs/) offer an on-site question route. The repository verifies that the route contains questions with explanations; it is not presented as an official paper or a prediction of any result. For a mixed session, [general ophthalmology free MCQs](/free-mcqs/general/) are more useful than resetting a familiar topic set merely to improve a percentage.
 
 ## OphthaMCQ’s app: what is verified, and what still needs a store check
 
 OphthaMCQ publishes links to an Android listing and an iOS listing from the site configuration. Both official store URLs were reachable on 18 August 2026: [Google Play](https://play.google.com/store/apps/details?id=com.bktxsx.ucjcrq) and the [Apple App Store](https://apps.apple.com/in/app/ophtha-mcq-faico-ico-pdcet-frc/id6759045904). That verifies the existence of the listing endpoints, not the permanence of any price, rating, country availability, privacy label, feature, update promise or purchase entitlement.
 
-The sensible way to assess the app is the same as any other question resource. First, open the current listing in the store region you use. Check the developer, current compatibility, update date, privacy disclosure and support route. Then sample the study workflow through the [free MCQs](/free-mcqs) before considering a paid resource. If you need a product-specific route, [High Yield MCQs](/products/high-yield-mcqs) is an on-site product page to inspect; its live store hand-off and current terms, rather than this article, control any purchase.
+The sensible way to assess the app is the same as any other question resource. First, open the current listing in the store region you use. Check the developer, current compatibility, update date, privacy disclosure and support route. Then sample the study workflow through the [free MCQs](/free-mcqs/) before considering a paid resource. If you need a product-specific route, [High Yield MCQs](/products/high-yield-mcqs/) is an on-site product page to inspect; its live store hand-off and current terms, rather than this article, control any purchase.
 
 OphthaMCQ is an independent preparation provider. It is not AIOS, ICO, the Royal College of Ophthalmologists, AAO, NBEMS or an official source for an examination’s rules. Use the relevant body’s current information for those rules.
 
@@ -68,7 +69,7 @@ Keep the hierarchy clear. An examination app can prompt you to revise a classifi
 
 The best use of an image resource is not rapid scrolling. It is deliberate uncertainty. Hide the caption, then state what you see before looking up the diagnosis: anatomical location, quality of the image, two positive signs, nearest differential, and the one feature that changes the answer.
 
-Resources such as [Cybersight](https://cybersight.org/) can provide ophthalmic learning material, but catalogue access and individual content should be checked when you use them. Pair image work with the relevant on-site topic map: the [retina study guide](/topics/retina) for broad retinal revision or the [cornea study guide](/topics/cornea) for corneal topics. A topic map helps you name the gap; the original educational or reference source should resolve it.
+Resources such as [Cybersight](https://cybersight.org/) can provide ophthalmic learning material, but catalogue access and individual content should be checked when you use them. Pair image work with the relevant on-site topic map: the [retina study guide](/topics/retina/) for broad retinal revision or the [cornea study guide](/topics/cornea/) for corneal topics. A topic map helps you name the gap; the original educational or reference source should resolve it.
 
 Use an image-app session in a small loop:
 
@@ -92,7 +93,7 @@ This distinction also avoids a common exam error: memorising the location of a b
 
 A mobile reader is useful when it removes friction from short study slots. It is not useful when it turns your phone into a graveyard of downloaded PDFs. Keep one current core note set, one error log and one folder of images or calculation sheets. Delete or archive duplicate copies only when you know which version is current.
 
-The [Handwritten Exam Ready Notes](/notes) route includes on-site note material and selected sample pages. Use sample pages to assess format, then return to a current standard source when a concept, classification or guideline-sensitive point is uncertain. A clean reader workflow is: search one term, annotate one error, close the document, then reproduce the idea from memory. Reading with the file permanently open is exposure, not retrieval.
+The [Handwritten Exam Ready Notes](/notes/) route includes on-site note material and selected sample pages. Use sample pages to assess format, then return to a current standard source when a concept, classification or guideline-sensitive point is uncertain. A clean reader workflow is: search one term, annotate one error, close the document, then reproduce the idea from memory. Reading with the file permanently open is exposure, not retrieval.
 
 ## A 15-minute install audit
 
@@ -112,7 +113,7 @@ At the end, limit yourself to one primary app or mobile resource per job for a t
 
 The app-versus-browser question is often a distraction. A browser may be better when you need an official notice, a long guideline, a cited paper, a full image case or a large table. An app may be better for a short closed-book question set, flashcard review or a small reference card. The right tool is the one that preserves the source trail and fits the available time.
 
-For a resident building an exam plan, start with the current official examination information, then use [OphthaMCQ’s free resources hub](/resources) to select a question, glossary, topic or planning route. Keep the free-resource route separate from any app purchase decision. You can run a reliable study system with one browser bookmark, one question source and one error log; the number of installed apps is not a measure of preparation.
+For a resident building an exam plan, start with the current official examination information, then use [OphthaMCQ’s free resources hub](/resources/) to select a question, glossary, topic or planning route. Keep the free-resource route separate from any app purchase decision. You can run a reliable study system with one browser bookmark, one question source and one error log; the number of installed apps is not a measure of preparation.
 
 ## Ignore comparison signals that do not answer your problem
 

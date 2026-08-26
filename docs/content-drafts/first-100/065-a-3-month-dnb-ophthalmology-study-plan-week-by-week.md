@@ -38,7 +38,7 @@ Then mark capacity honestly. A resident with OPD and calls should not borrow the
 | Call-heavy week | 25-minute rescue block on most days | three focused blocks plus one mixed set |
 | Post-call day | error-log review or an oral prompt | low-load image or formula drill; no difficult new mechanism |
 
-The rescue block is ten questions or one error-log page, a five-line explanation and one 60-second answer aloud. It preserves continuity; it is not a substitute for deeper work. Use the [DNB Ophthalmology preparation guide](/exams/dnb) for a verified on-site planning route, while keeping NBEMS documents in charge of current rules.
+The rescue block is ten questions or one error-log page, a five-line explanation and one 60-second answer aloud. It preserves continuity; it is not a substitute for deeper work. Use the [DNB Ophthalmology preparation guide](/exams/dnb/) for a verified on-site planning route, while keeping NBEMS documents in charge of current rules.
 
 ## The operating system for every topic
 
@@ -58,7 +58,7 @@ Keep one error ledger with topic, missed cue, error tag, correct distinction, so
 
 Attempt a representative mixed set under reproducible conditions. Include basic science, optics/refraction, glaucoma, retina, cornea/cataract, uveitis, neuro-ophthalmology, paediatric ophthalmology/squint and oculoplastics. Add two short written answers or spoken prompts so that organisation failures become visible. The result is neither a predicted rank nor a pass prediction.
 
-Produce three sheets only: an error ledger, an optics/formula sheet and an image/investigation sheet. Do not begin rewriting a textbook. [General ophthalmology free MCQs](/free-mcqs/general) are a verified practice route if useful, but they are not a representation of an NBEMS paper. Choose one broad clinical reference, one targeted depth source and one revision format. More resources are not a plan.
+Produce three sheets only: an error ledger, an optics/formula sheet and an image/investigation sheet. Do not begin rewriting a textbook. [General ophthalmology free MCQs](/free-mcqs/general/) are a verified practice route if useful, but they are not a representation of an NBEMS paper. Choose one broad clinical reference, one targeted depth source and one revision format. More resources are not a plan.
 
 ### Week 2: priorities and answer architecture
 
@@ -76,15 +76,15 @@ Read one principle, write the formula and units, solve variations closed-book an
 
 ### Week 4: cornea and cataract
 
-Practise discrimination. Build tables that force adjacent entities apart: epithelial, stromal and endothelial clues; cataract morphology and associated findings; or complications and their distinguishing signs. The goal is not to copy every table from a book. It is to state the two or three features that separate close options. Write one structured answer from memory after each loop, compare with the reference, and log omissions. The [cataract study guide](/topics/cataract) is a verified contextual map, not a replacement for a current reference.
+Practise discrimination. Build tables that force adjacent entities apart: epithelial, stromal and endothelial clues; cataract morphology and associated findings; or complications and their distinguishing signs. The goal is not to copy every table from a book. It is to state the two or three features that separate close options. Write one structured answer from memory after each loop, compare with the reference, and log omissions. The [cataract study guide](/topics/cataract/) is a verified contextual map, not a replacement for a current reference.
 
 ### Week 5: glaucoma and uveitis
 
-Connect anatomy, aqueous concepts, disc/field interpretation and the vocabulary used in a theory or viva answer. Do not learn eponyms without explaining the finding that separates mechanisms. For uveitis, use structured comparisons: anatomical classification, course, associated clues and why a sign matters. Where a current recommendation is uncertain, consult the underlying authority rather than turning an old revision note into a clinical instruction. Use the [glaucoma study guide](/topics/glaucoma) to organise revision maps and questions.
+Connect anatomy, aqueous concepts, disc/field interpretation and the vocabulary used in a theory or viva answer. Do not learn eponyms without explaining the finding that separates mechanisms. For uveitis, use structured comparisons: anatomical classification, course, associated clues and why a sign matters. Where a current recommendation is uncertain, consult the underlying authority rather than turning an old revision note into a clinical instruction. Use the [glaucoma study guide](/topics/glaucoma/) to organise revision maps and questions.
 
 ### Week 6: retina and neuro-ophthalmology
 
-Make this an image-and-localisation week. For every OCT, fundus image, angiographic description or field pattern, say: modality, visible features, likely pattern/localisation and one distinguishing alternative. This prevents a vague answer when an image initially feels unfamiliar. Pair neuro-ophthalmic signs with localisation, and retinal lesions with the classification or mechanism that distinguishes close options. The [retina study guide](/topics/retina) is a verified lateral route.
+Make this an image-and-localisation week. For every OCT, fundus image, angiographic description or field pattern, say: modality, visible features, likely pattern/localisation and one distinguishing alternative. This prevents a vague answer when an image initially feels unfamiliar. Pair neuro-ophthalmic signs with localisation, and retinal lesions with the classification or mechanism that distinguishes close options. The [retina study guide](/topics/retina/) is a verified lateral route.
 
 Finish with another mixed set. Compare error *types* with week 1, not only the total correct. If a Band A mechanism still dominates, schedule it again in week 8 or 9; chapter completion is not evidence that it has improved.
 
@@ -96,7 +96,7 @@ These subjects reward sequence. For squint, start with observation, then test/me
 
 ### Week 8: systemic links, pathology and weak-area repair
 
-Use this as flexible catch-up, not a dumping ground. Choose one systemic/ocular interface, one pathology or pharmacology gap, and the largest surviving Band A theme. Build comparisons linking systemic clue, ocular finding, mechanism and differential. Review source-labelled previous-question themes as concept prompts. The [Past 5-Year Question Papers DNB/DO](/products/dnb-do-past-5-year-papers) page is a verified product route if you want to inspect its sample/current details; it is not an NBEMS publication or a fixed blueprint.
+Use this as flexible catch-up, not a dumping ground. Choose one systemic/ocular interface, one pathology or pharmacology gap, and the largest surviving Band A theme. Build comparisons linking systemic clue, ocular finding, mechanism and differential. Review source-labelled previous-question themes as concept prompts. The [Past 5-Year Question Papers DNB/DO](/products/dnb-do-past-5-year-papers/) page is a verified product route if you want to inspect its sample/current details; it is not an NBEMS publication or a fixed blueprint.
 
 ### Week 9: mixed work and answer construction
 
@@ -112,7 +112,7 @@ Run one or two timed simulations under constraints you can reproduce. Do not cal
 
 Use current NBEMS instructions for logistics. For study, use a portable sequence: observe, state findings, organise their significance or differential, defend the reasoning, then stop. Practise with supervised clinical material and authorised departmental lists. Rotate a case presentation, instrument/drug prompt, investigation interpretation and short viva response across the week.
 
-[OSCE, Practical & Viva Voce Ready](/osce) is the relevant OphthaMCQ route if its study format suits you. Sample pages for [Ophthalmology Case Presentation Format](/products/case-presentation-format-notes) and [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva) are optional aids, not NBEMS materials or clinical-supervision substitutes.
+[OSCE, Practical & Viva Voce Ready](/osce/) is the relevant OphthaMCQ route if its study format suits you. Sample pages for [Ophthalmology Case Presentation Format](/products/case-presentation-format-notes/) and [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva/) are optional aids, not NBEMS materials or clinical-supervision substitutes.
 
 ### Week 12: controlled taper and document check
 
@@ -122,7 +122,7 @@ Do not start a new major source. Revisit the error ledger, formula sheet, image 
 
 Do not compress two missed weeks into one heroic weekend. Preserve official-document checks and practical rehearsal first, then Band A loops and mixed retrieval. Merge Band B facts into revision cards. Park Band C details and any new resource purchase. If a posting removes a week, repeat the phase rather than pretending its goals were met. The timetable succeeds only if it survives residency.
 
-For broader free practice, use the [OphthaMCQ free-MCQ hub](/free-mcqs) and choose a category that fits the actual gap. Questions decide the next reading task; they are not a daily-count competition.
+For broader free practice, use the [OphthaMCQ free-MCQ hub](/free-mcqs/) and choose a category that fits the actual gap. Questions decide the next reading task; they are not a daily-count competition.
 
 ## Sources
 

@@ -1,71 +1,38 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { PRODUCTS } from '../../config';
 import Icon from '../../components/Icon.astro';
 import Illustration from '../../components/Illustration.astro';
 import FinalCTA from '../../components/sections/FinalCTA.astro';
+import { COMPARE_PAGES, COMPARE_SLUGS, VERIFY_NOTE } from '../../data/compare-pages';
+import { SITE } from '../../config';
 
 export function getStaticPaths() {
-  return [
-    { params: { slug: 'best-ophthalmology-question-banks' } },
-    { params: { slug: 'ophthoquestions-vs-ophthamcq' } },
-    { params: { slug: 'ophthamcq-vs-prepguidance' } },
-    { params: { slug: 'best-app-for-ophthalmology-mcqs' } },
-  ];
+  return COMPARE_SLUGS.map((slug) => ({ params: { slug } }));
 }
 
 const { slug } = Astro.params;
+const page = COMPARE_PAGES[slug as string] ?? COMPARE_PAGES['best-ophthalmology-question-banks'];
 
-const pages: Record<string, any> = {
-  'best-ophthalmology-question-banks': {
-    title: 'Best Ophthalmology Question Banks (2026)',
-    description: 'Compare the top ophthalmology question banks for FRCOphth, ICO, FAICO, DNB and NEET-SS. Features, pricing, and which is best for you.',
-    h1: 'Best Ophthalmology Question Banks',
-    intro: 'Choosing the right question bank can make or break your exam preparation. Here is how the top platforms compare.',
-    competitors: [
-      { name: 'OphthaMCQ', price: '₹249–₹1,799', notes: '✅', pastPapers: '✅', mobile: '✅ iOS + Android', freeTrial: '50 free MCQs', bestFor: 'Indian + International exams' },
-      { name: 'OphthoQuestions', price: '$314.99/6mo', notes: '❌', pastPapers: '❌', mobile: '⚠️ Web only', freeTrial: 'Limited demo', bestFor: 'US board exams' },
-      { name: 'EyeDocs / EyeQ', price: '£79–99', notes: '❌', pastPapers: '❌', mobile: '❌', freeTrial: 'Limited', bestFor: 'UK FRCOphth' },
-      { name: 'PrepGuidance', price: '₹999–₹8,995', notes: '❌', pastPapers: '✅', mobile: '✅ Android', freeTrial: '❌', bestFor: 'DNB/NEET-SS' },
-    ],
-  },
-  'ophthoquestions-vs-ophthamcq': {
-    title: 'OphthoQuestions vs OphthaMCQ (2026 Comparison)',
-    description: 'Detailed comparison of OphthoQuestions and OphthaMCQ. Pricing, features, notes, mobile apps, and which one is right for you.',
-    h1: 'OphthoQuestions vs OphthaMCQ',
-    intro: 'OphthoQuestions is the established US leader. OphthaMCQ is the India-focused challenger with handwritten notes and past papers.',
-    competitors: [
-      { name: 'OphthaMCQ', price: '₹249–₹1,799', notes: '✅ Handwritten', pastPapers: '✅ ICO/FICO', mobile: '✅ iOS + Android', freeTrial: '50 free MCQs', bestFor: 'Value + notes' },
-      { name: 'OphthoQuestions', price: '$314.99/6mo', notes: '❌', pastPapers: '❌', mobile: '⚠️ Web only', freeTrial: 'Limited demo', bestFor: 'Large US question bank' },
-    ],
-  },
-  'ophthamcq-vs-prepguidance': {
-    title: 'OphthaMCQ vs PrepGuidance (2026 Comparison)',
-    description: 'Compare OphthaMCQ and PrepGuidance for DNB, MS, and NEET-SS ophthalmology preparation. Pricing, faculty, and features.',
-    h1: 'OphthaMCQ vs PrepGuidance',
-    intro: 'Both platforms serve Indian PG residents, but with very different approaches and price points.',
-    competitors: [
-      { name: 'OphthaMCQ', price: '₹249–₹1,799', notes: '✅ Handwritten', pastPapers: '✅ ICO/FICO', mobile: '✅ iOS + Android', freeTrial: '50 free MCQs', bestFor: 'Affordable, mobile-first' },
-      { name: 'PrepGuidance', price: '₹999–₹8,995', notes: '❌', pastPapers: '✅ DNB solved', mobile: '✅ Android', freeTrial: '❌', bestFor: 'Video + faculty mentorship' },
-    ],
-  },
-  'best-app-for-ophthalmology-mcqs': {
-    title: 'Best App for Ophthalmology MCQs (2026)',
-    description: 'Find the best mobile app for ophthalmology MCQ practice. Compare features, offline access, and pricing.',
-    h1: 'Best App for Ophthalmology MCQs',
-    intro: 'Medical residents study on their phones. Here is how the top ophthalmology MCQ apps compare.',
-    competitors: [
-      { name: 'OphthaMCQ', price: '₹249–₹1,799', notes: '✅', pastPapers: '✅', mobile: '✅ iOS + Android', freeTrial: '50 free MCQs', bestFor: 'Best overall app' },
-      { name: 'OphthoQuestions', price: '$314.99/6mo', notes: '❌', pastPapers: '❌', mobile: '⚠️ Web only', freeTrial: 'Limited', bestFor: 'Desktop use' },
-      { name: 'PrepGuidance', price: '₹999+', notes: '❌', pastPapers: '✅', mobile: '✅ Android', freeTrial: '❌', bestFor: 'Android users' },
-    ],
-  },
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  '@id': `${canonical}#faq`,
+  mainEntity: page.faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
 };
-
-const page = pages[slug] || pages['best-ophthalmology-question-banks'];
 ---
 
-<Layout title={page.title} description={page.description}>
+
+<Layout
+  title={page.title}
+  description={page.description}
+  breadcrumbs={[{ name: 'Compare', href: '/resources/' }, { name: page.h1 }]}
+  schema={[faqSchema]}
+>
   <div class="site-hero bg-white border-b border-slate-200">
     <div class="site-hero-inner mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-10">
       <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center w-full">
@@ -84,8 +51,25 @@ const page = pages[slug] || pages['best-ophthalmology-question-banks'];
     </div>
   </div>
 
+  <!-- Lede -->
+  <div class="bg-white py-14 lg:py-16 border-b border-slate-200">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      {page.lede.map((para) => (
+        <p class="text-base sm:text-lg text-slate-700 leading-relaxed mb-5 last:mb-0">{para}</p>
+      ))}
+    </div>
+  </div>
+
   <div class="bg-slate-50 py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3">
+        Feature comparison
+      </h2>
+      <div class="max-w-3xl mb-8">
+        {page.method.map((para) => (
+          <p class="text-slate-600 leading-relaxed mb-3 last:mb-0">{para}</p>
+        ))}
+      </div>
       <div class="table-scroll overflow-x-auto" tabindex="0" role="region" aria-label="Table, scroll horizontally to see more">
         <table class="w-full text-left border-collapse">
           <thead>
@@ -100,7 +84,7 @@ const page = pages[slug] || pages['best-ophthalmology-question-banks'];
             </tr>
           </thead>
           <tbody>
-            {page.competitors.map((c: any, i: number) => (
+            {page.competitors.map((c, i) => (
               <tr class={`border-b border-slate-200 ${i === 0 ? 'bg-sky-50/50' : 'bg-white'}`}>
                 <td class="py-4 px-4 font-semibold text-slate-900">{c.name}</td>
                 <td class="py-4 px-4 text-sm text-slate-600">{c.price}</td>
@@ -115,11 +99,111 @@ const page = pages[slug] || pages['best-ophthalmology-question-banks'];
         </table>
       </div>
 
+      <p class="mt-6 max-w-3xl text-sm text-slate-500 leading-relaxed">{VERIFY_NOTE}</p>
+
       <div class="mt-12 text-center">
-        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-sky-700 transition-colors">
-          Try OphthaMCQ Free
+        <a href="/free-mcqs/" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-sky-700 transition-colors">
+          Try OphthaMCQ free
           <Icon name="arrowRight" class="w-5 h-5" />
         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Honest fit guide -->
+  <div class="bg-white py-16 lg:py-24 border-b border-slate-200">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3">
+        When each one is the right choice
+      </h2>
+      <p class="text-slate-600 mb-10 max-w-2xl">
+        We publish one of these products. Where a rival is the better buy for your exam, it says so
+        below.
+      </p>
+      <div class="space-y-6">
+        {page.verdicts.map((v) => (
+          <div class="rounded-2xl border border-slate-200 p-6">
+            <h3 class="text-lg font-bold text-slate-900 m-0">Choose {v.name} when…</h3>
+            <p class="mt-3 text-slate-700 leading-relaxed m-0">{v.chooseWhen}</p>
+            <p class="mt-4 text-slate-600 leading-relaxed m-0">
+              <span class="font-semibold text-slate-900">The trade-off: </span>{v.tradeOff}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Decision guide by exam -->
+  <div class="bg-slate-50 py-16 lg:py-24 border-b border-slate-200">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3">
+        Pick by the exam you are sitting
+      </h2>
+      <p class="text-slate-600 mb-8 max-w-2xl">
+        The blueprint decides this more than any feature does.
+      </p>
+      <div class="table-scroll overflow-x-auto" tabindex="0" role="region" aria-label="Table, scroll horizontally to see more">
+        <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden">
+          <thead>
+            <tr class="border-b-2 border-slate-300">
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Your exam</th>
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Our pick</th>
+              <th class="py-4 px-4 text-sm font-bold text-slate-900">Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            {page.byExam.map((row) => (
+              <tr class="border-b border-slate-200">
+                <td class="py-4 px-4 font-semibold text-slate-900 whitespace-nowrap">{row.exam}</td>
+                <td class="py-4 px-4 text-sm font-medium text-sky-800 whitespace-nowrap">{row.pick}</td>
+                <td class="py-4 px-4 text-sm text-slate-600">{row.why}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="bg-white py-16 lg:py-24 border-b border-slate-200">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-8">
+        Questions residents ask before buying
+      </h2>
+      <div class="space-y-4">
+        {page.faqs.map((faq) => (
+          <details class="group rounded-xl border border-slate-200 bg-white open:shadow-sm transition-all">
+            <summary class="flex cursor-pointer items-center justify-between p-5 text-left">
+              <span class="text-base font-semibold text-slate-900 pr-4">{faq.q}</span>
+              <Icon name="chevronDown" class="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+            </summary>
+            <div class="px-5 pb-5 -mt-1">
+              <p class="text-slate-600 leading-relaxed m-0">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Related deep dives -->
+  <div class="bg-slate-50 py-16 lg:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-6">
+        Read the long version
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        {page.related.map((r) => (
+          <a
+            href={r.href}
+            class="block rounded-2xl border border-slate-200 bg-white p-5 hover:border-sky-300 hover:shadow-sm transition-all"
+          >
+            <h3 class="text-base font-bold text-slate-900 m-0">{r.title}</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed m-0">{r.blurb}</p>
+          </a>
+        ))}
       </div>
     </div>
   </div>

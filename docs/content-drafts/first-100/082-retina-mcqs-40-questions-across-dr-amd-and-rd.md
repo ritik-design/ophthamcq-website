@@ -197,7 +197,7 @@ Do not redo all 40 answers tomorrow. Sort only the questions you missed into fou
 | Detachment mechanism | “What break, traction or exudation evidence is present?” |
 | Imaging behaviour | “Does fluorescence enlarge, stain in place, or show background through?” |
 
-Then take a mixed second pass in the [high-yield MCQ set](/free-mcqs/high-yield), rather than repeating this page until its order becomes familiar. The [retina study guide](/topics/retina) gives a broader topic route. If you need topic-organised material, inspect the current [Retina Deciphered page](/products/retina-deciphered) for its sample and product information; do not assume its contents from this article. Use the [ophthalmology glossary](/glossary) for a fast terminology check before returning to the missed stem.
+Then take a mixed second pass in the [high-yield MCQ set](/free-mcqs/high-yield/), rather than repeating this page until its order becomes familiar. The [retina study guide](/topics/retina/) gives a broader topic route. If you need topic-organised material, inspect the current [Retina Deciphered page](/products/retina-deciphered/) for its sample and product information; do not assume its contents from this article. Use the [ophthalmology glossary](/glossary/) for a fast terminology check before returning to the missed stem.
 
 ## Sources and scope
 

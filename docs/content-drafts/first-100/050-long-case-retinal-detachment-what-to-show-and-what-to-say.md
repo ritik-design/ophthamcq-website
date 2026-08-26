@@ -1,5 +1,6 @@
 ---
 title: "Long Case: Retinal Detachment — What to Show and What to Say"
+seo_title: "Retinal Detachment Case Presentation for Exams"
 proposed_slug: "long-case-retinal-detachment-what-to-show-and-what-to-say"
 meta_description: "An exam-focused retinal-detachment long-case guide: present the retinal map, show a systematic break search, distinguish RD types and handle the viva safely."
 excerpt: "In an RD long case, describe the retina before naming the operation: type, extent, macular status, breaks, PVR and the fellow eye are the map."
@@ -125,7 +126,7 @@ Before you finish, run this silent checklist:
 
 Practise the checklist aloud with a fundus photograph, then repeat it with a different configuration. The aim is not a polished speech. It is a sequence that still works when the break is not obvious, the macula cannot be assessed, or the case contains a red herring.
 
-For wider retinal terminology and pattern revision, use the [Retina study guide](/topics/retina). If handwritten, topic-organised material suits your revision system, review the sample for [Retina Deciphered](/products/retina-deciphered). For the practical examination format, the [OSCE, Practical & Viva Voce Ready bundle](/osce) is the relevant on-site resource; it does not replace supervised clinical training. DNB candidates can also use the [DNB Ophthalmology preparation guide](/exams/dnb) to connect theory revision with practical preparation. OphthaMCQ is independent and is not affiliated with examining colleges or societies.
+For wider retinal terminology and pattern revision, use the [Retina study guide](/topics/retina/). If handwritten, topic-organised material suits your revision system, review the sample for [Retina Deciphered](/products/retina-deciphered/). For the practical examination format, the [OSCE, Practical & Viva Voce Ready bundle](/osce/) is the relevant on-site resource; it does not replace supervised clinical training. DNB candidates can also use the [DNB Ophthalmology preparation guide](/exams/dnb/) to connect theory revision with practical preparation. OphthaMCQ is independent and is not affiliated with examining colleges or societies.
 
 ## Internal-link manifest
 

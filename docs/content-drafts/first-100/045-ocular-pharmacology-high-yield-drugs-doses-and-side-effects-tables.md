@@ -1,5 +1,6 @@
 ---
 title: "Ocular Pharmacology High-Yield: Drugs, Doses and Side Effects Tables"
+seo_title: "Ocular Pharmacology High-Yield"
 proposed_slug: "ocular-pharmacology-high-yield-drugs-doses-and-side-effects-tables"
 meta_description: "An exam-focused ocular pharmacology framework: class, target, effect, adverse-effect clues, dose-verification method and MCQ traps for ophthalmology PGs."
 excerpt: "Learn to reason from drug class to ocular effect and adverse-effect clue before you memorise a dose line."
@@ -159,7 +160,7 @@ Mydriatics, miotics, viscoelastics, antibiotics and anti-inflammatory agents may
 
 Use five minutes to review one mechanism grid, ten minutes for mixed reverse cards, ten minutes for timed MCQs and five minutes for error coding. Code every wrong answer as one of four failures: mechanism, route, adverse effect or wording. The next day, make a card only for the failed link. This prevents a 30-page drug list from becoming passive highlighting.
 
-For practical recall, organise cards by station prompt: “identify this bottle,” “state mechanism,” “mention two adverse effects,” “what would you verify before use?” That format also makes a viva answer safer. The [Ophthalmology Drugs Practical PDF](/products/ophthalmology-drugs-practical-pdf) and [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva) are on-site revision routes when you want practical-focused material; practise the mechanisms first, then check the exact current reference required by your examination.
+For practical recall, organise cards by station prompt: “identify this bottle,” “state mechanism,” “mention two adverse effects,” “what would you verify before use?” That format also makes a viva answer safer. The [Ophthalmology Drugs Practical PDF](/products/ophthalmology-drugs-practical-pdf/) and [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva/) are on-site revision routes when you want practical-focused material; practise the mechanisms first, then check the exact current reference required by your examination.
 
 ## Sources
 

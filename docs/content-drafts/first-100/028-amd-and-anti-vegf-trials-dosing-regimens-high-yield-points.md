@@ -1,5 +1,6 @@
 ---
 title: "AMD and Anti-VEGF: Trials, Dosing Regimens and High-Yield Points"
+seo_title: "AMD and Anti-VEGF MCQs: Trials and Dosing"
 proposed_slug: "amd-and-anti-vegf-trials-dosing-regimens-high-yield-points"
 meta_description: "Revise neovascular AMD anti-VEGF trials with MARINA, ANCHOR, CATT, IVAN and VIEW study cards, regimen definitions and explained MCQs."
 excerpt: "A trial-literacy framework for retina exams, not an individual treatment protocol."
@@ -149,7 +150,7 @@ State that VIEW 1/2 tested aflibercept regimens against monthly ranibizumab, and
 29. **What does a trial’s primary endpoint tell you?** The outcome it was designed and powered to assess, not every clinical consequence.
 30. **What is the core exam skill?** Accurate study identification and bounded interpretation.
 
-For topic-level revision, see the verified [retina study guide](/topics/retina). The [Retina Deciphered](/products/retina-deciphered) page and [free high-yield MCQs](/free-mcqs/high-yield) are existing OphthaMCQ resources. They are not AAO guidance and do not replace local protocols, regulatory information or specialist clinical judgement.
+For topic-level revision, see the verified [retina study guide](/topics/retina/). The [Retina Deciphered](/products/retina-deciphered/) page and [free high-yield MCQs](/free-mcqs/high-yield/) are existing OphthaMCQ resources. They are not AAO guidance and do not replace local protocols, regulatory information or specialist clinical judgement.
 
 ## Sources
 

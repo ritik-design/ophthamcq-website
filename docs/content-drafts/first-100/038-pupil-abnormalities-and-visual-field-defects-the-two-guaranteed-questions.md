@@ -1,5 +1,6 @@
 ---
 title: "Pupil Abnormalities and Visual Field Defects: The Two Guaranteed Questions"
+seo_title: "Pupil Abnormalities and Visual Field Defects"
 proposed_slug: "pupil-abnormalities-and-visual-field-defects-the-two-guaranteed-questions"
 meta_description: "Use a pattern-first exam framework for pupils and visual fields: distinguish afferent from efferent signs, draw the field, then localise."
 excerpt: "Pupil and field questions become manageable when you record the pattern before you name the lesion."
@@ -143,7 +144,7 @@ Use the same scratch-pad sequence every time.
 4. **Reject the near miss.** A third-nerve option does not explain a pure RAPD; optic neuritis does not automatically explain all monocular loss; a chiasmal option does not explain homonymy.
 5. **State the limitation.** In a viva, say what additional examination or test would be needed to move from pattern to cause.
 
-This is a better revision task than passively reading a pathway diagram. Take ten mixed questions, force yourself to redraw every field, and keep an error log with only three headings: mapping error, physiology error and premature diagnosis. The [neuro-ophthalmology study guide](/topics/neuro-ophthalmology) is the appropriate pillar page for wider optic-nerve and field revision. Use [general ophthalmology MCQs](/free-mcqs/general) or the [high-yield MCQ set](/free-mcqs/high-yield) to test mixed retrieval rather than practising this topic only in a familiar order.
+This is a better revision task than passively reading a pathway diagram. Take ten mixed questions, force yourself to redraw every field, and keep an error log with only three headings: mapping error, physiology error and premature diagnosis. The [neuro-ophthalmology study guide](/topics/neuro-ophthalmology/) is the appropriate pillar page for wider optic-nerve and field revision. Use [general ophthalmology MCQs](/free-mcqs/general/) or the [high-yield MCQ set](/free-mcqs/high-yield/) to test mixed retrieval rather than practising this topic only in a familiar order.
 
 ## Final recall card
 

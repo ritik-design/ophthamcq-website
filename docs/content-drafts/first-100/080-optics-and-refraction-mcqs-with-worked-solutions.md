@@ -167,7 +167,7 @@ For modest prescriptions, the thin-lens SBA model often ignores vertex distance.
 
 Do one pass without a calculator. On the second pass, write one-line error labels: `unit`, `sign`, `axis`, `image`, or `concept`. A list of error labels is more useful than re-reading all 30 explanations after every session.
 
-For mixed retrieval practice, use the verified [general ophthalmology MCQs](/free-mcqs/general). If your weakness is the underlying optics chapter rather than a calculation, see [Optics & Refraction Notes](/products/optics-notes). ICO / FICO candidates can also place this topic in their wider [ICO / FICO preparation plan](/exams/ico-fico). These are study resources, not a substitute for the current syllabus or your designated text.
+For mixed retrieval practice, use the verified [general ophthalmology MCQs](/free-mcqs/general/). If your weakness is the underlying optics chapter rather than a calculation, see [Optics & Refraction Notes](/products/optics-notes/). ICO / FICO candidates can also place this topic in their wider [ICO / FICO preparation plan](/exams/ico-fico/). These are study resources, not a substitute for the current syllabus or your designated text.
 
 ## Sources and scope
 

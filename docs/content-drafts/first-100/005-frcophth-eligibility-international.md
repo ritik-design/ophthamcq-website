@@ -1,7 +1,8 @@
 ---
 title: "FRCOphth Eligibility, Fees and Exam Dates for International Candidates"
+seo_title: "FRCOphth Eligibility for International Doctors"
 proposed_slug: "frcophth-eligibility-fees-dates-international-candidates"
-meta_description: "A source-led FRCOphth application guide for international candidates: eligibility, component prerequisites, documents, live fee/date checks and booking safeguards."
+meta_description: "An FRCOphth application guide for international candidates: eligibility, component prerequisites, documents, and live fee and date checks."
 excerpt: "A source-led FRCOphth application guide for international candidates: eligibility, component prerequisites, documents, live fee/date checks and booking safeguards."
 category: "Exam Guides"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -39,7 +40,7 @@ That route map should sit at the top of your planning file. It prevents two comm
 
 For a current Part 1 candidate, RCOphth states that all candidates must hold a medical qualification approved by the GMC or Irish Medical Council before registering. That is an eligibility statement for Part 1 on the official component page, not an instruction to guess whether your own degree is acceptable. If the wording, your qualification or your prior examination history leaves doubt, ask the examinations team through the stated route before booking.
 
-The [OphthaMCQ FRCOphth preparation guide](/exams/frcophth) can help you organise your study work once the administrative route is clear. OphthaMCQ is independent and is not affiliated with the Royal College of Ophthalmologists.
+The [OphthaMCQ FRCOphth preparation guide](/exams/frcophth/) can help you organise your study work once the administrative route is clear. OphthaMCQ is independent and is not affiliated with the Royal College of Ophthalmologists.
 
 ## The overseas first-time application route: use the official form, not email attachments
 
@@ -99,7 +100,7 @@ This is the most important caution for an Indian resident comparing internationa
 
 When your real question is “Will this help me work in the UK?”, convert it into a specific written query for the relevant organisation: *Does this named qualification meet the stated requirement for this named role or registration route, and what additional evidence is required?* Keep the answer with its date. That is much stronger than a forum claim that a qualification is “accepted everywhere”.
 
-For a broad comparison of exam routes, use the [ophthalmology exams hub](/exams). It is useful navigation, not regulatory advice.
+For a broad comparison of exam routes, use the [ophthalmology exams hub](/exams/). It is useful navigation, not regulatory advice.
 
 ## Common mistakes that cost candidates time
 
@@ -127,7 +128,7 @@ Written assessments, venues and candidate instructions can change. The component
 
 Administrative certainty should produce a clearer study decision, not a purchase reflex. Map the official syllabus to the weeks available, choose named references, and use questions to locate gaps. A resource is useful only if you can explain why an answer is correct and why the nearest distractor is wrong.
 
-If you are looking for an on-site practice option, the [FRCOphth Step 1 MCQs page](/products/frcophth-step-1-mcqs) describes an OphthaMCQ product. Review the live product description and sample before any purchase; it does not confer RCOphth eligibility, registration or College endorsement. You can also [practise free FRCOphth MCQs](/free-mcqs/frcophth) to test your error-review process.
+If you are looking for an on-site practice option, the [FRCOphth Step 1 MCQs page](/products/frcophth-step-1-mcqs/) describes an OphthaMCQ product. Review the live product description and sample before any purchase; it does not confer RCOphth eligibility, registration or College endorsement. You can also [practise free FRCOphth MCQs](/free-mcqs/frcophth/) to test your error-review process.
 
 ## Pre-booking checklist
 

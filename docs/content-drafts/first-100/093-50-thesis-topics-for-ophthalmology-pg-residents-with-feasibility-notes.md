@@ -1,7 +1,8 @@
 ---
 title: "50 Thesis Topics for Ophthalmology PG Residents (With Feasibility Notes)"
+seo_title: "50 Ophthalmology Thesis Topics for PG Residents"
 proposed_slug: "50-thesis-topics-for-ophthalmology-pg-residents-with-feasibility-notes"
-meta_description: "Fifty ophthalmology PG thesis ideas organised by subspecialty, each with a feasibility lens for design, data access, recruitment, equipment and supervisor fit."
+meta_description: "Fifty ophthalmology PG thesis ideas by subspecialty, each with a feasibility lens for design, data access, recruitment, equipment and supervisor fit."
 excerpt: "Pick a thesis topic you can finish with your department’s real records, equipment, follow-up and supervision, not the most fashionable title."
 category: "Career"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -119,7 +120,7 @@ For reporting and authorship standards, consult the [ICMJE recommendations](http
 
 Use: **population + setting + exposure/intervention + outcome + design + period**. For example, replace “OCT in glaucoma” with “Agreement between documented optic-disc findings and reliable visual-field stage among adult glaucoma-clinic attendees: a retrospective review.” Your final protocol still needs supervisor and ethics review.
 
-Use the [free resources hub](/resources) for revision material alongside research work, and the [ophthalmology glossary](/glossary) when building a consistent definition sheet for your proposal.
+Use the [free resources hub](/resources/) for revision material alongside research work, and the [ophthalmology glossary](/glossary/) when building a consistent definition sheet for your proposal.
 
 ## Editorial QA and link manifest
 

@@ -1,5 +1,6 @@
 ---
 title: "What to Do in the Last 7 Days Before an Ophthalmology Exam"
+seo_title: "Last 7 Days Before an Ophthalmology Exam"
 proposed_slug: "what-to-do-in-the-last-7-days-before-an-ophthalmology-exam"
 meta_description: "A seven-day ophthalmology exam plan for residents: consolidate error logs, practise exam mechanics"
 excerpt: "The final week is for retrieval, error correction and logistics. Do not turn it into a late attempt at finishing every textbook."
@@ -74,7 +75,7 @@ Review the error cards once, without expanding them. Prepare required items, foo
 
 ## What to review
 
-Prioritise your own error log, common classifications, images you repeatedly misread, drug-class associations, optics formulae and the topics your exam guide emphasises. Use [Handwritten Exam Ready Notes](/notes) as a compact revision route, [free MCQs with explanations](/free-mcqs) for retrieval and the [OSCE, Practical & Viva Voce Ready bundle](/osce) if your assessment includes practical stations.
+Prioritise your own error log, common classifications, images you repeatedly misread, drug-class associations, optics formulae and the topics your exam guide emphasises. Use [Handwritten Exam Ready Notes](/notes/) as a compact revision route, [free MCQs with explanations](/free-mcqs/) for retrieval and the [OSCE, Practical & Viva Voce Ready bundle](/osce/) if your assessment includes practical stations.
 
 ## What not to do
 

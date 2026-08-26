@@ -1,5 +1,6 @@
 ---
 title: "ICO Clinical Sciences Paper: Structure, Scoring and Preparation Route"
+seo_title: "ICO Clinical Sciences Exam: Structure and Prep"
 proposed_slug: "ico-clinical-sciences-paper-structure-scoring-preparation"
 meta_description: "Prepare for the ICO Clinical Sciences paper with a clinical-reasoning grid, image-review workflow, timed-question loop and official-rule check."
 excerpt: "Prepare for the ICO Clinical Sciences paper with a clinical-reasoning grid, image-review workflow, timed-question loop and official-rule check."
@@ -88,7 +89,7 @@ Likewise, do not treat a past-paper pattern as a promise that the next paper wil
 
 ## Relevant OphthaMCQ routes
 
-For broad planning, use the [ICO / FICO preparation guide](/exams/ico-fico). To test recall before committing to a larger resource, use the [free ICO/FICO sample questions](/free-mcqs/ico-fico). The [ICO/FICO Past Papers](/products/ico-fico-past-papers) page describes an available OphthaMCQ resource; inspect its current scope and store information yourself. For targeted topic repair, the [retina study guide](/topics/retina), [glaucoma study guide](/topics/glaucoma) and [cornea study guide](/topics/cornea) are verified site routes.
+For broad planning, use the [ICO / FICO preparation guide](/exams/ico-fico/). To test recall before committing to a larger resource, use the [free ICO/FICO sample questions](/free-mcqs/ico-fico/). The [ICO/FICO Past Papers](/products/ico-fico-past-papers/) page describes an available OphthaMCQ resource; inspect its current scope and store information yourself. For targeted topic repair, the [retina study guide](/topics/retina/), [glaucoma study guide](/topics/glaucoma/) and [cornea study guide](/topics/cornea/) are verified site routes.
 
 OphthaMCQ is independent of ICO. These links are preparation resources, not an assertion of endorsement or a prediction of an exam result.
 

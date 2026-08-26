@@ -1,7 +1,8 @@
 ---
 title: "Does ICO/FICO Help You Get a Fellowship Abroad? What It Actually Does"
+seo_title: "FICO Exam Benefits: Does It Help You Go Abroad?"
 proposed_slug: "does-ico-fico-help-you-get-a-fellowship-abroad-what-it-actually-does"
-meta_description: "A source-led guide to what ICO/FICO can document in an overseas fellowship application — and what registration, programme selection and visa rules still require."
+meta_description: "What ICO/FICO can document in an overseas fellowship application, and what registration, programme selection and visa rules still require."
 excerpt: "ICO/FICO is a credential, not a clinical licence, fellowship offer or immigration route. Use a programme-specific evidence audit before committing to it."
 category: "Career"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -126,9 +127,9 @@ When a programme does not answer a question promptly, keep the unanswered point 
 
 ## Study planning without overclaiming
 
-If you decide the ICO route is relevant to your own academic plan, begin with the official ICO material, not a third-party summary. The site’s [ICO / FICO exam guide](/exams/ico-fico) is the internal exam-preparation route, while [ICO/FICO Past Papers](/products/ico-fico-past-papers) is a product-information page where you can inspect the current sample and store details. A mixed [ICO/FICO free-MCQ set](/free-mcqs/ico-fico) can be used for a short diagnostic. None of these resources proves credential recognition, programme eligibility or a fellowship outcome.
+If you decide the ICO route is relevant to your own academic plan, begin with the official ICO material, not a third-party summary. The site’s [ICO / FICO exam guide](/exams/ico-fico/) is the internal exam-preparation route, while [ICO/FICO Past Papers](/products/ico-fico-past-papers/) is a product-information page where you can inspect the current sample and store details. A mixed [ICO/FICO free-MCQ set](/free-mcqs/ico-fico/) can be used for a short diagnostic. None of these resources proves credential recognition, programme eligibility or a fellowship outcome.
 
-The [fellowship preparation page](/exams/fellowship) and [resources hub](/resources) are useful planning routes once you have listed your actual gaps. Use the [ophthalmology glossary](/glossary) if you need to clarify an examination or registration term before returning to the official source.
+The [fellowship preparation page](/exams/fellowship/) and [resources hub](/resources/) are useful planning routes once you have listed your actual gaps. Use the [ophthalmology glossary](/glossary/) if you need to clarify an examination or registration term before returning to the official source.
 
 ## Sources and final-check boundary
 

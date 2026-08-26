@@ -1,7 +1,8 @@
 ---
 title: "Ophthalmologist Salary and Career Paths in India (2026)"
+seo_title: "Ophthalmologist Salary in India 2026"
 proposed_slug: "ophthalmologist-salary-and-career-paths-in-india-2026"
-meta_description: "A realistic framework for comparing ophthalmology career paths in India in 2026: training, employment models, income variables, subspecialty and early-career decisions."
+meta_description: "A realistic framework for comparing ophthalmology career paths in India in 2026: training, employment models, income variables and subspecialty choice."
 excerpt: "There is no useful single salary number for ophthalmologists. Compare the job model, city, case mix, hours, supervision and pathway to independent practice."
 category: "Career"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -168,7 +169,7 @@ No current nationwide, role-normalised official salary dataset was identified fo
 [^2]: Ministry of Health and Family Welfare, Government of India. [Official gateway](https://www.mohfw.gov.in/). Live-checked 18 August 2026.
 [^3]: National Medical Commission. [Postgraduate Medical Education Regulations 2023 gateway](https://www.nmc.org.in/rules-regulations/pg-medical-education-regulations-2023/). Official source location; automated TLS validation failed on 18 August 2026. Recheck directly before publication.
 
-For career identity and the site’s independent educational position, read [About OphthaMCQ](/about). For exam-specific progression routes, use the [ophthalmology exam guides](/exams). OphthaMCQ sells exam-preparation resources; it does not provide placement, salary verification or career guarantees.
+For career identity and the site’s independent educational position, read [About OphthaMCQ](/about/). For exam-specific progression routes, use the [ophthalmology exam guides](/exams/). OphthaMCQ sells exam-preparation resources; it does not provide placement, salary verification or career guarantees.
 
 ## Editorial QA and link manifest
 

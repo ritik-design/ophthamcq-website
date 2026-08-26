@@ -1,5 +1,6 @@
 ---
 title: "NEET-SS Ophthalmology: Pattern, Eligibility and Preparation Strategy"
+seo_title: "NEET-SS Ophthalmology: Pattern and Preparation"
 proposed_slug: "neet-ss-ophthalmology-pattern-eligibility-preparation-strategy"
 meta_description: "A notification-first framework for checking current NEET-SS ophthalmology rules and building a syllabus-led preparation plan."
 excerpt: "Verify the current bulletin first, then turn its syllabus into a disciplined retrieval plan."
@@ -76,7 +77,7 @@ For example, “retina” is too broad to schedule. A useful map separates imagi
 | Cataract/refractive | optics, IOL and complication pathways | you can calculate or choose the next exam answer under time |
 | Neuro/paediatric/oculoplastics | localisation and syndrome matrices | you can identify the finding that changes the differential |
 
-Use standard references for the underlying concepts. The [retina study guide](/topics/retina) and [glaucoma study guide](/topics/glaucoma) can support general revision, but the current official syllabus remains the boundary of your exam plan.
+Use standard references for the underlying concepts. The [retina study guide](/topics/retina/) and [glaucoma study guide](/topics/glaucoma/) can support general revision, but the current official syllabus remains the boundary of your exam plan.
 
 ## A preparation strategy that survives a busy residency
 
@@ -98,7 +99,7 @@ For each error, write one line: “I chose X because I over-weighted Y; the disc
 
 Shift towards timed mixed blocks if the current scheme uses them. Review by decision point, not merely by specialty. For example, group errors under “localisation before label”, “absolute versus usual association”, “test interpretation”, “calculation setup”, or “exception wording”. Then choose the next targeted reading block from the largest error group.
 
-Do not chase a particular daily question count as a badge. Fifty carefully reviewed questions can be more useful than two hundred answered with no revisit. The [free ophthalmology MCQs](/free-mcqs) are a reasonable way to practise retrieval across topics; they are not a substitute for the current official scheme or specialty-specific source material.
+Do not chase a particular daily question count as a badge. Fifty carefully reviewed questions can be more useful than two hundred answered with no revisit. The [free ophthalmology MCQs](/free-mcqs/) are a reasonable way to practise retrieval across topics; they are not a substitute for the current official scheme or specialty-specific source material.
 
 ## A sample working week
 
@@ -137,7 +138,7 @@ Do not include an unverified fee, seat count or result date in your budget. Mark
 
 ## Where OphthaMCQ fits
 
-OphthaMCQ is an independent exam-preparation resource, not NBEMS and not an authority on NEET-SS eligibility or counselling. Use the [ophthalmology exams hub](/exams) to compare the examination guides currently available on the site and use topic resources to support revision. There is deliberately no link to an `/exams/neet-ss` page because that route is not valid.
+OphthaMCQ is an independent exam-preparation resource, not NBEMS and not an authority on NEET-SS eligibility or counselling. Use the [ophthalmology exams hub](/exams/) to compare the examination guides currently available on the site and use topic resources to support revision. There is deliberately no link to an `/exams/neet-ss` page because that route is not valid.
 
 ## The final 14-day review loop
 

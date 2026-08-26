@@ -1,5 +1,6 @@
 ---
 title: "New Ophthalmic Drug and Device Approvals Worth Knowing for Vivas"
+seo_title: "New Ophthalmology Drugs & Devices 2026"
 proposed_slug: "new-ophthalmic-drug-and-device-approvals-worth-knowing-for-vivas"
 meta_description: "A viva-safe way to discuss new ophthalmic drugs and devices: distinguish approval from evidence, verify jurisdiction and date, then state mechanism"
 excerpt: "In a viva, an approval is never just a product name. State where, when, for whom and on what evidence."
@@ -118,7 +119,7 @@ Do not confuse this caution with ignorance. Regulatory and evidence language is 
 
 The [American Academy of Ophthalmology education catalogue](https://www.aao.org/education/education-browse) is a verified .org learning-resource directory. Use regulator and label sources for status questions; the catalogue does not establish current approval status.
 
-For drug-class and practical-viva revision, see [Ophthalmology Drugs Practical PDF](/products/ophthalmology-drugs-practical-pdf) and [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva). For broader recent-advances note revision, use [Recent Advances in Ophthalmology](/products/recent-advances-ophthalmology-notes).
+For drug-class and practical-viva revision, see [Ophthalmology Drugs Practical PDF](/products/ophthalmology-drugs-practical-pdf/) and [Instruments & Drugs for Practical Exams/Viva](/products/instruments-drugs-practical-viva/). For broader recent-advances note revision, use [Recent Advances in Ophthalmology](/products/recent-advances-ophthalmology-notes/).
 
 ## Editorial QA and link manifest
 

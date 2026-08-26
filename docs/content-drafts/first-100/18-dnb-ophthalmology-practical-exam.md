@@ -26,7 +26,7 @@ The current DNB practical format must be confirmed from NBEMS and centre instruc
 
 Avoid narrating every fact you know. A concise, defensible answer gives the examiner fewer loose ends to probe. Record yourself answering one case daily; vague phrases become obvious on replay.
 
-Build a practical book from your own cases: chief complaint, key positive and negative findings, differential, planned investigations and a one-minute presentation. Then add instruments, drugs, imaging and common postoperative complications in short lists. The [DNB guide](/exams/dnb) supports the theory-practical connection. For structured practice resources, use the [OSCE, Practical & Viva Voce Ready bundle](/osce) and inspect [Case Presentation Format Notes](/products/case-presentation-format-notes).
+Build a practical book from your own cases: chief complaint, key positive and negative findings, differential, planned investigations and a one-minute presentation. Then add instruments, drugs, imaging and common postoperative complications in short lists. The [DNB guide](/exams/dnb/) supports the theory-practical connection. For structured practice resources, use the [OSCE, Practical & Viva Voce Ready bundle](/osce/) and inspect [Case Presentation Format Notes](/products/case-presentation-format-notes/).
 
 ## Sources and links
 

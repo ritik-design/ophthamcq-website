@@ -1,5 +1,6 @@
 ---
 title: "Long Case: Glaucoma — History, Examination and Discussion Points"
+seo_title: "Glaucoma Long Case: History, Exam and Discussion"
 proposed_slug: "long-case-glaucoma-history-examination-and-discussion-points"
 meta_description: "Prepare a glaucoma long case with a focused history, examination order, angle-disc-field-OCT correlation, reliability checks"
 excerpt: "A glaucoma long case is a correlation exercise: pressure context, angle, optic nerve and function must tell one coherent story."
@@ -143,7 +144,7 @@ Spend five minutes before each practice case completing this card. Then speak fo
 
 Common errors are predictable: treating IOP as diagnosis; saying “open angle” without a description; reporting cup/disc without rim or disc-size context; treating a single OCT map as proof; ignoring the fellow eye; and prescribing a treatment when the examiner asked for classification. Each error is fixed by returning to the four-evidence board.
 
-For a broader topic review, use the verified on-site [glaucoma study guide](/topics/glaucoma) and [Glaucoma Exam Ready Notes](/products/glaucoma-notes). For practical-station rehearsal, use the [OSCE, Practical & Viva Voce Ready bundle](/osce), the [DNB Ophthalmology preparation guide](/exams/dnb), and the [case-presentation format resource](/products/case-presentation-format-notes). These are study resources; they do not replace supervised disc, field or gonioscopy interpretation.
+For a broader topic review, use the verified on-site [glaucoma study guide](/topics/glaucoma/) and [Glaucoma Exam Ready Notes](/products/glaucoma-notes/). For practical-station rehearsal, use the [OSCE, Practical & Viva Voce Ready bundle](/osce/), the [DNB Ophthalmology preparation guide](/exams/dnb/), and the [case-presentation format resource](/products/case-presentation-format-notes/). These are study resources; they do not replace supervised disc, field or gonioscopy interpretation.
 
 ## Handle conflicting evidence without collapsing the presentation
 

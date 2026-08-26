@@ -1,5 +1,6 @@
 ---
 title: "Uveitis Classification (SUN) and a Workup You Can Reproduce Under Pressure"
+seo_title: "Uveitis Classification (SUN) and Workup"
 proposed_slug: "uveitis-classification-sun-and-a-workup-you-can-reproduce-under-pressure"
 meta_description: "Learn SUN uveitis classification, anterior-chamber and vitreous grading, an anatomical workup framework, red flags and exam-ready differential reasoning."
 excerpt: "Learn SUN uveitis classification, anterior-chamber and vitreous grading, an anatomical workup framework, red flags and exam-ready differential reasoning."
@@ -28,7 +29,7 @@ When given an uveitis case, say the fields in this order:
 5. **Course**: acute, recurrent or chronic.
 6. **Activity and phenotype**: anterior-chamber cells/flare, vitreous activity, granulomatous/non-granulomatous features, retinal/choroidal lesions, vasculitis and systemic associations.
 
-The [uveitis study guide](/topics/uveitis) is the broader topic route. The present guide gives you the language and workup logic needed to avoid broad, low-yield “uveitis panels.”
+The [uveitis study guide](/topics/uveitis/) is the broader topic route. The present guide gives you the language and workup logic needed to avoid broad, low-yield “uveitis panels.”
 
 ## Anatomical classification: use the primary site of inflammation
 
@@ -138,7 +139,7 @@ Avoid presenting corticosteroids, immunomodulation or antimicrobial therapy as a
 
 The compressed answer is: “I would classify by anatomical site, laterality, onset, duration, course and activity. I would grade anterior chamber cells and flare separately, document vitreous and posterior findings, then form a phenotype-led differential. Investigations are targeted to the phenotype and should address infectious causes and masquerades where relevant; they are not a universal panel.”
 
-For systematic question practice across adjacent topics, start with [free ophthalmology MCQs](/free-mcqs); use real clinical supervision and current guidelines for patient care.
+For systematic question practice across adjacent topics, start with [free ophthalmology MCQs](/free-mcqs/); use real clinical supervision and current guidelines for patient care.
 
 ## A note on classification criteria versus diagnosis
 

@@ -1,5 +1,6 @@
 ---
 title: "Corneal Dystrophies Made Memorable: IC3D Classification and Mnemonics"
+seo_title: "Corneal Dystrophies Made Memorable"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "corneal-dystrophies-made-memorable-ic3d-classification-and-mnemonics"
 meta_description: "A layer-first, IC3D-aware guide to corneal dystrophies: classic patterns, discriminators, safe mnemonics and viva-ready answers for PG exams."
@@ -146,7 +147,7 @@ That answer shows classification, representatives, and scientific caution. Add p
 4. What pathological material is classically associated with lattice corneal dystrophy?
 5. What is the sequence from guttae to corneal oedema in FECD?
 
-Answer these aloud in full sentences, not just with a label. Then use [the cornea study guide](/topics/cornea) to place dystrophies beside keratitis and keratoplasty, and use [general ophthalmology MCQs](/free-mcqs/general) for retrieval practice. If you are building a layer-first revision notebook, [Handwritten Exam Ready Notes](/notes) is the site’s broader notes collection. OphthaMCQ resources are educational material for doctors; they do not replace slit-lamp examination, genetic counselling or specialist management.
+Answer these aloud in full sentences, not just with a label. Then use [the cornea study guide](/topics/cornea/) to place dystrophies beside keratitis and keratoplasty, and use [general ophthalmology MCQs](/free-mcqs/general/) for retrieval practice. If you are building a layer-first revision notebook, [Handwritten Exam Ready Notes](/notes/) is the site’s broader notes collection. OphthaMCQ resources are educational material for doctors; they do not replace slit-lamp examination, genetic counselling or specialist management.
 
 ## Internal-link plan
 

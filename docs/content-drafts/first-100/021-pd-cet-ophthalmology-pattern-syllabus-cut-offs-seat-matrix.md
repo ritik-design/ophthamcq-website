@@ -1,7 +1,8 @@
 ---
 title: "PD-CET Ophthalmology: Pattern, Syllabus, Cut-offs and Seat Matrix"
+seo_title: "PD-CET Ophthalmology: Pattern, Syllabus, Cut-offs"
 proposed_slug: "pd-cet-ophthalmology-pattern-syllabus-cut-offs-seat-matrix"
-meta_description: "Read the current PD-CET notification correctly: separate pattern, syllabus, cut-off and seat-matrix facts, then build a source-led ophthalmology revision plan."
+meta_description: "Read the current PD-CET notification correctly: separate pattern, syllabus, cut-off and seat-matrix facts, then build a source-led revision plan."
 excerpt: "Read the current PD-CET notification correctly: separate pattern, syllabus, cut-off and seat-matrix facts, then build a source-led ophthalmology revision plan."
 category: "Ophthalmology Exams"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -68,7 +69,7 @@ Run a diagnostic mixed set before making a lengthy reading plan. Code every wron
 
 At the end of the week, choose the two error categories with the largest count. Repair those first. This creates a feedback loop: question → error code → focused source check → retrieval prompt → repeat test. It is more useful than completing chapters in a satisfying order while the same questions continue to fail.
 
-The on-site [PD-CET guide](/exams/pd-cet) is an appropriate starting point for OphthaMCQ’s preparation routes. For explained, topic-led practice, use [PD-CET free MCQs](/free-mcqs/pdcet). Neither page is an official notification, a published paper or an admission authority.
+The on-site [PD-CET guide](/exams/pd-cet/) is an appropriate starting point for OphthaMCQ’s preparation routes. For explained, topic-led practice, use [PD-CET free MCQs](/free-mcqs/pdcet/). Neither page is an official notification, a published paper or an admission authority.
 
 ## Cut-offs: a historical number needs a context card
 
@@ -108,7 +109,7 @@ On a busy clinical day, do a compact routine: ten retrieval cards, five image/in
 
 ### Resource discipline
 
-Choose a main clinical text, a concise revision source if needed, a question source with explanations and your error ledger. Add a new resource only when it solves a named gap. For example, use an optics text for a repeated optics error; do not add it because someone lists it as “must-have.” The OphthaMCQ [PDCET MCQs product page](/products/pdcet-mcqs) describes one available practice resource. Review its scope and price in the store before a purchase decision; this article makes no promise about results, update entitlement or question volume.
+Choose a main clinical text, a concise revision source if needed, a question source with explanations and your error ledger. Add a new resource only when it solves a named gap. For example, use an optics text for a repeated optics error; do not add it because someone lists it as “must-have.” The OphthaMCQ [PDCET MCQs product page](/products/pdcet-mcqs/) describes one available practice resource. Review its scope and price in the store before a purchase decision; this article makes no promise about results, update entitlement or question volume.
 
 ## Common mistakes worth avoiding
 

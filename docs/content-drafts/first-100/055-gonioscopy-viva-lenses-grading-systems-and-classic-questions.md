@@ -1,5 +1,6 @@
 ---
 title: "Gonioscopy Viva: Lenses, Grading Systems and Classic Questions"
+seo_title: "Gonioscopy Viva Questions, Lenses and Grading"
 proposed_slug: "gonioscopy-viva-lenses-grading-systems-and-classic-questions"
 meta_description: "A postgraduate gonioscopy viva guide: optical principle, lens categories, angle structures, indentation, grading systems and a clean quadrant report."
 excerpt: "Do not jump from a glimpse of trabecular meshwork to a diagnosis. State the technique, quadrant, structures, configuration and dynamic finding."
@@ -142,7 +143,7 @@ Ask a partner to change only one feature in the second run: for example, alter t
 - Turning Sampaolesi’s line, PAS or plateau iris configuration into a one-sign diagnosis.
 - Offering management advice when the station has only asked for gonioscopy.
 
-For wider revision, the [glaucoma MCQs and study guide](/topics/glaucoma) is the relevant topic hub. To work through glaucoma terminology and mechanism distinctions, use the [ophthalmology glossary](/glossary). If you want a product preview while planning a revision block, see [sample pages of Glaucoma Exam Ready Notes](/products/glaucoma-notes). Practical station rehearsal belongs with the [OSCE, Practical & Viva Voce Ready bundle](/osce). These are OphthaMCQ resources, not a substitute for supervised slit-lamp and gonioscopy training.
+For wider revision, the [glaucoma MCQs and study guide](/topics/glaucoma/) is the relevant topic hub. To work through glaucoma terminology and mechanism distinctions, use the [ophthalmology glossary](/glossary/). If you want a product preview while planning a revision block, see [sample pages of Glaucoma Exam Ready Notes](/products/glaucoma-notes/). Practical station rehearsal belongs with the [OSCE, Practical & Viva Voce Ready bundle](/osce/). These are OphthaMCQ resources, not a substitute for supervised slit-lamp and gonioscopy training.
 
 ## Sources
 

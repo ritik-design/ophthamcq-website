@@ -1,5 +1,6 @@
 ---
 title: "ICO Optics & Refraction Paper: What to Study and What to Skip"
+seo_title: "ICO Optics & Refraction Paper: Syllabus and Prep"
 proposed_slug: "ico-optics-refraction-paper-study-priorities"
 meta_description: "A calculation-first ICO Optics & Refraction study plan: build a current coverage map, practise the mechanics, review errors and avoid obsolete assumptions."
 excerpt: "A calculation-first ICO Optics & Refraction study plan: build a current coverage map, practise the mechanics, review errors and avoid obsolete assumptions."
@@ -115,9 +116,9 @@ Do **not** skip a foundation because it feels abstract. Vergence, lens behaviour
 
 ## Use resources by job
 
-For broad route context, use the verified [ICO / FICO preparation guide](/exams/ico-fico). When you need short practice in the same exam family, the [free ICO/FICO sample questions](/free-mcqs/ico-fico) provide a low-stakes way to test recall. The [ICO Optics & Refraction MCQs Part A](/products/ico-optics-refraction-mcqs-part-a) page and [Optics & Refraction Exam Ready Notes](/products/optics-notes) page describe relevant OphthaMCQ resources; inspect their current scope before buying. These links are not a claim of ICO affiliation or of an exam outcome.
+For broad route context, use the verified [ICO / FICO preparation guide](/exams/ico-fico/). When you need short practice in the same exam family, the [free ICO/FICO sample questions](/free-mcqs/ico-fico/) provide a low-stakes way to test recall. The [ICO Optics & Refraction MCQs Part A](/products/ico-optics-refraction-mcqs-part-a/) page and [Optics & Refraction Exam Ready Notes](/products/optics-notes/) page describe relevant OphthaMCQ resources; inspect their current scope before buying. These links are not a claim of ICO affiliation or of an exam outcome.
 
-For definitions that you want to standardise before a drill, use the site's [ophthalmology glossary](/glossary). Keep a core text such as Elkington's *Clinical Optics* as the place to repair a concept, rather than chasing ten short videos that each use a slightly different convention.
+For definitions that you want to standardise before a drill, use the site's [ophthalmology glossary](/glossary/). Keep a core text such as Elkington's *Clinical Optics* as the place to repair a concept, rather than chasing ten short videos that each use a slightly different convention.
 
 ## Final 48-hour check
 

@@ -11,7 +11,7 @@ const currentPath = Astro.url.pathname;
       <!-- Logo -->
       <a href="/" class="group flex items-center gap-2.5 shrink-0">
         <span class="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-white ring-1 ring-slate-200/80 shadow-sm transition-transform duration-300 group-hover:scale-105">
-          <img src="/logo.png" alt="" class="w-7 h-7 object-contain" />
+          <img src="/logo.png" alt="" width="480" height="480" class="w-7 h-7 object-contain" />
         </span>
         <span class="text-lg font-bold text-slate-900 tracking-tight">
           {SITE.name}
@@ -47,7 +47,7 @@ const currentPath = Astro.url.pathname;
       <!-- CTA -->
       <div class="hidden lg:flex items-center gap-3">
         <a
-          href="/notes"
+          href="/notes/"
           class="inline-flex items-center gap-1.5 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white"
         >
           Explore Products
@@ -94,7 +94,7 @@ const currentPath = Astro.url.pathname;
       </a>
       <div class="pt-3">
         <a
-          href="/notes"
+          href="/notes/"
           class="block text-center rounded-xl px-4 py-3 text-sm font-semibold text-white bg-sky-600"
         >
           Explore Products

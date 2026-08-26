@@ -1,5 +1,6 @@
 ---
 title: "Slit Lamp Examination Viva: Every Question Examiners Actually Ask"
+seo_title: "Slit Lamp Viva Questions Examiners Actually Ask"
 proposed_slug: "slit-lamp-examination-viva-every-question-examiners-actually-ask"
 meta_description: "A slit-lamp viva guide for ophthalmology PGs: examination sequence, illumination techniques, filters, Van Herick, cells and flare, plus examiner follow-ups."
 excerpt: "In a slit-lamp viva, name the illumination technique, the structure it isolates and the finding it makes visible before offering a diagnosis."
@@ -123,7 +124,7 @@ Use this after looking at any slit-lamp photograph or patient under supervision:
 
 If you cannot complete line 6, you have named a technique but not learned it. Repeat with a different beam setting, not by rereading the same paragraph.
 
-For practical-viva structure, see the [OSCE, Practical & Viva Voce Ready bundle](/osce). The [Instruments in Ophthalmology notes](/products/instruments-in-ophthalmology-notes) are the matching on-site instrument-revision route, while the [Ophthalmology Case Presentation Format](/products/case-presentation-format-notes) is useful for turning observations into an orderly presentation. These are revision resources, not a substitute for supervised clinical examination. OphthaMCQ is independent and is not affiliated with examining colleges or societies.
+For practical-viva structure, see the [OSCE, Practical & Viva Voce Ready bundle](/osce/). The [Instruments in Ophthalmology notes](/products/instruments-in-ophthalmology-notes/) are the matching on-site instrument-revision route, while the [Ophthalmology Case Presentation Format](/products/case-presentation-format-notes/) is useful for turning observations into an orderly presentation. These are revision resources, not a substitute for supervised clinical examination. OphthaMCQ is independent and is not affiliated with examining colleges or societies.
 
 ## Internal-link manifest
 

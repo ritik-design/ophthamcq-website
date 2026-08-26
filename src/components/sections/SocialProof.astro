@@ -13,25 +13,14 @@ const institutions = [
 // Duplicate enough cards for a smooth infinite loop on wide screens
 const marqueeReviews = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
 
-const reviewLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: 'OphthaMCQ Ophthalmology Exam Preparation',
-  description: 'Ophthalmology PG exam notes and MCQ question bank for ICO/FICO, FAICO, FRCOphth, DNB, MS, DO and PDCET.',
-  brand: { '@type': 'Brand', name: 'OphthaMCQ' },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: '2400',
-    bestRating: '5',
-  },
-  review: TESTIMONIALS.map(t => ({
-    '@type': 'Review',
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    author: { '@type': 'Person', name: t.name, jobTitle: t.role },
-    reviewBody: t.text,
-  })),
-};
+// Structured review markup deliberately omitted.
+//
+// Google's structured-data policy treats reviews about the entity that
+// controls the page as self-serving and ineligible for rich results, and an
+// unverifiable aggregateRating (4.8 from 2,400) on our own brand is the kind
+// of markup that attracts a manual action. The testimonials stay as visible
+// page content; Review/AggregateRating belongs on individual product pages
+// once there are verifiable purchase reviews to back it.
 ---
 
 <!-- Testimonials -->
@@ -130,7 +119,7 @@ const reviewLd = {
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mt-12 text-center">
       <a
-        href="/success-stories"
+        href="/success-stories/"
         class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all"
       >
         Read All Success Stories
@@ -139,7 +128,6 @@ const reviewLd = {
     </div>
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(reviewLd)} />
 </section>
 
 <style>

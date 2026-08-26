@@ -1,5 +1,6 @@
 ---
 title: "Ptosis: Classification, Measurements and Choosing the Right Surgery"
+seo_title: "Ptosis Classification, Measurements and Surgery"
 proposed_slug: "ptosis-classification-measurements-and-choosing-the-right-surgery"
 meta_description: "Revise ptosis classification, lid measurements, safety checks and operation-selection logic for ophthalmology MCQs, OSCEs and vivas."
 excerpt: "Revise ptosis classification, lid measurements, safety checks and operation-selection logic for ophthalmology MCQs, OSCEs and vivas."
@@ -118,7 +119,7 @@ Make one sheet with six boxes: true versus pseudo; onset; mechanism; MRD1/fissur
 
 On the second pass, practise a two-minute presentation. Use one measurement sentence, one classification sentence, one safety sentence and one conditional-operation sentence. This trains a clearer answer than a long paragraph of operation names.
 
-Use the [oculoplastics study guide](/topics/oculoplastics) as the cluster hub, then test terminology through [general ophthalmology free MCQs](/free-mcqs/general). [Eyelids Exam Ready Notes](/products/eyelids-notes) are an optional site study resource, not a surgical guideline. For practical examination structure, see the [OSCE and viva resource page](/osce).
+Use the [oculoplastics study guide](/topics/oculoplastics/) as the cluster hub, then test terminology through [general ophthalmology free MCQs](/free-mcqs/general/). [Eyelids Exam Ready Notes](/products/eyelids-notes/) are an optional site study resource, not a surgical guideline. For practical examination structure, see the [OSCE and viva resource page](/osce/).
 
 ## Common traps
 

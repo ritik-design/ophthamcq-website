@@ -1,5 +1,6 @@
 ---
 title: "FAICO Exam Guide: Eligibility, Subspecialties, Pattern and Timeline"
+seo_title: "FAICO Exam Guide: Eligibility, Pattern, Timeline"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "faico-exam-guide"
 meta_description: "A current, AIOS-source-led FAICO guide covering eligibility, the 11 subspecialties, online MCQ, OSCE/viva timeline, documents, centres and preparation."
@@ -80,7 +81,7 @@ AIOS currently lists the following award areas:
 
 Choose the field that matches your formal experience and daily decision-making, not simply the subject you enjoyed during residency. A strong candidate can explain the evidence behind their eligibility route and can work through a subspecialty stem from presentation to differential, investigation, principle and complication. A broad reading list without that depth is less useful.
 
-The [FAICO preparation guide](/exams/faico) can help you place the assessment within a study plan. It is not an AIOS rulebook and does not decide which specialty you should select.
+The [FAICO preparation guide](/exams/faico/) can help you place the assessment within a study plan. It is not an AIOS rulebook and does not decide which specialty you should select.
 
 ### Pick one specialty deliberately
 
@@ -146,7 +147,7 @@ Take a small baseline set, then tag errors as knowledge gap, differential error,
 
 Use timed MCQ blocks two or three times weekly. Review wrong answers, correct guesses and two-option decisions. For every important error, write the nearest distractor and the feature that defeats it. For example, a retina candidate should be able to say why a scan pattern supports one process over another; a glaucoma candidate should be able to connect disc, field, angle and pressure findings without reciting an unrelated list.
 
-Use [free FAICO MCQs](/free-mcqs/faico) for short retrieval practice. They are preparation material, not official AIOS questions.
+Use [free FAICO MCQs](/free-mcqs/faico/) for short retrieval practice. They are preparation material, not official AIOS questions.
 
 ### Phase 3: make your knowledge speakable (weeks 9–12)
 
@@ -158,7 +159,7 @@ This phase exposes a common problem: a candidate may recognise a diagnosis silen
 
 In the last weeks before the written stage, focus on your error map, comparison tables and timed blocks. Avoid opening a new large textbook solely to feel comprehensive. For OSCE/viva, organise mock circuits by presentation type: image, instrument, report, counselling/communication, complication and operative principle. Update the exact schedule only from AIOS.
 
-The [FAICO MCQs](/products/faico-mcqs) page is an optional product preview if you want to evaluate a commercial question-bank resource. It is not affiliated with AIOS, does not replace official instructions and makes no outcome promise.
+The [FAICO MCQs](/products/faico-mcqs/) page is an optional product preview if you want to evaluate a commercial question-bank resource. It is not affiliated with AIOS, does not replace official instructions and makes no outcome promise.
 
 ## Common application and preparation errors
 

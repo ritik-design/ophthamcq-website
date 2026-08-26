@@ -1,7 +1,8 @@
 ---
 title: "EBO/FEBO Diploma: Format, Eligibility and Whether It's Worth It"
+seo_title: "EBO/FEBO Ophthalmology Exam: Format and Value"
 proposed_slug: "ebo-febo-diploma-format-eligibility-whether-worth-it"
-meta_description: "A primary-source guide to the EBO Diploma: what to verify about eligibility and format, how to prepare, and how to decide whether it fits your ophthalmology career plan."
+meta_description: "A primary-source guide to the EBO Diploma: what to verify about eligibility and format, how to prepare, and whether it fits your career plan."
 excerpt: "Separate the EBO's current rules from recognition and career questions before committing time and money."
 category: "Ophthalmology Exams"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -81,7 +82,7 @@ Download the EBO syllabus and list every domain. Next to it, mark whether it is:
 | Neuro-ophthalmology | localisation matrix | derive the lesion level before naming it |
 | Paediatric/strabismus | age, pattern and measurement prompts | identify which detail changes the answer |
 
-The [retina study guide](/topics/retina) is a useful supplementary route for broad revision. It does not replace EBO's current syllabus or a standard reference. For an international paper, consolidate one trustworthy source per major domain rather than collecting competing sets of notes.
+The [retina study guide](/topics/retina/) is a useful supplementary route for broad revision. It does not replace EBO's current syllabus or a standard reference. For an international paper, consolidate one trustworthy source per major domain rather than collecting competing sets of notes.
 
 ## A 12-week preparation framework
 
@@ -107,7 +108,7 @@ A question bank measures retrieval; it does not magically correct it. For every 
 
 For example, “review glaucoma” is too vague. “Field defect pattern plus disc appearance: distinguish true progression from a non-corresponding artefact” is an actionable prompt. In clinical work, patient assessment and current guidance govern decisions. Here, the prompt is only a way to practise examination reasoning.
 
-Use [free ophthalmology MCQs](/free-mcqs) for additional recall practice if they fit your plan. Keep the official syllabus, your error log and a small number of standard references as the controlling documents.
+Use [free ophthalmology MCQs](/free-mcqs/) for additional recall practice if they fit your plan. Keep the official syllabus, your error log and a small number of standard references as the controlling documents.
 
 ## Is it worth it? Use a decision matrix
 
@@ -128,7 +129,7 @@ An EBO diploma may be a good fit if you meet the current rules, its syllabus ser
 
 EBO's award is one fact. Recognition for licensing, specialist registration, employment, immigration or a fellowship is another. Ask the regulator, hospital HR department, university or fellowship programme that makes the decision. Ask in writing and give them the precise qualification name. Retain the response. Do not ask EBO to guarantee another body's policy, and do not ask an online forum to interpret a regulator's rule for you.
 
-The [ICO / FICO guide](/exams/ico-fico) describes a separate examination pathway. It is useful for comparing how international exam planning works, but its eligibility and recognition must never be assumed to overlap with EBO.
+The [ICO / FICO guide](/exams/ico-fico/) describes a separate examination pathway. It is useful for comparing how international exam planning works, but its eligibility and recognition must never be assumed to overlap with EBO.
 
 ## Application-day and exam-day safeguards
 
@@ -136,7 +137,7 @@ Check names, document scans, deadlines and payment instructions early. Save conf
 
 ## Where OphthaMCQ fits
 
-OphthaMCQ is an independent exam-preparation resource. It is not affiliated with EBO and cannot determine EBO eligibility, administration, recognition or outcome. Use the [ophthalmology exams hub](/exams) to view the routes represented on the site, and use resources only where they serve your documented syllabus gap.
+OphthaMCQ is an independent exam-preparation resource. It is not affiliated with EBO and cannot determine EBO eligibility, administration, recognition or outcome. Use the [ophthalmology exams hub](/exams/) to view the routes represented on the site, and use resources only where they serve your documented syllabus gap.
 
 ## A final pre-commitment check
 

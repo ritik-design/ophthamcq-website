@@ -1,5 +1,6 @@
 ---
 title: "FAICO Glaucoma: Syllabus Map and High-Yield Question Areas"
+seo_title: "FAICO Glaucoma: Syllabus Map & High-Yield Areas"
 publication_action: "long-form-rewrite-after-live-serp-and-source-research"
 proposed_slug: "faico-glaucoma"
 meta_description: "A source-led FAICO Glaucoma revision map for mechanisms, OCT, fields, lasers, surgery, complications and viva reasoning—without invented weightage."
@@ -124,7 +125,7 @@ Use a loop that creates output, not just reading hours.
 
 When you miss a question, do not merely add its fact to a card. Write what would have separated the correct option from the chosen distractor. “Forgot pseudoexfoliation” is weak. “Saw high IOP but did not use dandruff-like lens material and poor dilation to identify pseudoexfoliation” is actionable.
 
-For supporting resources, use the site’s [glaucoma study guide](/topics/glaucoma) as a lateral topic hub, the [FAICO preparation guide](/exams/faico) for general exam context, and [free FAICO sample questions](/free-mcqs/faico) for short retrieval practice. [Glaucoma Notes](/products/glaucoma-notes) is an optional product preview; it is not an AIOS resource or an official blueprint.
+For supporting resources, use the site’s [glaucoma study guide](/topics/glaucoma/) as a lateral topic hub, the [FAICO preparation guide](/exams/faico/) for general exam context, and [free FAICO sample questions](/free-mcqs/faico/) for short retrieval practice. [Glaucoma Notes](/products/glaucoma-notes/) is an optional product preview; it is not an AIOS resource or an official blueprint.
 
 ## Internal-link manifest
 

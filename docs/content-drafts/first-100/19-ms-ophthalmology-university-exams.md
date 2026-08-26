@@ -26,7 +26,7 @@ MS Ophthalmology examinations are governed by the relevant university, while DNB
 
 Both routes reward the same basics: sound clinical reasoning, image interpretation, clear case presentation and accurate reference-grounded answers. Do not import a DNB mark scheme into an MS answer unless your university says it applies.
 
-Build one core knowledge system, then customise the final weeks. Keep an error log across topics; make one local past-paper file; practise viva responses with someone who knows your university’s habits. The [DNB / MS / DO preparation guide](/exams/dnb) is useful for shared study resources, while [OSCE, Practical & Viva Voce Ready](/osce) supports practical-format rehearsal.
+Build one core knowledge system, then customise the final weeks. Keep an error log across topics; make one local past-paper file; practise viva responses with someone who knows your university’s habits. The [DNB / MS / DO preparation guide](/exams/dnb/) is useful for shared study resources, while [OSCE, Practical & Viva Voce Ready](/osce/) supports practical-format rehearsal.
 
 ## Sources and links
 

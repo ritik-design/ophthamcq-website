@@ -168,7 +168,7 @@ Do not reread all 30 explanations tomorrow. Retest only the ones you missed, the
 - If you missed aqueous flow, ask for the pathway in reverse from episcleral veins.
 - If you missed retinal layers, ask whether the stem is travelling from vitreous to choroid or the other way round.
 
-Use the site’s [general ophthalmology MCQ quiz](/free-mcqs/general) for a mixed second pass. For a topic-organised anatomy reference, inspect the current [Anatomy of Eye Notes](/products/anatomy-notes) page; it describes the available material and sample information. The [ophthalmology glossary](/glossary) is useful when you need a fast definition before returning to the question rather than opening another full chapter.
+Use the site’s [general ophthalmology MCQ quiz](/free-mcqs/general/) for a mixed second pass. For a topic-organised anatomy reference, inspect the current [Anatomy of Eye Notes](/products/anatomy-notes/) page; it describes the available material and sample information. The [ophthalmology glossary](/glossary/) is useful when you need a fast definition before returning to the question rather than opening another full chapter.
 
 ## Sources and scope
 

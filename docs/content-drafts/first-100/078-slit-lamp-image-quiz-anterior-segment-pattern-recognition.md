@@ -107,7 +107,7 @@ Use the rubric to target revision. Three consecutive `layer` errors call for ana
 
 ## A compact revision route after the quiz
 
-Use the score, not just the total. Tag a miss as `layer`, `morphology`, `distribution`, `inflammation`, or `differential boundary`; then revise one relevant page and retest one unseen prompt. For mixed recall, use the verified [high-yield free MCQs](/free-mcqs/high-yield). Revisit layer and corneal-pattern foundations in the [cornea study guide](/topics/cornea), and use the [cataract study guide](/topics/cataract) for lens-location terminology. The [OSCE, Practical & Viva page](/osce) is the relevant site route for practical-exam preparation; verify current product scope before making a resource choice.
+Use the score, not just the total. Tag a miss as `layer`, `morphology`, `distribution`, `inflammation`, or `differential boundary`; then revise one relevant page and retest one unseen prompt. For mixed recall, use the verified [high-yield free MCQs](/free-mcqs/high-yield/). Revisit layer and corneal-pattern foundations in the [cornea study guide](/topics/cornea/), and use the [cataract study guide](/topics/cataract/) for lens-location terminology. The [OSCE, Practical & Viva page](/osce/) is the relevant site route for practical-exam preparation; verify current product scope before making a resource choice.
 
 ## Sources and scope
 

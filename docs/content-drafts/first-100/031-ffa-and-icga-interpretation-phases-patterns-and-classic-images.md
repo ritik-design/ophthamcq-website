@@ -1,5 +1,6 @@
 ---
 title: "FFA and ICGA Interpretation: Phases, Patterns and Classic Images"
+seo_title: "FFA and ICGA Interpretation for Ophthalmology Exams"
 proposed_slug: "ffa-and-icga-interpretation-phases-patterns-and-classic-images"
 meta_description: "An exam-ready framework for fluorescein angiography and ICGA: phases, hyperfluorescence, hypofluorescence and classic retinal patterns."
 excerpt: "Interpret FFA and ICGA by time, behaviour and mechanism before naming disease."
@@ -154,7 +155,7 @@ Apply the same discipline to an apparently dark lesion. If a photograph shows ha
 
 Make six flashcards labelled: transmission, leakage, pooling, staining, blocked, filling defect. On the reverse, draw only the time-course: early/late, fixed/spreading, bright/dark. Next, take an angiography sequence and force a single mechanism sentence before reading the caption. Finally, pair FA and OCT: ask whether OCT contributes fluid compartment, interface or RPE morphology, while FA contributes fluorescence behaviour. This trains modality selection rather than visual guessing.
 
-For broader context, study from the verified [retina study guide](/topics/retina). For structured report/test revision, see [Read Ophthalmology Reports & Tests](/products/read-ophthalmology-reports-tests). Use [high-yield free MCQs](/free-mcqs/high-yield) for timed recall and the verified [ophthalmology glossary](/glossary) when consolidating terminology. These are revision resources; local protocols and supervised judgement govern clinical angiography use.
+For broader context, study from the verified [retina study guide](/topics/retina/). For structured report/test revision, see [Read Ophthalmology Reports & Tests](/products/read-ophthalmology-reports-tests/). Use [high-yield free MCQs](/free-mcqs/high-yield/) for timed recall and the verified [ophthalmology glossary](/glossary/) when consolidating terminology. These are revision resources; local protocols and supervised judgement govern clinical angiography use.
 
 ## Sources
 

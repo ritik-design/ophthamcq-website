@@ -125,7 +125,8 @@ const teamFaqs = [
 ---
 
 <Layout
-  title="About OphthaMCQ — Ophthalmology Exam Prep Built by Doctors Who Passed"
+  breadcrumbs={[{ name: 'About' }]}
+  title="About OphthaMCQ: Built by Doctors Who Passed"
   description="Meet the ophthalmologists behind OphthaMCQ — an FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS exam prep team trusted by 15,000+ PG residents worldwide."
 >
   <PageHero
@@ -133,8 +134,8 @@ const teamFaqs = [
     eyebrowIcon="badgeCheck"
     titleHtml={`Built by <span class="text-sky-600">Ophthalmologists</span>, for Ophthalmologists`}
     description="We sat these exams. We know exactly what you need — and what you do not. OphthaMCQ is the ophthalmology exam prep platform built and maintained by doctors who passed FRCOphth, ICO/FICO, FAICO, DNB and NEET-SS."
-    primaryCta={{ href: '/free-mcqs', label: 'Try 200 free MCQs' }}
-    secondaryCta={{ href: '/exams', label: 'Browse exams' }}
+    primaryCta={{ href: '/free-mcqs/', label: 'Try 200 free MCQs' }}
+    secondaryCta={{ href: '/exams/', label: 'Browse exams' }}
     trust={[
       { value: '15,000+', label: 'Residents' },
       { value: '6', label: 'Exams' },
@@ -255,7 +256,7 @@ const teamFaqs = [
       </div>
 
       <div class="mt-12 text-center">
-        <a href="/free-mcqs" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+        <a href="/free-mcqs/" class="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
           See the output: 200 free MCQs
           <Icon name="arrowRight" class="w-4 h-4" />
         </a>
@@ -325,7 +326,7 @@ const teamFaqs = [
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <a href="/free-mcqs" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+        <a href="/free-mcqs/" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
           <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
             <Illustration name="freeMcqs" class="w-9 h-9" />
           </div>
@@ -334,7 +335,7 @@ const teamFaqs = [
           <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 inline-flex items-center gap-1">Try free MCQs <Icon name="chevronRight" class="w-4 h-4" /></span>
         </a>
 
-        <a href="/glossary" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+        <a href="/glossary/" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
           <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
             <Illustration name="notes" class="w-9 h-9" />
           </div>
@@ -343,7 +344,7 @@ const teamFaqs = [
           <span class="text-sm font-semibold text-sky-600 group-hover:text-sky-700 inline-flex items-center gap-1">Open glossary <Icon name="chevronRight" class="w-4 h-4" /></span>
         </a>
 
-        <a href="/notes" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
+        <a href="/notes/" class="group rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg hover:border-sky-200 transition-all">
           <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-4">
             <Illustration name="notes" class="w-9 h-9" />
           </div>
@@ -386,10 +387,10 @@ const teamFaqs = [
       <div class="mt-10 text-center">
         <p class="text-slate-600 mb-3">More questions about pricing, refunds or exam coverage?</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/faq" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
+          <a href="/faq/" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all">
             Read the full FAQ
           </a>
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
+          <a href="/contact/" class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors">
             <Icon name="chat" class="w-4 h-4" />
             Talk to the team
           </a>

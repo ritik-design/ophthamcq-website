@@ -1,5 +1,6 @@
 ---
 title: "Short Case: Squint — Cover Test to Diagnosis Without Fumbling"
+seo_title: "Squint Examination Steps: Cover Test to Diagnosis"
 proposed_slug: "short-case-squint-cover-test-to-diagnosis-without-fumbling"
 meta_description: "A postgraduate squint short-case sequence: cover tests, prism measurement, motility, clear reporting and examiner-ready rehearsal."
 excerpt: "The cover test only becomes useful in an exam when you state the fixation condition, the eye movement and what that movement means."
@@ -143,7 +144,7 @@ Keep a small error log with four columns: condition omitted, movement misread, c
 - Naming a nerve palsy, restrictive process or surgery from an alignment observation alone.
 - Giving patient-specific management advice in a postgraduate examination answer when the task asks for examination findings.
 
-For broader amblyopia and strabismus revision, use the [paediatric ophthalmology study guide](/topics/pediatric-ophthalmology). When you need to practise the station flow with cases, instruments and viva-style prompts, the relevant site hub is the [OSCE, Practical & Viva Voce Ready bundle](/osce). If measurement equipment or practical terminology is the gap, review [sample pages for Instruments in Ophthalmology](/products/instruments-in-ophthalmology-notes) and check repeat terms in the [ophthalmology glossary](/glossary). These are OphthaMCQ resources, not professional-body materials or a substitute for supervised clinical training.
+For broader amblyopia and strabismus revision, use the [paediatric ophthalmology study guide](/topics/pediatric-ophthalmology/). When you need to practise the station flow with cases, instruments and viva-style prompts, the relevant site hub is the [OSCE, Practical & Viva Voce Ready bundle](/osce/). If measurement equipment or practical terminology is the gap, review [sample pages for Instruments in Ophthalmology](/products/instruments-in-ophthalmology-notes/) and check repeat terms in the [ophthalmology glossary](/glossary/). These are OphthaMCQ resources, not professional-body materials or a substitute for supervised clinical training.
 
 ## Sources
 

@@ -11,7 +11,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "indexnow": "node scripts/indexnow-submit.mjs",
-    "indexnow:dry": "node scripts/indexnow-submit.mjs --dry-run"
+    "indexnow:dry": "node scripts/indexnow-submit.mjs --dry-run",
+    "prebuild": "node scripts/generate-asset-sizes.mjs",
+    "seo:check": "node scripts/seo-check.mjs",
+    "og:image": "node scripts/generate-og-image.mjs",
+    "indexnow:sitemap": "node scripts/indexnow-submit.mjs --sitemap"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.7.0",

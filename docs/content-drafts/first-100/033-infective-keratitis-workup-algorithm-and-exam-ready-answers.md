@@ -1,5 +1,6 @@
 ---
 title: "Infective Keratitis: Workup Algorithm and Exam-Ready Answers"
+seo_title: "Infective Keratitis MCQs and Workup Algorithm"
 publication_action: "rewrite-after-serp-and-source-research"
 proposed_slug: "infective-keratitis-workup-algorithm-and-exam-ready-answers"
 meta_description: "A source-led postgraduate framework for infective keratitis: describe the ulcer, frame sampling, compare patterns and answer common viva questions safely."
@@ -135,7 +136,7 @@ If you need to summarise, use this:
 
 That response answers assessment, investigation, urgency and monitoring without pretending that a viva image permits a complete clinical plan.
 
-For the wider cluster, review [the cornea study guide](/topics/cornea). To rehearse concise presentation sequences, the site’s [OSCE, Practical & Viva Voce Ready bundle](/osce) is the relevant product page. You can also use [general ophthalmology MCQs](/free-mcqs/general) for retrieval practice. These links are educational resources; OphthaMCQ does not provide patient-specific management advice.
+For the wider cluster, review [the cornea study guide](/topics/cornea/). To rehearse concise presentation sequences, the site’s [OSCE, Practical & Viva Voce Ready bundle](/osce/) is the relevant product page. You can also use [general ophthalmology MCQs](/free-mcqs/general/) for retrieval practice. These links are educational resources; OphthaMCQ does not provide patient-specific management advice.
 
 ## Build an error log that improves your next answer
 

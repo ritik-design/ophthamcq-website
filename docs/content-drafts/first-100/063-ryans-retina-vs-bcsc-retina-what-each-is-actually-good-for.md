@@ -1,7 +1,8 @@
 ---
 title: "Ryan's Retina vs BCSC Retina: What Each Is Actually Good For"
+seo_title: "Ryan's Retina vs BCSC: Which Retina Book to Use"
 proposed_slug: "ryans-retina-vs-bcsc-retina-what-each-is-actually-good-for"
-meta_description: "Choose Ryan's Retina or BCSC Retina by the question you cannot yet answer: core organisation, image interpretation, mechanism, surgical context or final revision."
+meta_description: "Choose Ryan's Retina or BCSC Retina by the question you cannot yet answer: core organisation, image interpretation, mechanism or final revision."
 excerpt: "BCSC Retina is a bounded, section-based route to core coverage. Ryan's Retina earns its time when an imaging, mechanism or surgical-context gap remains after the core read."
 category: "Resources"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -67,7 +68,7 @@ Read only until you can answer that question. Then close the text. Draw a simpli
 
 ### Three situations where depth changes the study outcome
 
-**1. Imaging language without image logic.** A question may name OCT, fluorescein angiography or indocyanine green angiography and ask for the interpretation rather than the definition. Start by naming what you see and what tissue or circulation the modality is depicting. If your core source tells you the label but the relationship between structure, signal and disease process remains vague, use the specialist reference for the narrow entity. Make a three-column note: finding, anatomical or physiological correlate, and the closest distractor. The [retina study guide](/topics/retina) can then place the concept beside related high-yield topics; it does not replace the primary reference.
+**1. Imaging language without image logic.** A question may name OCT, fluorescein angiography or indocyanine green angiography and ask for the interpretation rather than the definition. Start by naming what you see and what tissue or circulation the modality is depicting. If your core source tells you the label but the relationship between structure, signal and disease process remains vague, use the specialist reference for the narrow entity. Make a three-column note: finding, anatomical or physiological correlate, and the closest distractor. The [retina study guide](/topics/retina/) can then place the concept beside related high-yield topics; it does not replace the primary reference.
 
 **2. Retinal detachment and PVR.** These are common examples of a topic that appears simple until the stem adds a break, traction, inflammation, chronicity, membrane or surgical-history clue. A general section can establish the categories. A deeper reference becomes rational if repeated questions show that you cannot explain the mechanism behind the category or articulate why a complication changes the discussion. The NCBI Bookshelf overview of [retinal detachment](https://www.ncbi.nlm.nih.gov/books/NBK525970/) is a useful general background check, but it is not a patient-care protocol for this article. Keep the output exam-facing: a cause-to-finding chain, a classification trigger and one sentence on the concept being tested.
 
@@ -96,7 +97,7 @@ Your time until the next assessment changes what “useful” means.
 | Two to six weeks | error log and targeted sections | only for an error blocking several questions | turn each read into a short output immediately |
 | Final 10–14 days | retrieval, diagrams, image drills and concise revision | rarely; only to settle a genuine conceptual dispute | avoid opening a new large text |
 
-For a DNB candidate, connect the book plan to the [DNB Ophthalmology preparation guide](/exams/dnb), but continue to use the current official notice for any format detail. For ICO / FICO, the [ICO / FICO preparation guide](/exams/ico-fico) is a planning route, not an official reading list. In both cases, use the textbook to repair knowledge and a timed question set to check transfer. Do not let the name on a book substitute for a blueprint, previous-paper analysis or spoken practical rehearsal.
+For a DNB candidate, connect the book plan to the [DNB Ophthalmology preparation guide](/exams/dnb/), but continue to use the current official notice for any format detail. For ICO / FICO, the [ICO / FICO preparation guide](/exams/ico-fico/) is a planning route, not an official reading list. In both cases, use the textbook to repair knowledge and a timed question set to check transfer. Do not let the name on a book substitute for a blueprint, previous-paper analysis or spoken practical rehearsal.
 
 ## A 60-minute retina repair loop
 
@@ -116,13 +117,13 @@ Choose one: a disease flowchart, a two-column differential, a labelled sketch, o
 
 ### Minutes 45–60: retrieve, then schedule a delayed check
 
-Answer three fresh questions or explain the topic aloud in 60 seconds. Two days later, revisit five related questions without notes. If you still cannot transfer the idea, return to the exact source section and make a sharper output. If you can transfer it, log the concept and move on. [High-yield free MCQs](/free-mcqs/high-yield) offer a low-friction route for retrieval practice; they do not certify examination readiness.
+Answer three fresh questions or explain the topic aloud in 60 seconds. Two days later, revisit five related questions without notes. If you still cannot transfer the idea, return to the exact source section and make a sharper output. If you can transfer it, log the concept and move on. [High-yield free MCQs](/free-mcqs/high-yield/) offer a low-friction route for retrieval practice; they do not certify examination readiness.
 
 ## Do not confuse reference depth with final revision material
 
 Specialist reading and concise revision solve different phases of learning. A source like *Ryan's Retina* may help you build the explanation. A bounded BCSC section may help you organise it. Neither should be your only final-week retrieval system. By then, you need your error log, diagrams, formulae or classification triggers, image prompts and timed questions.
 
-If you want a short, topic-wise companion for repeat revision, inspect the [sample pages for Retina Deciphered](/products/retina-deciphered). It is a revision route from OphthaMCQ, not a substitute for a primary reference when the mechanism, classification or current guidance is uncertain. Use it after you have checked the source, so compression reinforces understanding rather than hiding a gap. The wider [OphthaMCQ resource hub](/resources) can help you choose other formats only after the present book decision is clear.
+If you want a short, topic-wise companion for repeat revision, inspect the [sample pages for Retina Deciphered](/products/retina-deciphered/). It is a revision route from OphthaMCQ, not a substitute for a primary reference when the mechanism, classification or current guidance is uncertain. Use it after you have checked the source, so compression reinforces understanding rather than hiding a gap. The wider [OphthaMCQ resource hub](/resources/) can help you choose other formats only after the present book decision is clear.
 
 ## Before buying: check these four things yourself
 

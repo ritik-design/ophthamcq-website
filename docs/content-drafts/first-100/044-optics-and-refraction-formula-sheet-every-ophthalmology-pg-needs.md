@@ -1,5 +1,6 @@
 ---
 title: "Optics and Refraction Formula Sheet Every Ophthalmology PG Needs"
+seo_title: "Ophthalmology Optics & Refraction Formula Sheet"
 proposed_slug: "optics-and-refraction-formula-sheet-every-ophthalmology-pg-needs"
 meta_description: "A source-linked ophthalmology optics formula sheet: vergence, lenses, prism, refraction, magnification, keratometry and exam traps."
 excerpt: "The calculation is short. The marks sit in the sketch, sign, unit and sanity check."
@@ -107,7 +108,7 @@ Similarly, a contact-lens vertex conversion question is a high-power-lens exerci
 
 Make one formula card for each row in the master table. The front should be a question cue, not the equation: “What does a +6 D lens do to −2 D incident vergence?” or “How do you transpose `−3 / +2 × 10`?” The back contains the formula, the unit and one trap. On alternate days, solve five mixed questions without looking at the topic label. Mark every mistake as **unit**, **sign**, **formula selection**, **algebra**, or **concept**. Revisit concept errors with a diagram; formula errors with a new numerical example.
 
-For longer, syllabus-mapped revision, see [Optics & Refraction Notes](/products/optics-notes). After the concepts are stable, use [ICO Optics & Refraction MCQs Part A](/products/ico-optics-refraction-mcqs-part-a) and the [ICO / FICO free-question route](/free-mcqs/ico-fico) to practise selection under pressure. The [ICO / FICO preparation guide](/exams/ico-fico) helps place optics within the wider examination plan.
+For longer, syllabus-mapped revision, see [Optics & Refraction Notes](/products/optics-notes/). After the concepts are stable, use [ICO Optics & Refraction MCQs Part A](/products/ico-optics-refraction-mcqs-part-a/) and the [ICO / FICO free-question route](/free-mcqs/ico-fico/) to practise selection under pressure. The [ICO / FICO preparation guide](/exams/ico-fico/) helps place optics within the wider examination plan.
 
 ## A one-page final-week drill
 

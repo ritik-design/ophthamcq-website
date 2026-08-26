@@ -1,7 +1,8 @@
 ---
 title: "How to Choose an Ophthalmology Subspecialty: An Honest Comparison"
+seo_title: "How to Choose an Ophthalmology Subspecialty"
 proposed_slug: "how-to-choose-an-ophthalmology-subspecialty-an-honest-comparison"
-meta_description: "A practical, evidence-bounded framework for choosing an ophthalmology subspecialty after residency: daily work, case mix, supervision, location and constraints."
+meta_description: "A practical framework for choosing an ophthalmology subspecialty after residency: daily work, case mix, supervision, location and constraints."
 excerpt: "Choose from the work you want to repeat on an ordinary weekday, not from one memorable theatre list."
 category: "Career"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -78,7 +79,7 @@ Also distinguish the person from the programme. If your interest disappears when
 
 Family responsibilities, health, finances, geography, visa/registration rules and partner employment can constrain the feasible training options. They are not “non-academic excuses” to hide below a prestige score. Place them in the same worksheet as case mix and supervision.
 
-For international options, verify requirements directly with the provider, regulator and current programme documentation. Fellowship directories are orientation tools; they do not replace a current eligibility check. The [fellowship preparation guide](/exams/fellowship) can help organise academic preparation, but it is not an endorsement or placement service.
+For international options, verify requirements directly with the provider, regulator and current programme documentation. Fellowship directories are orientation tools; they do not replace a current eligibility check. The [fellowship preparation guide](/exams/fellowship/) can help organise academic preparation, but it is not an endorsement or placement service.
 
 ## A scorecard that makes uncertainty useful
 
@@ -128,7 +129,7 @@ Residents sometimes frame another rotation as indecision. It can be a high-quali
 
 In week 1, select two tracks and arrange ordinary clinics. In week 2, complete the field log and ask one current fellow in each service the same five questions. In week 3, meet a supervisor to test your interpretation of the work, then check the actual current application and eligibility documents for the locations you could accept. In week 4, complete the scorecard, write a one-page rationale for each option, and identify the missing evidence that would change your choice.
 
-If the two rationales remain tied, extend exploration rather than invent certainty. Use the [practical and viva resources](/osce) only for the exam-facing elements of a selection process. They do not improve selection odds or substitute for clinical supervision.
+If the two rationales remain tied, extend exploration rather than invent certainty. Use the [practical and viva resources](/osce/) only for the exam-facing elements of a selection process. They do not improve selection odds or substitute for clinical supervision.
 
 ## Editorial QA and link manifest
 

@@ -1,5 +1,6 @@
 ---
 title: "Ophthalmology Question Banks Compared: An Exam-First Buying Framework"
+seo_title: "Ophthalmology Question Banks Compared"
 proposed_slug: "best-ophthalmology-question-banks-compared-2026"
 meta_description: "Compare ophthalmology question banks by exam fit, explanation quality, source trail and review workflow. A source-aware framework for residents."
 excerpt: "There is no universal best ophthalmology question bank. Use a sample to test whether a bank matches your examination and can turn an error into a later retrieval."
@@ -17,7 +18,7 @@ There is no objectively best ophthalmology question bank for every resident. A b
 
 This is a selection framework for postgraduate ophthalmology revision, not an affiliate list, a provider ranking or an endorsement by an examining body. It does not compare live prices, question counts, subscription lengths, app support, discounts or feature lists. Those details are volatile and should be checked on the seller's own current page immediately before purchase.
 
-If you specifically want a provider-by-provider route, use the existing [Ophthalmology Question Banks comparison](/compare/best-ophthalmology-question-banks) alongside the providers' current pages. This article answers the earlier decision: what to inspect before any table or marketing claim becomes relevant to you.
+If you specifically want a provider-by-provider route, use the existing [Ophthalmology Question Banks comparison](/compare/best-ophthalmology-question-banks/) alongside the providers' current pages. This article answers the earlier decision: what to inspect before any table or marketing claim becomes relevant to you.
 
 ## The short answer: choose for the next paper, not for the brand
 
@@ -33,7 +34,7 @@ Before comparing providers, write one sentence: “My next paper is ___, and I n
 | FRCOphth | The exact component: Part 1, Part 2 Written, Refraction or OSCE | Using “UK ophthalmology” as if it described one assessment |
 | OKAP or US-board preparation | Explicit US-facing scope on the provider's own site | Assuming an international bank maps to US-board use |
 
-Use the relevant official body for the examination rules. The [DNB preparation guide](/exams/dnb), [ICO / FICO guide](/exams/ico-fico), [FAICO guide](/exams/faico) and [FRCOphth guide](/exams/frcophth) are useful on-site orientation routes, but the live notice, syllabus and regulations from the responsible body control eligibility, format and dates.
+Use the relevant official body for the examination rules. The [DNB preparation guide](/exams/dnb/), [ICO / FICO guide](/exams/ico-fico/), [FAICO guide](/exams/faico/) and [FRCOphth guide](/exams/frcophth/) are useful on-site orientation routes, but the live notice, syllabus and regulations from the responsible body control eligibility, format and dates.
 
 ## Compare the review loop before you compare labels
 
@@ -65,7 +66,7 @@ EyeDocs describes [EyeQ](https://www.eyedocs.co.uk/eyeq/) as ophthalmology revis
 
 PrepGuidance's official [home page](https://prepguidance.com/) was also reachable on 18 August 2026. Its current product, price, duration, device and content details should be evaluated only on its own live pages. This article deliberately withholds those mutable attributes rather than repeating a dated comparison claim.
 
-OphthaMCQ has question-bank, notes, past-paper and practical-revision routes documented in the site inventory. The [free ophthalmology MCQs](/free-mcqs) route is the appropriate no-purchase place to inspect an explanation workflow. If you are considering a paid item, open the relevant on-site page, such as [High Yield MCQs](/products/high-yield-mcqs), and then read the current store hand-off and terms. The presence of a product route does not establish current price, coverage, updates, compatibility or suitability for a particular examination.
+OphthaMCQ has question-bank, notes, past-paper and practical-revision routes documented in the site inventory. The [free ophthalmology MCQs](/free-mcqs/) route is the appropriate no-purchase place to inspect an explanation workflow. If you are considering a paid item, open the relevant on-site page, such as [High Yield MCQs](/products/high-yield-mcqs/), and then read the current store hand-off and terms. The presence of a product route does not establish current price, coverage, updates, compatibility or suitability for a particular examination.
 
 OphthaMCQ is an independent preparation provider. It is not AIOS, ICO, NBEMS, the Royal College of Ophthalmologists or the AAO, and no provider's preparation material replaces the official source for examination rules.
 
@@ -103,7 +104,7 @@ For stable textbook material, a concise explanation may be enough. For a claim t
 
 Flag three questions. Find out how you will meet them again in 48 hours and one week. The route can be inside the bank, in a personal error log, or in a flashcard system. It does not need to be sophisticated. It does need to exist before you buy.
 
-If you are building your own log, use four fields: topic, error code, one-line discriminator and next review date. This is enough to convert a missed question into spaced retrieval. The [MCQ-bank spaced-repetition guide](/resources) is a planning hub for this workflow; the tool selection decision remains separate from how you schedule revision.
+If you are building your own log, use four fields: topic, error code, one-line discriminator and next review date. This is enough to convert a missed question into spaced retrieval. The [MCQ-bank spaced-repetition guide](/resources/) is a planning hub for this workflow; the tool selection decision remains separate from how you schedule revision.
 
 ## The feature questions that matter more than a large number
 
@@ -133,7 +134,7 @@ Most residents need fewer resources than they collect. A workable stack has dist
 | Topic repair | One concise note or chapter | A one-line discriminator or diagram from memory |
 | Mixed calibration | Timed mixed questions near the right stage of revision | List of gaps that still recur under pressure |
 
-Do not buy a second bank simply because the first produces discomfort. Discomfort after a difficult set may reveal the precise topic you need to repair. Add another resource only when it has a defined, non-overlapping job: a different examination component, a clearly different format, or a source you need to check a specific gap. For compact revision material, the [Handwritten Exam Ready Notes](/notes) route is available to inspect; use it as a study-format choice, not as a substitute for active recall or authoritative checking.
+Do not buy a second bank simply because the first produces discomfort. Discomfort after a difficult set may reveal the precise topic you need to repair. Add another resource only when it has a defined, non-overlapping job: a different examination component, a clearly different format, or a source you need to check a specific gap. For compact revision material, the [Handwritten Exam Ready Notes](/notes/) route is available to inspect; use it as a study-format choice, not as a substitute for active recall or authoritative checking.
 
 ## Red flags during a comparison
 
@@ -151,7 +152,7 @@ None of these proves that a product is poor. They are prompts to collect better 
 
 ## A decision rule for the final week before checkout
 
-Before you pay, complete this sentence: “I am choosing this resource for ___, during ___, and I will review errors by ___.” If you cannot fill in all three blanks, postpone the purchase. Start with a no-purchase diagnostic such as [free ophthalmology MCQs](/free-mcqs), identify the actual failure mode, then return to the provider pages.
+Before you pay, complete this sentence: “I am choosing this resource for ___, during ___, and I will review errors by ___.” If you cannot fill in all three blanks, postpone the purchase. Start with a no-purchase diagnostic such as [free ophthalmology MCQs](/free-mcqs/), identify the actual failure mode, then return to the provider pages.
 
 The aim is not to own the most resources. It is to establish a repeatable route from attempt to explanation to later recall. One question bank, one source-verification habit and one error log can be enough for a reliable study loop. Recheck live provider terms just before any transaction; this article cannot keep pace with price changes, access conditions or product revisions.
 

@@ -5,6 +5,7 @@
  */
 import Icon from '../Icon.astro';
 import { COM_BASE } from '../../config';
+import { imageSize } from '../../utils/image-size.js';
 import {
   PRACTICAL_RESOURCES,
   practicalStoreHref,
@@ -46,7 +47,7 @@ const stations = [
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <a
-          href="/osce"
+          href="/osce/"
           class="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-900/10 hover:bg-emerald-700 transition-colors"
         >
           Explore OSCE Bundle
@@ -97,6 +98,8 @@ const stations = [
               <img
                 src={r.thumb}
                 alt={r.title}
+                width={imageSize(r.thumb)?.width}
+                height={imageSize(r.thumb)?.height}
                 loading="lazy"
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
               />
@@ -141,7 +144,7 @@ const stations = [
                   </a>
                 ) : (
                   <a
-                    href="/osce"
+                    href="/osce/"
                     class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-emerald-300 hover:text-emerald-800 transition-colors"
                   >
                     View OSCE page

@@ -31,7 +31,7 @@ type ExamContent = {
 
 const content: Record<string, ExamContent> = {
   frcophth: {
-    seoTitle: 'FRCOphth Part 1 & 2 Preparation — Question Bank, Notes, Past Papers',
+    seoTitle: 'FRCOphth Part 1 & 2 Preparation Resources',
     seoDescription: 'Pass FRCOphth Part 1 and Part 2 with syllabus-mapped MCQs, handwritten basic sciences notes, OSCE scenarios and past paper explanations.',
     parts: [
       { name: 'Part 1 (Written)', format: '90 SBAs + 30 CRQs', duration: '3 hours total', passMark: 'Standard set (~63–67%)', questions: 'Basic sciences focus: anatomy, optics, physiology, pathology, pharmacology, biostatistics' },
@@ -79,7 +79,7 @@ const content: Record<string, ExamContent> = {
     ],
   },
   'ico-fico': {
-    seoTitle: 'ICO / FICO Preparation — Past Papers, BVS MCQs, Clinical Banks',
+    seoTitle: 'ICO/FICO Preparation: Past Papers & MCQs',
     seoDescription: 'Pass ICO Basic Sciences, Clinical, Optics & Refraction and FICO with past papers, syllabus-mapped MCQs and handwritten notes from doctors who passed.',
     parts: [
       { name: 'Basic Visual Sciences', format: '120 MCQs', duration: '3 hours', passMark: '~60%', questions: 'Anatomy, physiology, optics, pathology, pharmacology, microbiology, genetics' },
@@ -128,7 +128,7 @@ const content: Record<string, ExamContent> = {
     ],
   },
   faico: {
-    seoTitle: 'FAICO Exam Preparation — AIOS Fellowship MCQs, Notes & Tips',
+    seoTitle: 'FAICO Exam Preparation: MCQs and Notes',
     seoDescription: 'Pass FAICO with syllabus-mapped MCQs, sub-specialty handwritten notes, viva tips and past paper patterns for the AIOS Fellowship exam.',
     parts: [
       { name: 'FAICO Theory', format: 'MCQ + essay', duration: 'Full day', passMark: '50% per section', questions: 'Sub-specialty depth in chosen fellowship area' },
@@ -178,7 +178,7 @@ const content: Record<string, ExamContent> = {
     ],
   },
   'pd-cet': {
-    seoTitle: 'PD-CET Ophthalmology Preparation — MCQ Bank, Notes & Past Patterns',
+    seoTitle: 'PD-CET Ophthalmology Preparation & MCQ Bank',
     seoDescription: 'Prepare for PD-CET Ophthalmology with a syllabus-mapped MCQ bank, handwritten notes and past question patterns for diploma-to-degree conversion.',
     parts: [
       { name: 'PD-CET Theory', format: '100 MCQs', duration: '90 minutes', passMark: 'Rank-based selection', questions: 'Full ophthalmology curriculum at MS entry level' },
@@ -221,7 +221,7 @@ const content: Record<string, ExamContent> = {
     ],
   },
   dnb: {
-    seoTitle: 'DNB Ophthalmology Preparation — Theory MCQs, Notes & Practical Tips',
+    seoTitle: 'DNB Ophthalmology Preparation: MCQs & Notes',
     seoDescription: 'Pass DNB Ophthalmology theory and practical with syllabus-mapped MCQs, handwritten notes covering Kanski and Ryan, and viva tips from recent passers.',
     parts: [
       { name: 'DNB Theory', format: '4 papers, essays + short notes', duration: '3 hours each', passMark: '50% per paper, 50% aggregate', questions: 'Full clinical ophthalmology curriculum' },
@@ -270,7 +270,7 @@ const content: Record<string, ExamContent> = {
     ],
   },
   'neet-ss': {
-    seoTitle: 'NEET-SS Ophthalmology Preparation — MCQs, Image Banks & Strategy',
+    seoTitle: 'NEET-SS Ophthalmology Preparation & MCQs',
     seoDescription: 'Crack NEET-SS Ophthalmology with image-rich MCQs, sub-specialty handwritten notes and a 6-month timeline built by recent rankers.',
     parts: [
       { name: 'NEET-SS Ophthalmology', format: '150 MCQs', duration: '150 minutes', passMark: 'Rank-based selection', questions: 'Sub-specialty oriented: retina, glaucoma, cornea, paeds, neuro-ophth' },
@@ -316,7 +316,7 @@ const content: Record<string, ExamContent> = {
     ],
   },
   okaps: {
-    seoTitle: 'OKAPs Preparation — BCSC-Aligned MCQs & Topic-wise Notes',
+    seoTitle: 'OKAPs Preparation: BCSC-Aligned MCQs',
     seoDescription: 'Prepare for OKAPs with BCSC-aligned ophthalmology MCQs, handwritten topic notes and a US-resident-friendly study schedule.',
     parts: [
       { name: 'OKAP', format: '~260 MCQs', duration: '4 hours', passMark: 'Percentile-reported, programme-specific', questions: 'Comprehensive ophthalmology aligned to BCSC sections 1–13' },
@@ -358,7 +358,7 @@ const content: Record<string, ExamContent> = {
     ],
   },
   fellowship: {
-    seoTitle: 'Ophthalmology Subspecialty Fellowship Preparation — Notes, MCQs & Viva',
+    seoTitle: 'Ophthalmology Fellowship Exam Preparation',
     seoDescription: 'Handwritten notes, MCQs and viva preparation for ophthalmology subspecialty fellowships in retina, glaucoma, cornea, oculoplasty and paediatric ophthalmology.',
     parts: [
       { name: 'Theory / Long Case', format: 'Essays + clinical', duration: 'Institution specific', passMark: 'Examiner panel', questions: 'Subspecialty depth in chosen fellowship area' },
@@ -416,6 +416,7 @@ const matchedTestimonials = examData.testimonialFilter.length
 
 <Layout
   title={examData.seoTitle}
+  breadcrumbs={[{ name: 'Exams', href: '/exams/' }, { name: examData.name }]}
   description={examData.seoDescription}
 >
   <div class="site-hero bg-white border-b border-slate-200">
@@ -432,10 +433,10 @@ const matchedTestimonials = examData.testimonialFilter.length
           {exam.description}. Syllabus-mapped MCQ bank, handwritten notes and past paper patterns to help you pass on the first attempt.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-          <a href="/free-mcqs" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors w-full sm:w-auto">
+          <a href="/free-mcqs/" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white hover:bg-sky-700 transition-colors w-full sm:w-auto">
             Try Free MCQs
           </a>
-          <a href="/notes" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 transition-colors w-full sm:w-auto">
+          <a href="/notes/" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 transition-colors w-full sm:w-auto">
             View Notes
           </a>
         </div>
@@ -487,7 +488,7 @@ const matchedTestimonials = examData.testimonialFilter.length
         ))}
       </div>
       <div class="mt-10 text-center">
-        <a href="/topics" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800">
+        <a href="/topics/" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-800">
           Browse all ophthalmology topics
           <Icon name="chevronRight" class="w-4 h-4" />
         </a>
@@ -657,9 +658,9 @@ const matchedTestimonials = examData.testimonialFilter.length
         ))}
       </div>
       <div class="mt-10 grid sm:grid-cols-3 gap-3 text-center text-sm">
-        <a href="/exams" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">All exams</a>
-        <a href="/topics" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">All topics</a>
-        <a href="/glossary" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">Glossary</a>
+        <a href="/exams/" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">All exams</a>
+        <a href="/topics/" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">All topics</a>
+        <a href="/glossary/" class="rounded-xl border border-slate-200 p-3 hover:border-sky-300 transition-colors text-slate-700 font-medium">Glossary</a>
       </div>
     </div>
   </div>

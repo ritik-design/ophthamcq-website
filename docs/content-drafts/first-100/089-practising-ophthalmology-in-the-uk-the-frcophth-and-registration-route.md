@@ -1,5 +1,6 @@
 ---
 title: "Practising Ophthalmology in the UK: FRCOphth, GMC and the Employment Route"
+seo_title: "Ophthalmology Jobs in the UK for Indian Doctors"
 proposed_slug: "practising-ophthalmology-in-the-uk-the-frcophth-and-registration-route"
 meta_description: "A source-led orientation to the UK route for Indian ophthalmologists: separate FRCOphth, GMC registration, jobs and visa checks before committing."
 excerpt: "FRCOphth, GMC registration and a job offer answer different questions. Map each against current official requirements."
@@ -45,7 +46,7 @@ The [Royal College of Ophthalmologists examinations pages](https://www.rcophth.a
 
 FRCOphth can be relevant evidence of ophthalmic examination progress or achievement, but do not turn that into an automatic equivalence claim. It does not by itself determine your GMC application, an employer’s shortlisting decision, immigration status, appointment grade or training recognition. The advert and the relevant regulator each decide their own question.
 
-For an exam-revision map rather than career-route advice, use the internal [FRCOphth preparation guide](/exams/frcophth). The [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs) page is a product-information route; verify current store scope and terms before purchasing.
+For an exam-revision map rather than career-route advice, use the internal [FRCOphth preparation guide](/exams/frcophth/). The [FRCOphth Step 1 MCQs](/products/frcophth-step-1-mcqs/) page is a product-information route; verify current store scope and terms before purchasing.
 
 ## GMC: create a personal evidence map
 

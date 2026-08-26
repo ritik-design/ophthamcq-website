@@ -1,5 +1,6 @@
 ---
 title: "Optic Neuropathies Differentiated: AION, Optic Neuritis, Compressive"
+seo_title: "Optic Neuropathies Differentiated"
 proposed_slug: "optic-neuropathies-differentiated-aion-optic-neuritis-compressive"
 meta_description: "Differentiate AION, optic neuritis and compressive optic neuropathy in exam stems using tempo, pain, disc, field and imaging clues."
 excerpt: "Confirm the optic-neuropathy syndrome first; then use tempo and discriminators to rank AION, neuritis and compression."
@@ -145,7 +146,7 @@ These comparisons are useful because they convert a memorised table into conditi
 
 Create three columns in an error log: AION, neuritis and compression. After every missed question, write only the discriminator you ignored. Examples: “I saw disc oedema but ignored older age/systemic features”; “I saw pain but ignored progressive proptosis”; “I selected compression without a topographic clue.” Revisit the log after 48 hours and answer the same stem from a blank page.
 
-Then practise a mixed set through [general ophthalmology MCQs](/free-mcqs/general), rather than doing an entire block of optic-neuritis recalls. For broader context, use the [neuro-ophthalmology study guide](/topics/neuro-ophthalmology). The point is to make the tempo-first method automatic before the question writer changes the surface details.
+Then practise a mixed set through [general ophthalmology MCQs](/free-mcqs/general/), rather than doing an entire block of optic-neuritis recalls. For broader context, use the [neuro-ophthalmology study guide](/topics/neuro-ophthalmology/). The point is to make the tempo-first method automatic before the question writer changes the surface details.
 
 ## Sources
 

@@ -1,5 +1,6 @@
 ---
 title: "How to Read an OCT in the Exam: Pattern Recognition in 10 Scans"
+seo_title: "How to Read an OCT in the Exam"
 proposed_slug: "how-to-read-an-oct-in-the-exam-pattern-recognition-in-10-scans"
 meta_description: "Use a repeatable OCT interpretation sequence for ophthalmology exams: scan quality, layers, fluid, contour, ten patterns and a viva template."
 excerpt: "A description-first OCT framework for image stations, MCQs and viva."
@@ -140,7 +141,7 @@ This drill is deliberately basic. Under examination pressure, candidates often r
 
 Take ten unlabelled scans from a trusted teaching set. Give yourself 30 seconds each. Write exactly four lines: quality; interface/contour; compartment/layers; conditional differential. Only then reveal the caption. On the next pass, pair each morphology with one competing explanation: VMT versus DMO, SRF in CSCR versus MNV context, PED versus drusenoid elevation. That contrast makes the pattern durable under pressure.
 
-Use the verified [retina study guide](/topics/retina) for the wider clinical framework. For report- and test-reading revision, see [Read Ophthalmology Reports & Tests](/products/read-ophthalmology-reports-tests). You can also use [high-yield free MCQs](/free-mcqs/high-yield) for short retrieval practice and the on-site [ophthalmology glossary](/glossary) to standardise terminology. These are education resources, not clinical decision support.
+Use the verified [retina study guide](/topics/retina/) for the wider clinical framework. For report- and test-reading revision, see [Read Ophthalmology Reports & Tests](/products/read-ophthalmology-reports-tests/). You can also use [high-yield free MCQs](/free-mcqs/high-yield/) for short retrieval practice and the on-site [ophthalmology glossary](/glossary/) to standardise terminology. These are education resources, not clinical decision support.
 
 ## Sources
 

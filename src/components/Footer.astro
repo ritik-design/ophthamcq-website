@@ -3,38 +3,38 @@ import { SITE, APP_LINKS } from '../config';
 import Icon from './Icon.astro';
 
 const examLinks = [
-  { label: 'ICO / FICO',    href: '/exams/ico-fico' },
-  { label: 'FAICO',         href: '/exams/faico' },
-  { label: 'DNB / MS / DO', href: '/exams/dnb' },
-  { label: 'PDCET',         href: '/exams/pd-cet' },
-  { label: 'FRCOphth',      href: '/exams/frcophth', comingSoon: true },
-  { label: 'Fellowship',    href: '/exams/fellowship' },
+  { label: 'ICO / FICO',    href: '/exams/ico-fico/' },
+  { label: 'FAICO',         href: '/exams/faico/' },
+  { label: 'DNB / MS / DO', href: '/exams/dnb/' },
+  { label: 'PDCET',         href: '/exams/pd-cet/' },
+  { label: 'FRCOphth',      href: '/exams/frcophth/', comingSoon: true },
+  { label: 'Fellowship',    href: '/exams/fellowship/' },
 ];
 
 const productLinks = [
-  { label: 'Handwritten Exam Ready Notes', href: '/notes' },
-  { label: 'MCQ Question Banks',           href: '/exams' },
-  { label: 'ICO/FICO Past Papers',         href: '/exams/ico-fico' },
-  { label: 'FAICO MCQs',                   href: '/exams/faico' },
-  { label: 'OSCE & Practical Prep',        href: '/osce' },
-  { label: 'High Yield MCQs',              href: '/exams' },
+  { label: 'Handwritten Exam Ready Notes', href: '/notes/' },
+  { label: 'MCQ Question Banks',           href: '/exams/' },
+  { label: 'ICO/FICO Past Papers',         href: '/exams/ico-fico/' },
+  { label: 'FAICO MCQs',                   href: '/exams/faico/' },
+  { label: 'OSCE & Practical Prep',        href: '/osce/' },
+  { label: 'High Yield MCQs',              href: '/exams/' },
 ];
 
 const resourceLinks = [
-  { label: 'Blog',                  href: '/blog' },
-  { label: 'Free Sample Questions', href: '/free-mcqs' },
-  { label: 'Glossary',              href: '/glossary' },
-  { label: 'Success Stories',       href: '/success-stories' },
-  { label: 'FAQ',                   href: '/faq' },
-  { label: 'Free Resources',        href: '/resources' },
+  { label: 'Blog',                  href: '/blog/' },
+  { label: 'Free Sample Questions', href: '/free-mcqs/' },
+  { label: 'Glossary',              href: '/glossary/' },
+  { label: 'Success Stories',       href: '/success-stories/' },
+  { label: 'FAQ',                   href: '/faq/' },
+  { label: 'Free Resources',        href: '/resources/' },
 ];
 
 const companyLinks = [
-  { label: 'About Us',             href: '/about' },
-  { label: 'Contact',              href: '/contact' },
-  { label: 'Institutional Sales',  href: '/institutions' },
-  { label: 'Help & Support',       href: '/faq' },
-  { label: 'Pricing & Refunds',    href: '/faq#pricing-refunds' },
+  { label: 'About Us',             href: '/about/' },
+  { label: 'Contact',              href: '/contact/' },
+  { label: 'Institutional Sales',  href: '/institutions/' },
+  { label: 'Help & Support',       href: '/faq/' },
+  { label: 'Pricing & Refunds',    href: '/faq/#pricing-refunds' },
 ];
 ---
 
@@ -45,7 +45,7 @@ const companyLinks = [
       <!-- Column 1 — Brand -->
       <div class="col-span-2 md:col-span-3 lg:col-span-1">
         <a href="/" class="flex items-center gap-2 mb-4 group">
-          <img src="/logo.png" alt="OphthaMCQ" class="w-9 h-9 object-contain bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105" />
+          <img src="/logo.png" alt="OphthaMCQ" width="480" height="480" class="w-9 h-9 object-contain bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105" />
           <span class="text-lg font-bold text-white tracking-tight">{SITE.name}</span>
         </a>
         <p class="text-sm text-slate-400 leading-relaxed mb-2">
@@ -131,9 +131,9 @@ const companyLinks = [
         <p class="text-xs text-slate-600 mt-1">Built by Ophthalmologists. For Ophthalmologists.</p>
       </div>
       <div class="flex gap-6 text-sm text-slate-500">
-        <a href="/faq" class="hover:text-slate-300 transition-colors">Help</a>
-        <a href="/faq#pricing-refunds" class="hover:text-slate-300 transition-colors">Pricing & refunds</a>
-        <a href="/contact" class="hover:text-slate-300 transition-colors">Contact</a>
+        <a href="/faq/" class="hover:text-slate-300 transition-colors">Help</a>
+        <a href="/faq/#pricing-refunds" class="hover:text-slate-300 transition-colors">Pricing & refunds</a>
+        <a href="/contact/" class="hover:text-slate-300 transition-colors">Contact</a>
       </div>
     </div>
   </div>

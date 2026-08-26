@@ -1,7 +1,8 @@
 ---
 title: "Handwritten vs Typed Notes for Revision: What the Evidence Says"
+seo_title: "Handwritten vs Typed Notes: What Evidence Says"
 proposed_slug: "handwritten-vs-typed-notes-for-revision-what-the-evidence-says"
-meta_description: "Choose handwritten, typed or hybrid ophthalmology revision notes by the task: thinking, searchability, images and retrieval. Evidence does not crown one universal winner."
+meta_description: "Choose handwritten, typed or hybrid ophthalmology revision notes by the task: thinking, searchability, images and retrieval. No universal winner."
 excerpt: "The useful comparison is not pen versus keyboard. It is whether the note makes you select, retrieve and retest the ophthalmology concept."
 category: "Resources"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -117,11 +118,11 @@ At the end of each week, delete or archive duplicates. If an item exists in all 
 
 ## How to use OphthaMCQ resources without making a product claim the evidence cannot support
 
-The [Handwritten Exam Ready Notes](/notes) page is a verified route to OphthaMCQ’s handwritten revision materials. They can be used as a concise revision layer when you want to review a topic map, but they are not a substitute for checking the primary source for an uncertain concept or a changing rule. They also cannot perform your retrieval practice.
+The [Handwritten Exam Ready Notes](/notes/) page is a verified route to OphthaMCQ’s handwritten revision materials. They can be used as a concise revision layer when you want to review a topic map, but they are not a substitute for checking the primary source for an uncertain concept or a changing rule. They also cannot perform your retrieval practice.
 
-If a particular weakness is glaucoma or optics, inspect the current sample information on the [Glaucoma Exam Ready Notes page](/products/glaucoma-notes) or [Optics & Refraction Notes page](/products/optics-notes). Decide from the material and your gap, not from a claim that handwriting itself improves marks. Then test the concept with [free MCQs with explanations](/free-mcqs). The questions are the audit: they reveal whether your notes created a transferable decision.
+If a particular weakness is glaucoma or optics, inspect the current sample information on the [Glaucoma Exam Ready Notes page](/products/glaucoma-notes/) or [Optics & Refraction Notes page](/products/optics-notes/). Decide from the material and your gap, not from a claim that handwriting itself improves marks. Then test the concept with [free MCQs with explanations](/free-mcqs/). The questions are the audit: they reveal whether your notes created a transferable decision.
 
-For terminology you cannot immediately place, the [ophthalmology glossary](/glossary) is a quick on-site reference. It is a starting point for a term, not a replacement for the source context. The [resource hub](/resources) can help when the next need is a different format rather than another note set.
+For terminology you cannot immediately place, the [ophthalmology glossary](/glossary/) is a quick on-site reference. It is a starting point for a term, not a replacement for the source context. The [resource hub](/resources/) can help when the next need is a different format rather than another note set.
 
 ## Five signs you are rewriting instead of revising
 

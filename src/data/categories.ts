@@ -16,6 +16,10 @@ export type Category = {
   id: CategoryId;
   name: string;
   description: string;
+  /** SERP title — max 51 chars, Layout appends " | OphthaMCQ". */
+  seoTitle: string;
+  /** SERP description — 140-158 chars. */
+  seoDescription: string;
   iconName: string;
   fullQuestionCount: string;
   quizSize: number;
@@ -37,6 +41,8 @@ export const CATEGORIES: Category[] = [
   {
     id: 'pdcet',
     name: 'PD-CET Ophthal',
+    seoTitle: 'Free PD-CET Ophthalmology MCQs With Answers',
+    seoDescription: 'Practise free PD-CET ophthalmology MCQs with answers and explanations. Exam-pattern questions for the Post Diploma Centralized Entrance Test, scored instantly.',
     description: 'Post Diploma Centralized Entrance Test preparation with high-yield MCQs and notes.',
     iconName: 'target',
     fullQuestionCount: '1000+',
@@ -73,6 +79,8 @@ export const CATEGORIES: Category[] = [
   {
     id: 'faico',
     name: 'FAICO MCQs',
+    seoTitle: 'Free FAICO MCQs With Answers & Explanations',
+    seoDescription: 'Practise free FAICO MCQs mapped to the AIOS fellowship syllabus, each with a full explanation. Instant scoring, no signup, subspecialty-focused questions.',
     description: 'AIOS Fellowship exam MCQs mapped topic-by-topic to the FAICO syllabus.',
     iconName: 'badgeCheck',
     fullQuestionCount: '1500+',
@@ -109,6 +117,8 @@ export const CATEGORIES: Category[] = [
   {
     id: 'ico-fico',
     name: 'ICO/FICO Past Papers',
+    seoTitle: 'Free ICO/FICO Past Paper MCQs With Answers',
+    seoDescription: 'Practise free ICO/FICO past paper MCQs with complete answers and explanations, covering Basic Visual Sciences, Optics and the Clinical Sciences papers.',
     description: 'Past papers with full explanations for ICO Basic Sciences and Clinical/FICO exams.',
     iconName: 'globe',
     fullQuestionCount: '2000+',
@@ -145,6 +155,8 @@ export const CATEGORIES: Category[] = [
   {
     id: 'frcophth',
     name: 'FRCOPHTH MCQs',
+    seoTitle: 'Free FRCOphth MCQs With Answers & Explanations',
+    seoDescription: 'Practise free FRCOphth Part 1 MCQs in the UK single-best-answer pattern, with explanations drawn from Ryan, Kanski and Elkington. Instant scoring, no signup.',
     description: 'FRCOphth Part 1 / Step 1 MCQs built from Ryan, Kanski, and Elkington.',
     iconName: 'graduationCap',
     fullQuestionCount: '2000+',
@@ -179,6 +191,8 @@ export const CATEGORIES: Category[] = [
   {
     id: 'high-yield',
     name: 'Ophthal MCQs High Yield',
+    seoTitle: 'Free High-Yield Ophthalmology MCQs Practice',
+    seoDescription: 'Practise free high-yield ophthalmology MCQs across every subspecialty, each with a detailed explanation. Rapid revision for DNB, MS, ICO/FICO and FAICO.',
     description: 'High-yield MCQ bank across all ophthalmology subspecialties for rapid revision.',
     iconName: 'chartBar',
     fullQuestionCount: '1000+',
@@ -214,6 +228,8 @@ export const CATEGORIES: Category[] = [
   {
     id: 'general',
     name: 'General Ophthalmology',
+    seoTitle: 'Free General Ophthalmology MCQs With Answers',
+    seoDescription: 'Practise free general ophthalmology MCQs sampling every subspecialty, with answers and explanations. Test overall exam readiness with instant scoring.',
     description: 'A mixed sampler across all ophthalmology subspecialties to test your overall readiness.',
     iconName: 'eye',
     fullQuestionCount: '2000+',

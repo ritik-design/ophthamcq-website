@@ -1,7 +1,8 @@
 ---
 title: "Ophthalmology OSCE Stations: The Complete List and How to Approach Each"
+seo_title: "Ophthalmology OSCE Stations: The Complete List"
 proposed_slug: "ophthalmology-osce-stations-the-complete-list-and-how-to-approach-each"
-meta_description: "A structured ophthalmology OSCE guide for PG candidates: station families, timed scripts, interpretation framework, communication logic and a one-week practice circuit."
+meta_description: "A structured ophthalmology OSCE guide: station families, timed scripts, an interpretation framework, communication logic and a one-week practice circuit."
 excerpt: "Use one repeatable opening and close, then adapt the middle to the station task."
 category: "OSCE"
 author: "Dr. OphthaMCQ Editorial Team"
@@ -193,7 +194,7 @@ After every station, write a single “next repetition” instruction. Examples:
 7. Offering a definitive management plan from incomplete station information.
 8. Continuing after an examiner has redirected you.
 
-For structured practical practice, the [OSCE, Practical & Viva Voce Ready bundle](/osce) is the relevant OphthaMCQ route. Pair practical work with the [DNB Ophthalmology preparation guide](/exams/dnb) when you are balancing theory and practical revision, and use the [ophthalmology glossary](/glossary) to close terms that repeatedly stall a viva. A case-presentation template can also help you rehearse concise summaries; see [Case Presentation Format Notes](/products/case-presentation-format-notes).
+For structured practical practice, the [OSCE, Practical & Viva Voce Ready bundle](/osce/) is the relevant OphthaMCQ route. Pair practical work with the [DNB Ophthalmology preparation guide](/exams/dnb/) when you are balancing theory and practical revision, and use the [ophthalmology glossary](/glossary/) to close terms that repeatedly stall a viva. A case-presentation template can also help you rehearse concise summaries; see [Case Presentation Format Notes](/products/case-presentation-format-notes/).
 
 ## Sources
 

@@ -1,5 +1,6 @@
 ---
 title: "FRCOphth vs ICO: Which Exam Should an Indian Ophthalmology Resident Take?"
+seo_title: "FRCOphth vs ICO: Which Exam Should You Take?"
 proposed_slug: "frcophth-vs-ico-indian-ophthalmology-resident"
 meta_description: "A source-led FRCOphth vs ICO comparison for Indian ophthalmology residents: pathway, prerequisites, career questions, logistics checks and study planning."
 excerpt: "A source-led FRCOphth vs ICO comparison for Indian ophthalmology residents: pathway, prerequisites, career questions, logistics checks and study planning."
@@ -45,7 +46,7 @@ FRCOphth preparation works best when the current RCOphth curriculum and componen
 - **Reference learning:** the concept or clinical domain you need to understand from your named source.
 - **Personal data:** what your timed questions and error log show you are missing.
 
-The [FRCOphth guide](/exams/frcophth) is the relevant OphthaMCQ navigation page for this route. Use it after you have confirmed the live official details for your intended component.
+The [FRCOphth guide](/exams/frcophth/) is the relevant OphthaMCQ navigation page for this route. Use it after you have confirmed the live official details for your intended component.
 
 ## What ICO is asking you to plan
 
@@ -57,7 +58,7 @@ The same ICO source describes an Advanced ICO Examination for candidates who hav
 
 ICO planning is paper-specific. Visual Sciences, Optics/Refraction/ Instruments, and Clinical Ophthalmology have different dominant work: mechanisms and foundational science, calculations and optical reasoning, then applied clinical knowledge. You can share foundational study across long-term objectives, but do not attempt to prepare for every paper at once simply because the subjects overlap.
 
-The [ICO / FICO guide](/exams/ico-fico) is the matching on-site hub. It is a preparation resource, not an ICO regulation or a claim of affiliation.
+The [ICO / FICO guide](/exams/ico-fico/) is the matching on-site hub. It is a preparation resource, not an ICO regulation or a claim of affiliation.
 
 ## FRCOphth versus ICO at decision level
 
@@ -91,7 +92,7 @@ Draw both routes on one page. Add prerequisite arrows, likely exam windows, your
 
 Spend one weekend doing a timed set in the style you are preparing for, then classify errors: missing fact, flawed mechanism, calculation error, misread stem, uncertain differential, or time-management problem. The output is not a prediction of passing. It tells you whether your next six weeks should be basic-science consolidation, optics drills, applied clinical retrieval, or question interpretation.
 
-You can [try free FRCOphth MCQs](/free-mcqs/frcophth) and [practise ICO/FICO-style free MCQs](/free-mcqs/ico-fico) as low-commitment ways to test an error-log workflow. They are practice resources, not official examinations.
+You can [try free FRCOphth MCQs](/free-mcqs/frcophth/) and [practise ICO/FICO-style free MCQs](/free-mcqs/ico-fico/) as low-commitment ways to test an error-log workflow. They are practice resources, not official examinations.
 
 ### 5. Commit to one primary calendar for a defined block
 
@@ -140,7 +141,7 @@ Fees, centres, currency conversion and travel change. Compare verified component
 5. Complete one timed diagnostic in the likely primary route and start an error log.
 6. Select one calendar for the next block. Review the decision after new official information, not after a marketing email.
 
-For broad on-site navigation, begin with the [ophthalmology examinations hub](/exams). It links to separate FRCOphth and ICO/FICO preparation pages so that a comparison does not become a forced purchase decision.
+For broad on-site navigation, begin with the [ophthalmology examinations hub](/exams/). It links to separate FRCOphth and ICO/FICO preparation pages so that a comparison does not become a forced purchase decision.
 
 ## Sources
 

@@ -1,5 +1,6 @@
 ---
 title: "Recent Advances in Ophthalmology 2026: MCQs on What's New"
+seo_title: "Recent Advances in Ophthalmology 2026 + MCQs"
 proposed_slug: "recent-advances-in-ophthalmology-2026-mcqs-on-whats-new"
 meta_description: "Practise 40 recent-advances ophthalmology MCQs on trials, retina, glaucoma, gene therapy, AI and how to verify changing approval claims."
 excerpt: "A 40-question recent-advances set that tests the source trail behind an update, not just the headline."
@@ -199,7 +200,7 @@ For each wrong answer, write one line in this format:
 | Boundary | “What did the study *not* establish?” |
 | Freshness | “Which regulator/jurisdiction and what checked-on date?” |
 
-For mixed retrieval practice, use the [high-yield MCQ set](/free-mcqs/high-yield). The [resources hub](/resources) is a verified route to broader study material, and the [ophthalmology glossary](/glossary) can resolve a term before you return to a paper. For topic-organised current product information, inspect the [Recent Advances in Ophthalmology page](/products/recent-advances-ophthalmology-notes); this article does not infer its current contents, updates or access terms.
+For mixed retrieval practice, use the [high-yield MCQ set](/free-mcqs/high-yield/). The [resources hub](/resources/) is a verified route to broader study material, and the [ophthalmology glossary](/glossary/) can resolve a term before you return to a paper. For topic-organised current product information, inspect the [Recent Advances in Ophthalmology page](/products/recent-advances-ophthalmology-notes/); this article does not infer its current contents, updates or access terms.
 
 ## Sources and scope
 

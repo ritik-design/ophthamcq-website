@@ -15,7 +15,7 @@ const cards = [
 const osce = {
   name: 'OphthaMCQ OSCE Ready',
   description: 'Complete DNB/MS/DO Practical Exam Bundle — OSCE • Instruments • Cases • Investigations • Viva Voce',
-  href: '/osce',
+  href: '/osce/',
   badge: 'New Launch',
 };
 
@@ -55,6 +55,8 @@ const badgeClasses: Record<string, string> = {
               <img
                 src={p.image}
                 alt={p.fullName}
+                width={p.imageWidth}
+                height={p.imageHeight}
                 loading="lazy"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -72,7 +74,7 @@ const badgeClasses: Record<string, string> = {
 
               <div class="flex flex-col gap-2">
                 <a
-                  href={`/products/${p.id}`}
+                  href={`/products/${p.id}/`}
                   class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-colors"
                 >
                   Preview Sample
@@ -123,7 +125,7 @@ const badgeClasses: Record<string, string> = {
 
     <div class="mt-12 text-center">
       <a
-        href="/notes"
+        href="/notes/"
         class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all"
       >
         View All Products

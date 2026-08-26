@@ -1,5 +1,6 @@
 ---
 title: "DNB Ophthalmology Theory Papers: Pattern and 10-Year Topic Analysis"
+seo_title: "DNB Ophthalmology Theory Papers"
 publication_action: "long-form-rewrite-after-live-serp-and-source-research"
 proposed_slug: "dnb-ophthalmology-theory-papers"
 meta_description: "Use official NBEMS sources and a reproducible 10-year coding method to analyse DNB Ophthalmology theory papers, plan answers and revise efficiently."
@@ -139,7 +140,7 @@ Do not report a numerical “10-year top topics” list until every included pap
 
 NBEMS separates theory and practical stages, but your underlying knowledge should not be siloed. A poor explanation of an optic disc, OCT or surgical complication will surface in a written answer and a viva. Build each theory card with a practical prompt: “How would I show this on a patient/image?” Build each practical case note with a written prompt: “What short note or mechanism could this trigger?”
 
-The site’s [DNB preparation guide](/exams/dnb) is the relevant overview. The [DNB/DO past 5-year papers product page](/products/dnb-do-past-5-year-papers) is an optional resource preview, not an NBEMS source and not proof of a future pattern. Keep viva and case work alongside theory through [OSCE, Practical & Viva Voce Ready](/osce). For short mixed retrieval, use [general ophthalmology free MCQs](/free-mcqs/general).
+The site’s [DNB preparation guide](/exams/dnb/) is the relevant overview. The [DNB/DO past 5-year papers product page](/products/dnb-do-past-5-year-papers/) is an optional resource preview, not an NBEMS source and not proof of a future pattern. Keep viva and case work alongside theory through [OSCE, Practical & Viva Voce Ready](/osce/). For short mixed retrieval, use [general ophthalmology free MCQs](/free-mcqs/general/).
 
 ## A four-week implementation plan
 

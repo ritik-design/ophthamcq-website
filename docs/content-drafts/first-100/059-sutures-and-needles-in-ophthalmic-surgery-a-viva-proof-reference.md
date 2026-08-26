@@ -1,5 +1,6 @@
 ---
 title: "Sutures and Needles in Ophthalmic Surgery: A Viva-Proof Reference"
+seo_title: "Ophthalmic Sutures and Needles: Viva Reference"
 proposed_slug: "sutures-and-needles-in-ophthalmic-surgery-a-viva-proof-reference"
 meta_description: "A postgraduate ophthalmic sutures viva guide: packet reading, material properties, suture size, needle anatomy, point types and safe comparison answers."
 excerpt: "Start with what is printed on the packet. Then classify the material and needle before you offer a tissue context."
@@ -161,7 +162,7 @@ Use actual labelled images or packets only where your unit allows it and follow 
 - Giving a procedure-specific suture choice without the tissue, operative plan and local protocol.
 - Turning an instrument-identification station into an operative technique demonstration.
 
-For image- and packet-led instrument revision, see the [Instruments in Ophthalmology revision resource](/products/instruments-in-ophthalmology-notes). The [instruments-and-drugs practical viva resource](/products/instruments-drugs-practical-viva) is a related revision page. For wider surgical-topic revision, use the [cataract MCQs and study guide](/topics/cataract). Practical station rehearsal belongs with the [OSCE, Practical & Viva Voce Ready bundle](/osce). These resources support exam preparation and do not replace supervised operating-room training.
+For image- and packet-led instrument revision, see the [Instruments in Ophthalmology revision resource](/products/instruments-in-ophthalmology-notes/). The [instruments-and-drugs practical viva resource](/products/instruments-drugs-practical-viva/) is a related revision page. For wider surgical-topic revision, use the [cataract MCQs and study guide](/topics/cataract/). Practical station rehearsal belongs with the [OSCE, Practical & Viva Voce Ready bundle](/osce/). These resources support exam preparation and do not replace supervised operating-room training.
 
 ## Sources
 

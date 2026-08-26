@@ -1,5 +1,6 @@
 ---
 title: "FRCOphth Part 2 OSCE: All Stations, Marking and How to Rehearse"
+seo_title: "FRCOphth Part 2 OSCE: Stations and Marking"
 proposed_slug: "frcophth-part-2-osce-stations-marking-rehearsal"
 meta_description: "A source-linked FRCOphth Part 2 OSCE rehearsal guide covering the current station families, timing, marking boundary and feedback system."
 excerpt: "A source-linked FRCOphth Part 2 OSCE rehearsal guide covering the current station families, timing, marking boundary and feedback system."
@@ -122,7 +123,7 @@ In week one, create one station per family and rehearse slowly. In week two, add
 
 Keep a separate viva log and OSCE log. Because the components have separate pass marks, mixing all feedback into one average hides the problem. A candidate may need clearer investigation reasoning in viva and better task-reading in OSCE; those are different repairs.
 
-For practical case, instrument, drug and viva-oriented materials, the on-site [OSCE, Practical & Viva bundle](/osce) is the relevant resource hub. The [FRCOphth preparation guide](/exams/frcophth) provides broad exam context. Both are independent OphthaMCQ pages, not RCOphth materials or endorsement.
+For practical case, instrument, drug and viva-oriented materials, the on-site [OSCE, Practical & Viva bundle](/osce/) is the relevant resource hub. The [FRCOphth preparation guide](/exams/frcophth/) provides broad exam context. Both are independent OphthaMCQ pages, not RCOphth materials or endorsement.
 
 ## What not to do
 

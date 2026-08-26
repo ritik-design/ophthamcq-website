@@ -3,7 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
 import QuizEngine from '../../components/QuizEngine.astro';
 import BundleCTA from '../../components/BundleCTA.astro';
-import { CATEGORIES, getCategoryById } from '../../data/categories';
+import McqReviewList from '../../components/McqReviewList.astro';
+import { CATEGORIES, CATEGORY_MCQS, getCategoryById } from '../../data/categories';
+import { SITE } from '../../config';
 
 export function getStaticPaths() {
   return CATEGORIES.map((c) => ({ params: { category: c.id } }));
@@ -15,11 +17,48 @@ const categoryData = getCategoryById(category as any);
 if (!categoryData) {
   return Astro.redirect('/free-mcqs');
 }
+
+const mcqs = CATEGORY_MCQS[categoryData.id] ?? [];
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+
+/**
+ * Google's practice-problems rich result (schema.org/Quiz). Capped so the
+ * JSON-LD payload stays proportionate — the full set renders as HTML below.
+ */
+const SCHEMA_QUESTION_LIMIT = 25;
+
+const quizSchema = {
+  '@type': 'Quiz',
+  '@id': `${canonical}#quiz`,
+  name: `Free ${categoryData.name} MCQs`,
+  about: { '@type': 'Thing', name: `${categoryData.name} — ophthalmology` },
+  educationalLevel: 'Postgraduate',
+  publisher: { '@id': `${SITE.url}/#organization` },
+  hasPart: mcqs.slice(0, SCHEMA_QUESTION_LIMIT).map((mcq) => ({
+    '@type': 'Question',
+    eduQuestionType: 'Multiple choice',
+    learningResourceType: 'Practice problem',
+    name: mcq.q,
+    text: mcq.q,
+    suggestedAnswer: mcq.options
+      .map((option, i) => ({ option, i }))
+      .filter(({ i }) => i !== mcq.correct)
+      .map(({ option, i }) => ({ '@type': 'Answer', position: i, text: option })),
+    acceptedAnswer: {
+      '@type': 'Answer',
+      position: mcq.correct,
+      text: mcq.options[mcq.correct],
+      comment: { '@type': 'Comment', text: mcq.explanation },
+    },
+  })),
+};
 ---
 
 <Layout
-  title={`Free ${categoryData.name} MCQs — Practice & Buy Full Course`}
-  description={`Try ${categoryData.quizSize} free ${categoryData.name} MCQs with instant feedback. Unlock the full bundle with ${categoryData.fullQuestionCount} questions, notes, and past papers.`}
+  title={categoryData.seoTitle}
+  description={categoryData.seoDescription}
+  breadcrumbs={[{ name: 'Free MCQs', href: '/free-mcqs/' }, { name: categoryData.name }]}
+  schema={[quizSchema]}
 >
   <!-- Hero -->
   <div class="site-hero bg-gradient-to-br from-sky-50 via-white to-indigo-50 border-b border-slate-200">
@@ -68,7 +107,7 @@ if (!categoryData) {
   <div id="related-courses" class="bg-white py-16 lg:py-24">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        <h2 id="bundle" class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight scroll-mt-24">
           Unlock the full {categoryData.name} bundle
         </h2>
         <p class="mt-4 text-lg text-slate-600">
@@ -80,11 +119,13 @@ if (!categoryData) {
     </div>
   </div>
 
+  <McqReviewList categoryId={categoryData.id} />
+
   <!-- Back to all categories -->
   <div class="bg-slate-50 py-10">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
       <a
-        href="/free-mcqs"
+        href="/free-mcqs/"
         class="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-700 border-2 border-slate-200 hover:border-sky-300 hover:text-sky-700 transition-all"
       >
         ← Back to all free MCQs
