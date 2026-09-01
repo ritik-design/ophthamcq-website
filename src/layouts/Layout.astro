@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { SITE } from '../config';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import GooglePreferredSource from '../components/GooglePreferredSource.astro';
 
 export interface Breadcrumb {
   name: string;
@@ -38,6 +39,12 @@ const absoluteImage = new URL(image, SITE.url).href;
 
 const ORG_ID = `${SITE.url}/#organization`;
 const isHome = Astro.url.pathname === '/';
+const preferredSourceContentRoutes = ['/blog', '/glossary', '/topics', '/resources', '/free-mcqs'];
+const showPreferredSource =
+  robots.startsWith('index') &&
+  preferredSourceContentRoutes.some(
+    (route) => Astro.url.pathname === route || Astro.url.pathname.startsWith(`${route}/`)
+  );
 
 /**
  * One @graph per page. The Organization node is the entity every other node
@@ -142,6 +149,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
       <slot />
     </main>
     <Footer />
+    {showPreferredSource && <GooglePreferredSource />}
 
     <script>
       function getSiteGrid() {

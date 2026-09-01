@@ -1,0 +1,266 @@
+---
+import { SITE } from '../config';
+
+const sourceDomain = new URL(SITE.url).hostname;
+const sourcePreferencesUrl = `https://www.google.com/preferences/source?q=${encodeURIComponent(sourceDomain)}`;
+---
+
+<script is:inline async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+
+<aside class="preferred-source" aria-labelledby="preferred-source-title" data-google-preferred-source>
+  <button
+    class="preferred-source__close"
+    type="button"
+    aria-label="Dismiss Preferred Source prompt"
+    data-preferred-source-dismiss
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+      <path d="M6 6l12 12M18 6 6 18"></path>
+    </svg>
+  </button>
+
+  <div class="preferred-source__copy">
+    <p class="preferred-source__eyebrow">
+      <span aria-hidden="true"></span>
+      Google Preferred Source
+    </p>
+    <h2 id="preferred-source-title">Keep OphthaMCQ in your Google results</h2>
+    <p>See more of our source-led ophthalmology exam guides when they are fresh and relevant.</p>
+  </div>
+
+  <div class="preferred-source__action">
+    <div google-add-preferred-source-btn data-theme="light"></div>
+
+    {
+      import.meta.env.DEV && (
+        <a class="preferred-source__preview" href={sourcePreferencesUrl} target="_blank" rel="noopener noreferrer">
+          Test the live-domain Google flow <span aria-hidden="true">&#8599;</span>
+        </a>
+      )
+    }
+
+    <noscript>
+      <a class="preferred-source__fallback" href={sourcePreferencesUrl} target="_blank" rel="noopener noreferrer">
+        Add OphthaMCQ as a Preferred Source on Google
+      </a>
+    </noscript>
+  </div>
+</aside>
+
+<script>
+  const preferredSourcePrompt = document.querySelector<HTMLElement>('[data-google-preferred-source]');
+  const preferredSourceDismiss = preferredSourcePrompt?.querySelector<HTMLButtonElement>('[data-preferred-source-dismiss]');
+
+  preferredSourceDismiss?.addEventListener('click', () => {
+    if (!preferredSourcePrompt) return;
+    preferredSourcePrompt.dataset.isLeaving = 'true';
+    window.setTimeout(() => {
+      preferredSourcePrompt.hidden = true;
+    }, 220);
+  });
+</script>
+
+<style>
+  .preferred-source {
+    position: fixed;
+    right: clamp(16px, 2vw, 28px);
+    bottom: clamp(16px, 2vw, 28px);
+    z-index: 45;
+    width: min(360px, calc(100vw - 32px));
+    overflow: hidden;
+    padding: 20px 20px 18px;
+    border: 1px solid rgb(186 230 253);
+    border-top: 3px solid var(--color-clinical-bright);
+    border-radius: 1rem;
+    background: var(--color-surface-elevated);
+    box-shadow: var(--shadow-lift);
+    color: var(--color-ink-soft);
+    animation: preferred-source-enter 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .preferred-source::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    top: -135px;
+    right: -110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(56 189 248 / 0.18), transparent 68%);
+    pointer-events: none;
+  }
+
+  .preferred-source[hidden] {
+    display: none;
+  }
+
+  .preferred-source[data-is-leaving='true'] {
+    animation: preferred-source-leave 220ms ease-in forwards;
+    pointer-events: none;
+  }
+
+  .preferred-source__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: rgb(100 116 139);
+    cursor: pointer;
+    transition: color 180ms ease, background 180ms ease;
+  }
+
+  .preferred-source__close:hover {
+    background: rgb(240 249 255);
+    color: var(--color-clinical);
+  }
+
+  .preferred-source__close:focus-visible {
+    outline: 3px solid rgb(14 165 233 / 0.35);
+    outline-offset: -3px;
+  }
+
+  .preferred-source__close svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .preferred-source__copy,
+  .preferred-source__action {
+    position: relative;
+    z-index: 1;
+  }
+
+  .preferred-source__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 8px;
+    color: var(--color-clinical);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .preferred-source__eyebrow span {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--color-clinical-bright);
+    animation: preferred-source-dot 2.8s ease-in-out 1s infinite;
+  }
+
+  .preferred-source h2 {
+    margin: 0 34px 7px 0;
+    color: var(--color-ink);
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.18;
+  }
+
+  .preferred-source__copy > p:last-child {
+    margin: 0;
+    color: rgb(71 85 105);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .preferred-source__action {
+    min-width: 0;
+    margin-top: 13px;
+  }
+
+  [google-add-preferred-source-btn] {
+    width: 100%;
+    min-height: 60px;
+  }
+
+  .preferred-source__preview {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 7px;
+    color: var(--color-clinical);
+    font-size: 12.5px;
+    font-weight: 700;
+    text-underline-offset: 2px;
+  }
+
+  .preferred-source__fallback {
+    display: inline-flex;
+    color: var(--color-clinical);
+    font-weight: 700;
+  }
+
+  @keyframes preferred-source-enter {
+    from {
+      opacity: 0;
+      transform: translate3d(24px, 24px, 0) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+
+  @keyframes preferred-source-dot {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgb(14 165 233 / 0);
+    }
+    50% {
+      box-shadow: 0 0 0 7px rgb(14 165 233 / 0.14);
+    }
+  }
+
+  @keyframes preferred-source-leave {
+    to {
+      opacity: 0;
+      transform: translate3d(18px, 12px, 0) scale(0.97);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .preferred-source {
+      right: 12px;
+      bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      width: calc(100vw - 24px);
+      padding: 16px 16px 13px;
+    }
+
+    .preferred-source h2 {
+      font-size: 18px;
+    }
+
+    .preferred-source__copy > p:last-child {
+      display: none;
+    }
+
+    .preferred-source__action {
+      margin-top: 9px;
+    }
+
+    .preferred-source__preview {
+      margin-top: 3px;
+      font-size: 12px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .preferred-source,
+    .preferred-source[data-is-leaving='true'],
+    .preferred-source__eyebrow span {
+      animation: none;
+    }
+  }
+</style>
