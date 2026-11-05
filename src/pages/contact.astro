@@ -213,7 +213,7 @@ const trustPoints = [
       </div>
 
       <div class="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 lg:p-10 shadow-lg shadow-slate-900/5">
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
+        <form data-lead-form="contact" data-subject="New message from ophthamcq.org (contact form)" class="space-y-5">
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
               <label for="name" class="block text-sm font-medium text-slate-700 mb-1.5">Name</label>
@@ -279,8 +279,13 @@ const trustPoints = [
               <Icon name="arrowRight" class="w-4 h-4" />
             </button>
           </div>
+          <p data-form-status role="status" aria-live="polite" hidden></p>
+          <noscript><p class="text-sm text-slate-600">This form needs JavaScript. Please email <a href="mailto:support@ophthamcq.com" class="font-semibold text-sky-700 hover:underline">support@ophthamcq.com</a>.</p></noscript>
         </form>
       </div>
     </div>
   </section>
+  <script>
+    import '../scripts/lead-form';
+  </script>
 </Layout>
